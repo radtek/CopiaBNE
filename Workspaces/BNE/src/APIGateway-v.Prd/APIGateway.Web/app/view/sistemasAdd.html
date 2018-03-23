@@ -1,0 +1,17 @@
+﻿<form name="formAddSistema" ng-submit="AddSistema(formAddSistema)">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="closeModal()" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Incluir Novo Sistemas</h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group" ng-class="{'has-error has-feedback': IsFormInvalid}">
+            <label for="exampleInputEmail1">Nome novo sistema</label>
+            <input class="form-control" name="nomeSistema" ng-model="nomeNovoSistema" placeholder="Nome Sistema" required>
+            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-if="IsFormInvalid"></span>
+            <span id="inputError2Status" class="sr-only" ng-if="IsFormInvalid">(error)</span>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Incluir Sistema</button>
+    </div>
+</form>

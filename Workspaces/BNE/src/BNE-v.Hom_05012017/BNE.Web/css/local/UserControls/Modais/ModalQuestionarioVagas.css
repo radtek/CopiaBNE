@@ -1,0 +1,60 @@
+﻿.painel_pergunta
+{
+    background-image: url('/img/img_modal_questionario_separador_perguntas.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    font-size: 13px;
+    padding-bottom: 12px;
+}
+
+.painel_pergunta p
+{
+    margin: 0;
+    padding: 12px 20px;
+}
+
+.painel_pergunta label
+{
+    color: inherit;
+    float: none;
+    margin-left: 0;
+    padding-top: 0;
+}
+
+.painel_pergunta.ultima
+{
+    background: none;
+}
+
+.opcoes_pergunta
+{
+    padding: 0 20px;
+    text-align: center;
+}
+
+.opcoes_pergunta input
+{
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.opcoes_pergunta label
+{
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.resposta_sim
+{
+}
+
+.resposta_nao
+{
+    margin-left: 50px;
+}
+
+.painel_botoes
+{
+    margin: 18px 0 0;
+}

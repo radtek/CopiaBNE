@@ -1,0 +1,6 @@
+﻿<label for="Cidade">Cidade <span class="required">*</span></label>
+<input type="text" class="form-control" name="Cidade" id="Cidade" maxlength="80" validar-cidade ng-model="cadCV.curriculo.cidade" autocomplete-cidade buscar-media required />
+<div class="tooltip right in" style="top: 225px; left: 287px; display: block; width:180px;" ng-show="formPasso1.Cidade.$invalid && formPasso1.Cidade.$touched">
+    <div class="tooltip-arrow"></div>
+    <div class="tooltip-inner">Cidade não encontrada, pesquise a cidade e selecione uma na lista</div>
+</div>

@@ -1,0 +1,1102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="CarregarPorIdf">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idfPessoaJuridica" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarPorIdfResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarregarPorIdfResult" type="tns:PessoaJuridica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PessoaJuridica">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjNaturezaJuridica" type="tns:NaturezaJuridica" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroCNPJ" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroCEI" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="RazaoSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeFantasia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApelidoEmpresa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CNAEPrincipal" type="tns:CNAESubClasse" />
+          <s:element minOccurs="0" maxOccurs="1" name="CNAESecundario" type="tns:CNAESubClasse" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPessoaJuridica" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GPS" type="tns:GPS" />
+          <s:element minOccurs="0" maxOccurs="1" name="RAT" type="tns:RAT" />
+          <s:element minOccurs="0" maxOccurs="1" name="Simples" type="tns:Simples" />
+          <s:element minOccurs="0" maxOccurs="1" name="PorteEmpresa" type="tns:PorteEmpresa" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnderecoSite" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataFundacao" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuantidadeSocios" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagIsencaoFilantropica" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroFAP" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroPAT" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Persisted" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataCadastro" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataAlteracao" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NaturezaJuridica">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdNaturezaJuridica" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoNaturezaJuridica" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoNaturezaJuridica" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataCadastro" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CNAESubClasse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdCNAESubClasse" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoCNAESubClasse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoCNAESubClasse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CNAEClasse" type="tns:CNAEClasse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CNAEClasse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdCNAEClasse" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoCNAEClasse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoCNAEClasse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CNAEGrupo" type="tns:CNAEGrupo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CNAEGrupo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdCNAEGrupo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoCNAEGrupo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoCNAEGrupo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CNAEDivisao" type="tns:CNAEDivisao" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CNAEDivisao">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdCNAEDivisao" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoCNAEDivisao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoCNAEDivisao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CNAESecao" type="tns:CNAESecao" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CNAESecao">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdCNAESecao" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoCNAESecao" type="s1:char" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoCNAESecao" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GPS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdGPS" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoGPS" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataCadastro" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RAT">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdRAT" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoRAT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataCadastro" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Simples">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdSimples" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoSimples" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataCadastro" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PorteEmpresa">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdPorteEmpresa" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoPorteEmpresa" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataCadastro" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CarregarPorCNPJ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarPorCNPJResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarregarPorCNPJResult" type="tns:PessoaJuridica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirPessoaJuridica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pessoa" type="tns:PessoaJuridica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirPessoaJuridicaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InserirPessoaJuridicaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExisteCNPJ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExisteCNPJResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExisteCNPJResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SalvarLogoPrincipal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="logo" type="tns:PessoaJuridicaLogo" />
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PessoaJuridicaLogo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PessoaJuridica" type="tns:PessoaJuridica" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoLogo" type="tns:TipoLogo" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImagemLogo" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataCadastro" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TipoLogo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoLogo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoTipoLogo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SalvarLogoPrincipalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SalvarLogoPrincipalResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SalvarEnderecoPrincipal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="end" type="tns:EnderecoPessoaJuridica" />
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EnderecoPessoaJuridica">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PessoaJuridica" type="tns:PessoaJuridica" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cidade" type="tns:Cidade" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroCEP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoLogradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroEndereco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoComplemento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoBairro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoEndereco" type="tns:TipoEndereco" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cidade">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdCidade" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeCidade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="tns:Estado" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaxaISS" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoBase" type="tns:TipoBase" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoRaiz" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Estado">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdEstado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiglaEstado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeEstado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Regiao" type="tns:Regiao" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Regiao">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdRegiao" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeRegiao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TipoBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoTipoBase" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TipoEndereco">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoEndereco" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoTipoEndereco" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SalvarEnderecoPrincipalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SalvarEnderecoPrincipalResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarLogosCNPJ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarLogosCNPJResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarregarLogosCNPJResult" type="tns:ArrayOfPessoaJuridicaLogo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPessoaJuridicaLogo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PessoaJuridicaLogo" nillable="true" type="tns:PessoaJuridicaLogo" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetornaIdfLogoPrincipal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaIdfLogoPrincipalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RetornaIdfLogoPrincipalResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarPessoaJuridicaLogoIdf">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idlogo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarPessoaJuridicaLogoIdfResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarregarPessoaJuridicaLogoIdfResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarPessoaJuridicaLogoPrincipal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarPessoaJuridicaLogoPrincipalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarregarPessoaJuridicaLogoPrincipalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarPessoaJuridicaLogoPrincipalBinario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarPessoaJuridicaLogoPrincipalBinarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarregarPessoaJuridicaLogoPrincipalBinarioResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarEnderecoPrincipal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarEnderecoPrincipalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarregarEnderecoPrincipalResult" type="tns:EnderecoPessoaJuridica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarIEEnderecoPrincipal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarIEEnderecoPrincipalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarregarIEEnderecoPrincipalResult" type="tns:InscricaoEstadual" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InscricaoEstadual">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PessoaJuridica" type="tns:PessoaJuridica" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="tns:Estado" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroInscricao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CarregarIECnpjEstado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sigUf" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarIECnpjEstadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarregarIECnpjEstadoResult" type="tns:InscricaoEstadual" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirInscricaoEstadual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sigUf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numIE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirInscricaoEstadualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InserirInscricaoEstadualResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirAlterarInscricaoEstadual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sigUf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numIE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirAlterarInscricaoEstadualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InserirAlterarInscricaoEstadualResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirAlterarInscricaoMunicipal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="objCidade" type="tns:Cidade" />
+            <s:element minOccurs="0" maxOccurs="1" name="numIM" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirAlterarInscricaoMunicipalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InserirAlterarInscricaoMunicipalResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InativarLogoPrincipal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cnpj" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InativarLogoPrincipalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InativarLogoPrincipalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SalvarAliquotaFPAS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aliquota" type="tns:PessoaJuridicaFPASAliquota" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PessoaJuridicaFPASAliquota">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PessoaJuridica" type="tns:PessoaJuridica" />
+          <s:element minOccurs="0" maxOccurs="1" name="FPASAliquota" type="tns:FPASAliquota" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPessoaJuridicaFPASAliquota" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Persisted" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modified" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FPASAliquota">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdFPASAliquota" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeFPASAliquota" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroSomatoria" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="FPAS" type="tns:FPAS" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorPrevidencia" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorAutonomo" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorRiscoAcidente" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorSalarioEducacao" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorIncra" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorSenai" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorSesi" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorSenac" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorSesc" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorSebrae" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorDpc" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorFundoAeroviario" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorSenar" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorSest" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorSenat" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorSescoop" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FPAS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdFPAS" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoFPAS" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagInativo" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SalvarAliquotaFPASResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CarregarAliquotaFPAS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ceiCnpj" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregarAliquotaFPASResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarregarAliquotaFPASResult" type="tns:PessoaJuridicaFPASAliquota" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CarregarPorIdfSoapIn">
+    <wsdl:part name="parameters" element="tns:CarregarPorIdf" />
+  </wsdl:message>
+  <wsdl:message name="CarregarPorIdfSoapOut">
+    <wsdl:part name="parameters" element="tns:CarregarPorIdfResponse" />
+  </wsdl:message>
+  <wsdl:message name="CarregarPorCNPJSoapIn">
+    <wsdl:part name="parameters" element="tns:CarregarPorCNPJ" />
+  </wsdl:message>
+  <wsdl:message name="CarregarPorCNPJSoapOut">
+    <wsdl:part name="parameters" element="tns:CarregarPorCNPJResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirPessoaJuridicaSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirPessoaJuridica" />
+  </wsdl:message>
+  <wsdl:message name="InserirPessoaJuridicaSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirPessoaJuridicaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExisteCNPJSoapIn">
+    <wsdl:part name="parameters" element="tns:ExisteCNPJ" />
+  </wsdl:message>
+  <wsdl:message name="ExisteCNPJSoapOut">
+    <wsdl:part name="parameters" element="tns:ExisteCNPJResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalvarLogoPrincipalSoapIn">
+    <wsdl:part name="parameters" element="tns:SalvarLogoPrincipal" />
+  </wsdl:message>
+  <wsdl:message name="SalvarLogoPrincipalSoapOut">
+    <wsdl:part name="parameters" element="tns:SalvarLogoPrincipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalvarEnderecoPrincipalSoapIn">
+    <wsdl:part name="parameters" element="tns:SalvarEnderecoPrincipal" />
+  </wsdl:message>
+  <wsdl:message name="SalvarEnderecoPrincipalSoapOut">
+    <wsdl:part name="parameters" element="tns:SalvarEnderecoPrincipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="CarregarLogosCNPJSoapIn">
+    <wsdl:part name="parameters" element="tns:CarregarLogosCNPJ" />
+  </wsdl:message>
+  <wsdl:message name="CarregarLogosCNPJSoapOut">
+    <wsdl:part name="parameters" element="tns:CarregarLogosCNPJResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornaIdfLogoPrincipalSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornaIdfLogoPrincipal" />
+  </wsdl:message>
+  <wsdl:message name="RetornaIdfLogoPrincipalSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornaIdfLogoPrincipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="CarregarPessoaJuridicaLogoIdfSoapIn">
+    <wsdl:part name="parameters" element="tns:CarregarPessoaJuridicaLogoIdf" />
+  </wsdl:message>
+  <wsdl:message name="CarregarPessoaJuridicaLogoIdfSoapOut">
+    <wsdl:part name="parameters" element="tns:CarregarPessoaJuridicaLogoIdfResponse" />
+  </wsdl:message>
+  <wsdl:message name="CarregarPessoaJuridicaLogoPrincipalSoapIn">
+    <wsdl:part name="parameters" element="tns:CarregarPessoaJuridicaLogoPrincipal" />
+  </wsdl:message>
+  <wsdl:message name="CarregarPessoaJuridicaLogoPrincipalSoapOut">
+    <wsdl:part name="parameters" element="tns:CarregarPessoaJuridicaLogoPrincipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="CarregarPessoaJuridicaLogoPrincipalBinarioSoapIn">
+    <wsdl:part name="parameters" element="tns:CarregarPessoaJuridicaLogoPrincipalBinario" />
+  </wsdl:message>
+  <wsdl:message name="CarregarPessoaJuridicaLogoPrincipalBinarioSoapOut">
+    <wsdl:part name="parameters" element="tns:CarregarPessoaJuridicaLogoPrincipalBinarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="CarregarEnderecoPrincipalSoapIn">
+    <wsdl:part name="parameters" element="tns:CarregarEnderecoPrincipal" />
+  </wsdl:message>
+  <wsdl:message name="CarregarEnderecoPrincipalSoapOut">
+    <wsdl:part name="parameters" element="tns:CarregarEnderecoPrincipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="CarregarIEEnderecoPrincipalSoapIn">
+    <wsdl:part name="parameters" element="tns:CarregarIEEnderecoPrincipal" />
+  </wsdl:message>
+  <wsdl:message name="CarregarIEEnderecoPrincipalSoapOut">
+    <wsdl:part name="parameters" element="tns:CarregarIEEnderecoPrincipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="CarregarIECnpjEstadoSoapIn">
+    <wsdl:part name="parameters" element="tns:CarregarIECnpjEstado" />
+  </wsdl:message>
+  <wsdl:message name="CarregarIECnpjEstadoSoapOut">
+    <wsdl:part name="parameters" element="tns:CarregarIECnpjEstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirInscricaoEstadualSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirInscricaoEstadual" />
+  </wsdl:message>
+  <wsdl:message name="InserirInscricaoEstadualSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirInscricaoEstadualResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirAlterarInscricaoEstadualSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirAlterarInscricaoEstadual" />
+  </wsdl:message>
+  <wsdl:message name="InserirAlterarInscricaoEstadualSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirAlterarInscricaoEstadualResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirAlterarInscricaoMunicipalSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirAlterarInscricaoMunicipal" />
+  </wsdl:message>
+  <wsdl:message name="InserirAlterarInscricaoMunicipalSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirAlterarInscricaoMunicipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="InativarLogoPrincipalSoapIn">
+    <wsdl:part name="parameters" element="tns:InativarLogoPrincipal" />
+  </wsdl:message>
+  <wsdl:message name="InativarLogoPrincipalSoapOut">
+    <wsdl:part name="parameters" element="tns:InativarLogoPrincipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalvarAliquotaFPASSoapIn">
+    <wsdl:part name="parameters" element="tns:SalvarAliquotaFPAS" />
+  </wsdl:message>
+  <wsdl:message name="SalvarAliquotaFPASSoapOut">
+    <wsdl:part name="parameters" element="tns:SalvarAliquotaFPASResponse" />
+  </wsdl:message>
+  <wsdl:message name="CarregarAliquotaFPASSoapIn">
+    <wsdl:part name="parameters" element="tns:CarregarAliquotaFPAS" />
+  </wsdl:message>
+  <wsdl:message name="CarregarAliquotaFPASSoapOut">
+    <wsdl:part name="parameters" element="tns:CarregarAliquotaFPASResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSPessoaJuridicaSoap">
+    <wsdl:operation name="CarregarPorIdf">
+      <wsdl:input message="tns:CarregarPorIdfSoapIn" />
+      <wsdl:output message="tns:CarregarPorIdfSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarregarPorCNPJ">
+      <wsdl:input message="tns:CarregarPorCNPJSoapIn" />
+      <wsdl:output message="tns:CarregarPorCNPJSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirPessoaJuridica">
+      <wsdl:input message="tns:InserirPessoaJuridicaSoapIn" />
+      <wsdl:output message="tns:InserirPessoaJuridicaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExisteCNPJ">
+      <wsdl:input message="tns:ExisteCNPJSoapIn" />
+      <wsdl:output message="tns:ExisteCNPJSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SalvarLogoPrincipal">
+      <wsdl:input message="tns:SalvarLogoPrincipalSoapIn" />
+      <wsdl:output message="tns:SalvarLogoPrincipalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SalvarEnderecoPrincipal">
+      <wsdl:input message="tns:SalvarEnderecoPrincipalSoapIn" />
+      <wsdl:output message="tns:SalvarEnderecoPrincipalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarregarLogosCNPJ">
+      <wsdl:input message="tns:CarregarLogosCNPJSoapIn" />
+      <wsdl:output message="tns:CarregarLogosCNPJSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaIdfLogoPrincipal">
+      <wsdl:input message="tns:RetornaIdfLogoPrincipalSoapIn" />
+      <wsdl:output message="tns:RetornaIdfLogoPrincipalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarregarPessoaJuridicaLogoIdf">
+      <wsdl:input message="tns:CarregarPessoaJuridicaLogoIdfSoapIn" />
+      <wsdl:output message="tns:CarregarPessoaJuridicaLogoIdfSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarregarPessoaJuridicaLogoPrincipal">
+      <wsdl:input message="tns:CarregarPessoaJuridicaLogoPrincipalSoapIn" />
+      <wsdl:output message="tns:CarregarPessoaJuridicaLogoPrincipalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarregarPessoaJuridicaLogoPrincipalBinario">
+      <wsdl:input message="tns:CarregarPessoaJuridicaLogoPrincipalBinarioSoapIn" />
+      <wsdl:output message="tns:CarregarPessoaJuridicaLogoPrincipalBinarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarregarEnderecoPrincipal">
+      <wsdl:input message="tns:CarregarEnderecoPrincipalSoapIn" />
+      <wsdl:output message="tns:CarregarEnderecoPrincipalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarregarIEEnderecoPrincipal">
+      <wsdl:input message="tns:CarregarIEEnderecoPrincipalSoapIn" />
+      <wsdl:output message="tns:CarregarIEEnderecoPrincipalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarregarIECnpjEstado">
+      <wsdl:input message="tns:CarregarIECnpjEstadoSoapIn" />
+      <wsdl:output message="tns:CarregarIECnpjEstadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirInscricaoEstadual">
+      <wsdl:input message="tns:InserirInscricaoEstadualSoapIn" />
+      <wsdl:output message="tns:InserirInscricaoEstadualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirAlterarInscricaoEstadual">
+      <wsdl:input message="tns:InserirAlterarInscricaoEstadualSoapIn" />
+      <wsdl:output message="tns:InserirAlterarInscricaoEstadualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirAlterarInscricaoMunicipal">
+      <wsdl:input message="tns:InserirAlterarInscricaoMunicipalSoapIn" />
+      <wsdl:output message="tns:InserirAlterarInscricaoMunicipalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InativarLogoPrincipal">
+      <wsdl:input message="tns:InativarLogoPrincipalSoapIn" />
+      <wsdl:output message="tns:InativarLogoPrincipalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SalvarAliquotaFPAS">
+      <wsdl:input message="tns:SalvarAliquotaFPASSoapIn" />
+      <wsdl:output message="tns:SalvarAliquotaFPASSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarregarAliquotaFPAS">
+      <wsdl:input message="tns:CarregarAliquotaFPASSoapIn" />
+      <wsdl:output message="tns:CarregarAliquotaFPASSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSPessoaJuridicaSoap" type="tns:WSPessoaJuridicaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CarregarPorIdf">
+      <soap:operation soapAction="http://tempuri.org/CarregarPorIdf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarPorCNPJ">
+      <soap:operation soapAction="http://tempuri.org/CarregarPorCNPJ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirPessoaJuridica">
+      <soap:operation soapAction="http://tempuri.org/InserirPessoaJuridica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteCNPJ">
+      <soap:operation soapAction="http://tempuri.org/ExisteCNPJ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SalvarLogoPrincipal">
+      <soap:operation soapAction="http://tempuri.org/SalvarLogoPrincipal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SalvarEnderecoPrincipal">
+      <soap:operation soapAction="http://tempuri.org/SalvarEnderecoPrincipal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarLogosCNPJ">
+      <soap:operation soapAction="http://tempuri.org/CarregarLogosCNPJ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaIdfLogoPrincipal">
+      <soap:operation soapAction="http://tempuri.org/RetornaIdfLogoPrincipal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarPessoaJuridicaLogoIdf">
+      <soap:operation soapAction="http://tempuri.org/CarregarPessoaJuridicaLogoIdf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarPessoaJuridicaLogoPrincipal">
+      <soap:operation soapAction="http://tempuri.org/CarregarPessoaJuridicaLogoPrincipal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarPessoaJuridicaLogoPrincipalBinario">
+      <soap:operation soapAction="http://tempuri.org/CarregarPessoaJuridicaLogoPrincipalBinario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarEnderecoPrincipal">
+      <soap:operation soapAction="http://tempuri.org/CarregarEnderecoPrincipal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarIEEnderecoPrincipal">
+      <soap:operation soapAction="http://tempuri.org/CarregarIEEnderecoPrincipal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarIECnpjEstado">
+      <soap:operation soapAction="http://tempuri.org/CarregarIECnpjEstado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirInscricaoEstadual">
+      <soap:operation soapAction="http://tempuri.org/InserirInscricaoEstadual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirAlterarInscricaoEstadual">
+      <soap:operation soapAction="http://tempuri.org/InserirAlterarInscricaoEstadual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirAlterarInscricaoMunicipal">
+      <soap:operation soapAction="http://tempuri.org/InserirAlterarInscricaoMunicipal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InativarLogoPrincipal">
+      <soap:operation soapAction="http://tempuri.org/InativarLogoPrincipal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SalvarAliquotaFPAS">
+      <soap:operation soapAction="http://tempuri.org/SalvarAliquotaFPAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarAliquotaFPAS">
+      <soap:operation soapAction="http://tempuri.org/CarregarAliquotaFPAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSPessoaJuridicaSoap12" type="tns:WSPessoaJuridicaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CarregarPorIdf">
+      <soap12:operation soapAction="http://tempuri.org/CarregarPorIdf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarPorCNPJ">
+      <soap12:operation soapAction="http://tempuri.org/CarregarPorCNPJ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirPessoaJuridica">
+      <soap12:operation soapAction="http://tempuri.org/InserirPessoaJuridica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteCNPJ">
+      <soap12:operation soapAction="http://tempuri.org/ExisteCNPJ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SalvarLogoPrincipal">
+      <soap12:operation soapAction="http://tempuri.org/SalvarLogoPrincipal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SalvarEnderecoPrincipal">
+      <soap12:operation soapAction="http://tempuri.org/SalvarEnderecoPrincipal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarLogosCNPJ">
+      <soap12:operation soapAction="http://tempuri.org/CarregarLogosCNPJ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaIdfLogoPrincipal">
+      <soap12:operation soapAction="http://tempuri.org/RetornaIdfLogoPrincipal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarPessoaJuridicaLogoIdf">
+      <soap12:operation soapAction="http://tempuri.org/CarregarPessoaJuridicaLogoIdf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarPessoaJuridicaLogoPrincipal">
+      <soap12:operation soapAction="http://tempuri.org/CarregarPessoaJuridicaLogoPrincipal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarPessoaJuridicaLogoPrincipalBinario">
+      <soap12:operation soapAction="http://tempuri.org/CarregarPessoaJuridicaLogoPrincipalBinario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarEnderecoPrincipal">
+      <soap12:operation soapAction="http://tempuri.org/CarregarEnderecoPrincipal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarIEEnderecoPrincipal">
+      <soap12:operation soapAction="http://tempuri.org/CarregarIEEnderecoPrincipal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarIECnpjEstado">
+      <soap12:operation soapAction="http://tempuri.org/CarregarIECnpjEstado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirInscricaoEstadual">
+      <soap12:operation soapAction="http://tempuri.org/InserirInscricaoEstadual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirAlterarInscricaoEstadual">
+      <soap12:operation soapAction="http://tempuri.org/InserirAlterarInscricaoEstadual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirAlterarInscricaoMunicipal">
+      <soap12:operation soapAction="http://tempuri.org/InserirAlterarInscricaoMunicipal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InativarLogoPrincipal">
+      <soap12:operation soapAction="http://tempuri.org/InativarLogoPrincipal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SalvarAliquotaFPAS">
+      <soap12:operation soapAction="http://tempuri.org/SalvarAliquotaFPAS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarAliquotaFPAS">
+      <soap12:operation soapAction="http://tempuri.org/CarregarAliquotaFPAS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSPessoaJuridica">
+    <wsdl:port name="WSPessoaJuridicaSoap" binding="tns:WSPessoaJuridicaSoap">
+      <soap:address location="http://wstestegeral.webfopag.com.br/WSPessoaJuridica.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSPessoaJuridicaSoap12" binding="tns:WSPessoaJuridicaSoap12">
+      <soap12:address location="http://wstestegeral.webfopag.com.br/WSPessoaJuridica.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

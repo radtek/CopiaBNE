@@ -1,0 +1,842 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{89F6FEFA-246E-427C-B8A0-224F499519E0}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.Web.LanHouse</RootNamespace>
+    <AssemblyName>BNE.Web.LanHouse</AssemblyName>
+    <IgnoreDeployManagedRuntimeVersion>True</IgnoreDeployManagedRuntimeVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Backload">
+      <HintPath>..\packages\Backload.1.9.3.1\lib\net45\Backload.dll</HintPath>
+    </Reference>
+    <Reference Include="Backload.Contracts">
+      <HintPath>..\packages\Backload.1.9.3.1\lib\net45\Backload.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Employer.BNE.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SolutionItens\Library\Employer.BNE.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Employer.DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fcd4c44861dd5ff4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SolutionItens\Library\Employer.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Employer.Plataforma.Web.Componentes">
+      <HintPath>..\..\BNE-v.Base\Library\Employer.Plataforma.Web.Componentes.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=5.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FluentValidation.5.0.0.1\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation.Mvc, Version=5.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FluentValidation.MVC3.5.0.0.3\lib\Net40\FluentValidation.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Mandrill, Version=1.0.75.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Mandrill.1.0.75\lib\net40\Mandrill.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.3.0.20105.1\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.1.0.20105.408\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.5\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AutomapperConfig.cs" />
+    <Compile Include="App_Start\BackloadConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BLL\Cidade.cs" />
+    <Compile Include="BLL\Curriculo.cs" />
+    <Compile Include="BLL\DTO\CarregarOportunidades.cs" />
+    <Compile Include="BLL\Companhia.cs" />
+    <Compile Include="BLL\Entity\Escolaridade.cs" />
+    <Compile Include="BLL\Entity\ExperienciaProfissional.cs" />
+    <Compile Include="BLL\Endereco.cs" />
+    <Compile Include="BLL\Entity\MiniCurriculo.cs" />
+    <Compile Include="BLL\Entity\QuintaTela.cs" />
+    <Compile Include="BLL\Entity\SegundaTela.cs" />
+    <Compile Include="BLL\Entity\SextaTela.cs" />
+    <Compile Include="BLL\Entity\TerceiraTela.cs" />
+    <Compile Include="BLL\Entity\Vip.cs" />
+    <Compile Include="BLL\Enumeradores\Parametro.cs" />
+    <Compile Include="BLL\Enumeradores\Escolaridade.cs" />
+    <Compile Include="BLL\Enumeradores\EstadoCivil.cs" />
+    <Compile Include="BLL\Enumeradores\FaseCadastro.cs" />
+    <Compile Include="BLL\Enumeradores\Sexo.cs" />
+    <Compile Include="BLL\Filial.cs" />
+    <Compile Include="BLL\Fonte.cs" />
+    <Compile Include="BLL\Funcao.cs" />
+    <Compile Include="BLL\Oportunidade.cs" />
+    <Compile Include="BLL\OportunidadeCurriculo.cs" />
+    <Compile Include="BLL\OportunidadeCurriculoHistorico.cs" />
+    <Compile Include="BLL\OrigemFilial.cs" />
+    <Compile Include="BLL\Parametro.cs" />
+    <Compile Include="BLL\PessoaFisica.cs" />
+    <Compile Include="BLL\PessoaFisicaRedeSocial.cs" />
+    <Compile Include="Code\AbstractController.cs" />
+    <Compile Include="Code\AliasModelBinder.cs" />
+    <Compile Include="Code\AutorizadoQCAttribute.cs" />
+    <Compile Include="Code\BindAliasAttribute.cs" />
+    <Compile Include="Code\Cache.cs" />
+    <Compile Include="Code\AutorizadoLogadoAttribute.cs" />
+    <Compile Include="Code\EmitirTicketOrigem.cs" />
+    <Compile Include="Code\EntrouOrigemAttribute.cs" />
+    <Compile Include="Code\Enumeradores\Chave.cs" />
+    <Compile Include="Code\ExtensionMethods.cs" />
+    <Compile Include="Code\Http400ErrorHandlerAttribute.cs" />
+    <Compile Include="Code\Helper.cs" />
+    <Compile Include="Code\Paginacao\IPagedList.cs" />
+    <Compile Include="Code\Paginacao\LimitLessPagedCollection.cs" />
+    <Compile Include="Code\Paginacao\PagedList.cs" />
+    <Compile Include="Code\Paginacao\Pager.cs" />
+    <Compile Include="Code\Paginacao\PagerExtesions.cs" />
+    <Compile Include="Code\Paginacao\PagerOptions.cs" />
+    <Compile Include="Code\Paginacao\PagerOptionsBuilder.cs" />
+    <Compile Include="Code\Paginacao\PaginationModel.cs" />
+    <Compile Include="Code\Paginacao\RouteValueDictionaryExtensions.cs" />
+    <Compile Include="Code\RequireHttpsOnProductionAttribute.cs" />
+    <Compile Include="Controllers\AdministradorController.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\AjaxController_Login.cs" />
+    <Compile Include="Controllers\AjaxController_Facebook.cs" />
+    <Compile Include="Controllers\AjaxController_SegundaTela.cs" />
+    <Compile Include="Controllers\AjaxController_SextaTela.cs" />
+    <Compile Include="Controllers\AjaxController_TerceiraTela.cs" />
+    <Compile Include="Controllers\AjaxController_QuintaTela.cs" />
+    <Compile Include="Controllers\AjaxController_QuartaTela.cs" />
+    <Compile Include="Controllers\AjaxController_VipTela.cs" />
+    <Compile Include="Controllers\BackloadDemoController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\FilialController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="EntityFramework\BNE_Codigo_Desconto.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\BNE_Codigo_Desconto_Plano.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\BNE_Curriculo.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\BNE_Experiencia_Profissional.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\BNE_Formacao.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\BNE_Funcao_Erro_Sinonimo.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\BNE_Funcao_Pretendida.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\BNE_Plano.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\BUSCA_EMPRESA_RETORNO.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\LanHouse.Context1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanHouse.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\LanHouse.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\LanHouse1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanHouse.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\LAN_Administrador.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\LAN_Companhia.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\LAN_Fase_Cadastro.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\LAN_Oportunidade.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\LAN_Oportunidade_Cidade.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\LAN_Oportunidade_Curriculo.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\LAN_Oportunidade_Curriculo_Historico.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\LAN_Perfil.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\LAN_Plano_Adquirido.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\LAN_Plano_Situacao.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Cidade.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Contato.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Endereco.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Filial.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Filial_Logo.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Fonte.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Funcao.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Origem_Filial.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Parametro.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Parametro_Filial.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Pessoa_Fisica.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Pessoa_Fisica_Foto.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Pessoa_Fisica_Rede_Social.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Regiao_Metropolitana.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TAB_Regiao_Metropolitana_Cidade.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FluentValidators\ModelAjaxCnpjClicadoValidator.cs" />
+    <Compile Include="FluentValidators\ModelAjaxLogarFacebookValidator.cs" />
+    <Compile Include="FluentValidators\ModelAjaxBuscarFilialValidator.cs" />
+    <Compile Include="FluentValidators\ModelAjaxLogarCelularValidator.cs" />
+    <Compile Include="FluentValidators\ModelAjaxLogarCpfValidator.cs" />
+    <Compile Include="FluentValidators\ModelAjaxSegundaTelaValidator.cs" />
+    <Compile Include="FluentValidators\ModelAjaxSextaTelaValidator.cs" />
+    <Compile Include="FluentValidators\ModelAjaxTerceiraTelaValidator.cs" />
+    <Compile Include="FluentValidators\ModelHomeIndexValidator.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="FluentValidators\ModelAjaxQuintaTelaValidator.cs" />
+    <Compile Include="Models\ModelAjaxBuscarFilial.cs" />
+    <Compile Include="Models\ModelAjaxCnpjClicado.cs" />
+    <Compile Include="Models\ModelAjaxCompanhia.cs" />
+    <Compile Include="Models\ModelAjaxCV.cs" />
+    <Compile Include="Models\ModelAjaxLogarCelular.cs" />
+    <Compile Include="Models\ModelAjaxLogarCpf.cs" />
+    <Compile Include="Models\ModelAjaxLogarFacebook.cs" />
+    <Compile Include="Models\ModelAjaxQuintaTela.cs" />
+    <Compile Include="Models\ModelAjaxSegundaTela.cs" />
+    <Compile Include="Models\ModelAjaxSextaTela.cs" />
+    <Compile Include="Models\ModelAjaxTerceiraTela.cs" />
+    <Compile Include="Models\ModelCompanhia.cs" />
+    <Compile Include="Models\ModelFilialNaoExisteCidade.cs" />
+    <Compile Include="Models\ModelFilialNaoExisteOrigem.cs" />
+    <Compile Include="Models\ModelHomeIndex.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Backload\content-types\128\Excel.png" />
+    <Content Include="Content\Backload\content-types\128\File.png" />
+    <Content Include="Content\Backload\content-types\128\FileNotFound.png" />
+    <Content Include="Content\Backload\content-types\128\Image.png" />
+    <Content Include="Content\Backload\content-types\128\Multimedia.png" />
+    <Content Include="Content\Backload\content-types\128\OpenOffice-Writer.png" />
+    <Content Include="Content\Backload\content-types\128\PDF.png" />
+    <Content Include="Content\Backload\content-types\128\PowerPoint.png" />
+    <Content Include="Content\Backload\content-types\128\Text.png" />
+    <Content Include="Content\Backload\content-types\128\Word.png" />
+    <Content Include="Content\Backload\content-types\16\Excel.png" />
+    <Content Include="Content\Backload\content-types\16\File.png" />
+    <Content Include="Content\Backload\content-types\16\FileNotFound.png" />
+    <Content Include="Content\Backload\content-types\16\Image.png" />
+    <Content Include="Content\Backload\content-types\16\Multimedia.png" />
+    <Content Include="Content\Backload\content-types\16\OpenOffice-Writer.png" />
+    <Content Include="Content\Backload\content-types\16\PDF.png" />
+    <Content Include="Content\Backload\content-types\16\PowerPoint.png" />
+    <Content Include="Content\Backload\content-types\16\Text.png" />
+    <Content Include="Content\Backload\content-types\16\Word.png" />
+    <Content Include="Content\Backload\content-types\24\Excel.png" />
+    <Content Include="Content\Backload\content-types\24\File.png" />
+    <Content Include="Content\Backload\content-types\24\FileNotFound.png" />
+    <Content Include="Content\Backload\content-types\24\Image.png" />
+    <Content Include="Content\Backload\content-types\24\Multimedia.png" />
+    <Content Include="Content\Backload\content-types\24\OpenOffice-Writer.png" />
+    <Content Include="Content\Backload\content-types\24\PDF.png" />
+    <Content Include="Content\Backload\content-types\24\PowerPoint.png" />
+    <Content Include="Content\Backload\content-types\24\Text.png" />
+    <Content Include="Content\Backload\content-types\24\Word.png" />
+    <Content Include="Content\Backload\content-types\32\Excel.png" />
+    <Content Include="Content\Backload\content-types\32\File.png" />
+    <Content Include="Content\Backload\content-types\32\FileNotFound.png" />
+    <Content Include="Content\Backload\content-types\32\Image.png" />
+    <Content Include="Content\Backload\content-types\32\Multimedia.png" />
+    <Content Include="Content\Backload\content-types\32\OpenOffice-Writer.png" />
+    <Content Include="Content\Backload\content-types\32\PDF.png" />
+    <Content Include="Content\Backload\content-types\32\PowerPoint.png" />
+    <Content Include="Content\Backload\content-types\32\Text.png" />
+    <Content Include="Content\Backload\content-types\32\Word.png" />
+    <Content Include="Content\Backload\content-types\48\Excel.png" />
+    <Content Include="Content\Backload\content-types\48\File.png" />
+    <Content Include="Content\Backload\content-types\48\FileNotFound.png" />
+    <Content Include="Content\Backload\content-types\48\Image.png" />
+    <Content Include="Content\Backload\content-types\48\Multimedia.png" />
+    <Content Include="Content\Backload\content-types\48\OpenOffice-Writer.png" />
+    <Content Include="Content\Backload\content-types\48\PDF.png" />
+    <Content Include="Content\Backload\content-types\48\PowerPoint.png" />
+    <Content Include="Content\Backload\content-types\48\Text.png" />
+    <Content Include="Content\Backload\content-types\48\Word.png" />
+    <Content Include="Content\Backload\content-types\64\Excel.png" />
+    <Content Include="Content\Backload\content-types\64\File.png" />
+    <Content Include="Content\Backload\content-types\64\FileNotFound.png" />
+    <Content Include="Content\Backload\content-types\64\Image.png" />
+    <Content Include="Content\Backload\content-types\64\Multimedia.png" />
+    <Content Include="Content\Backload\content-types\64\OpenOffice-Writer.png" />
+    <Content Include="Content\Backload\content-types\64\PDF.png" />
+    <Content Include="Content\Backload\content-types\64\PowerPoint.png" />
+    <Content Include="Content\Backload\content-types\64\Text.png" />
+    <Content Include="Content\Backload\content-types\64\Word.png" />
+    <Content Include="Content\Backload\content-types\72\Excel.png" />
+    <Content Include="Content\Backload\content-types\72\File.png" />
+    <Content Include="Content\Backload\content-types\72\FileNotFound.png" />
+    <Content Include="Content\Backload\content-types\72\Image.png" />
+    <Content Include="Content\Backload\content-types\72\Multimedia.png" />
+    <Content Include="Content\Backload\content-types\72\OpenOffice-Writer.png" />
+    <Content Include="Content\Backload\content-types\72\PDF.png" />
+    <Content Include="Content\Backload\content-types\72\PowerPoint.png" />
+    <Content Include="Content\Backload\content-types\72\Text.png" />
+    <Content Include="Content\Backload\content-types\72\Word.png" />
+    <Content Include="Content\Backload\content-types\96\Excel.png" />
+    <Content Include="Content\Backload\content-types\96\File.png" />
+    <Content Include="Content\Backload\content-types\96\FileNotFound.png" />
+    <Content Include="Content\Backload\content-types\96\Image.png" />
+    <Content Include="Content\Backload\content-types\96\Multimedia.png" />
+    <Content Include="Content\Backload\content-types\96\OpenOffice-Writer.png" />
+    <Content Include="Content\Backload\content-types\96\PDF.png" />
+    <Content Include="Content\Backload\content-types\96\PowerPoint.png" />
+    <Content Include="Content\Backload\content-types\96\Text.png" />
+    <Content Include="Content\Backload\content-types\96\Word.png" />
+    <Content Include="Content\css22\global\boilerplate.css" />
+    <Content Include="Content\css22\global\jquery-ui-tweaks.css" />
+    <Content Include="Content\css22\global\modal.css" />
+    <Content Include="Content\css22\local\layout.css" />
+    <Content Include="Content\FileUpload\cors\postmessage.html" />
+    <Content Include="Content\FileUpload\cors\result.html" />
+    <Content Include="Content\FileUpload\css\bootstrap\bootstrap-image-gallery.debug.css" />
+    <Content Include="Content\FileUpload\css\bootstrap\bootstrap-responsive.debug.css" />
+    <Content Include="Content\FileUpload\css\bootstrap\bootstrap.debug.css" />
+    <Content Include="Content\FileUpload\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="Content\FileUpload\css\jquery.fileupload-ui.css" />
+    <Content Include="Content\FileUpload\css\jquery.image-gallery.debug.css" />
+    <Content Include="Content\FileUpload\css\jqueryui\jquery.fileupload-jui.css" />
+    <Content Include="Content\FileUpload\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\FileUpload\img\glyphicons-halflings.png" />
+    <Content Include="Content\FileUpload\img\loading.gif" />
+    <Content Include="Content\FileUpload\img\progressbar.gif" />
+    <Content Include="Content\FileUpload\img\progressblue.gif" />
+    <Content Include="Content\img\Anonimo.gif" />
+    <Content Include="Content\img\botao_facebook.png" />
+    <Content Include="Content\img\btn_fechar_modal.png" />
+    <Content Include="Content\img\checked.png" />
+    <Content Include="Content\img\comprovante-background.png" />
+    <Content Include="Content\img\img_icone_check.png" />
+    <Content Include="Content\img\layout\foto.png" />
+    <Content Include="Content\img\layout\logo2.png" />
+    <Content Include="Content\img\layout\logo3.png" />
+    <Content Include="Content\img\layout\logo4.png" />
+    <Content Include="Content\img\layout\logo5.png" />
+    <Content Include="Content\img\layout\logoVolvo.png" />
+    <Content Include="Content\img\layout\lupa.png" />
+    <Content Include="Content\img\linha_divisoria.png" />
+    <Content Include="Content\img\loading.gif" />
+    <Content Include="Content\img\LogoLAN.jpg" />
+    <Content Include="Content\img\logo_vazio.png" />
+    <Content Include="Content\img\modal\btnClose.png" />
+    <Content Include="Content\img\modal\btnInfo transparent.png" />
+    <Content Include="Content\img\modal\btnInfo.png" />
+    <Content Include="Content\img\modal\dadosArrow.png" />
+    <Content Include="Content\img\modal\empresaArrow.png" />
+    <Content Include="Content\img\modal\pesquisarEmpresaArrow.png" />
+    <Content Include="Content\jquery.jqGrid\ellipsis-xbl.xml" />
+    <Content Include="Content\jquery.jqGrid\ui.jqgrid.css" />
+    <Content Include="Content\ModalInformacao.css" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="EntityFramework\LanHouse.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LanHouse.Context1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="EntityFramework\LanHouse.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LanHouse1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="EntityFramework\LanHouse.edmx.diagram">
+      <DependentUpon>LanHouse.edmx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\controle\employer.controle.js" />
+    <Content Include="Scripts\controle\employer.controle.mvc.cep.js" />
+    <Content Include="Scripts\controle\employer.controle.mvc.cnpj.js" />
+    <Content Include="Scripts\controle\employer.controle.mvc.cpf.js" />
+    <Content Include="Scripts\controle\employer.controle.mvc.data.js" />
+    <Content Include="Scripts\controle\employer.controle.mvc.js" />
+    <Content Include="Scripts\controle\employer.controle.mvc.lista.js" />
+    <Content Include="Scripts\controle\employer.controle.mvc.telefone.js" />
+    <Content Include="Scripts\controle\employer.event.js" />
+    <Content Include="Scripts\controle\employer.js" />
+    <Content Include="Scripts\controle\employer.key.js" />
+    <Content Include="Scripts\controle\employer.util.js" />
+    <Content Include="Scripts\FileUpload\angularjs\angular.debug.js" />
+    <Content Include="Scripts\FileUpload\backload.demo.js" />
+    <Content Include="Scripts\FileUpload\bootstrap\bootstrap-image-gallery.debug.js" />
+    <Content Include="Scripts\FileUpload\bootstrap\bootstrap.debug.js" />
+    <Content Include="Scripts\FileUpload\canvas-to-blob.debug.js" />
+    <Content Include="Scripts\FileUpload\cors\jquery.postmessage-transport.js" />
+    <Content Include="Scripts\FileUpload\cors\jquery.xdr-transport.js" />
+    <Content Include="Scripts\FileUpload\jquery.fileupload-angular.js" />
+    <Content Include="Scripts\FileUpload\jquery.fileupload-audio.js" />
+    <Content Include="Scripts\FileUpload\jquery.fileupload-fp.js" />
+    <Content Include="Scripts\FileUpload\jquery.fileupload-image.js" />
+    <Content Include="Scripts\FileUpload\jquery.fileupload-jui.js" />
+    <Content Include="Scripts\FileUpload\jquery.fileupload-process.js" />
+    <Content Include="Scripts\FileUpload\jquery.fileupload-ui.js" />
+    <Content Include="Scripts\FileUpload\jquery.fileupload-validate.js" />
+    <Content Include="Scripts\FileUpload\jquery.fileupload-video.js" />
+    <Content Include="Scripts\FileUpload\jquery.fileupload.js" />
+    <Content Include="Scripts\FileUpload\jquery.iframe-transport.js" />
+    <Content Include="Scripts\FileUpload\jquery.image-gallery.debug.js" />
+    <Content Include="Scripts\FileUpload\jqueryui\jquery.fileupload-jui.js" />
+    <Content Include="Scripts\FileUpload\jqueryui\jquery.fileupload-ui.js" />
+    <Content Include="Scripts\FileUpload\jqueryui\jquery.fileupload.js" />
+    <Content Include="Scripts\FileUpload\jqueryui\jquery.ui.widget.js" />
+    <Content Include="Scripts\FileUpload\load-image.debug.js" />
+    <Content Include="Scripts\FileUpload\tmpl.debug.js" />
+    <Content Include="Scripts\global\modal.js" />
+    <Content Include="EntityFramework\LanHouse.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LanHouse.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\Lan.pubxml" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\i18n\grid.locale-ar.js" />
+    <Content Include="Scripts\i18n\grid.locale-bg.js" />
+    <Content Include="Scripts\i18n\grid.locale-bg1251.js" />
+    <Content Include="Scripts\i18n\grid.locale-cat.js" />
+    <Content Include="Scripts\i18n\grid.locale-cn.js" />
+    <Content Include="Scripts\i18n\grid.locale-cs.js" />
+    <Content Include="Scripts\i18n\grid.locale-da.js" />
+    <Content Include="Scripts\i18n\grid.locale-de.js" />
+    <Content Include="Scripts\i18n\grid.locale-dk.js" />
+    <Content Include="Scripts\i18n\grid.locale-el.js" />
+    <Content Include="Scripts\i18n\grid.locale-en.js" />
+    <Content Include="Scripts\i18n\grid.locale-es.js" />
+    <Content Include="Scripts\i18n\grid.locale-fa.js" />
+    <Content Include="Scripts\i18n\grid.locale-fi.js" />
+    <Content Include="Scripts\i18n\grid.locale-fr.js" />
+    <Content Include="Scripts\i18n\grid.locale-gl.js" />
+    <Content Include="Scripts\i18n\grid.locale-he.js" />
+    <Content Include="Scripts\i18n\grid.locale-hr.js" />
+    <Content Include="Scripts\i18n\grid.locale-hr1250.js" />
+    <Content Include="Scripts\i18n\grid.locale-hu.js" />
+    <Content Include="Scripts\i18n\grid.locale-id.js" />
+    <Content Include="Scripts\i18n\grid.locale-is.js" />
+    <Content Include="Scripts\i18n\grid.locale-it.js" />
+    <Content Include="Scripts\i18n\grid.locale-ja.js" />
+    <Content Include="Scripts\i18n\grid.locale-kr.js" />
+    <Content Include="Scripts\i18n\grid.locale-lt.js" />
+    <Content Include="Scripts\i18n\grid.locale-mne.js" />
+    <Content Include="Scripts\i18n\grid.locale-nl.js" />
+    <Content Include="Scripts\i18n\grid.locale-no.js" />
+    <Content Include="Scripts\i18n\grid.locale-pl.js" />
+    <Content Include="Scripts\i18n\grid.locale-pt-br.js" />
+    <Content Include="Scripts\i18n\grid.locale-pt.js" />
+    <Content Include="Scripts\i18n\grid.locale-ro.js" />
+    <Content Include="Scripts\i18n\grid.locale-ru.js" />
+    <Content Include="Scripts\i18n\grid.locale-sk.js" />
+    <Content Include="Scripts\i18n\grid.locale-sr-latin.js" />
+    <Content Include="Scripts\i18n\grid.locale-sr.js" />
+    <Content Include="Scripts\i18n\grid.locale-sv.js" />
+    <Content Include="Scripts\i18n\grid.locale-th.js" />
+    <Content Include="Scripts\i18n\grid.locale-tr.js" />
+    <Content Include="Scripts\i18n\grid.locale-tw.js" />
+    <Content Include="Scripts\i18n\grid.locale-ua.js" />
+    <Content Include="Scripts\i18n\grid.locale-vi.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
+    <Content Include="Scripts\jquery.bpopup.min.js" />
+    <Content Include="Scripts\jquery.cookie\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask-2.4.13.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask-2.4.13.min.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.date.extensions-2.4.13.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.date.extensions-2.4.13.min.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.extensions-2.4.13.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.extensions-2.4.13.min.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.numeric.extensions-2.4.13.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.numeric.extensions-2.4.13.min.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.phone.extensions-2.4.13.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.phone.extensions-2.4.13.min.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.regex.extensions-2.4.13.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.regex.extensions-2.4.13.min.js" />
+    <Content Include="Scripts\jquery.jqGrid.js" />
+    <Content Include="Scripts\jquery.jqGrid.min.js" />
+    <Content Include="Scripts\jquery.maskMoney.min.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-pt-BR.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\local\Administracao.js" />
+    <Content Include="Scripts\local\Facebook.js" />
+    <Content Include="Scripts\local\Site.js" />
+    <Content Include="Scripts\local\Util.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Views\Home\layout.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Administrador\Manutencao.cshtml" />
+    <Content Include="Views\Filial\NaoExisteOrigem.cshtml" />
+    <Content Include="Views\Filial\RecarregarOrigem.cshtml" />
+    <Content Include="Views\Filial\NaoExisteCidade.cshtml" />
+    <Content Include="Views\Ajax\NovoToken.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_ModalInformacao.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdministracao.cshtml" />
+    <Content Include="Views\Administrador\_Companhias.cshtml" />
+    <Content Include="Views\BackloadDemo\Index.cshtml" />
+    <None Include="Web.Backload.Default.config" />
+    <None Include="Web.Backload.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BNE.BLL\BNE.BLL.csproj">
+      <Project>{b316ce73-6590-43e7-bd7a-2c24963c09fb}</Project>
+      <Name>BNE.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.EL\BNE.EL.csproj">
+      <Project>{328d2b86-dd73-410e-aa9c-42d59bd28796}</Project>
+      <Name>BNE.EL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>80</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59000/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

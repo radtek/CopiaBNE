@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b4533e02-f542-47c6-afd8-cc3e65aa5331" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wsteste.sine.com.br/App.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="App.xsd" MetadataType="Schema" ID="2c1a6d77-20b0-4a0e-9f64-d57302bf36d2" SourceId="1" SourceUrl="http://wsteste.sine.com.br/App.svc?xsd=xsd3" />
+    <MetadataFile FileName="App1.xsd" MetadataType="Schema" ID="d068fd40-bd62-4a77-899b-03b1e3bb0ec6" SourceId="1" SourceUrl="http://wsteste.sine.com.br/App.svc?xsd=xsd1" />
+    <MetadataFile FileName="App44.xsd" MetadataType="Schema" ID="3320c9e3-1334-4c6a-9272-d9ec94386024" SourceId="1" SourceUrl="http://wsteste.sine.com.br/App.svc?xsd=xsd4" />
+    <MetadataFile FileName="App45.xsd" MetadataType="Schema" ID="f3511b6e-3c37-460e-900b-5b34b4869ff6" SourceId="1" SourceUrl="http://wsteste.sine.com.br/App.svc?xsd=xsd5" />
+    <MetadataFile FileName="App.disco" MetadataType="Disco" ID="f13595ca-2c50-43c4-824d-0997091a8ec8" SourceId="1" SourceUrl="http://wsteste.sine.com.br/App.svc?disco" />
+    <MetadataFile FileName="App2.xsd" MetadataType="Schema" ID="c149ceb0-56bc-42ee-ae4b-c1dfa0b861d4" SourceId="1" SourceUrl="http://wsteste.sine.com.br/App.svc?xsd=xsd2" />
+    <MetadataFile FileName="App3.xsd" MetadataType="Schema" ID="2778e88c-d07a-4320-b5da-5facd2bfba11" SourceId="1" SourceUrl="http://wsteste.sine.com.br/App.svc?xsd=xsd0" />
+    <MetadataFile FileName="App.wsdl" MetadataType="Wsdl" ID="6e471a6a-a461-4c7f-b1cd-286239c2ba96" SourceId="1" SourceUrl="http://wsteste.sine.com.br/App.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

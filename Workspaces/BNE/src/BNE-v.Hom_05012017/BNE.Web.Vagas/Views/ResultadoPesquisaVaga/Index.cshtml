@@ -1,0 +1,139 @@
+﻿@using BNE.Web.Vagas.Code.Helpers.Paginacao
+@model IPagedList<BNE.Web.Vagas.Models.Vaga>
+
+@section css
+{
+
+    <link href="~/Content/Vaga.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/custom.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/font-awesome.min.css" rel="stylesheet" />
+}
+@section scripts
+{
+    <script src="~/Scripts/local/Vagas.js"></script>
+    <script src="~/Scripts/local/ResultadoVagas.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            var delay = 1000,
+		        fadeTime = 200;
+            $('.neon:gt(0)').hide();
+            setInterval(function () {
+                $(".neon:first-child").fadeOut(fadeTime).next(".neon").fadeIn(fadeTime).end().appendTo("#bf16-neon")
+            }, delay + fadeTime);
+
+            if (new Date() > new Date("24 Nov 2016 23:59:59") && new Date() < new Date('27 Nov 2016 23:59:59')) {
+                document.getElementById("bannerCampanha-lista").style.display = "none";
+                document.getElementById("black-friday-2016").style.display = "block";
+            }
+            else {
+                document.getElementById("bannerCampanha-lista").style.display = "block";
+            }
+
+        });
+        $("#ordenacaoVagas").change(function () {
+            var url = document.URL;
+            var patt = /ordenacaoVagas=[0-9]/i;
+            if (url.match(patt)) {
+                url = url.replace(patt, "ordenacaoVagas=" + $("#ordenacaoVagas").val());
+            } else {
+                if (url.indexOf('?') > 0) {
+                    url += "&";
+                } else {
+                    url += "?";
+                }
+                url += "ordenacaoVagas=" + $("#ordenacaoVagas").val();
+            }
+            window.location.href = url;
+        });
+    </script>
+}
+
+@if (@ViewBag.Logado && !@ViewBag.Vip)
+{
+
+    <div id="bannerCampanha-lista" Style="display:none;">
+        <a href="http://www.bne.com.br/vip?utm_source=bne&utm_medium=banner&utm_campaign=PesquisaVagaMoeda" title="Seja VIP e tenha acesso ilitado e muito mais!">
+            <div id="link-area">
+                <div id="bannerCampanha-lista-titulo"><strong>Sabe aquela moedinha?</strong></div>
+                <div id="bannerCampanha-lista-subtitulo">Consiga um <strong>novo emprego</strong> com ela!</div>
+                <div id="bannerCampanha-lista-complemento"><strong>acesso ilimitado por menos de 50 centavos por dia</strong></div>
+                <div id="bannerCampanha-lista-button"><strong>quero ser vip!</strong></div>
+            </div>
+        </a>
+    </div>
+    <div id="black-friday-2016" style="display:none;" >
+        <div id="bf16-neon">
+            <img class="neon" src="~/Images/BlackFriday/2016-black-friday-banner-01.jpg">
+            <img class="neon" src="~/Images/BlackFriday/2016-black-friday-banner-02.jpg">
+            <img class="neon" src="~/Images/BlackFriday/2016-black-friday-banner-03.jpg" />
+        </div>
+        <div id="bf16-txt">
+            <div style="text-align: center; line-height: 140%; font-size: 16px;">
+                <strong>Candidaturas ilimitadas por apenas R$9,90 no primeiro mês.</strong><br>
+                Cancele quando quiser.
+            </div>
+            <a href="http://www.bne.com.br/Payment/PaymentMobile.aspx?IdPlano=672&utm_source=Bne&utm_medium=banner&utm_campaign=black-friday-2016-busca" id="bf16-btn">Eu quero ser VIP</a>
+        </div>
+    </div>
+}
+else if (!@ViewBag.Logado)
+{
+    <div>
+        <div class="BannerTitulo">
+            Interessado nas vagas do BNE?
+        </div>
+        <div class="BannerTexto">
+            Cadastre-se e fique disponível para mais de 100 mil empresas.
+            <a href="https://www.bne.com.br/cadastro-de-curriculo-gratis?utm_source=pesquisa_vagas&utm_medium=banner_vagas&utm_campaign=Pesquisa_vagas_deslogado3">
+                <button class="btnComprarVip" style="width:205px !important;" name="QueroCandidatar"><b> Quero me cadastrar</b></button>
+            </a>
+        </div>
+        <img id="imgBannerCadastro" src="~/Images/banner/banner-cadastro-bg.png" />
+    </div>
+}
+
+<div class="totalDeRegistros">@*@ViewBag.TotalDeRegistros*@</div>
+<div class="areadasVagas_"><h1>@ViewBag.H1  </h1></div>
+<div class="areadasVagas_legenda">
+    <ul class="Vagas_legenda_">
+        <li>Legenda&nbsp;</li>
+        <li class="Vagas_legenda_vaga"></li>
+        <li class="legenda_vaga">&nbsp;Vagas&nbsp;</li>
+        <li class="Vagas_legenda_oportunidade"></li>
+        <li class="legenda_oportunidade ">
+            &nbsp; Oportunidades
+            <a class="tooltipB balao">
+                <span>
+                    Vagas com o processo seletivo já encerrado,
+                    porém a empresa deseja receber mais
+                    currículos para vagas futuras.
+                </span>&nbsp;?&nbsp;
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+<span id="block-filter" style="float:right; padding-bottom:10px;">
+    <label style="margin-right:5px">Ordernar por:</label>
+    <select id="ordenacaoVagas">
+        <option value="0" @(Request.QueryString["ordenacaoVagas"] == "0" ? "selected=\"selected\"" : "")>Busca Padrão</option>
+        <option value="1" @(Request.QueryString["ordenacaoVagas"] == "1" ? "selected=\"selected\"" : "")>Maior Salário</option>
+        <option value="2" @(Request.QueryString["ordenacaoVagas"] == "2" ? "selected=\"selected\"" : "")>Últimas Vagas</option>
+    </select>
+</span>
+
+<div class="pager">
+    @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount, Request.QueryString)
+</div>
+
+@Html.Partial("_Vagas", Model)
+
+<div class="pager">
+    @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount, Request.QueryString)
+</div>
+
+<div id="MaisVagasLINKs" style="text-align:center; padding: 10px 0px 10px 0px; font-size: 11px;">
+    @{Html.RenderAction("CarregarLinksMaisVagas", "MaisVagas", new { cidadeEstado = ViewBag.Cidade, idFuncao = ViewBag.IdFuncao, idCidade = ViewBag.IdCidade });}
+</div>
+

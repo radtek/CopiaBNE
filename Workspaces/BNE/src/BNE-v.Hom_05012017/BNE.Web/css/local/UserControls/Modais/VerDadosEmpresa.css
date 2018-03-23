@@ -1,0 +1,226 @@
+﻿.painel_info_nao_vip {
+    background-color: #fff;
+    border: 1px dotted #f5e100;
+    cursor: pointer;
+    margin: 32px auto 0;
+    padding: 0 10px 10px;
+    text-align: center;
+    width: 100px;
+}
+
+    .painel_info_nao_vip * {
+        border: none;
+    }
+
+    .painel_info_nao_vip .icone_fechadura {
+        margin-top: -22px;
+    }
+
+    .painel_info_nao_vip .texto_tenha_acesso_livre {
+        color: #223061;
+        font-size: 11px;
+        line-height: 100%;
+        margin: 6px 0;
+        padding: 0;
+    }
+
+    .painel_info_nao_vip .texto_seja_vip {
+        color: #EE8800;
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+        line-height: 150%;
+    }
+
+    .painel_info_nao_vip .texto_por_apenas {
+        color: #EE8800;
+        font-size: 11px;
+        margin: 0;
+        padding: 0;
+        line-height: 150%;
+    }
+
+    .painel_info_nao_vip .texto_valor {
+        color: #EE8800;
+        font-size: 18px;
+        margin: 0;
+        line-height: 150%;
+    }
+
+    .painel_info_nao_vip .botao_eu_quero {
+        margin-top: 12px;
+    }
+
+.painel_info_vip {
+    background-color: #fff;
+    border: 1px dotted #f5e100;
+    margin: 10px auto 0;
+    padding: 10px;
+    text-align: center;
+    width: 100px;
+}
+
+    .painel_info_vip img {
+        width: 90px;
+    }
+
+
+.painel_dados_empresa {
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding: 8px 16px 24px 16px;
+    text-align: center;
+    background-color: #eceff1 !important;
+}
+
+    .painel_dados_empresa .container_campo {
+        padding-top: 3px;
+        width: 194px;
+    }
+
+        .painel_dados_empresa .container_campo img {
+            margin-left: -3px;
+            margin-top: -2px;
+        }
+
+        .painel_dados_empresa .container_campo a {
+            color: #000;
+            text-decoration: underline;
+        }
+
+            .painel_dados_empresa .container_campo a:hover {
+                color: #999;
+            }
+
+.texto_vip {
+    color: #c00;
+    font-weight: bold;
+}
+
+.painel_icone_confidencial {
+    background-color: #fff;
+    border: 1px dotted #f5e100;
+    margin: 68px auto 0;
+    padding: 10px;
+    text-align: center;
+    width: 100px;
+}
+
+.painel_empresa_confidencial {
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding: 100px 20px 60px 20px;
+    text-align: center;
+    font-size: 21px;
+}
+
+.titulo_modal_Dados_Empresa {
+    font-size: 30px;
+    text-align: center;
+    margin: 24px 8px 0 8px;
+    color:#0A3079;
+}
+
+.recrutamento-sigiloso-icon {
+    position: absolute;
+    /*left:50%;*/
+    left: 42%;
+    top: -80px;
+    margin-left: -75;
+}
+
+.dados_da_empresa {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #eceff1 !important;
+    border-radius: 8px;
+}
+
+    .dados_da_empresa .container_campo div, .dados_da_empresa .container_campo {
+        text-align: left;
+    }
+
+.linhaEmpresa .nao_agora {
+    float: left;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.linhaEmpresa .comprar-vip {
+    float: left;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.linhaEmpresa {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: -2px;
+}
+
+
+
+
+.comprar-vip input {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    background-color: #015a9c;
+    margin-bottom: 8px;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: all 0.5s;
+    outline: none;
+    width: 170px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+    .comprar-vip input:hover {
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+    }
+
+
+.modal_fechar {
+        background:  url(/img/modal_nova/btn_amarelo_fechar_modal.png) no-repeat;
+        width: 34px;
+        height: 34px;
+        display: inline;
+        z-index: 1003;
+        position: absolute;
+        top: -12px;
+        right: -15px;
+        cursor: pointer;
+    }
+
+
+.linhaEmpresa label{
+    width: 180px;
+    text-align: right;
+    color:black;
+
+}
+
+.container_campo{
+    padding-bottom:0px !important;
+}
+
+
+.modal_conteudo.candidato{
+    border-radius:15px;
+}
+
+h2{
+    height:0px !important;
+}

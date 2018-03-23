@@ -1,0 +1,42 @@
+﻿@model IEnumerable<BNE.Web.Vagas.Models.Vaga>
+
+@if (Model != null)
+{
+    <div class="vagas">
+        @{
+            int cont = 0;
+            bool MobileAcess = Request.Browser.IsMobileDevice;
+            foreach (var vaga in Model)
+            {
+                vaga.MobileAcess = MobileAcess;
+                if (cont == 5)
+                {
+                    <div style="text-align:center;">
+                        @{ if (!MobileAcess)
+                            {
+                                <div id="BNE_Joblist2_728x90_desktop"></div>
+                            }
+                            else
+                            {
+                                <div id="BNE_Joblist2_320x50_mobile"></div>
+                            }
+                        }
+                    </div>
+                }
+                Html.RenderPartial("_Vaga", vaga);
+                cont++;
+            }
+        }
+    </div>
+    <div style="text-align:center;">
+        @{ if (!MobileAcess)
+            {
+                <div id="BNE_VacancyList1_728x90_Desktop"></div>
+            }
+            else
+            {
+                <div id="BNE_VacancyList1_300x250_Mobile"></div>
+            }
+        }
+    </div>
+}

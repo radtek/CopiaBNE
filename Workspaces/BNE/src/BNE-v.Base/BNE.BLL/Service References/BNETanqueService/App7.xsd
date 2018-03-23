@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" />
+  <xs:element name="ReceberMensagem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="mensagem" nillable="true" type="q1:InReceberMensagem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReceberMensagemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="ReceberMensagemResult" nillable="true" type="q2:OutReceberMensagem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarMensagem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="enviarmensagem" nillable="true" type="q3:InEnviarMensagem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarMensagemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="EnviarMensagemResult" nillable="true" type="q4:OutEnviarMensagem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecebeSMSCelular">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="recebeSMScelular" nillable="true" type="q5:InRecebeSMSCelular" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecebeSMSCelularResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="RecebeSMSCelularResult" nillable="true" type="q6:OutRecebeSMSCelular" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarCelular">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="statusCeluluar" nillable="true" type="q7:InStatusDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarCelularResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="ValidarCelularResult" nillable="true" type="q8:OutStatusDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlteraStatusMensagem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="status" nillable="true" type="q9:InAlteraStatusMensagem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlteraStatusMensagemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="AlteraStatusMensagemResult" nillable="true" type="q10:OutAlteraStatusMensagem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlteraStatusCelular">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="status" nillable="true" type="q11:InAlteraStatusMensagem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlteraStatusCelularResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="AlteraStatusCelularResult" nillable="true" type="q12:OutAlteraStatusMensagem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EfetuarLigacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="idCelular" nillable="true" type="q13:InEfetuarLigacao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EfetuarLigacaoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StatusCelular">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="statuscelular" nillable="true" type="q14:InStatusCelular" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StatusCelularResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="StatusCelularResult" nillable="true" type="q15:OutStatusCelular" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarSaldo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="informacaoCelular" nillable="true" type="q16:InInformacaoSaldo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarSaldoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="AtualizarSaldoResult" nillable="true" type="q17:OutInformacaoSaldo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CelularLigado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="status" nillable="true" type="q18:InInatividadeCelular" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CelularLigadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="CelularLigadoResult" nillable="true" type="q19:OutInatividadeCelular" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificaCelulares">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="historico" nillable="true" type="q20:InVerificaCelulares" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificaCelularesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="VerificaCelularesResult" nillable="true" type="q21:OutVerificaCelulares" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestarExcecao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="some" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestarExcecaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TestarExcecaoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarMensagem_New">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="enviarmensagem" nillable="true" type="q22:InEnviarMensagem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarMensagem_NewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="EnviarMensagem_NewResult" nillable="true" type="q23:OutEnviarMensagem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecebeSMSCelular_New">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="recebeSMScelular" nillable="true" type="q24:InRecebeSMSCelular" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecebeSMSCelular_NewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="RecebeSMSCelular_NewResult" nillable="true" type="q25:OutRecebeSMSCelular" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviaSMSResposta_New">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="recebeSMSResposta" nillable="true" type="q26:InEnviaSMSResposta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviaSMSResposta_NewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="EnviaSMSResposta_NewResult" nillable="true" type="q27:OutEnviaSMSCelular" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarCelular_New">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="statusCeluluar" nillable="true" type="q28:InStatusDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarCelular_NewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="ValidarCelular_NewResult" nillable="true" type="q29:OutStatusDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlteraStatusMensagem_New">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="status" nillable="true" type="q30:InAlteraStatusMensagem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlteraStatusMensagem_NewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="AlteraStatusMensagem_NewResult" nillable="true" type="q31:OutAlteraStatusMensagem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlteraStatusCelular_New">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="status" nillable="true" type="q32:InAlteraStatusMensagem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlteraStatusCelular_NewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="AlteraStatusCelular_NewResult" nillable="true" type="q33:OutAlteraStatusMensagem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EfetuarLigacao_New">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="idCelular" nillable="true" type="q34:InEfetuarLigacao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EfetuarLigacao_NewResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StatusCelular_New">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="statuscelular" nillable="true" type="q35:InStatusCelular" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StatusCelular_NewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="StatusCelular_NewResult" nillable="true" type="q36:OutStatusCelular" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarSaldo_New">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="informacaoCelular" nillable="true" type="q37:InInformacaoSaldo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarSaldo_NewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="AtualizarSaldo_NewResult" nillable="true" type="q38:OutInformacaoSaldo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConversasAtivas_New">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="conversaAtiva" nillable="true" type="q39:InConversaAtiva" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConversasAtivas_NewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="ConversasAtivas_NewResult" nillable="true" type="q40:OutConversaAtiva" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HistoricoConversas_New">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="historico" nillable="true" type="q41:InHistorico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HistoricoConversas_NewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="HistoricoConversas_NewResult" nillable="true" type="q42:OutHistorico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CelularLigado_New">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="status" nillable="true" type="q43:InInatividadeCelular" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CelularLigado_NewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" minOccurs="0" name="CelularLigado_NewResult" nillable="true" type="q44:OutInatividadeCelular" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

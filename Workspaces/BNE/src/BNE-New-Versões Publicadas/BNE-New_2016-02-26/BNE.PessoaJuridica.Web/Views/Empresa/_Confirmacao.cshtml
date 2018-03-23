@@ -1,0 +1,82 @@
+﻿@model BNE.PessoaJuridica.Web.Models.CadastroEmpresaConfirmacao
+
+<script>
+    ConfigurarConfirmacao();
+</script>
+
+<div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col md-progtrckr">
+            <ol class="progtrckr" data-progtrckr-steps="3">
+                <li class="progtrckr-todo mdl-cell--hide-phone"><span class="silver">Dados da Empresa</span></li>
+                <li class="progtrckr-todo mdl-cell--hide-phone"><span class="silver">Dados do Responsável</span></li>
+                <li class="progtrckr-done"><span class="ultradarkgreen"><strong>Confirmação de Cadastro</strong></span></li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet center darkgrey top36">
+    <h4>
+        <i class="material-icons mediumcolor">security</i>
+        <strong>VOCÊ RECRUTANDO EM AMBIENTE SEGURO!</strong>
+    </h4>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+
+@if (Model.Click2Call && !string.IsNullOrWhiteSpace(Model.Numero))
+{
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+    <div class="mdl-cell mdl-cell--6-col center">
+        <strong> Para confirmar sua conta, clique no botão "pode me ligar", que nossa equipe fará um breve contato com você.</strong>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--6-col center">
+        <input type="hidden" id="Link" name="Link" value="@Model.Link" />
+        <input type="hidden" id="Numero" name="Numero" value="@Model.Numero" />
+        <input type="hidden" id="Nome" name="Nome" value="@Model.Nome" />
+        <input type="submit" value="Pode me ligar" name="action:Click2Call" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformbig" />
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+}
+else
+{
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+    <div class="mdl-cell mdl-cell--6-col center">
+        <strong> Para confirmar sua conta, nossa equipe fará um breve contato com você, por telefone em horário comercial! </strong>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+    <div class="mdl-cell mdl-cell--6-col center">
+        <p> Após este contato, seu acesso será liberado imediatamente! </p>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+    if (Model.Click2Call)
+    {
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate full-progressbar"></div>
+        </div>
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+    }
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--6-col center">
+        <a href="@Model.Link" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformbig">
+            PRONTO
+        </a>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+}
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone center darkgrey">
+    <p class=" text_conclu-down">
+        Caso não receba nossa ligação, entre em contato pelo <strong>0800 41 2400</strong>
+    </p>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>

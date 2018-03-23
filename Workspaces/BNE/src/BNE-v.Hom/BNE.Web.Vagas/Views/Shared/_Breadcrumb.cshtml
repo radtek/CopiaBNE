@@ -1,0 +1,11 @@
+﻿@model  BNE.Web.Vagas.Models.Breadcrumb
+<link href="~/Content/Breadcrumb.css" rel="stylesheet" />
+@if (Model.exibeBreadcrumb == true)
+{
+    <nav id="navBreadcrumbMvc">
+        <ol id="breadcrumbList" class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+            @Html.Raw(Model.links)
+            @Html.Raw(Model.nomePagina)
+        </ol>
+    </nav>
+}

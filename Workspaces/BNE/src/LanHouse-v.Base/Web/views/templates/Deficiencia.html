@@ -1,0 +1,18 @@
+﻿<div class="row">
+    <label>{{eLabel}}</label>
+</div>
+<div class="col-lg-3">
+    <label class="radio-inline">
+        <input type="radio" name="Deficiencia" id="rbDeficienciaNao" ng-model="cadCV.curriculo.temDeficiencia" ng-click="NaoTemDeficiencia()" value="false">Não
+    </label>
+</div>
+<div class="col-lg-3">
+    <label class="radio-inline">
+        <input type="radio" name="Deficiencia" id="rbDeficienciaSim" ng-model="cadCV.curriculo.temDeficiencia" ng-click="TemDeficiencia()" value="true">Sim
+    </label>
+</div>
+<div class="col-lg-6">
+    <select class="form-control comboDeficiencia" id="ddlDeficiencia" ng-options="value.id as value.text for value in cadCV.deficiencias | filter:{id: '!0'} " ng-model="cadCV.curriculo.idDeficiencia" ng-show="isDeficiencia">
+        <option value="">Qual...</option>
+    </select>
+</div>

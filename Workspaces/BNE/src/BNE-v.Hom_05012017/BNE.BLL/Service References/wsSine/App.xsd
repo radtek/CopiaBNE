@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wsteste.sine.com.br/App.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://wsteste.sine.com.br/App.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Sine.BLL.Enumeradores" />
+  <xs:complexType name="ArrayOfVaga">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Vaga" nillable="true" type="tns:Vaga" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVaga" nillable="true" type="tns:ArrayOfVaga" />
+  <xs:complexType name="Vaga">
+    <xs:sequence>
+      <xs:element name="_descricacaoVaga" nillable="true" type="xs:string" />
+      <xs:element name="_nomeEmpresa" nillable="true" type="xs:string" />
+      <xs:element name="_salario" nillable="true" type="xs:decimal" />
+      <xs:element name="_ultimasVagasVisualizadas" nillable="true" type="tns:ArrayOfVaga" />
+      <xs:element name="_url" nillable="true" type="xs:string" />
+      <xs:element name="_vagasSemelhantes" nillable="true" type="tns:ArrayOfVaga" />
+      <xs:element name="_x003C_Ad_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_Cidade_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Confidencial_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_DataCadastro_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_DataInicio_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_DescricaoClasseCss_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_DescricaoDeficiencias_x003E_k__BackingField" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element name="_x003C_DescricaoFuncao_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_DivulgacaoContato_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_Email_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Estado_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ExibirDescricao_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_IdCidade_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_IdFuncao_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_IdVaga_x003E_k__BackingField" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_IdsDeficiencias_x003E_k__BackingField" nillable="true" type="q2:ArrayOfint" />
+      <xs:element name="_x003C_NumeroDDD_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_NumeroTelefone_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_OrigemImportacao_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Posicao_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_QuantidadeVaga_x003E_k__BackingField" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Sine.BLL.Enumeradores" name="_x003C_SituacaoVaga_x003E_k__BackingField" type="q3:SituacaoVaga" />
+      <xs:element name="_x003C_UrlCandidatar_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Vaga" nillable="true" type="tns:Vaga" />
+</xs:schema>

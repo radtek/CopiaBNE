@@ -1,0 +1,595 @@
+//-- Data: 21/05/2013 14:30
+//-- Autor: Gieyson Stelmak
+
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using BNE.EL;
+
+namespace BNE.BLL
+{
+    public partial class Rota // Tabela: BNE_Rota
+    {
+        #region Atributos
+        private int _idRota;
+        private string _nomeRota;
+        private string _descricaoURL;
+        private string _descricaoCaminhoFisico;
+        private bool _flagInativo;
+        private int _numeroPeso;
+        private string _desBreadcrumb;
+        private string _desBreadcrumbURL;
+        private bool _flagIgnore;
+
+        private bool _persisted;
+        private bool _modified;
+        #endregion
+
+        #region Propriedades
+
+        #region IdRota
+        /// <summary>
+        /// Campo obrigatório.
+        /// </summary>
+        public int IdRota
+        {
+            get
+            {
+                return this._idRota;
+            }
+            set
+            {
+                this._idRota = value;
+                this._modified = true;
+            }
+        }
+        #endregion
+
+        #region NomeRota
+        /// <summary>
+        /// Tamanho do campo: 200.
+        /// Campo obrigatório.
+        /// </summary>
+        public string NomeRota
+        {
+            get
+            {
+                return this._nomeRota;
+            }
+            set
+            {
+                this._nomeRota = value;
+                this._modified = true;
+            }
+        }
+        #endregion
+
+        #region DescricaoURL
+        /// <summary>
+        /// Tamanho do campo: 500.
+        /// Campo obrigatório.
+        /// </summary>
+        public string DescricaoURL
+        {
+            get
+            {
+                return this._descricaoURL;
+            }
+            set
+            {
+                this._descricaoURL = value;
+                this._modified = true;
+            }
+        }
+        #endregion
+
+        #region DescricaoCaminhoFisico
+        /// <summary>
+        /// Tamanho do campo: 500.
+        /// Campo obrigatório.
+        /// </summary>
+        public string DescricaoCaminhoFisico
+        {
+            get
+            {
+                return this._descricaoCaminhoFisico;
+            }
+            set
+            {
+                this._descricaoCaminhoFisico = value;
+                this._modified = true;
+            }
+        }
+        #endregion
+
+        #region FlagInativo
+        /// <summary>
+        /// Campo obrigatório.
+        /// </summary>
+        public bool FlagInativo
+        {
+            get
+            {
+                return this._flagInativo;
+            }
+            set
+            {
+                this._flagInativo = value;
+                this._modified = true;
+            }
+        }
+        #endregion
+
+        #region NumeroPeso
+        /// <summary>
+        /// Campo obrigatório.
+        /// </summary>
+        public int NumeroPeso
+        {
+            get
+            {
+                return this._numeroPeso;
+            }
+            set
+            {
+                this._numeroPeso = value;
+                this._modified = true;
+            }
+        }
+        #endregion
+
+        #region DesBreadcrumb
+        /// <summary>
+        /// Tamanho do campo:   200
+        /// Campo Obrigatório:  Não
+        /// </summary>
+        public string DesBreadcrumb
+        {
+            get
+            {
+                return this._desBreadcrumb;
+            }
+            set
+            {
+                this._desBreadcrumb = value;
+                this._modified = true;
+            }
+        }
+        #endregion
+
+        #region DesBreadcrumbURL
+        /// <summary>
+        /// Tamanho do campo:   300
+        /// Campo Obrigatório:  Não
+        /// </summary>
+        public string DesBreadcrumbURL
+        {
+            get
+            {
+                return this._desBreadcrumbURL;
+            }
+            set
+            {
+                this._desBreadcrumbURL = value;
+                this._modified = true;
+            }
+        }
+        #endregion
+
+        #region FlagIgnore
+        /// <summary>
+        /// Campo obrigatório.
+        /// </summary>
+        public bool FlagIgnore
+        {
+            get
+            {
+                return this._flagIgnore;
+            }
+            set
+            {
+                this._flagIgnore = value;
+                this._modified = true;
+            }
+        }
+        #endregion
+        #endregion
+
+        #region Construtores
+        public Rota()
+        {
+        }
+        public Rota(int idRota)
+        {
+            this._idRota = idRota;
+            this._persisted = true;
+        }
+        #endregion
+
+        #region Consultas
+        private const string SPINSERT = "INSERT INTO BNE_Rota (Idf_Rota, Nme_Rota, Des_URL, Des_Caminho_Fisico, Flg_Inativo, Num_Peso, Flg_Ignore) VALUES (@Idf_Rota, @Nme_Rota, @Des_URL, @Des_Caminho_Fisico, @Flg_Inativo, @Num_Peso, @Flg_Ignore);";
+        private const string SPUPDATE = "UPDATE BNE_Rota SET Nme_Rota = @Nme_Rota, Des_URL = @Des_URL, Des_Caminho_Fisico = @Des_Caminho_Fisico, Flg_Inativo = @Flg_Inativo, Num_Peso = @Num_Peso, Flg_Ignore = @Flg_Ignore WHERE Idf_Rota = @Idf_Rota";
+        private const string SPDELETE = "DELETE FROM BNE_Rota WHERE Idf_Rota = @Idf_Rota";
+        private const string SPSELECTID = "SELECT * FROM BNE_Rota WITH(NOLOCK) WHERE Idf_Rota = @Idf_Rota";
+        #endregion
+
+        #region Métodos
+
+        #region GetParameters
+        /// <summary>
+        /// Método auxiliar utilizado para preparar a entrada para a procedure de insert e update.
+        /// </summary>
+        /// <returns>Lista de parâmetros SQL.</returns>
+        /// <remarks>Gieyson Stelmak</remarks>
+        private List<SqlParameter> GetParameters()
+        {
+            List<SqlParameter> parms = new List<SqlParameter>();
+            parms.Add(new SqlParameter("@Idf_Rota", SqlDbType.Int, 4));
+            parms.Add(new SqlParameter("@Nme_Rota", SqlDbType.VarChar, 200));
+            parms.Add(new SqlParameter("@Des_URL", SqlDbType.VarChar, 500));
+            parms.Add(new SqlParameter("@Des_Caminho_Fisico", SqlDbType.VarChar, 500));
+            parms.Add(new SqlParameter("@Flg_Inativo", SqlDbType.Bit, 1));
+            parms.Add(new SqlParameter("@Num_Peso", SqlDbType.Int, 4));
+            parms.Add(new SqlParameter("@Des_Breadcrumb", SqlDbType.VarChar, 200));
+            parms.Add(new SqlParameter("@Des_Breadcrumb_URL", SqlDbType.VarChar, 300));
+            parms.Add(new SqlParameter("@Flg_Ignore", SqlDbType.Bit, 1));
+            return (parms);
+        }
+        #endregion
+
+        #region SetParameters
+        /// <summary>
+        /// Método auxiliar que recebe e preenche a lista de parâmetros passada de acordo com os valores da instância.
+        /// </summary>
+        /// <param name="parms">Lista de parâmetros SQL.</param>
+        /// <remarks>Gieyson Stelmak</remarks>
+        private void SetParameters(List<SqlParameter> parms)
+        {
+            parms[0].Value = this._idRota;
+            parms[1].Value = this._nomeRota;
+            parms[2].Value = this._descricaoURL;
+            parms[3].Value = this._descricaoCaminhoFisico;
+            parms[4].Value = this._flagInativo;
+            parms[5].Value = this._numeroPeso;
+            parms[6].Value = this._desBreadcrumb;
+            parms[7].Value = this._desBreadcrumbURL;
+            parms[8].Value = this._flagIgnore;
+
+            if (!this._persisted)
+            {
+            }
+        }
+        #endregion
+
+        #region Insert
+        /// <summary>
+        /// Método utilizado para inserir uma instância de Rota no banco de dados.
+        /// </summary>
+        /// <remarks>Gieyson Stelmak</remarks>
+        private void Insert()
+        {
+            List<SqlParameter> parms = GetParameters();
+            SetParameters(parms);
+
+            using (SqlConnection conn = new SqlConnection(DataAccessLayer.CONN_STRING))
+            {
+                conn.Open();
+                using (SqlTransaction trans = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        SqlCommand cmd = DataAccessLayer.ExecuteNonQueryCmd(trans, CommandType.Text, SPINSERT, parms);
+                        cmd.Parameters.Clear();
+                        this._persisted = true;
+                        this._modified = false;
+                        trans.Commit();
+                    }
+                    catch
+                    {
+                        trans.Rollback();
+                        throw;
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// Método utilizado para inserir uma instância de Rota no banco de dados, dentro de uma transação.
+        /// </summary>
+        /// <param name="trans">Transação existente no banco de dados.</param>
+        /// <remarks>Gieyson Stelmak</remarks>
+        private void Insert(SqlTransaction trans)
+        {
+            List<SqlParameter> parms = GetParameters();
+            SetParameters(parms);
+            SqlCommand cmd = DataAccessLayer.ExecuteNonQueryCmd(trans, CommandType.Text, SPINSERT, parms);
+            cmd.Parameters.Clear();
+            this._persisted = true;
+            this._modified = false;
+        }
+        #endregion
+
+        #region Update
+        /// <summary>
+        /// Método utilizado para atualizar uma instância de Rota no banco de dados.
+        /// </summary>
+        /// <remarks>Gieyson Stelmak</remarks>
+        private void Update()
+        {
+            if (this._modified)
+            {
+                List<SqlParameter> parms = GetParameters();
+                SetParameters(parms);
+                DataAccessLayer.ExecuteNonQuery(CommandType.Text, SPUPDATE, parms);
+                this._modified = false;
+            }
+        }
+        /// <summary>
+        /// Método utilizado para atualizar uma instância de Rota no banco de dados, dentro de uma transação.
+        /// </summary>
+        /// <param name="trans">Transação existente no banco de dados.</param>
+        /// <remarks>Gieyson Stelmak</remarks>
+        private void Update(SqlTransaction trans)
+        {
+            if (this._modified)
+            {
+                List<SqlParameter> parms = GetParameters();
+                SetParameters(parms);
+                DataAccessLayer.ExecuteNonQuery(trans, CommandType.Text, SPUPDATE, parms);
+                this._modified = false;
+            }
+        }
+        #endregion
+
+        #region Save
+        /// <summary>
+        /// Método utilizado para salvar uma instância de Rota no banco de dados.
+        /// </summary>
+        /// <remarks>Gieyson Stelmak</remarks>
+        public void Save()
+        {
+            if (!this._persisted)
+                this.Insert();
+            else
+                this.Update();
+        }
+        /// <summary>
+        /// Método utilizado para salvar uma instância de Rota no banco de dados, dentro de uma transação.
+        /// </summary>
+        /// <param name="trans">Transação existente no banco de dados.</param>
+        /// <remarks>Gieyson Stelmak</remarks>
+        public void Save(SqlTransaction trans)
+        {
+            if (!this._persisted)
+                this.Insert(trans);
+            else
+                this.Update(trans);
+        }
+        #endregion
+
+        #region Delete
+        /// <summary>
+        /// Método utilizado para excluir uma instância de Rota no banco de dados.
+        /// </summary>
+        /// <param name="idRota">Chave do registro.</param>
+        /// <remarks>Gieyson Stelmak</remarks>
+        public static void Delete(int idRota)
+        {
+            List<SqlParameter> parms = new List<SqlParameter>();
+            parms.Add(new SqlParameter("@Idf_Rota", SqlDbType.Int, 4));
+
+            parms[0].Value = idRota;
+
+            DataAccessLayer.ExecuteNonQuery(CommandType.Text, SPDELETE, parms);
+        }
+        /// <summary>
+        /// Método utilizado para excluir uma instância de Rota no banco de dados, dentro de uma transação.
+        /// </summary>
+        /// <param name="idRota">Chave do registro.</param>
+        /// <param name="trans">Transação existente no banco de dados.</param>
+        /// <remarks>Gieyson Stelmak</remarks>
+        public static void Delete(int idRota, SqlTransaction trans)
+        {
+            List<SqlParameter> parms = new List<SqlParameter>();
+            parms.Add(new SqlParameter("@Idf_Rota", SqlDbType.Int, 4));
+
+            parms[0].Value = idRota;
+
+            DataAccessLayer.ExecuteNonQuery(trans, CommandType.Text, SPDELETE, parms);
+        }
+        /// <summary>
+        /// Método utilizado para excluir uma lista de Rota no banco de dados.
+        /// </summary>
+        /// <param name="idRota">Lista de chaves.</param>
+        /// <remarks>Gieyson Stelmak</remarks>
+        public static void Delete(List<int> idRota)
+        {
+            List<SqlParameter> parms = new List<SqlParameter>();
+            string query = "delete from BNE_Rota where Idf_Rota in (";
+
+            for (int i = 0; i < idRota.Count; i++)
+            {
+                string nomeParametro = "@parm" + i.ToString();
+
+                if (i > 0)
+                {
+                    query += ", ";
+                }
+                query += nomeParametro;
+                parms.Add(new SqlParameter(nomeParametro, SqlDbType.Int, 4));
+                parms[i].Value = idRota[i];
+            }
+
+            query += ")";
+
+            DataAccessLayer.ExecuteNonQuery(CommandType.Text, query, parms);
+        }
+        #endregion
+
+        #region LoadDataReader
+        /// <summary>
+        /// Método utilizado por retornar as colunas de um registro no banco de dados.
+        /// </summary>
+        /// <param name="idRota">Chave do registro.</param>
+        /// <returns>Cursor de leitura do banco de dados.</returns>
+        /// <remarks>Gieyson Stelmak</remarks>
+        private static IDataReader LoadDataReader(int idRota)
+        {
+            List<SqlParameter> parms = new List<SqlParameter>();
+            parms.Add(new SqlParameter("@Idf_Rota", SqlDbType.Int, 4));
+
+            parms[0].Value = idRota;
+
+            return DataAccessLayer.ExecuteReader(CommandType.Text, SPSELECTID, parms);
+        }
+        /// <summary>
+        /// Método utilizado por retornar as colunas de um registro no banco de dados, dentro de uma transação.
+        /// </summary>
+        /// <param name="idRota">Chave do registro.</param>
+        /// <param name="trans">Transação existente no banco de dados.</param>
+        /// <returns>Cursor de leitura do banco de dados.</returns>
+        /// <remarks>Gieyson Stelmak</remarks>
+        private static IDataReader LoadDataReader(int idRota, SqlTransaction trans)
+        {
+            List<SqlParameter> parms = new List<SqlParameter>();
+            parms.Add(new SqlParameter("@Idf_Rota", SqlDbType.Int, 4));
+
+            parms[0].Value = idRota;
+
+            return DataAccessLayer.ExecuteReader(trans, CommandType.Text, SPSELECTID, parms);
+        }
+        /// <summary>
+        /// Método utilizado por retornar uma consulta paginada do banco de dados.
+        /// </summary>
+        /// <param name="colunaOrdenacao">Nome da coluna pela qual será ordenada.</param>
+        /// <param name="direcaoOrdenacao">Direção da ordenação (ASC ou DESC).</param>
+        /// <param name="paginaCorrente">Número da página que será exibida.</param>
+        /// <param name="tamanhoPagina">Quantidade de itens em cada página.</param>
+        /// <param name="totalRegistros">Quantidade total de registros na tabela.</param>
+        /// <returns>Cursor de leitura do banco de dados.</returns>
+        public static IDataReader LoadDataReader(string colunaOrdenacao, string direcaoOrdenacao, int paginaCorrente, int tamanhoPagina, out int totalRegistros)
+        {
+            int inicio = ((paginaCorrente - 1) * tamanhoPagina) + 1;
+            int fim = paginaCorrente * tamanhoPagina;
+
+            string SPSELECTPAG = "SELECT ROW_NUMBER() OVER (ORDER BY " + colunaOrdenacao + " " + direcaoOrdenacao + ") AS RowID, Rot.Idf_Rota, Rot.Nme_Rota, Rot.Des_URL, Rot.Des_Caminho_Fisico, Rot.Flg_Inativo, Rot.Num_Peso, Rot.Des_Breadcrumb, Rot.Des_Breadcrumb_URL FROM BNE_Rota Rot";
+            string SPSELECTCOUNT = "SELECT COUNT(*) FROM (" + SPSELECTPAG + ") AS temp";
+            SPSELECTPAG = "SELECT * FROM (" + SPSELECTPAG + ") AS temp WHERE RowId BETWEEN " + inicio.ToString() + " AND " + fim.ToString();
+
+            totalRegistros = Convert.ToInt32(DataAccessLayer.ExecuteScalar(CommandType.Text, SPSELECTCOUNT, null));
+            return DataAccessLayer.ExecuteReader(CommandType.Text, SPSELECTPAG, null);
+        }
+        #endregion
+
+        #region LoadObject
+        /// <summary>
+        /// Método utilizado para retornar uma instância de Rota a partir do banco de dados.
+        /// </summary>
+        /// <param name="idRota">Chave do registro.</param>
+        /// <returns>Instância de Rota.</returns>
+        /// <remarks>Gieyson Stelmak</remarks>
+        public static Rota LoadObject(int idRota)
+        {
+            using (IDataReader dr = LoadDataReader(idRota))
+            {
+                Rota objRota = new Rota();
+                if (SetInstance(dr, objRota))
+                    return objRota;
+            }
+            throw (new RecordNotFoundException(typeof(Rota)));
+        }
+        /// <summary>
+        /// Método utilizado para retornar uma instância de Rota a partir do banco de dados, dentro de uma transação.
+        /// </summary>
+        /// <param name="idRota">Chave do registro.</param>
+        /// <param name="trans">Transação existente no banco de dados.</param>
+        /// <returns>Instância de Rota.</returns>
+        /// <remarks>Gieyson Stelmak</remarks>
+        public static Rota LoadObject(int idRota, SqlTransaction trans)
+        {
+            using (IDataReader dr = LoadDataReader(idRota, trans))
+            {
+                Rota objRota = new Rota();
+                if (SetInstance(dr, objRota))
+                    return objRota;
+            }
+            throw (new RecordNotFoundException(typeof(Rota)));
+        }
+        #endregion
+
+        #region CompleteObject
+        /// <summary>
+        /// Método utilizado para completar uma instância de Rota a partir do banco de dados.
+        /// </summary>
+        /// <returns>Verdadeiro ou falso informando se a operação foi executada com sucesso.</returns>
+        /// <remarks>Gieyson Stelmak</remarks>
+        public bool CompleteObject()
+        {
+            using (IDataReader dr = LoadDataReader(this._idRota))
+            {
+                return SetInstance(dr, this);
+            }
+        }
+        /// <summary>
+        /// Método utilizado para completar uma instância de Rota a partir do banco de dados, dentro de uma transação.
+        /// </summary>
+        /// <param name="trans">Transação existente no banco de dados.</param>
+        /// <returns>Verdadeiro ou falso informando se a operação foi executada com sucesso.</returns>
+        /// <remarks>Gieyson Stelmak</remarks>
+        public bool CompleteObject(SqlTransaction trans)
+        {
+            using (IDataReader dr = LoadDataReader(this._idRota, trans))
+            {
+                return SetInstance(dr, this);
+            }
+        }
+        #endregion
+
+        #region SetInstance
+        /// <summary>
+        /// Método auxiliar utilizado pelos métodos LoadObject e CompleteObject para percorrer um IDataReader e vincular as colunas com os atributos da classe.
+        /// </summary>
+        /// <param name="dr">Cursor de leitura do banco de dados.</param>
+        /// <param name="objRota">Instância a ser manipulada.</param>
+        /// <returns>Verdadeiro ou falso informando se a operação foi executada com sucesso.</returns>
+        /// <remarks>Gieyson Stelmak</remarks>
+        private static bool SetInstance(IDataReader dr, Rota objRota)
+        {
+            try
+            {
+                if (dr.Read())
+                {
+                    objRota._idRota = Convert.ToInt32(dr["Idf_Rota"]);
+                    objRota._nomeRota = Convert.ToString(dr["Nme_Rota"]);
+                    objRota._descricaoURL = Convert.ToString(dr["Des_URL"]);
+                    objRota._descricaoCaminhoFisico = Convert.ToString(dr["Des_Caminho_Fisico"]);
+                    objRota._flagInativo = Convert.ToBoolean(dr["Flg_Inativo"]);
+                    objRota._numeroPeso = Convert.ToInt32(dr["Num_Peso"]);
+                    objRota._desBreadcrumb = Convert.ToString(dr["Des_Breadcrumb"]);
+                    objRota._desBreadcrumbURL = Convert.ToString(dr["Des_Breadcrumb_URL"]);
+                    objRota._flagIgnore = Convert.ToBoolean(dr["Flg_Ignore"]);
+
+                    objRota._persisted = true;
+                    objRota._modified = false;
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                dr.Dispose();
+            }
+        }
+        #endregion
+
+        #endregion
+    }
+}

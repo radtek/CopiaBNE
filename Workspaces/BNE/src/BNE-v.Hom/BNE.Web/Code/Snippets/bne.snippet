@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>BNE</Title>
+      <Shortcut>bnep</Shortcut>
+      <Description>Gera todos os métodos básicos de uma tela</Description>
+      <Author>Gieyson Stelmak</Author>
+    </Header>
+    <Snippet>
+      <!--<References>
+                <Reference>
+                    <Assembly>using BNE.EL;</Assembly>
+                    <Assembly>using BNE.Web.Code.Enumeradores;</Assembly>
+                    <Assembly>using BNE.Web.Code;</Assembly>
+                    <Assembly>using Resources;</Assembly>
+                </Reference>
+            </References>-->
+      <Imports>
+        <Import>
+          <Namespace>using BNE.EL</Namespace>
+          <Namespace>using BNE.Web.Code.Enumeradores</Namespace>
+          <Namespace>using BNE.Web.Code</Namespace>
+          <Namespace>using Resources</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>NomePropriedadePadrao</ID>
+          <ToolTip>Defina o nome da propriedade.</ToolTip>
+          <Default>"NomePropriedadePadrao"</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+
+        <![CDATA[
+            #region Propriedades
+            
+            #region Id$NomePropriedadePadrao$ - Variável 1
+            /// <summary>
+            /// Propriedade que armazena e recupera o ID
+            /// </summary>
+            protected int? Id$NomePropriedadePadrao$
+            {
+                get
+                {
+                    if (ViewState[Chave.Temporaria.Variavel1.ToString()] != null)
+                        return Int32.Parse(ViewState[Chave.Temporaria.Variavel1.ToString()].ToString());
+                    return null;
+                }
+                set
+                {
+                    if (value != null)
+                        ViewState.Add(Chave.Temporaria.Variavel1.ToString(), value);
+                    else
+                        ViewState.Remove(Chave.Temporaria.Variavel1.ToString());
+                }
+            }
+            #endregion
+            
+            #endregion
+            
+            #region Eventos
+            
+            #region Page_Load
+            /// <summary>
+            /// Método executado quando a página é carregada
+            /// </summary>
+            /// <param name="sender">Objeto Correspondente</param>
+            /// <param name="e">Argumento do Evento</param>
+            protected void Page_Load(object sender, EventArgs e)
+            {
+                if (!Page.IsPostBack)
+                    Inicializar();
+            }
+            #endregion
+            
+            #region btnSalvar
+            /// <summary>
+            /// Evento disparado no click do btnSalvar
+            /// </summary>
+            /// <param name="sender">Objeto Correspondente</param>
+            /// <param name="e">Argumento do Evento</param>
+            protected void btnSalvar_Click(object sender, EventArgs e)
+            {
+                try
+                {
+                    Salvar();
+                    LimparCampos();
+
+                    base.ExibirMensagem(MensagemAviso._100001, TipoMensagem.Aviso);
+                }
+                catch (System.Data.SqlClient.SqlException ex)
+                {
+                    string mensagem;
+                    string codigo = base.RecuperarMensagemErroSql(ex, out mensagem);
+                    GerenciadorException.GravarExcecao(codigo, ex);
+                    base.ExibirMensagem(mensagem, TipoMensagem.Erro);
+                }
+                catch (Exception ex)
+                {
+                    GerenciadorException.GravarExcecao("_300001", ex);
+                    base.ExibirMensagem(MensagemErro._300001, TipoMensagem.Erro);
+                }
+            }
+            #endregion
+            
+            #region btnCancelar
+            /// <summary>
+            /// Evento disparado no click do btnCancelar
+            /// </summary>
+            /// <param name="sender">Objeto Correspondente</param>
+            /// <param name="e">Argumento do Evento</param>
+            protected void btnCancelar_Click(object sender, EventArgs e)
+            {
+                LimparCampos();
+            }
+            #endregion
+            
+            #endregion
+            
+            
+            #region Métodos
+            
+            #region Inicializar
+            /// <summary>
+            /// Método utilizado para para preenchimento de componentes, funções de foco e navegação
+            /// </summary>
+            private void Inicializar()
+            {
+            }
+            #endregion
+            
+            #region PreencherCampos
+            /// <summary>
+            /// Preenche os campos do formulário
+            /// </summary>
+            private void PreencherCampos()
+            {
+                if (Id$NomePropriedadePadrao$.HasValue)
+                {
+                }
+            }
+            #endregion
+            
+            #region LimparCampos
+            /// <summary>
+            /// Método utilizado para limpar todos os campos do formulário
+            /// </summary>
+            private void LimparCampos()
+            {
+            }
+            #endregion
+            
+            #region Salvar
+            /// <summary>
+            /// Método utilizado para salvar um cadastro
+            /// </summary>
+            private void Salvar()
+            {
+                
+            }
+            #endregion
+            
+            #endregion
+            ]]>
+
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

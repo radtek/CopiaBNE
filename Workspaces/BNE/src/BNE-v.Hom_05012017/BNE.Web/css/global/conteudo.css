@@ -1,0 +1,138 @@
+﻿.conteudo { clear: both; }
+    .conteudo .interna { width: 880px; margin: 0 auto; /*margin-top: 145px;*/ }
+/*.conteudo .internaSlim { margin-top: 90px !important; }*/
+.cor_texto { color: #1E3260; }
+.interno_abas { width: 880px; margin: 0 auto; /*position: relative;*/ }
+.abas { background-image: url('/img/aba.png'); background-repeat: repeat-x; padding-left: 11%; margin-top: 20px; }
+    .abas .aba_fundo { background-image: url('/img/aba_fundo.png'); display: inline-block; border-right: 1px solid #818182; }
+        .abas .aba_fundo a { text-decoration: none; color: #000; /*height: 26px;*/ padding-top: 6px; padding-bottom: 5px; display: inline-block; padding-left: 15px; padding-right: 15px; }
+    .abas .ativa { background-image: url('/img/aba_ativa.png'); background-repeat: repeat-x; display: inline-block; /*height: 26px;*/ padding-top: 6px; padding-bottom: 5px; padding-left: 15px; padding-right: 15px; border-left: 1px solid #818182; }
+.abas_nova { float: left; }
+.texto_abas_selecionada { color: #1d4d8f; font-weight: bold; font-size: 16px; }
+.texto_abas { color: #6f6a67; }
+.aba_selecionada_esquerda { background-image: url('/img/aba_selecionada_esquerda.png'); height: 26px; background-repeat: no-repeat; float: left; padding-left: 12px; padding-top: 4px; }
+.aba_selecionada_direita { background-image: url('/img/aba_selecionada_direita.png'); height: 26px; background-repeat: no-repeat; display: inline-block; padding-left: 39px; background-position: right top; }
+.aba_esquerda_nao_selecionada { background-image: url('/img/aba_esquerda_nao_selecionada.png'); height: 22px; background-repeat: no-repeat; float: left; padding-left: 15px; padding-top: 6px; margin-top: 4px; margin-left: -4px; }
+.aba_esquerda_nao_selecionada_inicio { background-image: url('/img/aba_esquerda_nao_selecionada_inicio.png'); height: 22px; background-repeat: no-repeat; float: left; padding-left: 15px; padding-top: 6px; margin-top: 4px; margin-left: -4px; }
+.aba_direita_nao_selecionada { background-image: url('/img/aba_direita_nao_selecionada.png'); height: 28px; background-repeat: no-repeat; display: inline-block; padding-left: 15px; padding-top: 4px; background-position: right bottom; }
+.aba_esquerda_selecionada_inicio { background-image: url('/img/aba_esquerda_selecionada_inicio.png'); height: 27px; background-repeat: no-repeat; float: left; padding-left: 15px; padding-top: 7px; }
+.aba_esquerda_selecionada { background-image: url('/img/aba_esquerda_selecionada.png'); height: 27px; background-repeat: no-repeat; float: left; padding-left: 20px; padding-top: 7px; margin-left: -6px; }
+.aba_direita_selecionada { background-image: url('/img/aba_direita_selecionada.png'); height: 27px; background-repeat: no-repeat; float: left; padding-left: 15px; padding-top: 6px; }
+.aba_esquerda { background-image: url('/img/aba_esquerda.png'); height: 19px; background-repeat: no-repeat; float: left; padding-left: 12px; padding-top: 4px; }
+.aba_direita { background-image: url('/img/aba_direita.png'); height: 23px; background-repeat: no-repeat; display: inline-block; padding-left: 39px; background-position: right top; }
+.linha_abas { /*margin-bottom: 15px;*/ padding-bottom: 40px; }
+.texto_marcadores_obrigatorio { text-align: center; font-size: 11px; }
+.cadastro_curriculo { text-align: left; margin-left: 16px; }
+.foto_mini_curriculo { position: absolute; right: 214px; }
+.linha { clear: both; padding: 3px 0; overflow: auto; }
+label { float: left; color: #1e3260; margin-left: 4px; padding-top: 3px; }
+.RadComboBoxDropDown label { float: none; display: inline; }
+.modal_conteudo.login label { font-weight: bold; }
+.label_principal { text-align: right; width: 155px; float: left; }
+    .label_principal.modal_login { width: 90px; }
+.legenda { background-image: url('/img/fecha_esquerda.png'); background-repeat: no-repeat; float: right; margin-right: 30px; width: 270px; background-color: #fcf8c4; text-align: left; font-size: 11px; padding-left: 21px; }
+.label_principal.bold { font-weight: bold; }
+.label_principal.foto { display: none; }
+.container_campo { float: left; padding-left: 5px; }
+    .container_campo .campo_anexar_arquivo { width: auto; }
+#divHorarios table { margin-bottom: 10px; margin-left: -2px; }
+.container_campo .RadComboBox { margin-left: 4px; margin-right: 5px; }
+.container_campo input { /* vertical-align: middle;*/ vertical-align: bottom; }
+.container_campo.venda_vip { margin-bottom: 12px; margin-top: 7px; }
+.container_campo_modal { float: left; padding-left: 5px; }
+.container_campo label { float: none; display: inline; padding: 2px 4px 2px 1px; }
+.foto div img { float: none; }
+.linha img { float: left; margin-left: 5px; }
+.linha.combobox_modal { padding-left: 32%; }
+.validador { color: #ff0000; font-weight: normal; font-size: 11px; background-image: url('/img/icone_validacao_campo.gif'); background-repeat: no-repeat; padding-left: 11px; }
+.validador_sem_asterisco { color: #ff0000; font-weight: normal; font-size: 11px; }
+.conteudo .textbox_padrao, .conteudo .textarea_padrao { margin-right: 4px; /*margin-left: 4px;*/ vertical-align: middle; border: 1px solid #B5CAEA; }
+.conteudo .textbox_fake, .conteudo .textarea_fake {margin-right: 4px;/*margin-left: 4px;*/vertical-align: middle;border: 1px solid #B5CAEA;EA; */background-color: #B5CAEA;background-color: #eeeeee;padding: 1px 22px 2px 12px;cursor: not-allowed;text-rendering: auto;
+    color: initial;    letter-spacing: normal;    word-spacing: normal;    text-transform: none;    text-indent: 0px;    text-shadow: none;    display: inline-block;    text-align: start; margin: 0em 0em 0em 0em;    font: 13.3333px Arial; color:#545454}
+    .conteudo .textbox_padrao.campo_obrigatorio, .conteudo .textarea_padrao.campo_obrigatorio { padding-left: 11px; }
+.textarea_padrao { font-size: 12px; }
+    .textbox_padrao.analise_curriculo, .textarea_padrao.analise_curriculo { font-size: 12px; width: 650px; height: 150px; }
+.textbox_padrao.atividades_exercidas { height: 100px; width: 270px; font-size: 12px; }
+.conteudo .textbox_padrao.ddd { margin-right: 4px; }
+    .conteudo .textbox_padrao.ddd.campo_obrigatorio { width: 38px; }
+.conteudo .textbox_padrao.celular.campo_obrigatorio { width: 38px; }
+.campo_obrigatorio { background-image: url('/img/bg_campo_obrigatorio.gif'); background-repeat: no-repeat; background-position: left 4px; padding-left: 11px; }
+.painel_padrao { background-image: url('/img/barra_painel_fim.png'); background-position: center bottom; background-repeat: no-repeat; background-color: #fff; padding: 0 0 10px; margin: 0; }
+    .painel_padrao.mini_curriculo { overflow: hidden; }
+.painel_padrao_topo { background-image: url('/img/barra_painel_topo.png'); background-repeat: no-repeat; background-position: center top; padding: 0 0 4px; height: 4px; }
+/* PAINEL DE VAGAS */
+.painel_pesquisa_vaga { background-image: url('/img/painel_pesquisa_vaga.png'); background-repeat: no-repeat; height: 41px; padding-top: 11px; padding-left: 10px; color: #0A3079; }
+.informacao_pesquisa_vaga { font-weight: bold; color: #2a5173; font-size: 14px; margin-left: 30px; margin-right: 20px; }
+    .informacao_pesquisa_vaga .requisito_rolagem { height: 70px; width: 450px; display: block; overflow: auto; font-size: 13px; }
+    .informacao_pesquisa_vaga.label { margin-left: 5px; }
+.linha_vaga { clear: both; padding: 10px 0px 7px 0px; overflow: auto; }
+.label_principal_vaga { text-align: right; margin-left: 30px; color: #254b6c; float: left; }
+.label_principal_modal_reduzida { text-align: right; margin-left: 30px; color: #254b6c; float: left; }
+.icone_modal_vaga { position: absolute; left: -27px; top: -23px; }
+.titulo_modal_vaga { color: #fff; text-align: left; margin-left: 55px; margin-top: 10px; font-size: 19px; font-weight: normal; margin-bottom: 30px; }
+.titulo_modal_com_icone { margin-left: 33px; margin-bottom: 35px; margin-top: 13px; color: #fff; }
+.atendimento_online { position: absolute; top: 87px; right: 0; }
+    .atendimento_online img { border: none; }
+.titulo_modal_vaga.menor { font-size: 14px; }
+/* FIM: PAINEL DE VAGAS */
+.button_buscar_cep { vertical-align: middle; }
+.painel_conheca_ferramenta { margin-left: 15px; display: block; color: #1E3260; }
+    .painel_conheca_ferramenta.revisao_curriculo { margin-right: 15px; text-align: justify; }
+.atalho { border-bottom: 1px solid #C9D7F1; position: absolute; right: 0; padding-bottom: 4px; }
+    .atalho a { color: #105904; cursor: pointer; text-decoration: none; margin-left: 10px; }
+.sigla_instituicao .ajax_ace { margin: 0; padding: 0; text-align: left; list-style: none; width: 215px !important; }
+.painel_alerta_vencimento_vip { background-image: url('/img/painel_alerta_vencimento_vip.png'); background-repeat: no-repeat; height: 41px; padding-left: 10px; padding-top: 11px; }
+.titulo_uctabs { color: #1E3260; font-size: 14px; font-weight: bold; display: inline-block; height: 23px; }
+p, .conteudo .interna ul { line-height: 150%; }
+.texto_destaque_padronizacao { font-size: 16px; font-weight: bold; }
+.navegacao_padronizacao_interface { text-align: center; }
+.painel_manutencao { width: 840px !important; margin: 0 auto; }
+/* GridView Mensagem  */
+.tabela_mensagens { table-layout: auto !important; }
+/* FIM: GridView Mensagem  */
+/* GridView Crítica  */
+.corrigir { width: 80px; }
+/* FIM: GridView Crítica  */
+.RadComboBox.campo_obrigatorio_radcombobox .rcbInputCell .rcbInput { background-image: url('/img/bg_campo_obrigatorio.gif') !important; background-repeat: no-repeat !important; background-position: left 4px !important; padding-left: 11px !important; }
+/*----------- PESQUISA CURRICULO AVANCADA ------------  */
+.balao_saiba_mais { font-size: 10px; text-decoration: underline; color: #1E3260; cursor: pointer; }
+.mini_botao_pesquisa_avancada { display: block; margin-bottom: 10px; }
+.RadComboBox .rcbInputCell .rcbEmptyMessage { font-style: normal !important; }
+.RadComboBox_Office2007 .rcbInputCell .rcbEmptyMessage { color: #333333 !important; }
+/*  ----------- FIM PESQUISA CURRICULO AVANCADA ------------  */
+.modal_cep { width: 650px !important; }
+    .modal_cep .painel_campos { margin: 12px 0; }
+    .modal_cep .painel_botoes { margin: 12px 0 !important; }
+    .modal_cep .gridview_padrao { border-collapse: collapse; width: 94% !important; }
+        .modal_cep .gridview_padrao * { font-size: 11px; }
+        .modal_cep .gridview_padrao th, .modal_cep .gridview_padrao td { padding: 2px; }
+        .modal_cep .gridview_padrao th { background: url('/img/bg_header_table_azul.png'); }
+    .modal_cep .paginacao_panel { text-align: center; }
+.comp_foto_cadastro { float: right; margin-right: 7px; }
+    .comp_foto_cadastro.texto_inline { margin: 20px 15px 0 0; }
+.conteudo_ajustado { overflow: hidden; }
+.dados_da_empresa { float: left; }
+.textbox_padrao.small { width: 43px; }
+/*-- Box de Sugestão de Tarefas --*/
+.BoxSugestaoTarefas { overflow: hidden; margin: 1px 0 0 10px; float: left; }
+.seta_apontador_esq { background-image: url('/img/seta_lateral_esq.png?1'); width: 11px; height: 102px; float: left; }
+    .seta_apontador_esq.largura_media { height: 52px; background-image: url('/img/seta_lateral_esq_media.png'); }
+.box_conteudo.sugestao { background-color: #f5f8f1; border-top: 1px solid #d7d9d6; border-right: 1px solid #d7d9d6; border-bottom: 1px solid #d7d9d6; overflow: hidden; width: 280px; float: left; height: 80px; padding: 10px; }
+.box_conteudo.dados_complementares { width: 175px; }
+    .box_conteudo.dados_complementares.largura_media { width: 325px; height: 30px; }
+.box_conteudo .textbox_padrao.sugestao_tarefas { font-size: 11px; color: #6e706b; border: none; background: #F5F8F1; width: 100%; height: 56px; }
+.box_conteudo .container_campo { float: none; padding: 0; margin: 5px 0 0 0; }
+.box_conteudo .label_principal { font-size: 11px; font-weight: bold; color: #f4830d; float: none; margin: 0; padding: 0; }
+.box_conteudo .btn_CopiarIndicacao { float: right; font-size: 11px; color: #f4830d; }
+    .box_conteudo .btn_CopiarIndicacao:hover { color: #900; }
+
+.tooltip { margin-left: 119px; margin-top: 4px; }
+a.tooltip { position: absolute; font-size: 10px; color: #000; text-decoration: underline; cursor: help; }
+    a.tooltip:hover { background: transparent; color: #f00; z-index: 25; }
+    a.tooltip span { display: none; }
+    a.tooltip:hover span { display: block; position: absolute; width: 210px; top: -93px; left: 0px; font-size: 12px; padding: 5px; border: 1px solid #FCE494; border-radius: 3px; background: #FFFEB7; color: #000; }
+.retorno_endereco { margin-left: 25px; margin-top: 30px; }
+
+
+.modal-header { min-height: 16.43px !important; padding: 15px !important; border-bottom: 1px solid #e5e5e5 !important; }
+.modal-title { font-weight: bold !important; margin: 0 !important; line-height: 1.42857143 !important; }

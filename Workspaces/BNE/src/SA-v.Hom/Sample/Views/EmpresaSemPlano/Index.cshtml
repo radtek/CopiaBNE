@@ -1,0 +1,578 @@
+﻿@model Sample.Models.GridEmpresaSemPlano
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Empresas
+            <small>sem plano</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li class="active">Sem plano</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Lista de empresas</h3>
+                    </div><!-- /.box-header -->
+                    <div class="aviso_erro"> @ViewBag.erro</div>
+
+                    @using (Html.BeginForm("Index", "EmpresaSemPlano", FormMethod.Get, new { @class = "form-group", id = "idForm" }))
+                    {
+                        @Html.HiddenFor(m => m.pag, new { @Value = Model.pag })
+                        @Html.HiddenFor(m => m.Ordenacao, new { @Value = Model.Ordenacao })
+                        @Html.HiddenFor(m => m.FlSituacao, new { @Value = Model.FlSituacao })
+                        <input type="submit" id="btnSubmit" style="display:none" />
+                        <div class="box-body table-responsive">
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.DropDownList("rowsPag", new SelectList(new Dictionary<string, int> { { "10", 10 }, { "25", 25 }, { "50", 50 }, { "100", 100 } }, "Key", "Value"), new { teste = "", @class = "pro_pag_tf1", id = "pagesizelist", onchange = "this.form.submit()"})
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    @Html.Label("CNJP / Empresa:")<br />
+                                                    @Html.TextBox("FlEmpresa", ViewBag.Empresa as string, new { style = "width:170px;border-radius: 4px !important;", @maxlength = "100", @class = "form-control" })
+                                                </td>
+                                                <td width="10"></td>
+
+                                                <td>
+                                                    @Html.Label("Último Plano:")<br />
+                                                    @Html.TextBox("FlPlano", ViewBag.FlPlano as string, new { style = "width:170px;border-radius: 4px !important;", @maxlength = "100", @class = "form-control" })
+                                                </td>
+                                                <td width="10"></td>
+                                                <td>
+
+                                                    @Html.Label("Area: ")<br />
+                                                    @Html.TextBox("FlArea", ViewBag.Area as string, new { style = "width:170px;border-radius: 4px !important;", @maxlength = "100", @class = "form-control" })
+                                                </td>
+                                                <td width="10"></td>
+                                                <td>
+                                                    @Html.Label("Cidade:")<br />
+                                                    @Html.TextBox("FlCidade", ViewBag.Cidade as string, new { style = "width:170px;border-radius: 4px !important;", @maxlength = "100", @class = "form-control" })
+                                                </td>
+                                                <td width="10"></td>
+                                                <td>
+                                                    @Html.Label("UF:")<br />
+                                                    @Html.TextBox("FlEstado", ViewBag.Uf as string, new { style = "width:45px;border-radius: 4px !important;", @maxlength = "2", @class = "form-control" })
+                                                </td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>
+                                                    @Html.Label("Data Fim Plano:")<br />
+                                                    <div class="input-group">
+                                                        @Html.TextBox("FlDataFimPlano", ViewBag.reservation as string, new { @class = "form-control form-control-custom", @style = "width:169px;" })
+                                                    </div><!-- /.input group -->
+                                                </td>
+                                                <td width="10"></td>
+                                                <td>
+                                                    @Html.Label("Data Retorno:")<br />
+                                                    <div class="input-group">
+                                                        @Html.TextBox("FlDataRetorno", ViewBag.DtaRetorno as string, new { @class = "form_datetime form-control", @style = "width:169px;" })
+
+                                                    </div><!-- /.input group -->
+
+                                                </td>
+                                                <td width="10"></td>
+                                                <td>
+                                                    @Html.Label("Data Cadastro:")<br />
+                                                    <div class="input-group">
+                                                        @Html.TextBox("FlDataCadastro", ViewBag.DtaRetorno as string, new { @class = "form_datetime form-control", @style = "width:169px;" })
+
+                                                    </div><!-- /.input group -->
+
+                                                </td>
+                                                <td width="10"></td>
+                                                <td>
+                                                    <br />
+                                                    @*@Html.TextBox("SearchString", ViewBag.currentFilter as string)*@
+                                                    <button type="submit" value="Filtrar" class="btn btn-default">
+                                                        <span class="glyphicon glyphicon-search"></span> Pesquisar
+                                                    </button>
+                                                    @*<button type="reset" value="Filtrar" onclick="Limpar();" class="btn btn-default">
+                                                            <span class="glyphicon glyphicon-trash"></span> Limpar
+                                                        </button>*@
+                                                </td>
+                                                <td width="10"></td>
+                                                <td width="10"></td>
+                                                <td width="10"></td>
+                                                <td width="10"></td>
+                                            </tr>
+
+                                        </table>
+
+                                        <br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="submit" class="btn btn-default btn-flat" name="button" value="Todas" />
+                                        <input type="submit" class="btn btn-primary btn-flat" name="button" value="Final de prazo" />
+                                        <input type="submit" class="btn btn-danger btn-flat" name="button" value="Sem atendimento" />
+                                        <input type="submit" class="btn btn-warning btn-flat" name="button" value="Atendido" />
+                                        <input type="submit" class="btn btn-success btn-flat" name="button" value="Negociado" />
+                                        <input type="submit" class="btn btn-warning btn-flat" name="button" value="Prospcção" />
+                                </tr>
+                            </table>
+                            <br />
+
+                            Página @(Model.Empresas.PageCount < Model.Empresas.PageNumber ? 0 : Model.Empresas.PageNumber) de @String.Format("{0:0,0}", Model.Empresas.PageCount) - Total de @String.Format("{0:0,0}", Model.Empresas.TotalItemCount) empresas
+                            <table id="EmpresaSemPlano" class="table table-bordered table-hover dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Ultimo_Atendimento_Vendedor desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Ultimo Atendimento Vendedor" onclick='Ordenar("Ultimo_Atendimento_Vendedor desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Ultimo Atendimento Vendedor" onclick='Ordenar("Ultimo_Atendimento_Vendedor asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Ultima_Acao_Cliente desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Ultima Ação Cliente" onclick='Ordenar("Ultima_Acao_Cliente desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Ultima Ação Cliente" onclick='Ordenar("Ultima_Acao_Cliente asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Ultimo_Atendimento desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Ultimo Atendimento" onclick='Ordenar("Ultimo_Atendimento desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Ultimo Atendimento" onclick='Ordenar("Ultimo_Atendimento asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Data_Cadastro desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Data Cadastro" onclick='Ordenar("Data_Cadastro desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Data Cadastro" onclick='Ordenar("Data_Cadastro asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Empresa desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Empresa" onclick='Ordenar("Empresa desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Empresa" onclick='Ordenar("Empresa asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Area desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Area" onclick='Ordenar("Area desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Area" onclick='Ordenar("Area asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Cidade desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Cidade" onclick='Ordenar("Cidade desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Cidade" onclick='Ordenar("Cidade asc");' />
+                                            }
+
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("UF desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="UF" onclick='Ordenar("UF desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="UF" onclick='Ordenar("UF asc");' />
+                                            }
+                                       
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Plano desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Plano" onclick='Ordenar("Plano desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Plano" onclick='Ordenar("Plano asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Fim_Plano desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Fim Plano" onclick='Ordenar("Fim_Plano desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Fim Plano" onclick='Ordenar("Fim_Plano asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Qtd_de_acoes desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Qtd de ações" onclick='Ordenar("Qtd_de_acoes desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Qtd de ações" onclick='Ordenar("Qtd_de_acoes asc");' />
+                                            }
+                                          
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Num_Funcionario desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Num Funcionario" onclick='Ordenar("Num_Funcionario desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Num Funcionario" onclick='Ordenar("Num_Funcionario asc");' />
+                                            }
+
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Boleto_Vencimento desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Vencimento Boleto" onclick='Ordenar("Boleto_Vencimento desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Vencimento Boleto" onclick='Ordenar("Boleto_Vencimento asc");' />
+                                            }
+
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Data_Retorno desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Data Retorno" onclick='Ordenar("Data_Retorno desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Data Retorno" onclick='Ordenar("Data_Retorno asc");' />
+                                            }
+                                          
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Situação desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Situação" onclick='Ordenar("Situação desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Situação" onclick='Ordenar("Situação asc");' />
+                                            }
+
+                                        </th>
+                                        <!--<th>Ações</th>-->
+                                    </tr>
+                                </thead>
+                                @foreach (var item in Model.Empresas)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Data_Ultimo_Atendimento)
+                                        </td>
+                                        @if (!(item.Data_Ultima_Acao_Site == null) && item.Data_Ultima_Acao_Site.Value.ToString("MM/dd/yyyy") == System.DateTime.Now.ToString("MM/dd/yyyy"))
+                                        {
+                                            <td bgcolor="#CEF6D8">
+                                                @Html.DisplayFor(modelItem => item.Data_Ultima_Acao_Site)
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Data_Ultima_Acao_Site)
+                                            </td>
+                                        }
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Data_ultimo_ATC_empresa)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Dta_Cadastro)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink((item.Raz_Social), "Details", new { controller = "Empresa", Id = item.Num_CNPJ })
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Des_Area_BNE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Nme_Cidade)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Sig_Estado)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Ultimo_Plano)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Dta_Fim_Plano)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Total_Acao)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.qtd_Funcionarios)
+                                        </td>
+                                        <td>
+
+                                            @if (item.dta_vencimento >= DateTime.Now.AddDays(-1) && item.dta_vencimento <= DateTime.Now.AddDays(1))
+                                            {
+                                                <div style="color:red;">@Html.DisplayFor(modelItem => item.dta_vencimento)</div>
+                                            }
+                                            else
+                                            {
+                                                @Html.DisplayFor(modelItem => item.dta_vencimento);
+                                            }
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Dta_Retorno)
+                                        </td>
+                                        <td>
+                                            @if (item.Idf_Atendimento == 1)
+                                            {
+                                                <span class="badge bg-yellow">Atendido @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                                <br><br>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-yellow" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                                </div>
+                                            }
+                                            @if (item.Idf_Atendimento == 2)
+                                            {
+                                                <span class="badge bg-green">Negociado @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                                <br><br>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-success" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                                </div>
+                                            }                                        @if (item.Idf_Atendimento == 3)
+                                            {
+                                                <span class="badge bg-red">Sem atendimento @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                                <br><br>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-danger" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                                </div>
+                                            }                                        @if (item.Idf_Atendimento == 4)
+                                            {
+                                                <span class="badge bg-red">Venda efetuada @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                                <br><br>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-success" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                                </div>
+                                            }
+                                            @if (item.Idf_Atendimento == 6)
+                                            {
+                                                <span class="badge bg-blue">Final de prazo @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                                <br><br>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-primary" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                                </div>
+                                            }
+                                            @if (item.Idf_Atendimento == 7)
+                                            {
+                                                <span class="badge bg-red">Prospcção 0%</span>
+                                                <br><br>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-danger" style="width: 0%"></div>
+                                                </div>
+                                            }
+                                        </td>
+                                        <!--<td>
+                                            @Html.ActionLink("Detalhes", "Details", new { controller = "Empresa", Id = item.Num_CNPJ })
+                                        </td>-->
+                                    </tr>
+                                }
+                            </table>
+                            Página @(Model.Empresas.PageCount < Model.Empresas.PageNumber ? 0 : Model.Empresas.PageNumber) de @String.Format("{0:0,0}", Model.Empresas.PageCount) - Total de @String.Format("{0:0,0}", Model.Empresas.TotalItemCount) empresas
+                            <div class="container">
+                                <nav aria-label="Page navigation" style="margin-left: -4%;">
+                                    <ul class="pagination" id="pagination"></ul>
+                                </nav>
+                            </div>
+                        </div>
+                                                } @*fim using form*@
+                    <div id="div_carregando" class="progresso">
+                        <div class="progresso_texto">
+                            <img src="~/Content/img/ajax-loader.gif" />
+                            <br /> Carregando...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</aside><!-- /.right-side -->
+
+@Scripts.Render("~/bundles/datatables")
+</aside><!-- /.right-side -->
+
+@Scripts.Render("~/bundles/datatables")
+<script type="text/javascript">
+ 
+
+
+    function Ordenar(order) {
+        document.getElementById('Ordenacao').value = order;
+        console.log(document.getElementById('Ordenacao').value);
+        document.getElementById('btnSubmit').click();
+    }
+    function Pagina(pag) {
+        document.getElementById('pag').value = pag;
+    }
+
+    $(document).click(function(event) {
+        if(event.target.className == 'page-link'){
+            document.getElementById('btnSubmit').click();
+        }
+    });
+
+    $("#idForm").submit(function(e) {
+        $("#div_carregando").show();
+    });
+
+    $(document).ready(function () {
+        $("li").removeClass("active");
+        $("#tables").addClass("active");
+        $("#tables_menu").css("display", "block");
+        $("#tables_datatables").addClass("active");
+
+        $("#tables_arrow").addClass("fa-angle-down");
+
+        $("#idForm").submit(function(e) {
+            $("#div_carregando").show();
+        });
+        var itens =  document.getElementsByClassName("page-link");
+        var pagina = @Model.pag;
+        for (var i=0; i< itens.length;i++ ){
+            if(itens[i].text == pagina){
+                document.getElementsByClassName("page-item")[i].className += " active"
+            }
+        }
+        
+        $(function () {
+            var obj = $('#pagination').twbsPagination({
+                totalPages: @Model.Empresas.PageCount,
+                visiblePages: 10,
+                startPage: @Model.pag,
+                onPageClick: function (event, page) {
+                    Pagina(page);
+
+                }
+            });
+
+        });
+    });
+</script>
+
+
+
+@section scripts {
+    <script type="text/javascript">
+        $('#pagesizelist').on('change', function (event) {
+            var form =  $(event.target).parents('form');
+            form.submit();
+        });
+    </script>
+}
+
+
+
+@Scripts.Render("~/bundles/input-mask")
+@Scripts.Render("~/bundles/daterangepicker")
+@Scripts.Render("~/bundles/colorpicker")
+@Scripts.Render("~/bundles/timepicker")
+<script type="text/javascript">
+    $(function () {
+        //Datemask dd/mm/yyyy
+        $("#datemask").inputmask("dd/mm/yyyy", { "placeholder": "dd/mm/yyyy" });
+        //Datemask2 mm/dd/yyyy
+        $("#datemask2").inputmask("mm/dd/yyyy", { "placeholder": "mm/dd/yyyy" });
+        //Money Euro
+        $("[data-mask]").inputmask();
+
+        //Date range picker
+        $('#FlDataFimPlano').daterangepicker();
+        $('#FlDataRetorno').daterangepicker();
+        $('#FlDataCadastro').daterangepicker();
+
+        //Date range picker with time picker
+        $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' });
+        //Date range as a button
+        $('#daterange-btn').daterangepicker(
+                {
+                    ranges: {
+                        'Today': [moment(), moment()],
+                        'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+                        'Last 7 Days': [moment().subtract('days', 6), moment()],
+                        'Last 30 Days': [moment().subtract('days', 29), moment()],
+                        'This Month': [moment().startOf('month'), moment().endOf('month')],
+                        'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
+                    },
+                    startDate: moment().subtract('days', 29),
+                    endDate: moment()
+                },
+        function (start, end) {
+            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
+        );
+
+        //iCheck for checkbox and radio inputs
+        $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+            checkboxClass: 'icheckbox_minimal',
+            radioClass: 'iradio_minimal'
+        });
+        //Red color scheme for iCheck
+        $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+            checkboxClass: 'icheckbox_minimal-red',
+            radioClass: 'iradio_minimal-red'
+        });
+        //Flat red color scheme for iCheck
+        $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+            checkboxClass: 'icheckbox_flat-red',
+            radioClass: 'iradio_flat-red'
+        });
+
+        //Colorpicker
+        $(".my-colorpicker1").colorpicker();
+        //color picker with addon
+        $(".my-colorpicker2").colorpicker();
+
+        //Timepicker
+        $(".timepicker").timepicker({
+            showInputs: false
+        });
+    });
+</script>
+
+
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax2.js");
+@Scripts.Render("~/Scripts/jquery.twbsPagination.min.js");

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SiteComercial" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://wsprdintegracao.meuholerite.com.br/SiteComercial.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://wsprdintegracao.meuholerite.com.br/SiteComercial.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://wsprdintegracao.meuholerite.com.br/SiteComercial.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISiteComercial_VerificarEnderecoAcesso_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarEnderecoAcesso" />
+  </wsdl:message>
+  <wsdl:message name="ISiteComercial_VerificarEnderecoAcesso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarEnderecoAcessoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteComercial_RetornarEmpresasUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarEmpresasUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ISiteComercial_RetornarEmpresasUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarEmpresasUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteComercial_CarregarUrlAcessoPorID_InputMessage">
+    <wsdl:part name="parameters" element="tns:CarregarUrlAcessoPorID" />
+  </wsdl:message>
+  <wsdl:message name="ISiteComercial_CarregarUrlAcessoPorID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CarregarUrlAcessoPorIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISiteComercial">
+    <wsdl:operation name="VerificarEnderecoAcesso">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteComercial/VerificarEnderecoAcesso" message="tns:ISiteComercial_VerificarEnderecoAcesso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteComercial/VerificarEnderecoAcessoResponse" message="tns:ISiteComercial_VerificarEnderecoAcesso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarEmpresasUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteComercial/RetornarEmpresasUsuario" message="tns:ISiteComercial_RetornarEmpresasUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteComercial/RetornarEmpresasUsuarioResponse" message="tns:ISiteComercial_RetornarEmpresasUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CarregarUrlAcessoPorID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteComercial/CarregarUrlAcessoPorID" message="tns:ISiteComercial_CarregarUrlAcessoPorID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteComercial/CarregarUrlAcessoPorIDResponse" message="tns:ISiteComercial_CarregarUrlAcessoPorID_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISiteComercial" type="tns:ISiteComercial">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerificarEnderecoAcesso">
+      <soap:operation soapAction="http://tempuri.org/ISiteComercial/VerificarEnderecoAcesso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarEmpresasUsuario">
+      <soap:operation soapAction="http://tempuri.org/ISiteComercial/RetornarEmpresasUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregarUrlAcessoPorID">
+      <soap:operation soapAction="http://tempuri.org/ISiteComercial/CarregarUrlAcessoPorID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SiteComercial">
+    <wsdl:port name="BasicHttpBinding_ISiteComercial" binding="tns:BasicHttpBinding_ISiteComercial">
+      <soap:address location="http://wsprdintegracao.meuholerite.com.br/SiteComercial.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

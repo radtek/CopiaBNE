@@ -1,0 +1,27 @@
+﻿@using System.Configuration
+@{string enderecoBNE = string.Format("http://{0}", ConfigurationManager.AppSettings["EnderecoBNE"]);}
+
+<!-- Header-->
+<header class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--5-col-tablet">
+        <a href="@enderecoBNE" style="color: #000;">
+            <img src="http://www.bne.com.br/img/logo_bne.gif" class="logo_bne" />
+        </a>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+        @*<ul id="nav">
+            <li class="darkgrey"><i class="material-icons i-small">insert_drive_file</i></li>
+            <li class="darkgrey"> 8.526.626 Currículos</li>
+            <li class="darkgrey"><i class="material-icons i-small">assignment</i></li>
+            <li class="darkgrey"> 194.861 Vagas</li>
+            <li class="darkgrey"><i class="material-icons i-small">business</i></li>
+            <li class="darkgrey"> 103.445 Empresas</li>
+        </ul>*@
+    </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--3-col-tablet mdl-cell--4-col-phone">
+        @*<ul id="signin">
+            <li class="darkgrey"><i class="material-icons i-small">input</i></li>
+            <li class="darkgrey">Entrar</li>
+        </ul>*@
+    </div>
+</header>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BNE.StorageManager</id>
+    <version>1.12</version>
+    <title>BNE.StorageManager</title>
+    <authors>Banco Nacional de Empregos</authors>
+    <owners>Banco Nacional de Empregos, Francisco Ribas</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Projeto que implementa a interface de acesso as storages</description>
+    <releaseNotes>Implementação ExistsAsync</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <dependencies>
+      <dependency id="AWSSDK.Core" version="3.3.4" />
+      <dependency id="AWSSDK.S3" version="3.3.1.1" />
+      <dependency id="Microsoft.WindowsAzure.ConfigurationManager" version="3.2.3" />
+      <dependency id="WindowsAzure.Storage" version="8.7.0" />
+    </dependencies>
+  </metadata>
+</package>

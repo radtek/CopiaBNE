@@ -1,0 +1,61 @@
+﻿.painel_vaga
+{
+    background-color: #fff;
+    border: 1px solid #D1D5DC;
+    clear: both;
+    margin: 8px 0;
+    padding: 12px;
+    overflow: auto;
+}
+    
+.painel_vaga h2
+{
+    color: #172B49;
+    font-size: 21px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+    
+.painel_vaga h3
+{
+    font-size: 12px;
+    margin-bottom: 0;
+}
+    
+.painel_vaga p
+{
+    margin-top: 0;
+}
+
+.texto_codigo_vaga,
+.painel_vaga .texto_codigo_vaga
+{
+    color: #999;
+    margin: 10px 0 0;
+}
+
+.texto_dados_empresa
+{
+	font-weight: bold;
+}
+
+.texto_quantidade_vagas
+{
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.texto_resumo_vaga
+{
+    color: #172B49;
+    font-size: 16px;
+    line-height:21px;
+}
+
+.texto_aviso
+{
+    text-align: center;
+    color: Black;
+    font-size: 15px;
+}

@@ -1,0 +1,16 @@
+﻿@model dynamic
+
+<div id="modalSucessoVagaCompartilhamento" class="modal amarela compartilhamento">
+    <script>
+        modal.abrirModal('modalSucessoVagaCompartilhamento');
+    </script>
+    <link href="~/Content/ModalSucessoVagaCompartilhamento.css" rel="stylesheet" />
+    <div>
+        <a class="b-close modal_fechar" title="Fechar"></a>
+        <div class="imagem_cadastro_sucesso_compartilhamento_vaga">
+        </div>
+        <p class="texto_cadastro_sucesso_compartilhamento_vaga">
+            <span>@Model.Mensagem</span>
+        </p>
+    </div>
+</div>

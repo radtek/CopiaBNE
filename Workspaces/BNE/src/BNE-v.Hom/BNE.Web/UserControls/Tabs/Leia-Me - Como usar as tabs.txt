@@ -1,0 +1,29 @@
+﻿- Como base para o desenvolvimento utilize a tela ClassificacaoDespesas.aspx
+
+1 - O controle Tabs.ascx deve ser adicionado a página
+2 - As tabs devem ser adicionadas na ordem em que devem aparecer na tela
+obs.: A primeira tab sempre vem carregada, e as outras carregam ao serem selecionadas
+ * O código abaixo mostra um exemplo de como adicionar as tabs
+    protected void Page_Load(object sender, System.EventArgs e)
+    {
+        if (!Page.IsPostBack)
+            {
+                ucTabs.AddTab("Dados pessoais", "DadosPessoais", true);
+                ucTabs.AddTab("Dependentes", "Dependentes", false);
+                ucTabs.AddTab("Contas bancárias", "ContasBancarias", false);
+                ucTabs.AddTab("Dados complementares", "DadosComplementares", false);
+            }
+    }
+    
+3 - Quando houver tabs na página, a seguinte estrutura deve ser criada:
+    a - Dentro da pasta UserControls/Tabs criar uma pasta com o nome da página
+    b - Adicionar os usercontrols, relativos a cada tab, dentro da pasta criada
+    c - Programar o Page_Load da página como exemplificado no código acima
+    
+    
+4 - O método AddTab do user control Tabs.ascx possui 3 parâmetros:
+    1º - Texto da tab
+    2º - Nome do controle (por exemplo, no caso acima, o nome dos controles são 
+                           Contas.ascx e Vigencia.ascx respectivamente)
+	3º - Se a tab está ativa ou não
+                           

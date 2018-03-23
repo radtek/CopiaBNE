@@ -1,0 +1,47 @@
+﻿.gridview_padrao td
+{
+    padding: 4px;
+}
+.gridview_padrao th.rgHeader
+{
+    color: #000 !important;
+    font-weight: bold;
+    padding: 4px;
+    text-align: center;
+}
+
+.linha_cnh
+{
+    margin: 10px 0;
+}
+
+.label_n_registro_cnh
+{
+    width: 182px;
+}
+
+.textbox_padrao.atividades_exercidas, .textbox_padrao.sugestao_tarefas
+{
+    width: 360px;
+}
+
+.ruStyled
+{
+    margin: 8px 0 0 12px;
+}
+
+.imagem_cadastro_sucesso
+{
+    margin: 12px auto;
+}
+.col_action_arq
+{
+    width: 10%;
+    text-align: center;
+    display: inline;
+}
+.col_action_arq input
+{
+    margin: 3px 5px;
+    height: 15px;
+}

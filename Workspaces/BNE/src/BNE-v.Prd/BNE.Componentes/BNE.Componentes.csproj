@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15EA9E89-5731-4D34-B1C9-5532F6668DD9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.Componentes</RootNamespace>
+    <AssemblyName>BNE.Componentes</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|AnyCPU'">
+    <OutputPath>bin\Homologacao\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|x64'">
+    <OutputPath>bin\x64\Homologacao\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ajax, Version=5.7.22.2, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Ajax.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\Library\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="Telerik.Web.UI">
+      <HintPath>..\Library\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BalaoSaibaMais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Base\AjaxClientControlBase.cs" />
+    <Compile Include="Base\AjaxClientDataBoundControlBase.cs" />
+    <Compile Include="Base\ControlBaseTextBox.cs" />
+    <Compile Include="Base\ControlBaseValidator.cs" />
+    <Compile Include="ContagemCaracteres.cs" />
+    <Compile Include="ControlAlfaNumerico.cs" />
+    <Compile Include="ControlAutoTabIndex.cs" />
+    <Compile Include="ControlButton.cs" />
+    <Compile Include="ControlCNPJ.cs" />
+    <Compile Include="ControlCNPJReceitaFederal.cs" />
+    <Compile Include="ControlImageButton.cs" />
+    <Compile Include="ControlModal.cs" />
+    <Compile Include="ControlPanel.cs" />
+    <Compile Include="DataTextBox.cs" />
+    <Compile Include="EL\ImageSlicerException.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Handlers\HandlerCaptchaReceitaFederal.cs" />
+    <Compile Include="ImageSlicer.cs" />
+    <Compile Include="Interface\IErrorMessage.cs" />
+    <Compile Include="Interface\IMensagemErro.cs" />
+    <Compile Include="Interface\IRequiredField.cs" />
+    <Compile Include="ControlLabel.cs" />
+    <Compile Include="PageResourceManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelecionarFoto.cs" />
+    <Compile Include="ThumbnailCreatedArgs.cs" />
+    <Compile Include="Util\Formatadores.cs" />
+    <Compile Include="Util\Helpers.cs" />
+    <Compile Include="Util\Keys.cs" />
+    <Compile Include="Util\Validacao.cs" />
+    <Compile Include="Validadores\CheckBoxListValidator.cs" />
+    <Compile Include="Validadores\CheckBoxValidator.cs" />
+    <Compile Include="Validadores\Helpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\js\ImgResizer.js" />
+    <EmbeddedResource Include="Content\js\jquery.imgareaselect.min.js" />
+    <EmbeddedResource Include="Content\js\SelecionarFoto.js" />
+    <EmbeddedResource Include="Content\js\AjaxClientControlBase.js" />
+    <EmbeddedResource Include="Content\js\AjaxClientDataBoundControlBase.js" />
+    <EmbeddedResource Include="Content\js\AlfaNumerico.js" />
+    <EmbeddedResource Include="Content\js\AutoTabIndex.js" />
+    <EmbeddedResource Include="Content\js\ControlBaseValidator.js" />
+    <EmbeddedResource Include="Content\js\ControlCNPJ.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\js\skmValidators.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Styles\BalaoSaibaMais.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Imagens\botao_calendar.png" />
+    <EmbeddedResource Include="Content\Imagens\botao_padrao_fechar.png" />
+    <EmbeddedResource Include="Content\js\ContagemCaracteres.js" />
+    <EmbeddedResource Include="Content\js\DataTextBox.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

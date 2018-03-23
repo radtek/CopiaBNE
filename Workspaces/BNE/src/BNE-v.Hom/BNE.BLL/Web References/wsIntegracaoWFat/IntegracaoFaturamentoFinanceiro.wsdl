@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="IntegrarFaturamentoFinanceiro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="enumSistemaOrigem" type="tns:SistemaOrigem" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtaPagamento" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="vlrPagamento" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="enumTipoTransacao" type="tns:TipoTransacao" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNumeroTransacao" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="enumTipoContrato" type="tns:TipoContrato" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtaInicioContrato" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtaTerminoContrato" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="enumTipoDocumento" type="tns:TipoDocumento" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRazaoSocial_Nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCEP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLogradouro" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intNumeroEndereco" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strComplemento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBairro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCidade" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNomeFantasia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCNAE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmailContato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDDD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelefone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNomeContato" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="numCPFUsuario" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNomeUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmailRemetente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNomeRemetente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTituloEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTextoEmail" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtaVencimento" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTextoAdicionalNFE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vlrTotalNFE" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTextoEmailCancelamentoNFE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strApelidoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNumeroAgenciaBancaria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNumContaBancaria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNumeroBanco" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="SistemaOrigem">
+        <s:restriction base="s:string">
+          <s:enumeration value="BNE" />
+          <s:enumeration value="SINE" />
+          <s:enumeration value="MEUHOLERITE" />
+          <s:enumeration value="SALARIOBR" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TipoTransacao">
+        <s:restriction base="s:string">
+          <s:enumeration value="Boleto" />
+          <s:enumeration value="CartaoCredito" />
+          <s:enumeration value="CartaoDebito" />
+          <s:enumeration value="Deposito" />
+          <s:enumeration value="Parceiro" />
+          <s:enumeration value="PagSeguro" />
+          <s:enumeration value="PayPal" />
+          <s:enumeration value="DebitoRecorrente" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TipoContrato">
+        <s:restriction base="s:string">
+          <s:enumeration value="BNE_Fidelidade" />
+          <s:enumeration value="Recrutamento" />
+          <s:enumeration value="Webfopag" />
+          <s:enumeration value="BNE_Vip" />
+          <s:enumeration value="Ilimitado_30_Dias" />
+          <s:enumeration value="Faturamento_STC" />
+          <s:enumeration value="Visualizações" />
+          <s:enumeration value="Pesquisa_Salarial" />
+          <s:enumeration value="Adicional_SMS" />
+          <s:enumeration value="Meu_Holerite" />
+          <s:enumeration value="SOS_RH" />
+          <s:enumeration value="R1" />
+          <s:enumeration value="Salario_BR" />
+          <s:enumeration value="SINE" />
+          <s:enumeration value="Feirao_de_Emprego" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TipoDocumento">
+        <s:restriction base="s:string">
+          <s:enumeration value="CNPJ" />
+          <s:enumeration value="CPF" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="IntegrarFaturamentoFinanceiroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IntegrarFaturamentoFinanceiroResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceAuthHeader" type="tns:ServiceAuthHeader" />
+      <s:complexType name="ServiceAuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodHash" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ConsultarIntegracaoHistorico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="enumTipoTransacao" type="tns:TipoTransacao" />
+            <s:element minOccurs="0" maxOccurs="1" name="strIdentificacaoTranscacao" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="enumTipoDocumento" type="tns:TipoDocumento" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocumento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarIntegracaoHistoricoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarIntegracaoHistoricoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelarNotaFiscalIntegracao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="enumTipoTransacao" type="tns:TipoTransacao" />
+            <s:element minOccurs="0" maxOccurs="1" name="strIdentificacaoTranscacao" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="enumTipoDocumento" type="tns:TipoDocumento" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocumento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="numCPFUsuario" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNomeUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmailCancelamentoNFE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelarNotaFiscalIntegracaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CancelarNotaFiscalIntegracaoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IntegrarFaturamentoFinanceiroSoapIn">
+    <wsdl:part name="parameters" element="tns:IntegrarFaturamentoFinanceiro" />
+  </wsdl:message>
+  <wsdl:message name="IntegrarFaturamentoFinanceiroSoapOut">
+    <wsdl:part name="parameters" element="tns:IntegrarFaturamentoFinanceiroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IntegrarFaturamentoFinanceiroServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarIntegracaoHistoricoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarIntegracaoHistorico" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarIntegracaoHistoricoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarIntegracaoHistoricoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarIntegracaoHistoricoServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CancelarNotaFiscalIntegracaoSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelarNotaFiscalIntegracao" />
+  </wsdl:message>
+  <wsdl:message name="CancelarNotaFiscalIntegracaoSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelarNotaFiscalIntegracaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelarNotaFiscalIntegracaoServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarIntegracaoHistoricoHttpGetIn">
+    <wsdl:part name="enumTipoTransacao" type="s:string" />
+    <wsdl:part name="strIdentificacaoTranscacao" type="s:string" />
+    <wsdl:part name="enumTipoDocumento" type="s:string" />
+    <wsdl:part name="strDocumento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarIntegracaoHistoricoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="CancelarNotaFiscalIntegracaoHttpGetIn">
+    <wsdl:part name="enumTipoTransacao" type="s:string" />
+    <wsdl:part name="strIdentificacaoTranscacao" type="s:string" />
+    <wsdl:part name="enumTipoDocumento" type="s:string" />
+    <wsdl:part name="strDocumento" type="s:string" />
+    <wsdl:part name="numCPFUsuario" type="s:string" />
+    <wsdl:part name="strNomeUsuario" type="s:string" />
+    <wsdl:part name="strEmailCancelamentoNFE" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CancelarNotaFiscalIntegracaoHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarIntegracaoHistoricoHttpPostIn">
+    <wsdl:part name="enumTipoTransacao" type="s:string" />
+    <wsdl:part name="strIdentificacaoTranscacao" type="s:string" />
+    <wsdl:part name="enumTipoDocumento" type="s:string" />
+    <wsdl:part name="strDocumento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarIntegracaoHistoricoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="CancelarNotaFiscalIntegracaoHttpPostIn">
+    <wsdl:part name="enumTipoTransacao" type="s:string" />
+    <wsdl:part name="strIdentificacaoTranscacao" type="s:string" />
+    <wsdl:part name="enumTipoDocumento" type="s:string" />
+    <wsdl:part name="strDocumento" type="s:string" />
+    <wsdl:part name="numCPFUsuario" type="s:string" />
+    <wsdl:part name="strNomeUsuario" type="s:string" />
+    <wsdl:part name="strEmailCancelamentoNFE" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CancelarNotaFiscalIntegracaoHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="IntegracaoFaturamentoFinanceiroSoap">
+    <wsdl:operation name="IntegrarFaturamentoFinanceiro">
+      <wsdl:input message="tns:IntegrarFaturamentoFinanceiroSoapIn" />
+      <wsdl:output message="tns:IntegrarFaturamentoFinanceiroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarIntegracaoHistorico">
+      <wsdl:input message="tns:ConsultarIntegracaoHistoricoSoapIn" />
+      <wsdl:output message="tns:ConsultarIntegracaoHistoricoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarNotaFiscalIntegracao">
+      <wsdl:input message="tns:CancelarNotaFiscalIntegracaoSoapIn" />
+      <wsdl:output message="tns:CancelarNotaFiscalIntegracaoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IntegracaoFaturamentoFinanceiroHttpGet">
+    <wsdl:operation name="ConsultarIntegracaoHistorico">
+      <wsdl:input message="tns:ConsultarIntegracaoHistoricoHttpGetIn" />
+      <wsdl:output message="tns:ConsultarIntegracaoHistoricoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarNotaFiscalIntegracao">
+      <wsdl:input message="tns:CancelarNotaFiscalIntegracaoHttpGetIn" />
+      <wsdl:output message="tns:CancelarNotaFiscalIntegracaoHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IntegracaoFaturamentoFinanceiroHttpPost">
+    <wsdl:operation name="ConsultarIntegracaoHistorico">
+      <wsdl:input message="tns:ConsultarIntegracaoHistoricoHttpPostIn" />
+      <wsdl:output message="tns:ConsultarIntegracaoHistoricoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarNotaFiscalIntegracao">
+      <wsdl:input message="tns:CancelarNotaFiscalIntegracaoHttpPostIn" />
+      <wsdl:output message="tns:CancelarNotaFiscalIntegracaoHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IntegracaoFaturamentoFinanceiroSoap" type="tns:IntegracaoFaturamentoFinanceiroSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IntegrarFaturamentoFinanceiro">
+      <soap:operation soapAction="http://tempuri.org/IntegrarFaturamentoFinanceiro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:IntegrarFaturamentoFinanceiroServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarIntegracaoHistorico">
+      <soap:operation soapAction="http://tempuri.org/ConsultarIntegracaoHistorico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarIntegracaoHistoricoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarNotaFiscalIntegracao">
+      <soap:operation soapAction="http://tempuri.org/CancelarNotaFiscalIntegracao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CancelarNotaFiscalIntegracaoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IntegracaoFaturamentoFinanceiroSoap12" type="tns:IntegracaoFaturamentoFinanceiroSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IntegrarFaturamentoFinanceiro">
+      <soap12:operation soapAction="http://tempuri.org/IntegrarFaturamentoFinanceiro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:IntegrarFaturamentoFinanceiroServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarIntegracaoHistorico">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarIntegracaoHistorico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarIntegracaoHistoricoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarNotaFiscalIntegracao">
+      <soap12:operation soapAction="http://tempuri.org/CancelarNotaFiscalIntegracao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CancelarNotaFiscalIntegracaoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IntegracaoFaturamentoFinanceiroHttpGet" type="tns:IntegracaoFaturamentoFinanceiroHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ConsultarIntegracaoHistorico">
+      <http:operation location="/ConsultarIntegracaoHistorico" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarNotaFiscalIntegracao">
+      <http:operation location="/CancelarNotaFiscalIntegracao" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IntegracaoFaturamentoFinanceiroHttpPost" type="tns:IntegracaoFaturamentoFinanceiroHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ConsultarIntegracaoHistorico">
+      <http:operation location="/ConsultarIntegracaoHistorico" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarNotaFiscalIntegracao">
+      <http:operation location="/CancelarNotaFiscalIntegracao" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IntegracaoFaturamentoFinanceiro">
+    <wsdl:port name="IntegracaoFaturamentoFinanceiroSoap" binding="tns:IntegracaoFaturamentoFinanceiroSoap">
+      <soap:address location="http://wshomglobal.webfopag.com.br/IntegracaoFaturamentoFinanceiro.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IntegracaoFaturamentoFinanceiroSoap12" binding="tns:IntegracaoFaturamentoFinanceiroSoap12">
+      <soap12:address location="http://wshomglobal.webfopag.com.br/IntegracaoFaturamentoFinanceiro.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IntegracaoFaturamentoFinanceiroHttpGet" binding="tns:IntegracaoFaturamentoFinanceiroHttpGet">
+      <http:address location="http://wshomglobal.webfopag.com.br/IntegracaoFaturamentoFinanceiro.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IntegracaoFaturamentoFinanceiroHttpPost" binding="tns:IntegracaoFaturamentoFinanceiroHttpPost">
+      <http:address location="http://wshomglobal.webfopag.com.br/IntegracaoFaturamentoFinanceiro.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

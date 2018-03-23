@@ -1,0 +1,182 @@
+﻿.modal_nova_candidatura {
+    background-color: #ebeff2;
+    background-repeat: no-repeat;
+    /*height: 250px;*/
+    margin: 0 auto;
+    width: 600px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.amarela {
+    /*background-image: url('/img/modal_nova/img_background_amareka_modal_nova.png');*/
+}
+
+.alinha_btn_fechar_nova_modal {
+    margin-left: 581px;
+    margin-top: -12px;
+}
+
+.img_envelope_bne {
+    display: block;
+    float: left;
+    margin-left: 11px;
+    margin-top: 9px;
+}
+
+.alerta {
+    margin-left: 30px;
+    margin-top: 47px;
+}
+
+.voce_ganhou {
+    color: #3F2007;
+    display: block;
+    font-size: 23px;
+    margin-top: 57px;
+    text-align: center;
+    margin: 74px 50px 8px 50px;
+     line-height: 29px;
+}
+
+.alinha_btnUsarBonus {
+    background-image: url('/img/modal_nova/btn_usar_bonus_cinza.png');
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 10px;
+    display: block;
+    float: left;
+    margin-left: -30px;
+    margin-top: 17px;
+    width: 151px;
+    height: 40px;
+    color: #21190C;
+    font-size: 18px;
+}
+
+.alinha_btnQueroPassarParaVip {
+    background-image: url('/img/modal_nova/btn_quero_passar_para_vip.png');
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    margin-left: 20px;
+    margin-top: 17px;
+    width: 212px;
+    height: 40px;
+    color: #21190C;
+    font-size: 18px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+.label_quantidadeBonus {
+    color: #21190C;
+    display: block;
+    float: left;
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 70px;
+    margin-top: -118px;
+    position: absolute;
+}
+
+.label_terminar_de_preencher_cv {
+    color: #21190C;
+    display: block;
+    float: left; /*margin-left: -23px;*/
+    margin-top: 0px;
+    font-size: 13px;
+}
+
+.que_pena {
+    font-size: 25px;
+    margin-left: 27px;
+    margin-bottom: 21px;
+}
+
+.nao_agora {
+    margin-left: -119px;
+}
+
+.complementa_alinhamento_label_queroPassarParaVip {
+    margin-top: -32px;
+}
+
+.complementa_btn_cinza_alinhamento {
+    margin-left: 24px;
+}
+
+.coin-icon {
+    position: absolute;
+    /*left:50%;*/
+    left: 42%;
+    top: -35px;
+    margin-left: -75;
+}
+
+
+.ok_entendi input {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    background-color: #015a9c;
+    margin-bottom: 8px;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: all 0.5s;
+    outline: none;
+    width: 170px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+    .ok_entendi input:hover {
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+    }
+
+.ok_entendi {
+    text-align: center;
+    margin: 15px;
+}
+
+
+
+
+.btnVoltar input {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    background-color: #015a9c;
+    margin-bottom: 8px;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: all 0.5s;
+    outline: none;
+    width: 170px;
+    border-radius: 5px 5px 5px 5px;
+    text-align: center;
+}
+
+    .btnVoltar input:hover {
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+    }
+
+
+.vip-pass-icon {
+    position: absolute;
+    /*left:50%;*/
+    left: 38%;
+    top: -85px;
+    margin-left: -75;
+}

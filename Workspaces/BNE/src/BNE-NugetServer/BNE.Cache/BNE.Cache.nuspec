@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BNE.Cache</id>
+    <version>$version$</version>
+    <title>BNE.Cache</title>
+    <authors>Banco Nacional de Empregos</authors>
+    <owners>Banco Nacional de Empregos, Gieyson Stelmak</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Projeto que implementa o Runtime.Caching.MemoryCache da Framework do .NET</description>
+    <releaseNotes>Versão inicial</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+  </metadata>
+</package>

@@ -1,0 +1,155 @@
+﻿body
+{
+    font-family: Arial,Helvetica,sans-serif !important;
+}
+.painel_padrao
+{
+    margin-bottom: 20px;
+    overflow: auto;
+}
+h1 .destaque
+{
+    color: #00678C;
+}
+.conteudo
+{
+    margin-top: 35px !important;
+}
+.seu_vip_inclui
+{
+    display: block;
+    float: left;
+    margin-left: 136px;
+    margin-top: 41px;
+}
+.seu_vip_inclui h2
+{
+    font-size: 25px;
+}
+.seu_vip_inclui h2 span
+{
+    color: #00678C;
+}
+.seu_vip_inclui ul
+{
+    font-size: 14px;
+    margin-left: -12px;
+}
+.seu_vip_inclui ul li
+{
+    list-style-type: none;
+}
+.seu_vip_inclui ul li a
+{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.seu_vip_inclui ul li a:link
+{
+    color: inherit;
+    text-decoration: underline;
+}
+.seu_vip_inclui ul li a:hover
+{
+    color: gray;
+}
+.container_vantagem
+{
+    display: block;
+    float: left;
+    margin-left: 96px;
+    width: 300px;
+}
+.container_imagem
+{
+    display: block;
+    float: left;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 403px;
+}
+.container_imagem.quero_candidatar
+{
+    background-image: url('/img/pacotes_bne/vendas_vip_tela_quero_me_candidatar.png');
+}
+.container_imagem.quem_me_viu
+{
+    background-image: url('/img/pacotes_bne/vendas_vip_tela_quem_me_viu.png');
+}
+.container_imagem.escolher_empresa
+{
+    background-image: url('/img/pacotes_bne/vendas_vip_escolher_empresas.png');
+}
+.container_imagem.topo_lista
+{
+    background-image: url('/img/pacotes_bne/vendas_vip_topo_da_lista.png');
+}
+.container_imagem.revisao_curriculo
+{
+    background-image: url('/img/pacotes_bne/vendas_vip_tela_revisao_cv.png');
+}
+.container_imagem.acesso_dados
+{
+    background-image: url('/img/pacotes_bne/vendas_vip_tela_dados_empresa.png');
+}
+.texto_quero_candidatar
+{
+    display: block;
+    font-size: 15px;
+    margin-top: 140px;
+    margin-left: 39px;
+}
+.texto_quem_me_viu
+{
+    display: block;
+    font-size: 15px;
+    margin-top: 140px;
+    margin-left: 39px;
+}
+.texto_escolher_empresa
+{
+    display: block;
+    font-size: 15px;
+    margin-top: 140px;
+    margin-left: 39px;
+}
+.texto_topo_lista
+{
+    display: block;
+    font-size: 15px;
+    margin-top: 178px;
+    margin-left: 39px;
+}
+.texto_revisao_curriculo
+{
+    display: block;
+    font-size: 15px;
+    margin-top: 146px;
+    margin-left: 39px;
+}
+.texto_acesso_dados
+{
+    display: block;
+    font-size: 15px;
+    margin-top: 178px;
+    margin-left: 39px;
+}
+.seta_laranja
+{
+    display: block;
+    float: left;
+    font-size: 15px;
+    background-image: url('/img/pacotes_bne/btn_seta_laranja.png');
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 25px;
+    position: relative;
+    top: -3px;
+}
+.btn_continuar_cinza
+{
+    display: block;
+    float: left;
+    margin-left: -197px;
+    margin-top: 280px;
+}

@@ -1,0 +1,297 @@
+﻿@model BNE.Web.Vagas.Models.VagaCandidatura
+
+<div id="upd_teste"></div>
+
+@if (User.Identity != null && User.Identity.IsAuthenticated)
+{
+    using (Ajax.BeginForm("Candidatar", "Vaga", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "container_candidatura_" + Model.IdentificadorVaga }))
+    {
+        @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+        <p class="btn">
+            <button class="quero_me_candidatar_vaga" name="QueroCandidatar"><i class="fa fa-file-text"></i>  Enviar Currículo</button>
+        </p>
+    }
+}
+else
+{
+    using (Html.BeginForm("Entrar", "Base", new { redirectURL = Model.URL }))
+    {
+        @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+        <p class="btn">
+            <button class="quero_me_candidatar_vaga" name="QueroCandidatar"><i class="fa fa-file-text"></i>  Enviar Currículo</button>
+        </p>
+    }
+}
+
+<div id="modalIndiqueTresAmigos" class="i3_top_container">
+    <script src="~/Scripts/jquery.mask.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/messages_pt_BR.min.js"></script>
+    <script>
+
+        function configurarValidadores() {
+
+        }
+
+        $(document).ready(function () {
+            modal.abrirModal('modalIndiqueTresAmigos');
+
+            var lft = ($(window).width() / 2) - 250;
+            $('.i3_top_container').css('left', lft);
+
+
+
+            jQuery.validator.addMethod("nomeCompleto", function (value, element) {
+                value = value.trim();
+                var patt = /[^a-zàáâäãèéêëėìíîïńòóôöõùúûüñç' ]+/i
+                return !patt.test(value);
+            }, "O nome informado é inválido.");
+
+
+            jQuery.validator.addMethod("emailValido", function (value, element) {
+                value = value.trim();
+                var patt = /^(([^<>()\[\]\.,;:\s@@\"]+(\.[^<>()\[\]\.,;:\s@@\"]+)*)|(\".+\"))@@(([^<>()[\]\.,;:\s@@\"]+\.)+[^<>()[\]\.,;:\s@@\"]{2,})$/i
+                return patt.test(value);
+            }, "O e-mail informado é inválido.");
+
+
+            jQuery.validator.classRuleSettings.i3_nme_indicado = { nomeCompleto: true, required: true };
+            //jQuery.validator.classRuleSettings.i3_fone_indicado = { celularValido: true, required: true };
+            jQuery.validator.classRuleSettings.i3_fone_indicado = { emailValido: true, required: true };
+
+
+            //$('.i3_fone_indicado').mask('(00) 0000-0000Z', {
+            //    translation: {
+            //        'Z': {
+            //            pattern: /[0-9]/, optional: true
+            //        }
+            //    }, clearIfNotMatch: true
+            //});
+
+            $('#i3_close, .i3_btn_cancel').click(function () { $('#' + latestOpenedModal).bPopup().close(); });
+            $('.i3_btn_send').click(function () {
+               // $('#i3_message_obj').hide();
+                if ($('#i3_form').valid()) {
+                    //enviarIndicacoesEmailI3();
+                }
+            });
+
+            $('#i3_form').validate();
+        });
+
+        function hasOwnPropertyI3(obj, prop) {
+            var proto = obj.__proto__ || obj.constructor.prototype;
+            return (prop in obj) &&
+                (!(prop in proto) || proto[prop] !== obj[prop]);
+        }
+
+        function postIndicados(url, ListaEnviar) {
+            $.ajax({
+                method: "POST",
+                url: "/Vaga/" + url,
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify({ Indicados: ListaEnviar })
+            })
+                .done(function (Result) {
+                    $('#i3_loading').hide();
+
+                    if (!Result.Status) {
+                        $('.i3_ipt_indic').prop("disabled", false);
+                        $('.i3_btn_cancel, .i3_btn_send').css('display', 'inline-block');
+                        $('#i3_message_obj').css('color', 'red');
+                    }
+                    else {
+                        $('#i3_message_obj').css('color', '#72992f');
+                        $('.i3_btn_ir_vagas').css('display', 'inline-block');
+                    }
+
+                    $('#i3_message_obj').html(Result.Message);
+                    $('#i3_message_obj').css('display', 'block');
+                })
+                .fail(function () {
+                    $('#i3_loading').hide();
+                    $('#i3_message_obj').css('color', 'red');
+                    $('#i3_message_obj').html('Opss, Algo deu errado! Tente novamente mais tarde.');
+                    $('#i3_message_obj').css('display', 'block');
+                    $('.i3_btn_cancel, .i3_btn_send').css('display', 'inline-block');
+                    $('.i3_ipt_indic').prop("disabled", false);
+                });
+        }
+
+        function enviarIndicacoesEmailI3() {
+            var dados = {};
+            var temRepetido = false;
+            $('.i3_nme_indicado').each(function (index) {
+                var rawEmail = $('#cel_' + $(this).attr('id')).val();
+                var objIndicado = { Nome: $(this).val().trim(), Email: rawEmail };
+
+                if (!hasOwnPropertyI3(dados, 'email_' + rawEmail))
+                    dados['email_' + rawEmail] = objIndicado;
+                else
+                    temRepetido = true;
+            });
+
+            if (temRepetido) {
+                $('#i3_loading').hide();
+                $('#i3_message_obj').css('color', 'red');
+                $('#i3_message_obj').css('display', 'block');
+                $('#i3_message_obj').html('Oops! Não vale indicar o mesmo e-mail!');
+                return;
+            }
+
+            $('.i3_btn_cancel, .i3_btn_send').hide();
+            $('#i3_message_obj').hide();
+
+            $('.i3_ipt_indic').prop("disabled", true);
+            $('#i3_loading').css('display', 'block');
+
+            var ListaEnviar = [];
+            for (var key in dados) {
+                if (dados.hasOwnProperty(key)) {
+                    ListaEnviar.push(dados[key]);
+                }
+            }
+
+            postIndicados('IndicarEmailPessoas', ListaEnviar);
+        }
+
+        function EnviarIndicacoesI3() {
+
+            var dados = {};
+            var temRepetido = false;
+            $(".i3_nme_indicado").each(function (index) {
+                var rawFone = $('#cel_' + $(this).attr('id')).cleanVal();
+                var objFone = { Nome: $(this).val().trim(), CelularDDD: rawFone.substring(0, 2), CelularNumero: rawFone.substring(2) }
+
+                if (!hasOwnPropertyI3(dados, 'fone_' + rawFone))
+                    dados['fone_' + rawFone] = objFone;
+                else
+                    temRepetido = true;
+            });
+
+            if (!temRepetido) {
+                $('.i3_btn_cancel, .i3_btn_send').hide();
+                $('#i3_message_obj').hide();
+
+                $('.i3_ipt_indic').prop("disabled", true);
+                $('#i3_loading').css('display', 'block');
+
+                var ListaEnviar = [];
+                for (var key in dados) {
+                    if (dados.hasOwnProperty(key)) {
+                        //console.log(key + " -> " + dados[key]);
+                        ListaEnviar.push(dados[key]);
+                    }
+                }
+
+                $.ajax({
+                    method: "POST",
+                    url: "/Vaga/IndicarEmailPessoas",
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ Indicados: ListaEnviar })
+                })
+                .done(function (Result) {
+                    $('#i3_loading').hide();
+
+                    if (!Result.Status) {
+                        $('.i3_ipt_indic').prop("disabled", false);
+                        $('.i3_btn_cancel, .i3_btn_send').css('display', 'inline-block');
+                        $('#i3_message_obj').css('color', 'red');
+                    }
+                    else {
+                        $('#i3_message_obj').css('color', '#72992f');
+                        $('.i3_btn_ir_vagas').css('display', 'inline-block');
+                    }
+
+                    $('#i3_message_obj').html(Result.Message);
+                    $('#i3_message_obj').css('display', 'block');
+                })
+                .fail(function () {
+                    $('#i3_loading').hide();
+                    $('#i3_message_obj').css('color', 'red');
+                    $('#i3_message_obj').html('Opss, Algo deu errado! Tente novamente mais tarde.');
+                    $('#i3_message_obj').css('display', 'block');
+                    $('.i3_btn_cancel, .i3_btn_send').css('display', 'inline-block');
+                    $('.i3_ipt_indic').prop("disabled", false);
+                });
+            }
+            else {
+                $('#i3_loading').hide();
+                $('#i3_message_obj').css('color', 'red');
+                $('#i3_message_obj').css('display', 'block');
+                $('#i3_message_obj').html('Oops! Não vale indicar o mesmo número!');
+            }
+
+           
+        }
+
+    </script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,900italic,700italic,900,700,500italic,500,300italic,400italic,300,100italic,100' rel='stylesheet' type='text/css'>
+    <link href="~/Content/ModalIndiqueTresAmigos.css" rel="stylesheet" />
+    <div class="i3_modal_container">
+        <div class="i3_panel_top">
+            <h4 class="i3_tit_modal">Indique e candidate-se :)</h4>
+            <i id="i3_close" class="fa fa-times"></i>
+        </div>
+        @using (Ajax.BeginForm("Candidatar", "Vaga", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "container_candidatura_" + Model.IdentificadorVaga }, new { @Id = "i3_form" }))
+        {
+            <div class="i3_content_dados">
+                <i class="fa fa-smile-o"></i>
+                <span class="i3_tit_chances">Quer mais chances?</span>
+                <p class="i3_txt_chances"><strong>Indique</strong> 3 amigos, e <strong>ganhe</strong> mais <strong>01 candidatura</strong>.</p>
+                <br /><br />
+                @*<div class="i3_validacao_mod"><i class="fa fa-exclamation-circle"></i> Informe um <strong>e-mail válido</strong></div>*@
+
+
+                @{
+            int qtdIndicacoes = 0;
+            int.TryParse(BNE.BLL.Parametro.RecuperaValorParametro(BNE.BLL.Enumeradores.Parametro.CampanhaIndiqueLimiteIndicacoes), out qtdIndicacoes);
+            int tb_index = 1;
+                }
+
+                @{
+            Guid guid;
+            List<Guid> lguid = new List<Guid>();
+                }
+
+                @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+
+
+                <div class="i3_form_indicar">
+                    <div class="i3_nomes_indicar">
+                        @for (int i = 0; i < qtdIndicacoes; i++)
+                        {
+                            guid = Guid.NewGuid();
+                            <div class="i3_input_group">
+                                <label class="i3_lb_inp_t">Nome<sup>*</sup></label>
+                                @Html.TextBoxFor(m => m.PessoasIndicadas[i].Nome, new { @class = "i3_ipt_indic i3_nme_indicado", @maxlength = "50" })
+                            </div>
+                        }
+                    </div>
+                    <div class="i3_fone_indicar">
+                        @for (int i = 0; i < qtdIndicacoes; i++)
+                        {
+                            <div class="i3_input_group">
+                                <label class="i3_lb_inp_t">E-mail<sup>*</sup></label>
+                                @Html.TextBoxFor(m => m.PessoasIndicadas[i].Email, new { @class = "i3_ipt_indic i3_fone_indicado", @maxlength = "60" })
+                            </div>
+                        }
+                        @Html.HiddenFor(m => m.IndicouTresAmigos, new { Value = true })
+                    </div>
+                </div>
+            </div>
+            <hr class="i3_linha">
+            <img id="i3_loading" src="~/Images/ajax-loader.gif" />
+    <div style="width:100%;text-align:center;">
+        <label id="i3_message_obj" class="i3_message">@ViewBag.Error</label>
+    </div>
+            <div class="i3_section_btn">
+                <button class="i3_btn_cancel">Não Quero!</button>
+                <button class="i3_btn_send">Indicar</button>
+                <a href="/vaga-de-emprego-na-area-a-em-a-aa/a/@Model.IdentificadorVaga" class="i3_btn_ir_vagas">Ir para a Vaga</a>
+            </div>
+        }
+    </div>
+</div>

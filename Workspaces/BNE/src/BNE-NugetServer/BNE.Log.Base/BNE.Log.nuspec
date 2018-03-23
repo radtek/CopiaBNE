@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BNE.Log.Base</id>
+    <version>1.0.1</version>
+    <title>BNE.Log.Base</title>
+    <authors>Gieyson Stelmak</authors>
+    <owners>Banco Nacional de Empregos, Gieyson Stelmak</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Projeto para log de erros dos aplicativos do BNE</description>
+    <releaseNotes>Versão inicial</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+  </metadata>
+</package>

@@ -1,0 +1,378 @@
+﻿@model PagedList.IPagedList<AdminLTE_Application.VW_EMPRESA_COM_PLANO>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Empresas
+            <small>com plano</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li class="active">Com plano</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Lista de empresas</h3>
+                    </div><!-- /.box-header -->
+
+
+
+                    <div class="box-body table-responsive">
+                        <table>
+                            <tr>
+                                <td>
+                                    @using (Html.BeginForm("Index", "EmpresaComPlano", FormMethod.Get, new { sortOrder = ViewBag.CurrentSort, SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, page = Model.PageNumber }))
+                                    {
+                                        @Html.DropDownList("PageSize", new SelectList(new Dictionary<string, int> { { "10", 10 }, { "20", 20 }, { "100", 100 } }, "Key", "Value"), new { teste = "", @class = "pro_pag_tf1", id = "pagesizelist", sortOrder = ViewBag.CurrentSort, SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, page = Model.PageNumber })
+                                        @Html.TextBox("SearchString", ViewBag.currentFilter as string)
+                                        <input type="submit" value="Filtrar" />
+                                        <input type="hidden" id="currentFilterSituacao" name="currentFilterSituacao" value="@ViewBag.currentFilterSituacao" />
+                                        <input type="hidden" id="sortOrder" name="sortOrder" value="@ViewBag.CurrentSort" />
+
+                                    }
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Todas", "Index", new { currentFilterSituacao = "X", sortOrder = ViewBag.CurrentSort, SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, page = 1 }, new { @class = "btn btn-default btn-flat", filtraAtual = ViewBag.currentFilter })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Final de prazo", "Index", new { currentFilterSituacao = "6", sortOrder = ViewBag.CurrentSort, SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, page = 1 }, new { @class = "btn btn-primary btn-flat" })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Sem atendimento", "Index", new { currentFilterSituacao = "3", sortOrder = ViewBag.CurrentSort, SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, page = 1 }, new { @class = "btn btn-danger btn-flat", filtraAtual = ViewBag.currentFilter })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Atendido", "Index", new { currentFilterSituacao = "1", sortOrder = ViewBag.CurrentSort, SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, page = 1 }, new { @class = "btn btn-warning btn-flat", filtraAtual = ViewBag.currentFilter })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Negociado", "Index", new { currentFilterSituacao = "2", sortOrder = ViewBag.CurrentSort, SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, page = 1 }, new { @class = "btn btn-success btn-flat", filtraAtual = ViewBag.currentFilter })
+                            </tr>
+                        </table>
+
+                        @{
+                            string dtUltimaAcaoClienteSort = ViewBag.dtUltimaAcaoClienteSort;
+                            string dtUltimoAtendimentoSort = ViewBag.dtUltimoAtendimentoSort;
+                            string vlrSituacaoSort = ViewBag.vlrSituacaoSort;
+                            string empresaSort = ViewBag.empresaSort;
+                            string sigUfSort = ViewBag.sigUfSort;
+                            string areaSort = ViewBag.areaSort;
+                            string cidadeSort = ViewBag.cidadeSort;
+                            string fimPlanoSort = ViewBag.fimPlanoSort;
+                            string dtaRetornoSort = ViewBag.dtaRetornoSort;
+                            string qtdAcoesSort = ViewBag.qtdAcoesSort;
+                            string qtdFuncionarios = ViewBag.qtdFuncionarios;
+                            string BoletoVencimento = ViewBag.BoletoVencimento;
+
+                        }
+                        <table id="EmpresaSemPlano" class="table table-bordered table-hover dataTable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @{
+                                            if (dtUltimoAtendimentoSort != "Ultimo Atendimento desc")
+                                            {
+                                                dtUltimoAtendimentoSort = "Ultimo Atendimento desc";
+                                            }
+                                            else
+                                            {
+                                                dtUltimoAtendimentoSort = "Ultimo Atendimento asc";
+                                            }
+                                        }
+                                        @Html.ActionLink("Ultimo Atendimento", "Index", new { SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, currentFilterSituacao = ViewBag.currentFilterSituacao, sortOrder = dtUltimoAtendimentoSort, page = 1 })
+                                    </th>
+                                    <th>
+                                        @{
+                                            if (dtUltimaAcaoClienteSort != "Ultima Ação Cliente desc")
+                                            {
+                                                dtUltimaAcaoClienteSort = "Ultima Ação Cliente desc";                                                 
+                                            }
+                                            else
+                                            {
+                                                dtUltimaAcaoClienteSort = "Ultima Ação Cliente asc";                                                
+                                            }
+                                        }
+                                        @Html.ActionLink("Ultima Ação Cliente", "Index", new { SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, currentFilterSituacao = ViewBag.currentFilterSituacao, sortOrder = dtUltimaAcaoClienteSort, page = 1 })
+                                    </th>      
+                                    <th>
+                                        @{
+                                            if (empresaSort != "Empresa desc")
+                                            {
+                                                empresaSort = "Empresa desc";
+                                            }
+                                            else
+                                            {
+                                                empresaSort = "Empresa asc";
+                                            }
+                                        }
+                                        @Html.ActionLink("Empresa", "Index", new { SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, currentFilterSituacao = ViewBag.currentFilterSituacao, sortOrder = empresaSort, page = 1 })
+                                    </th>
+                                    
+                                    <th>
+                                        @{
+                                            if (areaSort != "Area desc")
+                                            {
+                                                areaSort = "Area desc";
+                                            }
+                                            else
+                                            {
+                                                areaSort = "Area asc";
+                                            }
+                                        }
+                                        @Html.ActionLink("Area", "Index", new { SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, currentFilterSituacao = ViewBag.currentFilterSituacao, sortOrder = areaSort, page = 1 })
+                                    </th>
+                                    <th>
+                                        @{
+                                            if (cidadeSort != "Cidade desc")
+                                            {
+                                                cidadeSort = "Cidade desc";
+                                            }
+                                            else
+                                            {
+                                                cidadeSort = "Cidade asc";
+                                            }
+                                        }
+                                        @Html.ActionLink("Cidade", "Index", new { SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, currentFilterSituacao = ViewBag.currentFilterSituacao, sortOrder = cidadeSort, page = 1 })
+                                    </th>
+                                    <th>
+                                        @{
+                                            if (sigUfSort != "UF desc")
+                                            {
+                                                sigUfSort = "UF desc";
+                                            }
+                                            else
+                                            {
+                                                sigUfSort = "UF asc";
+                                            }
+                                        }
+                                        @Html.ActionLink("UF", "Index", new { SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, currentFilterSituacao = ViewBag.currentFilterSituacao, sortOrder = sigUfSort, page = 1 })
+                                    </th>
+                                    <th>
+                                        @{
+                                            if (fimPlanoSort != "Fim Plano desc")
+                                            {
+                                                fimPlanoSort = "Fim Plano desc";
+                                            }
+                                            else
+                                            {
+                                                fimPlanoSort = "Fim Plano asc";
+                                            }
+                                        }
+                                        @Html.ActionLink("Fim Plano", "Index", new { SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, currentFilterSituacao = ViewBag.currentFilterSituacao, sortOrder = fimPlanoSort, page = 1 })
+                                    </th>
+                                    <th>
+                                        @{
+                                            if (qtdAcoesSort != "Qtd de ações desc")
+                                            {
+                                                qtdAcoesSort = "Qtd de ações desc";
+                                            }
+                                            else
+                                            {
+                                                qtdAcoesSort = "Qtd de ações asc";
+                                            }
+                                        }
+                                        @Html.ActionLink("Qtd de ações", "Index", new { SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, currentFilterSituacao = ViewBag.currentFilterSituacao, sortOrder = qtdAcoesSort, page = 1 })
+                                    </th>
+                                    <th>
+                                        @{
+                                            if (qtdFuncionarios != "Num Funcionario desc")
+                                            {
+                                                qtdFuncionarios = "Num Funcionario desc";
+                                            }
+                                            else
+                                            {
+                                                qtdFuncionarios = "Num Funcionario asc";
+                                            }
+                                        }
+                                        @Html.ActionLink("Qtd Funcionarios", "index", new { reservation = ViewBag.reservation, SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, currentFilterSituacao = ViewBag.currentFilterSituacao, sortOrder = qtdFuncionarios, Page = 1 })
+                                    </th>
+                                    <th>
+                                        @{
+                                            if (BoletoVencimento != "BoletoVencimento desc")
+                                            {
+                                                BoletoVencimento = "BoletoVencimento desc";
+                                            }
+                                            else
+                                            {
+                                                BoletoVencimento = "BoletoVencimento asc";
+                                            }
+                                        }
+                                        @Html.ActionLink("Vencimento Boleto", "index", new { reservation = ViewBag.reservation, SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, currentFilterSituacao = ViewBag.currentFilterSituacao, sortOrder = BoletoVencimento, Page = 1 })
+                                    </th>
+                                    <th>
+                                        @{
+                                            if (dtaRetornoSort != "Data Retorno desc")
+                                            {
+                                                dtaRetornoSort = "Data Retorno desc";
+                                            }
+                                            else
+                                            {
+                                                dtaRetornoSort = "Data Retorno asc";
+                                            }
+                                        }
+                                        @Html.ActionLink("Data Retorno", "Index", new { SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, currentFilterSituacao = ViewBag.currentFilterSituacao, sortOrder = dtaRetornoSort, page = 1 })
+                                    </th>
+                                    <th>
+                                        @{
+                                            if (vlrSituacaoSort != "Situação desc")
+                                            {
+                                                vlrSituacaoSort = "Situação desc";
+                                            }
+                                            else
+                                            {
+                                                vlrSituacaoSort = "Situação asc";
+                                            }
+                                        }
+                                        @Html.ActionLink("Situação", "Index", new { SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, currentFilterSituacao = ViewBag.currentFilterSituacao, sortOrder = vlrSituacaoSort, page = 1 })
+                                    </th>
+                                </tr>
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Data_Ultimo_Atendimento)
+                                    </td>
+                                    @if (!(item.Data_Ultima_Acao_Site == null) && item.Data_Ultima_Acao_Site.Value.ToString("MM/dd/yyyy") == System.DateTime.Now.ToString("MM/dd/yyyy"))
+                                    {
+                                        <td bgcolor="#CEF6D8">
+                                            @Html.DisplayFor(modelItem => item.Data_Ultima_Acao_Site)
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Data_Ultima_Acao_Site)
+                                        </td>
+                                    }
+                                    <td>
+                                        @Html.ActionLink(item.Raz_Social, "Details", new { controller = "Empresa", Id = item.Num_CNPJ })
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Des_Area_BNE)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nme_Cidade)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Sig_Estado)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Dta_Fim_Plano)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Total_Acao)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.qtd_Funcionarios)
+                                    </td>
+                                    <td>
+
+                                        @if (item.dta_vencimento >= DateTime.Now.AddDays(-1) && item.dta_vencimento <= DateTime.Now.AddDays(1))
+                                        {
+                                            <div style="color:red;">@Html.DisplayFor(modelItem => item.dta_vencimento)</div>
+                                        }
+                                        else
+                                        {
+                                            @Html.DisplayFor(modelItem => item.dta_vencimento);
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Dta_Retorno)
+                                    </td>
+                                    <td>
+                                        @if (item.Idf_Atendimento == 1)
+                                        {
+                                            <span class="badge bg-yellow">Atendido @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                            <br><br>
+                                            <div class="progress xs">
+                                                <div class="progress-bar progress-bar-yellow" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                            </div>
+                                        }
+                                        @if (item.Idf_Atendimento == 2)
+                                        {
+                                            <span class="badge bg-green">Negociado @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                            <br><br>
+                                            <div class="progress xs">
+                                                <div class="progress-bar progress-bar-success" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                            </div>
+                                        }                                        @if (item.Idf_Atendimento == 3)
+                                        {
+                                            <span class="badge bg-red">Sem atendimento @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                            <br><br>
+                                            <div class="progress xs">
+                                                <div class="progress-bar progress-bar-danger" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                            </div>
+                                        }                                        @if (item.Idf_Atendimento == 4)
+                                        {
+                                            <span class="badge bg-red">Venda efetuada @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                            <br><br>
+                                            <div class="progress xs">
+                                                <div class="progress-bar progress-bar-success" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                            </div>
+                                        }
+                                        @if (item.Idf_Atendimento == 6)
+                                        {
+                                            <span class="badge bg-blue">Final de prazo @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                            <br><br>
+                                            <div class="progress xs">
+                                                <div class="progress-bar progress-bar-primary" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                            </div>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, SearchString = ViewBag.currentFilter, PageSize = Model.PageSize, currentFilterSituacao = ViewBag.currentFilterSituacao, sortOrder = ViewBag.CurrentSort }))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- /.content -->
+</aside><!-- /.right-side -->
+@Scripts.Render("~/bundles/datatables")
+<script type="text/javascript">
+
+            $(function() {
+                $('#EmpresaSemPlano').dataTable({
+                    "bPaginate": false,
+                    "bLengthChange": true,
+                    "bFilter": false,
+                    "bServerSide":false,
+                    "bSort": false,
+                    "bInfo": false,
+                    "bAutoWidth": false
+                });
+
+            });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("li").removeClass("active");
+        $("#tables").addClass("active");
+        $("#tables_menu").css("display", "block");
+        $("#tables_datatables").addClass("active");
+        $("#tables_arrow").addClass("fa-angle-down");
+    });
+</script>
+@section scripts {
+    <script type="text/javascript">
+        $('#pagesizelist').on('change', function (event) {
+            var form = $(event.target).parents('form');
+
+            form.submit();
+        });
+    </script>
+}

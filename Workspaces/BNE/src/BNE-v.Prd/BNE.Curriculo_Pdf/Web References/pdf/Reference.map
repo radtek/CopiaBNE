@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://teste.queroaumento.com.br/Service/generate_pdf_from_html.svc?singleWsdl" filename="generate_pdf_from_html.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

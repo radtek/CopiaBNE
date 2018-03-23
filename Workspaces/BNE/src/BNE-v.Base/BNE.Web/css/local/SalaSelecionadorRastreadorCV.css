@@ -1,0 +1,427 @@
+﻿p {margin-top:0;}
+
+
+/*-- .rtsUL 
+{
+	position: absolute;
+	right: 0;
+	top: 60px;*//*
+	top: 40px;
+} --*/
+
+/*- ajuste da sala selecionadora -*/
+
+.col_action_arq {width: 14%;}
+
+.col_action_arq input {margin:5px 8px;}
+
+
+.conteudo .interna { margin: 20px auto;}
+.conteudo .internaSlim
+{
+ margin-top: 20px !important;
+}
+
+.rcbSlide label{float:none;}
+
+.balao_saiba_mais{ float:left; padding-top:6px;}
+.btn_buscarbairro{ width: 20px; height:20px;}
+.abasVertical ul li
+{
+	list-style: none;
+}
+
+.painel_minha_informacao
+{
+	position: absolute;
+	right: 170px;
+	padding: 10px;
+	border: 1px solid #d3ecf9;
+	/* Bordas arredondadas */
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	display:none;
+}
+
+.nome_usuario_ss{float:left; margin-top:10px;}
+
+.nome_destaque
+{    margin:0;
+	color: #476d11;
+	font-size: 14px;
+	border-bottom: 1px solid #d9e0e9;
+	height:22px;
+    padding-bottom:18px;
+}
+
+.menu_ss {padding:25px 0; overflow:hidden;}
+
+.logo_empresa {margin-top:4px; float:right;}
+
+.col01 {width: 257px;margin:0 10px 0 10px; float:left;}
+.col02 {width: 257px;margin:0 10px 0 10px; float:left;}
+.col03 {width: 270px;margin:0 5px 0 10px; float:left;}
+.btn_col { margin-bottom:20px; cursor:pointer;}
+
+.bottom{ margin-bottom:0; cursor:pointer;}
+
+
+.titulo_texto_btn { margin:10px 0 10px 10px; height:80px}                
+                 
+/*- Modelo padrão  menor -*/
+fundo_btn_ss {width:268px;height:100px; /*.background: url('../../img/SalaSelecionadora/bg_ss_col_e.png') no-repeat;*/}
+.sombra_btn_ss {/*-width: 221px; -*/ overflow:hidden;  /*background: url('../../img/SalaSelecionadora/sombra_ss1.png') no-repeat bottom;*/}
+.sombra_btn_ss:hover {/*background: url('../../img/SalaSelecionadora/sombra_ss2.png') no-repeat bottom;*/}
+.sombra_btn_ss img { float: left; margin: 20px 15px;border:none;}
+
+/*- Modelo padrão  maior -*/
+.fundo_btn_ss_g {/*background: url('../../img/SalaSelecionadora/bg_ss_col_g.png') no-repeat;*/}
+.sombra_btn_ss_g{overflow:hidden;/*-width: 221px; -*/ /*background: url('../../img/SalaSelecionadora/sombra_ss_g1.png') no-repeat bottom;*/}
+.sombra_btn_ss_g:hover{/*background: url('../../img/SalaSelecionadora/sombra_ss_g2.png') no-repeat bottom;*/}
+.sombra_btn_ss_g img { float: left; margin: 20px 15px; border:none;}
+
+.texto_btn_ss {margin:10px;}
+            
+.tit_btn_ss {font-size:20px; font-weight:bold; color: #476d11; margin-top:10px; }
+
+.item_btn {font-size: 11px; font-weight:bold; color:#555555; line-height:15px; margin: 0;padding:0; width:235px;}
+
+.item_btn li {list-style-type:none; margin:0; padding:0;}
+
+li b {color:#476D11;}
+
+.painel_padrao_sala_selecionador
+{
+	/*- background-image: url('/img/barra_painel_fim_sala_vip.png');-*/
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	background-color: #fff;
+	padding:20px;
+	margin: 0;
+	margin-top
+	/*min-height: 445px;
+	min-height: 410px;*/
+}
+
+.botao_padrao{margin-bottom: 0;}
+.painel_padrao_topo_sala_selecionador
+{
+	background-image: url('/img/barra_painel_topo_sala_vip.png');
+	background-repeat: no-repeat;
+	background-position: left top;
+	padding: 0 0 4px;
+	display:none;
+}
+
+.btn_sala_vip_normal:link
+{
+	display: block;
+	padding-top: 7px !important;
+}
+
+.btn_sala_vip_normal:hover
+{
+	b/*ackground-image: url("/img/btn_sala_vip_hover.png") !important;*/
+	background-position: right top !important;
+	background-repeat: no-repeat !important;   
+	color: #2f60a1 !important;
+	font-weight: bold !important;
+	padding: 5px;
+}
+
+.btn_sala_vip_selecionado
+{
+	/*background-image: url("/img/btn_sala_vip_selecionado.png") !important;*/
+	color: #fff !important;
+	display: block;
+	padding-top: 7px !important;
+	height: 27px;
+	width: 150px;
+}
+
+.painel_conteudo_sala_selecionador
+{
+	margin-top: 15px;
+}
+
+/*-.uctabs_sala_selecionador
+{
+	margin: 0 auto;
+	width: 700px;
+}-*/
+
+.RadGrid_Office2007 .rgHeader:first-child, .RadGrid_Office2007 th.rgResizeCol:first-child, .RadGrid_Office2007 .rgFilterRow > td:first-child, .RadGrid_Office2007 .rgRow > td:first-child, .RadGrid_Office2007 .rgAltRow > td:first-child
+{
+	width: 100px;
+}
+
+.RadGrid_Office2007 .rgHeader, .RadGrid_Office2007 th.rgResizeCol 
+{
+	width: 120px;
+}
+
+.rgHeader.candidato_codigo
+{
+	width: 100px;
+}
+
+.rgHeader.mensagem
+{
+	width: 100px;
+}
+
+.rgHeader.forma_envio
+{
+	width: 90px;
+}
+
+.gridview_padrao
+{
+	margin-top: 15px;
+    width: 100% !important;
+}
+
+.RadGrid_Office2007, .RadGrid_Office2007 .rgMasterTable, .RadGrid_Office2007 .rgDetailTable, .RadGrid_Office2007 .rgGroupPanel table, .RadGrid_Office2007 .rgCommandRow table, .RadGrid_Office2007 .rgEditForm table, .RadGrid_Office2007 .rgPager table, .GridToolTip_Office2007
+{
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 12px;
+}
+
+.RadGrid_Office2007 .rgRow a, .RadGrid_Office2007 .rgAltRow a, .RadGrid_Office2007 .rgEditRow a, .RadGrid_Office2007 .rgFooter a, .RadGrid_Office2007 .rgEditForm a
+{
+	color: #1E3260 !important;
+}
+
+/*--- .RadGrid_Office2007 .rgHeader, .RadGrid_Office2007 .rgHeader a
+{
+	color: #1E3260 !important;
+} ---*/
+
+.tabela_arvore
+{
+	width: 100%;
+	border-left: 1px solid #D3ECF9;
+	border-top: 1px solid #D3ECF9;
+	border-right: 1px solid #D3ECF9;
+}
+
+.tabela_arvore .icone_mais
+{
+	width: 15px;
+}
+.tabela_arvore .checkbox
+{
+	width: 20px;
+}
+
+.tabela_arvore .descricao_funcao
+{
+	font-weight: bold;
+	padding-left: 3px;
+}
+
+.tabela_arvore .informacao_vaga
+{
+	background-color: #D3ECF9;
+	color: #1E3260;
+}
+
+.painel_aviso_selecionador
+{
+	background-color: #E4F0F6;
+	border: 1px solid #fff;
+	padding-bottom:6px;
+	padding-left:5px;
+	padding-top:5px;
+	width:380px;
+	display: inline-block;
+}
+
+.painel_pesquisa_rastreador_esquerda .label_principal,
+.painel_pesquisa_rastreador_direita .label_principal
+{
+	width: 70px !important;
+}
+
+.linha.imagem_bairro div div
+{
+	display: inline !important;
+	vertical-align: top;
+}
+
+.label_principal.modal
+{
+	width: 140px !important;
+}
+
+.label_principal.bold
+{
+	font-weight: bold;
+}
+
+.painel_pesquisa_rastreador
+{
+	border: 1px solid #d3ecf9;
+	/* Bordas arredondadas */
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	margin: 0 auto;
+	width: 700px;
+}
+
+.painel_pesquisa_rastreador_esquerda
+{
+	float: left;
+	margin-right: 20px;
+}
+
+.painel_pesquisa_rastreador_direita
+{
+	display: inline-block;
+}
+
+.container_campo span
+{
+	display: inline-block;
+}
+
+.campo_pesquisa_salarial
+{
+	width: 151px;
+}
+
+.painel_destaque_padrao.presidente
+{
+	padding-top: 0;
+	padding-bottom: 0;
+	width: 100%;
+}
+
+.painel_destaque_padrao.plano_venda
+{
+	margin-top: 0;
+	padding-left: 34%;
+	width: 581px;
+}
+
+.container_campo.mensagem span
+{
+	width: 340px;
+}
+
+.titulo_ligue_bne
+{
+	position: absolute;
+	/*margin-top: 133px;*/
+	bottom: 1px;
+}
+
+.alinhar_painel_destaque_padrao.presidente
+{
+	vertical-align: top;
+}
+
+/*
+.painel_pessoa_fisica
+{
+
+}*/
+
+.texto_doutor_pessoa_fisica
+{
+	margin: 0 auto;
+	text-align: justify;
+	width: 540px;
+	margin-right: 15px;
+}
+
+.texto_doutor_pessoa_juridica
+{
+	margin: 0 auto;
+	text-align: justify;
+	width: 540px;
+	margin-right: 15px;
+}
+
+.alinhar_rodape
+{
+	width: 710px;
+}
+
+.radio_alinhar label
+{
+	float: none;
+}
+
+.painel_botoes.plano_venda
+{
+	margin-top: 0;
+	margin-bottom: -15px;
+}
+
+.centro_modal_sala_selecionadora_plano_venda
+{
+	display: block;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+
+.titulo_modal_plano_venda
+{
+	margin-top: 2px;
+}
+
+
+.painel_modal_plano_venda
+{
+	border: 1px solid #d3ecf9;
+	/* Bordas arredondadas */
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	width: 860px;
+	margin: 0 auto;
+	margin-bottom: 5px;
+}
+
+.img_cartoes
+{
+	text-align: center;
+	margin-top: 30px;
+	height: 120px;
+}
+
+.painel_quantidade_cv
+{
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+/*.rgRow td{width:auto - !important;}-*/
+
+.codigo{ width: 10% !important;}
+.descricao_vaga2{ width: 30%;}
+.cidade { width: 16%;}
+.cv_recebida{ width: 16%;}
+
+.col_action { text-align:center; width:11%;}
+
+.col_action input {margin:5px 6px;}
+
+.mensagem_nodata {padding: 30px 0 !important;text-align:center !important;}
+
+.gridview_padrao th.rgHeader {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 0;
+    text-align: center;
+    color:Black;
+}
+
+
+.gridview_padrao tr { font-size:11px;}
+.titulo_uctabs {height: auto;}
+.no_margin{margin-left:30px; width:auto;}

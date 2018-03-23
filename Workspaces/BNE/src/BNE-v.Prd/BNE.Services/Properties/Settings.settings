@@ -1,0 +1,333 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BNE.Services.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PessoaFisicaFotoChave" Type="System.Guid" Scope="Application">
+      <Value Profile="(Default)">0c088ab7-ae45-40a6-9736-cf344d801aa4</Value>
+    </Setting>
+    <Setting Name="DiretorioAplicacao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Employer-TFS36\BNE\BNE\BNE-v.Dev\BNE.Web</Value>
+    </Setting>
+    <Setting Name="SubDiretorioFoto" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/ArquivosTemporarios/ErroFotoTemp</Value>
+    </Setting>
+    <Setting Name="AtualizarCurriculoHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:00</Value>
+    </Setting>
+    <Setting Name="AtualizarCurriculoDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="ArquivarVagaHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:00</Value>
+    </Setting>
+    <Setting Name="AtualizarPlanoHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:00</Value>
+    </Setting>
+    <Setting Name="EmissaoBoletoAntesTerminoPlanoHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:00</Value>
+    </Setting>
+    <Setting Name="EmissaoBoletoAposTerminoPlanoHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:00</Value>
+    </Setting>
+    <Setting Name="AtualizarEmpresaDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="EnviarConviteCandidatoPorMSNHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">02:00</Value>
+    </Setting>
+    <Setting Name="EnviarConviteCandidatoPorMSNDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="RastreadorCurriculoMinutoExecucao" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="RastreadorCurriculoDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">60</Value>
+    </Setting>
+    <Setting Name="EnvioVagasEmMassaDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">90</Value>
+    </Setting>
+    <Setting Name="RastreadorVagasDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">60</Value>
+    </Setting>
+    <Setting Name="ArquivarVagaDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="AtualizarPlanoDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="EmissaoBoletoAntesTerminoPlanoDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="EmissaoBoletoAposTerminoPlanoDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="AbandonoCompraDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="AtualizarEmpresaHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">02:00</Value>
+    </Setting>
+    <Setting Name="EnvioEmailBoasVindasSiteTrabalheConoscoDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="EnvioEmailBoasVindasSiteTrabalheConoscoHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">00:01</Value>
+    </Setting>
+    <Setting Name="BNE_Services_BNE_BuscarCurriculo_BuscarCurriculo" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://webservicesteste.bne.com.br/BuscarCurriculo.asmx</Value>
+    </Setting>
+    <Setting Name="BNE_Services_wsTransacao_wsTRANSACAO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wshomglobal.webfopag.com.br/wstransacao.asmx</Value>
+    </Setting>
+    <Setting Name="LogName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BNE</Value>
+    </Setting>
+    <Setting Name="EnviarConviteAdicionarMSNHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:00</Value>
+    </Setting>
+    <Setting Name="EnviarCurriculoHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:00</Value>
+    </Setting>
+    <Setting Name="EnviarCurriculoDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="AtualizarCurriculoForaFaixaDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10080</Value>
+    </Setting>
+    <Setting Name="EnvioEmailDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="AtualizaSitemapExecutarNoStart" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AbandonoCompraHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:00</Value>
+    </Setting>
+    <Setting Name="EnvioSMSSemanalDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="EnvioEmailHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:00</Value>
+    </Setting>
+    <Setting Name="BNESmtpAccount" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">noreplybne</Value>
+    </Setting>
+    <Setting Name="BNESmtpPass" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0slo20sp029s</Value>
+    </Setting>
+    <Setting Name="BNESmtAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">200.193.137.46</Value>
+    </Setting>
+    <Setting Name="AtualizaSitemapSiteTrabalheConoscoDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="AtualizaSitemapSiteTrabalheConoscoHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">16:15</Value>
+    </Setting>
+    <Setting Name="EnvioSMSSemanalHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">09:26</Value>
+    </Setting>
+    <Setting Name="EnvioVagasEmMassaHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">02:00</Value>
+    </Setting>
+    <Setting Name="AtualizarCurriculoForaFaixaHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">14:25</Value>
+    </Setting>
+    <Setting Name="EmailVagaFacilDelayMinutosEnvio" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="EmailVagaFacilDelayMinutosRetorno" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="InativarCurriculoHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">00:05</Value>
+    </Setting>
+    <Setting Name="InativarCurriculoDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="BuscaCoordenadasDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="BuscaCoordenadasLimiteRequisicoes" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="IntegrarVagasInicioJanelaExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">14:30</Value>
+    </Setting>
+    <Setting Name="IntegrarVagasDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="BNE_Services_wsPessoaFisicaFoto_wsPessoaFisicaFoto" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://dev.meusalariohoje.com.br/WebServices/wsPessoaFisicaFoto.asmx</Value>
+    </Setting>
+    <Setting Name="IntegracaoWebfopagDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="EnvioR1ParaVagasPoucasCandidaturasHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">08:00</Value>
+    </Setting>
+    <Setting Name="EnvioR1ParaVagasPoucasCandidaturasDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="AlertaJornalVagasHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">06:00</Value>
+    </Setting>
+    <Setting Name="AlertaJornalVagasSMTPServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">smtp.mandrillapp.com</Value>
+    </Setting>
+    <Setting Name="AlertaJornalVagasSMTPPort" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">587</Value>
+    </Setting>
+    <Setting Name="AlertaJornalVagasSMTPAccount" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">google@bne.com.br</Value>
+    </Setting>
+    <Setting Name="AlertaJornalVagasSMTPPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">b4wkj7VqpPjoyAhutn4VVQ</Value>
+    </Setting>
+    <Setting Name="EnvioEmailMailingDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="EnvioEmailMailingSMTPServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">smtp.mandrillapp.com</Value>
+    </Setting>
+    <Setting Name="EnvioEmailMailingSMTPPort" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">587</Value>
+    </Setting>
+    <Setting Name="EnvioEmailMailingSMTPAccount" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">google@bne.com.br</Value>
+    </Setting>
+    <Setting Name="UploadFotoErroDelayMinutos" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">60</Value>
+    </Setting>
+    <Setting Name="BNE_Web_wsTransacao_wsTRANSACAO" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://wshomglobal.webfopag.com.br/wstransacao.asmx </Value>
+    </Setting>
+    <Setting Name="EnvioEmailMailingSMTPPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">b4wkj7VqpPjoyAhutn4VVQ</Value>
+    </Setting>
+    <Setting Name="AlertaJornalVagasDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="DestravaSMSPlanoEmployerHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">08:00</Value>
+    </Setting>
+    <Setting Name="DestravaSMSPlanoEmployerDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="DestravaSMSPlanoEmployerDiaExecucao" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="OperadoraCelularHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">21:00</Value>
+    </Setting>
+    <Setting Name="OperadoraCelularDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="ControleParcelasDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="ControleParcelasHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:30</Value>
+    </Setting>
+    <Setting Name="EmailsInvalidosHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">19:00</Value>
+    </Setting>
+    <Setting Name="EmailsInvalidosDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="IntegrarVagasFimJanelaExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">23:59:59</Value>
+    </Setting>
+    <Setting Name="EmailFiliaisHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">08:00</Value>
+    </Setting>
+    <Setting Name="EmailFiliaisDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="EnviarEmailAlertaExperienciaProfissionalHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:00</Value>
+    </Setting>
+    <Setting Name="EnviarEmailAlertaExperienciaProfissionalDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="EnvioSMSEmpresasHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10:00</Value>
+    </Setting>
+    <Setting Name="EnviarEmailAlertaMensalFilialHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">08:00</Value>
+    </Setting>
+    <Setting Name="EnviarEmailAlertaMensalFilialDiaExecucao" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ControleParcelasRemetente" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">kassiasilveira@bne.com.br</Value>
+    </Setting>
+    <Setting Name="ControleParcelasConsiderarData" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ControleFinanceiroDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="CartaoCreditoDiasAtraso" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="PeriodoListagemCartaoCreditoDiasAtraso" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="EnvioSMSEmailEmpresasCvsNaoVistosHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">13:30</Value>
+    </Setting>
+    <Setting Name="EnviarEmailConfirmacaoCandidaturaHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">18:00</Value>
+    </Setting>
+    <Setting Name="EnviarEmailConfirmacaoCandidaturaDelay" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="EnvioSMSParceirosLANExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">03:00</Value>
+    </Setting>
+    <Setting Name="EnvioSMSParceirosInicioExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">18:00</Value>
+    </Setting>
+    <Setting Name="EnviarEmailOportunidadeHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:00</Value>
+    </Setting>
+    <Setting Name="EnviarEmailOportunidadeDelay" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="EnvioSMSEmailEmpresasCvsNaoVistosDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="EnviarCampanhaHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">06:00</Value>
+    </Setting>
+    <Setting Name="EnviarCampanhaDelay" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="AtualizarSitemapHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">22:00</Value>
+    </Setting>
+    <Setting Name="SiteMapsUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://www.bne.com.br</Value>
+    </Setting>
+    <Setting Name="EnvioEmailParaSMSNaoRecebidaHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:00</Value>
+    </Setting>
+    <Setting Name="EnvioEmailParaSMSNaoRecebidaDelay" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="EnvioBoletoAntesDeVencerPlanoHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">00:30</Value>
+    </Setting>
+    <Setting Name="EnvioBoletoAntesDeVencerPlanoDelay" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+    <Setting Name="CIACarrinhoAbandonadoHoraExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:20</Value>
+    </Setting>
+    <Setting Name="CIACarrinhoAbandonadoDelayMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1440</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

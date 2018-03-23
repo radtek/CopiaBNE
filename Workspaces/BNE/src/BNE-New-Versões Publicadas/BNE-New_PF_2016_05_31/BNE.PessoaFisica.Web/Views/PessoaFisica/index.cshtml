@@ -1,0 +1,11 @@
+﻿@using System.Web.Optimization;
+@using BNE.Core.Common;
+@model BNE.PessoaFisica.Web.Models.PessoaFisica
+
+@section scripts {
+    @Scripts.Render("~/bundles/pessoa-fisica")
+    }
+
+<div class="container" id="etapa">
+    @Html.Partial("_CadastroEtapa1", Model)
+</div>

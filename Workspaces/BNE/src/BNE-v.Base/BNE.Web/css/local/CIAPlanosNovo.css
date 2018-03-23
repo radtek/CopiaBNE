@@ -1,0 +1,152 @@
+﻿body { font-family: Arial,Helvetica,sans-serif !important; }
+.painel_padrao { margin-bottom: 0px; overflow: auto; }
+h1 .destaque { color: #00678C; }
+.conteudo { margin-top: 0px !important; }
+/*.interna {margin-top: 130px!important;}*/
+.hidden { display: none; }
+.containerSlogan { /*background-image: url('/img/pacotes_cia/etiqueta_slogan.png');*/ background-repeat: no-repeat; color: #033061; display: block; font-size: 20px; font-weight: bold; height: 51px; margin-left: 18px; margin-top: 10px; width: 850px; }
+.containerPlanos { margin-left: 15px; margin-right: 15px; }
+.containerPlano { -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-box-shadow: 0 2px 10px 3px #ddd; box-shadow: 0 2px 10px 3px #ddd; float: left; height: 397px; width: 195px; cursor: pointer; margin-right: 15px; }
+    .containerPlano.escolhido { border: 8px solid #EC882F; border-radius: 10px; margin-left: -8px; margin-top: -8px; margin-right: 7px; }
+    .containerPlano .topo { -webkit-border-top-left-radius: 5px; -webkit-border-top-right-radius: 5px; -moz-border-radius-topleft: 5px; -moz-border-radius-topright: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; background-color: #f4f7f8; background: #f4f7f8; /* Old browsers */ background: -moz-linear-gradient(top, #f4f7f8 0%, #fbfbfc 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f7f8), color-stop(100%,#fbfbfc)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #f4f7f8 0%,#fbfbfc 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #f4f7f8 0%,#fbfbfc 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #f4f7f8 0%,#fbfbfc 100%); /* IE10+ */ background: linear-gradient(to bottom, #f4f7f8 0%,#fbfbfc 100%); /* W3C */ border-bottom: 1px solid #ddd; display: table-cell; filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f7f8', endColorstr='#fbfbfc',GradientType=0 ); /* IE6-9 */ font-size: 22px; font-weight: bold; height: 79px; text-align: center; vertical-align: middle; width: 195px; }
+    .containerPlano .metricas { border-bottom: 1px solid #ddd; height: 130px; color: #666; padding: 12px 15px 0 32px; font-size: 11px; }
+    .containerPlano.customizado .btnComprarVerde { clear: both; background-color: yellow; }
+.strong { font-size: 13px; font-weight: bold; }
+.topoBasicAnualMensalMetricas { color: #666; display: table-cell; font-size: 11px; height: 130px; margin-left: 32px; margin-top: 12px; text-align: left; position: absolute; vertical-align: middle; width: 140px; }
+.containerchecked { background-image: url('/img/pacotes_cia/ciaPlanos/iconChecked.png'); background-repeat: no-repeat; /*display: table-cell;*/ /*float:left;*/ height: 28px; margin-left: -15px; margin-top: 3px; position: absolute; /*vertical-align:middle;*/ width: 20px; }
+.metrica_1 { display: table-cell; margin-left: 10px; vertical-align: middle; }
+.footerBasicAnualMensal { -webkit-border-bottom-right-radius: 5px; -webkit-border-bottom-left-radius: 5px; -moz-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: #e5eaeb; background: #e5eaeb; /* Old browsers */ background: -moz-linear-gradient(top, #e5eaeb 0%, #f3f7f8 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5eaeb), color-stop(100%,#f3f7f8)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #e5eaeb 0%,#f3f7f8 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #e5eaeb 0%,#f3f7f8 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #e5eaeb 0%,#f3f7f8 100%); /* IE10+ */ background: linear-gradient(to bottom, #e5eaeb 0%,#f3f7f8 100%); /* W3C */ /*border-bottom:1px solid #ddd;
+    border-radius:10px;*/ display: table-cell; filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5eaeb', endColorstr='#f3f7f8',GradientType=0 ); /* IE6-9 */ font-size: 10px; font-weight: bold; height: 174px; text-align: center; vertical-align: middle; width: 195px; }
+.containerPrecos { }
+.footerBasicAnualMensal { text-align: left; }
+.deSemDesconto { color: rgb(128, 128, 128); font-size: 18px; line-height: 10px; text-decoration: line-through; }
+.deDesconto { color: #000; font-family: helvetica; font-size: 40px; font-weight: normal; line-height: 10px; /*text-decoration: line-through;*/ }
+.precoSemDesconto { margin-left: 53px; margin-top: 3px; }
+.precoDesconto { margin-left: 54px; margin-top: 19px; }
+.formataPorMesSemDesconto { color: rgb(128, 128, 128); font-size: 9px; line-height: 5px; /*text-decoration: line-through;*/ }
+formataPorMesDesconto { color: rgb(128, 128, 128); font-size: 9px; line-height: 5px; /*text-decoration: line-through;*/ }
+.footerBasicAnualMensal { }
+.containerButtons { width: 195px; margin: 0 auto; text-align: center; padding: 15px 0; line-height: 27px; }
+.buttonStyleOrange { background-color: rgb(238,155,75); border: 1px solid #F8AE22; border-radius: 4px; color: #fff; height: 25px; position: inherit; vertical-align: middle; width: 87px; font-weight: bold; background-image: -ms-linear-gradient( 90deg, rgb(234,114,17) 0%, rgb(238,155,75) 100%); font-size: 13px; display: inline; padding: 5px; }
+.containerPlano.escolhido .buttonStyleOrange { display: none; }
+.buttonStyleGreen { background-color: rgb(61,148,66); border: 1px solid #fff; border-radius: 4px; color: #fff; cursor: pointer; font-size: 10px; height: 32px; margin-left: 0; margin-top: 20px; position: inherit; vertical-align: middle; width: 115px; font-weight: bold; background-image: -ms-linear-gradient( 90deg, rgb(61,148,66) 0%, rgb(110,187,69) 100%); font-size: 10px; display: none; padding: 8px 5px; }
+.containerPlano.escolhido .buttonStyleGreen { display: inline; }
+.labelEconomize20 { background-color: #cfd3d1; border-right: 2px dotted #fff; color: rgb(128, 128, 128); height: 27px; font-style: italic; margin-left: 8px; padding-top: 3px; text-align: center; vertical-align: middle; width: 65px; float: left; line-height: 12px; }
+.enfatizaTexto { color: #808080; font-size: 10px; font-weight: normal; }
+.enfatizaTextoPlus { color: #4f5253; }
+.diagramacaoTexto { color: #4f5253; }
+.containerEtiquetaAnual { background-image: url('/img/pacotes_cia/ciaPlanos/etiquetaAnual.png'); background-repeat: no-repeat; display: block; /*float:left;*/ height: 68px; margin-left: -1px; margin-top: -21px; position: absolute; width: 68px; }
+.labelMaisVendido { font-size: 34px; color: rgb(255,255,255); display: table-cell; font-weight: bold; text-transform: uppercase; height: 56px; line-height: 1.002; margin-left: -45px; margin-top: -24px; position: absolute; text-align: right; text-shadow: 0px 0px 0px rgb( 4, 1, 5 ); -moz-transform: matrix( 0.21536031624017,-0.2112907373445,0.21536031624017,0.2112907373445,0,0); -webkit-transform: matrix( 0.21536031624017,-0.2112907373445,0.21536031624017,0.2112907373445,0,0); width: 122px; -ms-transform: matrix( 0.21536031624017,-0.2112907373445,0.21536031624017,0.2112907373445,0,0); }
+.containerTodosPlanos { /*background-color:yellow;*/ color: #033061; float: left; margin-left: 38px; margin-top: 115px; width: 170px; }
+.TodosPlanosTitulo { color: #033061; display: table-cell; font-family: Arial, Helvetica, sans-serif !important; font-weight: 900; margin-left: 10px; vertical-align: middle; }
+.containerIcons { display: table-cell; margin-left: 10px; vertical-align: middle; }
+.containerIconBorder { border-bottom: 1px solid #ddd; border-top: 1px solid #ddd; line-height: 39px; height: 40px; padding-left: 11px; width: 180px; }
+.ajusteBorderBottom { line-height: 15px !important; padding-top: 10px; }
+.iconTodosPlanos1 { background-image: url('/img/pacotes_cia/ciaPlanos/iconIlimitado.png'); background-repeat: no-repeat; /*display: table-cell;*/ /*float:left;*/ height: 40px; margin-left: -33px; margin-top: 10px; position: absolute; /*vertical-align:middle;*/ width: 40px; }
+.iconTodosPlanos2 { background-image: url('/img/pacotes_cia/ciaPlanos/iconFiltro.png'); background-repeat: no-repeat; /*display: table-cell;*/ /*float:left;*/ height: 40px; margin-left: -31px; margin-top: 10px;; position: absolute; /*vertical-align:middle;*/ width: 40px; }
+.iconTodosPlanos3 { background-image: url('/img/pacotes_cia/ciaPlanos/iconComparativos.png'); background-repeat: no-repeat; /*display: table-cell;*/ /*float:left;*/ height: 40px; margin-left: -31px; margin-top: 10px; position: absolute; /*vertical-align:middle;*/ width: 40px; }
+.iconTodosPlanos4 { background-image: url('/img/pacotes_cia/ciaPlanos/iconCurriculos.png'); background-repeat: no-repeat; /*display: table-cell;*/ /*float:left;*/ height: 40px; margin-left: -28px; margin-top: 5px; position: absolute; /*vertical-align:middle;*/ width: 40px; }
+.containerEtiqueta { height: 330px; margin-left: 80px; margin-top: -13px; width: 750px; }
+.container_prePago { background-image: url('/img/pacotes_cia/etiqueta_1.png'); background-repeat: no-repeat; display: inline-block; float: left; height: 330px; margin-left: 0px; margin-top: 0px; width: 152px; }
+    .container_prePago .prepago { margin-left: 54px; margin-top: 140px; position: relative; height: 190px; width: 200px; }
+    .container_prePago .radiobutton_padrao { margin-left: 59px; }
+.containerTresMeses { background-image: url('/img/pacotes_cia/etiqueta_2.png'); background-repeat: no-repeat; display: inline-block; float: left; height: 330px; margin-left: 98px; margin-top: 0px; width: 166px; }
+    .containerTresMeses .trimestral { margin-left: 40px; margin-top: 132px; position: relative; height: 198px; width: 200px; }
+    .containerTresMeses .radiobutton_padrao { margin-left: 74px; }
+.containerDozeMeses { background-image: url('/img/pacotes_cia/etiqueta_3.png'); background-repeat: no-repeat; display: inline-block; float: left; height: 330px; margin-left: 118px; margin-top: 0px; width: 171px; }
+    .containerDozeMeses .anual { margin-left: 39px; margin-top: 128px; position: relative; height: 202px; width: 200px; }
+    .containerDozeMeses .radiobutton_padrao { margin-left: 78px; }
+.radiobutton_padrao label { float: none; }
+.container_preco { display: block; position: absolute; }
+.MesesDe { color: #808080; font-size: 22px; text-decoration: line-through; }
+.prePago_por { color: #000; font-size: 26px; font-weight: bold; }
+.tresMesesPor { color: #000; font-size: 26px; font-weight: bold; margin-left: 0px; margin-top: 11px; }
+.dozeMesesPor { color: #000; font-size: 26px; font-weight: bold; margin-left: 0px; margin-top: 11px; }
+.prePago_curriculo { font-size: 18px; font-weight: bold; margin-left: -27px; margin-top: 22px; }
+.prePago_chameFacil { font-size: 18px; font-weight: bold; margin-left: 48px; margin-top: -25px; }
+.tresMesesFacil { font-size: 18px; font-weight: bold; margin-left: 73px; margin-top: 24px; }
+.dozeMesesFacil { font-size: 18px; font-weight: bold; margin-left: 73px; margin-top: 22px; }
+.btn_cinza { display: block; background-image: url("/img/pacotes_cia/btn_continuar_cinzab.png"); background-repeat: no-repeat; width: 253px; height: 70px; }
+
+.complementaTextbox { width: 140px; vertical-align: middle; }
+.containerIsenrirCupom { padding: 9px 0 0 35px; background-color: #EEE; -webkit-border-radius: 7px; border: 2px solid #F8AE22; border-radius: 7px; display: inline-block; float: left; height: 39px; margin-left: -115px; margin-top: 0px; width: 338px; padding-left: 10px; }
+.buttonStyle { border: 1px solid #F8AE22; border-radius: 4px; cursor: pointer; height: 25px; vertical-align: middle; }
+    .buttonStyle:hover, .buttonStyle:active { color: #B26500; }
+.prePago_prazo { padding: 4px 0 4px 22px; }
+.tresMesesPrazo { padding: 4px 0 4px 22px; }
+.dozeMesesPrazo { padding: 4px 0 4px 22px; }
+.container_controles { display: inline-block; float: left; margin-left: 265px; margin-top: 10px; width: 600px; }
+.container_codigocredito { display: inline-block; margin-left: -153px; margin-right: 0px; margin-bottom: 6px; }
+/*.btnComprarVerde{ color: #000; display: inline-block;float:right;height:67px;margin-left:-10px; margin-top:-8px;width:200px;}*/
+.btnComprarVerde { display: block; margin-left: -10px; margin-top: 10px; background-image: url("/img/pacotes_cia/ciaPlanos/btnVerdeComprar.png"); background-repeat: no-repeat; width: 200px; height: 66px; line-height: 20px; }
+.label_verde_continuar { color: #fff; display: block; font-size: 25px; margin-left: 25px; padding-top: 20px; position: relative; text-shadow: 2px 2px #4f5253; float: left; }
+.formataLabelBtnComprar { }
+.divAlinhaCheckBoxContrato { width: 232px; height: 14px; position: absolute; display: block; margin-top: 73px; margin-left: 267px; }
+.contrato { color: #888; font-size: 10px !important; margin-left: 107px; margin-top: -46px; width: 270px; }
+.pnlContrato { margin-top: 50px; }
+.pnlPrazo { margin-top: 20px; margin-left: 37px; }
+.containerSloganTelefone { color: rgb(102, 102, 102); font-size: 13px; font-weight: bold; text-align: left; overflow: overlay; line-height: 33px; clear: both; padding-top: 40px; }
+    .containerSloganTelefone div { float: left; margin-left: 5px; font-size: 17px; }
+.phone { color: #0c3e56; font-family: Arial; font-size: 1.4em; font-weight: bolder; display: table; }
+    .phone div { display: table-row; }
+        .phone div.phonecell { display: table-cell; vertical-align: middle; text-align: right; }
+.container-continuar-customizado { clear: both; padding-top: 75px; }
+    .container-continuar-customizado .btnComprarVerde { margin: 0 auto; }
+.dropdown-plano { width: 100px; }
+span.checkbox_text_right input[type='checkbox'] { float: left; }
+span.checkbox_text_right { display: inline-block; }
+.textarea_padrao { width: 130px; height: 60px; max-height: 60px; }
+.containerPlano.customizado .metricas { padding: 12px 15px 0 20px; }
+.containerPlano.plano1 .precoDesconto { margin-top: 57px; }
+.venda-cia-div49939200 { position: fixed; left: 0px; top: 50%; margin-top: -95px; }
+.balloon { background-image: url(img/atendimento-online/balloon.png); background-repeat: no-repeat; left: 4px; position: absolute; top: 19px; width: 200px; height: 100px; }
+.estilodecaracterenormal { font-family: verdana; font-size: 15px; display: block; color: #fff; padding-top: 84px; }
+.container-fa-adjust-online { border-radius: 38%; position: absolute; right: 98px !important; text-align: center; bottom: 220px; width: 100px; }
+.fa-adjust-online { margin-right: 0px !important; display: inline-block; width: 1em; height: 1em; line-height: 1em; vertical-align: middle; }
+.btn-atendimentoOnline { background: #3498db; background-image: -webkit-linear-gradient(top,#3498db,#2980b9); background-image: -moz-linear-gradient(top,#3498db,#2980b9); background-image: -ms-linear-gradient(top,#3498db,#2980b9); background-image: -o-linear-gradient(top,#3498db,#2980b9); background-image: linear-gradient(to bottom,#3498db,#2980b9); -webkit-border-radius: 5; -moz-border-radius: 5; border-radius: 5px; -webkit-box-shadow: 0 1px 3px silver; -moz-box-shadow: 5px 5px 28px silver; box-shadow: -5px 5px 28px #666; font-family: Arial; color: #fff; font-size: 16px; padding: 20px 15px 13px 20px; text-decoration: none; }
+    .btn-atendimentoOnline:hover { background: #3cb0fd; background-image: -webkit-linear-gradient(top,#3cb0fd,#3498db); background-image: -moz-linear-gradient(top,#3cb0fd,#3498db); background-image: -ms-linear-gradient(top,#3cb0fd,#3498db); background-image: -o-linear-gradient(top,#3cb0fd,#3498db); background-image: linear-gradient(to bottom,#3cb0fd,#3498db); text-decoration: none; }
+.containerNosLigamos { display: block; position: fixed; right: 0; bottom: 215px; }
+.modal-size { width: 400px !important; }
+.input-group-adjust { height: 36px; padding-left: 10px !important; font-size: 21px; }
+.painel_login_padrao input, textarea, .uneditable-input { width: 200px; /* hack bootstrap*/ }
+.plan-table input[type=text] { width: 90px; }
+.plan-table div.plano-customizado { border: 2px #999 solid; height: 150px; }
+    .plan-table div.plano-customizado:first-child span:first-child { font-size: 20px; line-height: normal; }
+.plan-table div.plano-customizado { font-size: 85% !important; }
+.plan-table { font-family: "Trebuchet MS", Verdana, sans-serif; }
+    .plan-table div span:first-child { text-align: right; }
+    .plan-table div:first-child span:first-child { border-radius: 5px 5px 0 0; font-size: 30px; font-weight: bolder; line-height: 40px; }
+    .plan-table div:first-child span { line-height: normal; min-height: 80px; }
+        .plan-table div:first-child span small { text-shadow: none; color: #999; }
+    .plan-table div span:nth-child(4) { background: #7aa037; border-bottom: 1px solid #6f8f37; color: #fff; }
+    .plan-table div:first-child span:nth-child(4) { border-radius: 5px 5px 0 0; padding-top: 30px; margin-top: -10px; }
+        .plan-table div:first-child span:nth-child(4) small { color: #fff; }
+    .plan-table div span { line-height: 60px; float: left; text-align: center; border-bottom: 1px solid #ccc; min-height: 60px; width: 150px; min-width: 40px; padding: 20px 10px; font-size: 12px; display: inline-block; font-size: 18px; color: #a7a7a7; }
+        .plan-table div span strong { display: block; font-size: 30px; }
+        .plan-table div span a { color: #a7a7a7; }
+        .plan-table div span:nth-child(4) a { color: #fff; }
+    .plan-table div { clear: both; }
+        .plan-table div:nth-last-child(2) span { border-bottom: none !important; }
+            .plan-table div:nth-last-child(2) span:first-child { border-radius: 0 0 5px 5px; }
+            .plan-table div:nth-last-child(2) span:nth-child(4) { border-radius: 0 0 5px 5px; }
+        .plan-table div span:first-child { background: #eee; font-size: 13px; font-weight: bolder; padding: 40px 10px 0px 15px; line-height: normal; }
+        .plan-table div span .fa-check { display: block; height: 15px; width: 15px; margin: 0 auto; }
+        .plan-table div span .fa-times { display: block; height: 15px; width: 15px; margin: 0 auto; }
+        .plan-table div span i { margin-top: 25px !important; }
+    .plan-table .block-bts span { background: none !important; border-bottom: none !important; }
+        .plan-table .block-bts span .btn { background: #ccc; border-radius: 5px; color: #fff; padding: 10px 25px; font-size: 15px; font-weight: bolder; text-transform: uppercase; }
+            .plan-table .block-bts span .btn:hover { background: #bbb; }
+            .plan-table .block-bts span .btn.green { background: #7aa037; }
+                .plan-table .block-bts span .btn.green:hover { background: #58811e; }
+    .plan-table .checkbox { color: #666; height: 40px; padding-left: 300px; }
+#prices h2 { font-size: 20px; text-align: center; color: #7aa037; font-family: "Trebuchet MS", Verdana, sans-serif; height: 40px; }
+    #prices h2 strong { font-size: 30px; }
+#prices .code { text-align: center; color: #999; font-family: "Trebuchet MS", Verdana, sans-serif; margin-bottom: 15px; }
+    #prices .code label { color: #999;; padding-right: 20px; font-size: 14px; font-weight: bolder; line-height: 35px; float: none; display: inline; }
+    #prices .code input { padding: 10px 20px; border-radius: 5px; border: 2px solid #999; }
+        #prices .code input[type=submit] { padding: 10px 20px; border-radius: 5px; border: 2px solid #0d2c5e; background: #1e4b82; color: #fff; text-transform: uppercase; font-weight: bolder; font-family: "Trebuchet MS", Verdana, sans-serif; }
+#prices h1 { font-family: "Trebuchet MS", Verdana, sans-serif; color: #999; font-size: 30px; margin-bottom: 30px; }
+#prices #cphConteudo_btnEnviarEmail { padding: 10px 30px; float: right; }
+#prices .block-bts { width: 100%; background: #fff; position: static !important; bottom: 0px; left: 0px; border-top: 1px solid #ccc; }
+    #prices .block-bts .container-prices { width: 880px; margin: 0 auto; }
+.ver_contrato { text-decoration: underline; }

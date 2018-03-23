@@ -1,0 +1,36 @@
+﻿@model BNE.PessoaFisica.Web.Models.Curriculo
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#spaVagaOportunidade').html($('#hddVagaOportunidade').val());
+        ConfigurarJaEnviei();
+    });
+</script>
+
+<div class="mdl-grid bottom20">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center ">
+        @if (ViewBag.IndicadoBNE)
+        {
+            <h1>
+                <i class="fa fa-thumbs-up"></i> Seu currículo já foi indicado para a <span id="spaVagaOportunidade"></span>!
+            </h1>
+        }
+        else
+        {
+            <h1>
+                <i class="fa fa-check-circle"></i> Seu currículo já foi enviado para a <span id="spaVagaOportunidade"></span>!
+            </h1>
+        }
+        @if (!String.IsNullOrEmpty(ViewBag.UrlPesquisa))
+        {
+            <p class="white"><a href="@ViewBag.UrlPesquisa">Voltar para a tela de pesquisa</a>
+            </p>
+        }
+        else
+        {
+            <p class="white"><a href="" onclick="javascript: history.go(-1);">Voltar para a tela de pesquisa</a>
+            </p>
+        }
+
+    </div>
+</div>

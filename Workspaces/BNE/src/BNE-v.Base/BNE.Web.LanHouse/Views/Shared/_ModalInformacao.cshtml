@@ -1,0 +1,27 @@
+﻿<link href="@Url.Content("~/Content/ModalInformacao.css")" rel="stylesheet" type="text/css" />
+<script>
+    function hideInfoButton() {
+        $('#btnInfo').css('visibility', 'hidden');
+    }
+
+    function showInfoButton() {
+        $('#btnInfo').css('visibility', 'visible');
+    }
+</script>
+
+<div class="informacao">
+        @* - Início - botão abre a modal no corpo da página*@
+        <a href="#modalInformacao" id="btnInfo" onclick="hideInfoButton()">
+            <img src="/Content/img/modal/btnInfo.png" title="Como usar!" class="image" /></a>
+        @* - Fim - botão abre a modal no corpo da página*@
+
+        @* - Início - modal*@
+        <div id="modalInformacao" class="modalInformacao">
+            <img src="/Content/img/modal/pesquisarEmpresaArrow.png" class="pesquisar-empresa image" />
+            @*<img src="/Content/img/modal/dadosArrow.png" class="dados image" />*@
+            <a href="#" onclick="showInfoButton()">
+                <img id="btnClose" src="/Content/img/modal/btnClose.png" class="image" /></a>
+            <img id="empresaArrow" src="/Content/img/modal/empresaArrow.png" class="image" />
+        </div>
+        @*  - FIM - modal*@
+</div>

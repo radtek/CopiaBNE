@@ -1,0 +1,15 @@
+﻿p.op_planos2 { border-bottom: 1px solid #d0d0d0; border-top: 1px solid #d0d0d0; padding: 17px 0px 16px 0px; margin-top: -12px; }
+p.op_planos3 { border-bottom: 1px solid #d0d0d0; padding: 0px 0px 24px 0px; }
+p.op_planos4 { border-bottom: 1px solid #d0d0d0; padding: 0px 0px 18px 0px; }
+p.op_planos5 { border-bottom: 1px solid #d0d0d0; padding: 0px 0px 18px 0px; }
+p.op_planos6 { padding: 8px 0px 24px 0px; border-bottom: none; }
+p.op_planos7 { padding: 3px 0px 19px 0px; font-size: 10px; text-decoration: underline; cursor: pointer; border-bottom: none; }
+p.text_valor { padding: 9px 30px 9px 0px; }
+p.op_planos { font-family: Arial, Helvetica, sans-serif; text-align: left; border-bottom: 1px solid #d0d0d0; padding: 0px 0px 17px 0px; font-size: 12px; padding-left: 30px; }
+p.precos_de { margin-top: 15px; }
+p.precos_de2 { margin-bottom: 22px; }
+p.op_planos.planos_acesso { margin-top: 16px; }
+p.op_planos.planos_alerta { border-bottom: none; }
+.table_planos, .plano_10, .plano_20, .plano_30 { height: 420px; }
+.plano_custom { height: 495px; }
+.op-planos-set-button{text-align:center;}

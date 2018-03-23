@@ -1,0 +1,24 @@
+﻿.Observacao {
+    float: left;
+    margin-left: 30px;
+    width: 500px;
+}
+.DataDesc {
+    color: #254B6C;
+    float: right;
+    font-weight: bold;
+    text-align: left;
+    width: 255px;
+}
+
+.linhaSearch{
+    text-align: right;
+    margin-right: 10px;
+}
+
+.btn_pesquisa { margin: 0; }
+
+
+.coluna_icones { width: 66px !important ;}
+
+.modal_conteudo.financeiro { background-color: #FFFFFF; background-image: url("/img/bg_topo_modal_candidato.png"); background-repeat: repeat-x; border: none; margin: 0 auto; width: 990px !important; }

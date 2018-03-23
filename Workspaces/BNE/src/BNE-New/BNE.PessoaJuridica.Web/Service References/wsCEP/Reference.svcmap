@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1c5b7821-f805-4556-a74d-4f25999d4812" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wscep.bne.com.br/CEP.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CEP.wsdl" MetadataType="Wsdl" ID="cc147d74-2e02-4a59-bb87-3f2f3c9b90b7" SourceId="1" SourceUrl="http://wscep.bne.com.br/CEP.svc?wsdl" />
+    <MetadataFile FileName="CEP.disco" MetadataType="Disco" ID="3de4e112-3763-4332-8055-8d60e7218158" SourceId="1" SourceUrl="http://wscep.bne.com.br/CEP.svc?disco" />
+    <MetadataFile FileName="CEP.xsd" MetadataType="Schema" ID="e59041b4-e6da-4242-a26c-b003e00ca81e" SourceId="1" SourceUrl="http://wscep.bne.com.br/CEP.svc?xsd=xsd0" />
+    <MetadataFile FileName="CEP1.xsd" MetadataType="Schema" ID="c048cfb1-bcf6-41ee-848c-8bb0cda62841" SourceId="1" SourceUrl="http://wscep.bne.com.br/CEP.svc?xsd=xsd2" />
+    <MetadataFile FileName="CEP2.xsd" MetadataType="Schema" ID="006289ee-8438-4f0e-a79a-4853071376c2" SourceId="1" SourceUrl="http://wscep.bne.com.br/CEP.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

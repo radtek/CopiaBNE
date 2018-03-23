@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="APIGateway.Model.Api">
+    <Position X="7.75" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAACEAABABAABAAAAAgCAAAAAAAAAA=</HashCode>
+      <FileName>Api.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AuthenticationType" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Sistemas" />
+      <Property Name="Endpoints" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="APIGateway.Model.Authorization">
+    <Position X="7.5" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAUAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authorization.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Endpoint" />
+      <Property Name="Perfil" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIGateway.Model.Endpoint">
+    <Position X="7.75" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IBACAAAAAAAIAAAAAIAgAIAAAAJCAAAAAAAAAAAoAgA=</HashCode>
+      <FileName>Endpoint.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Method" />
+      <Property Name="Api" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIGateway.Model.SistemaCliente">
+    <Position X="11" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAEAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>SistemaCliente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Apis" />
+      <Property Name="Headers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="APIGateway.Model.Authentication">
+    <Position X="4.25" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAABAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Authentication.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OAuthConfig" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIGateway.Model.Requisicao">
+    <Position X="11" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAEABAAAAAEUAAAAABAQBAgAEAAAAFAAAAAAA=</HashCode>
+      <FileName>Requisicao.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Endpoint" />
+      <Property Name="ResponseStatusCode" />
+      <Property Name="Usuario" />
+      <Property Name="SistemaCliente" />
+      <Property Name="Perfil" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIGateway.Model.Usuario">
+    <Position X="15.5" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAACAAAAAAAAgAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="APIGateway.Model.UsuarioSistemaCliente">
+    <Position X="13.5" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAABCQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UsuarioSistema.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SistemaCliente" />
+      <Property Name="Perfil" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Headers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="APIGateway.Model.UsuarioPessoaFisica">
+    <Position X="15.5" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UsuarioPessoaFisica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="APIGateway.Model.UsuarioPessoaJuridica">
+    <Position X="17.75" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UsuarioPessoaJuridica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="APIGateway.Model.Header">
+    <Position X="13.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Header.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="APIGateway.Model.OAuthConfig">
+    <Position X="4.25" Y="5.25" Width="2" />
+    <AssociationLine Name="Authentication" Type="APIGateway.Model.Authentication">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.157" Y="0.17" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>QMAAAAAAAAAAAAAAAABAAAAAAAAAkAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OAuthConfig.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Authentication" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="APIGateway.Model.Method" Collapsed="true">
+    <Position X="4.25" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAYAAACAAAEAQAAAAAAAAAABAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Method.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="System.Net.HttpStatusCode" Collapsed="true">
+    <Position X="10" Y="9.5" Width="1.75" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="APIGateway.Model.Perfil">
+    <Position X="13.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAACAAAAAAAAAAAAAQCAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Perfil.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

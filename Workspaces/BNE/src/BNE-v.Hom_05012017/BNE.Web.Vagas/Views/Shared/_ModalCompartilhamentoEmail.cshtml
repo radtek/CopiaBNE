@@ -1,0 +1,75 @@
+﻿@model BNE.Web.Vagas.Models.CompartilhamentoEmail
+
+<div id="modalCompartilhamentoEmail" class="modal amarela compartilhamento">
+    <script>
+        modal.abrirModal('modalCompartilhamentoEmail');
+    </script>
+
+    <style>
+        .compartilhamento p { 
+            float: left; padding: 0px 0px; font-size: 13px; cursor: pointer; 
+        }
+        .modalEmail
+        {
+            background-color:#eceff1 !important;
+        }
+    </style>
+
+    <link href="~/Content/ModalCompartilhamentoEmail.css" rel="stylesheet" />
+
+    <img class="email-icon" src="~/Images/modal/CompartilharVaga/icon-send-email.png" />
+    <a class="b-close modal_fechar" title="Close"></a>
+    <div class="modal_conteudo modalEmail">
+        @using (Ajax.BeginForm("EnviarCompartilhamentoEmail", "Vaga", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "modal_container" }))
+        {
+            for (var i = 0; i < Model.ListaEmailDestinatario.Count(); i++)
+            {
+            @Html.HiddenFor(m => Model.ListaEmailDestinatario[i])
+            }
+            @Html.HiddenFor(m => m.URL)
+            @Html.HiddenFor(m => m.IdentificadorVaga)
+            @Html.HiddenFor(m => m.PodeInserirMaisEmails)
+            <p class="label_digite_email">Digite abaixo o <b>e-mail</b> para quem gostaria de <b>compartilhar a vaga:</b></p>
+            <div>
+                <div class="controle_compartilhar_email">
+                    @Html.ValidationMessageFor(m => m.EmailDestinatario)
+                
+                        @(Model.PodeInserirMaisEmails ? Html.TextBoxFor(m => m.EmailDestinatario, new {@class = "text_email", @Placeholder ="E-mail da pessoa"}) : Html.TextBoxFor(m => m.EmailDestinatario, new { disabled = "true", @class ="text_email" }))
+                        <button name="button" class="btn_adicionar" value="adicionar">Adicionar CC</button>
+                
+                </div>
+            </div>
+        }
+        @foreach (string destinatario in @Model.ListaEmailDestinatario)
+        {
+            <div class="panel_item_repeater_compartilhar_email">
+                @destinatario
+                @using (Ajax.BeginForm("DeletarCompartilhamentoEmail", "Vaga", new { item = destinatario }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "modal_container" }, new { @class = "email_adicionado" }))
+                {
+                    for (var i = 0; i < Model.ListaEmailDestinatario.Count(); i++)
+                    {
+                    @Html.HiddenFor(m => Model.ListaEmailDestinatario[i])
+                    }
+                    @Html.HiddenFor(m => m.URL)
+                    @Html.HiddenFor(m => m.IdentificadorVaga)
+                    @Html.HiddenFor(m => m.PodeInserirMaisEmails)
+                    <input type="image" value="excluir" class="btn_deletar_email_grid" src="/Images/btn_compartilhar_email_excluir.png" />
+                }
+            </div>
+        }
+        @using (Ajax.BeginForm("EnviarCompartilhamentoEmail", "Vaga", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "modal_container" }))
+        {
+            for (var i = 0; i < Model.ListaEmailDestinatario.Count(); i++)
+            {
+            @Html.HiddenFor(m => Model.ListaEmailDestinatario[i])
+            }
+            @Html.HiddenFor(m => m.URL)
+            @Html.HiddenFor(m => m.IdentificadorVaga)
+            @Html.HiddenFor(m => m.PodeInserirMaisEmails)
+        <div class="comprar-vip btn_enviar">
+             <button name="button" value="enviar">Enviar e-mails</button>
+        </div>
+
+        }
+    </div>
+</div>

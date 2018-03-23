@@ -1,0 +1,40 @@
+﻿<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-5 column">
+            <img src="../../images/telaMagica/telaMagica.jpg" />
+        </div>
+        <div class="col-md-2 column"></div>
+        <div class="col-md-4 column">
+        <p class="adjustPaddingAtivarVip"></p>
+        <p><img src="../../images/telaMagica/ativarMagica.jpg" class="img-thumbnail text-center" /></p>
+           
+            <p class="text-center text-primary lead">
+                Adquira neste estabelecimento
+                o serviço  <strong class="adjustStrong">BNE</strong> <span class="adjustVipText">VIP</span> por<br/>
+               <small><strong class ="adjustStrong">apenas </strong></small><span class="alert-warning alertAdjust">R$ 14,90</span>
+                <div class="input-group">
+                    <input type="text" id="codigoDesconto" class="form-control" placeholder="DIGITE AQUI SEU CÓDIGO">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary btn-lg" type="button" ng-click="AtivarVip()">ATIVAR VIP</button>
+                    </span>
+                </div>
+                <p></p>
+                <div id="DivCarregandoVip" class="col-md-12 column pull-right" ng-show="processandoVip">
+                    <span style="color:#666">Processando...</span> 
+                    <img src="../../images/gif-progress.gif" />
+                </div>
+                <div id="DivSucessoVip" class="col-md-12 column pull-right alert alert-warning" ng-show="vipOK">
+                        <i class="fa fa-thumbs-o-up"></i>
+                        Vip liberado com sucesso! <a ng-click="VerMaisVagas()" style="cursor:pointer"> Ver mais vagas </a>
+                </div>
+                <div id="DivErroVip" class="col-md-12 column pull-right alert alert-warning" ng-show="vipErro">
+                    <i class="fa fa-frown-o fa-2x"></i>
+                    Erro na liberação do VIP: {{descErroVip}}.
+                </div>
+                <div id="DivVipSemCodigo" class="col-md-12 column pull-right alert alert-warning" ng-show="vipSemCodigo">
+                    <i class="fa fa-frown-o fa-2x"></i>
+                    Código não informado.
+                </div>
+        </div>
+    </div>
+</div>

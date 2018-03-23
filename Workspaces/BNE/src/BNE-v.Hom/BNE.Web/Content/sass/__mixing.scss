@@ -1,0 +1,57 @@
+﻿@mixin border-radius($args) {
+    -webkit-border-radius: $args;
+    -moz-border-radius: $args;
+    -ms-border-radius: $args;
+    border-radius: $args;
+}
+
+@mixin user-select($args) {
+    -webkit-user-select: $args;
+    -moz-user-select: $args;
+    -ms-user-select: $args;
+    user-select: $args;
+}
+
+@function calculateRem($args) {
+    $remSize: $args / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($args...) {
+    font-size: $args;
+    font-size: calculateRem($args);
+}
+
+@mixin transition ($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin opacity($args) {
+    opacity: $args;
+    $opacity-ie: $args * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+    @if is-direction($direction) == false {
+        $color-stops: $direction, $color-stops;
+        $direction: 90;
+    }
+
+    background: nth(nth($color-stops, 1), 1);
+    background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+    background: -moz-linear-gradient(legacy-direction($direction), $color-stops);
+    background: -ms-linear-gradient(legacy-direction($direction), $color-stops);
+    background: -o-linear-gradient(legacy-direction($direction), $color-stops);
+    background: linear-gradient($direction, $color-stops);
+}
+
+@mixin box-shadow($args) {
+    -webkit-box-shadow: $args;
+    -moz-box-shadow: $args;
+    box-shadow: $args;
+}

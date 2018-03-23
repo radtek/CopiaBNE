@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BNE.BLL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BNE_BLL_WSCep_cepws" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wsprdgeral.webfopag.com.br/cepws.asmx</Value>
+    </Setting>
+    <Setting Name="MandrillApiKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">b4wkj7VqpPjoyAhutn4VVQ</Value>
+    </Setting>
+    <Setting Name="BNE_BLL_wsIntegracaoWFat_IntegracaoFaturamentoFinanceiro" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wsprdglobal3.webfopag.com.br/integracaofaturamentofinanceiro.asmx</Value>
+    </Setting>
+    <Setting Name="BNE_BLL_wsTRANSACAO_wsTRANSACAO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wshomglobal.webfopag.com.br/wstransacao.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

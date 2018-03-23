@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69D3B0D3-922C-432C-A9FF-C888BD23DDA7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.PessoaFisica.API</RootNamespace>
+    <AssemblyName>BNE.PessoaFisica.API</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoRest">
+      <HintPath>..\packages\AutoRest.0.17.3\tools\AutoRest.exe</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.10\lib\net452\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIClient\CodigoConfirmacaoEmail.cs" />
+    <Compile Include="APIClient\CodigoConfirmacaoEmailExtensions.cs" />
+    <Compile Include="APIClient\Curriculo.cs" />
+    <Compile Include="APIClient\CurriculoExtensions.cs" />
+    <Compile Include="APIClient\Curso.cs" />
+    <Compile Include="APIClient\CursoExtensions.cs" />
+    <Compile Include="APIClient\DadosEmpresa.cs" />
+    <Compile Include="APIClient\DadosEmpresaExtensions.cs" />
+    <Compile Include="APIClient\ICodigoConfirmacaoEmail.cs" />
+    <Compile Include="APIClient\ICurriculo.cs" />
+    <Compile Include="APIClient\ICurso.cs" />
+    <Compile Include="APIClient\IDadosEmpresa.cs" />
+    <Compile Include="APIClient\IInstituicaoEnsino.cs" />
+    <Compile Include="APIClient\INavegacaoVaga.cs" />
+    <Compile Include="APIClient\InstituicaoEnsino.cs" />
+    <Compile Include="APIClient\InstituicaoEnsinoExtensions.cs" />
+    <Compile Include="APIClient\IParametro.cs" />
+    <Compile Include="APIClient\IPessoaFisicaAPI.cs" />
+    <Compile Include="APIClient\IPessoaFisicaOperations.cs" />
+    <Compile Include="APIClient\IPlano.cs" />
+    <Compile Include="APIClient\IPreCurriculo.cs" />
+    <Compile Include="APIClient\IRamoAtividade.cs" />
+    <Compile Include="APIClient\IRankingEmail.cs" />
+    <Compile Include="APIClient\IVaga.cs" />
+    <Compile Include="APIClient\IVagaPergunta.cs" />
+    <Compile Include="APIClient\Models\CadastroCurriculoResponse.cs" />
+    <Compile Include="APIClient\Models\CandidaturaDegustacao.cs" />
+    <Compile Include="APIClient\Models\CandidaturaResponse.cs" />
+    <Compile Include="APIClient\Models\CursoResponse.cs" />
+    <Compile Include="APIClient\Models\DadosEmpresaCommand.cs" />
+    <Compile Include="APIClient\Models\DadosEmpresaResponse.cs" />
+    <Compile Include="APIClient\Models\ExperienciaProfissionalResponse.cs" />
+    <Compile Include="APIClient\Models\FormacaoResponse.cs" />
+    <Compile Include="APIClient\Models\GetByCodigoCommand.cs" />
+    <Compile Include="APIClient\Models\GetByIdCommand.cs" />
+    <Compile Include="APIClient\Models\GetByIdVagaCommand.cs" />
+    <Compile Include="APIClient\Models\GetCursoCommand.cs" />
+    <Compile Include="APIClient\Models\GetInstituicaoEnsinoCommand.cs" />
+    <Compile Include="APIClient\Models\GetPlanoCommand.cs" />
+    <Compile Include="APIClient\Models\GetRamoAtividadeCommand.cs" />
+    <Compile Include="APIClient\Models\GetRankingEmailCommand.cs" />
+    <Compile Include="APIClient\Models\IndicarAmigosAmigoIndicadoCommand.cs" />
+    <Compile Include="APIClient\Models\IndicarAmigosCommand.cs" />
+    <Compile Include="APIClient\Models\IndicarAmigosResponse.cs" />
+    <Compile Include="APIClient\Models\InformacaoCurriculoResponse.cs" />
+    <Compile Include="APIClient\Models\InstituicaoEnsinoResponse.cs" />
+    <Compile Include="APIClient\Models\NavegacaoVagaCommand.cs" />
+    <Compile Include="APIClient\Models\NavegacaoVagaResponse.cs" />
+    <Compile Include="APIClient\Models\Pergunta.cs" />
+    <Compile Include="APIClient\Models\PlanoResponse.cs" />
+    <Compile Include="APIClient\Models\PreCurriculoResponse.cs" />
+    <Compile Include="APIClient\Models\RecuperarCandidaturaDegustacaoCommand.cs" />
+    <Compile Include="APIClient\Models\RecuperarInformacaoCurriculoCommand.cs" />
+    <Compile Include="APIClient\Models\SalvarCurriculoCommand.cs" />
+    <Compile Include="APIClient\Models\SalvarCurriculoVagaCommand.cs" />
+    <Compile Include="APIClient\Models\SalvarExperienciaProfissionalCommand.cs" />
+    <Compile Include="APIClient\Models\SalvarFormacaoCommand.cs" />
+    <Compile Include="APIClient\Models\SalvarPreCurriculoCommand.cs" />
+    <Compile Include="APIClient\Models\VagaPerguntaResponse.cs" />
+    <Compile Include="APIClient\Models\VagaResponse.cs" />
+    <Compile Include="APIClient\NavegacaoVaga.cs" />
+    <Compile Include="APIClient\NavegacaoVagaExtensions.cs" />
+    <Compile Include="APIClient\Parametro.cs" />
+    <Compile Include="APIClient\ParametroExtensions.cs" />
+    <Compile Include="APIClient\PessoaFisicaAPI.cs" />
+    <Compile Include="APIClient\PessoaFisicaOperations.cs" />
+    <Compile Include="APIClient\PessoaFisicaOperationsExtensions.cs" />
+    <Compile Include="APIClient\Plano.cs" />
+    <Compile Include="APIClient\PlanoExtensions.cs" />
+    <Compile Include="APIClient\PreCurriculo.cs" />
+    <Compile Include="APIClient\PreCurriculoExtensions.cs" />
+    <Compile Include="APIClient\RamoAtividade.cs" />
+    <Compile Include="APIClient\RamoAtividadeExtensions.cs" />
+    <Compile Include="APIClient\RankingEmail.cs" />
+    <Compile Include="APIClient\RankingEmailExtensions.cs" />
+    <Compile Include="APIClient\Vaga.cs" />
+    <Compile Include="APIClient\VagaExtensions.cs" />
+    <Compile Include="APIClient\VagaPergunta.cs" />
+    <Compile Include="APIClient\VagaPerguntaExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

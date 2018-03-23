@@ -1,0 +1,1469 @@
+﻿// ------------------------------------------------------------------ Cálculos
+// Units, margins and paddings
+$un: 4px;
+$width-full: 100%;
+$max-width: 1200px;
+
+%reset {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+%radius-bottom-side {
+    border-radius: 0px 0px 3*$un 3*$un;
+}
+
+%radius-bottom-allsides {
+    border-radius: 3*$un 3*$un 3*$un 3*$un;
+}
+
+%padding-sides-small {
+    padding: 0px $un 0px $un;
+}
+
+%padding-sides-average {
+    padding: 0px 3*$un 0px 3*$un;
+}
+
+// ------------------------------------------------------------------ Variáveis
+// Colors
+$white: #ffffff;
+// Cinza
+$grey: #999999;
+$ultradarkgrey: darken($grey, 50%);
+$darkgrey: darken($grey, 20%);
+$mediumgrey: $grey;
+$lightgrey: lighten($grey, 20%);
+$ultralightgrey: lighten($grey, 30%);
+$ultralightergrey: lighten($ultradarkgrey, 85%);
+// Negação
+$ncolor: #f44336;
+// Atenção
+$acolor: #ffc107;
+// Afirmação
+$scolor: #8bc34a;
+
+// Typography
+$font-family: "Roboto","Helvetica","Arial",sans-serif;
+$font-weight: 300;
+$font-weight-bold: 600;
+$font-size: 4*$un;
+$line-height: 4*$un;
+
+%link {
+    text-decoration: none;
+}
+
+%reset-link {
+    text-decoration: none !important;
+    color: $darkgrey !important;
+}
+// ------------------------------------------------------------------  Body
+body {
+    font-family: $font-family;
+    font-size: 4*$un;
+    color: $darkgrey;
+    background: url("../img/bg.jpg") repeat-x;
+    height: 100%;
+
+    &.iframe {
+        background: none !important;
+    }
+}
+
+html {
+    height: 100%;
+}
+
+// ------------------------------------------------------------------ Reset
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+}
+// ------------------------------------------------------------------  Fonts
+
+h1 {
+    font-size: 8.5*$un !important;
+    line-height: 9.5*$un !important;
+    font-weight: $font-weight-bold !important;
+    @extend %reset;
+}
+
+h2 {
+    font-size: 7*$un !important;
+    line-height: 7.5*$un !important;
+    font-weight: $font-weight-bold !important;
+    @extend %reset;
+}
+
+h3 {
+    font-size: 6.5*$un !important;
+    line-height: 7*$un !important;
+    font-weight: $font-weight-bold !important;
+    @extend %reset;
+}
+
+h4 {
+    font-size: 6*$un !important;
+    line-height: 6.5*$un !important;
+    font-weight: $font-weight-bold !important;
+    letter-spacing: normal !important;
+    @extend %reset;
+}
+
+h5 {
+    font-size: 5.5*$un !important;
+    line-height: 6*$un !important;
+    font-weight: $font-weight-bold !important;
+    letter-spacing: normal !important;
+    @extend %reset;
+}
+
+h6 {
+    color: $darkgrey;
+    font-size: 4.5*$un !important;
+    line-height: 5*$un !important;
+    font-weight: $font-weight-bold !important;
+    letter-spacing: normal !important;
+    @extend %reset;
+
+    span {
+        font-weight: lighter !important;
+        color: $mediumgrey;
+    }
+
+    &.light {
+        font-weight: lighter !important;
+
+        strong {
+            font-weight: 500;
+        }
+    }
+}
+
+p {
+    font-size: 4*$un;
+    line-height: 4.5*$un;
+    @extend %reset;
+}
+
+.small {
+    font-size: 3.5*$un !important;
+    line-height: 4*$un !important;
+}
+
+a.color {
+    color: $primarycolor !important;
+    text-decoration: none !important;
+}
+
+a.color:hover {
+    text-decoration: underline !important;
+}
+// ------------------------------------------------------------------ Cheats
+.clear { /* geral */
+    clear: both;
+}
+
+.center { /* geral */
+    text-align: center;
+}
+
+.right { /* geral */
+    text-align: right;
+    float: right;
+}
+
+.spacing { /* title quando dentro de um no-spacing */
+    margin-left: 16px !important;
+    margin-top: 16px !important;
+}
+
+.no-spacing {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.title { /* title quando antes de um no-spacing */
+    margin-bottom: -16px !important;
+}
+
+.bottom20 { /* geral */
+    margin-bottom: 20px !important;
+}
+
+.bottom-20 { /* geral */
+    margin-bottom: -20px !important;
+}
+
+.bottom120 { /* geral */
+    margin-bottom: 120px !important;
+}
+
+.top-36 { /* subir 24px */
+    margin-top: -36px !important;
+}
+
+.top36 { /* descer 24px */
+    margin-top: 36px !important;
+}
+
+.top-24 { /* subir 24px */
+    margin-top: -24px !important;
+}
+
+.top24 { /* descer 24px */
+    margin-top: 24px !important;
+}
+
+.top-12 { /* subir 12px */
+    margin-top: -12px !important;
+}
+
+.top12 { /* descer 12px */
+    margin-top: 12px !important;
+}
+
+.top-6 { /* subir 6px */
+    margin-top: -6px !important;
+}
+
+.top6 { /* descer 6px */
+    margin-top: 6px !important;
+}
+/*.vert-middle { alinhar radios e checks 
+  padding-top: 25px;
+  height: 30px; }*/
+.vertitemform {
+    margin-top: 42px !important;
+    padding-botom: -10px !important;
+}
+
+.rsp {
+    width: 100%;
+
+    &logo {
+        width: 100%;
+        min-width: 250px;
+        max-width: 300px;
+    }
+}
+
+.temp {
+    height: 20px;
+    background-color: #dedede;
+    margin-top: 10px !important;
+
+    &ok {
+        $colorteste: green;
+        background-color: $colorteste;
+        margin-top: 10px !important;
+    }
+}
+
+.absolute {
+    position: absolute;
+}
+
+.bold {
+    font-weight: 600 !important;
+}
+
+.lighter {
+    font-weight: lighter !important;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.italic {
+    font-style: italic;
+}
+// ------------------------------------------------------------------  Colors
+// CRIAR UMA REGRA MELHOR @each!!!
+//$pessoa:juridica;
+//.darkcolor {
+//  @if $pessoa == juridica {
+//    color: $primarycolor;
+//  } @else if $pessoa == fisica {
+//    color: $accentcolor;
+//  }
+//}
+.white {
+    color: $white;
+}
+
+.ultradarkgrey {
+    color: $ultradarkgrey;
+}
+
+.darkgrey {
+    color: $darkgrey;
+}
+
+.mediumgrey {
+    color: $mediumgrey;
+}
+
+.lightgrey {
+    color: $lightgrey;
+}
+
+.ultralightgrey {
+    color: $ultralightgrey;
+}
+
+.ultradarkcolor {
+    color: $ultradarkcolor;
+}
+
+.darkcolor {
+    color: $darkcolor;
+}
+
+.mediumcolor {
+    color: $mediumcolor;
+}
+
+.lightcolor {
+    color: $lightcolor;
+}
+
+.ultralightcolor {
+    color: $ultralightcolor;
+}
+// ------------------------------------------------------------------ Header
+header {
+    margin-top: -4*$un !important;
+    max-width: $max-width;
+    margin: auto;
+    list-style: none;
+    text-align: center;
+
+    &.absolute {
+        position: absolute;
+    }
+
+    &.relative {
+        position: relative;
+    }
+}
+
+#logo {
+    margin-top: 12px;
+    max-width: 355px;
+}
+
+#nav {
+    display: none;
+    //display: table;
+    @extend %padding-sides-average;
+    @extend %radius-bottom-side;
+    font-size: 3*$un;
+    height: 40px;
+    background-color: $ultralightgrey;
+    font-weight: $font-weight;
+    float: right;
+    color: $ultradarkgrey;
+
+    li {
+        display: table-cell;
+        vertical-align: middle;
+        @extend %padding-sides-small;
+    }
+}
+
+#signin {
+    display: none;
+    //display: table;
+    @extend %padding-sides-average;
+    @extend %radius-bottom-side;
+    height: 40px;
+    font-weight: $font-weight;
+    margin: auto;
+    background-color: $primarycolor;
+
+    li {
+        display: table-cell;
+        vertical-align: middle;
+        @extend %padding-sides-small;
+        color: $white;
+    }
+}
+
+
+// ------------------------------------------------------------------  Footer
+#footer {
+    width: $width-full;
+    background-color: $ultralightgrey;
+
+    &.relative {
+        position: relative !important;
+    }
+
+    &.absolute {
+        position: absolute !important;
+    }
+}
+
+footer {
+    max-width: $max-width;
+    margin: auto;
+    list-style: none;
+
+    & .darkblue {
+        color: #2b64b2;
+    }
+
+    & .darkgreen {
+        color: #659230;
+    }
+
+    & .darkgrey {
+        color: #333333;
+    }
+
+    a {
+        @extend %link;
+        color: $darkgrey;
+    }
+
+    ul {
+        display: inline-block;
+        font-size: 3*$un;
+
+        span {
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    li {
+        display: inline-block;
+    }
+}
+
+#footer-baseline {
+    width: $width-full;
+    text-align: center;
+    color: $mediumgrey;
+    background-color: $white;
+}
+// ------------------------------------------------------------------  Icons
+.i-h4 {
+    margin-top: 2*$un !important;
+    position: relative;
+    left: -12px;
+    top: $un;
+}
+// ------------------------------------------------------------------  Titles and Subtitles
+.subtitle {
+    margin-top: $un !important;
+}
+// ------------------------------------------------------------------  Containers
+%container {
+    max-width: $max-width;
+    margin: auto;
+}
+
+.container {
+    @extend %container;
+
+    & .first-line {
+        margin-top: -20px !important;
+    }
+}
+
+// ------------------------------------------------------------------  Sections
+.md-section-grey {
+    background-color: $ultralightgrey;
+}
+
+.md-section-candidatvaga {
+    background-color: $ultralightgrey;
+    width: 68%;
+    margin: auto;
+    min-width: 300px;
+}
+
+.md-section-login {
+    padding-bottom: 2*$un;
+    margin-top: 6.5*$un;
+
+    input {
+        margin-top: -6*$un !important;
+    }
+}
+
+.md-section-candidatura {
+    padding-bottom: 2*$un;
+    margin-top: 6.5*$un;
+}
+
+.suggestions {
+    background-color: $lightgrey;
+    padding: 4*$un 4*$un 4*$un 4*$un;
+    margin-top: 28px !important;
+    text-align: justify;
+    margin-bottom: -20px !important;
+}
+
+#curriculo-pg {
+    /*border: solid 1px #cecece;*/
+    padding: $un 5*$un 6*$un 5*$un;
+    margin-bottom: 6*$un;
+    box-shadow: 0 0 10px $ultralightgrey;
+
+    & .border {
+        border-bottom: solid 1px #cecece;
+    }
+}
+
+// ------------------------------------------------------------------  Components - ProgressTracker
+%progtrckr {
+    bottom: 3*$un;
+    content: "\039F";
+    color: transparent;
+    height: 2*$un;
+    width: 2*$un;
+    border: 5px solid $white;
+    -webkit-border-radius: 1.2em;
+    -moz-border-radius: 1.2em;
+    -ms-border-radius: 1.2em;
+    border-radius: 1.2em;
+    -webkit-box-shadow: 2px 2px 4px 0px $lightgrey;
+    -moz-box-shadow: 2px 2px 4px 0px $lightgrey;
+    box-shadow: 2px 2px 4px 0px $lightgrey;
+}
+
+.md-progtrckr {
+    margin-bottom: -30px !important;
+
+    ol {
+        width: 95%;
+        margin: auto;
+    }
+}
+
+ol.progtrckr {
+    display: table;
+    list-style-type: none;
+
+    &[data-progtrckr-steps="5"] li {
+        width: 18%;
+    }
+
+    li {
+        display: table-cell;
+        text-align: center;
+
+        &:after {
+            content: "\00a0\00a0";
+        }
+
+        &:before {
+            position: relative;
+            float: left;
+            left: 100%;
+        }
+
+        &.progtrckr-done {
+            color: $darkgrey;
+            color: $darkgrey;
+            border-top: $un solid $primarycolor;
+
+            &:before {
+                background-color: $primarycolor;
+                line-height: 16px;
+                @extend %progtrckr;
+            }
+
+            span {
+                color: $primarycolor;
+            }
+        }
+
+        &.progtrckr-todo {
+            color: $darkgrey;
+            border-top: $un solid $lightgrey;
+
+            &:before {
+                background-color: $lightgrey;
+                border: 5px solid $white;
+                @extend %progtrckr;
+            }
+
+            span {
+                color: $mediumgrey;
+            }
+        }
+    }
+
+    & .substage {
+        padding-left: 12px;
+    }
+}
+
+// ------------------------------------------------------------------ Components - Inputs
+// Input padrão BNE com label do material!!!
+.md-input-bne {
+    height: 13*$un;
+
+    input {
+        outline: none;
+        border: solid 1px $ultralightgrey;
+        height: 6*$un;
+        width: 100%;
+        text-indent: 1.5*$un;
+        padding-top: 4*$un;
+        background-color: $white;
+    }
+
+    label {
+        position: relative;
+        margin-top: -12*$un;
+        padding-left: 2*$un;
+        font-weight: $font-weight !important;
+        color: $mediumgrey !important;
+        font-size: $font-size/1.1;
+    }
+
+    span {
+        position: relative;
+        margin-top: 7*$un;
+        padding: 0 3*$un 0 3*$un;
+        float: right;
+        background-color: $ncolor;
+        color: $white;
+
+        i {
+            position: absolute;
+            z-index: 120;
+            top: -20px;
+            font-size: 36px;
+            color: $ncolor;
+            right: 10px;
+        }
+    }
+
+    &.mdl-textfield.is-invalid .mdl-textfield__input {
+        border-color: $ncolor;
+    }
+
+    &.is-focused .mdl-textfield__label {
+        font-size: 3*$un;
+        top: $un;
+        visibility: visible;
+        color: $primarycolor !important;
+    }
+
+    &.is-dirty .mdl-textfield__label {
+        font-size: 3*$un;
+        top: $un;
+        visibility: visible;
+        color: $primarycolor !important;
+    }
+}
+
+// Input Comum sem animação
+.md-input-bne-emp-common {
+    height: 10*$un;
+
+    input {
+        outline: none;
+        border: solid 1px $lightgrey;
+        color: $mediumgrey !important;
+        height: 6*$un;
+        width: 100%;
+        text-indent: 2*$un;
+        padding-top: 2*$un;
+        padding-bottom: 2*$un;
+        background-color: $white;
+    }
+}
+// Input Editável pencil on over!!!
+.md-input-edit-bne {
+    & .tit-section {
+        border-bottom: solid 1px $ultralightgrey;
+        font-size: 3.5*$un;
+        color: $mediumgrey;
+        margin-bottom: 3*$un !important;
+        padding-top: 3*$un !important;
+    }
+
+    & .mdl-cell {
+        margin-bottom: 0px;
+        margin-top: 2px !important;
+    }
+
+    & .input-edit-title {
+        text-align: right;
+        font-weight: $font-weight-bold;
+        padding-top: 8px;
+
+        &-noborder {
+            border-bottom: solid 1px $white !important;
+            text-align: right;
+            font-weight: $font-weight-bold;
+            padding-top: 8px;
+        }
+    }
+
+    & .input-edit {
+        padding: $un 1.5*$un $un $un;
+        border-radius: 5.25*$un;
+        margin-left: 2*$un;
+
+
+        &:hover {
+            background-color: $ultralightercolor;
+
+            input {
+                border: solid 1px $ultralightercolor !important;
+            }
+
+            span {
+                display: inherit;
+                background-color: $primarycolor;
+
+                i {
+                    color: $white;
+                }
+            }
+        }
+
+        input {
+            outline: none;
+            color: $darkgrey;
+            font-size: 3.5*$un;
+            font-family: $font-family;
+            border: solid 1px $white !important;
+            height: 6*$un;
+            width: calc(100% - 36px);
+            text-indent: 1.5*$un;
+            background-color: $white;
+            line-break: auto;
+            border-radius: 16px;
+
+            &:focus {
+                box-shadow: 0 0 5px $lightcolor;
+            }
+        }
+
+        span {
+            display: none;
+            position: relative;
+            float: right;
+            background-color: $ultralightgrey;
+            border-radius: 13px;
+            width: 26px;
+            height: 26px;
+
+            i {
+                margin-top: 3px;
+                margin-left: 3px;
+                font-size: 20px;
+                color: $white;
+            }
+        }
+
+        textarea {
+            color: $darkgrey;
+            font-size: 3.6*$un;
+            font-family: $font-family;
+            outline: none;
+            border: solid 1px $white !important;
+            width: calc(100% - 42px);
+            overflow: hidden;
+            resize: none;
+            margin-bottom: -2px !important;
+            padding: 4px;
+            border-radius: 16px;
+            text-align: justify;
+
+            &:focus {
+                box-shadow: 0 0 5px $lightcolor;
+            }
+        }
+
+        select {
+            option {
+                padding: 4px;
+            }
+
+            &::-ms-expand {
+                display: none;
+            }
+
+            color: $darkgrey;
+            font-size: 3.5*$un;
+            font-family: $font-family;
+            border: solid 1px $white !important;
+            height: 6.5*$un;
+            width: calc(100% - 32px);
+            text-indent: 0.5*$un;
+            background-color: $white;
+            border-radius: 16px;
+            -webkit-appearance: none; /*Remove estilo padrão do Chrome*/
+            -moz-appearance: none; /* Remove estilo padrão do FireFox*/
+            &:focus {
+                box-shadow: 0 0 5px $lightcolor;
+            }
+        }
+    }
+}
+// ------------------------------------------------------------------  Components - Text Area */
+.md-textarea-bne {
+    margin-top: 7*$un !important;
+
+    textarea {
+        outline: none;
+        border: solid 1px $ultralightgrey;
+        padding-top: 2*$un;
+        padding-left: 2*$un;
+        padding-bottom: 6*$un;
+        background-color: $white;
+        resize: none !important;
+        height: 190px;
+        width: 98%;
+        font-family: $font-family;
+        font-size: $font-size/1.1;
+    }
+
+    label {
+        position: relative;
+        margin-top: -12*$un;
+        padding-left: 2*$un;
+        color: $mediumgrey !important;
+        font-weight: $font-weight !important;
+        font-size: $font-size/1.1;
+    }
+}
+
+
+// ------------------------------------------------------------------  Components - ProgressBar
+.full-progressbar {
+    width: $width-full !important;
+}
+
+.mdl-progress {
+    & .bar {
+        background-color: $mediumcolor !important;
+    }
+
+    & .progressbar {
+        background-color: $mediumcolor !important;
+    }
+
+    & .bufferbar {
+        background-image: none !important;
+        background-color: $ultralightcolor !important;
+    }
+}
+
+// ------------------------------------------------------------------  Components - Buttons
+
+// ----------------CRIAR REGRA!!
+// Button principal
+.btnform {
+    margin-top: 6*$un !important;
+    margin-bottom: -2*$un !important;
+
+    &big {
+        height: 12.5*$un !important;
+        width: 40*$un !important;
+        border-radius: 3*$un !important;
+        margin-top: 4.5*$un !important;
+        background-color: $primarycolor !important;
+    }
+
+    &xbig {
+        height: 12.5*$un !important;
+        width: 50*$un !important;
+        border-radius: 3*$un !important;
+        ;
+        margin-top: 4.5*$un !important;
+        background-color: $primarycolor !important;
+
+        &grey {
+            height: 12.5*$un !important;
+            width: 50*$un !important;
+            border-radius: 3*$un !important;
+            margin-top: 4.5*$un !important;
+            background-color: $mediumgrey !important;
+        }
+    }
+
+    &light {
+        background-color: $lightcolor !important;
+    }
+
+    &medium {
+        background-color: $mediumcolor !important;
+    }
+
+    &dark {
+        background-color: $darkcolor !important;
+    }
+
+    &sec {
+        background-color: $accentcolor !important;
+    }
+
+    &neg {
+        background-color: $ncolor !important;
+        color: $white !important;
+    }
+}
+
+.btn {
+    background-color: $primarycolor !important;
+    width: 100%;
+    height: 42px !important;
+    font-weight: $font-weight-bold !important;
+
+    &:hover {
+        background-color: $darkcolor !important;
+    }
+}
+// ------------------------------------------------------------------  Components - Captchas
+.captcha {
+    margin-top: 6*$un !important;
+    height: 90px;
+}
+
+// ------------------------------------------------------------------  Components - Selects
+.mdl-select-bne {
+    margin-bottom: -4px !important;
+
+    select {
+        margin-top: 19px;
+        height: 46px;
+        color: $mediumgrey;
+        width: 100%;
+    }
+}
+
+.mdl-select {
+    outline: none;
+    width: 100%;
+    background-color: $white;
+    font-family: $font-family;
+    font-size: $font-size;
+    color: $mediumgrey !important;
+
+    &__input {
+        border: solid 1px $ultralightgrey;
+        height: 10.5*$un;
+        padding-left: 2*$un;
+        font-weight: $font-weight !important;
+        font-size: $font-size/1.1;
+    }
+
+    &__option {
+        height: 8*$un;
+        text-indent: 2*$un;
+        padding-top: 2.5*$un;
+    }
+}
+// ------------------------------------------------------------------  Components - Radio e CheckBox
+.mdl-radio.is-checked .mdl-radio__outer-circle {
+    border: 2px solid $darkcolor !important;
+}
+
+.mdl-radio__inner-circle {
+    background: $mediumcolor !important;
+}
+
+.mdl-radio__ripple-container .mdl-ripple {
+    background: $mediumcolor !important;
+}
+/*.mdl-checkbox__box-outline {
+
+    border: 2px solid $mediumgrey !important;
+}
+.mdl-checkbox__ripple-container .mdl-ripple{
+    background: $mediumcolor !important;
+}
+
+.mdl-checkbox .is-checked{
+    color: $mediumcolor !important;
+}*/
+.mdl-checkbox.is-checked .mdl-checkbox__box-outline {
+    border: 2px solid $primarycolor !important;
+}
+
+.mdl-checkbox.is-focused.is-checked .mdl-checkbox__focus-helper {
+    background-color: $primarycolor !important;
+}
+
+.mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
+    background-color: $primarycolor !important;
+}
+
+.mdl-checkbox.is-checked.is-disabled .mdl-checkbox__tick-outline {
+    background-color: $primarycolor !important;
+}
+
+.mdl-checkbox__ripple-container .mdl-ripple {
+    background: $primarycolor !important;
+}
+
+.mdl-checkbox__label {
+    font-size: $font-size/1.1;
+    color: $mediumgrey !important;
+}
+/*// Radio sem Ripple Effect do Material
+.mdl-radio-bne {
+    position: relative;
+    float: left;
+    padding: 0;
+    div.label{
+        margin-left:30px;
+        margin-top:2px;
+        display:block;
+    }
+    input{
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+        width: 24px;
+        height: 24px;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        cursor: pointer;
+        outline: none;
+        z-index: 1;
+        &[type="radio"]{
+            & + span{
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                width: 20px;
+                height: 20px;
+                color: #FFF;
+                text-align: center;
+                border: 3px solid $ultralightgrey;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                -webkit-border-radius: 10px;
+                border-radius: 10px;
+            }
+            &:checked{
+                & + span{
+                    border-color: $primarycolor;
+                    &:before{
+                        content: "";
+                        display: block;
+                        width: 6px;
+                        height: 6px;
+                        margin: 4px auto 0;
+                        background-color: $primarycolor;
+                        -webkit-border-radius: 3px;
+                        border-radius: 3px;
+                    }
+                }
+            }
+        }
+    }
+}*/
+
+/*p.radio{
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:not(:checked) + label,
+[type="radio"]:checked + label {
+    position: relative;
+}
+[type="radio"]:not(:checked) + label:before,
+[type="radio"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid $primarycolor;
+    background: $white;
+    border-radius: 10px;
+}
+[type="radio"]+label{
+    padding-left:25px;
+    
+  
+}
+[type="radio"]:not(:checked) + label:after,
+[type="radio"]:checked + label:after {
+    content: '•';
+    position: absolute;
+    left: 4px;
+    top:-1px;
+    font-size: 13px;
+    color: $primarycolor;
+    font-size:32px;
+    transition: all .2s;
+}
+[type="radio"]:not(:checked) + label:after {
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {;
+    transform: scale(1);
+}
+label.label {
+padding-top:4px !important;}
+
+}*/
+.mdl-radio-bne input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    -moz-opacity: 0;
+    -webkit-opacity: 0;
+    -o-opacity: 0;
+
+    & + label {
+        position: relative;
+        padding: 3px 0 0 25px;
+        line-height: 24px;
+        margin: 0 0 10px 0;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 2px;
+            height: 14px;
+            width: 14px;
+            background: white;
+            border: 2px solid $lightgrey;
+            border-radius: 12px;
+            box-shadow: inset 0px 0px 0px 3px white;
+            -webkit-box-shadow: inset 0px 0px 0px 3px white;
+            -moz-box-shadow: inset 0px 0px 0px 3px white;
+            -o-box-shadow: inset 0px 0px 0px 3px white;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -o-border-radius: 8px;
+        }
+    }
+
+    &:checked + label:before {
+        background: $primarycolor;
+        border: 2px solid $primarycolor;
+    }
+}
+// ------------------------------------------------------------------  Components - Tables
+
+// Auto float THead
+table.resp {
+    border: 1px solid #ccc;
+    width: 100%;
+    border-collapse: collapse;
+    @extend %reset;
+
+    tr {
+        border: 1px solid $ultralightgrey;
+        padding: 1.25*$un;
+    }
+
+    th, td {
+        padding: 10px 0 10px 10px;
+        text-align: left;
+        color: $mediumgrey;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+}
+// ------------------------------------------------------------------  Layout Vagas - Aplicações diversas
+// Candidatando para uma vaga (cabeçalho azul, corpo branco com box-shadow)
+.headbox-vaga {
+    background-color: $primarycolor;
+    z-index: 500;
+    position: relative;
+    padding: 12px 24px 12px 24px !important;
+    width: 68%;
+    margin: auto;
+    min-width: 240px;
+}
+
+.headcont-vaga {
+    padding: 12px 24px 12px 24px !important;
+    box-shadow: 0 0 6px $ultralightgrey;
+    -webkit-box-shadow: 0 0 6px $ultralightgrey;
+    -moz-box-shadow: 0 0 6px $ultralightgrey;
+    z-index: 400;
+    position: relative;
+    clear: both;
+    width: 68%;
+    min-width: 240px;
+    margin: auto;
+}
+// ------------------------------------------------------------------  Painel de Avisos (Herdado Jeann)
+
+.painel_avisos {
+    display: none;
+    position: fixed;
+    cursor: pointer;
+    opacity: 0.9 !important;
+    width: 100%;
+    height: 40px;
+    padding: 10px 0;
+    text-align: center;
+    bottom: 0;
+    background-color: #fffeb7;
+    border-top: 1px solid #e4e270;
+    border-bottom: 1px solid #e4e270;
+    font-size: 15px;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.painel_avisos .imagem_painel_aviso {
+    vertical-align: middle;
+    margin-right: 25px;
+    margin-top: -5px;
+}
+
+.painel_avisos .texto_avisos_padrao {
+    color: #e7100b;
+    position: relative;
+    bottom: 10px;
+    margin-left: 20px;
+}
+
+.painel_avisos .texto_avisos_erro {
+    color: #ed0000;
+}
+
+.painel_avisos .botao_fechar_aviso {
+    cursor: pointer;
+    position: absolute;
+    overflow: visible;
+    height: 63px;
+    margin: -12px 0;
+    right: 0;
+    padding: 0 16px 0 32px;
+    background-color: #e3df77;
+    color: #d00;
+    border: none;
+    top: 0;
+}
+// ------------------------------------------------------------------  Loading (Herdado Jeann)
+.loading {
+    @include opacity(0.7);
+    display: none;
+    background-color: #cde1e8;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    .content {
+        left: 0;
+        height: 100%;
+        margin: 0 auto;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+
+        .spinner {
+            height: 60px;
+            width: 60px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20%;
+        }
+
+        .message {
+            display: none;
+            color: rgba(0,0,0,.87);
+        }
+    }
+}
+// ------------------------------------------------------------------  Error (Campo obrigatório)
+label.error {
+    position: relative;
+    float: right;
+    color: #fff !important;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    background: #ffab40;
+    top: 52px;
+    padding: 5px 5px 5px 5px;
+    margin-right: 8px;
+    line-height: 14px;
+    @include border-radius(2px);
+    z-index: 1;
+}
+
+label.error:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ffab40;
+    border-left: 10px solid transparent;
+    margin: -24px 0 0 -24px;
+}
+// ------------------------------------------------------------------  Badges
+.md-badges {
+    background-color: $primarycolor;
+    border-radius: 5*$un;
+    color: $white;
+    position: relative;
+    float: right;
+    font-size: 3.8*$un;
+    margin: 0 !important;
+    padding: 4px 0 0 0 !important;
+    min-width: 30px;
+    min-height: 26px;
+    font-weight: $font-weight-bold;
+    text-align: center;
+}
+// ------------------------------------------------------------------ Modal
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.5s 0.5s ease-in-out;
+    transition: all 0.5s 0.5s ease-in-out;
+}
+
+.modal-content {
+    padding: 10px;
+    max-width: 800px;
+    min-width: 240px;
+    max-height: 85%;
+    overflow: auto;
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    z-index: 2;
+    opacity: 0;
+    border-radius: 2*$un;
+    background: #fff;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(#000000,0.8);
+}
+
+.modal-close:after {
+    float: right;
+    margin-top: 2*$un;
+    margin-right: 2*$un;
+    font-family: 'Material Icons';
+    content: "cancel";
+    font-size: 24px;
+    -webkit-font-feature-settings: 'liga';
+    padding: 4px;
+    border-radius: 22px;
+    z-index: 3;
+    cursor: pointer;
+    background-color: $white;
+    color: $ncolor;
+}
+
+input[id*="modal_"] {
+    position: fixed;
+    left: -9999px;
+    top: 50%;
+    opacity: 0;
+}
+
+input[id*="modal_"]:checked + div.modal {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition-delay: 0s;
+    -ms-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+input[id*="modal_"]:checked + div.modal .modal-content {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    -webkit-transition-delay: 0.5s;
+    -ms-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+}
+
+
+/* Autocomplete */
+.ui-corner-all {
+    @include border-radius(0);
+}
+
+.ui-menu {
+    border: 1px solid lightgray;
+    border-top: 2px solid lightgray;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.ui-menu .ui-menu-item a {
+    color: #888;
+}
+
+.ui-menu .ui-menu-item:hover {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: $primarycolor;
+    background-image: none;
+    border: 1px solid lightgray;
+}
+
+.ui-widget-content .ui-state-hover, .ui-widget-content .ui-state-focus {
+    border: 1px solid lightgray;
+    background-image: none;
+    background-color: $primarycolor;
+    color: #fff;
+}
+
+input::placeholder { color: #d1d1d1 !important; }

@@ -1,0 +1,44 @@
+﻿.container_confirmacao_candidatura {
+    width: 530px;
+    float: left;
+    height: 203px;
+}
+
+
+
+    .container_confirmacao_candidatura .texto_confirmacao {
+        color: #1A3876;
+        font-size: 13px;
+        text-align: center;
+        width: 530px;
+        height: 100px;
+        display: block;
+        width: 425px;
+        float: left;
+    }
+
+        .container_confirmacao_candidatura .texto_confirmacao .texto_enviado_sucesso {
+            color: black !important;
+            font-size: 23px;
+            margin: 68px 80px 0px 80px;
+            text-align: center;
+            width: 100%;
+            line-height: 150%;
+        }
+
+        .container_confirmacao_candidatura .texto_confirmacao .texto_protocolo_envio {
+            color: rgba(0,0,0, .54);
+            font-size: 14px;
+            margin: 0px 140px 0;
+            text-align: left;
+            width: 425px;
+            float: left;
+        }
+
+.sucesso-icon {
+    position: absolute;
+    /*left:50%;*/
+    left: 39%;
+    top: -65px;
+    margin-left: -75;
+}

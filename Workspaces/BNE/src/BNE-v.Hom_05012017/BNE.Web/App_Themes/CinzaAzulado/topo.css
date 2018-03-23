@@ -1,0 +1,23 @@
+/*------------------------------------------------------------ Theme Cinza Azulado*/
+.topo {
+  background-image: url("/img/App_Themes/CinzaAzulado/bg_topo.gif"); }
+
+.painel_filtro_vaga_escondido {
+  background-image: linear-gradient(90deg, #8FA9B0 6%, #687A7F 18%, #8FA9B0 72%, #9CB8BF 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #9CB8BF 6%, #687A7F 18%, #8FA9B0 72%, #9CB8BF 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #9CB8BF 6%, #687A7F 18%, #8FA9B0 72%, #9CB8BF 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #9CB8BF 6%, #687A7F 18%, #8FA9B0 72%, #9CB8BF 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9CB8BF', endColorstr='#687A7F') !important; }
+
+#pnlBusca.painel_filtro_vaga {
+  background-image: linear-gradient(90deg, #8FA9B0 6%, #687A7F 18%, #8FA9B0 72%, #9CB8BF 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #9CB8BF 6%, #687A7F 18%, #8FA9B0 72%, #9CB8BF 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #9CB8BF 6%, #687A7F 18%, #8FA9B0 72%, #9CB8BF 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #9CB8BF 6%, #687A7F 18%, #8FA9B0 72%, #9CB8BF 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9CB8BF', endColorstr='#687A7F') !important;
+  border-radius: 0 4px 4px 4px !important; }
+
+#aBuscarVagas {
+  border-bottom: 35px solid #9CB8BF !important; }
+
+/*# sourceMappingURL=topo.css.map */

@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86FF5F85-254C-49C0-8C7A-E5DCDD8B3480}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.Mensagem.AsyncExecutor</RootNamespace>
+    <AssemblyName>BNE.Mensagem.AsyncExecutor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsyncExecutor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AsyncExecutor.Designer.cs">
+      <DependentUpon>AsyncExecutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capabilities.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueueListener.cs" />
+    <Compile Include="Service References\wsSMSTWW\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SMSController.cs" />
+    <Compile Include="TaskWorker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Xml.XmlNode.datasource" />
+    <None Include="Service References\wsSMSTWW\wsreluzcap.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Plugins\txt.txt" />
+    <None Include="Service References\wsSMSTWW\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\wsSMSTWW\configuration.svcinfo" />
+    <None Include="Service References\wsSMSTWW\configuration91.svcinfo" />
+    <None Include="Service References\wsSMSTWW\wsreluzcap.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BNE.ExceptionLog\BNE.ExceptionLog.csproj">
+      <Project>{5FF511DD-6705-4338-AAF7-0174B87DEE18}</Project>
+      <Name>BNE.ExceptionLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mensagem.AsyncServices.Base\BNE.Mensagem.AsyncServices.Base.csproj">
+      <Project>{7BE52586-73F1-45A6-BF44-0FB3FE73B849}</Project>
+      <Name>BNE.Mensagem.AsyncServices.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mensagem.AsyncServices.BLL\BNE.Mensagem.AsyncServices.BLL.csproj">
+      <Project>{044a408f-b74b-4981-8622-946b8de4e86c}</Project>
+      <Name>BNE.Mensagem.AsyncServices.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mensagem.Core\BNE.Mensagem.Core.csproj">
+      <Project>{E0A396E4-94E8-4C1C-A1A9-B277D56DBE95}</Project>
+      <Name>BNE.Mensagem.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mensagem.Domain\BNE.Mensagem.Domain.csproj">
+      <Project>{3e0b85e7-75b3-414b-aab4-e9a538b79892}</Project>
+      <Name>BNE.Mensagem.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mensagem.Model\BNE.Mensagem.Model.csproj">
+      <Project>{526991DB-A4B4-4F85-9460-548D54E6B6AE}</Project>
+      <Name>BNE.Mensagem.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Services.AsyncServices.Base\BNE.Services.AsyncServices.Base.csproj">
+      <Project>{9d2ec96c-cd62-46a6-9f0e-a59c38ddeb21}</Project>
+      <Name>BNE.Services.AsyncServices.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\wsSMSTWW\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

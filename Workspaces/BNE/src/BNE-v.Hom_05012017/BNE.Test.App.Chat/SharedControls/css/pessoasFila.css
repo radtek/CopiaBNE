@@ -1,0 +1,328 @@
+/* This code is only meant for previewing your Reflow design. */
+.primaryContainerFila {
+    font-family: verdana;
+    z-index: 1002;
+    float: left;
+    width: 52px;
+    margin-right: 5px;
+    min-height: 1px;
+    height: 322px \9;
+}
+
+#box_excesso_pessoas {
+    float: right;
+    height: 30px;
+    clear: both;
+    width: 50px;
+    border: 1px solid rgb(222, 219, 222);
+    background-color: rgb(231, 244, 231);
+    cursor: pointer;
+}
+
+.painel_janelas {
+    float: right;
+    position: relative;
+    bottom: 288px;
+    height: 1px;
+}
+
+.janela_chat {
+    float: left;
+    margin-right: 10px;
+}
+
+.painel_contatos {
+    float: right;
+    height: 320px;
+    width: 210px;
+}
+
+.container_geral_contatos {
+    min-height: 32px;
+    width: 210px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #E7F4E7;
+}
+
+.container_contact_info_left {
+    float: left;
+    margin-right: 3px;
+}
+
+.img_online_contact {
+    width: 32px;
+    height: 32px;
+    /* float: left; */
+}
+
+.container_contact_info_right {
+    margin-left: 3px;
+}
+
+.online_contact {
+    list-style: none;
+    padding-left: 3px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-width: 1px 0px 0px 0px;
+    height: 32px;
+}
+
+    .online_contact:hover {
+        background: rgb(117, 203, 63);
+    }
+
+.container_online_contact_info {
+    width: 100%;
+}
+
+.contact_title {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    float: left;
+    line-height: 1;
+    font-weight: bold;
+    width: 54%;
+    word-wrap: break-word;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.contact_last_message_date {
+    margin: 0;
+    margin-top: 2px;
+    padding: 0;
+    font-size: 10px;
+    float: right;
+    line-height: 1;
+    margin-left: 3px;
+    font-size: 9px;
+    margin-right: 1px;
+}
+
+.btn_deletar_contato {
+    height: 16px;
+    width: 16px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: -3px;
+    line-height: 57px;
+    font-size: 9px;
+    float: right;
+    right: 1px;
+}
+
+.contact_last_message_content {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1;
+    font-style: italic;
+    margin-left: 1px;
+    margin-top: 0px;
+    display: block;
+    word-wrap: break-word;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    float: left;
+    /*width: 156px;*/
+    /*width: 108px;*/
+    width: 128px;
+}
+
+.container_header_contatos {
+    height: 32px;
+    clear: none;
+    width: 100%;
+    background-color: rgb(49, 116, 6);
+    margin-right: 0%;
+    display: block;
+    float: left;
+}
+
+.lista_grupo_contato {
+    margin: 0;
+    padding: 0;
+}
+
+    .lista_grupo_contato li {
+        list-style: none;
+    }
+
+        .lista_grupo_contato li:before {
+            content: "-----";
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .lista_grupo_contato li:first-child:before {
+            content: "";
+        }
+
+.lista_contatos {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+    .lista_contatos li:before {
+        content: "";
+    }
+
+.container_lista_contatos {
+    float: left;
+    width: 100%;
+    max-height: 620px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.contato_header_texto {
+    color: white;
+    text-align: left;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.text2 {
+    float: left;
+    font-size: 12px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: 10px;
+    margin-top: 8px;
+    clear: none;
+    min-height: 0px;
+    margin-right: 0%;
+}
+
+.pessoa1:hover {
+    background-color: rgb(49, 116, 6);
+}
+
+.balaob {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    margin-top: 7px;
+    margin-left: 0%;
+    clear: none;
+    margin-right: 0%;
+}
+
+.lista_pessoas {
+}
+
+.balao {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 2px;
+    left: 4.3125px;
+    z-index: 6;
+    clear: none;
+}
+
+.container_notificacoes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#container_excesso_pessoas {
+    float: right;
+    clear: none;
+    width: 52px;
+    display: none;
+}
+
+.pessoa1 {
+    float: right;
+    height: 25px;
+    margin-top: 0px;
+    clear: none;
+    width: 150px;
+    margin-right: 0%;
+    border: 1px solid rgb(222, 219, 222);
+    background-color: rgb(231, 244, 231);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.text_close_janela_pendente {
+    float: left;
+    font-size: 12px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: 500;
+    line-height: 1em;
+    margin-left: 2px;
+    margin-top: 6px;
+    clear: none;
+    min-height: 0px;
+    color: rgb(99, 142, 71);
+    cursor: pointer;
+    padding-right: 3px;
+    padding-left: 2px;
+}
+
+.pessoa_na_lista {
+    float: left;
+    font-size: 12px;
+    width: 75.548986%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: 10px;
+    margin-top: 7px;
+    clear: none;
+    min-height: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    width: 124px;
+}
+/*.text:hover {
+    color: rgb(255, 255, 255);
+}
+
+.text1:hover {
+    color: rgb(255, 255, 255);
+}*/
+
+
+.box_janelas_pendentes {
+    float: left;
+    height: 15px;
+    margin-left: 6px;
+    margin-top: 4px;
+    clear: none;
+    width: 15px;
+    position: relative;
+    margin-right: 0%;
+}

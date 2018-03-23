@@ -1,0 +1,43 @@
+﻿@model BNE.PessoaJuridica.Web.Models.CadastroEmpresaReceita
+
+<script>
+    function ConfigurarReceita() {
+
+        bne.components.web.textbox('txtNomeReceita', true, bne.components.web.textbox.type.nome, 100);
+        bne.components.web.textbox('txtEmailReceita', true, bne.components.web.textbox.type.email, 100);
+
+        componentHandler.upgradeDom();
+    }
+</script>
+
+@Html.HiddenFor(m => m.CNPJ)
+@Html.HiddenFor(m => m.Telefone)
+
+<div style="text-align:center; width:100%;height:160px">
+    <input type="checkbox" id="modal_receita" checked />
+    <div class="modal">
+        <div class="modal-content">
+            <div id="modal-content-header">
+                Neste momento o <span class="ncolor">sistema está indisponível</span>, entraremos em contato assim que voltar.<br />
+                Estamos cuidando disso com urgência.<br /><br />
+                <h6 class="lighter mediumcolor">Informe seu <strong class="bold">nome e e-mail</strong> para facilitar o contato:</h6>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+            <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                @Html.TextBoxFor(m => m.Nome, new { id = "txtNomeReceita", @class = "mdl-textfield__input", @name = "txtNomeReceita" })
+                <label class="mdl-textfield__label" for="txtNomeReceita">Nome</label>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+            <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne top-12">
+                @Html.TextBoxFor(m => m.Email, new { id = "txtEmailReceita", @class = "mdl-textfield__input" })
+                <label class="mdl-textfield__label" for="txtEmailReceita">Email</label>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+            <input type="submit" value="CONFIRMAR" name="action:Receita" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised  btnformbig bottom20" />
+        </div>
+        <label class="modal-close" for="modal_receita"></label>
+    </div>
+</div>

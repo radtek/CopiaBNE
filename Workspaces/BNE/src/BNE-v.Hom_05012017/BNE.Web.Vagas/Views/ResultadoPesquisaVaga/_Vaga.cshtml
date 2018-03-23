@@ -1,0 +1,349 @@
+﻿@using BNE.BLL.Common
+@using BNE.BLL.Custom
+@using BNE.Web.Vagas.Code
+@using BNE.Web.Vagas.Models
+
+@model Vaga
+@{
+    var cssClassQualificacaoVaga = @Model.TipoOrigem.Equals(3) ? "qualificacaoVaga parceiro" : "qualificacaoVaga bne";
+    var textoQualificacaoVaga = @Model.TipoOrigem.Equals(3) ? "vaga de parceiro do BNE" : "vaga auditada pelo BNE";
+}
+@{
+    var cssClassVaga = "vaga colorcol_vaga";
+    if (@Model.FlagVagaArquivada || @Model.FlagInativo)
+    {
+        cssClassVaga = "vaga colorcol_oportunidade";
+    }
+
+    if (@Model.Premium && !@Model.FlagVagaArquivada)
+    {
+        cssClassVaga = "vaga colorcol_vaga vaga-premium-col02 vaga-premium";
+    }
+
+    if (@Model.BNERecomenda)
+    {
+        if (!ViewBag.STC)
+        {
+            cssClassVaga += " vaga bne_recomenda";
+        }
+
+        if (ViewBag.STCUniversitario && @Model.IdentificadorOrigem.Equals(ViewBag.IdentificadorOrigem))
+        {
+            cssClassVaga += " vaga vip_universitario_recomenda";
+        }
+    }
+}
+
+
+@*VAGA NORMAL*@
+@if (!@Model.Premium)
+{
+    <div class="@cssClassVaga" itemscope itemtype="http://schema.org/JobPosting">
+
+        @if (@Model.VagaLivre)
+        {
+            <img alt='Candidatura Grátis' class='imagem_candidatura_gratis' src='/Images/img_bne_acessolivre.png' />
+        }
+        <div class="@cssClassQualificacaoVaga">
+            <div class="img"><span>@textoQualificacaoVaga</span></div>
+        </div>
+        <div class="coluna_esquerda_colorcol">
+            @if (@Model.IdentificadorDeficiencia.HasValue && @Model.IdentificadorDeficiencia != 0)
+            {
+                <i class="fa fa-wheelchair fa-3x ico_pcd"></i>
+            }
+            <div class="titulo">
+                @if ("Estagiário" == @Model.Funcao || @Model.ContratoDeEstagio)
+                {
+                    @*<span class="coluna_web_estagios_vaga">
+                            <a href="http://www.webestagios.com.br" target="_blank">
+                                <img class="imagem_web_estagios" title="Vaga do WebEstágios" src="~/Images/ic_webstg.png" alt="Vaga do WebEstágios" />
+                            </a>
+                        </span>*@
+                }
+                <h2 itemprop="title" class="funcao">@Model.LinkVaga.GetLink()</h2>
+                @if (@Model.QuantidadeVaga > 1 && @Model.FlagVagaArquivada == false)
+                {
+                    <span class="quantidade_vaga">(@Helper.RetornarDesricaoQuantidadeVaga(@Model.QuantidadeVaga))</span>
+                }
+
+            </div>
+
+
+            <span class="cidade" itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
+                <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="addressLocality" class="Media">
+                        @Model.Cidade
+                    @if (!string.IsNullOrWhiteSpace(@Model.Bairro))
+                    {
+                        <span> no bairro @Model.Bairro</span>
+                    }
+                </span>
+            </span>
+        </span>
+        @if (@Model.SalarioInicial == null && @Model.SalarioFinal == null && !@Model.ContratoDeEstagio && @Model.MediaSalarial != null)
+        {
+            <span class="salario" itemprop="baseSalary">
+                <div >Média salarial do mercado: @Model.MediaSalarial</div>
+            </span>
+        }
+        @if (@Model.SalarioInicial != null || @Model.SalarioFinal != null || @Model.ContratoDeEstagio)
+        {
+            <span class="salario" itemprop="baseSalary">
+                <div > @Helper.RetornarDesricaoSalario(@Model.SalarioInicial, @Model.SalarioFinal)</div>
+            </span>
+        }
+
+        <div class="container_atribuicao">
+            @if (!String.IsNullOrWhiteSpace(@Model.Atribuicao))
+            {
+                <h3>Atribuições:</h3>
+                <span class="atribuicao">@Html.Raw(@Model.Atribuicao.Truncate(220))</span>
+            }
+        </div>
+        <div class="painel_mais_dados_vaga">
+            <span class="atribuicao" itemprop="responsibilities">@Html.Raw(@Model.Atribuicao)</span>
+            @if (!string.IsNullOrWhiteSpace(@Model.Beneficio))
+            {
+                <h3>Benefícios:</h3>
+                <span itemprop="benefits">@Html.Raw(@Model.Beneficio)</span>
+            }
+            @if (@Model.IdentificadorDeficiencia.HasValue && !@Model.IdentificadorDeficiencia.Value.Equals(0))
+            {
+                <p>
+                    <h3>Deficiência:</h3>
+                    <span>@Model.DescricaoDeficiencia</span>
+                </p>
+            }
+            @if (!string.IsNullOrWhiteSpace(@Model.Escolaridade) || !string.IsNullOrWhiteSpace(@Model.Requisito))
+            {
+                <h3>Requisitos:</h3>
+
+                if (!string.IsNullOrWhiteSpace(@Model.Escolaridade))
+                {
+                    <span itemprop="educationRequirements">
+                        @Model.Escolaridade.
+                    </span>
+                }
+                <span itemprop="experienceRequirements">@Html.Raw(@Model.Requisito)</span>
+
+                if (!string.IsNullOrWhiteSpace(@Model.Disponibilidade))
+                {
+                    <p>
+                        Disponibilidade de Trabalho:
+                        <span itemprop="workHours">@Model.Disponibilidade</span>
+                    </p>
+                }
+                if (!string.IsNullOrWhiteSpace(@Model.TipoVinculo))
+                {
+                    <p>
+                        Tipo de Contrato:
+                        <span itemprop="employmentType">@Model.TipoVinculo</span>
+                    </p>
+                }
+            }
+            <p class="codigo_data_vaga">Código da @(!@Model.FlagVagaArquivada && !@Model.FlagInativo ? "vaga" : "oportunidade"): @Model.Codigo</p>
+
+            @if (!@Model.FlagVagaArquivada && !@Model.FlagInativo)
+            {
+                <p class="codigo_data_vaga">Anunciada em <span itemprop="datePosted">@Model.DataAnuncio.ToShortDateString()</span></p>
+            }
+            <div class="compartilhamento">
+                <span class="compartilhe">COMPARTILHE:</span>
+                @{ Html.RenderPartial("_VagaCompartilhamento", new VagaCompartilhamento { Identificador = Model.IdentificadorVaga, Cidade = Model.Cidade, Funcao = Model.Funcao, SalarioInicial = Model.SalarioInicial, SalarioFinal = Model.SalarioFinal, URLVaga = Model.URL, URLIconeFacebook = Model.URLIconeFacebook, MobileAcess = Model.MobileAcess }); }
+            </div>
+        </div>
+    </div>
+    @*<div class="coluna_meio">
+        </div>*@
+    <div class="coluna_direita">
+        <div id="container_candidatura_@(Model.IdentificadorVaga)">
+            @{ Html.RenderPartial("_VagaCandidatura", new VagaCandidatura { Candidatou = Model.Candidatou, IdentificadorVaga = Model.IdentificadorVaga, URL = Model.URL, FlgVagaArquivada = Model.FlagVagaArquivada, FlgInativa = Model.FlagInativo }); }
+        </div>
+        <ul>
+            <li class="spanMaisDadosDaVaga">
+                @Html.HiddenFor(m => m.IdentificadorVaga)
+                @if (@Model.FlagVagaArquivada)
+                {
+                    @Html.Raw(@Html.HyperLink("javascript:;", "Mais dados da oportunidade", true))
+                }
+                else
+                {
+                    @Html.Raw(@Html.HyperLink("javascript:;", "Mais dados da vaga", true))
+                }
+
+            </li>
+
+            @if (!ViewBag.STC && !@Model.FlagVagaArquivada)
+            {
+                <li>
+                    @Ajax.ActionLink("Mais dados da empresa", "DadosEmpresa", "Vaga", new { vaga = @Model.IdentificadorVaga }, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "modal_container" }, new { rel = "nofollow" })
+                    @*  @Html.Raw(@Html.HyperLink("javascript:;", "Mais dados da empresa"))*@
+                </li>
+
+            }
+        </ul>
+    </div>
+</div>
+
+
+
+}@*VAGA PREMIUM*@
+else
+{
+    <div class="@cssClassVaga" itemscope itemtype="http://schema.org/JobPosting">
+
+
+        <div class="@cssClassQualificacaoVaga">
+            <div class="img"><span>@textoQualificacaoVaga</span></div>
+        </div>
+        <div class="vaga-premium-col01"><img src="~/Images/vaga-premium-trofeu-big.png" /></div>
+        <div class="coluna_esquerda_colorcol_premium vaga-premium-detalhes">
+            @if (@Model.IdentificadorDeficiencia.HasValue && @Model.IdentificadorDeficiencia != 0)
+            {
+                <i class="fa fa-wheelchair fa-3x ico_pcd" style="color:white;"></i>
+            }
+            <div class="titulo">
+                @if ("Estagiário" == @Model.Funcao || @Model.ContratoDeEstagio)
+                {
+                    @*<span class="coluna_web_estagios_vaga">
+                            <a href="http://www.webestagios.com.br" target="_blank">
+                                <img class="imagem_web_estagios" title="Vaga do WebEstágios" src="~/Images/ic_webstg.png" alt="Vaga do WebEstágios" />
+                            </a>
+                        </span>*@
+                }
+                <div class="vaga-premium-funcao">
+                    <h2 itemprop="title">
+                        @Model.LinkVaga.GetLink()
+                        <span class="vaga-premium-tag">vaga premium</span>
+                    </h2>
+
+                </div>
+                @if (@Model.QuantidadeVaga > 1 && @Model.FlagVagaArquivada == false)
+                {
+                    <span class="quantidade_vaga">(@Helper.RetornarDesricaoQuantidadeVaga(@Model.QuantidadeVaga))</span>
+                }
+
+            </div>
+
+
+
+            <span class="vaga-premium-salario-local" itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
+                <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <span class="Media" itemprop="addressLocality">
+                        @Model.Cidade
+                        @if (!string.IsNullOrWhiteSpace(@Model.Bairro))
+                        {
+                        <span > no bairro @Model.Bairro</span>
+                        }
+                    </span>
+                    <span class="vaga-premium-salario-local" itemprop="baseSalary">
+                        @if (@Model.SalarioInicial != null || @Model.SalarioFinal != null || @Model.ContratoDeEstagio)
+                        {
+                            <div >  @Helper.RetornarDesricaoSalario(@Model.SalarioInicial, @Model.SalarioFinal)</div>
+                        }
+                    </span>
+
+                </span>
+            </span>
+
+
+            <div class="container_atribuicao">
+                @if (!String.IsNullOrWhiteSpace(@Model.Atribuicao))
+                {
+                    <h3>Atribuições:</h3>
+                    <span class="atribuicao">@Html.Raw(@Model.Atribuicao.Truncate(220))</span>
+                }
+            </div>
+            <div class="painel_mais_dados_vaga">
+                <div class=" vaga-premium-detalhes">
+                    <span class="atribuicao" itemprop="responsibilities">@Html.Raw(@Model.Atribuicao)</span>
+                    @if (!string.IsNullOrWhiteSpace(@Model.Beneficio))
+                    {
+                        <h3>Benefícios:</h3>
+                        <span itemprop="benefits">@Html.Raw(@Model.Beneficio)</span>
+                    }
+                    @if (@Model.IdentificadorDeficiencia.HasValue && !@Model.IdentificadorDeficiencia.Value.Equals(0))
+                    {
+                        <p>
+                            <h3>Deficiência:</h3>
+                            <span>@Model.DescricaoDeficiencia</span>
+                        </p>
+                    }
+                    @if (!string.IsNullOrWhiteSpace(@Model.Escolaridade) || !string.IsNullOrWhiteSpace(@Model.Requisito))
+                    {
+                        <h3>Requisitos:</h3>
+
+                        if (!string.IsNullOrWhiteSpace(@Model.Escolaridade))
+                        {
+                            <span itemprop="educationRequirements">
+                                @Model.Escolaridade.
+                            </span>
+                        }
+                        <span itemprop="experienceRequirements">@Html.Raw(@Model.Requisito)</span>
+
+                        if (!string.IsNullOrWhiteSpace(@Model.Disponibilidade))
+                        {
+                            <p>
+                                Disponibilidade de Trabalho:
+                                <span itemprop="workHours">@Model.Disponibilidade</span>
+                            </p>
+                        }
+                        if (!string.IsNullOrWhiteSpace(@Model.TipoVinculo))
+                        {
+                            <p>
+                                Tipo de Contrato:
+                                <span itemprop="employmentType">@Model.TipoVinculo</span>
+                            </p>
+                        }
+                    }
+                    <p class="codigo_data_vaga"><strong>Código da vaga:</strong> @Model.Codigo</p>
+
+                    @if (!@Model.FlagVagaArquivada && !@Model.FlagInativo)
+                    {
+                        <p class="codigo_data_vaga"><strong>Anunciada em </strong><span itemprop="datePosted">@Model.DataAnuncio.ToShortDateString()</span></p>
+                    }
+                </div>
+                <strong>
+                    <span class="compartilhe-premium">COMPARTILHE:</span>
+                </strong>
+                <div class="compartilhamento compartilhe-link">
+                    @{ Html.RenderPartial("_VagaCompartilhamento", new VagaCompartilhamento { Identificador = Model.IdentificadorVaga, Cidade = Model.Cidade, Funcao = Model.Funcao, SalarioInicial = Model.SalarioInicial, SalarioFinal = Model.SalarioFinal, URLVaga = Model.URL, URLIconeFacebook = Model.URLIconeFacebook, MobileAcess = Model.MobileAcess }); }
+                </div>
+            </div>
+        </div>
+        @*<div class="coluna_meio">
+            </div>*@
+        <div class="coluna_direita_premium" style="margin-bottom:0px !important;">
+            <div id="container_candidatura_@(Model.IdentificadorVaga)">
+                @{ Html.RenderPartial("_VagaCandidatura", new VagaCandidatura { Candidatou = Model.Candidatou, IdentificadorVaga = Model.IdentificadorVaga, URL = Model.URL, FlgVagaArquivada = Model.FlagVagaArquivada, FlgInativa = Model.FlagInativo, Premium = new VagaCandidatura.PremiumCandidatura { PrecoCandidatura = string.Empty } }); }
+            </div>
+            <div class="vaga-premium-options">
+                <ul>
+                    <li class="spanMaisDadosDaVaga">
+                        @Html.HiddenFor(m => m.IdentificadorVaga)
+                        @if (@Model.FlagVagaArquivada)
+                        {
+                            @Html.Raw(@Html.HyperLink("javascript:;", "Mais dados da oportunidade", true))
+                        }
+                        else
+                        {
+                            @Html.Raw(@Html.HyperLink("javascript:;", "Mais dados da vaga", true))
+                        }
+
+                    </li>
+
+                    @if (!ViewBag.STC && !@Model.FlagVagaArquivada)
+                    {
+                        <li>
+                            @Ajax.ActionLink("Mais dados da empresa", "DadosEmpresa", "Vaga", new { vaga = @Model.IdentificadorVaga }, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "modal_container" }, new { rel = "nofollow" })
+                            @*  @Html.Raw(@Html.HyperLink("javascript:;", "Mais dados da empresa"))*@
+                        </li>
+
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+

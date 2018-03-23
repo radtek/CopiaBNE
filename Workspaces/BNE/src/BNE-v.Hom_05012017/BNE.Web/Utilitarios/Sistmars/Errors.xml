@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Mensagens>
+	<CPF>
+		<Err1>CPF inválido.</Err1>
+		<Err2>O CPF não foi informado.</Err2>
+		<Err3>O Número de dígitos do CPF está inválido.</Err3>
+	</CPF>
+	<Erros>
+		<Err1>Usuário e/ou senha inválidos.</Err1>
+		<Err2>Erro ao tentar gravar dados. O administrador já foi avisado.</Err2>
+		<Err3>Erro ao tentar enviar email de resposta. O administrador já foi avisado.</Err3>
+		<Err4>Erro ao tentar carregar o resultado da avaliação. O administrador já foi avisado.</Err4>
+		<Err5>Por favor, digite a resposta.</Err5>
+	</Erros>
+	<Sucesso>
+		<Msg1>Dados gravados com sucesso.</Msg1>
+	</Sucesso>
+</Mensagens>

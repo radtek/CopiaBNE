@@ -1,0 +1,39 @@
+﻿.visualizar_vaga { overflow: auto; position: relative; margin-top: -15px; }
+/*.coluna_esquerda { float: left; width: 650px; }*/
+.coluna_esquerda { float: left; width: 575px; }
+.box_vaga { width: 100%; }
+
+.coluna_direita { width: 300px; height: 100%; position: absolute; right: 0; }
+.container_vagas_similares { overflow-y: auto; background-color: #fff; border: 1px solid #D1D5DC; clear: both; position: relative; height: calc(100% - 18px); /* IE9+ and future browsers */ height: -moz-calc(100% - 18px); /* Firefox */ height: -webkit-calc(100% - 270px); /* Chrome, Safari */ }
+    .container_vagas_similares .vagas_similares { padding: 15px 12px; }
+    .container_vagas_similares .titulo { color: #172B49; font-size: 17px; width: auto; height: 20px; margin: 0; padding: 0; border-bottom: 2px solid #D1D5DC; margin-left: 4px; text-align: center; margin-right: 4px; padding-top: 4px; }
+    .container_vagas_similares .vagas_similares ul li { border-bottom: 1px solid #D1D5DC; padding-top: 5px; padding-bottom: 5px; }
+        .container_vagas_similares .vagas_similares ul li.last { border-bottom: none; }
+    .container_vagas_similares .vagas_similares .funcao { font-weight: bold; }
+    .container_vagas_similares .vagas_similares .cidade { }
+.vaga .data_vaga { margin-left: 10px; }
+.vaga h2 { font-size: 12px; margin-top: 14px; }
+.coluna_esquerda .vaga { padding-left: 10px; padding-right: 10px; }
+.box_vaga .vaga { padding-left: 10px; padding-right: 10px; }
+
+.vaga .quero_me_candidatar { margin-left: 0px; }
+
+.container_botoes { /*height: 100px;*/ }
+    .container_botoes .container_candidatura { text-align: left; /*float: left;*/ }
+    .container_botoes .compartilhamento { clear: both; padding-top: 20px; }
+
+@media only screen and (max-device-width: 900px) {
+    .coluna_direita { display: none !important; }
+    .coluna_esquerda { width: 100%; }
+}
+
+.candidatura_encerrada { width: 355px; height: 30px; background: #194582; text-align: center; padding-top: 12px; font-family: Arial; color: #fff; font-size: 14px; -webkit-transform: rotate(325deg); -moz-transform: rotate(325deg); -o-transform: rotate(325deg);  -ms-transform: rotate(325deg);  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); opacity: 0.9; position: absolute; z-index: 99999; margin-top: 64px;}
+.faixa_enc {
+    width: 400px;
+    height: 189px;
+    position: absolute;
+    z-index: 99;
+    margin-top: 9px;
+    overflow: hidden;
+    margin-left: -66px;
+}

@@ -1,0 +1,50 @@
+﻿@model BNE.PessoaFisica.Web.Models.PreCurriculo
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        ConfigurarIndicacao();
+    });
+</script>
+<div class="mdl-grid">
+    @Html.HiddenFor(m => m.Nome, new { @Value = Model.Nome })
+    @Html.HiddenFor(m => m.CPF, new { @Value = Model.CPF })
+
+    @Html.HiddenFor(m => m.DataNascimento, new { @Value = Model.DataNascimento.Value.ToString("dd/MM/yyyy") })
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center bottom20">
+    <h4><strong class="darkgrey">Quer mais chances?</strong></h4>
+    <h5>Indique 3 amigos e ganhe mais uma candidatura.</h5>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+        @Html.TextBoxFor(m => m.IndicadoUm.Nome, new { id = "txtNomeIndicadoUm", @class = "mdl-textfield__input" })
+        <label class="mdl-textfield__label" for="txtNome">Nome</label>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+        @Html.TextBoxFor(m => m.IndicadoUm.Email, new { id = "txtEmailIndicadoUm", @class = "mdl-textfield__input" })
+        <label class="mdl-textfield__label" for="txtEmail">Email</label>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+        @Html.TextBoxFor(m => m.IndicadoDois.Nome, new { id = "txtNomeIndicadoDois", @class = "mdl-textfield__input" })
+        <label class="mdl-textfield__label" for="txtNome">Nome</label>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+        @Html.TextBoxFor(m => m.IndicadoDois.Email, new { id = "txtEmailIndicadoDois", @class = "mdl-textfield__input" })
+        <label class="mdl-textfield__label" for="txtEmail">Email</label>
+    </div><div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.IndicadoTres.Nome, new { id = "txtNomeIndicadoTres", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtNome">Nome</label>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.IndicadoTres.Email, new { id = "txtEmailIndicadoTres", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtEmail">Email</label>
+</div>
+    @if(ViewBag.Erros){
+        <div id="divAviso" class="mdl-cell mdl-cell--12-col center top12">
+            <h5>Ocorreu um erro ao indicar os e-mails, por favor verifique os dados dos indicados.</h5>
+        </div>
+    }
+    
+        <div class="mdl-cell mdl-cell--12-col center top12">
+            <button type="submit" name="action:IndicarAmigos" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformxbig">Indicar</button>
+        </div>
+
+    </div>

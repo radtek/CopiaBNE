@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="APIGateway.Model.Api">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAACEAAAAAAAAAAAAAgAAAAAAEAAAA=</HashCode>
+      <FileName>Models\Api.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Endpoints" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="APIGateway.Model.Endpoint">
+    <Position X="0.75" Y="2.5" Width="1.75" />
+    <AssociationLine Name="Method" Type="System.Net.Http.HttpMethod">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.378" Y="0.412" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAEAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Endpoint.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Method" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="System.Net.Http.HttpMethod" Collapsed="true">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="APIGateway.Model.Authorization">
+    <Position X="3.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Authorization.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Endpoint" />
+      <Property Name="Perfil" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="APIGateway.Model.AuthenticationType">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AuthenticationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="APIGateway.Model.Perfil">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Perfil.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

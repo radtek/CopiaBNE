@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://painel02.allinmail.com.br/wsAllin/login.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="wsLogin" targetNamespace="http://painel02.allinmail.com.br/wsAllin/login.php" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://painel02.allinmail.com.br/wsAllin/login.php" />
+  </wsdl:types>
+  <wsdl:message name="getTicketIn">
+    <wsdl:part name="login" type="xsd:string" />
+    <wsdl:part name="senha" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getTicketOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="wsLoginPort">
+    <wsdl:operation name="getTicket">
+      <documentation>@param string $login 
+  @param string $senha
+  @return string</documentation>
+      <wsdl:input message="tns:getTicketIn" />
+      <wsdl:output message="tns:getTicketOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsLoginBinding" type="tns:wsLoginPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="getTicket">
+      <soap:operation soapAction="http://painel02.allinmail.com.br/wsAllin/login.php#getTicket" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://painel02.allinmail.com.br/wsAllin/login.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://painel02.allinmail.com.br/wsAllin/login.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsLoginService">
+    <wsdl:port name="wsLoginPort" binding="tns:wsLoginBinding">
+      <soap:address location="http://painel02.allinmail.com.br/wsAllin/login.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,40 @@
+﻿@using BNE.Web.Vagas.Models
+@model ExperienciaProfissional
+<div id="modalPergunta" class="modal amarela">
+    <script>
+        modal.abrirModal('modalPergunta');
+    </script>
+    <link href="~/Content/ModalExperienciaProfissional.css" rel="stylesheet" />
+    <a class="simplemodal-close b-close modal_fechar" title="Close"></a>
+    <div class="modal_conteudo">
+        <div class="container_confirmacao_candidatura">
+            <div class="icone_confirmacao">
+                <img alt="Ícone Confirmação" src="/Images/img_alerta_bne.png" />
+            </div>
+            <div class="texto_confirmacao">
+                @using (Ajax.BeginForm("Candidatar", "Vaga", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "container_candidatura_" + Model.IdentificadorVaga }))
+                {
+                    @Html.HiddenFor(m => m.Identificador, new { @id = "id_" + Model.Identificador })
+                    @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+                    @Html.HiddenFor(m => m.IdPerguntaHistoricoExp, new { @id = "id_" + Model.IdPerguntaHistoricoExp })
+
+                     
+                <p class="texto_aviso">
+                   Confira a sua última experiência profissional antes de enviar seu currículo para esta vaga:
+                </p>
+                <p>@Html.TextBoxFor(m => m.RazSocial, new { @class="textbox_padrao"})</p>
+                <p>
+                    @Html.TextAreaFor(m => m.DesAtividade, new { @class="textarea_padrao"})
+                </p>
+                    <button class="btn btn-danger btn-small espacoBotao espacoBtnExperiencia" name="Button" value="AtualizarExperiencia">Atualizar Experiências</button>
+                }
+
+                @using (Ajax.BeginForm("Candidatar", "Vaga", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "container_candidatura_" + Model.IdentificadorVaga }))
+                {
+                    @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+                    <button class="btn btn-primary btn-small espacoBotao" name="Button" value="ExperienciaCorreta">Está correto</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>

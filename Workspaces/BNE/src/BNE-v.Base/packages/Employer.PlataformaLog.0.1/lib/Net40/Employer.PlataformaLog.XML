@@ -1,0 +1,405 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Employer.PlataformaLog</name>
+    </assembly>
+    <members>
+        <member name="T:Employer.PlataformaLog.PLATAFORMA_LOG_ERROEntities">
+            <summary>
+            There are no comments for PLATAFORMA_LOG_ERROEntities in the schema.
+            </summary>
+        </member>
+        <member name="M:Employer.PlataformaLog.PLATAFORMA_LOG_ERROEntities.#ctor">
+            <summary>
+            Initializes a new PLATAFORMA_LOG_ERROEntities object using the connection string found in the 'PLATAFORMA_LOG_ERROEntities' section of the application configuration file.
+            </summary>
+        </member>
+        <member name="M:Employer.PlataformaLog.PLATAFORMA_LOG_ERROEntities.#ctor(System.String)">
+            <summary>
+            Initialize a new PLATAFORMA_LOG_ERROEntities object.
+            </summary>
+        </member>
+        <member name="M:Employer.PlataformaLog.PLATAFORMA_LOG_ERROEntities.#ctor(System.Data.EntityClient.EntityConnection)">
+            <summary>
+            Initialize a new PLATAFORMA_LOG_ERROEntities object.
+            </summary>
+        </member>
+        <member name="M:Employer.PlataformaLog.PLATAFORMA_LOG_ERROEntities.AddToTAB_Erro_Log(Employer.PlataformaLog.TAB_Erro_Log)">
+            <summary>
+            There are no comments for TAB_Erro_Log in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.PLATAFORMA_LOG_ERROEntities.TAB_Erro_Log">
+            <summary>
+            There are no comments for TAB_Erro_Log in the schema.
+            </summary>
+        </member>
+        <member name="T:Employer.PlataformaLog.TAB_Erro_Log">
+            <summary>
+            There are no comments for PLATAFORMA_LOG_ERROModel.TAB_Erro_Log in the schema.
+            </summary>
+            <KeyProperties>
+            Idf_Erro_Log
+            </KeyProperties>
+        </member>
+        <member name="M:Employer.PlataformaLog.TAB_Erro_Log.CreateTAB_Erro_Log(System.Guid,System.DateTime,System.String,System.String,System.String)">
+            <summary>
+            Create a new TAB_Erro_Log object.
+            </summary>
+            <param name="idf_Erro_Log">Initial value of Idf_Erro_Log.</param>
+            <param name="dta_Cadastro">Initial value of Dta_Cadastro.</param>
+            <param name="aplicacao">Initial value of Aplicacao.</param>
+            <param name="stack_Trace">Initial value of Stack_Trace.</param>
+            <param name="message">Initial value of Message.</param>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.Idf_Erro_Log">
+            <summary>
+            There are no comments for property Idf_Erro_Log in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.Dta_Cadastro">
+            <summary>
+            There are no comments for property Dta_Cadastro in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.Aplicacao">
+            <summary>
+            There are no comments for property Aplicacao in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.Usuario">
+            <summary>
+            There are no comments for property Usuario in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.Centro_Servico">
+            <summary>
+            There are no comments for property Centro_Servico in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.Empresa">
+            <summary>
+            There are no comments for property Empresa in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.Sessao">
+            <summary>
+            There are no comments for property Sessao in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.URL">
+            <summary>
+            There are no comments for property URL in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.Request">
+            <summary>
+            There are no comments for property Request in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.Response">
+            <summary>
+            There are no comments for property Response in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.Stack_Trace">
+            <summary>
+            There are no comments for property Stack_Trace in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.Message">
+            <summary>
+            There are no comments for property Message in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.Source">
+            <summary>
+            There are no comments for property Source in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.MachineName">
+            <summary>
+            There are no comments for property MachineName in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.Custon_Message">
+            <summary>
+            There are no comments for property Custon_Message in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.URL_Referrer">
+            <summary>
+            There are no comments for property URL_Referrer in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.WsRequest">
+            <summary>
+            There are no comments for property WsRequest in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.TAB_Erro_Log1">
+            <summary>
+            There are no comments for TAB_Erro_Log1 in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.InnerException">
+            <summary>
+            There are no comments for InnerException in the schema.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.TAB_Erro_Log.InnerExceptionReference">
+            <summary>
+            There are no comments for InnerException in the schema.
+            </summary>
+        </member>
+        <member name="T:Employer.PlataformaLog.Conf.BufferLogConfig">
+            <summary>
+            Sessão de configuração que indica o tamanho do buffer e timeout dele.
+            Ex: 
+             <BufferLogConfig Tamanho="100" Timeout="00:00:30"></BufferLogConfig>
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.Conf.BufferLogConfig.Tamanho">
+            <summary>
+            Tamanho do buffer
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.Conf.BufferLogConfig.Timeout">
+            <summary>
+            Tempo de expiração do buffer. Padrão 3 minutos
+            </summary>
+        </member>
+        <member name="T:Employer.PlataformaLog.Conf.HttpLogErrorIgnore">
+            <summary>
+            Inica qual errorcode deve ignorar
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.Conf.HttpLogErrorIgnore.StatusCode">
+            <summary>
+            Inica qual errorcode deve ignorar
+            </summary>
+        </member>
+        <member name="T:Employer.PlataformaLog.Conf.HttpLogErrorIgnoreCollection">
+            <summary>
+            Coleção de HttpLogErrorIgnore
+            </summary>
+        </member>
+        <member name="M:Employer.PlataformaLog.Conf.HttpLogErrorIgnoreCollection.CreateNewElement">
+            <summary>
+            Cria um HttpLogErrorIgnore
+            </summary>
+            <returns>HttpLogErrorIgnore</returns>
+        </member>
+        <member name="M:Employer.PlataformaLog.Conf.HttpLogErrorIgnoreCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Retorna um StatusCode de um  HttpLogErrorIgnore
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Employer.PlataformaLog.Conf.HttpLogErrorIgnoreCollection.GetByStatusCode(System.Int32)">
+            <summary>
+            Retorna um HttpLogErrorIgnore pelo código
+            </summary>
+            <param name="StatusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Employer.PlataformaLog.Conf.HttpLogErrorIgnoreCollection.IndexOf(Employer.PlataformaLog.Conf.HttpLogErrorIgnore)">
+            <summary>
+            Retorna um o indice de um HttpLogErrorIgnore
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Employer.PlataformaLog.Conf.HttpLogErrorIgnoreCollection.Add(Employer.PlataformaLog.Conf.HttpLogErrorIgnore)">
+            <summary>
+            Adiciona um HttpLogErrorIgnore
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:Employer.PlataformaLog.Conf.HttpLogErrorIgnoreCollection.BaseAdd(System.Configuration.ConfigurationElement)">
+            <summary>
+            Adiciona u ConfigurationElement
+            </summary>
+            <param name="element"></param>
+        </member>
+        <member name="M:Employer.PlataformaLog.Conf.HttpLogErrorIgnoreCollection.Remove(Employer.PlataformaLog.Conf.HttpLogErrorIgnore)">
+            <summary>
+            Remove um HttpLogErrorIgnore
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="P:Employer.PlataformaLog.Conf.HttpLogErrorIgnoreCollection.Item(System.Int32)">
+            <summary>
+            Retorna um HttpLogErrorIgnore baseado pelo indice
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Employer.PlataformaLog.Conf.HttpLogErrorIgnoreCollection.Item(System.String)">
+            <summary>
+            Retorna um HttpLogErrorIgnore pelo código
+            </summary>
+            <param name="Name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Employer.PlataformaLog.Conf.LogErrorConfig">
+            <summary>
+            Sessão de configuração que infica quais httperrorcode deve ignorar.
+            Ex: 
+            <LogErrorConfig>
+                <HttpLogErrorIgnore>
+                    <add statusCode="404"></add>
+                    <add statusCode="403"></add>
+                </HttpLogErrorIgnore>
+            </LogErrorConfig>
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.Conf.LogErrorConfig.HttpIgnoreCollection">
+            <summary>
+            Lista e httperrorcode que deve ignorar.
+            </summary>
+        </member>
+        <member name="T:Employer.PlataformaLog.LogError">
+            <summary>
+            Classe responsável para gravar log de erro na base de bado, caso não consiga gravar em banco 
+            ele grava no log do windows.
+            </summary>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogError.WriteErrorGlobal">
+            <summary>
+            Grava o erro corrente que está em HttpContext.Current
+            </summary>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogError.WriteErrorGlobal(System.Web.HttpContext)">
+            <summary>
+            Este metodo trata o erro no Global.asax metodo Application_Error.
+            Obs.: Captura o erro por Server.GetLastError()
+            </summary>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogError.WriteLog(System.Exception)">
+            <summary>
+            Grava log de erro
+            </summary>
+            <param name="ex">Exceção</param>
+            <returns>Id do Erro no BD</returns>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogError.WriteLog(System.Exception,System.String)">
+            <summary>
+            Grava log de erro
+            </summary>
+            <param name="ex">Exceção</param>
+            <param name="sCustonMessage">Mensagem customizada. Grava no campo Custon_Message na tabela de log</param>
+            <returns>Id do Erro no BD</returns>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogError.WriteLog(System.Exception,System.String@)">
+            <summary>
+            Grava log de erro
+            </summary>
+            <param name="ex">Exceção</param>
+            <param name="sMessage">Messagem da Exption. Obs: Em alguns casos retorna menságem customizada</param>
+            <returns>Id do Erro no BD</returns>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogError.WriteLog(System.Exception,System.String@,System.String)">
+            <summary>
+            Grava log de erro
+            </summary>
+            <param name="ex">Exceção</param>
+            <param name="sMessage">Messagem da Exption. Obs: Em alguns casos retorna menságem customizada</param>
+            <param name="sCustonMessage">Mensagem customizada. Grava no campo Custon_Message na tabela de log</param>
+            <returns>Id do Erro no BD</returns>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogError.TrataMensagemDeErro(System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogError.GetErrorMessage(System.Guid)">
+            <summary>
+            Retorna a mensagem de um log de erro gravado no banco de dados.
+            </summary>
+            <param name="Id">Identificação do erro</param>
+            <returns></returns>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogError.GravaXml(System.Object)">
+            <summary>
+            Método de um objeto e transforma em xml o conteudo via Refexão.
+            Obs: Não foi usado serelização em xml pois nem todos os objetos são serealizaveis p/ xml
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogError.GravaColecao(System.Collections.IEnumerable,System.Xml.XmlTextWriter)">
+            <summary>
+            Le uma coleção e grava dentro do XmlTextWriter
+            </summary>
+            <param name="oblColecao"></param>
+            <param name="xWriter"></param>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogError.GravarXmlProperty(System.Object,System.Type,System.Xml.XmlTextWriter)">
+            <summary>
+            Le as propriedades de um objeto e grava em xml no XmlTextWriter
+            </summary>
+            <param name="obj"></param>
+            <param name="tipo"></param>
+            <param name="xWriter"></param>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogError.GravaObjeto(System.Object,System.Xml.XmlTextWriter)">
+            <summary>
+            Grava o conteudo de um objeto para um xml verificando de é uma coleção ou não
+            </summary>
+            <param name="oValue"></param>
+            <param name="xWriter"></param>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogError.Dispose">
+            <summary>
+            Grava o que ficou pendente no Buffer do log.
+            </summary>
+        </member>
+        <member name="T:Employer.PlataformaLog.LogErrorProvider">
+            <summary>
+            Health monitor para captura de erros.
+            Registra o erro conforme definição da classe LogError
+            </summary>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogErrorProvider.ProcessEvent(System.Web.Management.WebBaseEvent)">
+            <summary>
+            Registra todo WebBaseErrorEvent conforme definição da classe LogError
+            </summary>
+            <param name="raisedEvent"></param>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogErrorProvider.Flush">
+            <summary>
+            Não tem Flush
+            </summary>
+        </member>
+        <member name="M:Employer.PlataformaLog.LogErrorProvider.Shutdown">
+            <summary>
+            Não tem Shutdown
+            </summary>
+        </member>
+        <member name="T:Employer.PlataformaLog.Resources.ExceptionMessage">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.Resources.ExceptionMessage.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.Resources.ExceptionMessage.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Employer.PlataformaLog.Resources.ExceptionMessage.System_Data_Common_DbException">
+            <summary>
+              Looks up a localized string similar to Erro Genérico de Banco de Dados.
+            </summary>
+        </member>
+    </members>
+</doc>

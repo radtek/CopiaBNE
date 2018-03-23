@@ -1,0 +1,1476 @@
+﻿/* reset ----------------------------------------------------------*/
+html, body, div, span, applet, object, iframe, caption,
+tfoot, thead, del, dfn, em, font, img, ins,
+kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+acronym, address, big, cite, code, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend {
+    font-family: inherit; /*font-weight: inherit;*/
+    font-style: inherit;
+    font-size: 100%;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+:focus {
+    outline: 0;
+}
+
+body {
+    background: white;
+    /*line-height: 1;*/
+    color: black;
+}
+ol, ul {
+    list-style: none;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+caption, th, td {
+    font-weight: normal;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+}
+
+blockquote, q {
+    -webkit-quotes: "" "";
+    quotes: "" "";
+}
+/* FIM:reset ----------------------------------------------------------*/
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    width: 100%;
+    overflow-x: hidden;    
+    overflow-y:auto !important;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.clear {
+    clear: both;
+}
+
+h1 {
+    color: gray;
+    font-size: 20px;
+    
+    font-weight: bold;
+    display: block;
+    
+}
+
+h2 {
+    font-weight: normal;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+a {
+    color: #1E3260;
+    text-decoration: none;
+}
+
+
+.totalDeRegistros {
+    padding-right: 5px;
+    float: left;
+    color: gray;
+    font-size: 20px;
+    height: 20px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 13px;
+}
+
+/* topo----------------------------------------------------------*/
+.header {
+    background-image: url('/Images/bg_topo.png');
+    background-repeat: repeat-x;
+    min-width: 320px;
+}
+
+    .header .busca {
+        
+        display: flex;
+        flex-direction:column;
+        padding:8px;
+    }
+
+    .header .logo {
+
+    }
+
+    .header .busca .busca_superior .vaga {
+        clear: both;
+        display: block;
+        position: relative;
+        height: 30px;
+    }
+
+    .header .busca .busca_superior .curriculo {
+        clear: both;
+        display: block;
+        position: relative;
+        height: 30px;
+        background-color: black;
+    }
+
+
+.DtCidade, .DtFuncao {
+    left: initial !important;
+    text-align: right;
+    padding-right: 16px;
+    margin-top: 4px;
+}
+.descricaoTopo {
+    color: #fff;
+    font-weight: bold !important;
+    position: relative !important;
+    top: initial !important;
+}
+
+    /*.header .conteudo-wrapper { padding-top: 3px; }*/
+    .esquerda {
+        float: left;
+    }
+
+.direita {
+    float: right;
+}
+
+.header .painel_informacoes {
+    background-color: #DDDDDD;
+    padding:4px 8px;
+    border-radius: 0 0 4px 4px;
+    margin-right:8px;
+}
+.painel_informacoes i {
+    margin-top:0px;
+}
+/*.topo .painel_informacoes .icones { vertical-align: middle; }*/
+.header .painel_informacoes .separar {
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+    .header .painel_informacoes img {
+        vertical-align: middle;
+    }
+
+    .header .painel_informacoes .textos {
+        font-weight: bold;
+        vertical-align: middle;
+        margin-left: 6px;
+    }
+
+.header .painel_login {
+   display:flex;
+   flex-direction:column;
+   align-items:center;
+   justify-content:center;
+}
+
+.header .painel_atalho {
+  
+}
+/*.buscar .submit { border-radius: 4px 4px 4px 4px; background: none repeat scroll 0 0 #1F659B; width: 120px; }*/
+
+
+.pesquisa_topo_funcao, .pesquisa_topo_cidade, .pesquisa_topo_palavra_chave {
+    position: relative;
+    top: initial !important;
+    border: none;    
+    background: none repeat scroll 0 0 transparent;
+}
+/* rodape */
+.footer {
+    /*background-image: url('/Images/barra_rodape.png');*/
+    /*background-repeat: repeat-x;*/
+    /*height: 96px;*/
+    /*font-size: 11px;
+    top: 450px;
+    width: 100%;
+    clear: both;
+    min-width: 320px;*/
+}
+
+    .footer .wrapper {
+        margin: 0 auto;
+        max-width: 1199px;
+        /* width: 880px;*/
+        /*display:flex;*/
+        width:100%;
+    }
+
+    .footer .img_separar_rodape {
+        float: left;
+        margin-right: 13px;
+        margin-left: 13px;
+        margin-top: 15px;
+    }
+
+
+    .footer .barra_rodape_candidato {
+        color: #143D75;
+        float: left;
+    }
+
+    .footer .barra_rodape_empresa {
+        color: #175007;
+        float: left;
+    }
+
+    .footer .barra_rodape_geral {
+        color: #424341;
+        float: left;
+    }
+
+    .footer .barra_rodape_rhoffice {
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    .footer ul {
+        list-style: none;
+        line-height: 16px;
+        float: left;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+
+        .footer ul li {
+            display: inline;
+            list-style-position: inside;
+        }
+
+    .footer .lista_rodape {
+        font-size: 11px;
+        width: 266px;
+    }
+
+    .footer .lista_rodape_candidato {
+        font-size: 11px;
+        width: 256px;
+    }
+
+    .footer .lista_rodape_empresa {
+        font-size: 11px;
+        width: 295px;
+    }
+
+    .footer .lista_rodape_geral {
+        font-size: 11px;
+        width: 273px;
+    }
+
+    .footer .link_rodape_nao_quebrar_linha {
+        white-space: nowrap;
+    }
+
+    .footer .lista_rodape .candidato, .barra_rodape_candidato ul li a {
+        color: #143d75;
+    }
+
+    .footer .lista_rodape .empresa, .barra_rodape_empresa ul li a {
+        color: #175007;
+    }
+
+    .footer .lista_rodape .geral, .barra_rodape_geral ul li a {
+        color: #424341;
+    }
+
+    .footer .lista_rodape .candidato li, .lista_rodape .empresa li, .lista_rodape .geral li {
+        display: inline;
+    }
+
+/* conteudo----------------------------------------------------------*/
+        .content { /*background-color: #FFFFFF; */ /* clear: both; */ /* padding-bottom: 35px; */
+    min-width: 320px; /* height: 100%; */ /* overflow: hidden; */
+}
+
+.conteudo-wrapper {
+    margin: 0 auto;
+    /*max-width: 880px;*/
+    max-width: 1199px;
+    position: relative;
+}
+
+.pager {
+    height: 24px;
+    background-image: url('/Images/bg_barra_paginacao.png');
+    background-repeat: repeat-x;
+    border-color: #5D8CC9;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    padding: 2px 6px;
+}
+
+    .pager a, .current {
+        padding-top: 2px;
+        vertical-align: middle;
+        height: 14px;
+        margin-left: 3px;
+        margin-top: 1px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        font-size: 11px;
+        margin: 0 1px;
+        padding: 3px 4px;
+    }
+
+    .pager .input {
+        padding: 0px;
+    }
+
+    .pager .pagina:hover {
+        background-color: #e3efff;
+        border: 1px solid #5D8CC9;
+    }
+
+    .pager .current {
+        margin-left: 3px;
+        background-color: #e3efff;
+        border: 1px solid #5D8CC9;
+    }
+
+    .pager .disabled {
+        margin-left: 3px;
+    }
+
+    .pager * {
+        vertical-align: middle;
+    }
+
+    .pager div {
+        display: inline-block;
+    }
+
+.container_botoes {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.botao_padrao {
+    background-image: url('/Images/botao_padrao.png');
+    background-repeat: repeat-x;
+    border: 1px solid #c3c3c3;
+    cursor: pointer;
+    font-size: 12px;
+    overflow: visible;
+    padding: 0 11px !important;
+    height: 26px;
+    width: auto !important;
+    margin-bottom: 25px;
+    margin-left: 10px;
+}
+
+.linha {
+    clear: both;
+    padding: 3px 0;
+    overflow: auto;
+}
+
+label {
+    float: left;
+    color: #1e3260;
+    margin-left: 4px;
+    padding-top: 3px;
+}
+
+.label_principal {
+    text-align: right;
+    width: 155px;
+    float: left;
+    font-weight: bold;
+    color: black;
+}
+
+.container_campo {
+    float: left;
+    padding-left: 5px;
+}
+
+.field-validation-error {
+    color: #ff0000;
+    font-weight: normal;
+    font-size: 11px;
+    background-image: url('/Images/icone_validacao_campo.gif');
+    background-repeat: no-repeat;
+    padding-left: 11px;
+}
+
+.highlight {
+    font-weight: bold;
+}
+/* Modal */
+.modal {
+    background-color: #eceff1;
+    width: 600px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 0px 4px white,1px 1px 8px 0 white;
+    -moz-box-shadow: 0px 0px 0px 4px white,1px 1px 8px 0 white;
+    box-shadow: 0px 0px 0px 4px white,1px 1px 8px 0 white;
+}
+
+    .modal .modal_fechar {
+        background: url(/Images/modal/btn_fechar_modal.png) no-repeat;
+        width: 34px;
+        height: 34px;
+        display: inline;
+        z-index: 1003;
+        position: absolute;
+        top: -12px;
+        right: -15px;
+        cursor: pointer;
+    }
+
+    .modal.amarela {
+        background-color: #eceff1;
+    }
+
+        .modal.amarela .modal_fechar {
+            background: url(/Images/modal/btn_fechar_modal_amarela.png) no-repeat;
+            width: 36px;
+            height: 36px;
+            top: -14px;
+        }
+
+@media only screen and (max-device-width: 900px) {
+}
+
+
+
+[data-tooltip],
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+    /* Base styles for the entire tooltip */
+    [data-tooltip]:before,
+    [data-tooltip]:after,
+    .tooltip:before,
+    .tooltip:after {
+        position: absolute;
+        visibility: hidden;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+        -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+        -moz-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+        transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        pointer-events: none;
+    }
+
+    /* Show the entire tooltip on hover and focus */
+    [data-tooltip]:hover:before,
+    [data-tooltip]:focus:before,
+    .tooltip:hover:before,
+    .tooltip:focus:before {
+        visibility: visible;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+    }
+
+
+    [data-tooltip]:hover:after,
+    [data-tooltip]:focus:after,
+    .tooltip:hover:after,
+    .tooltip:focus:after {
+        visibility: visible;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+    }
+
+    /* Base styles for the tooltip's directional arrow */
+    .tooltip:before,
+    [data-tooltip]:before {
+        z-index: 1001;
+        border: 6px solid transparent;
+        background: transparent;
+        content: "";
+    }
+
+    /* Base styles for the tooltip's content area */
+    .tooltip:after,
+    [data-tooltip]:after {
+        z-index: 1000;
+        padding: 8px;
+        width: 156px;
+        background-color: #2b64b2 !important;
+        background-color: hsla(0, 0%, 0%, 0.9);
+        color: #fff;
+        content: attr(data-tooltip);
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    /* Directions */
+
+    /* Top (default) */
+    [data-tooltip]:before,
+    [data-tooltip]:after,
+    .tooltip:before,
+    .tooltip:after,
+    .tooltip-top:before,
+    .tooltip-top:after {
+        bottom: 100%;
+        left: 50%;
+    }
+
+    [data-tooltip]:before,
+    .tooltip:before,
+    .tooltip-top:before {
+        margin-left: -6px;
+        margin-bottom: -12px;
+        border-top-color: #000;
+        border-top-color: hsla(0, 0%, 20%, 0.9);
+    }
+
+    /* Horizontally align top/bottom tooltips */
+    [data-tooltip]:after,
+    .tooltip:after,
+    .tooltip-top:after {
+        margin-left: -80px;
+    }
+
+    [data-tooltip]:hover:before,
+    [data-tooltip]:hover:after,
+    [data-tooltip]:focus:before,
+    [data-tooltip]:focus:after,
+    .tooltip:hover:before,
+    .tooltip:hover:after,
+    .tooltip:focus:before,
+    .tooltip:focus:after,
+    .tooltip-top:hover:before,
+    .tooltip-top:hover:after,
+    .tooltip-top:focus:before,
+    .tooltip-top:focus:after {
+        -webkit-transform: translateY(-12px);
+        -moz-transform: translateY(-12px);
+        transform: translateY(-12px);
+    }
+
+/* Left */
+.tooltip-left:before,
+.tooltip-left:after {
+    right: 100%;
+    bottom: 50%;
+    left: auto;
+}
+
+.tooltip-left:before {
+    margin-left: 0;
+    margin-right: -12px;
+    margin-bottom: 0;
+    border-top-color: transparent;
+    border-left-color: #000;
+    border-left-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-left:hover:before,
+.tooltip-left:hover:after,
+.tooltip-left:focus:before,
+.tooltip-left:focus:after {
+    -webkit-transform: translateX(-12px);
+    -moz-transform: translateX(-12px);
+    transform: translateX(-12px);
+}
+
+/* Bottom */
+.tooltip-bottom:before,
+.tooltip-bottom:after {
+    top: 100%;
+    bottom: auto;
+    left: 630%;
+}
+
+.tooltip-bottom:before {
+    margin-top: -12px;
+    margin-bottom: 0;
+    border-top-color: transparent;
+    border-bottom-color: #000;
+    border-bottom-color: #2b64b2 !important;
+}
+
+.tooltip-bottom:hover:before,
+.tooltip-bottom:hover:after,
+.tooltip-bottom:focus:before,
+.tooltip-bottom:focus:after {
+    -webkit-transform: translateY(12px);
+    -moz-transform: translateY(12px);
+    transform: translateY(12px);
+}
+
+/* Right */
+.tooltip-right:before,
+.tooltip-right:after {
+    bottom: 50%;
+    left: 100%;
+}
+
+.tooltip-right:before {
+    margin-bottom: 0;
+    margin-left: -12px;
+    border-top-color: transparent;
+    border-right-color: #000;
+    border-right-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-right:hover:before,
+.tooltip-right:hover:after,
+.tooltip-right:focus:before,
+.tooltip-right:focus:after {
+    -webkit-transform: translateX(12px);
+    -moz-transform: translateX(12px);
+    transform: translateX(12px);
+}
+
+/* Move directional arrows down a bit for left/right tooltips */
+.tooltip-left:before,
+.tooltip-right:before {
+    top: 3px;
+}
+
+/* Vertically center tooltip content for left/right tooltips */
+.tooltip-left:after,
+.tooltip-right:after {
+    margin-left: 0;
+    margin-bottom: -16px;
+}
+
+.fa-question-circle {
+    color: #bdbdbd;
+}
+
+.Media {
+    line-height: 2.0;
+    font-size: 14px !important;
+}
+
+
+.progresso_texto {
+    height: 57px;
+    width: 195px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    margin-top: 20%;
+    opacity: 1;
+}
+
+
+.progresso {
+    display: none;
+    position: fixed;
+    margin-top: -50px;
+    margin-left: -100px;
+    /* vertical-align: middle; */
+    text-align: center; /* font-size: 16px; */ /* font-weight: bold; */
+    background-color: rgba(205, 225, 232, 0.6);
+    color: #0054ac;
+    font-weight: bold;
+    font-size: 14px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+
+
+
+.BannerTexto {
+    margin-top: 46px;
+    position: absolute;
+    color: #003e7d;
+    /*padding: 25px 20px 20px 170px;*/
+    font-size: 17px;
+    width: 613px;
+    text-align: center;
+    padding-left: 94px;
+    padding-right: 57px;
+}
+
+.BannerTitulo {
+    margin-top: 0px;
+    position: absolute;
+    color: #003e7d;
+    padding: 20px 20px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    width: 766px;
+}
+
+.btnComprarVip {
+    margin-top: 24px;
+    background-color: #0d47a1 !important;
+    color: #fff !important;
+    border: none !important;
+    width: 170px;
+    cursor: pointer;
+    padding: 12px 15px 12px 15px;
+}
+
+.comprar-vip button {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    background-color: #015a9c;
+    margin-bottom: 8px;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: all 0.5s;
+    outline: none;
+    width: 170px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+    .comprar-vip button:hover {
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+    }
+
+
+.comprar-vip input {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    background-color: #015a9c;
+    margin-bottom: 8px;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: all 0.5s;
+    outline: none;
+    width: 170px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+    .comprar-vip input:hover {
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+    }
+
+.nao_agora input {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.54);
+    margin-bottom: 8px;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: all 0.5s;
+    outline: none;
+    width: 170px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+    .nao_agora input:hover {
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+    }
+
+.nao_agora {
+    text-align: center;
+}
+
+.txt_modal {
+    font-size: 23px;
+    margin-top: 57px;
+    text-align: center;
+    line-height: 29px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.txt_checkblox {
+    bottom: 12px;
+    opacity: .75;
+    color: #999;
+    font-size: 16px;
+    margin-left: 24px;
+}
+
+.btn_esquerda {
+    width: 281px;
+    float: left;
+}
+
+.modal_conteudo2 {  z-index: 9999 !important; }
+.modal_conteudo2 .titulo_modal, .head-modal, .titulo_modal_com_icone { margin-bottom: 10px; 
+                                                                      background-image: -moz-linear-gradient( 90deg, rgb(82,128,191) 4%, rgb(20,61,117) 17%, rgb(20,61,117) 27%, rgb(20,61,117) 77%, rgb(82,128,191) 87%, rgb(9,46,98) 100%); 
+                                                                      background-image: -webkit-linear-gradient( 90deg, rgb(82,128,191) 4%, rgb(20,61,117) 17%, rgb(20,61,117) 27%, rgb(20,61,117) 77%, rgb(82,128,191) 87%, rgb(9,46,98) 100%); 
+                                                                      background-image: -ms-linear-gradient( 90deg, rgb(82,128,191) 4%, rgb(20,61,117) 17%, rgb(20,61,117) 27%, rgb(20,61,117) 77%, rgb(82,128,191) 87%, rgb(9,46,98) 100%); 
+                                                                      filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#092E62', endColorstr='#5280BF');
+}
+
+
+
+
+
+
+/*INICIO - BANNER POSSO AJUDAR*/
+.banner-posso-ajudar
+{
+	font-family: 'Roboto', sans-serif;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	width:200px;
+	position: fixed;
+	top: calc(50% - 115px);
+	right:5px;
+	background-color: #2196f3;
+	padding:16px 16px 0;
+	text-transform: uppercase;
+	border-radius:6px;
+	color:#ffffff;
+	height:230px;
+	transition: all ease-in-out .45s;
+    z-index: 1000;
+}
+
+.banner-posso-ajudar:hover{
+	cursor: pointer;
+}
+
+.view-offline{
+	display:none;
+}
+#possoajudar-bemvindo{
+	font-size: 16px;
+}
+#possoajudar-txt{
+	font-size: 16px;
+	font-weight: lighter;
+	margin-bottom: 16px;
+}
+#possoajudar-atendimento{
+	font-size: 13px;
+}
+#possoajudar-status{
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom:8px;
+}
+#possoajudar-ico{
+	display:none;
+
+}
+@media screen and (max-width: 1366px){
+	.banner-posso-ajudar{
+		width:48px;
+		height:48px;
+		border-radius: 50%;
+		transition: all ease-in-out .45s;
+		display:flex;
+		justify-content: center;
+		align-items: center;
+        top:calc(50% - 12px);
+		padding:0;
+	}
+	#possoajudar-ico{
+		display:block;
+	}
+	#possoajudar-bemvindo, 
+	#possoajudar-txt,
+	#possoajudar-atendimento,
+	#possoajudar-status,
+	#possoajudar-img{
+		display:none;
+
+	}
+}
+/*FIM    - BANNER POSSO AJUDAR*/
+.header .conteudo-wrapper-responsivo {
+    display:flex;
+    flex-direction:column;
+    flex-wrap;flex-wrap;
+    max-width: 1199px;
+    margin:0 auto;
+
+}
+.header .painel_informacoes {
+    float:right;
+}
+
+.header .busca .busca_superior {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: auto !important;
+}
+#header_linha01 {
+    display:flex;
+    flex-direction:row;
+    /*background-color:#ffffff ;*/
+    padding-left:8px;
+    padding-right:8px;
+}
+.header .whitebar {
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.27);
+    -moz-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.27);
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.27);
+    margin-bottom:4px;
+}
+.header .painel_icones {
+    position: relative !important;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    top: initial !important;
+    right: initial !important;
+    float: right;
+}
+.header .painel_icones a{
+    margin-left:8px;
+    display:flex;
+    flex-direction:row;
+}
+.busca_superior-icones-extras {
+    flex-grow:2;
+}
+.busca_superior-abas {
+    display:flex;
+    flex-direction:row;
+}
+#aBuscarVagas, #aBuscarCurriculos {
+    float: none;
+    border-right: solid 0px !important;
+    border-left: solid 0px !important;
+    padding: 8px 16px !important;
+    line-height: initial !important;
+    border-radius: 0px !important;
+    color: #fff !important;
+    display: flex !important;
+    border-bottom: 0px solid !important;
+    border-right: 0px solid !important;
+    height: auto !important;
+    border-top-left-radius: 0px !important;
+    justify-content:center;
+}
+#aBuscarVagas {
+    background-color: #114d85;
+    border-radius:4px 4px 0 0 !important;
+    margin-right:4px;
+}
+
+#aBuscarCurriculos {
+    background-color: #689f38;
+    border-radius: 4px 4px 0 0 !important;
+}
+
+#txtFuncao, #txtCidade {
+    width: calc(100% - 16px);
+}
+.header .busca .funcao,
+.header .busca .cidade, 
+.header .busca .palavrachave {
+    padding: 0px;
+}
+
+
+
+.header .busca .buscar {
+    flex-grow: 0;
+    margin: 0 !important;
+    float: none !important;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+   
+}
+    .header .busca .buscar > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    
+.busca_inferior-campos {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 2;
+    }
+    
+.busca .busca_inferior input.search, #btiPesquisarVaga, #btiPesquisarCurriculo {
+    padding: 0px !important;
+    width: auto !important;
+    height: 34px;
+}
+.buscar input {
+    display: initial;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.header .busca .busca_inferior > form {
+    display: flex;
+    flex-direction: row;
+    padding:16px 16px 8px;
+}
+.breadcrumb {  
+    margin: 0 8px 20px !important;
+}
+.busca .busca_inferior {
+    background-image: none !important;
+    filter: none !important;
+    background-color: #114d85 !important;
+    /*background-color: #2B64B2 !important;*/
+}
+#buscaavancada {
+    font-size:10px;
+    font-weight:bold;
+    margin-top:4px;
+    text-transform:uppercase;
+    color:rgba(255,255,255, .54);
+}
+.pager {
+margin-left:8px;
+margin-right:8px;
+}
+.footer .wrapper {
+    margin: 0 auto;
+    max-width: 1199px;
+    display: flex;
+    justify-content:space-around;
+    flex-direction:row;
+}
+.footer .footer-bar {
+    border-right:solid 0px !important;
+}
+.footer .geral.footer-bar {
+    border-left: solid 0px !important;
+}
+.footer .lista_rodape_empresa {
+    width: auto;
+    max-width: 256px;
+}
+
+@media screen and (max-width:599px) {
+    .header .logo {
+            width: 110px;
+            overflow: hidden;
+        }
+
+        .vagas_adsense, .painel_informacoes, .busca_superior-icones-extras {
+            display: none !important;
+        }
+
+        .busca_superior-abas {
+            flex-grow: 2;
+        }
+
+        #aBuscarVagas, #aBuscarCurriculos {
+            width: 50% !important;
+            border-radius: 0px;
+            margin-right: 0px;
+            font-size: 11px;
+        }
+
+        .busca_superior {
+            width: 100vw;
+        }
+
+        .header .busca .buscar {
+            justify-content: center;
+        }
+
+        .header .busca .busca_inferior > form {
+            flex-direction: column;
+        }
+
+        .busca .busca_inferior {
+            border-radius: 0 0 4px 4px !important;
+        }
+
+        .busca_inferior-campos + .busca_inferior-campos {
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+        .footer .wrapper {
+            flex-direction: column;
+            align-items:center;
+        }
+    }
+
+    @media screen and (min-width:600px) and (max-width:979px) {
+        .header .logo {
+            width: 110px;
+            overflow: hidden;
+        }
+
+        .vagas_adsense, .painel_informacoes, .busca_superior-icones-extras {
+            display: none !important;
+        }
+    }
+
+
+#barra_rodape.footer {
+    background: linear-gradient(to right, #123B72 0%,#123B72 50%,#114D85 50%,#114D85 100%);
+    margin-top: 32px !important;
+}
+#rodapeVagas {
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    padding:0 16px;
+}
+
+.titulo_rodape {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+    #rodapeVagas ul {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        padding: 0;
+        margin-left: 0px;
+    }
+        #rodapeVagas ul li {
+            margin-bottom: 8px;
+        }
+            #rodapeVagas ul li a {
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 12px;
+            }
+#rodapeVagas_logo {
+    width: 34%;
+    background-color: #123B72;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    order:0;
+}
+#rodapeVagas_candidato,
+#rodapeVagas_institucional,
+#rodapeVagas_empresa {
+    width: 22%;
+    background-color: #114D85;
+    padding: 16px 32px;
+    color:#fff;
+}
+
+
+#rodapeVagas_logo h6 {
+    color: rgba(255,255,255, 1) !important;
+    margin-top: 8px;
+    font-size: 11px;
+    text-align: center;
+    line-height: 130%;
+}
+#rodapeVagas_logo h3 {
+    margin-top: 26px;
+    margin-bottom: 0px;
+    font-size: 22px;
+    font-weight: bolder;
+}
+#rodapeVagas_logo ul * {
+    color: rgba(255,255,255, .87) !important;
+}
+#rodapeVagas_logo img {
+    width: 100%;
+    max-width: 200px;
+    height: inherit;
+}
+@media screen and (max-width:959px) {
+    #rodapeVagas {
+        flex-direction: column;
+        flex-wrap:wrap;
+        padding:0;
+    }
+    #rodapeVagas ul {
+        width:100%;
+    }
+    #rodapeVagas_logo {
+        width: calc(100% - 48px);
+        order: 4;
+    }
+    #rodapeVagas_candidato{
+        width: calc(100% - 64px);
+        text-align: center;
+        padding: 32px 32px 16px;
+    }
+    #rodapeVagas_empresa {
+        width: calc(100% - 64px);
+        text-align: center;
+        padding: 16px 32px;
+    }
+    #rodapeVagas_institucional {
+        width: calc(100% - 64px);
+        text-align: center;
+        padding: 8px 32px 16px;
+    }
+    .titulo_rodape {
+        margin-top: 0px;
+    }
+    #rodapeVagas_logo h3 {
+        text-align:center;
+    }
+}
+
+
+.dropup,
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle:focus {
+    outline: 0;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 14px;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    background-clip: padding-box;
+}
+
+    .dropdown-menu.pull-right {
+        right: 0;
+        left: auto;
+    }
+
+    .dropdown-menu .divider {
+        height: 1px;
+        margin: 9px 0;
+        overflow: hidden;
+        background-color: #e5e5e5;
+    }
+
+    .dropdown-menu > li > a {
+        display: block;
+        padding: 3px 20px;
+        clear: both;
+        font-weight: normal;
+        line-height: 1.42857143;
+        color: #333333;
+        white-space: nowrap;
+    }
+
+        .dropdown-menu > li > a:hover,
+        .dropdown-menu > li > a:focus {
+            text-decoration: none;
+            color: #262626;
+            background-color: #f5f5f5;
+        }
+
+    .dropdown-menu > .active > a,
+    .dropdown-menu > .active > a:hover,
+    .dropdown-menu > .active > a:focus {
+        color: #fff;
+        text-decoration: none;
+        outline: 0;
+        background-color: #337ab7;
+    }
+
+    .dropdown-menu > .disabled > a,
+    .dropdown-menu > .disabled > a:hover,
+    .dropdown-menu > .disabled > a:focus {
+        color: #777777;
+    }
+
+        .dropdown-menu > .disabled > a:hover,
+        .dropdown-menu > .disabled > a:focus {
+            text-decoration: none;
+            background-color: transparent;
+            background-image: none;
+            filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+            cursor: not-allowed;
+        }
+
+.open > .dropdown-menu {
+    display: block;
+}
+
+.open > a {
+    outline: 0;
+}
+
+.dropdown-menu-right {
+    left: auto;
+    right: 0;
+}
+
+.dropdown-menu-left {
+    left: 0;
+    right: auto;
+}
+
+.dropdown-header {
+    display: block;
+    padding: 3px 20px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #777777;
+    white-space: nowrap;
+}
+
+.dropdown-backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 990;
+}
+
+.pull-right > .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
+.dropup .caret,
+.navbar-fixed-bottom .dropdown .caret {
+    border-top: 0;
+    border-bottom: 4px dashed;
+    border-bottom: 4px solid \9;
+    content: "";
+}
+
+.dropup .dropdown-menu,
+.navbar-fixed-bottom .dropdown .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 2px;
+}
+
+
+
+.menu-responsivo .btn-default {
+    color: rgba(0,0,0, .54) !important;
+    background-color: #fff !important;
+    border-color: rgba(0,0,0,0) !important;
+    font-weight: bolder !important;
+    font-size: 0.9em !important;
+}
+
+    .menu-responsivo .btn-default:hover {
+        color: rgba(0,0,0, .87) !important;
+        background-color: #f5f5f5 !important;
+    }
+
+
+
+@media (min-width: 768px) {
+    .navbar-right .dropdown-menu {
+        left: auto;
+        right: 0;
+    }
+
+    .navbar-right .dropdown-menu-left {
+        left: 0;
+        right: auto;
+    }
+}
+
+.btn-group,
+.btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+    .btn-group > .btn,
+    .btn-group-vertical > .btn {
+        position: relative;
+        float: left;
+    }
+
+        .btn-group > .btn:hover,
+        .btn-group-vertical > .btn:hover,
+        .btn-group > .btn:focus,
+        .btn-group-vertical > .btn:focus,
+        .btn-group > .btn:active,
+        .btn-group-vertical > .btn:active,
+        .btn-group > .btn.active,
+        .btn-group-vertical > .btn.active {
+            z-index: 2;
+        }
+
+
+.nomeusuariologado {
+    margin-right: 8px;
+    font-weight: 700 !important;
+    font-family: "Roboto","Helvetica","Arial",sans-serif !important;
+    color: rgba(0,0,0, .87);
+    margin-top: 20px;
+} 

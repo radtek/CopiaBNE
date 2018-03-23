@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <ProjectGuid>{bb0a3d3a-086a-42e9-b668-6492b1b74d9b}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SilverlightPrototype1Screens</RootNamespace>
+    <AssemblyName>SilverlightPrototype1.Screens</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <Utf8Output>true</Utf8Output>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Drawing" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <PropertyGroup>
+    <ExpressionBlendPrototypingEnabled>true</ExpressionBlendPrototypingEnabled>
+    <ExpressionBlendPrototypeHarness>false</ExpressionBlendPrototypeHarness>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Controls" />
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="Microsoft.Expression.Prototyping.Interactivity" />
+    <Reference Include="Microsoft.Expression.Prototyping.Runtime" />
+    <Reference Include="Microsoft.Expression.Prototyping.SketchControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Confirmação.xaml.cs">
+      <DependentUpon>Confirmação.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Debito_em_Conta.xaml.cs">
+      <DependentUpon>Debito_em_Conta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Escolher_Empresa.xaml.cs">
+      <DependentUpon>Escolher_Empresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Finan.xaml.cs">
+      <DependentUpon>Finan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro.xaml.cs">
+      <DependentUpon>Financeiro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Início.xaml.cs">
+      <DependentUpon>Início.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pagamento.xaml.cs">
+      <DependentUpon>Pagamento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PAgamento_com_Desconto.xaml.cs">
+      <DependentUpon>PAgamento_com_Desconto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Quem_me_Viu.xaml.cs">
+      <DependentUpon>Quem_me_Viu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sala_Vip.xaml.cs">
+      <DependentUpon>Sala_Vip.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Confirmação.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Debito_em_Conta.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Escolher_Empresa.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Finan.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Financeiro.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Início.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pagamento.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PAgamento_com_Desconto.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Quem_me_Viu.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Sala_Vip.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SketchStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Properties\Version.cs">
+      <Link>Properties\Version.cs</Link>
+    </Compile>
+    <Resource Include="edit-redo-4.png" />
+    <Resource Include="Fonts\BuxtonSketch.ttf" />
+    <Resource Include="Fonts\SketchFlow Print.ttf" />
+    <Resource Include="Fonts\SegoeMarker.ttf" />
+    <Resource Include="Image1.png" />
+    <Resource Include="Image10.png" />
+    <Resource Include="Image11.png" />
+    <Resource Include="Image12.png" />
+    <Resource Include="Image13.png" />
+    <Resource Include="Image14.png" />
+    <Resource Include="Image15.png" />
+    <Resource Include="Image16.png" />
+    <Resource Include="Image17.png" />
+    <Resource Include="Image18.png" />
+    <Resource Include="Image19.png" />
+    <Resource Include="Image2.png" />
+    <Resource Include="Image20.png" />
+    <Resource Include="Image21.png" />
+    <Resource Include="Image22.png" />
+    <Resource Include="Image24.png" />
+    <Resource Include="Image25.png" />
+    <Resource Include="Image26.png" />
+    <Resource Include="Image27.png" />
+    <Resource Include="Image28.png" />
+    <Resource Include="Image29.png" />
+    <Resource Include="Image3.png" />
+    <Resource Include="Image30.png" />
+    <Resource Include="Image31.png" />
+    <Resource Include="Image32.png" />
+    <Resource Include="Image33.png" />
+    <Resource Include="Image34.png" />
+    <Resource Include="Image35.png" />
+    <Resource Include="Image36.png" />
+    <Resource Include="Image37.png" />
+    <Resource Include="Image38.png" />
+    <Resource Include="Image39.png" />
+    <Resource Include="Image4.png" />
+    <Resource Include="Image40.png" />
+    <Resource Include="Image41.png" />
+    <Resource Include="Image42.png" />
+    <Resource Include="Image5.png" />
+    <Resource Include="Image6.png" />
+    <Resource Include="Image7.png" />
+    <Resource Include="Image8.png" />
+    <Resource Include="Image9.png" />
+    <Resource Include="Sketch.Flow" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image23.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	     Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

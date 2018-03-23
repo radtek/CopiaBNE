@@ -1,0 +1,106 @@
+﻿@media (max-width: 479px) {
+    body{
+        overflow-x:hidden;
+    }
+    #step-ok {
+        display: none;
+    }
+
+    #step-nok {
+        display: none;
+    }
+    #signin {
+        width: 160px;
+        border-radius: 3*$un 3*$un 3*$un 3*$un;
+        margin: auto;
+        li {
+            display: inline-table;
+            margin-top:2*$un;
+        }
+    }
+    #container-etapa   {
+        top:145px !important;
+    }
+    .etapa-campanha{
+        img{ display:none;}
+    }
+    .etapa2b{
+        display:none;
+    }
+    .etapa2{
+        margin-top:0px !important;
+    }
+    #map {
+        height:calc(100% - 372px);
+        min-height:660px !important;
+    }
+    .md-textarea-bne {
+        label{
+            font-size:$font-size /1.1;
+        }
+    }
+    .md-input-edit-bne{
+        & .input-edit-title{
+            text-align:left !important;
+            &-noborder{text-align:left !important;}
+        }
+        & .input-edit{
+            margin-top:4px !important;
+        }
+
+    }
+    
+}
+@media (min-width: 480px) and (max-width: 839px) {
+    #step-ok {
+        display:none
+    }
+    #step-nok {
+        display:none
+    }
+    #signin {
+        float:right;
+    }
+}
+@media screen and (max-width: 720px) {
+    table.resp {
+        border: 1px solid #ccc;
+        thead {
+            display: none;
+        }
+        tr {
+            margin-bottom: 10px;
+            display: block;
+            border-bottom: 1px solid $ultralightgrey;
+            clear:both !important;
+        }
+        td {
+            display: block;
+            border-bottom: 1px solid $ultralightgrey;
+            height:auto;
+            text-align:left;
+            clear:both !important;
+            &:last-child {
+                border-bottom: 0;
+                
+            }
+            &:before {
+                content: attr(data-label);
+                float: left;
+                position:relative;
+                font-weight:$font-weight-bold;
+                width:50%;
+                height:100%;
+                width:100%;
+            }
+        }
+    }
+}
+@media (max-width: 1030px) {
+    #nav{
+        display:none;
+
+    }
+
+}
+@media (min-width: 840px){}

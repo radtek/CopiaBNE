@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0040D95A-8CBF-4180-A8BC-02B13F6ED3AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.PessoaFisica.Domain</RootNamespace>
+    <AssemblyName>BNE.PessoaFisica.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BNE.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BNE.Log.1.0.4\lib\net40\BNE.Log.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BNE.Log.ADO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BNE.Log.ADO.1.0.4\lib\net40\BNE.Log.ADO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BNE.Log.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BNE.Log.Base.1.0.1\lib\net40\BNE.Log.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BNE.Logger, Version=2.68.16180.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BNE.Logger.1.0.0\lib\net40\BNE.Logger.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aggregates\Candidatura.cs" />
+    <Compile Include="CadastrarCurriculo.cs" />
+    <Compile Include="CadastrarPreCurriculo.cs" />
+    <Compile Include="CodigoConfirmacaoEmail.cs" />
+    <Compile Include="Command\AmigoIndicado.cs" />
+    <Compile Include="Command\CriarAtualizarPessoaFisica.cs" />
+    <Compile Include="Command\Curriculo.cs" />
+    <Compile Include="Command\CurriculoParametro.cs" />
+    <Compile Include="Command\Email.cs" />
+    <Compile Include="Command\ExperienciaProfissional.cs" />
+    <Compile Include="Command\Formacao.cs" />
+    <Compile Include="Command\InformacaoCurriculo.cs" />
+    <Compile Include="Command\Pergunta.cs" />
+    <Compile Include="Command\Indicacao.cs" />
+    <Compile Include="Command\PessoaFisica.cs" />
+    <Compile Include="Command\PreCurriculo.cs" />
+    <Compile Include="Command\SituacaoCurriculo.cs" />
+    <Compile Include="Command\TipoCurriculo.cs" />
+    <Compile Include="Command\Vaga.cs" />
+    <Compile Include="Curriculo.cs" />
+    <Compile Include="CurriculoOrigem.cs" />
+    <Compile Include="CurriculoParametro.cs" />
+    <Compile Include="Curso.cs" />
+    <Compile Include="Custom\Allin\IntegrarCurriculo.cs" />
+    <Compile Include="Custom\Allin\IntegrarPreCurriculo.cs" />
+    <Compile Include="Custom\Allin\RemoverPreCurriculo.cs" />
+    <Compile Include="Custom\SOLR\CarregarVagaSolr.cs" />
+    <Compile Include="Custom\SOLR\ResultadoBuscaVagaSolr.cs" />
+    <Compile Include="Email.cs" />
+    <Compile Include="Enumeradores\SituacaoCurriculo.cs" />
+    <Compile Include="ExperienciaProfissional.cs" />
+    <Compile Include="Formacao.cs" />
+    <Compile Include="FuncaoPretendida.cs" />
+    <Compile Include="InstituicaoEnsino.cs" />
+    <Compile Include="Mensagem\Email.cs" />
+    <Compile Include="Parametro.cs" />
+    <Compile Include="PessoaFisica.cs" />
+    <Compile Include="PreCurriculo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RankingEmail.cs" />
+    <Compile Include="SituacaoCurriculo.cs" />
+    <Compile Include="TelefoneCelular.cs" />
+    <Compile Include="TipoCurriculo.cs" />
+    <Compile Include="Web References\wsInserirEmailAllin\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsLoginAllin\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsRemoverEmailAllin\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BNE.Comum.Model\BNE.Comum.Model.csproj">
+      <Project>{962132f9-4293-4ac7-b044-2590667cd2e9}</Project>
+      <Name>BNE.Comum.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Core\BNE.Core.csproj">
+      <Project>{1c0e9fda-4b7f-4f28-bdef-9733c99aa46a}</Project>
+      <Name>BNE.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Data\BNE.Data.csproj">
+      <Project>{287ba500-e16d-46ad-91b7-442cda127398}</Project>
+      <Name>BNE.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Global.Data\BNE.Global.Data.csproj">
+      <Project>{fd787b4c-b825-4d17-a807-90a84fe3138f}</Project>
+      <Name>BNE.Global.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Global.Domain\BNE.Global.Domain.csproj">
+      <Project>{0ed6a49e-b926-4088-a7b5-40de1085e084}</Project>
+      <Name>BNE.Global.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Global.Model\BNE.Global.Model.csproj">
+      <Project>{1c31b8d0-c2d2-4a48-893e-c2b43a852978}</Project>
+      <Name>BNE.Global.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mapper.ToOld\BNE.Mapper.ToOld.csproj">
+      <Project>{d4fcefda-3d86-42bc-9dcb-b1e2d3c0d639}</Project>
+      <Name>BNE.Mapper.ToOld</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mapper\BNE.Mapper.csproj">
+      <Project>{bc671d33-cfd9-4868-888f-4266aedb3b13}</Project>
+      <Name>BNE.Mapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.PessoaFisica.Data\BNE.PessoaFisica.Data.csproj">
+      <Project>{476040c4-57b6-48a3-83b9-9bfe5806414d}</Project>
+      <Name>BNE.PessoaFisica.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.PessoaFisica.Model\BNE.PessoaFisica.Model.csproj">
+      <Project>{d9fe3158-5c0b-4b2b-b3da-033da5a88026}</Project>
+      <Name>BNE.PessoaFisica.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsInserirEmailAllin\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsInserirEmailAllin\wsInserirEmailBase.wsdl" />
+    <None Include="Web References\wsLoginAllin\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsLoginAllin\wsLogin.wsdl" />
+    <None Include="Web References\wsRemoverEmailAllin\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsRemoverEmailAllin\wsRemoverEmailBase.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://painel02.allinmail.com.br/wsAllin/inserir_email_base.php%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsInserirEmailAllin\</RelPath>
+      <UpdateFromURL>http://painel02.allinmail.com.br/wsAllin/inserir_email_base.php%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BNE_PessoaFisica_Domain_wsInserirEmailAllin_wsInserirEmailBaseService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://painel02.allinmail.com.br/wsAllin/login.php%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsLoginAllin\</RelPath>
+      <UpdateFromURL>http://painel02.allinmail.com.br/wsAllin/login.php%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BNE_PessoaFisica_Domain_wsLoginAllin_wsLoginService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://painel02.allinmail.com.br/wsAllin/remover_email_base.php%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsRemoverEmailAllin\</RelPath>
+      <UpdateFromURL>http://painel02.allinmail.com.br/wsAllin/remover_email_base.php%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BNE_PessoaFisica_Domain_wsRemoverEmailAllin_wsRemoverEmailBaseService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

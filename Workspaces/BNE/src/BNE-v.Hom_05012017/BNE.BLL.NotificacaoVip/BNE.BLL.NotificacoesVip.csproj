@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74466BFD-C61E-449E-8F71-693D969288A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.BLL.NotificacoesVip</RootNamespace>
+    <AssemblyName>BNE.BLL.NotificacoesVip</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTO\Curriculo.cs" />
+    <Compile Include="DTO\ExtratoCurriculo.cs" />
+    <Compile Include="Enumeradores\StatusExecucaoNotificacaoVip.cs" />
+    <Compile Include="Enumeradores\TipoInformativoVip.cs" />
+    <Compile Include="NotificacoesVip.cs" />
+    <Compile Include="Notificacoes\AparicaoPesquisa.cs" />
+    <Compile Include="Notificacoes\Atualizacao.cs" />
+    <Compile Include="Notificacoes\Dica.cs" />
+    <Compile Include="Notificacoes\Extrato.cs" />
+    <Compile Include="Notificacoes\Interface\INotivicacaoCV.cs" />
+    <Compile Include="Notificacoes\Uteis\Email.cs" />
+    <Compile Include="Notificacoes\Uteis\SMS.cs" />
+    <Compile Include="Notificacoes\Video.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BNE.BLL.Commom\BNE.BLL.Common.csproj">
+      <Project>{f41b8060-1ea8-4c42-9fa0-02868dac7f8e}</Project>
+      <Name>BNE.BLL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.BLL\BNE.BLL.csproj">
+      <Project>{b316ce73-6590-43e7-bd7a-2c24963c09fb}</Project>
+      <Name>BNE.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.EL\BNE.EL.csproj">
+      <Project>{328d2b86-dd73-410e-aa9c-42d59bd28796}</Project>
+      <Name>BNE.EL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

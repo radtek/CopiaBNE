@@ -1,0 +1,68 @@
+﻿.btnPadding{padding:10px}
+.col_funcao{font-size:11px;}
+
+.data{ width: 10%; text-align:center;}
+.hora{ width: 7%; text-align:center;}
+.nome_empresa { width: 40%; font-weight: bold;}
+/*-- .nome_empresa span{ float:left;} --*/
+
+.nome_empresa img {/*--float:left; --*/ vertical-align:baseline; margin-left: 2px;}
+
+.cidade_uf{ width: 15%;}
+
+.col_action_arq{ width: 28%;}
+
+.col_action_arq input { vertical-align: middle; }
+
+.gridview_padrao
+{
+	margin-top: 0;
+    /*width: 100% !important;*/
+}
+
+.RadGrid_Office2007, .RadGrid_Office2007 .rgMasterTable, .RadGrid_Office2007 .rgDetailTable, .RadGrid_Office2007 .rgGroupPanel table, .RadGrid_Office2007 .rgCommandRow table, .RadGrid_Office2007 .rgEditForm table, .RadGrid_Office2007 .rgPager table, .GridToolTip_Office2007
+{
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 12px;
+}
+
+.RadGrid_Office2007 .rgRow a, .RadGrid_Office2007 .rgAltRow a, .RadGrid_Office2007 .rgEditRow a, .RadGrid_Office2007 .rgFooter a, .RadGrid_Office2007 .rgEditForm a
+{
+	color: #1E3260 !important;
+}
+
+.RadGrid_Office2007 .rgHeader, .RadGrid_Office2007 .rgHeader a
+{
+	color: Black !important;
+}
+
+.grid_resultado_sala_vip { margin-top:30px;}
+
+.label_principal {
+    float: left;
+    text-align: left;
+    width:auto;
+}
+
+.container_campo {
+   margin-right:10px;
+}
+.botao_padrao{margin: 20px;}
+
+
+.texto_exemplo{margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    font-size:11px;
+    font-style:italic;
+    color:#949596;}
+
+.alerta_h2 {font-size:13px; margin:0 0 15px 0; height:auto;}
+.alerta_h2 img {float:left;}
+.alerta_h2 span {margin-left:10px;}
+.item{padding:0; margin:5px 0 5px 35px;}
+.item li{list-style-image: url('/img/icn_item2.png'); vertical-align:middle;}
+li a {font-size: 11px;}
+li a:hover {text-decoration: underline;}
+
+#cphConteudo_ucQuemMeViu_upGvQuemMeViu {/*float: left;*/}

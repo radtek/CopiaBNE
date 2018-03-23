@@ -1,0 +1,34 @@
+﻿p
+{
+    text-align: center;
+}
+
+.painel_padrao
+{
+    margin-bottom: 20px;
+}
+
+.icone_confirmacao
+{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.texto_criado_sucesso
+{
+    color: #F07900;
+    font-size: 22px;
+   /*-- margin: 36px 0; --*/
+}
+
+.texto_pode_divulgar
+{
+    color: #777;
+    font-size: 14px;
+}
+
+.link_endereco_www a
+{
+    color: #070;
+    font-weight: bold;
+}

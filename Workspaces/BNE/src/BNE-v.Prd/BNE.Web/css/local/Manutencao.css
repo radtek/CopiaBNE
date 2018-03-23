@@ -1,0 +1,38 @@
+﻿   h1
+    {
+    	text-align: left;
+    }
+    
+    h2
+    {
+    	text-align: left;
+    }
+    
+    .coluna_esquerda
+    {
+    	float: left;
+    	width: 427px;
+    	margin-right: 25px;
+    }
+        
+    .coluna_direita
+     {
+     	display: block;
+     }
+     
+    .btn 
+    {
+    	margin-bottom: 10px;
+    }
+    
+     
+    
+    
+
+/* GridView Palavras Proibidas */
+.icones_tabela_palavra_proibida
+{
+	width: 90px;
+}
+/* FIM: GridView Palavras Proibidas */
+

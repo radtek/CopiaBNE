@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="ApiGateway">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Switch -->
+    <link href="../bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet" />
+
+    <!-- Timeline CSS -->
+    <link href="../dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Angular Chart -->
+    <link href="bower_components/angular-chart.js/dist/angular-chart.min.css" rel="stylesheet" />
+
+    <!-- Multiselect -->
+    <link href="dist/css/bootstrap-multiselect.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <base href="/">
+</head>
+
+<body>
+    <div class="panel panel-warning top-panel" loading>
+        <div class="panel-heading text-center">
+            <h3 class="panel-title"><i class="fa fa-circle-o-notch fa-spin"></i></h3>
+        </div>
+    </div>
+    <div class="panel panel-danger top-panel error" control="errorPanel" error-panel>
+        <div class="panel-heading text-center">
+            <ul ng-repeat="error in errors" class="list-unstyled">
+                <li>{{ error }}</li>
+            </ul>
+        </div>
+    </div>
+
+        <div id="wrapper">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Api Gateway Admin</a>
+                </div>
+                <!-- /.navbar-header -->
+
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <li>
+                                <a href="/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="/apis"><i class="fa fa-cubes fa-fw"></i> Apis</a>
+                            </li>
+                            <li>
+                                <a href="/sistemas"><i class="fa fa-server fa-fw"></i> Sistemas</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.sidebar-collapse -->
+                </div>
+                <!-- /.navbar-static-side -->
+            </nav>
+
+            <div id="page-wrapper" ng-view></div>
+
+        </div>
+        <!-- /#wrapper -->
+        <!-- jQuery -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+        <script src="dist/js/bootstrap-multiselect.js"></script>
+
+        <!-- Angular -->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="bower_components/Chart.js/Chart.min.js"></script>
+        <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+        <script src="bower_components/angular-utf8-base64/angular-utf8-base64.min.js"></script>
+        <script src="bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+        <script src="bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.js"></script>
+
+        <!-- Application -->
+        <script src="app/config.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/controllers/apicontroller.js"></script>
+        <script src="app/controllers/endpointcontroller.js"></script>
+        <script src="app/controllers/sistemacontroller.js"></script>
+        <script src="app/controllers/dashboardcontroller.js"></script>
+
+        <script src="app/resources/apiresource.js"></script>
+        <script src="app/resources/sistemaresource.js"></script>
+        <script src="app/resources/estatisticaresource.js"></script>
+
+        <!-- Morris Charts JavaScript -->
+        <!--<script src="bower_components/raphael/raphael-min.js"></script>
+        <script src="bower_components/morrisjs/morris.min.js"></script>
+        <script src="js/morris-data.js"></script>-->
+        <!-- Custom Theme JavaScript -->
+        <script src="dist/js/sb-admin-2.js"></script>
+
+
+</body>
+
+</html>

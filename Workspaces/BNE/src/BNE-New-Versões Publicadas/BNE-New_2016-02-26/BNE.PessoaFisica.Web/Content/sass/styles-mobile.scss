@@ -1,0 +1,126 @@
+@media screen and (min-width:240px) and (max-width: 257px)  {
+  .demo-header img.logo_bne { width: 68%; margin-left: -30px;} 
+  .painel_botoes_sistema { display: none;}
+}
+
+@media screen and (min-width:258px) and (max-width: 277px)  {
+  .demo-header img.logo_bne { width: 72%; margin-left: -30px;} 
+  .painel_botoes_sistema { display: none;}
+}
+
+@media screen and (min-width:278px) and (max-width: 290px)  {
+  .demo-header img.logo_bne { width: 74%; margin-left: -30px;} 
+  .painel_botoes_sistema { display: none;}
+}
+
+@media screen and (min-width:291px) and (max-width: 320px)  {
+  .demo-header img.logo_bne { width: 82%; margin-left: -30px;} 
+  .painel_botoes_sistema { display: none;}
+}
+
+@media screen and (min-width:321px) and (max-width: 364px)  {
+  .demo-header img.logo_bne { width: 88%; margin-left: -30px;} 
+  .painel_botoes_sistema { display: none;}
+}
+
+@media screen and (min-width:365px) and (max-width: 480px)  {
+  .demo-header img.logo_bne { width: 94%;} 
+  .painel_botoes_sistema { display: none;}
+}
+
+@media screen and (min-width:481px) and (max-width: 535px)  {
+  .demo-header img.logo_bne { width: 100%;} 
+  .painel_botoes_sistema { display: none;}
+}
+
+@media screen and (min-width:536px) and (max-width: 600px)  {
+  .bnt_entrar_mobile { display: none;}
+  .painel_botoes_sistema {margin-left: 60px; margin-top: 2px !important;}
+}
+
+@media screen and (min-width:600px) and (max-width: 638px)  {
+  .bnt_entrar_mobile { display: none;}
+  .painel_botoes_sistema {margin-left: 40%; margin-top: 2px !important;}
+}
+
+@media screen and (min-width:639px) and (max-width: 700px)  {
+  .bnt_entrar_mobile { display: none;}
+  .painel_botoes_sistema {margin-left: 60%; margin-top: 2px !important;}
+}
+
+
+@media screen and (min-width:701px) and (max-width: 800px)  {
+
+  .bnt_entrar_mobile { display: none;}
+  .painel_botoes_sistema {margin-left: 70%; margin-top: 2px !important;}
+}
+
+@media screen and (min-width: 801px) and (max-width: 839px)  {
+  .bnt_entrar_mobile { display: none;}
+  .painel_botoes_sistema {margin-left: 80%; margin-top: 2px !important;}
+  .painel_informacoes { display: none;}
+}
+
+@media screen and (min-width: 840px) and (max-width: 900px)  {
+  .bnt_entrar_mobile { display: none;}
+  .painel_botoes_sistema {margin-left: 31%; margin-top: 2px !important;}
+  .painel_informacoes { display: none;}
+}
+
+@media screen and (min-width: 901px) and (max-width: 960px)  {
+  .bnt_entrar_mobile { display: none;}
+  .painel_botoes_sistema {margin-left: 42%; margin-top: 2px !important;}
+  .painel_informacoes { display: none;}
+}
+
+@media screen and (min-width: 961px) and (max-width: 1023px)  {
+  .bnt_entrar_mobile { display: none;}
+  .painel_botoes_sistema {margin-left: 42%; margin-top: 2px !important;}
+  .painel_informacoes { display: none;}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1100px)  {
+  .bnt_entrar_mobile { display: none;}
+  .painel_botoes_sistema {margin-left: 62%; margin-top: 2px !important;}
+  .painel_informacoes { display: none; }
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1180px)  {
+  .bnt_entrar_mobile { display: none;}
+  .painel_botoes_sistema {}
+  .painel_informacoes { margin-left: -150px;}
+}
+
+@media screen and (min-width: 1181px) and (max-width: 1280px)  {
+  .bnt_entrar_mobile { display: none;}
+  .painel_botoes_sistema {}
+  .painel_informacoes { margin-left: -120px;}
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1360px)  {
+  .bnt_entrar_mobile { display: none;}
+  .painel_botoes_sistema {}
+  .painel_informacoes { margin-left: -90px;}
+}
+
+@media screen and (min-width: 1361px) and (max-width: 1440px)  {
+  .bnt_entrar_mobile { display: none;}
+  .painel_botoes_sistema {}
+  .painel_informacoes { margin-left: -90px;}
+}
+
+@media screen and (min-width: 1441px)  {
+  .bnt_entrar_mobile { display: none;}
+  .painel_botoes_sistema {}
+  .painel_informacoes { margin-left: -90px;}
+}
+
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
+
+  .demo-header img.logo_bne { width: 84%;} 
+
+}
+
+@media screen and (min-width: 719px) and (max-width: 710px)  {
+  .demo-header img.logo_bne { width: 84%;}
+}

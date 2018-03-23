@@ -1,0 +1,52 @@
+﻿.LookupControlRadWindow .TituloJanela
+{    
+    background-repeat: repeat-x;
+    height: 44px;
+    margin: 6px auto 10px auto; 
+    width: 782px;
+}
+
+.LookupControlRadWindow .PainelSelecionaRadgridTreeview
+{
+    background-color: #e7eef1;
+    margin: 0 auto 10px auto;
+    padding: 4px 0;
+    width: 782px;
+    
+    /* Bordas arredondadas */
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webskit-border-radius: 6px;
+}
+
+.LookupControlRadWindow .LabelMostrarComo
+{
+    background-color: #c4d9e2;
+    color: #0a2f62;
+    display: inline-block;
+    font-family: Arial, Sans-Serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding: 3px 6px 3px 0;
+    text-align: right;
+    width: 180px;
+}
+
+.LookupControlRadWindow .LabelValorSelecionado
+{
+    color: #316284;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/*Geral, texto de vazios dos grids, teeviews e etc*/
+div[class$='EmptyText']
+{    
+    color:Blue;
+    text-align:center;    
+    font-weight:bolder;
+    height:130px;
+    width:100%;
+    padding-top:130px;
+}

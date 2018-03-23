@@ -1,0 +1,122 @@
+﻿.modal_quero_contratar_estagiario
+{
+    background-color: #FFFFCE;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: 1px 10px 50px 3px #ccc;
+    box-shadow: 1px 10px 50px 3px #ccc;
+    background-repeat: repeat-x;
+    padding: 5px 15px;
+    position: fixed;
+    width: 412px;
+    z-index: 3;
+    left: 454px!important;
+    top: 21px;
+}
+
+.imagem_confirmar_contratacao
+{
+    background-repeat: no-repeat;
+    height: 55px;
+    width: 28px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.botaoNovo_fechar_modal
+{
+    display: block;
+    margin-left: 420px;
+    margin-top: -29px;
+    position: absolute;
+}
+
+.span_exemplo_beneficios
+{
+    display: block;
+    font-size: 10px;
+}
+
+.confirmar_contratacao_texto
+{
+    margin-left: 7px;
+    float: left;
+    width: 300px;
+}
+
+.texto_marcadores_obrigatorio.confirmar_contratacao
+{
+    text-align: left;
+    font-size: 10px;
+}
+
+.container_campo_centralizado
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.radio_inner_bolsa_esquerda
+{
+    float: left;
+}
+
+.radio_inner_bolsa_direita
+{
+    float: left;
+}
+
+.container_campo_centralizado.radio_bolsa
+{
+    float: left;
+}
+
+.container_campo_centralizado.botao_contratar_confirmar
+{
+    width: 100px;
+}
+
+.label_quero_contratar
+{
+    float: left;
+    margin-top: 4px;
+    width: 100px;
+    text-align: right;
+}
+
+.campo_obrigatorio.opcional
+{
+    background-image: none;
+    padding-left: 2px;
+    width: 214px;
+    height: 16px;
+}
+
+.textbox_padrao
+{
+    margin-right: 4px; /*margin-left: 4px;*/
+    vertical-align: middle;
+    border: 1px solid #B5CAEA;
+}
+
+    .textbox_padrao.campo_obrigatorio
+    {
+        background-image: url('/img/bg_campo_obrigatorio.gif');
+        padding-left: 11px;
+        background-repeat: no-repeat;
+        left: 4px;
+    }
+
+    .textbox_padrao.contratar_estag_beneficios
+    {
+        width: 260px;
+        left: 4px;
+    }
+
+    .textbox_padrao.campo_obrigatorio.valor_bolsa
+    {
+        width: 100px;
+    }

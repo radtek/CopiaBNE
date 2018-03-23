@@ -1,0 +1,122 @@
+﻿.modal_email_sucesso
+{    
+    background-color:#FFFFCE;
+    border:5px solid #fff;
+    border-radius: 10px; 
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: 1px 10px 50px 3px #ccc;
+    box-shadow: 1px 10px 50px 3px #ccc; 
+    background-repeat: repeat-x;
+    padding: 5px 15px;
+    position: fixed;    
+    width: 412px;
+    z-index: 3;
+    left: 454px!important;
+    top: 21px; 
+}
+
+#cphRodape_ucModalEnvioEmail_pnlEnvioEmail 
+{
+    position: fixed;
+    z-index: 21;
+    left: 454px;
+    top: 28.5px;
+}
+
+.botaoNovo_fechar_modal
+{
+    display:block;
+    margin-left:416px;
+    margin-top:-84px;
+    position:absolute;
+}
+.containerConteudoModal
+{
+   
+      
+}
+.botao_enviar_email
+{
+    margin-top: 20px;
+    margin-left: 161px;
+}
+
+.labelDigiteAbaixoAlinha
+{
+    color:#355F77;
+    font-family:'Open Sans', sans-serif !important;
+    font-weight:600;
+    font-size:15px;
+    margin-top: -35px;
+    margin-left:12px !important; 
+}
+
+.titulo_enviar_email
+{
+    display: block;
+    float: left;
+    color: rgb(255,255,255);
+}
+
+.limpa_float_envio_email
+{
+    clear: both;
+}
+
+.text_box_modal_email
+{
+    display: block;
+    margin-left: 3px;
+    margin-top:5px;
+    width: 290px;
+}
+
+.textbox_email
+{
+    width: 213px;
+}
+
+.controle_email
+{
+    display: inline-block;
+}
+
+.label_email
+{
+    display: inline-block;
+    margin-top:5px;
+    margin-left: 59px !important;
+} 
+
+.label_nome
+{
+    display: inline-block;
+    margin-top:5px;
+    margin-left: 61px !important;
+} 
+
+.label_mensagem
+{
+    display: inline-block;
+    margin-top:5px;
+    margin-left: 33px !important;
+} 
+
+.imagem_confirm_envio_email
+{
+    background-repeat:no-repeat;
+    height:128px;
+    margin-left:194px;
+    margin-top:-28px;
+    width:50px;
+}
+
+.texto_cadastro_sucesso_envio_email
+{
+    color:#406C85;
+    font-family:'Open Sans', sans-serif !important;
+    font-size:16px;
+    margin-left:10px;
+    margin-top:-106px;
+    text-align: center;
+}

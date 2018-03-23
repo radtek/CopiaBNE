@@ -1,0 +1,30 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 90;
+  }
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: -moz-linear-gradient(legacy-direction($direction), $color-stops);
+  background: -ms-linear-gradient(legacy-direction($direction), $color-stops);
+  background: -o-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}

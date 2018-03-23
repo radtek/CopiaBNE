@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3671811-DA55-463A-9C65-B27741C1B834}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.BLL.Notificacao</RootNamespace>
+    <AssemblyName>BNE.BLL.Notificacao</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BNE.Cache, Version=0.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BNE.Cache.0.9.2\lib\net461\BNE.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="FormatWith, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FormatWith.1.4.1\lib\net45\FormatWith.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MailSender, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSender.1.0.10\lib\net461\MailSender.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.7\lib\net452\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlertaCidades_P1.cs" />
+    <Compile Include="AlertaCidades_P2.cs" />
+    <Compile Include="AlertaCurriculosAgenda_P1.cs" />
+    <Compile Include="AlertaCurriculosAgenda_P2.cs" />
+    <Compile Include="AlertaCurriculos_P1.cs" />
+    <Compile Include="AlertaCurriculos_P2.cs" />
+    <Compile Include="AlertaFuncoes_P1.cs" />
+    <Compile Include="AlertaFuncoes_P2.cs" />
+    <Compile Include="AlertaVagas_P1.cs" />
+    <Compile Include="AlertaVagas_P2.cs" />
+    <Compile Include="AvisoInstantaneoDeVagasVipService.cs" />
+    <Compile Include="CartaInvisivel_P1.cs" />
+    <Compile Include="CartaVip_P1.cs" />
+    <Compile Include="Carta_P1.cs" />
+    <Compile Include="CartaInvisivel_P2.cs" />
+    <Compile Include="CartaVip_P2.cs" />
+    <Compile Include="Carta_P2.cs" />
+    <Compile Include="DataAccessLayer\DataAccessLayer.cs" />
+    <Compile Include="DTO\Curriculo.cs" />
+    <Compile Include="DTO\Parametro.cs" />
+    <Compile Include="DTO\ParametroVaga.cs" />
+    <Compile Include="DTO\Vaga.cs" />
+    <Compile Include="Enumeradores\Carta.cs" />
+    <Compile Include="Enumeradores\DiaDaSemana.cs" />
+    <Compile Include="Enumeradores\UtmUrl.cs" />
+    <Compile Include="Facets\Vaga.cs" />
+    <Compile Include="JornalVagaService.cs" />
+    <Compile Include="LogEnvioMensagem_P1.cs" />
+    <Compile Include="LogEnvioMensagem_P2.cs" />
+    <Compile Include="ProcessamentoAvisoVagasVip_P1.cs" />
+    <Compile Include="ProcessamentoAvisoVagasVip_P2.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProcessamentoJornalVagas_P1.cs" />
+    <Compile Include="ProcessamentoJornalVagas_P2.cs" />
+    <Compile Include="ProcessamentoJornalVagasSteps_P1.cs" />
+    <Compile Include="ProcessamentoJornalVagasSteps_P2.cs" />
+    <Compile Include="LogErroJornal_P1.cs" />
+    <Compile Include="LogErroJornal_P2.cs" />
+    <Compile Include="UtmUrlInvisivel_P1.cs" />
+    <Compile Include="UtmUrlVip_P1.cs" />
+    <Compile Include="UtmUrl_P1.cs" />
+    <Compile Include="UtmUrlInvisivel_P2.cs" />
+    <Compile Include="UtmUrlVip_P2.cs" />
+    <Compile Include="UtmUrl_P2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BNE.BLL.Commom\BNE.BLL.Common.csproj">
+      <Project>{F41B8060-1EA8-4C42-9FA0-02868DAC7F8E}</Project>
+      <Name>BNE.BLL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.BLL.Mensagem\BNE.BLL.Mensagem.csproj">
+      <Project>{26fe1d1f-89b0-4ca6-9c76-c93ba038bee3}</Project>
+      <Name>BNE.BLL.Mensagem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.EL\BNE.EL.csproj">
+      <Project>{328D2B86-DD73-410E-AA9C-42D59BD28796}</Project>
+      <Name>BNE.EL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Infrastructure.Services.SolrService\BNE.Infrastructure.Services.SolrService.csproj">
+      <Project>{46271D80-D629-48A9-8D1A-606DBE8E1033}</Project>
+      <Name>BNE.Infrastructure.Services.SolrService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.JornalVagas\BNE.JornalVagas.csproj">
+      <Project>{E7F5719C-7620-420C-9374-26F1AD6AA5CF}</Project>
+      <Name>BNE.JornalVagas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

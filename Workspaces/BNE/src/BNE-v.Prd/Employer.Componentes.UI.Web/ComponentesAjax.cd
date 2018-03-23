@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Employer.Componentes.UI.Web.ValorNumericoTextBox" Collapsed="true">
+    <Position X="2.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IACwAAAAiAAAABAAAAAgAAAIAAAABAQBAGAAAAAAUoA=</HashCode>
+      <FileName>ValorNumericoTextBox.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.ControlBaseTextBox" Collapsed="true">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAADAABIAAgpAAAAAQAEBQAAAAAAIAAAAMACgMAEA=</HashCode>
+      <FileName>ControlBaseTextBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.ControlBaseValidator" Collapsed="true">
+    <Position X="10" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACGAAAAACEQAQAAAEAIAAkAAAAAgAAEYBACACiAAQAE=</HashCode>
+      <FileName>ControlBaseValidator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.AjaxClientControlBase" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAQAAAAAAAAAAAIAAAAIAAAAAAAAABAEAAAAEAA=</HashCode>
+      <FileName>AjaxClientControlBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.DataTextBox" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gACSAAAADACAABAABAIAAAIqAABIBAQAADAQgABAUgE=</HashCode>
+      <FileName>DataTextBox.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.ControlPlacaVeiculo" Collapsed="true">
+    <Position X="4.25" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACQAAAACAAAABAAAAAAAAAIAAAABAAAAAAAAAAAEgA=</HashCode>
+      <FileName>ControlPlacaVeiculo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.ControlTelefone" Collapsed="true">
+    <Position X="6.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAiAAAAACAAAABAAAAAAAAAKAAAABAAAAAAEASAAEgQ=</HashCode>
+      <FileName>ControlTelefone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.CronometroSessao" Collapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ICAAEAAAAgAAARgAAABAIAAIIAAAQBQQABAAAAACECA=</HashCode>
+      <FileName>CronometroSessao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.EmployerHora" Collapsed="true">
+    <Position X="13.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQAAAACAAAABAAAAAAACAIAAAABAAAABAACAAAEgA=</HashCode>
+      <FileName>EmployerHora.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.EmployerMultipleUpload" Collapsed="true">
+    <Position X="11.5" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQCwABIAGAQWCJFIBCAAAASLASAIAIQAhIAECjAoUAA=</HashCode>
+      <FileName>EmployerMultipleUpload.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.EmployerPIS" Collapsed="true">
+    <Position X="15" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQAAQCCAAAABAAABAAAAAIAQAABQAAQCBAKAAAEgA=</HashCode>
+      <FileName>EmployerPIS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.ControlCEP" Collapsed="true">
+    <Position X="9.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQAAAACAAAAJAAAAAAAAAKIAAABQABAEAFCAAAUgA=</HashCode>
+      <FileName>ControlCEP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.ControlCNPJ" Collapsed="true">
+    <Position X="11.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQAAAACAAAABAAAAAAAAAIAAAABQQBAAAACAAAUgA=</HashCode>
+      <FileName>ControlCNPJ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.ControlCPF" Collapsed="true">
+    <Position X="8" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQAAAACAAAABAAAAAAAAAIAAAABQQBAAAFCAAAUgA=</HashCode>
+      <FileName>ControlCPF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.AutoTabIndex" Collapsed="true">
+    <Position X="17" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAACAAAAAABAAAAAAAAAIAAAACIAAABAAAAAAEAA=</HashCode>
+      <FileName>AutoTabIndex.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.ControlAlfaNumerico" Collapsed="true">
+    <Position X="17" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACwAAAAiAAAAFAAAECwEAAaAAAABQAAAUCEAAAAUgQ=</HashCode>
+      <FileName>ControlAlfaNumerico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.ControlAutoCompleteBase" Collapsed="true">
+    <Position X="18.75" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>4JDxSAAgCQIBBNAAAAAAFAAKAACJFYQARFOMWWAGUgw=</HashCode>
+      <FileName>ControlAutoCompleteBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.EmployerListaConfColunas" Collapsed="true">
+    <Position X="12.25" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAgQAAABAAAAAAAAAIABAAAAAACBAAgAAAUAA=</HashCode>
+      <FileName>EmployerListaConfColunas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.EmployerToolTip" Collapsed="true">
+    <Position X="14.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAgAAAADAAAAAAAABIAAAAAAACAEAACAIAEAA=</HashCode>
+      <FileName>EmployerToolTip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer.Componentes.UI.Web.EmployerUpload" Collapsed="true">
+    <Position X="9.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQAAAAHAQBABIIAAAAAUAKAAAAAAAAjBAEADBo0gA=</HashCode>
+      <FileName>EmployerUpload.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

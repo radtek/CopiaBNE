@@ -1,0 +1,71 @@
+﻿// ------------------------------------------------------------------ Perfil
+@import "juridica";
+// ------------------------------------------------------------------ General Imports
+@import "__mixing";
+@import "__global";
+@import "__media";
+// ------------------------------------------------------------------ Especific Imports
+//@import "campanha";
+
+.btnformbig {
+    line-height: 50px !important;
+    @include border-radius(2px !important);
+}
+
+.btn_add_user {
+    width: 265px !important;
+    background: #999999 !important;
+    height: 48px !important;
+
+    &:hover {
+        background: #7e7e7e !important;
+    }
+}
+
+.btn_add_new_user {
+    padding: 8px 40px 10px 40px !important;
+    height: 48px !important;
+}
+
+.user-template {
+    display: none;
+}
+
+.content-add-user {
+    @include linear-gradient(#f1f1f1, #f2f2f2);
+    @include border-radius(4px);
+    border: 1px solid #e8e8e8;
+    border-bottom: 3px solid #dcdcdc;
+    position: relative;
+    float: left;
+    padding: 10px 0 10px 90px;
+    margin-bottom: 20px;
+
+    .box {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.button-remove-user {
+    top: 18px;
+    padding: 7px 0 38px 0;
+    position: relative;
+    font-size: 14px;
+    color: #fff !important;
+    background: #f44235 !important;
+    height: 48px !important;
+
+    &:hover {
+        background: #c0392f !important;
+    }
+}
+
+.float-left {
+    float: left;
+}
+
+#modal-content-header {
+    padding:12px !important;
+    margin-bottom:-24px !important;
+}

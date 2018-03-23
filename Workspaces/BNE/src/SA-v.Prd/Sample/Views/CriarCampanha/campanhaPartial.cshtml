@@ -1,0 +1,13 @@
+﻿@model Sample.Models.CampanhaModel
+
+@using (Html.BeginForm("Index", "CriarCampanha", FormMethod.Get, new { @class = "form-group", id = "idForm2" }))
+{
+    
+    @Html.HiddenFor(x => x.cnpjs, new { id="hdfCnpjs"})
+    @*<div class="btn btn-default_3D btn-lg btn_campanha" onclick=" $('#div_carregando').show();window.location.href='@Url.Action("Index", "CriarCampanha", new { empresa = "CampanhaComPlano" })'" id="btnEnviarCampanha" style="display:none">*@
+    <button class="btn btn-default_3D btn-lg btn_campanha" type="submit"  id="btnEnviarCampanha" onclick=" $('#div_carregando').show();" style="display:none">
+        <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-info"></span> Enviar Campanha <br />
+        <span class="btn_campanha_selecionados" id="spEmpresaSelection"> </span>
+     
+    </button>
+}

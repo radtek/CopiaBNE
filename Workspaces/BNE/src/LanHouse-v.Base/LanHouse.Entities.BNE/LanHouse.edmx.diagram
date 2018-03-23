@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e004da8c274643dcb3b1503cb75be411" Name="Diagram1" ZoomLevel="42">
+        <EntityTypeShape EntityType="LANModel.BNE_Codigo_Desconto" Width="1.5" PointX="8.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LANModel.BNE_Codigo_Desconto_Plano" Width="1.5" PointX="8" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LANModel.BNE_Curriculo" Width="1.5" PointX="5.25" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LANModel.BNE_Experiencia_Profissional" Width="1.5" PointX="5.25" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="LANModel.BNE_Formacao" Width="1.5" PointX="8.25" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LANModel.BNE_Funcao_Erro_Sinonimo" Width="1.5" PointX="10.5" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LANModel.BNE_Funcao_Pretendida" Width="1.5" PointX="10.5" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LANModel.TAB_Contato" Width="1.5" PointX="8.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LANModel.TAB_Filial" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LANModel.TAB_Fonte" Width="1.5" PointX="6" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LANModel.TAB_Origem_Filial" Width="1.5" PointX="3.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LANModel.TAB_Pessoa_Fisica" Width="1.5" PointX="3" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LANModel.TAB_Cidade" Width="1.5" PointX="0.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LANModel.TAB_Funcao" Width="1.5" PointX="8.25" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LANModel.TAB_Parametro" Width="1.5" PointX="7.75" PointY="10.125" IsExpanded="true" />
+        <AssociationConnector Association="LANModel.FK_BNECUR_BNEFPR" ManuallyRouted="false" />
+        <AssociationConnector Association="LANModel.FK_BNETCI_BNECUR" ManuallyRouted="false" />
+        <AssociationConnector Association="LANModel.FK_TABCID_BNECUR" ManuallyRouted="false" />
+        <AssociationConnector Association="LANModel.FK_TABPFI_BNECUR" ManuallyRouted="false" />
+        <AssociationConnector Association="LANModel.FK_TABFUN_BNEEPR" ManuallyRouted="false" />
+        <AssociationConnector Association="LANModel.FK_TABPFI_BNEEPR" ManuallyRouted="false" />
+        <AssociationConnector Association="LANModel.FK_TABCID_TABFOR" ManuallyRouted="false" />
+        <AssociationConnector Association="LANModel.FK_TABFON_BNEFOR" ManuallyRouted="false" />
+        <AssociationConnector Association="LANModel.FK_TABPFI_BNEFOR" ManuallyRouted="false" />
+        <AssociationConnector Association="LANModel.FK_TABFUN_BNEFES" ManuallyRouted="false" />
+        <AssociationConnector Association="LANModel.FK_TABFUN_BNEFPR" ManuallyRouted="false" />
+        <AssociationConnector Association="LANModel.FK_TABFIL_TABOFI" ManuallyRouted="false" />
+        <AssociationConnector Association="LANModel.FK_TABCID_TABPFI" ManuallyRouted="false" />
+        <AssociationConnector Association="LANModel.FK_TABFUN_TABFUN" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LANModel.TAB_Endereco" Width="1.5" PointX="3.5914231387858386" PointY="8.0390244610789345" />
+        <AssociationConnector Association="LANModel.FK_TABCDA_TABEND" />
+        <AssociationConnector Association="LANModel.FK_TABEND_TABFIL" />
+        <AssociationConnector Association="LANModel.FK_TABEND_TABPFI" />
+        <EntityTypeShape EntityType="LANModel.TAB_Pessoa_Fisica_Foto" Width="1.5" PointX="0.60427546715562952" PointY="4.911295013926595" />
+        <AssociationConnector Association="LANModel.FK_TABPFI_TABPFF" />
+        <EntityTypeShape EntityType="LANModel.LAN_Administrador" Width="1.5" PointX="15" PointY="8.5" />
+        <EntityTypeShape EntityType="LANModel.LAN_Companhia" Width="1.5" PointX="4.125" PointY="0.75" />
+        <EntityTypeShape EntityType="LANModel.LAN_Fase_Cadastro" Width="1.5" PointX="6.375" PointY="14.75" />
+        <EntityTypeShape EntityType="LANModel.LAN_Oportunidade" Width="1.5" PointX="6.375" PointY="1.5" />
+        <EntityTypeShape EntityType="LANModel.LAN_Oportunidade_Cidade" Width="1.5" PointX="10.625" PointY="9.375" />
+        <EntityTypeShape EntityType="LANModel.LAN_Oportunidade_Curriculo_Historico" Width="1.5" PointX="0.75" PointY="9.25" />
+        <EntityTypeShape EntityType="LANModel.LAN_Perfil" Width="1.5" PointX="12.75" PointY="8.75" />
+        <EntityTypeShape EntityType="LANModel.LAN_Plano_Adquirido" Width="1.5" PointX="10.875" PointY="21.875" />
+        <EntityTypeShape EntityType="LANModel.LAN_Plano_Situacao" Width="1.5" PointX="8.625" PointY="29.125" />
+        <AssociationConnector Association="LANModel.FK_LAN_Plano_Adquirido_Idf_Cod_Desconto_BNE_BNE_Codigo_Desconto_Idf_Codigo_Desconto" />
+        <AssociationConnector Association="LANModel.FK_LAN_Plano_Adquirido_Idf_Curriculo_bne_Curiculo_Idf_Curriculo" />
+        <AssociationConnector Association="LANModel.FK_LAN_Companhia_Idf_Filial_Tab_Filial_Idf_Filial" />
+        <AssociationConnector Association="LANModel.FK_LAN_Oportunidade_Idf_Filial_Tab_Filial_Idf_Filial" />
+        <AssociationConnector Association="LANModel.FK_LAN_Administrador_idf_Perfil_LAN_Administrador_idf_Perfil" />
+        <AssociationConnector Association="LANModel.FK_LAN_Oportunidade_Idf_Companhia_LAN_Companhia_Idf_Compahia" />
+        <AssociationConnector Association="LANModel.FK_LAN_Oportunidade_Filial_Companhia_LAN_Oportunidade_Filial_Companhia" />
+        <AssociationConnector Association="LANModel.FK_LAN_Oportunidade_Cidade_Idf_cidade_Tab_Cidade_Idf_Cidade" />
+        <AssociationConnector Association="LANModel.FK_LAN_Plano_Adquirido_Idf_Plano_Situacao_LAN_Plano_Situacao" />
+        <EntityTypeShape EntityType="LANModel.LAN_Oportunidade_Curriculo" Width="1.5" PointX="8.625" PointY="14" />
+        <AssociationConnector Association="LANModel.FK_LAN_Oportunidade_Curriculo_Idf_Curriculo_BNE_Curriculo_Idf_Curriculo" />
+        <AssociationConnector Association="LANModel.FK_LAN_Oportunidade_Curriculo_Idf_Fase_Cadastro_LAN_Fase_Cadastro_Idf_Fase_Cadastro" />
+        <AssociationConnector Association="LANModel.FK_LAN_Oportunidade_Curriculo_Idf_Filial_Idf_Companhia_LAN_Oportunidade_Idf_Filial_Idf_Companhia" />
+        <EntityTypeShape EntityType="LANModel.TAB_Parametro_Filial" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="LANModel.TAB_Regiao_Metropolitana" Width="1.5" PointX="3.125" PointY="16.125" />
+        <EntityTypeShape EntityType="LANModel.TAB_Regiao_Metropolitana_Cidade" Width="1.5" PointX="11.375" PointY="16.5" />
+        <AssociationConnector Association="LANModel.FK_TABCID_TABRME" />
+        <AssociationConnector Association="LANModel.FK_TABRME_TABRMC" />
+        <AssociationConnector Association="LANModel.FK_TABCID_TABRMC" />
+        <EntityTypeShape EntityType="LANModel.TAB_DePara_Email" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="LANModel.TAB_Deficiencia" Width="1.5" PointX="11.375" PointY="3.875" />
+        <AssociationConnector Association="LANModel.FK_TABDEF_TABPFI" />
+        <EntityTypeShape EntityType="LANModel.TAB_Area_BNE" Width="1.5" PointX="3" PointY="37.25" />
+        <AssociationConnector Association="LANModel.FK_TABAEM_BNEEPR" />
+        <AssociationConnector Association="LANModel.FK_TABABN_TABFUN" />
+        <EntityTypeShape EntityType="LANModel.TAB_Curso" Width="1.5" PointX="13.375" PointY="1" />
+        <EntityTypeShape EntityType="LANModel.TAB_Escolaridade" Width="1.5" PointX="0.75" PointY="28.75" />
+        <AssociationConnector Association="LANModel.FK_TABCRS_BNEFOR" />
+        <AssociationConnector Association="LANModel.FK_TABESC_BNEFOR" />
+        <AssociationConnector Association="LANModel.TAB_Escolaridade_TAB_Pessoa_Fisica_FK1" />
+        <AssociationConnector Association="LANModel.FK_TABESC_TABFUN" />
+        <EntityTypeShape EntityType="LANModel.TAB_Idioma" Width="1.5" PointX="13.5" PointY="4.75" />
+        <EntityTypeShape EntityType="LANModel.TAB_Estado_Civil" Width="1.5" PointX="11.5" PointY="12.875" />
+        <AssociationConnector Association="LANModel.FK_TABECI_TABPFI" />
+        <EntityTypeShape EntityType="LANModel.BNE_Situacao_Formacao" Width="1.5" PointX="14.375" PointY="11.875" />
+        <AssociationConnector Association="LANModel.FK_BNESFO_BNEFOR" />
+        <AssociationConnector Association="LANModel.FK_TABPAF_TABFIL" />
+        <EntityTypeShape EntityType="LANModel.BNE_Plano" Width="1.5" PointX="5.75" PointY="37.375" />
+        <AssociationConnector Association="LANModel.FK_BNECDP_BNEPAN" />
+        <EntityTypeShape EntityType="LANModel.TAB_Filial_Logo" Width="1.5" PointX="3.75" PointY="13" />
+        <AssociationConnector Association="LANModel.FK_TABPFI_TABFLO" />
+        <EntityTypeShape EntityType="LANModel.BNE_Vaga" Width="1.5" PointX="13.75" PointY="15.75" />
+        <AssociationConnector Association="LANModel.FK_BNEVAG_TABDEF" />
+        <AssociationConnector Association="LANModel.FK_TABCDA_BNEVAG" />
+        <AssociationConnector Association="LANModel.FK_TABESC_BNEVAG" />
+        <AssociationConnector Association="LANModel.FK_TABFIL_BNEVAG" />
+        <AssociationConnector Association="LANModel.FK_TABFUN_BNEVAG" />
+        <EntityTypeShape EntityType="LANModel.TAB_Pesquisa_Salarial" Width="1.5" PointX="10.5" PointY="38.125" />
+        <AssociationConnector Association="LANModel.FK_TABFUN_TABPSA" />
+        <EntityTypeShape EntityType="LANModel.TAB_Estado" Width="1.5" PointX="15.375" PointY="1" />
+        <AssociationConnector Association="LANModel.FK_TABEST_TABPSA" />
+        <EntityTypeShape EntityType="LANModel.BNE_Vaga_Candidato" Width="1.5" PointX="16" PointY="21.25" />
+        <AssociationConnector Association="LANModel.BNE_Curriculo_BNE_Vaga_Candidato_FK1" />
+        <AssociationConnector Association="LANModel.FK_BNEVAG_BNEVCA" />
+        <EntityTypeShape EntityType="LANModel.TAB_Parametro_Curriculo" Width="1.5" PointX="16" PointY="17.75" />
+        <AssociationConnector Association="LANModel.FK_TABPARC_BNECV" />
+        <AssociationConnector Association="LANModel.FK_TABPARC_BNEPAR" />
+        <EntityTypeShape EntityType="LANModel.TAB_Usuario_Filial_Perfil" Width="1.5" PointX="13.25" PointY="27.125" />
+        <AssociationConnector Association="LANModel.FK_BNE_Codigo_Desconto_TAB_Usuario_Filial_Perfil" />
+        <AssociationConnector Association="LANModel.FK_BNEUFP_BNEVAG" />
+        <AssociationConnector Association="LANModel.FK_TABUSF_TABFLA" />
+        <AssociationConnector Association="LANModel.FK_TABUFP_TABPSF" />
+        <EntityTypeShape EntityType="LANModel.BNE_Tipo_Codigo_Desconto" Width="1.5" PointX="2.75" PointY="21" />
+        <AssociationConnector Association="LANModel.FK_BNE_Codigo_Desconto_BNE_Tipo_Codigo_Desconto" />
+        <AssociationConnector Association="LANModel.FK_BNECDP_BNETCP" />
+        <EntityTypeShape EntityType="LANModel.BNE_Pagamento" Width="1.5" PointX="17.5" PointY="11.125" />
+        <EntityTypeShape EntityType="LANModel.BNE_Plano_Parcela" Width="1.5" PointX="15.25" PointY="32.75" />
+        <AssociationConnector Association="LANModel.FK_TABCODESCONTO_BNEPAG" />
+        <AssociationConnector Association="LANModel.FK_BNEFIL_BNEPAG" />
+        <AssociationConnector Association="LANModel.FK_BNEPAG_BNEPLP" />
+        <AssociationConnector Association="LANModel.FK_TABUFG_BNEPAG" />
+        <AssociationConnector Association="LANModel.FK_TABUFP_BNEPAG" />
+        <EntityTypeShape EntityType="LANModel.BNE_Usuario_Filial" Width="1.5" PointX="17.5" PointY="32" />
+        <AssociationConnector Association="LANModel.FK_BNEUSF_BNEUFP" />
+        <AssociationConnector Association="LANModel.FK_TABFUN_BNEUSF" />
+        <EntityTypeShape EntityType="LANModel.BNE_Plano_Adquirido" Width="1.5" PointX="18.5" PointY="23.5" />
+        <EntityTypeShape EntityType="LANModel.BNE_Plano_Adquirido_Detalhes" Width="1.5" PointX="19" PointY="18.75" />
+        <EntityTypeShape EntityType="LANModel.BNE_Plano_Quantidade" Width="1.5" PointX="20.75" PointY="24.125" />
+        <AssociationConnector Association="LANModel.FK_BNEPAC_BNEPAS" />
+        <AssociationConnector Association="LANModel.FK_BNEFPA_BNEPAS" />
+        <AssociationConnector Association="LANModel.FK_BNEPAD_BNEPLD" />
+        <AssociationConnector Association="LANModel.FK_BNEPPA_BNEPPA" />
+        <AssociationConnector Association="LANModel.FK_BNEUSU_BNEPAS" />
+        <AssociationConnector Association="LANModel.FK_TABFIL_BNEPAS" />
+        <AssociationConnector Association="LANModel.FK_BNEPAD_BNEFILIAL" />
+        <AssociationConnector Association="LANModel.FK_BNEPAD_BNEVAG" />
+        <AssociationConnector Association="LANModel.FK_TABFUN_BNEPLD" />
+        <EntityTypeShape EntityType="LANModel.BNE_Tipo_Pagamento" Width="1.5" PointX="16.375" PointY="4.875" />
+        <AssociationConnector Association="LANModel.FK_BNETPP_BNEPAG" />
+        <EntityTypeShape EntityType="LANModel.BNE_Curriculo_Idioma" Width="1.5" PointX="19.75" PointY="15.375" />
+        <AssociationConnector Association="LANModel.FK_BNECID_BNECUR" />
+        <AssociationConnector Association="LANModel.FK_BNECID_BNEidi" />
+        <EntityTypeShape EntityType="LANModel.BNE_Adicional_Plano" Width="1.5" PointX="20.75" PointY="28.5" />
+        <AssociationConnector Association="LANModel.FK_BNEAPL_BNEPAG" />
+        <AssociationConnector Association="LANModel.FK_BNEAPL_BNEPAS" />
+        <EntityTypeShape EntityType="LANModel.BNE_Carta_Email" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="LANModel.TAB_Pessoa_Fisica_Idioma" Width="1.5" PointX="21.875" PointY="18.75" />
+        <AssociationConnector Association="LANModel.FK_TABIDI_BNECUI" />
+        <AssociationConnector Association="LANModel.FK_BNECUR_BNECUI" />
+        <EntityTypeShape EntityType="LANModel.BNE_Curriculo_Observacao" Width="1.5" PointX="15.5" PointY="27.5" />
+        <AssociationConnector Association="LANModel.FK_TABFIL_BNECOI" />
+        <AssociationConnector Association="LANModel.FK_TABFUFP_BNECOI" />
+        <EntityTypeShape EntityType="LANModel.TAB_Filial_Observacao" Width="1.5" PointX="20.5" PointY="10.75" />
+        <AssociationConnector Association="LANModel.FK_TABFIL_TABFIO" />
+        <AssociationConnector Association="LANModel.FK_TABFIL_TABFOB" />
+        <EntityTypeShape EntityType="LANModel.TAB_Nivel_Idioma" Width="1.5" PointX="17.375" PointY="7.875" />
+        <AssociationConnector Association="LANModel.FK_TABNID_BNECUI" />
+        <EntityTypeShape EntityType="LANModel.BNE_Carta_SMS" Width="1.5" PointX="18.375" PointY="3.75" />
+        <EntityTypeShape EntityType="LANModel.BNE_Estatistica" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="LANModel.BNE_Intencao_Filial" Width="1.5" PointX="22.5" PointY="15.75" />
+        <AssociationConnector Association="LANModel.FK_BNECUR_BNECUF" />
+        <AssociationConnector Association="LANModel.FK_TABFIL_BNECRF" />
+        <EntityTypeShape EntityType="LANModel.BNE_Ranking_Email" Width="1.5" PointX="19.375" PointY="6.75" />
+        <EntityTypeShape EntityType="LANModel.BNE_Curriculo_Origem" Width="1.5" PointX="7.5" PointY="44.125" />
+        <AssociationConnector Association="LANModel.FK_BNECUR_BNECOR" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

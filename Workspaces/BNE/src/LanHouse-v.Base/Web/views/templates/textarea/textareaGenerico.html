@@ -1,0 +1,4 @@
+﻿<label>{{label}}</label>
+<textarea class="form-control" id="{{nome}}" name="{{nome}}" ng-focus="CarregarSugestaoAtividade('{{nome}}','{{destino}}','{{funcao}}')" rows="3" ng-trim="false" ng-model="value" maxlength="{{maxl}}"></textarea>
+<span ng-show="value.length > 1798">{{2000 - value.length}} caracteres restantes</span>
+<blockquote ng-show="mostrarSugestao"><p>Sugestão de atividades</p><span id="{{destino}}">{{sugestaoAtividade}}</span></blockquote>

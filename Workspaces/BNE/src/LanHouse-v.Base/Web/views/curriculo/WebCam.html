@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../Scripts/angular.js"></script>
+    <script src="js/angularApp/controllers/webcamController.js"></script>
+</head>
+<body>
+    <webcam on-stream="onStream(stream,video)"
+            on-access-denied="onError(err)"
+            on-streaming="onSuccess(video)">
+    </webcam>
+    <canvas id="snapshot" class="well"></canvas>
+    <button class="btn btn-large btn-primary" ng-click="makeSnapshot()">Take snapshot!</button>
+</body>
+</html>

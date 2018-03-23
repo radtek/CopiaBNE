@@ -1,0 +1,37 @@
+﻿.topo
+{
+}
+
+.Responsavel
+{
+	margin-bottom: -2px;
+	margin-left: 37px;
+}
+
+.DataNascimentoGrid
+{
+	left: 11px;
+	position: relative;
+}
+
+.AcessoGrid
+{
+	left: 27px;
+	position: relative;
+}
+
+.celular
+{
+	width: 100px;
+}
+
+.CPF
+{
+	width: 100px;
+}
+
+.rgHeader ColunaCelularGrid
+{
+	width: 150px;
+}
+

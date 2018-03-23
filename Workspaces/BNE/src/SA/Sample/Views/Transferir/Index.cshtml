@@ -1,0 +1,101 @@
+﻿@model IEnumerable<AdminLTE_Application.CRM_Vendedor_Empresa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Vendedores
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Transferências</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Lista de transferências</h3>
+                        <div class="box-tools">
+                            <div class="input-group">
+
+                            </div>
+                        </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body table-responsive">
+                        <table id="example6" class="table table-bordered table-hover">
+                            <thead>
+                                <tr role="row">
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" style="width: 295px;" aria-label="Rendering engine: activate to sort column ascending">Empresa</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" style="width: 423px;" aria-sort="ascending" aria-label="Browser: activate to sort column descending">Situação</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" style="width: 390px;" aria-label="Platform(s): activate to sort column ascending">Vendedor</th>
+                                    <th class="sorting_desc" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" style="width: 253px;" aria-label="Engine version: activate to sort column ascending">Inicio</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" style="width: 181px;" aria-label="CSS grade: activate to sort column ascending">Fim</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" style="width: 181px;" aria-label="CSS grade: activate to sort column ascending">Obs</th>
+                               </tr>
+                            </thead>
+                            @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CRM_Empresa.Raz_Social)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CRM_Situacao_Atendimento.Des_Situacao_atendimento)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CRM_Vendedor.Nme_Vendedor)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Dta_Inicio)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Dta_Fim)
+                                        </td>                                        
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Des_Obs_VendedorEmpresa)
+                                        </td>                                        
+                                    </tr>
+                                }
+
+                            </table>
+
+</div><!-- /.box-body -->
+                </div>
+
+            </div>
+        </div>
+    </section><!-- /.content -->
+</aside><!-- /.right-side -->
+@Scripts.Render("~/bundles/datatables")
+<script type="text/javascript">
+    $(function () {
+        $("#example1").dataTable();
+        $('#example6').dataTable({
+            "bPaginate": true,
+            "bLengthChange": true,
+            "bFilter": true,
+            "bSort": true,
+            "bInfo": true,
+            "bAutoWidth": true
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("li").removeClass("active");
+        $("#tables").addClass("active");
+        $("#tables_menu").css("display", "block");
+        $("#tables_datatables").addClass("active");
+        $("#tables_arrow").addClass("fa-angle-down");
+    });
+</script>

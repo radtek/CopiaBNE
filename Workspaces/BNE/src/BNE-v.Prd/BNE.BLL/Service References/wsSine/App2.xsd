@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="RetornoOperacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdCandidatura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetornoOperacao" nillable="true" type="tns:RetornoOperacao" />
+  <xs:complexType name="RetornoDetalhes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataAbertura" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescricaoAtribuicoes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescricaoBeneficio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescricaoRequisitos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuantidadeVagas" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetornoDetalhes" nillable="true" type="tns:RetornoDetalhes" />
+  <xs:complexType name="RetornoQuantidade">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QuantidadeNovasVagas" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetornoQuantidade" nillable="true" type="tns:RetornoQuantidade" />
+  <xs:complexType name="ArrayOfRetornoCandidaturasDoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RetornoCandidaturasDoUsuario" nillable="true" type="tns:RetornoCandidaturasDoUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRetornoCandidaturasDoUsuario" nillable="true" type="tns:ArrayOfRetornoCandidaturasDoUsuario" />
+  <xs:complexType name="RetornoCandidaturasDoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BreveDescricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cidade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoVaga" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomeFuncao" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetornoCandidaturasDoUsuario" nillable="true" type="tns:RetornoCandidaturasDoUsuario" />
+  <xs:complexType name="RetornoCurriculo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Celular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cidade" type="xs:int" />
+      <xs:element minOccurs="0" name="DataNascimento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Funcao" type="xs:int" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroCPF" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PretensaoSalarial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sexo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetornoCurriculo" nillable="true" type="tns:RetornoCurriculo" />
+  <xs:complexType name="InRetornaFuncao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="funcao" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InRetornaFuncao" nillable="true" type="tns:InRetornaFuncao" />
+  <xs:complexType name="OutRetornaFuncao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutRetornaFuncao" nillable="true" type="tns:OutRetornaFuncao" />
+  <xs:complexType name="InRetornaCidade">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cidade" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InRetornaCidade" nillable="true" type="tns:InRetornaCidade" />
+  <xs:complexType name="OutRetornaCidade">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutRetornaCidade" nillable="true" type="tns:OutRetornaCidade" />
+  <xs:complexType name="RetornoLiberarDestaqueVaga">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotaFiscal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroBoleto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroDocumento" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Parcela" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plano" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValorPlano" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetornoLiberarDestaqueVaga" nillable="true" type="tns:RetornoLiberarDestaqueVaga" />
+  <xs:complexType name="InAtualizaNumNF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ln" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nt" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InAtualizaNumNF" nillable="true" type="tns:InAtualizaNumNF" />
+  <xs:complexType name="OutAtualizaNumNF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="r" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutAtualizaNumNF" nillable="true" type="tns:OutAtualizaNumNF" />
+  <xs:complexType name="RetornoBronquinha">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MensagemRetorno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetornoBronquinha" nillable="true" type="tns:RetornoBronquinha" />
+</xs:schema>

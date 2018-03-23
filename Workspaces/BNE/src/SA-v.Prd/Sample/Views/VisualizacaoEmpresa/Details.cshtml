@@ -1,0 +1,232 @@
+﻿@model Sample.Models.VisualizacaoEmpresa
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Visualização de currículos
+            <small>Empresa</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="~/Views/Home/"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Empresa</li>
+            <li class="active">Visualização</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">@Model.RazSocial</h3>
+                    </div><!-- /.box-header -->
+                    @using (Html.BeginForm("Details", "VisualizacaoEmpresa", FormMethod.Post, new { id = "idForm" }))
+                    {
+                        @Html.HiddenFor(m => m.pag, new { @Value = Model.pag })
+                        <input type="submit" id="btnSubmit" style="display:none" />
+                        <div class="box-body table-responsive">
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.DropDownList("rowsPag", new SelectList(new Dictionary<string, int> { { "10", 10 }, { "25", 25 }, {"50", 50 },
+                                       { "100", 100 } }, "Key", "Value"), new
+                                       {
+                                           onchange = "this.form.submit()",
+                                           @class = "pro_pag_tf1",
+                                           id = "pagesizelist",
+                                           rowsPag = Model.rowsPag,
+                                           pag = Model.pag
+
+                                       })
+                                    </td>
+
+                                </tr>
+                            </table>
+                            @Html.HiddenFor(m => m.rowsPag, new { @Value = Model.rowsPag })
+
+                            Página @(Model.TotalPag < Model.pag ? 0 : Model.pag) de @Model.TotalPag - Total de @Model.Qtd_Total Visualizações
+
+                            <table id="EmpresaSemPlano" class="table table-bordered table-hover dataTable">
+                                <thead>
+                                    <tr>
+                                        <tr>
+                                            Visualizador
+                                        </tr>
+                                        <th>
+                                            Tipo
+                                        </th>
+                                        <th>
+                                            Data
+                                        </th>
+                                        <th>
+                                            Pessoa
+                                        </th>
+
+                                        <th>
+                                            Cidade
+                                        </th>
+                                        <th>
+                                            UF
+                                        </th>
+                                        <th>
+                                            Função
+                                        </th>
+                                        <th>
+                                            URL
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                @foreach (var item in Model.listaVisualizacao)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Visualizador)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Tipo)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Data)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Nme_Pessoa)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.nme_cidade)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.sig_Estado)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.funcao)
+                                        </td>
+                                        <td>
+                                            <a href="@item.Url" target="_blank"> @Html.DisplayFor(modelItem => item.Url)</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                            Página @(Model.TotalPag < Model.pag? 0 : Model.pag) de @Model.TotalPag - Total de @Model.Qtd_Total Visualizações
+
+                            <div class="container">
+                                <nav aria-label="Page navigation" style="margin-left: -4%;">
+                                    <ul class="pagination" id="pagination"></ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                    }
+
+                    <div id="div_carregando" class="progresso">
+                        <div class="progresso_texto">
+                            <img src="~/Content/img/ajax-loader.gif" />
+                            <br /> Carregando...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- /.content -->
+</aside><!-- /.right-side -->
+
+@Scripts.Render("~/bundles/datatables")
+<script type="text/javascript">
+
+    $(function () {
+        var obj = $('#pagination').twbsPagination({
+            totalPages: @Model.TotalPag,
+            visiblePages: 10,
+            startPage: @Model.pag,
+            onPageClick: function (event, page) {
+                 Pagina(page);
+
+            }
+        });
+
+    });
+
+    
+
+    $(function () {
+        $('#EmpresaSemPlano').dataTable({
+            "bPaginate": false,
+            "bLengthChange": true,
+            "bFilter": false,
+            "bServerSide": false,
+            "bSort": false,
+            "bInfo": false,
+            "bAutoWidth": false
+        });
+
+    });
+
+    function Pagina(pag) {
+        document.getElementById('pag').value = pag;
+    }
+
+    $(document).click(function(event) {
+        if(event.target.className == 'page-link'){
+            document.getElementById('btnSubmit').click();
+        }
+    });
+
+    $("#idForm").submit(function(e) {
+        $("#div_carregando").show();
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("li").removeClass("active");
+        $("#tables").addClass("active");
+        $("#tables_menu").css("display", "block");
+        $("#tables_datatables").addClass("active");
+
+        $("#tables_arrow").addClass("fa-angle-down");
+
+        $("#idForm").submit(function(e) {
+            $("#div_carregando").show();
+        });
+        var itens =  document.getElementsByClassName("page-link");
+        var pagina = @Model.pag;
+        for (var i=0; i< itens.length;i++ ){
+            if(itens[i].text == pagina){
+                     document.getElementsByClassName("page-item")[i].className += " active"
+            }
+        }
+
+    });
+</script>
+@section scripts {
+    <script type="text/javascript">
+        $('#pagesizelist').on('change', function (event) {
+            var form =  $(event.target).parents('form');
+            form.submit();
+        });
+    </script>
+}
+
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax2.js");
+@Scripts.Render("~/Scripts/jquery.twbsPagination.min.js");
+@Scripts.Render("~/Scripts/AdminLTE/dashboard.js")
+@Scripts.Render("~/Scripts/raphael-min.js")
+@Scripts.Render("~/Scripts/plugins/morris/morris.min.js")
+@Scripts.Render("~/Scripts/plugins/sparkline/jquery.sparkline.min.js")
+@Scripts.Render("~/Scripts/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js")
+@Scripts.Render("~/Scripts/plugins/jvectormap/jquery-jvectormap-world-mill-en.js")
+@Scripts.Render("~/Scripts/plugins/jqueryKnob/jquery.knob.js")
+@Scripts.Render("~/Scripts/plugins/daterangepicker/daterangepicker.js")
+@Scripts.Render("~/Scripts/plugins/datepicker/bootstrap-datepicker.js")
+@Scripts.Render("~/Scripts/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js")
+@Scripts.Render("~/Scripts/plugins/iCheck/icheck.min.js")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("li").removeClass("active");
+        $("#dashboard").addClass("active");
+    });
+</script>

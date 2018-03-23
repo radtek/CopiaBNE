@@ -1,0 +1,168 @@
+﻿@using BNE.Web.Vagas.Code
+@model BNE.Web.Vagas.Models.DadosEmpresa
+<div id="modalDadosEmpresa" class="modal amarela">
+    <script>
+        modal.abrirModal('modalDadosEmpresa');
+    </script>
+    <link href="~/Content/ModalDadosEmpresa.css" rel="stylesheet" />
+    @*<a class="b-close modal_fechar" title="Close"></a>*@
+
+    <div class="modal_conteudo dados_da_empresa">
+
+        @if (Model.VagaConfidencial)
+        {
+            <div class="recrutamento-sigiloso-icon"><img src="~/Images/modal/DadosEmpresa/recrutamento-sigiloso.png" /></div>
+            <div class="painel_empresa_confidencial">
+                <b>Desculpe,</b> esta empresa optou por fazer um <br> processo de recrutamento sigiloso
+            </div>
+            <div class="nao_agora">
+                <a class="b-close">
+                    <input type="button" value="OK ENTENDI" />
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="titulo_modal_Dados_Empresa">Dados da empresa</div>
+            if (Model.CurriculoVIP)
+            {
+                if (!Model.VagaSine)
+                {
+                    <div class="painel_info_vip">
+                        @Html.Action("LogoEmpresa", "Base", new { cnpj = Model.NumeroCNPJ })
+                    </div>
+                }
+            }
+            <div class="painel_dados_empresa">
+                @if (!String.IsNullOrEmpty(Model.DesAreaBne) ^ !String.IsNullOrEmpty(Model.NumeroTelefone))
+                {
+                    <div class="linha">
+
+                        @if (!String.IsNullOrEmpty(Model.DesAreaBne))
+                        {
+                            <label class="label_principal">
+                                Ramo da Empresa :
+                            </label>
+                        }
+                        else
+                        {
+                            <label class="label_principal">
+                                Nome da Empresa :
+                            </label>
+                        }
+
+                        <div class="container_campo">
+                            @if (Model.CurriculoVIP)
+                            {
+                                if (!String.IsNullOrEmpty(Model.DesAreaBne))
+                                {
+                                    @Model.DesAreaBne
+                                }
+                                else
+                                {
+                                    @Model.NomeEmpresa
+                                }
+                            }
+                            else
+                            {
+                                <div> Somente para Cliente <span class="texto_vip">VIP</span></div>
+                            }
+                        </div>
+                    </div>
+                }
+                @if (@Model.QuantidadeFuncionarios.HasValue)
+                {
+                    <div class="linha">
+                        <label class="label_principal">Número de Funcionários:</label>
+                        <div class="container_campo">
+                            @Model.QuantidadeFuncionarios
+                        </div>
+                    </div>
+                }
+
+                @if (!string.IsNullOrWhiteSpace(@Model.Cidade))
+                {
+                    <div class="linha">
+                        <label class="label_principal">Cidade da Empresa:</label>
+                        <div class="container_campo">
+                            @Model.Cidade
+                        </div>
+                    </div>
+                }
+                @if (!string.IsNullOrWhiteSpace(@Model.Bairro))
+                {
+                    <div class="linha">
+                        <label class="label_principal">Bairro da Empresa:</label>
+                        <div class="container_campo">
+                            @Model.Bairro
+                        </div>
+                    </div>
+                }
+                @if (@Model.DataCadastro.HasValue)
+                {
+                    <div class="linha">
+                        <label class="label_principal">Empresa Cadastrada em:</label>
+                        <div class="container_campo">
+                            @if (Model.CurriculoVIP)
+                            {
+                                @Model.DataCadastro.Value.ToShortDateString()
+                            }
+                            else
+                            {
+                                <div>Somente para Cliente <span class="texto_vip">VIP</span></div>
+                            }
+                        </div>
+                    </div>
+                }
+                @if (@Model.QuantidadeCurriculosVisualizados.HasValue)
+                {
+                    <div class="linha">
+                        <label class="label_principal">Currículos Visualizados:</label>
+                        <div class="container_campo">
+                            @Model.QuantidadeCurriculosVisualizados
+                        </div>
+                    </div>
+                }
+                @if (@Model.QuantidadeVagasDivulgadas.HasValue)
+                {
+                    <div class="linha">
+                        <label class="label_principal">Vagas Divulgadas:</label>
+                        <div class="container_campo">
+                            @if (Model.CurriculoVIP)
+                            {
+                                @Model.QuantidadeVagasDivulgadas
+                            }
+                            else
+                            {
+                                <div>Somente para Cliente <span class="texto_vip">VIP</span></div>
+                            }
+                        </div>
+                    </div>
+                }
+                <div class="linha">
+
+
+                    <div class="nao_agora ">
+                        <a class="b-close">
+                            <input type="button" value="CONTINUAR" />
+                        </a>
+                    </div>
+                    @if (!Model.CurriculoVIP)
+                    {
+                        <div class="comprar-vip ">
+                            <a href='@Url.Action("CompreVip", "Base")'>
+                                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                                {
+                                    <input type="button" value="QUERO SER VIP">
+                                }
+                            </a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        }
+
+    </div>
+
+</div>

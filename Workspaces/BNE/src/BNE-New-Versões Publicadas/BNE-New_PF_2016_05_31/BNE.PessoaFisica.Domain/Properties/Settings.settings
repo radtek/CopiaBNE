@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BNE.PessoaFisica.Domain.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BNE_PessoaFisica_Domain_wsInserirEmailAllin_wsInserirEmailBaseService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://painel02.allinmail.com.br/wsAllin/inserir_email_base.php</Value>
+    </Setting>
+    <Setting Name="BNE_PessoaFisica_Domain_wsLoginAllin_wsLoginService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://painel02.allinmail.com.br/wsAllin/login.php</Value>
+    </Setting>
+    <Setting Name="BNE_PessoaFisica_Domain_wsRemoverEmailAllin_wsRemoverEmailBaseService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://painel02.allinmail.com.br/wsAllin/remover_email_base.php</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

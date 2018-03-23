@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DummyDataSource">
+      <rd:DataSourceID>8334e30f-7e0f-4e7c-a032-e1d4ee8599ce</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>29.7cm</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="TotalRegistros">
+      <DataType>Integer</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>TotalRegistros</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DtaInicio">
+      <DataType>DateTime</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>DtaInicio</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DtaFim">
+      <DataType>DateTime</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>DtaFim</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>1cm</RightMargin>
+  <LeftMargin>1cm</LeftMargin>
+  <BottomMargin>1cm</BottomMargin>
+  <rd:ReportID>6f00bf2d-68a9-4269-b326-55734c5b2599</rd:ReportID>
+  <PageWidth>21cm</PageWidth>
+  <DataSets>
+    <DataSet Name="Mensagens_BNE_Mensagem_CS">
+      <Fields>
+        <Field Name="Idf_Mensagem_CS">
+          <DataField>Idf_Mensagem_CS</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Idf_Usuario_Filial_Perfil">
+          <DataField>Idf_Usuario_Filial_Perfil</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Idf_Curriculo">
+          <DataField>Idf_Curriculo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Des_Mensagem">
+          <DataField>Des_Mensagem</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Dta_Envio">
+          <DataField>Dta_Envio</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Idf_Rede_Social_CS">
+          <DataField>Idf_Rede_Social_CS</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Idf_Tipo_Mensagem_CS">
+          <DataField>Idf_Tipo_Mensagem_CS</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Des_Email_Destinatario">
+          <DataField>Des_Email_Destinatario</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Des_Email_Assunto">
+          <DataField>Des_Email_Assunto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Arq_Anexo">
+          <DataField>Arq_Anexo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Idf_Status_Mensagem_CS">
+          <DataField>Idf_Status_Mensagem_CS</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Dta_Cadastro">
+          <DataField>Dta_Cadastro</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Des_Email_Remetente">
+          <DataField>Des_Email_Remetente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Num_DDD_Celular">
+          <DataField>Num_DDD_Celular</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Num_Celular">
+          <DataField>Num_Celular</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Flg_Inativo">
+          <DataField>Flg_Inativo</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Nme_Anexo">
+          <DataField>Nme_Anexo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nme_Usuario">
+          <DataField>Nme_Usuario</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nme_Pessoa">
+          <DataField>Nme_Pessoa</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Forma_Envio">
+          <DataField>Forma_Envio</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Idf_Centro_Servico">
+          <DataField>Idf_Centro_Servico</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Nme_Fantasia">
+          <DataField>Nme_Fantasia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Des_Tipo_Mensagem">
+          <DataField>Des_Tipo_Mensagem</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DummyDataSource</DataSourceName>
+        <CommandText />
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Mensagens</rd:DataSetName>
+        <rd:TableName>BNE_Mensagem_CS</rd:TableName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Width>19.5cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Table Name="table27">
+        <ZIndex>3</ZIndex>
+        <DataSetName>Mensagens_BNE_Mensagem_CS</DataSetName>
+        <Top>1.45985cm</Top>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox14">
+                      <Style>
+                        <BorderColor>
+                          <Default>Gray</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Dotted</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.1mm</Default>
+                        </BorderWidth>
+                        <FontSize>6.5pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <LineHeight>0.3cm</LineHeight>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <Value>=CDate(Fields!Dta_Envio.Value).ToString("dd/MM/yyyy")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox15">
+                      <Style>
+                        <BorderColor>
+                          <Default>Gray</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Dotted</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.1mm</Default>
+                        </BorderWidth>
+                        <FontSize>6.5pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <LineHeight>0.3cm</LineHeight>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <Value>=Fields!Nme_Usuario.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox16">
+                      <Style>
+                        <BorderColor>
+                          <Default>Gray</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Dotted</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.1mm</Default>
+                        </BorderWidth>
+                        <FontSize>6.5pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <LineHeight>0.3cm</LineHeight>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <Value>=Fields!Nme_Pessoa.Value &amp; " (" &amp; Fields!Idf_Curriculo.Value &amp; ")"</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox17">
+                      <Style>
+                        <BorderColor>
+                          <Default>Gray</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Dotted</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.1mm</Default>
+                        </BorderWidth>
+                        <FontSize>6.5pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <LineHeight>0.3cm</LineHeight>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Des_Mensagem.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox18">
+                      <Style>
+                        <BorderColor>
+                          <Default>Gray</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Dotted</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.1mm</Default>
+                        </BorderWidth>
+                        <FontSize>6.5pt</FontSize>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <LineHeight>0.3cm</LineHeight>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Des_Tipo_Mensagem.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.5cm</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Style>
+          <BorderWidth>
+            <Default>0.5mm</Default>
+          </BorderWidth>
+          <FontSize>8pt</FontSize>
+          <LineHeight>0.5cm</LineHeight>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox344">
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BorderColor>
+                          <Default>Gray</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Dotted</Left>
+                          <Right>Dotted</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Dotted</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.1mm</Default>
+                        </BorderWidth>
+                        <FontSize>6.5pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>15</ZIndex>
+                      <Value>Data</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox345">
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BorderColor>
+                          <Default>Gray</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Dotted</Left>
+                          <Right>Dotted</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Dotted</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.1mm</Default>
+                        </BorderWidth>
+                        <FontSize>6.5pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>14</ZIndex>
+                      <Value>Usuário</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox346">
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BorderColor>
+                          <Default>Gray</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Dotted</Left>
+                          <Right>Dotted</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Dotted</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.1mm</Default>
+                        </BorderWidth>
+                        <FontSize>6.5pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>13</ZIndex>
+                      <Value>Candidato (Cód)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox347">
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BorderColor>
+                          <Default>Gray</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Dotted</Left>
+                          <Right>Dotted</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Dotted</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.1mm</Default>
+                        </BorderWidth>
+                        <FontSize>6.5pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>12</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Mensagem</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox348">
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BorderColor>
+                          <Default>Gray</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Dotted</Left>
+                          <Right>Dotted</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Dotted</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.1mm</Default>
+                        </BorderWidth>
+                        <FontSize>6.5pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Forma de Envio</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.45933cm</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>1.5cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>4cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>4cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>8cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>0.95933cm</Height>
+      </Table>
+      <Textbox Name="textbox3">
+        <Top>0.84127cm</Top>
+        <Width>8.125cm</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <LineHeight>0.4cm</LineHeight>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>11.35582cm</Left>
+        <Height>0.4cm</Height>
+        <Value>=IIF(IsNothing(Parameters!DtaInicio.Value), 
+(IIF(IsNothing(Parameters!DtaFim.Value), " " , "Data de Envio até " + CDate(Parameters!DtaFim.Value).ToString("dd/MM/yyyy"))),
+(IIF(IsNothing(Parameters!DtaFim.Value), "Data de Envio de " + CDate(Parameters!DtaInicio.Value).ToString("dd/MM/yyyy") , "Data de Envio de " + CDate(Parameters!DtaInicio.Value).ToString("dd/MM/yyyy") + " até " + CDate(Parameters!DtaFim.Value).ToString("dd/MM/yyyy"))))</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <Top>0.85582cm</Top>
+        <Width>8.75cm</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <LineHeight>0.4cm</LineHeight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.4cm</Height>
+        <Value>="Relatório de Mensagens Enviadas (" &amp; Parameters!TotalRegistros.Value &amp; ")"</Value>
+      </Textbox>
+      <Textbox Name="txt1">
+        <Top>0.25cm</Top>
+        <Width>5cm</Width>
+        <Style>
+          <FontSize>12pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Left</TextAlign>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.5cm</Height>
+        <Value>=Fields!Nme_Fantasia.Value</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>3.64128cm</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox2">
+        <Top>0.24405cm</Top>
+        <Width>8cm</Width>
+        <Style>
+          <BorderColor>
+            <Default>Gray</Default>
+          </BorderColor>
+          <FontSize>6pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <LineHeight>0.3cm</LineHeight>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <Left>5.69709cm</Left>
+        <Height>0.3cm</Height>
+        <Value>="Página " + Globals!PageNumber.ToString() + " de " + Globals!TotalPages.ToString()</Value>
+      </Textbox>
+      <Textbox Name="textbox27">
+        <Top>0.28241cm</Top>
+        <Width>2.75cm</Width>
+        <Style>
+          <BorderColor>
+            <Default>Gray</Default>
+          </BorderColor>
+          <FontSize>5pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <LineHeight>0.3cm</LineHeight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Left>0.25cm</Left>
+        <Height>0.25cm</Height>
+        <Value>Fonte: BNE (www.bne.com.br)</Value>
+      </Textbox>
+      <Textbox Name="textbox29">
+        <Top>0.21759cm</Top>
+        <Width>8cm</Width>
+        <Style>
+          <BorderColor>
+            <Default>Gray</Default>
+          </BorderColor>
+          <FontSize>5pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <LineHeight>0.3cm</LineHeight>
+        </Style>
+        <Left>11.25cm</Left>
+        <Height>0.3cm</Height>
+        <Value>="Emissão: " + Now().ToString("dd/MM/yyyy à\s HH:mm:ss") + " (data e hora de Brasília)"</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.75cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>1cm</TopMargin>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD0505EC-02A2-4CE1-B006-CF24264D0DA2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AllInMail.Client</RootNamespace>
+    <AssemblyName>AllInMail</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|AnyCPU'">
+    <OutputPath>bin\Homologacao\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|x64'">
+    <OutputPath>bin\x64\Homologacao\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Employer.BNE.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SolutionItens\Library\Employer.BNE.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Employer.DAL">
+      <HintPath>..\SolutionItens\Library\Employer.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Interactive">
+      <HintPath>..\packages\Ix-Main.1.2.2\lib\net45\System.Interactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Threading, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Rx-Xaml.2.2.5\lib\net45\System.Reactive.Windows.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.1\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.1\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.1\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="EF\BNE_Acao_Publicacao.cs" />
+    <Compile Include="EF\BNE_Adicional_Plano.cs" />
+    <Compile Include="EF\BNE_Adicional_Plano_Situacao.cs" />
+    <Compile Include="EF\BNE_Agradecimento.cs" />
+    <Compile Include="EF\BNE_Amplitude_Salarial.cs" />
+    <Compile Include="EF\BNE_Arquivo.cs" />
+    <Compile Include="EF\BNE_Auditor_Publicador.cs" />
+    <Compile Include="EF\BNE_Cadastro_Parceiro.cs" />
+    <Compile Include="EF\BNE_Campanha.cs" />
+    <Compile Include="EF\BNE_Campanha_Curriculo.cs" />
+    <Compile Include="EF\BNE_Campo_Publicacao.cs" />
+    <Compile Include="EF\BNE_Carta_Email.cs" />
+    <Compile Include="EF\BNE_Carta_SMS.cs" />
+    <Compile Include="EF\BNE_Celular.cs" />
+    <Compile Include="EF\BNE_Celular_Selecionador.cs" />
+    <Compile Include="EF\BNE_Cidade_Propaganda.cs" />
+    <Compile Include="EF\BNE_Codigo_Desconto.cs" />
+    <Compile Include="EF\BNE_Codigo_Desconto_Plano.cs" />
+    <Compile Include="EF\BNE_Consultor_R1.cs" />
+    <Compile Include="EF\BNE_Conta_Twitter.cs" />
+    <Compile Include="EF\BNE_Conteudo_HTML.cs" />
+    <Compile Include="EF\BNE_Conversas_Ativas.cs" />
+    <Compile Include="EF\BNE_Curriculo.cs" />
+    <Compile Include="EF\BNE_Curriculo_Auditoria.cs" />
+    <Compile Include="EF\BNE_Curriculo_Busca.cs" />
+    <Compile Include="EF\BNE_Curriculo_Classificacao.cs" />
+    <Compile Include="EF\BNE_Curriculo_Correcao.cs" />
+    <Compile Include="EF\BNE_Curriculo_Disponibilidade.cs" />
+    <Compile Include="EF\BNE_Curriculo_Disponibilidade_Cidade.cs" />
+    <Compile Include="EF\BNE_Curriculo_Entrevista.cs" />
+    <Compile Include="EF\BNE_Curriculo_Fila.cs" />
+    <Compile Include="EF\BNE_Curriculo_Fulltext.cs" />
+    <Compile Include="EF\BNE_Curriculo_Idioma.cs" />
+    <Compile Include="EF\BNE_Curriculo_Observacao.cs" />
+    <Compile Include="EF\BNE_Curriculo_Origem.cs" />
+    <Compile Include="EF\BNE_Curriculo_Permissao.cs" />
+    <Compile Include="EF\BNE_Curriculo_Publicacao.cs" />
+    <Compile Include="EF\BNE_Curriculo_Quem_Me_Viu.cs" />
+    <Compile Include="EF\BNE_Curriculo_Visualizacao.cs" />
+    <Compile Include="EF\BNE_Curriculo_Visualizacao_Historico.cs" />
+    <Compile Include="EF\BNE_Curso_Funcao_Tecla.cs" />
+    <Compile Include="EF\BNE_Curso_Modalidade_Tecla.cs" />
+    <Compile Include="EF\BNE_Curso_Parceiro_Tecla.cs" />
+    <Compile Include="EF\BNE_Curso_Tecla.cs" />
+    <Compile Include="EF\BNE_Email_Destinatario.cs" />
+    <Compile Include="EF\BNE_Email_Destinatario_Cidade.cs" />
+    <Compile Include="EF\BNE_Empresa_Home.cs" />
+    <Compile Include="EF\BNE_Estatistica.cs" />
+    <Compile Include="EF\BNE_Experiencia_Profissional.cs" />
+    <Compile Include="EF\BNE_Fale_Presidente.cs" />
+    <Compile Include="EF\BNE_Financeiro.cs" />
+    <Compile Include="EF\BNE_Formacao.cs" />
+    <Compile Include="EF\BNE_Funcao_Erro_Sinonimo.cs" />
+    <Compile Include="EF\BNE_Funcao_Pretendida.cs" />
+    <Compile Include="EF\BNE_Gerente_Filial_New.cs" />
+    <Compile Include="EF\BNE_Grupo_Cidade.cs" />
+    <Compile Include="EF\BNE_Historico_Publicacao_Curriculo.cs" />
+    <Compile Include="EF\BNE_Historico_Publicacao_Vaga.cs" />
+    <Compile Include="EF\BNE_Indicacao_Filial.cs" />
+    <Compile Include="EF\BNE_Inscricao_Curso.cs" />
+    <Compile Include="EF\BNE_Integracao.cs" />
+    <Compile Include="EF\BNE_Integracao_Admissao.cs" />
+    <Compile Include="EF\BNE_Integracao_Situacao.cs" />
+    <Compile Include="EF\BNE_Intencao_Filial.cs" />
+    <Compile Include="EF\BNE_Linha_Arquivo.cs" />
+    <Compile Include="EF\BNE_Lista_Cidade.cs" />
+    <Compile Include="EF\BNE_Mensagem_CS.cs" />
+    <Compile Include="EF\BNE_Mensagem_Sistema.cs" />
+    <Compile Include="EF\BNE_Mini_Curriculo.cs" />
+    <Compile Include="EF\BNE_Mobile_Token.cs" />
+    <Compile Include="EF\BNE_Noticia.cs" />
+    <Compile Include="EF\BNE_Noticia_Visualizacao.cs" />
+    <Compile Include="EF\BNE_Operadora.cs" />
+    <Compile Include="EF\BNE_Pagamento.cs" />
+    <Compile Include="EF\BNE_Pagamento_Situacao.cs" />
+    <Compile Include="EF\BNE_Palavra_Chave.cs" />
+    <Compile Include="EF\BNE_Palavra_Proibida.cs" />
+    <Compile Include="EF\BNE_Palavra_Publicacao.cs" />
+    <Compile Include="EF\BNE_Parametro_Busca_CV.cs" />
+    <Compile Include="EF\BNE_Parceiro.cs" />
+    <Compile Include="EF\BNE_Parceiro_Tecla.cs" />
+    <Compile Include="EF\BNE_Pesquisa_Vaga_log.cs" />
+    <Compile Include="EF\BNE_Plano.cs" />
+    <Compile Include="EF\BNE_Plano_Adquirido.cs" />
+    <Compile Include="EF\BNE_Plano_Adquirido_Detalhes.cs" />
+    <Compile Include="EF\BNE_Plano_Forma_Pagamento.cs" />
+    <Compile Include="EF\BNE_Plano_Parcela.cs" />
+    <Compile Include="EF\BNE_Plano_Parcela_Situacao.cs" />
+    <Compile Include="EF\BNE_Plano_Quantidade.cs" />
+    <Compile Include="EF\BNE_Plano_Situacao.cs" />
+    <Compile Include="EF\BNE_Plano_Tipo.cs" />
+    <Compile Include="EF\BNE_Propaganda.cs" />
+    <Compile Include="EF\BNE_Propaganda_Email.cs" />
+    <Compile Include="EF\BNE_Propaganda_Estado.cs" />
+    <Compile Include="EF\BNE_Publicador.cs" />
+    <Compile Include="EF\BNE_Rastreador.cs" />
+    <Compile Include="EF\BNE_Rastreador_Curriculo.cs" />
+    <Compile Include="EF\BNE_Rastreador_Disponibilidade.cs" />
+    <Compile Include="EF\BNE_Rastreador_Idioma.cs" />
+    <Compile Include="EF\BNE_Rastreador_Resultado_Vaga.cs" />
+    <Compile Include="EF\BNE_Rastreador_Vaga.cs" />
+    <Compile Include="EF\BNE_Rede_Social_Conta.cs" />
+    <Compile Include="EF\BNE_Rede_Social_CS.cs" />
+    <Compile Include="EF\BNE_Regra_Campo_Publicacao.cs" />
+    <Compile Include="EF\BNE_Regra_Publicacao.cs" />
+    <Compile Include="EF\BNE_Resposta_Automatica.cs" />
+    <Compile Include="EF\BNE_Revidor.cs" />
+    <Compile Include="EF\BNE_Rota.cs" />
+    <Compile Include="EF\BNE_Simulacao_R1.cs" />
+    <Compile Include="EF\BNE_Situacao_Curriculo.cs" />
+    <Compile Include="EF\BNE_Situacao_Formacao.cs" />
+    <Compile Include="EF\BNE_Solicitacao_R1.cs" />
+    <Compile Include="EF\BNE_Status_Curriculo_Vaga.cs" />
+    <Compile Include="EF\BNE_Status_Mensagem_CS.cs" />
+    <Compile Include="EF\BNE_Template.cs" />
+    <Compile Include="EF\BNE_Teste_Cores.cs" />
+    <Compile Include="EF\BNE_Tipo_Adicional.cs" />
+    <Compile Include="EF\BNE_Tipo_Codigo_Desconto.cs" />
+    <Compile Include="EF\BNE_Tipo_Contrato.cs" />
+    <Compile Include="EF\BNE_Tipo_Curriculo.cs" />
+    <Compile Include="EF\BNE_Tipo_Mensagem_CS.cs" />
+    <Compile Include="EF\BNE_Tipo_Origem.cs" />
+    <Compile Include="EF\BNE_Tipo_Pagamento.cs" />
+    <Compile Include="EF\BNE_Tipo_Perfil.cs" />
+    <Compile Include="EF\BNE_Tipo_Publicacao.cs" />
+    <Compile Include="EF\BNE_Tipo_Sistema_Mobile.cs" />
+    <Compile Include="EF\BNE_Tipo_Vinculo.cs" />
+    <Compile Include="EF\BNE_Transacao.cs" />
+    <Compile Include="EF\BNE_Transacao_Resposta.cs" />
+    <Compile Include="EF\BNE_Transacao_Retorno.cs" />
+    <Compile Include="EF\BNE_Usuario.cs" />
+    <Compile Include="EF\BNE_Usuario_Filial.cs" />
+    <Compile Include="EF\BNE_Vaga.cs" />
+    <Compile Include="EF\BNE_Vaga_Candidato.cs" />
+    <Compile Include="EF\BNE_Vaga_Candidato_Pergunta.cs" />
+    <Compile Include="EF\BNE_Vaga_Disponibilidade.cs" />
+    <Compile Include="EF\BNE_Vaga_Divulgacao.cs" />
+    <Compile Include="EF\BNE_Vaga_Fulltext.cs" />
+    <Compile Include="EF\BNE_Vaga_Home.cs" />
+    <Compile Include="EF\BNE_Vaga_Integracao.cs" />
+    <Compile Include="EF\BNE_Vaga_Palavra_Chave.cs" />
+    <Compile Include="EF\BNE_Vaga_Pergunta.cs" />
+    <Compile Include="EF\BNE_Vaga_Rede_Social.cs" />
+    <Compile Include="EF\BNE_Vaga_Tipo_Vinculo.cs" />
+    <Compile Include="Entities.cs" />
+    <Compile Include="ExporterDataBase.cs" />
+    <Compile Include="EF\GLO_Chave_Cielo.cs" />
+    <Compile Include="EF\GLO_Cobranca_Boleto.cs" />
+    <Compile Include="EF\GLO_Cobranca_Boleto_Arquivo_Remessa.cs" />
+    <Compile Include="EF\GLO_Cobranca_Boleto_Arquivo_Retorno.cs" />
+    <Compile Include="EF\GLO_Cobranca_Boleto_Lista_Remessa.cs" />
+    <Compile Include="EF\GLO_Cobranca_Boleto_Lista_Retorno.cs" />
+    <Compile Include="EF\GLO_Cobranca_Boleto_LOG.cs" />
+    <Compile Include="EF\GLO_Cobranca_Cartao.cs" />
+    <Compile Include="EF\GLO_Cobranca_Cartao_LOG.cs" />
+    <Compile Include="EF\GLO_Convenio_Bancario.cs" />
+    <Compile Include="EF\GLO_Licenca_Cobre_Bem.cs" />
+    <Compile Include="EF\GLO_Mensagem_Operadora_Cartao.cs" />
+    <Compile Include="EF\GLO_Mensagem_Retorno_Boleto.cs" />
+    <Compile Include="EF\GLO_Mensagem_Retorno_Cartao.cs" />
+    <Compile Include="EF\GLO_Status_Transacao.cs" />
+    <Compile Include="EF\GLO_Transacao.cs" />
+    <Compile Include="EF\LOG_Exclusao_CPF.cs" />
+    <Compile Include="EF\log_queue.cs" />
+    <Compile Include="EF\TAB_Area_BNE.cs" />
+    <Compile Include="EF\TAB_Atividade.cs" />
+    <Compile Include="EF\TAB_Avaliacao.cs" />
+    <Compile Include="EF\TAB_Banco.cs" />
+    <Compile Include="EF\TAB_Campanha_CV_Desatualizado.cs" />
+    <Compile Include="EF\TAB_Campo_Integrador.cs" />
+    <Compile Include="EF\TAB_Categoria_Habilitacao.cs" />
+    <Compile Include="EF\TAB_Categoria_Permissao.cs" />
+    <Compile Include="EF\TAB_Centro_Servico.cs" />
+    <Compile Include="EF\TAB_Cidade.cs" />
+    <Compile Include="EF\TAB_Cidade_Capital.cs" />
+    <Compile Include="EF\TAB_Classe_Salarial.cs" />
+    <Compile Include="EF\TAB_CNAE_Classe.cs" />
+    <Compile Include="EF\TAB_CNAE_Divisao.cs" />
+    <Compile Include="EF\TAB_CNAE_Grupo.cs" />
+    <Compile Include="EF\TAB_CNAE_Secao.cs" />
+    <Compile Include="EF\TAB_CNAE_Sub_Classe.cs" />
+    <Compile Include="EF\TAB_Contato.cs" />
+    <Compile Include="EF\TAB_Curso.cs" />
+    <Compile Include="EF\TAB_Curso_Fonte.cs" />
+    <Compile Include="EF\TAB_Deficiencia.cs" />
+    <Compile Include="EF\TAB_DePara_Email.cs" />
+    <Compile Include="EF\Tab_Disponibilidade.cs" />
+    <Compile Include="EF\TAB_Email_Situacao.cs" />
+    <Compile Include="EF\TAB_Empresa.cs" />
+    <Compile Include="EF\TAB_Endereco.cs" />
+    <Compile Include="EF\TAB_Endereco_Pessoa_Juridica.cs" />
+    <Compile Include="EF\TAB_Envio_Email_Sal_BR.cs" />
+    <Compile Include="EF\TAB_Escolaridade.cs" />
+    <Compile Include="EF\TAB_Estado.cs" />
+    <Compile Include="EF\TAB_Estado_Civil.cs" />
+    <Compile Include="EF\TAB_Feriado.cs" />
+    <Compile Include="EF\TAB_Feriado_Modelo.cs" />
+    <Compile Include="EF\TAB_Filial.cs" />
+    <Compile Include="EF\TAB_Filial_BNE.cs" />
+    <Compile Include="EF\TAB_Filial_Logo.cs" />
+    <Compile Include="EF\TAB_Filial_Observacao.cs" />
+    <Compile Include="EF\TAB_Flag.cs" />
+    <Compile Include="EF\TAB_Fonte.cs" />
+    <Compile Include="EF\TAB_FPAS.cs" />
+    <Compile Include="EF\TAB_FPAS_Aliquota.cs" />
+    <Compile Include="EF\TAB_Funcao.cs" />
+    <Compile Include="EF\TAB_Funcao_Categoria.cs" />
+    <Compile Include="EF\TAB_Funcao_Mini_Agrupadora.cs" />
+    <Compile Include="EF\TAB_GPS.cs" />
+    <Compile Include="EF\TAB_Grau_Escolaridade.cs" />
+    <Compile Include="EF\TAB_Grupo_Economico.cs" />
+    <Compile Include="EF\TAB_Idioma.cs" />
+    <Compile Include="EF\TAB_Inscricao_Estadual.cs" />
+    <Compile Include="EF\TAB_Integracao_SINE_2.cs" />
+    <Compile Include="EF\TAB_Integrador.cs" />
+    <Compile Include="EF\TAB_Integrador_Curriculo.cs" />
+    <Compile Include="EF\TAB_Mensagem.cs" />
+    <Compile Include="EF\TAB_Mensagem_CS.cs" />
+    <Compile Include="EF\TAB_Mensagem_Mailing.cs" />
+    <Compile Include="EF\TAB_Mensagem_Mailing_Bruno.cs" />
+    <Compile Include="EF\TAB_Mini_Agrupadora.cs" />
+    <Compile Include="EF\TAB_Motivo_Rescisao.cs" />
+    <Compile Include="EF\TAB_Nacionalidade.cs" />
+    <Compile Include="EF\TAB_Natureza_Juridica.cs" />
+    <Compile Include="EF\TAB_Nivel_Curso.cs" />
+    <Compile Include="EF\TAB_Nivel_Idioma.cs" />
+    <Compile Include="EF\TAB_Operadora_Cartao.cs" />
+    <Compile Include="EF\TAB_Operadora_Celular.cs" />
+    <Compile Include="EF\TAB_Origem.cs" />
+    <Compile Include="EF\TAB_Origem_Filial.cs" />
+    <Compile Include="EF\TAB_Origem_Filial_Funcao.cs" />
+    <Compile Include="EF\TAB_Parametro.cs" />
+    <Compile Include="EF\TAB_Parametro_Curriculo.cs" />
+    <Compile Include="EF\TAB_Parametro_Filial.cs" />
+    <Compile Include="EF\TAB_Parametro_Integrador.cs" />
+    <Compile Include="EF\TAB_Parcela_Cartao.cs" />
+    <Compile Include="EF\TAB_Perfil.cs" />
+    <Compile Include="EF\TAB_Perfil_Usuario.cs" />
+    <Compile Include="EF\TAB_Permissao.cs" />
+    <Compile Include="EF\TAB_Pesquisa_Curriculo.cs" />
+    <Compile Include="EF\TAB_Pesquisa_Curriculo_Disponibilidade.cs" />
+    <Compile Include="EF\TAB_Pesquisa_Curriculo_Idioma.cs" />
+    <Compile Include="EF\TAB_Pesquisa_Salarial.cs" />
+    <Compile Include="EF\TAB_Pesquisa_Vaga.cs" />
+    <Compile Include="EF\TAB_Pesquisa_Vaga_Disponibilidade.cs" />
+    <Compile Include="EF\TAB_Pesquisa_Vaga_Tipo_Vinculo.cs" />
+    <Compile Include="EF\TAB_Pessoa_Fisica.cs" />
+    <Compile Include="EF\TAB_Pessoa_Fisica_Complemento.cs" />
+    <Compile Include="EF\TAB_Pessoa_Fisica_Foto.cs" />
+    <Compile Include="EF\TAB_Pessoa_Fisica_Idioma.cs" />
+    <Compile Include="EF\TAB_Pessoa_Fisica_Rede_Social.cs" />
+    <Compile Include="EF\TAB_Pessoa_Fisica_Temp.cs" />
+    <Compile Include="EF\TAB_Pessoa_Fisica_Veiculo.cs" />
+    <Compile Include="EF\TAB_Pessoa_Juridica.cs" />
+    <Compile Include="EF\TAB_Pessoa_Juridica_Logo.cs" />
+    <Compile Include="EF\TAB_Plugin.cs" />
+    <Compile Include="EF\TAB_Plugins_Compatibilidade.cs" />
+    <Compile Include="EF\TAB_Porte_Empresa.cs" />
+    <Compile Include="EF\TAB_Raca.cs" />
+    <Compile Include="EF\TAB_random.cs" />
+    <Compile Include="EF\TAB_RAT.cs" />
+    <Compile Include="EF\TAB_Rede_Social.cs" />
+    <Compile Include="EF\TAB_Regiao.cs" />
+    <Compile Include="EF\TAB_Regiao_Metropolitana.cs" />
+    <Compile Include="EF\TAB_Regiao_Metropolitana_Cidade.cs" />
+    <Compile Include="EF\TAB_Regra_Substituicao_Integracao.cs" />
+    <Compile Include="EF\TAB_Repositorio_CV_XML.cs" />
+    <Compile Include="EF\TAB_Repositorio_XML.cs" />
+    <Compile Include="EF\TAB_Requisicao_Integrador_Curriculo.cs" />
+    <Compile Include="EF\TAB_Sexo.cs" />
+    <Compile Include="EF\TAB_Simples.cs" />
+    <Compile Include="EF\TAB_Sistema.cs" />
+    <Compile Include="EF\TAB_Situacao_Filial.cs" />
+    <Compile Include="EF\TAB_Status_Atividade.cs" />
+    <Compile Include="EF\TAB_Status_Codigo_Desconto.cs" />
+    <Compile Include="EF\TAB_Status_Mensagem.cs" />
+    <Compile Include="EF\TAB_Status_Transacao.cs" />
+    <Compile Include="EF\TAB_Substituicao_Integracao.cs" />
+    <Compile Include="EF\TAB_Tipo_Arquivo.cs" />
+    <Compile Include="EF\TAB_Tipo_Atividade.cs" />
+    <Compile Include="EF\TAB_Tipo_Contato.cs" />
+    <Compile Include="EF\TAB_Tipo_Endereco.cs" />
+    <Compile Include="EF\TAB_Tipo_Feriado.cs" />
+    <Compile Include="EF\TAB_Tipo_Integrador.cs" />
+    <Compile Include="EF\TAB_Tipo_Logo.cs" />
+    <Compile Include="EF\TAB_Tipo_Mensagem.cs" />
+    <Compile Include="EF\TAB_Tipo_Parceiro.cs" />
+    <Compile Include="EF\TAB_Tipo_Plugin.cs" />
+    <Compile Include="EF\TAB_Tipo_Saida.cs" />
+    <Compile Include="EF\TAB_Tipo_Sanguineo.cs" />
+    <Compile Include="EF\TAB_Tipo_Transacao.cs" />
+    <Compile Include="EF\TAB_Tipo_Veiculo.cs" />
+    <Compile Include="EF\TAB_Tipo_Vinculo_Integracao.cs" />
+    <Compile Include="EF\TAB_Transacao_Mensagem_Erro.cs" />
+    <Compile Include="EF\TAB_Usuario_Filial_Perfil.cs" />
+    <Compile Include="EF\TAB_Usuario_Funcao.cs" />
+    <Compile Include="Vm\ProgressViewModel.cs" />
+    <Compile Include="Vm\Base\Notifiable.cs" />
+    <Compile Include="Vm\MainViewModel.cs" />
+    <Compile Include="Vm\StartedSettings.cs" />
+    <Compile Include="Vm\StaticsItem.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AllInMail.Core\AllInMailCore.csproj">
+      <Project>{a9e931ac-89d9-4d49-891e-2b088851b849}</Project>
+      <Name>AllInMailCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.BLL\BNE.BLL.csproj">
+      <Project>{b316ce73-6590-43e7-bd7a-2c24963c09fb}</Project>
+      <Name>BNE.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

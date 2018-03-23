@@ -1,0 +1,1043 @@
+﻿<script type="text/javascript">
+    document.querySelector("#myCard").classList.toggle("flip");
+</script>
+<script type="text/javascript">
+    // JavaScript Document
+    $(document).ready(function () {
+        //Ajustando o scroll
+        alert(1);
+        $(window).scroll(function () {
+            var vTop = ($(window).height() / 2) - $("#divSlowDown").height() / 2 + $(top.window).scrollTop();
+
+            //Ajustando a altura para não estourar o layout
+            if (vTop < 80)
+                vTop = 80;
+            else if (vTop > 830)
+                vTop = 825;
+
+            $("#divSlowDown").stop().animate({ "top": vTop + "px" }, { duration: 700, queue: false });
+        });
+    });
+</script>
+
+<div class="container-fluid container-fluid-adjust" style="display:block">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="container-fluid container-fluid-adjust container-adjust-login">
+                <div class="row col-lg-12">
+                    <div class="col-lg-9">
+                        <ol class="breadcrumb">
+                            <li><a href="#/Home">Home</a></li>
+                            <li><a href="#/Cadastro">1º Passo</a></li>
+                            <li><a href="#/CadastroPasso2">2º Passo</a></li>
+                            <li><a href="#/CadastroPasso3">3º Passo</a></li>
+                            <li><a href="#/CadastroPasso4">4º Passo</a></li>
+
+                            <li class="active">Escolher modelo do currículo</li>
+                        </ol>
+                        <h2 class="col-lg-12 assistenteCV">Escolha o modelo do seu currículo!</h2>
+                        <!--START MODELO MINI TRADICIONAL-->
+                        <div class="col-lg-4 cv">
+                            <div class="containerGroupCv">
+                                <img class="img-a1-ajustes" src="images/cv-a1.png" />
+                                <p class="titleCv elegante_2">MODELO TRADICIONAL</p>
+                                <!--INÍCIO Efeito + MiniCv-->
+                                <div class="flip-container" id="myCard" ontouchstart="this.classList.toggle('hover');" ng-click="hideMsg('divCVElegante')" data-toggle="modal" data-target="#CvTradicionalModal">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <!-- front content -->
+                                            <div class="containerCv mini">
+                                                <div class="container modeloTradicional">
+                                                    <div class="row">
+                                                        <div class="col-lg-8">
+                                                            <span>{{ imprimirCV.curriculo.nome || "Seu nome completo" }}</span>
+                                                            <ul class="list-unstyled">
+                                                                <li><i class="fa fa-user"></i><span> {{showEstadoCivil()}}, {{calcularIdadeCandidato()}} anos</span></li>
+                                                                <li><i class="fa fa-home"></i><span> {{imprimirCV.curriculo.cidade}}</span></li>
+                                                                <li><i class="fa fa-phone"></i><span> ({{imprimircv.curriculo.dddtelefone || "41" }}) {{imprimircv.curriculo.telefone || "32771605" }} | ({{imprimircv.curriculo.dddcelular || "41" }}) {{imprimircv.curriculo.celular || "9999-9999" }}</span></li>
+                                                                <li><i class="fa fa-envelope-o"></i><span> {{ imprimirCV.curriculo.email || "seu e-mail" }}</span></li>
+                                                                <li>Pretensão salarial: R$ {{imprimirCV.curriculo.pretensaoSalarial }},00</li>
+
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <img class="imgMini" src="{{imgCandidato || imprimirCV.curriculo.imgCandidato}}" />
+                                                        </div>
+                                                    </div>
+
+                                                    <p class="clearfix"></p>
+
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <span>
+                                                                <strong>FORMAÇÃO</strong><hr>
+                                                            </span>
+                                                            <div ng-repeat="value in imprimirCV.curriculo.formacoes | orderBy:value.anoConclusao">
+                                                                <span>
+                                                                    {{ value.instituicao || "Nome da Instituição" }}
+                                                                    <span class="pull-right">
+                                                                        {{value.cidadeFormacao || "Curitiba/PR"}}<br>
+                                                                        {{value.anoConclusao || "Ano de conclusão" }}
+                                                                    </span>
+                                                                </span>
+                                                                <div>
+                                                                    <em>{{value.curso || "Nome do curso"}}</em>
+                                                                </div>
+                                                            </div>
+                                                            <div ng-repeat="value in imprimirCV.curriculo.cursos | orderBy:value.anoConclusao">
+                                                                <span>
+                                                                    {{ value.instituicao || "Nome da Instituição" }}
+                                                                    <span class="pull-right">
+                                                                        {{value.cidadeFormacao || "Curitiba/PR"}}<br>
+                                                                        {{value.anoConclusao || "Ano de conclusão" }}
+                                                                    </span>
+                                                                </span>
+                                                                <div>
+                                                                    <em>{{value.curso || "Nome do curso"}}</em>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="clearfix"></p>
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <span>
+                                                                <strong>EXPERIÊNCIA PROFISSIONAL</strong><hr>
+                                                            </span>
+
+                                                            <div>{{ imprimirCV.curriculo.empresa || "Nome da Empresa" }}</div>
+                                                            <em>{{imprimirCV.curriculo.funcaoEmpresa}} <span class="pull-right">{{ imprimirCV.curriculo.dataInicio }} – {{ imprimirCV.curriculo.dataSaida}}</span></em>
+                                                            <ul>
+                                                                <li>{{ imprimirCV.curriculo.atividades | limitTo:60 }}</li>
+                                                            </ul>
+                                                            <div ng-show="imprimirCV.curriculo.Empresape != '' && imprimirCV.curriculo.Empresape != null">
+                                                                <span>{{ imprimirCV.curriculo.empresape || "Nome da Empresa" }}</span>
+                                                                <em>{{imprimirCV.curriculo.funcaoEmpresape}} <span>{{ imprimirCV.curriculo.dataIniciope }} – {{ imprimirCV.curriculo.dataSaidape }}</span></em>
+                                                                <ul>
+                                                                    <li>{{ imprimirCV.curriculo.atividadespe | limitTo:60 }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="clearfix"></p>
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <span>
+                                                                <strong>DADOS COMPLEMENTARES</strong><hr>
+                                                            </span>
+                                                            <!--<ul class="elegante-cv-header">-->
+                                                            <ul>
+                                                                <li id="liEditPeriodos_CVT" ng-show="imprimirCV.curriculo.periodosTrabalhar != ''">
+                                                                    <span ng-show="imprimirCV.numeroPeriodos>1">Disponível para trabalhar nos períodos:</span>
+                                                                    <a ng-show="imprimirCV.curriculo.periodoManha" e-title=" Manhã">Manhã;</a>
+                                                                    <a ng-show="imprimirCV.curriculo.periodoTarde" e-title=" Tarde">Tarde;</a>
+                                                                    <a ng-show="imprimirCV.curriculo.periodoNoite" e-title=" Noite">Noite;</a>
+                                                                    <a g-show="imprimirCV.curriculo.periodoFimdeSemana" e-title=" Fim de semana">Fim de semana;</a>
+                                                                </li>
+                                                                <li class="addIdioma_{{value.id}}" ng-repeat="value in imprimirCV.curriculo.idiomasCandidato | orderBy: 'text' ">
+                                                                    <a href="#">nível {{exibirNivelIdiomaCandidato(value.nivel)}}</a> em
+                                                                    <a href="#">{{value.text}}</a>;
+
+                                                                </li>
+                                                                <li ng-show="imprimirCV.curriculo.observacao !=null" class="justifyText">
+                                                                    <span class="DadosComplementaresObs"><a acao-editar href="#" editable-textarea="imprimirCV.curriculo.observacao" e-rows="7" e-cols="60">{{ imprimirCV.curriculo.observacao || "observações" }}</a></span>
+                                                                </li>
+                                                                <li ng-show="imprimirCV.curriculo.temDeficiencia=='true' && imprimirCV.curriculo.idDeficiencia > 0">
+                                                                    <a acao-editar href="#" editable-select="imprimirCV.curriculo.idDeficiencia" e-ng-options="value.id as value.text for value in imprimirCV.deficiencias | orderBy:'id'">Possuí deficiência {{ExibirDeficiencia()}}</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="back"></div>
+                                    </div>
+                                </div>
+                                <!--FIM Efeito + MiniCv-->
+                            </div>
+                        </div>
+                        <!--FIM MODELO MINI TRADICIONAL-->
+                        <!--START MODELO MINI MODERNO-->
+                        <div class="col-lg-4 cv">
+                            <div class="containerGroupCv">
+                                <img class="img-a1-ajustes" src="images/cv-a2.png" />
+                                <p class="titleCv moderno_2">MODELO MODERNO </p>
+                                <!--INÍCIO Efeito + MiniCv-->
+                                <div class="flip-container" id="myCard" ontouchstart="this.classList.toggle('hover');" data-toggle="modal" data-target="#CvModernoModal">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <!-- front content -->
+                                            <div class="containerCv mini">
+                                                <div class="container modeloModerno">
+                                                    <div class="row">
+                                                        <div class="col-lg-5 miniAjuste">
+                                                            <p>
+                                                                <img src="{{imprimirCV.curriculo.imgCandidato}}" class="imgMini" />
+                                                            </p>
+                                                            <span class="">{{imprimirCV.curriculo.nome || "Seu nome completo" }}</span>
+                                                            <ul class="list-unstyled ajusteIcon">
+                                                                <li><i class="fa fa-user"></i><span> {{showEstadoCivil()}}, {{calcularIdadeCandidato()}} anos</span></li>
+                                                                <li><i class="fa fa-home"></i><span> {{ imprimirCV.curriculo.cidade}}</span></li>
+                                                                <li><i class="fa fa-phone"></i><span> ({{imprimirCV.curriculo.dddTelefone}}){{imprimirCV.curriculo.telefone}} </span></li>
+                                                                <li><i class="fa fa-phone"></i><span> ({{imprimirCV.curriculo.dddCelular}}) {{imprimirCV.curriculo.celular}}</span></li>
+                                                                <li><i class="fa fa-envelope-o"></i><span> {{ imprimirCV.curriculo.email}}</span></li>
+                                                                <li>Pretensão salarial:{{imprimirCV.curriculo.pretensaoSalarial }}</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-lg-7">
+                                                            <div>
+                                                                <span class="miniModerno">FORMAÇÃO</span>
+                                                                <div ng-repeat="value in imprimirCV.curriculo.formacoes | orderBy:value.anoConclusao">
+                                                                    <span>
+                                                                        {{ value.instituicao || "Nome da Instituição" }}
+                                                                        <span class="pull-right">
+                                                                            {{value.cidadeFormacao || "Curitiba/PR"}}<br>
+                                                                            {{value.anoConclusao || "Ano de conclusão" }}
+                                                                        </span>
+                                                                    </span>
+                                                                    <div>
+                                                                        <em>{{value.curso || "Nome do curso"}}</em>
+                                                                    </div>
+                                                                </div>
+                                                                <div ng-repeat="value in imprimirCV.curriculo.cursos | orderBy:value.anoConclusao">
+                                                                    <span>
+                                                                        {{ value.instituicao || "Nome da Instituição" }}
+                                                                        <span class="pull-right">
+                                                                            {{value.cidadeFormacao || "Curitiba/PR"}}<br>
+                                                                            {{value.anoConclusao || "Ano de conclusão" }}
+                                                                        </span>
+                                                                    </span>
+                                                                    <div>
+                                                                        <em>{{value.curso || "Nome do curso"}}</em>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <span class="miniModerno">EXPERIÊNCIA PROFISSIONAL</span>
+                                                                <p>{{imprimirCV.curriculo.empresa || "Nome da Empresa" }}</p>
+                                                                <em>{{imprimirCV.curriculo.funcaoEmpresa}} <span>{{ imprimirCV.curriculo.dataInicio || "Data de início" }} – {{ imprimirCV.curriculo.dataSaida || "Emprego atual" }}</span></em>
+                                                                <ul class="ajusteColumn">
+                                                                    <li>{{imprimirCV.curriculo.atividades | limitTo:60 }}</li>
+                                                                </ul>
+                                                                <div ng-show="imprimirCV.curriculo.Empresape != '' && imprimirCV.curriculo.Empresape != null">
+                                                                    <span>{{imprimirCV.curriculo.empresape || "Nome da Empresa" }}</span>
+                                                                    <em>{{imprimirCV.curriculo.funcaoEmpresape}} <span>{{ imprimirCV.curriculo.dataIniciope || "Data de início" }} – {{ imprimirCV.curriculo.dataSaidape || "Data de saída" }}</span></em>
+                                                                    <ul>
+                                                                        <li>{{ imprimirCV.curriculo.atividadespe | limitTo:60 }}</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <p class="miniModerno">DADOS COMPLEMENTARES</p>
+                                                            </div>
+                                                            <!--<ul class="elegante-cv-header">-->
+                                                            <ul>
+                                                                <li id="liEditPeriodos_CVT" ng-show="imprimirCV.curriculo.periodosTrabalhar != ''">
+                                                                    <span ng-show="imprimirCV.numeroPeriodos>1">Disponível para trabalhar nos períodos:</span> <span ng-show="imprimirCV.numeroPeriodos==1">Disponível para trabalhar no período:</span>
+                                                                    <a ng-show="imprimirCV.curriculo.periodoManha" e-title=" Manhã">Manhã;</a>
+                                                                    <a ng-show="imprimirCV.curriculo.periodoTarde" e-title=" Tarde">Tarde;</a>
+                                                                    <a ng-show="imprimirCV.curriculo.periodoNoite" e-title=" Noite">Noite;</a>
+                                                                    <a g-show="imprimirCV.curriculo.periodoFimdeSemana" e-title=" Fim de semana">Fim de semana;</a>
+                                                                </li>
+                                                                <li class="addIdioma_{{value.id}}" ng-repeat="value in imprimirCV.curriculo.idiomasCandidato | orderBy: 'text' ">
+                                                                    <a href="#">nível {{exibirNivelIdiomaCandidato(value.nivel)}}</a> em
+                                                                    <a href="#">{{value.text}}</a>;
+
+                                                                </li>
+                                                                <li ng-show="imprimirCV.curriculo.observacao !=null" class="justifyText">
+                                                                    <span class="DadosComplementaresObs"><a acao-editar href="#" editable-textarea="imprimirCV.curriculo.observacao" e-rows="7" e-cols="60">{{ imprimirCV.curriculo.observacao || "observações" }}</a></span>
+                                                                </li>
+                                                                <li ng-show="imprimirCV.curriculo.temDeficiencia=='true' && imprimirCV.curriculo.idDeficiencia > 0">
+                                                                    <a acao-editar href="#" editable-select="imprimirCV.curriculo.idDeficiencia" e-ng-options="value.id as value.text for value in imprimirCV.deficiencias | orderBy:'id'">Possuí deficiência {{ExibirDeficiencia()}}</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="back"></div>
+                                    </div>
+                                </div>
+                                <!--FIM Efeito + MiniCv-->
+                            </div>
+                        </div>
+                        <!--FIM MODELO MINI MODERNO-->
+                        <!--START MODELO MINI BNE-->
+                        <div class="col-lg-4 cv">
+                            <div class="containerGroupCv">
+                                <img class="img-a1-ajustes" src="images/cv-a1.png" />
+                                <p class="titleCv bne">MODELO BNE </p>
+                                <!--INÍCIO Efeito + MiniCv-->
+                                <div class="flip-container" id="Div1" ontouchstart="this.classList.toggle('hover');" data-toggle="modal" data-target="#CvBNEModal">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <!-- front content -->
+                                            <img class="img-a1-ajustesFaixa" src="images/faixaIndicado.png" />
+                                            <div class="containerCv">
+                                                <div class="container modeloBNE">
+                                                    <div style="width: 600px; margin: 0 auto;" class="miniModernoMargin">
+                                                        <table cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td width="490px">
+                                                                        <div class="miniModerno" style="display: block; font-weight: bold; margin-left: 10px; width: 350px;">
+                                                                            {{ imprimirCV.curriculo.nome || "Seu nome completo" }}
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div style="border-bottom: 1px solid #999; display: block; font-family: Arial Unicode MS; font-size: 7px; font-weight: bold; margin-left: 10px; width: 140px">
+                                                            Dados Pessoais
+                                                        </div>
+                                                        <table style="margin-left: 10px; width: 140px; float: left; font-size: 7px;" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top" style="text-align: left; font-weight: bold; width: 60px;">Sexo:</td>
+                                                                    <td style="text-align: left;">{{exibirSexoCandidato(imprimirCV.curriculo.sexo)}}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="top" style="text-align: left; font-size: 6px; font-weight: bold; width: 60px;">Estado Civil:</td>
+                                                                    <td valign="top" style="text-align: left; font-size: 7px;">{{showEstadoCivil()}}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="top" style="text-align: left; font-size: 6px; font-weight: bold; width: 60px;">Idade:</td>
+                                                                    <td valign="top" style="text-align: left; font-size: 7px; width: 80px;">{{calcularIdadeCandidato()}} Anos</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="top" style="text-align: left; font-size: 6px; width: 60px;">Telefone Celular:</td>
+                                                                    <td valign="top" style="text-align: left;">({{imprimirCV.curriculo.dddCelular || "DDD" }}) {{imprimirCV.curriculo.celular || "Celular" }}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="top" style="text-align: left; width: 50px;">Cidade: </td>
+                                                                    <td valign="top" style="text-align: left;">{{ imprimirCV.curriculo.cidade || "Cidade" }}</td>
+                                                                </tr>
+                                                                <tr></tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table style="width: 100px; float: left; font-size: 10px;" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td width="95px" rowspan="7">
+                                                                        <img src="{{imprimirCV.curriculo.imgCandidato}}" class="imgMini" style="display: block;">
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div style="border-bottom: 1px solid #999; display: block; font-family: Arial Unicode MS; font-size: 7px; font-weight: bold; margin-left: 10px; width: 170px">Pretensões</div>
+                                                        <table style="margin-left: 10px; width: 600px; font-size: 7px;" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td width="0" valign="top" style="font-size: 5px; text-align: left; font-weight: bold; width: 40px;">Funções Pretendidas:</td>
+                                                                    <td width="0" valign="top" style="font-size: 6px; text-align: left; width: 50px">{{imprimirCV.curriculo.funcao}}</td>
+                                                                    <td valign="top" style="font-size: 5px; text-align: left; font-weight: bold; width: 50px;">Salário:</td>
+                                                                    <td valign="top" style="font-size: 5px; text-align: left;">{{imprimirCV.curriculo.pretensaoSalarial | currency:"R$":0}}</td>
+                                                                </tr>
+                                                                <tr><td></td><td></td><td></td><td></td></tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div style="border-bottom: 1px solid #999; display: block; font-family: Arial Unicode MS; font-size: 7px; font-weight: bold; margin-left: 10px; width: 170px">Escolaridade</div>
+                                                        <table ng-repeat="value in imprimirCV.curriculo.formacoes | orderBy:value.anoConclusao" style="margin-left: 10px; width: 230px; font-size: 7px;" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top" style="text-align: left; font-size: 7px; font-weight: bold; width: 45px;">Nível:</td>
+                                                                    <td valign="top" style="text-align: left; font-size: 6px;">{{ value.curso || "Nome do curso" }} - {{ value.instituicao || "Nome da Instituição" }}</td>
+                                                                    <td valign="top" style="text-align: left; font-size: 6px;">{{ value.cidadeFormacao || "Cidade" }} - {{ value.anoConclusao || "Ano de conclusão" }}</td>
+
+                                                                </tr>
+                                                                <tr><td></td><td></td></tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table style="margin-left: 10px; width: 230px; font-size: 7px;" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top" style="text-align: left; font-weight: bold; width: 45px;">Idiomas:</td>
+                                                                </tr>
+                                                                <tr ng-repeat="value in imprimirCV.curriculo.idiomasCandidato">
+                                                                    <td style="font-size: 6px;">Nível {{exibirNivelIdiomaCandidato(value.nivel)}} em {{value.text}};</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div style="border-bottom: 1px solid #999; display: block; font-family: Arial Unicode MS; font-size: 7px; font-weight: bold; width: 170px; margin-left: 10px;">Experiência Profissional</div>
+                                                        <table style="margin-left: 10px; width: 570px; font-size: 7px;" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colspan="2" valign="top" style="text-align: left; width: 230px; font-style: italic; font-size: 7px; padding-top: 5px; font-weight: bold;">
+                                                                        {{ imprimirCV.curriculo.empresa || "Nome da Empresa" }} - de {{ imprimirCV.curriculo.dataInicio || "Data de início" }} até {{ imprimirCV.curriculo.dataSaida || "Emprego atual" }}
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="top" style="text-align: left; font-size: 7px; font-weight: bold; width: 75px;">Função Exercida:</td>
+                                                                    <td valign="top" style="text-align: left;">{{ imprimirCV.curriculo.funcaoEmpresa || "Função exercida" }}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="top" style="text-align: left; font-size: 7px; font-weight: bold; width: 75px;">Atribuições:</td>
+                                                                    <td valign="top" style="text-align: justify; font-size: 7px;">{{ imprimirCV.curriculo.atividades | limitTo:60}}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table ng-show="imprimirCV.curriculo.Empresape != '' && imprimirCV.curriculo.Empresape != null" style="margin-left: 10px; width: 570px; font-size: 7px;" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colspan="2" valign="top" style="text-align: left; width: 230px; font-style: italic; font-size: 7px; padding-top: 5px; font-weight: bold;">
+                                                                        {{ imprimirCV.curriculo.empresape || "Nome da Empresa" }} - de {{ imprimirCV.curriculo.dataInicioPE || "Data de início" }} até {{ imprimirCV.curriculo.dataSaidape || "Emprego atual" }}
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="top" style="text-align: left; font-size: 7px; font-weight: bold; width: 75px;">Função Exercida:</td>
+                                                                    <td valign="top" style="text-align: left; font-size: 7px;">{{ imprimirCV.curriculo.funcaoEmpresape || "Função exercida" }}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="top" style="text-align: left; font-size: 7px; font-weight: bold; width: 75px;">Atribuições:</td>
+                                                                    <td valign="top" style="text-align: justify; font-size: 7px;">{{ imprimirCV.curriculo.atividadespe | limitTo:60 }}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div style="border-bottom: 1px solid #999; display: block; font-size: 7px; font-weight: bold; margin-left: 10px; width: 170px">
+                                                            <!--Observações-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="back"></div>
+                                    </div>
+                                </div>
+                                <!--FIM Efeito + MiniCv-->
+                            </div>
+                        </div>
+                        <!--FIM MODELO MINI BNE-->
+
+                    </div>
+                    <div class="col-lg-3">
+                        <p class="vagas"><b>{{imprimirCV.curriculo.nome}}</b>, temos <span>{{totalVagas}} vagas</span> para você!</p>
+                        <a class="btn btn-primary btn-block btn-continue" href="#/Home">Próximo <i class="glyphicon glyphicon-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-12" style="margin:20px;"><h4 class="labelCv">Modelos <b>aprovados</b> pelas <b>melhores empresas</b> do mercado.</h4></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- START Modal Currículo Tradicional|Elegante -->
+            <div class="modal fade" id="CvTradicionalModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog elegante">
+                    <div class="modal-bg">
+                        <div class="modal-header modal-headerCVs">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        </div>
+                        <div class="modal-body" id="CVElegante">
+                            <div class="elegant-cv">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-8 elegante-cv-header">
+                                            <h1 class="elegante-cv-header"><a acao-editar href="#" editable-text="imprimirCV.curriculo.nome" onbeforesave="ValNomeCompleto($data)" onaftersave="salvarCurriculo('divCVElegante')">{{ imprimirCV.curriculo.nome || "Seu nome completo"}}</a></h1>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fa fa-user"></i> <a acao-editar href="#" editable-select="imprimirCV.curriculo.idEstadoCivil" e-ng-options="s.id as s.text for s in imprimirCV.estadoCivil" onaftersave="salvarCurriculo('divCVElegante')">{{showEstadoCivil()}}</a>, <a acao-editar href="#" editable-text="imprimirCV.curriculo.dataNascimento" e-pattern="\d{2}/\d{2}/\d{4}" onaftersave="salvarCurriculo('divCVElegante')">{{calcularIdadeCandidato()}} anos</a></li>
+                                                <li><i class="fa fa-home"></i> <a acao-editar href="#" class="breakWordCityModerno" e-custom-dir="autocomplete-cidade" onbeforesave="ValCidade($data)" onaftersave="salvarCurriculo('divCVElegante')" editable-text="imprimirCV.curriculo.cidade" ng-model="imprimirCV.curriculo.cidade">{{ imprimirCV.curriculo.cidade || "Cidade" }}</a></li>
+                                                <li><i class="fa fa-phone"></i> (<a acao-editar href="#" editable-tel="imprimirCV.curriculo.dddTelefone" e-pattern="\d{2}" onaftersave="salvarCurriculo('divCVElegante')" e-title="Por ex. 41">{{imprimirCV.curriculo.dddTelefone || "DDD" }}</a>) <a acao-editar href="#" editable-tel="imprimirCV.curriculo.telefone" onbeforesave="ValTelefone($data)" onaftersave="salvarCurriculo('divCVElegante')" e-pattern="\d{8}" e-title="3030-1234">{{imprimirCV.curriculo.telefone}}</a> | (<a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" editable-tel="imprimirCV.curriculo.dddCelular" e-pattern="\d{2}" e-title="Por ex. 41">{{imprimirCV.curriculo.dddCelular}}</a>) <a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" editable-text="imprimirCV.curriculo.celular" onbeforesave="ValCelular($data)">{{imprimirCV.curriculo.celular}}</a> </li>
+                                                <li><i class="fa fa-envelope-o"></i> <a acao-editar href="#" e-custom-dir="autocomplete-email" onaftersave="salvarCurriculo('divCVElegante')" editable-email="imprimirCV.curriculo.email" ng-model="imprimirCV.curriculo.email">{{ imprimirCV.curriculo.email || "seu e-mail" }}</a></li>
+                                                <li>Função pretendida: <a acao-editar href="#" class="breakWordCityModerno" e-custom-dir="autocomplete-funcao" onaftersave="salvarCurriculo('divCVElegante')" editable-text="imprimirCV.curriculo.funcao" ng-model="imprimirCV.curriculo.funcao">{{ imprimirCV.curriculo.funcao || "Função pretendida" }}</a></li>
+                                                <li>Pretensão salarial: <a acao-editar href="#" onbeforesave="ValPretensaoSalarial($data)" onaftersave="salvarCurriculo('divCVElegante')" editable-text="imprimirCV.curriculo.pretensaoSalarial">{{imprimirCV.curriculo.pretensaoSalarial |currency:'R$'}}</a></li>
+                                                <li></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <img class="imgCVE" src="{{imprimirCV.curriculo.imgCandidato || imgCandidato}}" style="border:solid 1px #000000 !important; margin-left:25px; height:160px; width:auto;" />
+                                        </div>
+                                    </div>
+
+                                    <h2 class="elegante-cv-header">Formação</h2>
+                                    <p class="clearfix"></p>
+
+                                    <div ng-repeat="value in imprimirCV.curriculo.formacoes | orderBy:value.anoConclusao">
+                                        <div class="row h3 elegante-cv-header">
+                                            <div class="col-md-9"><em>{{value.nivel || "Nível" }}</em> <a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" editable-text="value.anoConclusao">{{ value.anoConclusao }}</a></div>
+                                            <div class="col-md-7"><a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" e-custom-dir="autocomplete-instituicao" editable-text="value.instituicao" ng-model="value.instituicao">{{value.instituicao}}</a> <a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" e-custom-dir="autocomplete-cidade" onbeforesave="ValCidade($data)" editable-text="value.cidade" ng-model="value.cidadeFormacao">{{value.cidadeFormacao}}</a></div>
+                                            <!--<div class="col-md-5 elegante-cv-cidade"></div>-->
+                                        </div>
+                                        <p class="clearfix"></p>
+                                        <div class="row h3 elegante-cv-header-curso">
+                                            <div class="col-md-9"><em><a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" e-custom-dir="autocomplete-curso" editable-text="value.curso" ng-model="value.curso">{{value.curso}}</a></em></div>
+                                            <!--<div class="col-md-3" style="text-align:right"></div>-->
+                                        </div>
+                                        <p class="clearfix"></p>
+                                        <br>
+                                    </div>
+                                    <p class="clearfix"></p>
+                                    <!--CURSOS-->
+                                    <div class="maecurso" ng-repeat="value in imprimirCV.curriculo.cursos | orderBy:value.anoConclusao">
+                                        <div class="row h3 elegante-cv-header-curso">
+                                            <div class="col-md-9"><em>{{value.nivel || "Nível" }}</em> <a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" editable-text="value.anoConclusao">{{ value.anoConclusao }}</a></div>
+                                            <div class="col-md-7 elegante-cv-margin"><a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" e-custom-dir="autocomplete-instituicao" editable-text="value.instituicao" ng-model="value.instituicao">{{value.instituicao}}</a> <a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" e-custom-dir="autocomplete-cidade" onbeforesave="ValCidade($data)" editable-text="value.cidade" ng-model="value.cidadeFormacao">{{value.cidadeFormacao}}</a></div>
+                                            <div class="col-md-5 elegante-cv-cidade"></div>
+                                        </div>
+                                        <p class="clearfix"></p>
+                                        <div class="row h3 elegante-cv-header-curso">
+                                            <div class="col-md-9 elegante-cv-margin"><em><a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" e-custom-dir="autocomplete-curso" editable-text="value.curso" ng-model="value.curso">{{value.curso}}</a></em></div>
+                                            <!--<div class="col-md-3" style="text-align:right"></div>-->
+                                        </div>
+                                        <p class="clearfix"></p>
+                                        <br>
+                                    </div>
+                                    <h2 class="elegante-cv-header">Experiência Profissional</h2>
+                                    <p class="clearfix"></p>
+                                    <br>
+
+                                    <div ng-show="imprimirCV.curriculo.empresa != '' && imprimirCV.curriculo.empresa != null">
+                                        <div class="row h3 elegante-cv-header">
+                                            <div class="col-md-8"><a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" editable-text="imprimirCV.curriculo.empresa">{{ imprimirCV.curriculo.empresa}}</a></div>
+                                            <div class="col-md-4"></div>
+                                        </div>
+
+                                        <div class="row h3 elegante-cv-header">
+
+                                            <div class=" col-md-7"><em><a acao-editar href="#" class="breakWordCityModerno" e-custom-dir="autocomplete-funcao" onaftersave="salvarCurriculo('divCVElegante')" editable-text="imprimirCV.curriculo.funcaoEmpresa" ng-model="imprimirCV.curriculo.funcaoEmpresa">{{imprimirCV.curriculo.funcaoEmpresa}}</a></em></div>
+                                            <div class="col-md-5"><em><a acao-editar href="#" editable-select="imprimirCV.curriculo.mesInicio" onaftersave="salvarCurriculo('divCVElegante')" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperiencia()}}</a> - <a onaftersave="salvarCurriculo('divCVElegante')" acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoInicio">{{ imprimirCV.curriculo.anoInicio}}</a> até <a onaftersave="salvarCurriculo('divCVElegante')" acao-editar href="#" editable-select="imprimirCV.curriculo.mesSaida" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaSaida()}}</a> - <a onaftersave="salvarCurriculo('divCVElegante')" acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoSaida">{{ imprimirCV.curriculo.anoSaida }}</a> </em></div>
+                                            <!--<div class="col-md-4"><em><a href="#" e-pattern="\d{2}/\d{2}/\d{4}" e-title="dd/mm/aaaa por ex.: 01/01/2014" editable-text="imprimirCV.curriculo.dataInicio">{{ imprimirCV.curriculo.dataInicio}}</a> - <a href="#" e-pattern="\d{2}/\d{2}/\d{4}" e-title="dd/mm/aaaa por ex.: 20/12/2014" editable-text="imprimirCV.curriculo.dataSaida">{{ imprimirCV.curriculo.dataSaida}}</a></em></div>-->
+                                        </div>
+
+                                        <!--<p class="clearfix"></p>-->
+         <ul>
+
+                                        <ul>
+                                            <li class="justifyText">
+                                                <span class="EleganteAtivi elegante-cv-header">
+                                                    <a class="white-space-pre-line" acao-editar onaftersave="salvarCurriculo('divCVElegante')" href="#" editable-textarea="imprimirCV.curriculo.atividades" e-rows="7" e-cols="60">{{ imprimirCV.curriculo.atividades}}</a>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p class="clearfix"></p>
+                                    <br>
+
+                                    <div ng-show="imprimirCV.curriculo.empresape != '' && imprimirCV.curriculo.empresape != null">
+
+                                        <div class="row h3 elegante-cv-header">
+                                            <div class="col-md-8"><a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" editable-text="imprimirCV.curriculo.empresape">{{ imprimirCV.curriculo.empresape}}</a></div>
+                                            <div class="col-md-4"></div>
+                                        </div>
+
+                                        <div class="row h3 elegante-cv-header">
+                                            <div class="col-md-7"><em><a acao-editar href="#" class="breakWordCityModerno" onaftersave="salvarCurriculo('divCVElegante')" e-custom-dir="autocomplete-funcao" editable-text="imprimirCV.curriculo.funcaoEmpresape" ng-model="imprimirCV.curriculo.funcaoEmpresape">{{imprimirCV.curriculo.funcaoEmpresape}}</a></em></div>
+                                            <div class="col-md-5"><em><a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" editable-select="imprimirCV.curriculo.mesIniciope" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaPE()}}</a> - <a onaftersave="salvarCurriculo('divCVElegante')" acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoIniciope">{{ imprimirCV.curriculo.anoIniciope}}</a> até <a onaftersave="salvarCurriculo('divCVElegante')" acao-editar href="#" editable-select="imprimirCV.curriculo.mesSaidape" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaSaidaPE()}}</a> - <a onaftersave="salvarCurriculo('divCVElegante')" acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoSaidape">{{ imprimirCV.curriculo.anoSaidape }}</a></em></div>
+                                        </div>
+                                        <!--<p class="clearfix"></p>-->
+                                        <ul>
+                                            <li class="justifyText">
+                                                <span class="EleganteAtivi elegante-cv-header">
+                                                    <a class="white-space-pre-line" acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" editable-textarea="imprimirCV.curriculo.atividadespe" e-rows="7" e-cols="60">{{ imprimirCV.curriculo.atividadespe}}</a>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p class="clearfix"></p>
+
+                                    <div ng-show="imprimirCV.curriculo.empresa3 != '' && imprimirCV.curriculo.empresa3 != null">
+
+                                        <div class="row h3 elegante-cv-header">
+                                            <div class="col-md-8"><a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" editable-text="imprimirCV.curriculo.empresa3">{{ imprimirCV.curriculo.empresa3}}</a></div>
+                                            <div class="col-md-4"></div>
+                                        </div>
+
+                                        <div class="row h3 elegante-cv-header">
+                                            <div class="col-md-7"><em><a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" class="breakWordCityModerno" e-custom-dir="autocomplete-funcao" editable-text="imprimirCV.curriculo.funcaoEmpresa3" ng-model="imprimirCV.curriculo.funcaoEmpresa3">{{imprimirCV.curriculo.funcaoEmpresa3}}</a></em></div>
+                                            <div class="col-md-5"><em><a acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" editable-select="imprimirCV.curriculo.mesInicio3" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperiencia3()}}</a> <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoInicio3">{{ imprimirCV.curriculo.anoInicio3 }}</a> <a acao-editar href="#" editable-select="imprimirCV.curriculo.mesSaida3" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaSaida3()}}</a>  <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoSaida3">{{ imprimirCV.curriculo.anoSaida3 }}</a></em></div>
+                                        </div>
+                                        <!--<p class="clearfix"></p>-->
+                                        <ul>
+                                            <li class="justifyText">
+                                                <span class="EleganteAtivi elegante-cv-header">
+                                                    <a class="white-space-pre-line" acao-editar href="#" onaftersave="salvarCurriculo('divCVElegante')" editable-textarea="imprimirCV.curriculo.atividades3" e-rows="7" e-cols="60">{{ imprimirCV.curriculo.atividades3}}</a>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p class="clearfix"></p>
+
+                                    <h2 class="elegante-cv-header dados_complementares">Dados Complementares</h2>
+                                    <ul class="elegante-cv-header">
+                                        <li id="liEditPeriodos_CVT" ng-mouseover="abrirEditarPeriodos('CVT')" ng-mouseleave="fecharEditarPeriodos('CVT')" ng-show="imprimirCV.curriculo.periodosTrabalhar != ''">
+                                            <span ng-show="imprimirCV.numeroPeriodos>1">Disponível para trabalhar nos períodos:</span>
+                                            <a acao-editar href="#" onaftersave="atualizarPeriodos()" ng-class="(imprimirCV.curriculo.periodoManha == true ? 'show-periodo' : 'hide-periodo')" e-title=" Manhã" editable-checkbox="imprimirCV.curriculo.periodoManha">Manhã;</a>
+                                            <a acao-editar href="#" onaftersave="atualizarPeriodos()" ng-class="(imprimirCV.curriculo.periodoTarde == true ? 'show-periodo' : 'hide-periodo')" e-title=" Tarde" editable-checkbox="imprimirCV.curriculo.periodoTarde">Tarde;</a>
+                                            <a acao-editar href="#" onaftersave="atualizarPeriodos()" ng-class="(imprimirCV.curriculo.periodoNoite == true ? 'show-periodo' : 'hide-periodo')" e-title=" Noite" editable-checkbox="imprimirCV.curriculo.periodoNoite">Noite;</a>
+                                            <a acao-editar href="#" onaftersave="atualizarPeriodos()" ng-class="(imprimirCV.curriculo.periodoFimdeSemana ==true ? 'show-periodo' : 'hide-periodo')" e-title=" Fim de semana" editable-checkbox="imprimirCV.curriculo.periodoFimdeSemana">Fim de semana;</a>
+                                            <a acao-editar id="addPeriodo_CVT" style="display:none;" e-style="margin-left: 420px;" href="#" onaftersave="ativarPeriodo()" editable-select="imprimirCV.curriculo.periodos" e-ng-options="p.id as p.text for p in imprimirCV.periodosLivres | filter:{status:'!false'}">Adicionar período</a>
+                                        </li>
+                                        <li class="addIdioma_{{value.id}}" ng-repeat="value in imprimirCV.curriculo.idiomasCandidato | orderBy: 'text' " ng-mouseover="abrirAddIdioma('CVT',value.id)" ng-mouseleave="fecharAddIdioma('CVT',value.id)">
+                                            <a acao-editar href="" editable-radiolist="value.nivel" e-ng-options="n.id as n.text for n in imprimirCV.niveisIdiomas">Nível {{exibirNivelIdiomaCandidato(value.nivel) | lowercase}}</a> em
+                                            <a acao-editar href="" editable-select="imprimirCV.curriculo.IdIdioma" onaftersave="atualizarGridIdiomas(value.idIdioma)" e-ng-options="i.id as i.text for i in imprimirCV.idiomas">{{value.text}}</a>;
+                                            <a acao-editar id="btnRemoverIdioma_CVT{{value.id}}" style="display:none;" href ng-click="removerIdioma(value)">x remover este idioma</a>
+                                            <a acao-editar style="display:none;float:right;" e-style="margin-left: 410px;" href="#" id="addIdioma_CVT{{value.id}}" onaftersave="inserirnaGridIdiomas()" editable-select="imprimirCV.curriculo.IdIdioma" e-ng-options="value.id as value.text for value in imprimirCV.idiomas"> adicionar outro idioma</a>
+                                        </li>
+                                        <li ng-show="imprimirCV.curriculo.observacao !=null" class="justifyText">
+                                            <span class="DadosComplementaresObs"> <a class="white-space-pre-line" onaftersave="salvarCurriculo('divCVElegante')" acao-editar href="#" editable-textarea="imprimirCV.curriculo.observacao" e-rows="7" e-cols="60">{{ imprimirCV.curriculo.observacao}}</a> </span>
+                                        </li>
+                                        <li ng-show="imprimirCV.curriculo.temDeficiencia=='true' && imprimirCV.curriculo.idDeficiencia > 0">
+                                            <a acao-editar href="#" editable-select="imprimirCV.curriculo.idDeficiencia" onaftersave="salvarCurriculo('divCVElegante')" e-ng-options="value.id as value.text for value in imprimirCV.deficiencias | orderBy:'id'">{{ExibirDeficiencia()}}</a>
+                                        </li>
+                                    </ul>
+
+                                    <p class="text-center ass">------------------------------------------------------------------------</p>
+                                    <p class="text-center">{{imprimirCV.curriculo.nome}}</p>
+                                    <p class="text-center">{{imprimirCV.curriculo.cidade}}, {{date | date: 'dd'}} de {{date | date: 'MMMM' : 'GMT'}} de {{date | date: 'yyyy'}}</p>
+                                    <p class="clearfix"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="divCVEleganteSalvarSucesso" class="alert alert-warning alert-dismissible pull-right inativo adjustAlertMargin" role="alert"></div>
+                        <div class="modal-footer modal-footerCVs" id="menu_flutuante">
+                            <div class="divAcoesMenu">
+                                <a id="btnImprimirCVTradicional" class="btn btn-link btn-sizecv" ng-click="imprimirCurriculo('CVElegante')">Imprimir</a>  |
+                                <a class="btn btn-link btn-sizecv" ng-click="setarModeloCurriculoEnviarEmail('CVElegante')" data-toggle="modal" data-target="#CvEmail">Enviar por E-mail</a> |
+                                <!--<a class="btn btn-link btn-sizecv" ng-click="salvarCurriculo('divCVElegante');">Salvar Modificações</a> |-->
+                                <a class="btn btn-link btn-sizecv" data-dismiss="modal">Fechar</a>
+                            </div>
+                            <div class="divImprimirCV inativo imprimir-loading">
+                                <img src="images/gif-load.gif" /> Imprimindo currículo...
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Currículo Tradicional|Elegante -->
+            <!-- START Modal Currículo Moderno -->
+            <div class="modal fade" id="CvModernoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog moderno">
+                    <div class="modal-bg">
+                        <div class="modal-header modal-headerCVs">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        </div>
+                        <div iv class="modal-body" id="CVModerno">
+                            <div class="modern-cv">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <img src="{{imgCandidato || imprimirCV.curriculo.imgCandidato}}" class="imgCVmodern" />
+                                            <h2 class="nome"><a acao-editar href="#" editable-text="imprimirCV.curriculo.nome" onbeforesave="ValNomeCompleto($data)">{{ imprimirCV.curriculo.nome }}</a></h2>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fa fa-user"></i> <a acao-editar href="#" editable-select="imprimirCV.curriculo.idEstadoCivil" e-ng-options="s.id as s.text for s in imprimirCV.estadoCivil">{{showEstadoCivil()}}</a>, <a acao-editar href="#" editable-text="imprimirCV.curriculo.dataNascimento" e-pattern="\d{2}/\d{2}/\d{4}">{{calcularIdadeCandidato()}} anos</a></li>
+                                                <li><i class="fa fa-home"></i> <a acao-editar href="#" class="breakWordCityModerno" e-custom-dir="autocomplete-cidade" onbeforesave="ValCidade($data)" editable-text="imprimirCV.curriculo.cidade" ng-model="imprimirCV.curriculo.cidade">{{ imprimirCV.curriculo.cidade || "Cidade" }}</a></li>
+                                                <li><i class="fa fa-phone"></i> (<a acao-editar href="#" editable-tel="imprimirCV.curriculo.dddTelefone" e-pattern="\d{2}" e-title="Por ex. 41">{{imprimirCV.curriculo.dddTelefone || "DDD" }}</a>)<a acao-editar href="#" editable-tel="imprimirCV.curriculo.telefone" onbeforesave="ValTelefone($data)" e-pattern="\d{8}" e-title="3030-1234">{{imprimirCV.curriculo.telefone || "Telefone" }}</a> | (<a acao-editar href="#" editable-tel="imprimirCV.curriculo.dddCelular" e-pattern="\d{2}" e-title="Por ex. 41">{{imprimirCV.curriculo.dddCelular || "DDD" }}</a>) <a acao-editar href="#" editable-text="imprimirCV.curriculo.celular" onbeforesave="ValCelular($data)">{{imprimirCV.curriculo.celular || "Celular" }}</a></li>
+                                                <li><i class="fa fa-envelope-o"></i> <a acao-editar href="#" e-custom-dir="autocomplete-email" editable-email="imprimirCV.curriculo.email" ng-model="imprimirCV.curriculo.email">{{ imprimirCV.curriculo.email || "seu e-mail" }}</a></li>
+                                                <li>Função pretendida: <a acao-editar href="#" class="breakWordCityModerno" e-custom-dir="autocomplete-funcao" editable-text="imprimirCV.curriculo.funcao" ng-model="imprimirCV.curriculo.funcao">{{ imprimirCV.curriculo.funcao || "Função pretendida" }}</a></li>
+                                                <li>Pretensão salarial: <a acao-editar href="#" onbeforesave="ValPretensaoSalarial($data)" editable-tel="imprimirCV.curriculo.pretensaoSalarial">{{imprimirCV.curriculo.pretensaoSalarial |currency:'R$'}}</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-8 direita">
+                                            <h2 class="modern-cv-header">Formação</h2>
+
+                                            <div ng-repeat="value in imprimirCV.curriculo.formacoes | orderBy:value.anoConclusao">
+                                                <div class="row h3 modern-cv-header">
+                                                    <div class="col-md-12"><em>{{value.nivel}}</em> <a acao-editar href="#" editable-text="value.anoConclusao">{{ value.anoConclusao }}</a></div>
+                                                    <div class="col-md-12"><a acao-editar href="#" e-custom-dir="autocomplete-instituicao" editable-text="value.instituicao" ng-model="value.instituicao">{{value.instituicao}}</a> <a acao-editar href="#" e-custom-dir="autocomplete-cidade" onbeforesave="ValCidade($data)" editable-text="value.cidadeFormacao" ng-model="value.cidadeFormacao">{{value.cidadeFormacao}}</a></div>
+                                                    <!--<<div class="col-md-4 modern-cv-cidade" style="text-align:right"></div>-->
+                                                </div>
+                                                <p class="clearfix"></p>
+                                                <div class="row h3">
+                                                    <div class="col-md-9"><em><a acao-editar href="#" e-custom-dir="autocomplete-curso" editable-text="value.curso" ng-model="value.curso">{{value.curso}}</a></em></div>
+                                                    <!--<div class="col-md-3" style="text-align:right"></div>-->
+                                                </div>
+                                                <p class="clearfix"></p>
+                                            </div>
+
+                                            <div class="maecurso" ng-repeat="value in imprimirCV.curriculo.cursos | orderBy:value.anoConclusao">
+                                                <div class="row h3 elegante-cv-header">
+                                                    <div class="col-md-12"><em>{{value.nivel}}</em> <a class="margin-right-15" acao-editar href="#" editable-text="value.anoConclusao">{{ value.anoConclusao }}</a></div>
+                                                    <div class="col-md-12"><a acao-editar href="#" e-custom-dir="autocomplete-instituicao" editable-text="value.instituicao" ng-model="value.instituicao">{{value.instituicao}}</a> <a class="margin-right-15" acao-editar href="#" e-custom-dir="autocomplete-cidade" onbeforesave="ValCidade($data)" editable-text="value.cidadeFormacao" ng-model="value.cidadeFormacao">{{value.cidadeFormacao}}</a></div>
+                                                    <!--<div class="col-md-4 modern-cv-cidade" style="text-align:right"></div>-->
+                                                </div>
+                                                <p class="clearfix"></p>
+                                                <div class="row h3 elegante-cv-header">
+                                                    <div class="col-md-9"><em><a acao-editar href="#" e-custom-dir="autocomplete-curso" editable-text="value.curso" ng-model="value.curso">{{value.curso}}</a></em></div>
+                                                    <!--<div class="col-md-3" style="text-align:right"></div>-->
+                                                </div>
+                                                <p class="clearfix"></p>
+                                            </div>
+                                            <p class="clearfix"></p>
+                                            <br />
+                                            <h2 class="modern-cv-header">Experiência Profissional</h2>
+                                            <div class="row h3">
+                                                <div class="col-md-12 empresa">
+                                                    <a acao-editar href="#" editable-text="imprimirCV.curriculo.empresa">{{ imprimirCV.curriculo.empresa}}</a>
+                                                    <em><a acao-editar href="#" editable-select="imprimirCV.curriculo.mesInicio" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperiencia()}}</a> - <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoInicio">{{ imprimirCV.curriculo.anoInicio || "Não Informado" }}</a> até <a acao-editar href="#" editable-select="imprimirCV.curriculo.mesSaida" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaSaida()}}</a> - <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoSaida">{{ imprimirCV.curriculo.anoSaida }}</a></em>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12"><em><a acao-editar href="#" class="breakWordCityModerno" e-custom-dir="autocomplete-funcao" editable-text="imprimirCV.curriculo.funcaoEmpresa" ng-model="imprimirCV.curriculo.funcaoEmpresa">{{imprimirCV.curriculo.funcaoEmpresa}}</a></em></div>
+                                                <!--<div class="col-md-4"><em><a acao-editar href="#" editable-select="imprimirCV.curriculo.mesInicio" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperiencia()}}</a> - <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoInicio">{{ imprimirCV.curriculo.anoInicio }}</a> até <a acao-editar href="#" editable-select="imprimirCV.curriculo.mesSaida" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaSaida()}}</a> - <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoSaida">{{ imprimirCV.curriculo.anoSaida }}</a></em></div>-->
+                                            </div>
+
+                                            <p class="clearfix"></p>
+            <ul>
+                                            <ul>
+                                                <li class="justifyText">
+                                                    <span class="ModernoExpAtivi">
+                                                        <a class="white-space-pre-line" acao-editar href="#" editable-textarea="imprimirCV.curriculo.atividades" e-rows="7" e-cols="60">{{ imprimirCV.curriculo.atividades}}</a>
+                                                    </span>
+                                                </li>
+                                            </ul>
+
+                                            <p class="clearfix"></p>
+                                            <div ng-show="imprimirCV.curriculo.empresape != '' && imprimirCV.curriculo.empresape != null">
+                                                <div class="row h3">
+                                                    <div class="col-md-12 empresa">
+                                                        <a acao-editar href="#" editable-text="imprimirCV.curriculo.empresape">{{ imprimirCV.curriculo.empresape }}</a>
+                                                        <em><a acao-editar href="#" editable-select="imprimirCV.curriculo.mesIniciope" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaPE()}}</a> - <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoIniciope">{{ imprimirCV.curriculo.anoIniciope }}</a> até <a acao-editar href="#" editable-select="imprimirCV.curriculo.mesSaidape" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaSaidaPE()}}</a> - <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoSaidape">{{ imprimirCV.curriculo.anoSaidape }}</a></em>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-8"><em><a acao-editar href="#" class="breakWordCityModerno" e-custom-dir="autocomplete-funcao" editable-text="imprimirCV.curriculo.funcaoEmpresape" ng-model="imprimirCV.curriculo.funcaoEmpresape">{{imprimirCV.curriculo.funcaoEmpresape}}</a></em></div>
+                                                    <div class="col-md-4"><!--<em><a acao-editar href="#" editable-select="imprimirCV.curriculo.mesIniciope" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciape()}}</a> - <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoIniciope">{{ imprimirCV.curriculo.anoIniciope }}</a> até <a acao-editar href="#" editable-select="imprimirCV.curriculo.mesSaidape" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaSaidape()}}</a> - <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoSaidape">{{ imprimirCV.curriculo.anoSaidape }}</a></em>--></div>
+                                                </div>
+                                                <p class="clearfix"></p>
+
+                          <ul>
+
+                                                <ul>
+                                                    <li class="justifyText">
+                                                        <span class="ModernoExpAtivi">
+                                                            <a class="white-space-pre-line" acao-editar href="#" editable-textarea="imprimirCV.curriculo.atividadespe" e-rows="7" e-cols="60">{{ imprimirCV.curriculo.atividadespe }}</a>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <p class="clearfix"></p>
+                                            <div ng-show="imprimirCV.curriculo.empresa3 != '' && imprimirCV.curriculo.empresa3 != null">
+                                                <div class="row h3">
+                                                    <div class="col-md-12 empresa">
+                                                        <a acao-editar href="#" editable-text="imprimirCV.curriculo.empresa3">{{ imprimirCV.curriculo.empresa3}}</a>
+                                                        <em><a acao-editar href="#" editable-select="imprimirCV.curriculo.mesInicio3" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperiencia3()}}</a> <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoInicio3">{{ imprimirCV.curriculo.anoInicio3}}</a> <a acao-editar href="#" editable-select="imprimirCV.curriculo.mesSaida3" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaSaida3()}}</a> <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoSaida3">{{ imprimirCV.curriculo.anoSaida3 }}</a></em>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-8"><em><a acao-editar href="#" class="breakWordCityModerno" e-custom-dir="autocomplete-funcao" editable-text="imprimirCV.curriculo.funcaoEmpresa3" ng-model="imprimirCV.curriculo.funcaoEmpresa3">{{imprimirCV.curriculo.funcaoEmpresa3}}</a></em></div>
+                                                    <div class="col-md-4"><!--<em><a acao-editar href="#" editable-select="imprimirCV.curriculo.mesInicio3" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperiencia3()}}</a> - <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoInicio3">{{ imprimirCV.curriculo.anoInicio3}}</a> até <a acao-editar href="#" editable-select="imprimirCV.curriculo.mesSaida3" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaSaida3()}}</a> - <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoSaida3">{{ imprimirCV.curriculo.anoSaida3 }}</a></em>--></div>
+                                                </div>
+
+                                                <p class="clearfix"></p>
+                         <br>
+                                                <br>
+                                                <ul>
+                                                    <li class="justifyText">
+                                                        <span class="ModernoExpAtivi">
+                                                            <a class="white-space-pre-line" acao-editar href="#" editable-textarea="imprimirCV.curriculo.atividades3" e-rows="7" e-cols="60">{{ imprimirCV.curriculo.atividades3}}</a>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <p class="clearfix"></p>
+                                            <h2 class="modern-cv-header">Dados Complementares</h2>
+                                            <ul class="periodosTrabalhar">
+                                                <li id="liEditPeriodos_CVM" ng-mouseover="abrirEditarPeriodos('CVM')" ng-mouseleave="fecharEditarPeriodos('CVM')" ng-show="imprimirCV.curriculo.periodosTrabalhar != ''">
+                                                    <span ng-show="imprimirCV.numeroPeriodos>1">Disponível para trabalhar nos períodos:</span>
+                                                    <a acao-editar href="#" onaftersave="atualizarPeriodos()" ng-class="(imprimirCV.curriculo.periodoManha == true ? 'show-periodo' : 'hide-periodo')" e-title=" Manhã" editable-checkbox="imprimirCV.curriculo.periodoManha">Manhã;</a>
+                                                    <a acao-editar href="#" onaftersave="atualizarPeriodos()" ng-class="(imprimirCV.curriculo.periodoTarde == true ? 'show-periodo' : 'hide-periodo')" e-title=" Tarde" editable-checkbox="imprimirCV.curriculo.periodoTarde">Tarde;</a>
+                                                    <a acao-editar href="#" onaftersave="atualizarPeriodos()" ng-class="(imprimirCV.curriculo.periodoNoite == true ? 'show-periodo' : 'hide-periodo')" e-title=" Noite" editable-checkbox="imprimirCV.curriculo.periodoNoite">Noite;</a>
+                                                    <a acao-editar href="#" onaftersave="atualizarPeriodos()" ng-class="(imprimirCV.curriculo.periodoFimdeSemana == true ? 'show-periodo' : 'hide-periodo')" e-title=" Fim de semana" editable-checkbox="imprimirCV.curriculo.periodoFimdeSemana">Fim de semana;</a>
+                                                    <a acao-editar id="addPeriodo_CVM" style="display:none;" e-style="margin-left: 420px;" href="#" onaftersave="ativarPeriodo()" editable-select="imprimirCV.curriculo.periodos" e-ng-options="p.id as p.text for p in imprimirCV.periodosLivres | filter:{status:'!false'}">Adicionar período</a>
+                                                </li>
+                                                <li class="addIdioma_{{value.id}}" ng-repeat="value in imprimirCV.curriculo.idiomasCandidato | orderBy: 'text' " ng-mouseover="abrirAddIdioma('CVM',value.id)" ng-mouseleave="fecharAddIdioma('CVM',value.id)">
+                                                    <a acao-editar href="#" editable-radiolist="value.nivel" e-ng-options="n.id as n.text for n in imprimirCV.niveisIdiomas">Nível {{exibirNivelIdiomaCandidato(value.nivel) | lowercase}}</a> em
+                                                    <a acao-editar href="#" editable-select="imprimirCV.curriculo.IdIdioma" onaftersave="atualizarGridIdiomas(value.id)" e-ng-options="i.id as i.text for i in imprimirCV.idiomas">{{value.text}}</a>;
+                                                    <a acao-editar id="btnRemoverIdioma_CVM{{value.id}}" style="display:none;" ng-click="removerIdioma(value)">x remover este idioma</a>
+                                                    <a acao-editar style="display:none;float:right;" e-style="margin-left: -100px;" href="#" id="addIdioma_CVM{{value.id}}" onaftersave="inserirnaGridIdiomas()" editable-select="imprimirCV.curriculo.IdIdioma" e-ng-options="value.id as value.text for value in imprimirCV.idiomas"> adicionar outro idioma</a>
+                                                </li>
+                                                <span class="DadosComplementaresObsModerno">
+                                                    <li ng-show="imprimirCV.curriculo.observacao !=null"> <a class="white-space-pre-line" acao-editar href="#" editable-textarea="imprimirCV.curriculo.observacao" e-rows="7" e-cols="60">{{ imprimirCV.curriculo.observacao}}</a> </li>
+                                                </span>
+                                                <li ng-show="imprimirCV.curriculo.temDeficiencia=='true' && imprimirCV.curriculo.IdDeficiencia > 0">
+                                                    <a acao-editar href="#" editable-select="imprimirCV.curriculo.IdDeficiencia" e-ng-options="value.id as value.text for value in imprimirCV.deficiencias | orderBy:'id'">{{ExibirDeficiencia()}}</a>
+                                                </li>
+                                            </ul>
+
+                                            <p class="text-center ass">------------------------------------------------------------------------</p>
+                                            <p class="text-center">{{imprimirCV.curriculo.nome}}</p>
+                                            <p class="text-center">{{imprimirCV.curriculo.cidade}}, {{date | date: 'dd'}} de {{date | date: 'MMMM' : 'GMT'}} de {{date | date: 'yyyy'}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="divCVModernoSalvarSucesso" class="alert alert-warning alert-dismissible pull-right inativo adjustAlertMargin" role="alert"></div>
+                        <div class="modal-footer modal-footerCVs" id="menu_flutuante">
+                            <div class="divAcoesMenu">
+                                <a class="btn btn-link btn-sizecv" ng-click="imprimirCurriculo('CVModerno')">Imprimir</a> |
+                                <a class="btn btn-link btn-sizecv" ng-click="setarModeloCurriculoEnviarEmail('CVModerno')" data-toggle="modal" data-target="#CvEmail">Enviar por E-mail</a> |
+                                <a class="btn btn-link btn-sizecv" ng-click="salvarCurriculo('divCVModerno')">Salvar Modificações</a> |
+                                <a class="btn btn-link btn-sizecv" data-dismiss="modal">Fechar</a>
+                            </div>
+                            <div class="divImprimirCV inativo imprimir-loading">
+                                <img src="images/gif-load.gif" /> Imprimindo currículo...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Currículo Moderno -->
+            <!-- START Modal Currículo BNE-->
+            <div class="modal fade" id="CvBNEModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog bneModal">
+                    <div class="modal-bg">
+                        <div class="modal-header modal-headerCVs">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        </div>
+                        <div class="modal-body" id="CVBNE">
+                            <div style="width:800px; font-size:16px!important; margin: 0 auto;">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="690px">
+                                                <div style="display:block;">
+                                                    <h3><strong><a acao-editar href="#" editable-text="imprimirCV.curriculo.nome" onbeforesave="ValNomeCompleto($data)">{{ imprimirCV.curriculo.nome || "Seu nome completo" }}</a></strong></h3>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="display: block; font-family: Arial Unicode MS;font-weight: bold; width: 770px">
+                                    Dados Pessoais
+
+                                </div>
+                                <hr>
+
+                                <table style="margin-left: 20px; width: 580px; float: left;" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 175px;">Sexo:</td>
+                                            <td style="text-align: left;">
+                                                <a acao-editar href="#" editable-radiolist="imprimirCV.curriculo.sexo" e-ng-options="s.id as s.text for s in imprimirCV.sexos">{{exibirSexoCandidato(imprimirCV.curriculo.sexo)}}</a>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 175px;">Estado Civil:</td>
+                                            <td valign="top" style="text-align: left;"><a acao-editar href="#" editable-select="imprimirCV.curriculo.idEstadoCivil" e-ng-options="s.id as s.text for s in imprimirCV.estadoCivil">{{showEstadoCivil()}}</a></td>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 50px;"></td>
+                                            <td valign="top" style="text-align: left;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 175px;">Data Nascimento:</td>
+                                            <td valign="top" style="text-align: left;"><a acao-editar href="#" editable-text="imprimirCV.curriculo.dataNascimento" e-pattern="\d{2}/\d{2}/\d{4}">{{imprimirCV.curriculo.dataNascimento}} - {{calcularIdadeCandidato()}} Anos</a></td>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 50px;"></td>
+                                            <td valign="top" style="text-align: left;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 175px;">Telefone Fixo:</td>
+                                            <td valign="top" style="text-align: left;">(<a acao-editar href="#" editable-tel="imprimirCV.curriculo.dddTelefone" e-pattern="\d{2}" e-title="Por ex. 41">{{imprimirCV.curriculo.dddTelefone || "DDD" }}</a>) <a acao-editar href="#" editable-text="imprimirCV.curriculo.telefone" onbeforesave="ValTelefone($data)">{{imprimirCV.curriculo.telefone || "Telefone" }}</a></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 175px;">Telefone Celular:</td>
+                                            <td valign="top" style="text-align: left;">(<a acao-editar href="#" editable-tel="imprimirCV.curriculo.dddCelular" e-pattern="\d{2}" e-title="Por ex. 41">{{imprimirCV.curriculo.dddCelular || "DDD" }}</a>) <a acao-editar href="#" editable-text="imprimirCV.curriculo.celular" onbeforesave="ValCelular($data)">{{imprimirCV.curriculo.celular || "Celular" }}</a></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <!--<td valign="top" style="text-align: left; font-weight: bold; width: 175px;">CEP:</td>
+                                            <td valign="top" style="text-align: left;">80240040</td>-->
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 50px;">Cidade: </td>
+                                            <td valign="top" style="text-align: left;"><a acao-editar href="#" class="breakWordCityModerno" e-custom-dir="autocomplete-cidade" onbeforesave="ValCidade($data)" editable-text="imprimirCV.curriculo.cidade" ng-model="imprimirCV.curriculo.cidade">{{ imprimirCV.curriculo.cidade || "Cidade" }}</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 50px;">E-mail: </td>
+                                            <td valign="top" style="text-align: left;"><a acao-editar href="#" e-custom-dir="autocomplete-email" editable-email="imprimirCV.curriculo.email" ng-model="imprimirCV.curriculo.email">{{ imprimirCV.curriculo.email || "seu e-mail" }}</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table style="float:right;" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="95px" rowspan="7">
+                                                <img src="{{imgCandidato || imprimirCV.curriculo.imgCandidato}}" class="imgCVmodern" style="display: block;height:160px; width:auto;" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="clearfix"></p>
+                                <div style="display: block; font-family: Arial Unicode MS;font-weight: bold; margin:10px 0 0 0px; width: 770px">
+                                    Pretensões
+                                </div>
+                                <hr>
+                                <table cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="0" valign="top" style="text-align: left; font-weight: bold; width: 175px;">Função Pretendida: </td>
+                                            <td width="0" valign="top" style="text-align: left; width: 300px"><a acao-editar href="#" class="breakWordCityModerno" e-custom-dir="autocomplete-funcao" editable-text="imprimirCV.curriculo.funcao" ng-model="imprimirCV.curriculo.funcao">{{ imprimirCV.curriculo.funcao || "Função" }}</a></td>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 50px;">Salário:</td>
+                                            <td valign="top" style="text-align: left;"><a acao-editar href="#" onbeforesave="ValPretensaoSalarial($data)" editable-text="imprimirCV.curriculo.pretensaoSalarial">{{imprimirCV.curriculo.pretensaoSalarial |currency:'R$'}}</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="display: block; font-family: Arial Unicode MS;font-weight: bold; margin:10px 0 0 0px; width: 700px">Escolaridade</div>
+                                <hr>
+                                <table style="margin-left: 20px; width: 750px;" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr ng-repeat="value in imprimirCV.curriculo.formacoes | orderBy:value.anoConclusao">
+                                            <td valign="top" style="text-align: left; padding: 5px 0 5px 0">{{value.nivel}} <span ng-show="value.curso.length > 0">-</span> <a acao-editar href="#" e-custom-dir="autocomplete-curso" editable-text="value.curso" ng-model="value.curso">{{value.curso}}</a> <span ng-show="value.instituicao.length > 0">-</span> <a acao-editar href="#" e-custom-dir="autocomplete-instituicao" editable-text="value.instituicao" ng-model="value.instituicao">{{value.instituicao}}</a> <span ng-show="value.cidade.length > 0">-</span> <a acao-editar href="#" e-custom-dir="autocomplete-cidade" onbeforesave="ValCidade($data)" editable-text="value.cidade" ng-model="value.cidade">{{value.cidade}}</a> <span ng-show="value.anoConclusao > 0">-</span> <a acao-editar href="#" editable-text="value.anoConclusao">{{ value.anoConclusao }}</a></td>
+                                        </tr>
+                                        <tr ng-repeat="value in imprimirCV.curriculo.cursos | orderBy:value.anoConclusao">
+                                            <td valign="top" style="text-align: left;">{{value.nivel}} <span ng-show="value.curso.length > 0">-</span> <a acao-editar href="#" e-custom-dir="autocomplete-curso" editable-text="value.curso" ng-model="value.curso">{{value.curso}}</a> <span ng-show="value.instituicao.length > 0">-</span> <a acao-editar href="#" e-custom-dir="autocomplete-instituicao" editable-text="value.instituicao" ng-model="value.instituicao">{{value.instituicao}}</a> <span ng-show="value.cidade.length > 0">-</span> <a acao-editar href="#" e-custom-dir="autocomplete-cidade" onbeforesave="ValCidade($data)" editable-text="value.cidade" ng-model="value.cidade">{{value.cidade}}</a> <span ng-show="value.anoConclusao > 0">-</span> <a acao-editar href="#" editable-text="value.anoConclusao">{{ value.anoConclusao }}</a></td>
+                                        </tr>
+                                        <tr class="linha_idiomas" id="trLinhaIdiomas" runat="server">
+                                            <td style="text-align: left;">
+                                                <ul>
+                                                    <li class="addIdioma_{{value.id}}" ng-repeat="value in imprimirCV.curriculo.idiomasCandidato | orderBy: 'text' " ng-mouseover="abrirAddIdioma('CVB',value.id)" ng-mouseleave="fecharAddIdioma('CVB',value.id)">
+                                                        <a acao-editar href="#" editable-radiolist="value.nivel" e-ng-options="n.id as n.text for n in imprimirCV.niveisIdiomas">Nível {{exibirNivelIdiomaCandidato(value.nivel) | lowercase}}</a> em
+                                                        <a acao-editar href="#" editable-select="imprimirCV.curriculo.IdIdioma" onaftersave="atualizarGridIdiomas(value.id)" e-ng-options="i.id as i.text for i in imprimirCV.idiomas">{{value.text}}</a>;
+                                                        <a acao-editar id="btnRemoverIdioma_CVB{{value.id}}" style="display:none;" href ng-click="removerIdioma(value)">x remover este idioma</a>
+                                                        <a acao-editar style="display:none;float:right;" e-style="margin-left: 410px;" href="#" id="addIdioma_CVB{{value.id}}" onaftersave="inserirnaGridIdiomas()" editable-select="imprimirCV.curriculo.IdIdioma" e-ng-options="value.id as value.text for value in imprimirCV.idiomas"> adicionar outro idioma</a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="display: block; font-family: Arial Unicode MS;font-weight: bold; width: 570px; margin:10px 0 0 0px;">Experiência Profissional</div>
+                                <hr>
+                                <table style="margin-left: 20px; width: 700px;" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2" valign="top" style="text-align: left; width: 650px; font-style: italic; padding-top: 5px; font-weight: bold;">
+                                                <a acao-editar href="#" editable-text="imprimirCV.curriculo.empresa">{{ imprimirCV.curriculo.empresa }}</a> - de <a acao-editar href="#" editable-select="imprimirCV.curriculo.mesInicio" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperiencia()}}</a> - <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoInicio">{{ imprimirCV.curriculo.anoInicio}}</a> até <a acao-editar href="#" editable-select="imprimirCV.curriculo.mesSaida" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaSaida()}}</a> - <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoSaida">{{ imprimirCV.curriculo.anoSaida }}</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 175px;">Função Exercida:</td>
+                                            <td valign="top" style="text-align: left;"><a acao-editar href="#" class="breakWordCityModerno" e-custom-dir="autocomplete-funcao" editable-text="imprimirCV.curriculo.funcaoEmpresa" ng-model="imprimirCV.curriculo.funcaoEmpresa">{{imprimirCV.curriculo.funcaoEmpresa}}</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 175px;">Atribuições:</td>
+                                            <td valign="top" style="text-align: justify; text-justify: inter-word;"> <a class="white-space-pre-line" acao-editar href="#" editable-textarea="imprimirCV.curriculo.atividades" e-rows="7" e-cols="60">{{ imprimirCV.curriculo.atividades }}</a> </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table ng-show="imprimirCV.curriculo.empresape != '' && imprimirCV.curriculo.empresape != null" style="margin-left: 20px; width: 700px;" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2" valign="top" style="text-align: left; width: 550px; font-style: italic;padding-top: 5px; font-weight: bold;">
+                                                <a acao-editar href="#" editable-text="imprimirCV.curriculo.empresape">{{ imprimirCV.curriculo.empresape }}</a> - de <a acao-editar href="#" editable-select="imprimirCV.curriculo.mesIniciope" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaPE()}}</a> - <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoIniciope">{{ imprimirCV.curriculo.anoIniciope}}</a> até <a acao-editar href="#" editable-select="imprimirCV.curriculo.mesSaidape" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaSaidaPE()}}</a> - <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoSaidape">{{ imprimirCV.curriculo.anoSaidape }}</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 175px;">Função Exercida:</td>
+                                            <td valign="top" style="text-align: left;"><a acao-editar href="#" class="breakWordCityModerno" e-custom-dir="autocomplete-funcao" editable-text="imprimirCV.curriculo.funcaoEmpresape" ng-model="imprimirCV.curriculo.funcaoEmpresape">{{imprimirCV.curriculo.funcaoEmpresape}}</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 175px;">Atribuições:</td>
+                                            <td valign="top" style="text-align: justify; text-justify: inter-word;"> <a class="white-space-pre-line" acao-editar href="#" editable-textarea="imprimirCV.curriculo.atividadespe" e-rows="7" e-cols="60">{{ imprimirCV.curriculo.atividadespe}}</a> </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table ng-show="imprimirCV.curriculo.empresa3 != '' && imprimirCV.curriculo.empresa3 != null" style="margin-left: 20px; width: 700px;" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2" valign="top" style="text-align: left; width: 550px; font-style: italic;padding-top: 5px; font-weight: bold;">
+                                                <a acao-editar href="#" editable-text="imprimirCV.curriculo.empresa3">{{ imprimirCV.curriculo.empresa3 }}</a> <a acao-editar href="#" editable-select="imprimirCV.curriculo.mesInicio3" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperiencia3()}}</a> <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoInicio3">{{ imprimirCV.curriculo.anoInicio3}}</a> <a acao-editar href="#" editable-select="imprimirCV.curriculo.mesSaida3" e-ng-options="s.id as s.text for s in imprimirCV.mesesAno">{{selecionarMesAnoExperienciaSaida3()}}</a> <a acao-editar href="#" e-pattern="\d{4}" e-title="aaaa por ex.: 2014" editable-text="imprimirCV.curriculo.anoSaida3">{{ imprimirCV.curriculo.anoSaida3 }}</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 175px;">{{retornarLabelFuncaoExercida()}}</td>
+                                            <td valign="top" style="text-align: left;"><a acao-editar href="#" class="breakWordCityModerno" e-custom-dir="autocomplete-funcao" editable-text="imprimirCV.curriculo.funcaoEmpresa3" ng-model="imprimirCV.curriculo.funcaoEmpresa3">{{imprimirCV.curriculo.funcaoEmpresa3}}</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="text-align: left; font-weight: bold; width: 175px;">{{retornarLabelAtribuicoes()}}</td>
+                                            <td valign="top" style="text-align: justify; text-justify: inter-word;"> <a class="white-space-pre-line" acao-editar href="#" editable-textarea="imprimirCV.curriculo.atividades3" e-rows="7" e-cols="60">{{ imprimirCV.curriculo.atividades3 }}</a> </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="display: block; font-family: Arial Unicode MS;font-weight: bold; margin:10px 0 0 0px; width: 570px">
+                                    Observações
+                                </div>
+                                <hr>
+                                <table cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr id="liEditPeriodos_CVB" ng-mouseover="abrirEditarPeriodos('CVB')" ng-mouseleave="fecharEditarPeriodos('CVB')" ng-show="imprimirCV.curriculo.periodosTrabalhar != ''">
+                                            <td valign="top" style="text-align: left; font-weight: bold;">
+                                                <span ng-show="imprimirCV.numeroPeriodos>1">Disponível para trabalhar nos períodos:</span>
+                                                <a acao-editar href="#" onaftersave="atualizarPeriodos()" ng-class="(imprimirCV.curriculo.periodoManha == true ? 'show-periodo' : 'hide-periodo')" e-title=" Manhã" editable-checkbox="imprimirCV.curriculo.periodoManha">Manhã;</a>
+                                                <a acao-editar href="#" onaftersave="atualizarPeriodos()" ng-class="(imprimirCV.curriculo.periodoTarde == true ? 'show-periodo' : 'hide-periodo')" e-title=" Tarde" editable-checkbox="imprimirCV.curriculo.periodoTarde">Tarde;</a>
+                                                <a acao-editar href="#" onaftersave="atualizarPeriodos()" ng-class="(imprimirCV.curriculo.periodoNoite == true ? 'show-periodo' : 'hide-periodo')" e-title=" Noite" editable-checkbox="imprimirCV.curriculo.periodoNoite">Noite;</a>
+                                                <a acao-editar href="#" onaftersave="atualizarPeriodos()" ng-class="(imprimirCV.curriculo.periodoFimdeSemana == true ? 'show-periodo' : 'hide-periodo')" e-title=" Fim de semana" editable-checkbox="imprimirCV.curriculo.periodoFimdeSemana">Fim de semana;</a>
+                                                <a acao-editar id="addPeriodo_CVB" style="display:none;" e-style="margin-left: 20px;" href="#" onaftersave="ativarPeriodo()" editable-select="imprimirCV.curriculo.periodos" e-ng-options="p.id as p.text for p in imprimirCV.periodosLivres | filter:{status:'!false'}">Adicionar período</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <!--<td><a acao-editar href="#" editable-textarea="imprimirCV.curriculo.observacao" e-rows="7" e-cols="60">{{ imprimirCV.curriculo.observacao}}</a></td>-->
+                                            <td> <a class="white-space-pre-line" acao-editar href="#" editable-textarea="imprimirCV.curriculo.observacao" e-rows="7" e-cols="60">{{imprimirCV.curriculo.observacao}}</a> </td>
+                                        </tr>
+                                        <tr ng-show="imprimirCV.curriculo.temDeficiencia=='true' && imprimirCV.curriculo.IdDeficiencia >0">
+                                            <td><a acao-editar href="#" editable-select="imprimirCV.curriculo.IdDeficiencia" e-ng-options="value.id as value.text for value in imprimirCV.deficiencias | orderBy:'id'">{{ExibirDeficiencia()}}</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="divCVBNESalvarSucesso" class="alert alert-warning alert-dismissible pull-right inativo" role="alert"></div>
+                        <div class="modal-footer modal-footerCVs" id="menu_flutuante">
+                            <div class="divAcoesMenu">
+                                <a class="btn btn-link btn-sizecv" ng-click="imprimirCurriculo('CVBNE')">Imprimir</a> |
+                                <a class="btn btn-link btn-sizecv" ng-click="setarModeloCurriculoEnviarEmail('CVBNE')" data-toggle="modal" data-target="#CvEmail">Enviar por E-mail</a> |
+                                <a class="btn btn-link btn-sizecv" ng-click="salvarCurriculo('divCVBNE')">Salvar Modificações</a>
+                                <a class="btn btn-link btn-sizecv" data-dismiss="modal">Fechar</a>
+                            </div>
+                            <div class="divImprimirCV inativo imprimir-loading">
+                                <img src="images/gif-load.gif" /> Imprimindo currículo...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Currículo BNE-->
+            <!-- START Modal E-mail -->
+            <form role="form" id="formCVEmail" name="formCVEmail" novalidate>
+                <div class="modal fade" id="CvEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog emailCv">
+                        <div class="modal-content">
+                            <div class="modal-bg">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    <h4 class="modal-title" id="H2">ENVIAR MEU CURRÍCULO</h4>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="form-group">
+                                        <label class="labelFormGroup" for="txtEmailDestinatario">E-mail <span class="required">*</span></label>
+                                        <input type="email" ng-model="cadCV.curriculo.EmailEnviar" class="form-control" id="txtEmailDestinatario" name="txtEmailDestinatario" autocomplete-email required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="labelFormGroup" for="txtAssunto">Assunto <span class="required">*</span></label>
+                                        <input type="text" ng-model="cadCV.curriculo.EmailAssunto" class="form-control" id="txtAssunto" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="labelFormGroup" for="exampleInputFile">Mensagem</label>
+                                        <textarea id="txtMensagem" ng-model="cadCV.curriculo.MensagemEmail" maxlength="2000" class="form-control" rows="7"></textarea>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer modal-footerEmail">
+
+                                    <button type="button" class="btn btn-default btn-email" ng-disabled="formCVEmail.$invalid" ng-click="enviarCurriculoEmail()"><i class="icon email iconColorEmail">ENVIAR E-MAIL</i></button>
+                                    <span id="divEnviando" style="display:none;"><img src="../../images/gif-load.gif" /> ENVIANDO E-MAIL...</span>
+                                    <p class="alert alert-success" style="display:none;">E-mail enviado com sucesso!</p>
+                                    <p class="alert alert-warning" style="display:none;">ops, ocorreu um erro ao enviar o e-mail. Por favor tente novamente!</p>
+                                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                                    <!--<button type="button" class="btn btn-primary">ENVIAR E-MAIL</button>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+            <!-- END Modal E-mail -->

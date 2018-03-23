@@ -1,0 +1,80 @@
+﻿@model  Sample.Models.Empresa.GridProspect
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Painel Empresa
+            <small>prospcção</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="~/Views/Home/"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Lista de Empresas</li>
+            <li class="active">Empresa</li>
+        </ol>
+    </section>
+
+
+    <section class="content">
+        <div class="row">
+            <table id="example" class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Data Ultima ação Site</th>
+                        <th>Num CNPJ</th>
+                        <th>Empresa</th>
+                        <th>Area</th>
+                        <th>Cidade</th>
+                        <th>UF</th>
+                        <th>Total Ação</th>
+                        <th>Quantidade Funcionarios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var empresa in Model.lista)
+                    {
+                        <tr>
+                            <td>@empresa.Data_Ultima_Acao_Site</td>
+                            <td>@empresa.Num_CNPJ</td>
+                            <td>@empresa.Raz_Social</td>
+                            <td>@empresa.Des_Area_BNE</td>
+                            <td>@empresa.Nme_Cidade</td>
+                            <td>@empresa.Sig_Estado</td>
+                            <td>@empresa.Total_Acao</td>
+                            <td>@empresa.qtd_Funcionarios</td>
+                        </tr>
+                    }
+                  
+                </tbody>
+            </table>
+        </div>
+    </section>
+</aside>
+    <script src="~/Scripts/plugins/DataTableOrdering/jquery.dataTables.js"></script>
+    <script src="~/Scripts/plugins/DataTableOrdering/jquery-1.12.3.js"></script>
+    <link href="~/Scripts/plugins/DataTableOrdering/jquery.dataTables.css" rel="stylesheet" />
+    <script>
+
+
+        $(document).ready(function () {
+            $('#example').DataTable({
+                columnDefs: [{
+                    targets: [0],
+                    orderData: [0, 1]
+                }, {
+                    targets: [1],
+                    orderData: [1, 0]
+                }, {
+                    targets: [4],
+                    orderData: [4, 0]
+                }]
+            });
+        });
+
+    </script>

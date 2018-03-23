@@ -1,0 +1,58 @@
+﻿@model BNE.PessoaFisica.Web.Models.Curriculo
+
+
+<script>
+    $('#maisInfo').hide();
+    $(".linkLogin").hide();
+    $(".linkCadastro").hide();
+</script>
+
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center bottom20 ">
+        <h4>
+            <b>Aviso!</b> <br />
+            <strong class="darkgrey">
+               Este processo seletivo foi encerrado deseja enviar seu currículo para a empresa para futuras contratações?
+            </strong>
+        </h4>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--middle right">
+      
+        <button type="submit" onclick="javascript: history.go(-1);" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformxbiggrey " id="btnSave5">Não, obrigado</button>
+        </div>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--middle">
+      
+            @if (Model.Vaga != null)
+            {
+                @Html.HiddenFor(m => m.IdFuncao, new { @Value = Model.Vaga.IdFuncao })
+                @Html.HiddenFor(m => m.DescricaoFuncao, new { @Value = Model.Vaga.Descricao })
+                @Html.HiddenFor(m => m.IdPesquisa, new { @Value = Model.Vaga.IdPesquisa })
+                @Html.HiddenFor(m => m.UrlPesquisa, new { @Value = Model.Vaga.urlPesquisa })
+                @Html.HiddenFor(m => m.Vaga.FlgPremium, new { @Value = Model.Vaga.FlgPremium })
+                @Html.HiddenFor(m => m.IdCidade, new { @Value = Model.Vaga.IdCidade })
+                @Html.HiddenFor(m => m.Vaga.LinkVagasFuncaoCidade.URL, new { @Value = Model.Vaga.LinkVagasFuncaoCidade.URL })
+                @Html.HiddenFor(m => m.EstaEmBH, new { @Value = Model.EstaEmBH })
+                @Html.HiddenFor(m => m.EmpresaBloqueada, new { @Value = Model.EmpresaBloqueada })
+                @Html.HiddenFor(m => m.CurriculoVIP, new { @Value = Model.CurriculoVIP })
+                @Html.HiddenFor(m => m.Vaga.FlgArquivada, new { @Value = Model.Vaga.FlgArquivada })
+                for (var i = 0; i < Model.Vaga.Perguntas.Count; i++)
+                {
+                    @Html.HiddenFor(m => m.Vaga.Perguntas[i].descricaoVagaPergunta, new { @Value = Model.Vaga.Perguntas[i].descricaoVagaPergunta })
+                    @Html.HiddenFor(m => m.Vaga.Perguntas[i].flagResposta, new { @Value = Model.Vaga.Perguntas[i].flagResposta })
+                    @Html.HiddenFor(m => m.Vaga.Perguntas[i].tipoResposta, new { @Value = Model.Vaga.Perguntas[i].tipoResposta })
+                    @Html.HiddenFor(m => m.Vaga.Perguntas[i].idVagaPergunta, new { @Value = Model.Vaga.Perguntas[i].idVagaPergunta })
+                    @Html.HiddenFor(m => m.Vaga.Perguntas[i].flgRespostaPergunta, new { @Value = Model.Vaga.Perguntas[i].flgRespostaPergunta })
+                    @Html.HiddenFor(m => m.Vaga.Perguntas[i].resposta, new { @Value = Model.Vaga.Perguntas[i].resposta })
+                }
+            }
+            @Html.HiddenFor(m => m.IdVaga, new { @Value = Model.IdVaga })
+            @Html.HiddenFor(m => m.CPF, new { @Value = Model.CPF })
+            @Html.HiddenFor(m => m.DataNascimento, new { @Value = Model.DataNascimento })
+            @Html.HiddenFor(m => m.Nome, new { @Value = Model.Nome })
+            @Html.HiddenFor(m => m.Candidatar, new { @Value = Model.Candidatar })
+
+            <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformxbig" name="action:EnviarCurriculo"
+                     value="CandidatarOportunidade">Sim, eu quero</button>
+    </div>
+</div>
+

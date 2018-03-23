@@ -1,0 +1,67 @@
+﻿h2 { margin: 30px 0 10px; height: auto; }
+.titulo_interno { margin: 0 0 10px 0; height: auto; }
+.conteudo .interna { margin-top: 20px; }
+.txt_explicativo { color: #0A3079; font-size: 10px; }
+.hint_explicativo { background: #FAF5A6; color: #BE0307; float: left; margin: 3px 0 0; padding: 3px 10px 2px; }
+span.hint_explicativo { background: #FAF5A6; color: #BE0307; float: right; margin: 0 70px 0 3px; padding: 3px 10px; }
+.label_principal { text-align: right; /*width: 140px;*/ width: 180px; clear: both; }
+.container_campo { float: left; padding-left: 5px; margin-left: 0; padding-top: 3px; }
+.negrito { font-weight: bold; }
+.linha { padding: 0; margin: 2px 0; overflow: hidden; }
+.chk_info_vagas { margin-left: 183px; }
+.confidencial { background: #FAF5A6; padding: 0; width: 50%; overflow: hidden; padding: 0 3px; margin-left: 5px; }
+.confidencial div { margin: 2px 0; }
+.chk_confidencial { float: right; padding: 0 5px; color: #BE0307; }
+.chk_confidencial label { color: #BE0307; }
+.conteudo .textbox_padrao.campo_obrigatorio, .conteudo .textarea_padrao.campo_obrigatorio { margin-right: 4px; margin-left: 0; vertical-align: middle; border: 1px solid #B5CAEA; padding-left: 11px; }
+.painel_padrao { background-image: none; background-color: #fff; padding: 0; margin: 0; }
+.painel_padrao_topo { background-image: url('/img/barra_painel_topo.png'); background-repeat: no-repeat; background-position: center top; padding: 0 0 4px; height: 4px; }
+.conteudo .textbox_padrao { border: 1px solid #B5CAEA; margin-left: 0; margin-right: 4px; }
+.conteudo .textarea_padrao { border: 1px solid #B5CAEA; margin-left: 0; margin-right: 4px; height: 100px; width: 270px; }
+.balao_saiba_mais { float: left; padding-top: 6px; }
+span.texto_exemplo { font-size: 11px; color: #8C8B8B; font-style: italic; }
+label { margin-left: 4px; padding-top:5px;}
+/*label {*/ /*-     text-align: right;     width: 180px; -*/ /* float: none; }*/
+.texto_complementar { margin: 10px 0 15px 0; }
+.container_campo .RadComboBox { margin-left: 0; margin-right: 5px; }
+.label_confidencial { line-height: 18px; }
+.dados_confidenciais { margin: 3px 0; overflow: hidden; }
+.coluna_label { float: left; }
+.cor_texto { color: #1E3260; }
+.rgRow td input type { border-width: 0px; }
+.titulo_sucesso { margin: 20px 0; color: #ef841b; }
+.esquerda_sucesso { width: 50%;float: left;text-align: center;}
+.direita_sucesso { width: 50%;float: left;height: 250px;margin-top: 20px;margin-bottom: 30px;text-align: center;border-left: 1px solid #DDDDCC;margin-left: -2px;}
+.divisoria_sucesso { height: 150px;float: left;position: absolute;left: 50%;top: 36%;border: 1px #DDDDCC solid;}
+.direita_sucesso_inner { -webkit-border-radius: 8px; height:100%; -moz-border-radius: 8px; border-radius: 8px;border: 1px solid #CCCCCC;margin-left: 55px;margin-right: 55px; }
+.webestagios_sucesso {float: left;margin-top: 15px;margin-left: 15px; }
+.direita_sucesso_box_texto {margin-left: 18px;margin-right: 18px;margin-top: 10px;text-align: justify;}
+.webestagios_sucesso_texto { color: #999;font-size: small;font-weight: normal;float: left;margin-top: 12px;margin-right: 35px;}
+.botao_web_estagios { text-align: center;margin-top: 30px;width: 100%;background: no-repeat url('/img/button-we.png');font-size: medium;cursor: pointer; font-weight: bold;color: white;margin-left: 10px;border: none;height: 36px;width:275px}
+.icone_sucesso, .sucesso { text-align: center; }
+.sucesso p { font-size: 14px; color: #5d5e5d; font-size: 16px; }
+.base_redes_btn { position: relative; margin: 0 30px; }
+.base_euquero { height: 62px; /*-- left: 470px;     position: absolute;     top: 12px;--*/ float: right; margin-top: 12px; width: 302px; z-index: 10000000; }
+.bg_redes_sociais { border: 1px dashed #666; width: 573px; height: 84px; background: no-repeat url('/img/img_redessociais.jpg') 10px 35px; }
+.bg_redes_sociais p { margin: 12px 0 0 17px; font-size: 14px; line-height: 100%; text-align: left; }
+.sucesso .texto_destaque { color: #EF841B; font-weight: bold; font-size: 16px; line-height: 500%; }
+.botao_padrao { margin-bottom: 0; }
+.add_pergunta { margin: 20px 0; }
+.gridview_padrao th.rgHeader { font-size: 12px; font-weight: bold; padding: 10px 0; color: Black; }
+.fixo_endereco { margin-left: 652px; margin-top: 8px; position: absolute; }
+.rodape_divulgacao_massa { display: block;padding-bottom: 15px; }
+.divulgacao_massa_titulo { width: 160px;margin-left:35px;margin-right: auto;margin-top:354px;}
+.campoEscolaridade { width: 230px !important; }
+.anunciaVagaIncentivo{bottom:0px;cursor: pointer;right: 270px;top: 204px;position:absolute;width: 259px;height: 350px;  }
+.anunciaVagaIncentivo:hover{opacity: 0.90;}
+.lineAdjust{margin-left:190px!important}
+.fade.in{opacity:1}
+.alert,.alert h4{color:#666}
+.alert{padding:14px 35px 8px 14px;margin-bottom:20px;text-shadow:0 1px 0 rgba(255,255,255,.5);background-color:#fcf8e3;border:1px solid #fbeed5;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;width:265px}
+.fade{opacity:0;-webkit-transition:opacity .15s linear;-moz-transition:opacity .15s linear;-o-transition:opacity .15s linear;transition:opacity .15s linear}
+.alert .close{position:relative;top:-2px;right:-21px;line-height:20px}
+button.close{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance:none}
+.close{float:right;font-size:20px;font-weight:700;line-height:20px;color:#000;text-shadow:0 1px 0 #fff;opacity:.2;filter:alpha(opacity=20)}
+.inputFuncaoPretendida{border:2px solid #ff6a00;border-radius:4px;height:23px;}
+.btComprar{color: white !important; padding: 11px !important;width:244px;}
+.btComprar:hover{background-color:#357ebd;border-color:#357ebd;}

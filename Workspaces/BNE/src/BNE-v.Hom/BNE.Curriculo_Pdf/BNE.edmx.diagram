@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="11ec91472d974783a7d293f9b23f9550" Name="Diagram1">
+        <EntityTypeShape EntityType="BNE_DEVModel.BNE_Curriculo_Origem" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BNE_DEVModel.TAB_Origem" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="BNE_DEVModel.FK_TABORI_BNECOR" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BNE_DEVModel.BNE_Curriculo" Width="1.5" PointX="0.75" PointY="5.125" />
+        <AssociationConnector Association="BNE_DEVModel.FK_BNECUR_BNECOR" />
+        <EntityTypeShape EntityType="BNE_DEVModel.TAB_Cidade" Width="1.5" PointX="6.125" PointY="7.875" />
+        <AssociationConnector Association="BNE_DEVModel.FK_BNETCI_BNECUR" />
+        <AssociationConnector Association="BNE_DEVModel.FK_TABCID_BNECUR" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

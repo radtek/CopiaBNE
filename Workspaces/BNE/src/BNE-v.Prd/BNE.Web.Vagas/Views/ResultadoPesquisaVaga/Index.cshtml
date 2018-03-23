@@ -1,0 +1,123 @@
+﻿@using BNE.Web.Vagas.Code.Helpers.Paginacao
+@model   IPagedList<BNE.Web.Vagas.Models.Vaga>
+
+@section HeadBidder
+{
+    <script src="http://m2d.m2.ai/m2d.bne.js"></script>
+}
+
+@section css
+{
+
+    <link href="~/Content/Vaga.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/custom.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/font-awesome.min.css" rel="stylesheet" />
+}
+@section scripts
+{
+    <script src="~/Scripts/local/Vagas.js"></script>
+    @Scripts.Render("~/bundles/ResultadoVagas")
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            var delay = 1000,
+		        fadeTime = 200;
+            $('.neon:gt(0)').hide();
+            setInterval(function () {
+                $(".neon:first-child").fadeOut(fadeTime).next(".neon").fadeIn(fadeTime).end().appendTo("#bf16-neon")
+            }, delay + fadeTime);
+
+            if (new Date() > new Date("24 Nov 2016 23:59:59") && new Date() < new Date('27 Nov 2016 23:59:59')) {
+                document.getElementById("bannerCampanha-lista").style.display = "none";
+                document.getElementById("black-friday-2016").style.display = "block";
+            }
+            else {
+                document.getElementById("bannerCampanha-lista").style.display = "block";
+            }
+
+        });
+        $("#ordenacaoVagas").change(function () {
+            var url = document.URL;
+            var patt = /ordenacaoVagas=[0-9]/i;
+            if (url.match(patt)) {
+                url = url.replace(patt, "ordenacaoVagas=" + $("#ordenacaoVagas").val());
+            } else {
+                if (url.indexOf('?') > 0) {
+                    url += "&";
+                } else {
+                    url += "?";
+                }
+                url += "ordenacaoVagas=" + $("#ordenacaoVagas").val();
+            }
+            window.location.href = url;
+        });
+    </script>
+}
+
+
+<div style="text-align:center;"  >
+    @{ if (!Request.Browser.IsMobileDevice)
+        {
+            <div id="BNE_JobList1_728x90_desktop"></div>
+        }
+        else
+        {
+            <div id="BNE_Joblist1_320x50_mobile"></div>
+        }
+    }
+</div>
+
+<div class="areadasVagas_row">
+    @*<div class="totalDeRegistros">@ViewBag.TotalDeRegistros</div>*@
+    <div class="areadasVagas_"><h1>@ViewBag.H1  </h1></div>
+    <div class="areadasVagas_options">
+
+        <div class="areadasVagas_legenda">
+            <ul class="Vagas_legenda_">
+                <li>Legenda&nbsp;</li>
+                <li class="Vagas_legenda_vaga"></li>
+                <li class="legenda_vaga">&nbsp;Vagas&nbsp;</li>
+                <li class="Vagas_legenda_oportunidade"></li>
+                <li class="legenda_oportunidade ">
+                    &nbsp; Oportunidades
+                    <a class="tooltipB balao">
+                        <span>
+                            Vagas com o processo seletivo já encerrado,
+                            porém a empresa deseja receber mais
+                            currículos para vagas futuras.
+                        </span>&nbsp;?&nbsp;
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+        <div id="block-filter">
+            <label style="margin-right:5px">Ordernar por:</label>
+            <select id="ordenacaoVagas">
+                <option value="0" @(Request.QueryString["ordenacaoVagas"] == "0" ? "selected=\"selected\"" : "")>Busca Padrão</option>
+                <option value="1" @(Request.QueryString["ordenacaoVagas"] == "1" ? "selected=\"selected\"" : "")>Maior Salário</option>
+                <option value="2" @(Request.QueryString["ordenacaoVagas"] == "2" ? "selected=\"selected\"" : "")>Últimas Vagas</option>
+            </select>
+        </div>
+    </div>
+    
+</div>
+
+<input type="hidden" value="@ViewBag.PerguntarAlerta" id="hdfAlert" />
+@Html.Partial("_ModalAlertaVaga", new BNE.Web.Vagas.Models.AlertaVaga() { Cidade = ViewBag.CidadePesquisada, Funcao = ViewBag.FuncaoPesquisada, IdCidade = ViewBag.IdCidade, IdFuncao = ViewBag.IdFuncao, Uf = ViewBag.Uf })
+@Html.Partial("_ConfirmacaoAlerta")
+
+<div class="pager">
+    @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount, Request.QueryString)
+</div>
+
+@Html.Partial("_Vagas", Model)
+
+<div class="pager">
+    @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount, Request.QueryString)
+</div>
+
+<div id="MaisVagasLINKs" style="text-align:center; padding: 10px 0px 10px 0px; font-size: 11px;">
+    @{Html.RenderAction("CarregarLinksMaisVagas", "MaisVagas", new { cidadeEstado = ViewBag.Cidade, idFuncao = ViewBag.IdFuncao, idCidade = ViewBag.IdCidade });}
+</div>
+

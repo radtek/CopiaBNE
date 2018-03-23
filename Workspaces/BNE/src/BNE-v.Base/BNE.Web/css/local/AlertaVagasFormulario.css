@@ -1,0 +1,301 @@
+﻿body{font-family:Arial,Helvetica,sans-serif !important;}
+.container_alertaVaga
+{
+    background-color:#EEF5F7;
+    background-repeat:no-repeat;
+    border: 1px solid #0C71CC;
+    border-radius:0px;
+    display:block;
+    height:auto;
+    margin-bottom:10px;
+    margin-left:100px;
+    margin-top:40px;
+    width:420px;
+    min-height:320px;
+}
+.controlador_detalhes
+{
+    margin-bottom:25px;
+    margin-top:25px;
+    text-align:center; 
+}
+.label_tituloAlerta
+{
+    color:#1E325F;
+    font-family:Verdana;
+    font-size:25px;
+}
+.controlador_detalhes2
+{
+   margin-left:50px;
+   width:371px;
+   
+}
+.label_textoParagrafo
+{
+    font-size:16px; 
+    text-align:left; 
+    width:320px;
+}
+.detalheLarguraCampoField
+{
+    width:250px;    
+}
+.controlador_detalhes3
+{
+   display:block;
+   margin-left:-66px;
+   margin-top:15px;
+   height:auto;
+}
+
+.GridItems
+{ 
+    clear: both;
+    float: left;
+    height: auto;
+    line-height: 100%;
+    list-style: none outside none;
+    margin-left: 158px;
+    padding: 0 0 0 10px;
+    text-align: left;
+    width: 252px;
+}
+
+.GridItems li
+{
+    background-color: #FFEFBF;  
+    padding: 0 0 0 4px;
+    float: left;
+    margin: 0 2px 2px 0 !important;
+}
+
+.liActive
+{
+    border: 1px solid #0C71CC;
+}
+.liInactive
+{
+    border: 1px solid #FF0000;
+}
+
+.liEsconder
+{
+    display:none;    
+}
+
+.liSimilar
+{
+    background-color:#EEDD82 !important;
+}
+
+.GridItems li a
+{
+    text-decoration:none;
+}
+
+.btn_azul
+{
+    background-image:url('/img/pacote_alertavaga/btn_azulSalvar.png');
+    background-repeat:no-repeat;
+    clear:both;
+    display:inline-block;
+    height:40px;
+    margin-bottom:15px;
+    margin-left:207px;
+    margin-top:10px;
+    width:215px  
+}
+.label_vagaSalvar
+{
+    color: #fff;
+    display:block;
+    font-size:20px;
+    text-shadow:2px 2px #333;
+    text-align:center;
+    padding-top:7px;
+    cursor:pointer;
+}
+.container_avatar
+{
+    display:block;
+    height:380px;
+    margin-left:-150px;
+    margin-top:430px;
+    position:absolute;
+    width:280px;
+}
+.handup{
+    
+    background-repeat:no-repeat;
+    display:block;
+    height:60px;
+    margin-left:532px;
+    margin-top:-466px;
+    position:absolute;
+    width:120px;
+}
+.handupImg1
+{
+    background-image:url('/img/pacote_alertavaga/men_avatarHandUp.png');
+}
+.handupImg2
+{
+    background-image:url('/img/pacote_alertavaga/men_avatarHandUpb.png');
+}
+.body{
+    background-image:url('/img/pacote_alertavaga/men_avatarBody.png');
+    background-repeat:no-repeat;
+    display:block;
+    height:350px;
+    margin-left:662px;
+    margin-top:-447px;
+    position:absolute;
+    width:180px;
+}
+.bodyImg1
+{
+    background-image:url('/img/pacote_alertavaga/men_avatarBody.png');
+}
+.bodyImg2
+{
+    background-image:url('/img/pacote_alertavaga/men_avatarBodyb.png');
+    margin-left: 663px !important;
+}
+
+.handown{
+    background-image:url('/img/pacote_alertavaga/men_avatarHandDown.png');
+    background-repeat:no-repeat;
+    display:block;
+    height:110px;
+    margin-left:659px;
+    margin-top:-228px;
+    position:absolute;
+    width:80px;
+}
+.handown2{
+    background-image:url('/img/pacote_alertavaga/men_avatarHandDownb.png');
+    background-repeat:no-repeat;
+    display:none;
+    height:110px;
+    margin-left:661px;
+    margin-top:-228px;
+    position:absolute;
+    width:80px;
+}
+.balao
+{
+    background-image:url('/img/pacote_alertavaga/baloon_1.png');
+    background-repeat:no-repeat;
+    display:none;
+    height:300px;
+    margin-left: 771px;
+    margin-top: -489px;
+    position:absolute;
+    width:380px;
+}
+.container_baloes
+{
+    display:block;
+    margin-left:0px;
+    margin-top:0px;
+    position:absolute;
+}
+.textoCidade
+{
+    display:none;
+    font-size:16px;
+    height:300px;
+    margin-left:745px;
+    margin-top:0px;
+    position:absolute;
+    width:300px;
+}
+.textoFuncao
+{
+    display:none;
+    font-size:19px;
+    height:300px;
+    margin-left:736px;
+    margin-top:15px;
+    position:absolute;
+    width:300px;
+}
+strong
+{
+color:Red;    
+}
+ 
+.balaoCidade
+{
+    display:none;
+}
+.balaoFuncao{
+    display:none;
+}
+input[type="text"]:focus, textarea:focus {
+    border: 2px solid #FF8000;
+    outline: medium none;
+}
+.chamadaStrong
+{
+font-size:22px;    
+color: #FF8000;
+}
+.modalConfirmacaoAlerta
+{
+     background-image:url('/img/pacote_alertaVaga/img_fundoModal.png');
+     background-repeat:no-repeat; 
+     background-color:#EEEEEE; 
+     height:160px;
+     width:350px;
+}
+.botao_fechar_m
+{ 
+    display:block;
+    margin-left:323px;
+    margin-top:-5px;
+    position:absolute;
+}
+.texto_aviso
+{ 
+    font-size:14px;
+    margin-left:51px;
+    margin-top:40px;
+}
+.btnModalOk
+{ 
+    margin-left:142px;
+    margin-top: 27px;
+}
+.label_alerta_btnOk
+ { background-image: url("/img/pacote_alertaVaga/btnModalok.png");
+   background-repeat: no-repeat; 
+   display: block;
+   font-weight: bold;
+   height: 36px;
+   margin-left: 146px;
+   margin-top: 16px;
+   padding-top: 10px;
+   text-align: center;
+   width: 54px;
+ }
+.conteudo .interna 
+{
+    margin: 35px auto 0 !important; 
+}
+.conteudo .internaSlim
+{
+    margin-top: 35px !important; 
+}
+.linha img  
+{
+    float: none !important;
+    margin-left: 2px !important; 
+    margin-right:2px !important; 
+    cursor:pointer;
+}
+.painel_botoes
+{
+    width: 420px !important;
+}

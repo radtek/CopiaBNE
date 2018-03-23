@@ -1,0 +1,1412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_Copyright" xml:space="preserve">
+    <value>Copyright 2002-2007 ©Telerik  Todos os direitos reservados.</value>
+  </data>
+  <data name="About_Title" xml:space="preserve">
+    <value>RadEditor por Telerik</value>
+  </data>
+  <data name="Common_AddCustomTarget" xml:space="preserve">
+    <value>[adicionar destino personalizado...]</value>
+  </data>
+  <data name="Common_AllowedExtensions" xml:space="preserve">
+    <value>Extensões de arquivo permitidas</value>
+  </data>
+  <data name="Common_Back" xml:space="preserve">
+    <value>Voltar</value>
+  </data>
+  <data name="Common_BackgroundColor" xml:space="preserve">
+    <value>Cor de fundo</value>
+  </data>
+  <data name="Common_BackgroundImage" xml:space="preserve">
+    <value>Imagem de Fundo</value>
+  </data>
+  <data name="Common_BorderColor" xml:space="preserve">
+    <value>Cor da Borda</value>
+  </data>
+  <data name="Common_BorderWidth" xml:space="preserve">
+    <value>Largura da Borda</value>
+  </data>
+  <data name="Common_Bottom" xml:space="preserve">
+    <value>Inferior</value>
+  </data>
+  <data name="Common_bytes" xml:space="preserve">
+    <value>bytes</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Common_CellCss" xml:space="preserve">
+    <value>Célula CSS</value>
+  </data>
+  <data name="Common_ClassID" xml:space="preserve">
+    <value>Especificar ID da Classe</value>
+  </data>
+  <data name="Common_ClassIDText" xml:space="preserve">
+    <value>ID da Classe</value>
+  </data>
+  <data name="Common_Client_AlertExists" xml:space="preserve">
+    <value>Um arquivo com o mesmo nome já existe nesse diretório!</value>
+  </data>
+  <data name="Common_Client_AlertFile" xml:space="preserve">
+    <value>Por favor selecione um arquivo para enviar!</value>
+  </data>
+  <data name="Common_Client_ConfirmDelete" xml:space="preserve">
+    <value>Você tem certeza que deseja excluir o arquivo selecionado? A imagem selecionada pode estar em uso. Se excluída, algumas páginas podem não serem apresentadas corretamente. Pressione "OK" para confirmar a exclusão.</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="Common_ConfirmDelete" xml:space="preserve">
+    <value>Are you sure you want to delete the selected file?
+The selected image may be in use. If deleted, some pages will not be displayed properly.
+Press "OK" to confirm deletion.</value>
+  </data>
+  <data name="Common_ConstrainProportions" xml:space="preserve">
+    <value>Manter proporções?</value>
+  </data>
+  <data name="Common_ControlButtons" xml:space="preserve">
+    <value>Controlar botões</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>Criar</value>
+  </data>
+  <data name="Common_CreateNewFolder" xml:space="preserve">
+    <value>Enter the new folder name</value>
+  </data>
+  <data name="Common_CreateThumbnail" xml:space="preserve">
+    <value>Criar Miniatura</value>
+  </data>
+  <data name="Common_CssClass" xml:space="preserve">
+    <value>Classe CSS</value>
+  </data>
+  <data name="Common_CustomTargets" xml:space="preserve">
+    <value>Destino personalizado</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="Common_DimensionUnit" xml:space="preserve">
+    <value>Unidade de dimensão</value>
+  </data>
+  <data name="Common_FileExists" xml:space="preserve">
+    <value>Um arquivo com o mesmo nome já existe e você optou por não sobrescrevê-lo!</value>
+  </data>
+  <data name="Common_FileListerFilesSummary" xml:space="preserve">
+    <value>Tabela de Arquivos: Arquivos</value>
+  </data>
+  <data name="Common_FileListerHeaderSummary" xml:space="preserve">
+    <value>Tabela de Arquivos: Cabeçalho</value>
+  </data>
+  <data name="Common_Green" xml:space="preserve">
+    <value>Verde</value>
+  </data>
+  <data name="Common_Height" xml:space="preserve">
+    <value>Altura</value>
+  </data>
+  <data name="Common_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Common_ImageAltText" xml:space="preserve">
+    <value>Título (alt)</value>
+  </data>
+  <data name="Common_ImageEditor" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="Common_ImageFieldSet" xml:space="preserve">
+    <value>Propriedades da Imagem</value>
+  </data>
+  <data name="Common_Insert" xml:space="preserve">
+    <value>Inserir</value>
+  </data>
+  <data name="Common_InvalidCharactersInPath" xml:space="preserve">
+    <value>Caractéres inválidos no nome da pasta!.</value>
+  </data>
+  <data name="Common_InvalidFileExtension" xml:space="preserve">
+    <value>O formato do arquivo enviado não é valido. Por favor, forneça um arquivo válido!</value>
+  </data>
+  <data name="Common_InvalidFileSize" xml:space="preserve">
+    <value>O tamanho do arquivo enviado ultrapassada o tamanho máximo permitido.</value>
+  </data>
+  <data name="Common_Kilobytes" xml:space="preserve">
+    <value>KB</value>
+  </data>
+  <data name="Common_Left" xml:space="preserve">
+    <value>Esquerda</value>
+  </data>
+  <data name="Common_LookIn" xml:space="preserve">
+    <value>Procurar em</value>
+  </data>
+  <data name="Common_MaxFileSize" xml:space="preserve">
+    <value>Tamanho máximo permitido</value>
+  </data>
+  <data name="Common_Megabytes" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="Common_MessageCannotWriteToFolder" xml:space="preserve">
+    <value>Não é possível salvar na pasta de destino!</value>
+  </data>
+  <data name="Common_MessageNoValidDimensions" xml:space="preserve">
+    <value>Por favor, forneça dimensões válidas para a imagem</value>
+  </data>
+  <data name="Common_MessageSourceNotLocal" xml:space="preserve">
+    <value>Arquivo de imagem está localizado em outro servidor!</value>
+  </data>
+  <data name="Common_Middle" xml:space="preserve">
+    <value>Centralizado</value>
+  </data>
+  <data name="Common_NewFolder" xml:space="preserve">
+    <value>Nova Pasta</value>
+  </data>
+  <data name="Common_NewImageName" xml:space="preserve">
+    <value>Novo nome para a Imagem</value>
+  </data>
+  <data name="Common_No" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Common_NoColor" xml:space="preserve">
+    <value>Nenhuma cor</value>
+  </data>
+  <data name="Common_None" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+  <data name="Common_NoPermissionsToCreateFolder" xml:space="preserve">
+    <value>A pasta não pôde ser criada devido as permissões de segurança da aplicação. Por favor, contate o administrador.</value>
+  </data>
+  <data name="Common_NoPermissionsToDeleteFile" xml:space="preserve">
+    <value>O arquivo não pôde ser excluído devido as permissões de segurança da aplicação. Por favor, contate o administrador.</value>
+  </data>
+  <data name="Common_NoPermissionsToDeleteFolder" xml:space="preserve">
+    <value>A pasta não pôde ser excluída devido as permissões de segurança da aplicação. Por favor, contate o administrador.</value>
+  </data>
+  <data name="Common_NoUploadedFile" xml:space="preserve">
+    <value>Por favor, selecione um arquivopara enviar!</value>
+  </data>
+  <data name="Common_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Common_Orange" xml:space="preserve">
+    <value>Laranja</value>
+  </data>
+  <data name="Common_OverwriteExisting" xml:space="preserve">
+    <value>Sobrescrever se o arquivo existir?</value>
+  </data>
+  <data name="Common_Paste" xml:space="preserve">
+    <value>Colar</value>
+  </data>
+  <data name="Common_Percent" xml:space="preserve">
+    <value>Por cento</value>
+  </data>
+  <data name="Common_Pixel" xml:space="preserve">
+    <value>Pixel</value>
+  </data>
+  <data name="Common_PresetTargets" xml:space="preserve">
+    <value>Destinos pré-definidos</value>
+  </data>
+  <data name="Common_Preview" xml:space="preserve">
+    <value>Visualizar</value>
+  </data>
+  <data name="Common_Properties" xml:space="preserve">
+    <value>Propriedades</value>
+  </data>
+  <data name="Common_PropertiesPanel" xml:space="preserve">
+    <value>Painel de Propriedades</value>
+  </data>
+  <data name="Common_Red" xml:space="preserve">
+    <value>Vermelho</value>
+  </data>
+  <data name="Common_Refresh" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="Common_Right" xml:space="preserve">
+    <value>Direita</value>
+  </data>
+  <data name="Common_SelectFile" xml:space="preserve">
+    <value>Selecione um arquivo</value>
+  </data>
+  <data name="Common_SortByExt" xml:space="preserve">
+    <value>Extensão</value>
+  </data>
+  <data name="Common_SortByExtTitle" xml:space="preserve">
+    <value>Ordenar por Extensão</value>
+  </data>
+  <data name="Common_SortByFilename" xml:space="preserve">
+    <value>Nome do arquivo</value>
+  </data>
+  <data name="Common_SortByFilenameTitle" xml:space="preserve">
+    <value>Ordenar por Nome do Arquivo</value>
+  </data>
+  <data name="Common_SortBySize" xml:space="preserve">
+    <value>Tamanho</value>
+  </data>
+  <data name="Common_SortBySizeTitle" xml:space="preserve">
+    <value>Ordenar por Tamanho</value>
+  </data>
+  <data name="Common_TableCss" xml:space="preserve">
+    <value>Tabela CSS</value>
+  </data>
+  <data name="Common_Target" xml:space="preserve">
+    <value>Destino</value>
+  </data>
+  <data name="Common_TargetBlank" xml:space="preserve">
+    <value>Nova Janela (_blank)</value>
+  </data>
+  <data name="Common_TargetMedia" xml:space="preserve">
+    <value>Mídia (_media)</value>
+  </data>
+  <data name="Common_TargetParent" xml:space="preserve">
+    <value>Janela Pai (_parent)</value>
+  </data>
+  <data name="Common_TargetSearch" xml:space="preserve">
+    <value>Busca (_search)</value>
+  </data>
+  <data name="Common_TargetSelf" xml:space="preserve">
+    <value>Mesma Janela (_self)</value>
+  </data>
+  <data name="Common_TargetTop" xml:space="preserve">
+    <value>Janela Superior (_top)</value>
+  </data>
+  <data name="Common_Top" xml:space="preserve">
+    <value>Topo</value>
+  </data>
+  <data name="Common_Up" xml:space="preserve">
+    <value>Acima</value>
+  </data>
+  <data name="Common_Upload" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="Common_UploadFile" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="Common_Uploading" xml:space="preserve">
+    <value>Enviando...</value>
+  </data>
+  <data name="Common_Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="Common_UseControlVMessage" xml:space="preserve">
+    <value>Por favor, use CTRL + V para colar abaixo o conteúdo que você gostaria que fosse limpo pelo RadEditor</value>
+  </data>
+  <data name="Common_White" xml:space="preserve">
+    <value>Branco</value>
+  </data>
+  <data name="Common_Width" xml:space="preserve">
+    <value>Largura</value>
+  </data>
+  <data name="Common_Yellow" xml:space="preserve">
+    <value>Amarelo</value>
+  </data>
+  <data name="Common_Yes" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="DocumentManager_DocumentPropertiesLegend" xml:space="preserve">
+    <value>Propriedades do Documento</value>
+  </data>
+  <data name="DocumentManager_Title" xml:space="preserve">
+    <value>Gerenciador de Documentos</value>
+  </data>
+  <data name="DocumentManager_Tooltip" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="FindAndReplace_CaseSensitive" xml:space="preserve">
+    <value>Diferenciar maiúsc./minúsc.</value>
+  </data>
+  <data name="FindAndReplace_Down" xml:space="preserve">
+    <value>Abaixo</value>
+  </data>
+  <data name="FindAndReplace_EntireText" xml:space="preserve">
+    <value>Todo o texto</value>
+  </data>
+  <data name="FindAndReplace_Find" xml:space="preserve">
+    <value>Localizar</value>
+  </data>
+  <data name="FindAndReplace_FindNext" xml:space="preserve">
+    <value>Próximo</value>
+  </data>
+  <data name="FindAndReplace_MatchCase" xml:space="preserve">
+    <value>Coincidir maiúsc./minúsc.</value>
+  </data>
+  <data name="FindAndReplace_MatchWholeWords" xml:space="preserve">
+    <value>Coincidir a palavra inteira</value>
+  </data>
+  <data name="FindAndReplace_Replace" xml:space="preserve">
+    <value>Substituir</value>
+  </data>
+  <data name="FindAndReplace_ReplaceAll" xml:space="preserve">
+    <value>Subst. tudo</value>
+  </data>
+  <data name="FindAndReplace_ReplaceWith" xml:space="preserve">
+    <value>Substituir por</value>
+  </data>
+  <data name="FindAndReplace_Search" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="FindAndReplace_SearchDirection" xml:space="preserve">
+    <value>Direção</value>
+  </data>
+  <data name="FindAndReplace_SearchIn" xml:space="preserve">
+    <value>Buscar em</value>
+  </data>
+  <data name="FindAndReplace_SearchOptions" xml:space="preserve">
+    <value>Opções de Busca</value>
+  </data>
+  <data name="FindAndReplace_SearchText" xml:space="preserve">
+    <value>Localizar</value>
+  </data>
+  <data name="FindAndReplace_Selection" xml:space="preserve">
+    <value>Seleção</value>
+  </data>
+  <data name="FindAndReplace_Title" xml:space="preserve">
+    <value>Localizar e Substituir</value>
+  </data>
+  <data name="FlashManager_AlertClassID" xml:space="preserve">
+    <value>Por favor, forneça uma Class ID!</value>
+  </data>
+  <data name="FlashManager_AlertWidthHeight" xml:space="preserve">
+    <value>Por favor, forneça altura e largura do filme Flash!</value>
+  </data>
+  <data name="FlashManager_Baseline" xml:space="preserve">
+    <value>Linha de base</value>
+  </data>
+  <data name="FlashManager_CenterBottom" xml:space="preserve">
+    <value>Parte inferior central</value>
+  </data>
+  <data name="FlashManager_CenterCenter" xml:space="preserve">
+    <value>Centralizado</value>
+  </data>
+  <data name="FlashManager_CenterTop" xml:space="preserve">
+    <value>Parte superior central</value>
+  </data>
+  <data name="FlashManager_Custom" xml:space="preserve">
+    <value>Personalizado</value>
+  </data>
+  <data name="FlashManager_FlashAlign" xml:space="preserve">
+    <value>Alinhamento do Flash</value>
+  </data>
+  <data name="FlashManager_FlashMenu" xml:space="preserve">
+    <value>Menu do Flash</value>
+  </data>
+  <data name="FlashManager_FlashPropertiesLegend" xml:space="preserve">
+    <value>Propriedades do Filme Flash</value>
+  </data>
+  <data name="FlashManager_High" xml:space="preserve">
+    <value>Alta</value>
+  </data>
+  <data name="FlashManager_HtmlAlign" xml:space="preserve">
+    <value>Alinhamento HTML</value>
+  </data>
+  <data name="FlashManager_Left" xml:space="preserve">
+    <value>Esquerda</value>
+  </data>
+  <data name="FlashManager_LeftBottom" xml:space="preserve">
+    <value>Parte inferior Esquerda</value>
+  </data>
+  <data name="FlashManager_LeftCenter" xml:space="preserve">
+    <value>Parte intermediária esquerda</value>
+  </data>
+  <data name="FlashManager_LeftTop" xml:space="preserve">
+    <value>Parte superior esquerda</value>
+  </data>
+  <data name="FlashManager_Loop" xml:space="preserve">
+    <value>Loop</value>
+  </data>
+  <data name="FlashManager_Low" xml:space="preserve">
+    <value>Baixa</value>
+  </data>
+  <data name="FlashManager_Medium" xml:space="preserve">
+    <value>Média</value>
+  </data>
+  <data name="FlashManager_Middle" xml:space="preserve">
+    <value>Centralizado</value>
+  </data>
+  <data name="FlashManager_Play" xml:space="preserve">
+    <value>Executar</value>
+  </data>
+  <data name="FlashManager_Quality" xml:space="preserve">
+    <value>Qualidade</value>
+  </data>
+  <data name="FlashManager_Right" xml:space="preserve">
+    <value>Direita</value>
+  </data>
+  <data name="FlashManager_RightBottom" xml:space="preserve">
+    <value>Parte inferior direita</value>
+  </data>
+  <data name="FlashManager_RightCenter" xml:space="preserve">
+    <value>Parte intermediária direita</value>
+  </data>
+  <data name="FlashManager_RightTop" xml:space="preserve">
+    <value>Parte superior direita</value>
+  </data>
+  <data name="FlashManager_TextTop" xml:space="preserve">
+    <value>Acima do texto</value>
+  </data>
+  <data name="FlashManager_Title" xml:space="preserve">
+    <value>Gerenciador de Arquivos Flash</value>
+  </data>
+  <data name="FlashManager_Top" xml:space="preserve">
+    <value>Topo</value>
+  </data>
+  <data name="FlashManager_Transparent" xml:space="preserve">
+    <value>Transparente</value>
+  </data>
+  <data name="FormatCodeBlock_DisplayLineNumbers" xml:space="preserve">
+    <value>Mostrar númeração das linhas</value>
+  </data>
+  <data name="FormatCodeBlock_LanguageCS" xml:space="preserve">
+    <value>C#</value>
+  </data>
+  <data name="FormatCodeBlock_LanguageCss" xml:space="preserve">
+    <value>CSS</value>
+  </data>
+  <data name="FormatCodeBlock_LanguageDelphi" xml:space="preserve">
+    <value>Delphi</value>
+  </data>
+  <data name="FormatCodeBlock_LanguageJavascript" xml:space="preserve">
+    <value>Javascript</value>
+  </data>
+  <data name="FormatCodeBlock_LanguagePhp" xml:space="preserve">
+    <value>Php</value>
+  </data>
+  <data name="FormatCodeBlock_LanguagePython" xml:space="preserve">
+    <value>Python</value>
+  </data>
+  <data name="FormatCodeBlock_LanguageSQL" xml:space="preserve">
+    <value>SQL</value>
+  </data>
+  <data name="FormatCodeBlock_LanguageVB" xml:space="preserve">
+    <value>VB</value>
+  </data>
+  <data name="FormatCodeBlock_LanguageXml" xml:space="preserve">
+    <value>Marcação - (x)HTML, XML, ASPX, ...</value>
+  </data>
+  <data name="FormatCodeBlock_MaxSnippetHeight" xml:space="preserve">
+    <value>Altura Máx. do Código</value>
+  </data>
+  <data name="FormatCodeBlock_MaxSnippetWidth" xml:space="preserve">
+    <value>Largura Máx. do Código</value>
+  </data>
+  <data name="FormatCodeBlock_PasteSourceCode" xml:space="preserve">
+    <value>Colar código fonte abaixo</value>
+  </data>
+  <data name="FormatCodeBlock_SelectLanguage" xml:space="preserve">
+    <value>Selecione a Linguagem</value>
+  </data>
+  <data name="ImageEditor_Crop" xml:space="preserve">
+    <value>Aparar</value>
+  </data>
+  <data name="ImageEditor_DisableCrop" xml:space="preserve">
+    <value>Desabilitar Aparar</value>
+  </data>
+  <data name="ImageEditor_EnableCrop" xml:space="preserve">
+    <value>Habilitar Aparar</value>
+  </data>
+  <data name="ImageEditor_Flip" xml:space="preserve">
+    <value>Inverter</value>
+  </data>
+  <data name="ImageEditor_FlipBoth" xml:space="preserve">
+    <value>Inverter Hor. e Vert.</value>
+  </data>
+  <data name="ImageEditor_FlipHorizontal" xml:space="preserve">
+    <value>Inverter Horizontalmente</value>
+  </data>
+  <data name="ImageEditor_FlipVertical" xml:space="preserve">
+    <value>Inverter Verticalmente</value>
+  </data>
+  <data name="ImageEditor_Opacity" xml:space="preserve">
+    <value>Opacidade</value>
+  </data>
+  <data name="ImageEditor_Resize" xml:space="preserve">
+    <value>Redimensionar</value>
+  </data>
+  <data name="ImageEditor_RestoreImage" xml:space="preserve">
+    <value>Restaurar imagem</value>
+  </data>
+  <data name="ImageEditor_Rotate" xml:space="preserve">
+    <value>Rotacionar</value>
+  </data>
+  <data name="ImageEditor_Save" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="ImageEditor_SaveAs" xml:space="preserve">
+    <value>Salvar como...</value>
+  </data>
+  <data name="ImageManager_ActualSize" xml:space="preserve">
+    <value>Tamanho atual</value>
+  </data>
+  <data name="ImageManager_AlertDimensions" xml:space="preserve">
+    <value>Por favor, especifique a altura e largura para a miniatura.</value>
+  </data>
+  <data name="ImageManager_AlertHeight" xml:space="preserve">
+    <value>Por favor, especifique uma altura válida para a imagem.</value>
+  </data>
+  <data name="ImageManager_AlertWidth" xml:space="preserve">
+    <value>Por favor, especifique uma largura válida para a imagem</value>
+  </data>
+  <data name="ImageManager_BestFit" xml:space="preserve">
+    <value>Melhor tamanho</value>
+  </data>
+  <data name="ImageManager_Title" xml:space="preserve">
+    <value>Gerenciador de Imagem</value>
+  </data>
+  <data name="ImageManager_ZoomIn" xml:space="preserve">
+    <value>Aumentar Zoom</value>
+  </data>
+  <data name="ImageManager_ZoomOut" xml:space="preserve">
+    <value>Dimunir Zoom</value>
+  </data>
+  <data name="ImageMap_AreaFieldSet" xml:space="preserve">
+    <value>Propriedades da Área Selecionada</value>
+  </data>
+  <data name="ImageMap_ChooseImage" xml:space="preserve">
+    <value>Selecione a Imagem</value>
+  </data>
+  <data name="ImageMap_Circle" xml:space="preserve">
+    <value>Círculo</value>
+  </data>
+  <data name="ImageMap_Client_AlertDeleteAllAreas" xml:space="preserve">
+    <value>Tem certeza que deseja excluir TODAS as Áreas.</value>
+  </data>
+  <data name="ImageMap_Client_AlertDeleteArea" xml:space="preserve">
+    <value>Tem certeza que deseja excluir essa Área.</value>
+  </data>
+  <data name="ImageMap_Client_AlertInvalidAreaProperties" xml:space="preserve">
+    <value>Propriedades Inválidas para a Área. Por favor digite a URL</value>
+  </data>
+  <data name="ImageMap_Client_AlertInvalidProperties" xml:space="preserve">
+    <value>Propriedades inválidas!</value>
+  </data>
+  <data name="ImageMap_Client_AlertWrongAreaDimensions" xml:space="preserve">
+    <value>Dimensões de área incorretas foram encontradas. Ignorando essa área.</value>
+  </data>
+  <data name="ImageMap_Comment" xml:space="preserve">
+    <value>Comentar</value>
+  </data>
+  <data name="ImageMap_DefineAreaPropertiesLegend" xml:space="preserve">
+    <value>Definir Propriedades da Área</value>
+  </data>
+  <data name="ImageMap_HowToAdd" xml:space="preserve">
+    <value>Você pode clicar e arrastar sobre a imagem para criar uma nova área.</value>
+  </data>
+  <data name="ImageMap_ImageSrc" xml:space="preserve">
+    <value>Localização da imagem</value>
+  </data>
+  <data name="ImageMap_NewArea" xml:space="preserve">
+    <value>Nova Área</value>
+  </data>
+  <data name="ImageMap_Polygon" xml:space="preserve">
+    <value>Polígono</value>
+  </data>
+  <data name="ImageMap_Rectangle" xml:space="preserve">
+    <value>Retângulo</value>
+  </data>
+  <data name="ImageMap_RemoveAllAreas" xml:space="preserve">
+    <value>Limpar</value>
+  </data>
+  <data name="ImageMap_RemoveArea" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="ImageMap_SelectAreaShape" xml:space="preserve">
+    <value>Selecionar forma da Área</value>
+  </data>
+  <data name="ImageMap_SelectImage" xml:space="preserve">
+    <value>Por favor selecione uma imagem para criar um Mapa de Imagem.</value>
+  </data>
+  <data name="ImageMap_ShapeAlt" xml:space="preserve">
+    <value>Arraste o canto inferior direito para redimensionar a Área.</value>
+  </data>
+  <data name="ImageMap_UpdateArea" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="LinkManager_AnchorTab" xml:space="preserve">
+    <value>Âncora</value>
+  </data>
+  <data name="LinkManager_EmailTab" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="LinkManager_ExistingAnchor" xml:space="preserve">
+    <value>Âncora existente</value>
+  </data>
+  <data name="LinkManager_HyperlinkTab" xml:space="preserve">
+    <value>Hyperlink</value>
+  </data>
+  <data name="LinkManager_LinkAddress" xml:space="preserve">
+    <value>Endereço</value>
+  </data>
+  <data name="LinkManager_LinkName" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="LinkManager_LinkSubject" xml:space="preserve">
+    <value>Assunto</value>
+  </data>
+  <data name="LinkManager_LinkTarget" xml:space="preserve">
+    <value>Destino</value>
+  </data>
+  <data name="LinkManager_LinkText" xml:space="preserve">
+    <value>Texto do Link</value>
+  </data>
+  <data name="LinkManager_LinkTooltip" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="LinkManager_LinkType" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="LinkManager_LinkUrl" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="LinkManager_Other" xml:space="preserve">
+    <value>outro</value>
+  </data>
+  <data name="LinkManager_Title" xml:space="preserve">
+    <value>Gerenciador de Hyperlinks</value>
+  </data>
+  <data name="MediaManager_AlertValue" xml:space="preserve">
+    <value>Por favor, forneça um valor válido para a propriedade!</value>
+  </data>
+  <data name="MediaManager_AlertWidthHeight" xml:space="preserve">
+    <value>Por favor, forneça a altura e largura para o arquivo de Mídia!</value>
+  </data>
+  <data name="MediaManager_Align" xml:space="preserve">
+    <value>Alinhar</value>
+  </data>
+  <data name="MediaManager_AllowChangeDisplaySize" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o tamanho da visualização pode ser alterado.</value>
+  </data>
+  <data name="MediaManager_AllowScan" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se SCANNING está habilitado.</value>
+  </data>
+  <data name="MediaManager_AnimationAtStart" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se uma Animação roda antes da primeira imagem ser apresentada.</value>
+  </data>
+  <data name="MediaManager_Arrowhourglass" xml:space="preserve">
+    <value>Seta padrão e Ampulheta pequena</value>
+  </data>
+  <data name="MediaManager_AudioStream" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe o número do STREAM do STREAM de áudio em execução.</value>
+  </data>
+  <data name="MediaManager_AutoRewind" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle automaticamente retorna ao início da mídia após o término ou apenas pára.</value>
+  </data>
+  <data name="MediaManager_AutoSize" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle automaticamente se redimensiona para acomodar a mídia no tamanho especificado por &lt;B&gt;DisplaySize&lt;/B&gt;.</value>
+  </data>
+  <data name="MediaManager_AutoStart" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle deve iniciar a execução da mídia automaticamente.</value>
+  </data>
+  <data name="MediaManager_Balance" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando o controle de balanço de áudio da mídia.</value>
+  </data>
+  <data name="MediaManager_Baseline" xml:space="preserve">
+    <value>Linha de base</value>
+  </data>
+  <data name="MediaManager_Black" xml:space="preserve">
+    <value>Preto</value>
+  </data>
+  <data name="MediaManager_Blue" xml:space="preserve">
+    <value>Azul</value>
+  </data>
+  <data name="MediaManager_Bottom" xml:space="preserve">
+    <value>Inferior</value>
+  </data>
+  <data name="MediaManager_Caption2" xml:space="preserve">
+    <value>Legenda2</value>
+  </data>
+  <data name="MediaManager_CCActive" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se &lt;i&gt;closed caption&lt;/i&gt; está ligado ou desligado.</value>
+  </data>
+  <data name="MediaManager_ClickToPlay" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o usuário pode controlar a execução da mídia clicando na mesma.</value>
+  </data>
+  <data name="MediaManager_ColorKey" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe a Chave de Cor sendo utilizada peloa rerodutção do DVD.</value>
+  </data>
+  <data name="MediaManager_Crosshair" xml:space="preserve">
+    <value>Mira</value>
+  </data>
+  <data name="MediaManager_CurrentAngle" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando o ângulo atual da câmera.</value>
+  </data>
+  <data name="MediaManager_CurrentAudioStream" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando o STREAM de áudio atual.</value>
+  </data>
+  <data name="MediaManager_CurrentCCService" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando o serviço de &lt;i&gt;closed caption&lt;/i&gt;.</value>
+  </data>
+  <data name="MediaManager_CurrentMarker" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando o número do marcador.</value>
+  </data>
+  <data name="MediaManager_CurrentPosition" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se a posição atual da mídia (em segundos).</value>
+  </data>
+  <data name="MediaManager_CurrentSubpictureStream" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando o STREAM das subimagens.</value>
+  </data>
+  <data name="MediaManager_CursorType" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o tipo de cursor.</value>
+  </data>
+  <data name="MediaManager_Custom" xml:space="preserve">
+    <value>Personalizado</value>
+  </data>
+  <data name="MediaManager_Customh" xml:space="preserve">
+    <value>Personalizado -</value>
+  </data>
+  <data name="MediaManager_DefaultCaption1" xml:space="preserve">
+    <value>Padrão. Legenda1</value>
+  </data>
+  <data name="MediaManager_DefaultFrame" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando o quadro HTTP de destino padrão.</value>
+  </data>
+  <data name="MediaManager_Description" xml:space="preserve">
+    <value>&lt;br /&gt;&lt;b&gt;Descrição: &lt;/b&gt;</value>
+  </data>
+  <data name="MediaManager_DesignTime" xml:space="preserve">
+    <value>Tamanho especificado em tempo real</value>
+  </data>
+  <data name="MediaManager_DisplayBackColor" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando a cor de fundo do DISPLAY do controle.</value>
+  </data>
+  <data name="MediaManager_DisplayForeColor" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando a cor do DISPLAY do controle.</value>
+  </data>
+  <data name="MediaManager_DisplayMode" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se a barra de status mostra a posição atual em segundos (YES) ou Quadros (NO).</value>
+  </data>
+  <data name="MediaManager_DisplaySize" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe o tamanho da janela de exibição.</value>
+  </data>
+  <data name="MediaManager_DoublepointedNESW" xml:space="preserve">
+    <value>Seta NE-SO</value>
+  </data>
+  <data name="MediaManager_DoublepointedNS" xml:space="preserve">
+    <value>Seta N-S</value>
+  </data>
+  <data name="MediaManager_DoublepointedNWSE" xml:space="preserve">
+    <value>Seta NO-SE</value>
+  </data>
+  <data name="MediaManager_DoublepointedWE" xml:space="preserve">
+    <value>Seta O-L</value>
+  </data>
+  <data name="MediaManager_DoubleSourceImage" xml:space="preserve">
+    <value>Duplicar as dimensões da imagem.</value>
+  </data>
+  <data name="MediaManager_EnableContextMenu" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o menu de contexto aparece quando o usuário clica com o botão direito.</value>
+  </data>
+  <data name="MediaManager_Enabled" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle está habilitado.</value>
+  </data>
+  <data name="MediaManager_EnableFullScreenControls" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle é apresentado em tela cheia.</value>
+  </data>
+  <data name="MediaManager_EnablePositionControls" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se os controles de posicionamento são apresentados na barra de controle.</value>
+  </data>
+  <data name="MediaManager_EnableTracker" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle de faixa está habilitado.</value>
+  </data>
+  <data name="MediaManager_EntireScreen" xml:space="preserve">
+    <value>Maximizar em Tela Cheia</value>
+  </data>
+  <data name="MediaManager_ExtendedDataServices" xml:space="preserve">
+    <value>Extended Data Services (XDS)</value>
+  </data>
+  <data name="MediaManager_Fourpointedarrow" xml:space="preserve">
+    <value>Seta de Quatro pontas</value>
+  </data>
+  <data name="MediaManager_Green" xml:space="preserve">
+    <value>Verde</value>
+  </data>
+  <data name="MediaManager_HalfScreen" xml:space="preserve">
+    <value>Diminuir tela pela metade</value>
+  </data>
+  <data name="MediaManager_HalfSourceImage" xml:space="preserve">
+    <value>L e A são metade da imagem.</value>
+  </data>
+  <data name="MediaManager_Handpointing" xml:space="preserve">
+    <value>Mão com apontamento para o índice</value>
+  </data>
+  <data name="MediaManager_Hidden" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle é visível no navegador.</value>
+  </data>
+  <data name="MediaManager_Hourglass" xml:space="preserve">
+    <value>Ampulheta</value>
+  </data>
+  <data name="MediaManager_InvokeURLs" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle deve automaticamente abrir URLs no navegador.</value>
+  </data>
+  <data name="MediaManager_Language" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando o valor da cultura/localização atual.</value>
+  </data>
+  <data name="MediaManager_MediaPropertiesLegend" xml:space="preserve">
+    <value>Propriedades da Mídia</value>
+  </data>
+  <data name="MediaManager_Middle" xml:space="preserve">
+    <value>Centralizado</value>
+  </data>
+  <data name="MediaManager_Mute" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle está SEM SOM.</value>
+  </data>
+  <data name="MediaManager_NA" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="MediaManager_None" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+  <data name="MediaManager_Nosubpicturestream" xml:space="preserve">
+    <value>Não há STREAM de subimagens</value>
+  </data>
+  <data name="MediaManager_Orange" xml:space="preserve">
+    <value>Laranja</value>
+  </data>
+  <data name="MediaManager_PlayCount" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe o número de vezes que a mídia executa</value>
+  </data>
+  <data name="MediaManager_PreviewMode" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle está em modo de Visualização (preview mode).</value>
+  </data>
+  <data name="MediaManager_QuarterScreen" xml:space="preserve">
+    <value>Um quarto do tamanho da tela</value>
+  </data>
+  <data name="MediaManager_Rate" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando a classificação da mídia.</value>
+  </data>
+  <data name="MediaManager_Red" xml:space="preserve">
+    <value>Vermelho</value>
+  </data>
+  <data name="MediaManager_Right" xml:space="preserve">
+    <value>Direita</value>
+  </data>
+  <data name="MediaManager_Samesize" xml:space="preserve">
+    <value>Mesmo tamanho da imagem original</value>
+  </data>
+  <data name="MediaManager_SelectionEnd" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe o tempo em que a reprodução da mídia irá parar. Esta propriedade não pode ser recebida até que &lt;b&gt;ReadyState&lt;/b&gt; tenha o valor 4.</value>
+  </data>
+  <data name="MediaManager_SelectionStart" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe a posição do tempo  em que a mídia irá iniciar a reprodução.</value>
+  </data>
+  <data name="MediaManager_SelectProperty" xml:space="preserve">
+    <value>Selecionar Propriedade</value>
+  </data>
+  <data name="MediaManager_SendErrorEvents" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle deve lançar eventos de erro.</value>
+  </data>
+  <data name="MediaManager_SendKeyboardEvents" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle deve lançar eventos de teclado.</value>
+  </data>
+  <data name="MediaManager_SendMouseClickEvents" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle deve lançar eventos de clique do mouse.</value>
+  </data>
+  <data name="MediaManager_SendMouseMoveEvents" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle deve lançar eventos de movimentação do mouse.</value>
+  </data>
+  <data name="MediaManager_SendOpenStateChangeEvents" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle deve lançar eventos de alteração do estado da abertura.</value>
+  </data>
+  <data name="MediaManager_SendPlayStateChangeEvents" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle deve lançar eventos de alteração do estado da reprodução.</value>
+  </data>
+  <data name="MediaManager_SendWarningEvents" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle deve lançar eventos de alerta.</value>
+  </data>
+  <data name="MediaManager_ShowAudioControls" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se os controles de áudio aparecem na barra de controle.</value>
+  </data>
+  <data name="MediaManager_ShowCaptioning" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se a área de CLOSED CAPTION está visível e se CLOSED CAPTION está habilitado.</value>
+  </data>
+  <data name="MediaManager_ShowControls" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se a barra de controle está visível.</value>
+  </data>
+  <data name="MediaManager_ShowDisplay" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o painel de reprodução está visível.</value>
+  </data>
+  <data name="MediaManager_ShowGotoBar" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se a barra IR PARA está visível.</value>
+  </data>
+  <data name="MediaManager_ShowPositionControls" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se os controles de reprodução aparecem na barra de controle.</value>
+  </data>
+  <data name="MediaManager_ShowStatusBar" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se a barra de status está visível.</value>
+  </data>
+  <data name="MediaManager_ShowTracker" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se a barra de controle de faixa está visível.</value>
+  </data>
+  <data name="MediaManager_SixteenthScreen" xml:space="preserve">
+    <value>Um sexto do tamanho da tela</value>
+  </data>
+  <data name="MediaManager_SlashedCircle" xml:space="preserve">
+    <value>Círculo cortado</value>
+  </data>
+  <data name="MediaManager_Standardarrow" xml:space="preserve">
+    <value>Seta padrão</value>
+  </data>
+  <data name="MediaManager_Streamisvalid" xml:space="preserve">
+    <value>O STREAM é válido.</value>
+  </data>
+  <data name="MediaManager_SubpictureOn" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se subimagens são exibidas.</value>
+  </data>
+  <data name="MediaManager_Text1" xml:space="preserve">
+    <value>Texto1</value>
+  </data>
+  <data name="MediaManager_Text2" xml:space="preserve">
+    <value>Texto2</value>
+  </data>
+  <data name="MediaManager_TextIbeam" xml:space="preserve">
+    <value>Texto I-beam</value>
+  </data>
+  <data name="MediaManager_TextTop" xml:space="preserve">
+    <value>TextTop</value>
+  </data>
+  <data name="MediaManager_Title" xml:space="preserve">
+    <value>Gerenciador de Mídia</value>
+  </data>
+  <data name="MediaManager_TransparentAtStart" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o controle é transparente antes do início da reprodução e após a reprodução.</value>
+  </data>
+  <data name="MediaManager_ValidateAudio" xml:space="preserve">
+    <value>Por favor, digite um valor entre 0 e 7 indicando o STREAM de áudio atual ou 0xFFFFFFFF se nenhum STREAM está selecionado.</value>
+  </data>
+  <data name="MediaManager_ValidateLCID" xml:space="preserve">
+    <value>Por favor, especifique um valor númerico que corresponda ao LCID.</value>
+  </data>
+  <data name="MediaManager_ValidateNumber" xml:space="preserve">
+    <value>Por favor, digite somente valores numéricos.</value>
+  </data>
+  <data name="MediaManager_ValidateNumber10" xml:space="preserve">
+    <value>Por favor, digite um valor entre –10.00 e 10.00.</value>
+  </data>
+  <data name="MediaManager_ValidateNumber10000" xml:space="preserve">
+    <value>Por favor, digite um valor entre  –10,000 e 10,000.</value>
+  </data>
+  <data name="MediaManager_ValidateNumberHex" xml:space="preserve">
+    <value>Por favor, especifique um valor em HEXADECIMAL.</value>
+  </data>
+  <data name="MediaManager_Value" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="MediaManager_Verticalarrow" xml:space="preserve">
+    <value>Seta Vertical</value>
+  </data>
+  <data name="MediaManager_VideoBorder3D" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe um valor indicando se o efeito de borda 3D da mídia está habilitada.</value>
+  </data>
+  <data name="MediaManager_VideoBorderColor" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe a cor da borda da mídia.</value>
+  </data>
+  <data name="MediaManager_VideoBorderWidth" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe a largura da borda da mídia em pixels.</value>
+  </data>
+  <data name="MediaManager_Volume" xml:space="preserve">
+    <value>Esta propriedade especifica ou recebe o volume da mídia.</value>
+  </data>
+  <data name="MediaManager_White" xml:space="preserve">
+    <value>Branco</value>
+  </data>
+  <data name="MediaManager_Yellow" xml:space="preserve">
+    <value>Amarelo</value>
+  </data>
+  <data name="PageProperties_BackColor" xml:space="preserve">
+    <value>Cor de fundo</value>
+  </data>
+  <data name="PageProperties_BaseLocation" xml:space="preserve">
+    <value>Localização da base</value>
+  </data>
+  <data name="PageProperties_BodyAttributes" xml:space="preserve">
+    <value>Atributos do Corpo</value>
+  </data>
+  <data name="PageProperties_BottomMargin" xml:space="preserve">
+    <value>Margem Inferior</value>
+  </data>
+  <data name="PageProperties_ClassName" xml:space="preserve">
+    <value>Nome da Classe</value>
+  </data>
+  <data name="PageProperties_Description" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="PageProperties_Keywords" xml:space="preserve">
+    <value>Palavras chaves</value>
+  </data>
+  <data name="PageProperties_LeftMargin" xml:space="preserve">
+    <value>Margem esquerda</value>
+  </data>
+  <data name="PageProperties_PageAttributes" xml:space="preserve">
+    <value>Atributos da Página</value>
+  </data>
+  <data name="PageProperties_PageTitle" xml:space="preserve">
+    <value>Título da Página</value>
+  </data>
+  <data name="PageProperties_RightMargin" xml:space="preserve">
+    <value>Margem Direita</value>
+  </data>
+  <data name="PageProperties_TopMargin" xml:space="preserve">
+    <value>Margem Superior</value>
+  </data>
+  <data name="ReservedResource" xml:space="preserve">
+    <value>Please, do not delete this string. RadEditor needs it to determine if an external resource file is present in App_GlobalResources.</value>
+  </data>
+  <data name="SetImageProperties_Constrain" xml:space="preserve">
+    <value>Restrição</value>
+  </data>
+  <data name="SetImageProperties_HorizontalSpacing" xml:space="preserve">
+    <value>Espaçamento Horizontal</value>
+  </data>
+  <data name="SetImageProperties_ImageAlignment" xml:space="preserve">
+    <value>Alinhamento da Imagem</value>
+  </data>
+  <data name="SetImageProperties_ImageSrc" xml:space="preserve">
+    <value>Localização da Imagem</value>
+  </data>
+  <data name="SetImageProperties_LongDescription" xml:space="preserve">
+    <value>Descrição Longa</value>
+  </data>
+  <data name="SetImageProperties_Title" xml:space="preserve">
+    <value>Propriedades da Imagem</value>
+  </data>
+  <data name="SetImageProperties_VerticalSpacing" xml:space="preserve">
+    <value>Espaçamento Vertical</value>
+  </data>
+  <data name="TableWizard_AddCustomColor" xml:space="preserve">
+    <value>Adicionar Cor Personalizada...</value>
+  </data>
+  <data name="TableWizard_AddHexColor" xml:space="preserve">
+    <value>Adicionar Cor Hexadecimal...</value>
+  </data>
+  <data name="TableWizard_Additional" xml:space="preserve">
+    <value>Adicional</value>
+  </data>
+  <data name="TableWizard_Alignment" xml:space="preserve">
+    <value>Alinhamento</value>
+  </data>
+  <data name="TableWizard_AllFourSides" xml:space="preserve">
+    <value>Todos os lados</value>
+  </data>
+  <data name="TableWizard_AllRowsAndColomns" xml:space="preserve">
+    <value>Todas linhas e colunas</value>
+  </data>
+  <data name="TableWizard_AssociateCellsWithHeaders" xml:space="preserve">
+    <value>Associar células com cabeçalho</value>
+  </data>
+  <data name="TableWizard_Background" xml:space="preserve">
+    <value>Plano de fundo</value>
+  </data>
+  <data name="TableWizard_Baseline" xml:space="preserve">
+    <value>Linha de Base</value>
+  </data>
+  <data name="TableWizard_Betweenall" xml:space="preserve">
+    <value>Entre todas as linhas e colunas</value>
+  </data>
+  <data name="TableWizard_BetweenColumns" xml:space="preserve">
+    <value>Entre colunas</value>
+  </data>
+  <data name="TableWizard_Betweengroup" xml:space="preserve">
+    <value>Entre Linha e grupo de Colunas</value>
+  </data>
+  <data name="TableWizard_BetweenRows" xml:space="preserve">
+    <value>Entre linhas</value>
+  </data>
+  <data name="TableWizard_Black" xml:space="preserve">
+    <value>Preto</value>
+  </data>
+  <data name="TableWizard_Blue" xml:space="preserve">
+    <value>Azul</value>
+  </data>
+  <data name="TableWizard_Border" xml:space="preserve">
+    <value>Borda</value>
+  </data>
+  <data name="TableWizard_Bottom" xml:space="preserve">
+    <value>Inferior</value>
+  </data>
+  <data name="TableWizard_BottomSide" xml:space="preserve">
+    <value>Somente inferior</value>
+  </data>
+  <data name="TableWizard_Caption" xml:space="preserve">
+    <value>Legenda</value>
+  </data>
+  <data name="TableWizard_CaptionAlign" xml:space="preserve">
+    <value>Alinhamento da Legenda</value>
+  </data>
+  <data name="TableWizard_CellPadding" xml:space="preserve">
+    <value>Enchimento</value>
+  </data>
+  <data name="TableWizard_CellSpacing" xml:space="preserve">
+    <value>Espaçamento</value>
+  </data>
+  <data name="TableWizard_Center" xml:space="preserve">
+    <value>Centralizado</value>
+  </data>
+  <data name="TableWizard_Columns" xml:space="preserve">
+    <value>Colunas</value>
+  </data>
+  <data name="TableWizard_ColumnSettings" xml:space="preserve">
+    <value>Número de Coluna e Mesclagem</value>
+  </data>
+  <data name="TableWizard_ColumnSpan" xml:space="preserve">
+    <value>Mesclagem de Colunas</value>
+  </data>
+  <data name="TableWizard_Content" xml:space="preserve">
+    <value>Conteúdo</value>
+  </data>
+  <data name="TableWizard_ContentAlignment" xml:space="preserve">
+    <value>Alinhamento do Conteúdo</value>
+  </data>
+  <data name="TableWizard_Custom" xml:space="preserve">
+    <value>Personalizado</value>
+  </data>
+  <data name="TableWizard_Customh" xml:space="preserve">
+    <value>Personalizado -</value>
+  </data>
+  <data name="TableWizard_Dimensions" xml:space="preserve">
+    <value>Dimensões</value>
+  </data>
+  <data name="TableWizard_Frame" xml:space="preserve">
+    <value>Quadro</value>
+  </data>
+  <data name="TableWizard_Green" xml:space="preserve">
+    <value>Verde</value>
+  </data>
+  <data name="TableWizard_HeadingColumns" xml:space="preserve">
+    <value>Colunas de Cabeçalho</value>
+  </data>
+  <data name="TableWizard_HeadingRows" xml:space="preserve">
+    <value>Linhas de Cabeçalho</value>
+  </data>
+  <data name="TableWizard_HeadingsLabel" xml:space="preserve">
+    <value>Cabeçalho</value>
+  </data>
+  <data name="TableWizard_Horizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="TableWizard_InvalidCellHeight" xml:space="preserve">
+    <value>Altura inválida para a Célula.</value>
+  </data>
+  <data name="TableWizard_InvalidCellWidth" xml:space="preserve">
+    <value>Largura inválida para a Célula.</value>
+  </data>
+  <data name="TableWizard_InvalidTableHeight" xml:space="preserve">
+    <value>Altura inválida para a Tabela.</value>
+  </data>
+  <data name="TableWizard_InvalidTableWidth" xml:space="preserve">
+    <value>Largura inválida para a Tabela.</value>
+  </data>
+  <data name="TableWizard_Layout" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="TableWizard_LeftAndRightSide" xml:space="preserve">
+    <value>Somente lateral esquerda e direita</value>
+  </data>
+  <data name="TableWizard_LeftSide" xml:space="preserve">
+    <value>Lateral Esquerda</value>
+  </data>
+  <data name="TableWizard_Middle" xml:space="preserve">
+    <value>Centralizado</value>
+  </data>
+  <data name="TableWizard_NoBorders" xml:space="preserve">
+    <value>Sem Bordas</value>
+  </data>
+  <data name="TableWizard_NoInteriorBorders" xml:space="preserve">
+    <value>Sem bordas internas</value>
+  </data>
+  <data name="TableWizard_NoTextWrapping" xml:space="preserve">
+    <value>sem quebra de linha</value>
+  </data>
+  <data name="TableWizard_NoWrapping" xml:space="preserve">
+    <value>Sem quebra de linha</value>
+  </data>
+  <data name="TableWizard_Orange" xml:space="preserve">
+    <value>Laranja</value>
+  </data>
+  <data name="TableWizard_OtherOptionsLabel" xml:space="preserve">
+    <value>Outras opções</value>
+  </data>
+  <data name="TableWizard_PixelsOrPercents" xml:space="preserve">
+    <value>pixels, %</value>
+  </data>
+  <data name="TableWizard_PromptColor" xml:space="preserve">
+    <value>Por favor, forneça o valor Hexadecimal da cor</value>
+  </data>
+  <data name="TableWizard_Red" xml:space="preserve">
+    <value>Vermelho</value>
+  </data>
+  <data name="TableWizard_Right" xml:space="preserve">
+    <value>Direita</value>
+  </data>
+  <data name="TableWizard_RightSide" xml:space="preserve">
+    <value>Somente lateral Direita</value>
+  </data>
+  <data name="TableWizard_Rows" xml:space="preserve">
+    <value>Linhas</value>
+  </data>
+  <data name="TableWizard_RowSettings" xml:space="preserve">
+    <value>Número de Linha e Mesclagem</value>
+  </data>
+  <data name="TableWizard_RowSpan" xml:space="preserve">
+    <value>Mesclagem de linhas</value>
+  </data>
+  <data name="TableWizard_Size" xml:space="preserve">
+    <value>Tamanho</value>
+  </data>
+  <data name="TableWizard_Summary" xml:space="preserve">
+    <value>Sumário</value>
+  </data>
+  <data name="TableWizard_Tab1HeaderText" xml:space="preserve">
+    <value>Desenhar Tabela</value>
+  </data>
+  <data name="TableWizard_Tab2HeaderText" xml:space="preserve">
+    <value>Propriedades (Tabela)</value>
+  </data>
+  <data name="TableWizard_Tab3HeaderText" xml:space="preserve">
+    <value>Propriedades (Célula)</value>
+  </data>
+  <data name="TableWizard_Tab4HeaderText" xml:space="preserve">
+    <value>Acessibilidade</value>
+  </data>
+  <data name="TableWizard_TableBorderControlSizeOverflow" xml:space="preserve">
+    <value>Você está tentando definir o tamanho da borda para um valor maior que 1000. O valor será definido como 1000.</value>
+  </data>
+  <data name="TableWizard_TableControls" xml:space="preserve">
+    <value>Controles da Tabela</value>
+  </data>
+  <data name="TableWizard_TableDesignPreviewLabel" xml:space="preserve">
+    <value>Visualizar Tabela</value>
+  </data>
+  <data name="TableWizard_Title" xml:space="preserve">
+    <value>Assistente de Tabela</value>
+  </data>
+  <data name="TableWizard_TopAndBottomSide" xml:space="preserve">
+    <value>Somente Lado superior e inferior</value>
+  </data>
+  <data name="TableWizard_TopSide" xml:space="preserve">
+    <value>Somente lado superior</value>
+  </data>
+  <data name="TableWizard_UseColor" xml:space="preserve">
+    <value>Usar Cor</value>
+  </data>
+  <data name="TableWizard_Vertical" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="TableWizard_White" xml:space="preserve">
+    <value>Branco</value>
+  </data>
+  <data name="TableWizard_Yellow" xml:space="preserve">
+    <value>Amarelo</value>
+  </data>
+</root>

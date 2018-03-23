@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RequisitarUrl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailPessoa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nomePessoa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numeroCpf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="razaoSocial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequisitarUrlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RequisitarUrlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceAuthHeader" type="tns:ServiceAuthHeader" />
+      <s:complexType name="ServiceAuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroCPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodHash" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="RequisitarUrl2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailPessoa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nomePessoa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numeroCpf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="razaoSocial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequisitarUrl2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequisitarUrl2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequisitarUrlCodigoSistema">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSistema" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequisitarUrlCodigoSistemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RequisitarUrlCodigoSistemaResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequisitarUrlCodigoSistema2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSistema" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequisitarUrlCodigoSistema2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequisitarUrlCodigoSistema2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RequisitarUrlSoapIn">
+    <wsdl:part name="parameters" element="tns:RequisitarUrl" />
+  </wsdl:message>
+  <wsdl:message name="RequisitarUrlSoapOut">
+    <wsdl:part name="parameters" element="tns:RequisitarUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequisitarUrlServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="RequisitarUrl2SoapIn">
+    <wsdl:part name="parameters" element="tns:RequisitarUrl2" />
+  </wsdl:message>
+  <wsdl:message name="RequisitarUrl2SoapOut">
+    <wsdl:part name="parameters" element="tns:RequisitarUrl2Response" />
+  </wsdl:message>
+  <wsdl:message name="RequisitarUrl2ServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="RequisitarUrlCodigoSistemaSoapIn">
+    <wsdl:part name="parameters" element="tns:RequisitarUrlCodigoSistema" />
+  </wsdl:message>
+  <wsdl:message name="RequisitarUrlCodigoSistemaSoapOut">
+    <wsdl:part name="parameters" element="tns:RequisitarUrlCodigoSistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequisitarUrlCodigoSistemaServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="RequisitarUrlCodigoSistema2SoapIn">
+    <wsdl:part name="parameters" element="tns:RequisitarUrlCodigoSistema2" />
+  </wsdl:message>
+  <wsdl:message name="RequisitarUrlCodigoSistema2SoapOut">
+    <wsdl:part name="parameters" element="tns:RequisitarUrlCodigoSistema2Response" />
+  </wsdl:message>
+  <wsdl:message name="RequisitarUrlCodigoSistema2ServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="wsAutenticacaoSoap">
+    <wsdl:operation name="RequisitarUrl">
+      <wsdl:input message="tns:RequisitarUrlSoapIn" />
+      <wsdl:output message="tns:RequisitarUrlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequisitarUrl2">
+      <wsdl:input message="tns:RequisitarUrl2SoapIn" />
+      <wsdl:output message="tns:RequisitarUrl2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequisitarUrlCodigoSistema">
+      <wsdl:input message="tns:RequisitarUrlCodigoSistemaSoapIn" />
+      <wsdl:output message="tns:RequisitarUrlCodigoSistemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequisitarUrlCodigoSistema2">
+      <wsdl:input message="tns:RequisitarUrlCodigoSistema2SoapIn" />
+      <wsdl:output message="tns:RequisitarUrlCodigoSistema2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsAutenticacaoSoap" type="tns:wsAutenticacaoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RequisitarUrl">
+      <soap:operation soapAction="http://tempuri.org/RequisitarUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequisitarUrlServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequisitarUrl2">
+      <soap:operation soapAction="http://tempuri.org/RequisitarUrl2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequisitarUrl2ServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequisitarUrlCodigoSistema">
+      <soap:operation soapAction="http://tempuri.org/RequisitarUrlCodigoSistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequisitarUrlCodigoSistemaServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequisitarUrlCodigoSistema2">
+      <soap:operation soapAction="http://tempuri.org/RequisitarUrlCodigoSistema2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequisitarUrlCodigoSistema2ServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsAutenticacaoSoap12" type="tns:wsAutenticacaoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RequisitarUrl">
+      <soap12:operation soapAction="http://tempuri.org/RequisitarUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RequisitarUrlServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequisitarUrl2">
+      <soap12:operation soapAction="http://tempuri.org/RequisitarUrl2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RequisitarUrl2ServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequisitarUrlCodigoSistema">
+      <soap12:operation soapAction="http://tempuri.org/RequisitarUrlCodigoSistema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RequisitarUrlCodigoSistemaServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequisitarUrlCodigoSistema2">
+      <soap12:operation soapAction="http://tempuri.org/RequisitarUrlCodigoSistema2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RequisitarUrlCodigoSistema2ServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsAutenticacao">
+    <wsdl:port name="wsAutenticacaoSoap" binding="tns:wsAutenticacaoSoap">
+      <soap:address location="http://teste.sosrh.com.br/webservices/wsAutenticacao.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsAutenticacaoSoap12" binding="tns:wsAutenticacaoSoap12">
+      <soap12:address location="http://teste.sosrh.com.br/webservices/wsAutenticacao.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="BuscarCurriculosRastreador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarCurriculosRastreadorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BuscarCurriculosRastreadorResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Idfs_Curriculo_Match" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Idfs_Curriculo_NotMatch" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BuscarCurriculosRastreadorAplicarFiltro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Idfs_Curriculo_Match" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Idfs_Curriculo_NotMatch" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nme_Fonte" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Vlr_Salario_Inicial" nillable="true" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Vlr_Salario_Final" nillable="true" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Num_Idade_Inicial" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Num_Idade_Final" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Des_Bairro" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Qtd_Experiencia" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Idf_Sexo" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Idf_Habilitacao" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Idf_Formacao" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nme_Empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Des_Area_BNE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Idf_Deficiencia" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarCurriculosRastreadorAplicarFiltroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarCurriculosRastreadorAplicarFiltroResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="BuscarCurriculosRastreadorSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarCurriculosRastreador" />
+  </wsdl:message>
+  <wsdl:message name="BuscarCurriculosRastreadorSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarCurriculosRastreadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarCurriculosRastreadorAplicarFiltroSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarCurriculosRastreadorAplicarFiltro" />
+  </wsdl:message>
+  <wsdl:message name="BuscarCurriculosRastreadorAplicarFiltroSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarCurriculosRastreadorAplicarFiltroResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BuscarCurriculoSoap">
+    <wsdl:operation name="BuscarCurriculosRastreador">
+      <wsdl:input message="tns:BuscarCurriculosRastreadorSoapIn" />
+      <wsdl:output message="tns:BuscarCurriculosRastreadorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCurriculosRastreadorAplicarFiltro">
+      <wsdl:input message="tns:BuscarCurriculosRastreadorAplicarFiltroSoapIn" />
+      <wsdl:output message="tns:BuscarCurriculosRastreadorAplicarFiltroSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BuscarCurriculoSoap" type="tns:BuscarCurriculoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BuscarCurriculosRastreador">
+      <soap:operation soapAction="http://tempuri.org/BuscarCurriculosRastreador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCurriculosRastreadorAplicarFiltro">
+      <soap:operation soapAction="http://tempuri.org/BuscarCurriculosRastreadorAplicarFiltro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BuscarCurriculoSoap12" type="tns:BuscarCurriculoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BuscarCurriculosRastreador">
+      <soap12:operation soapAction="http://tempuri.org/BuscarCurriculosRastreador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCurriculosRastreadorAplicarFiltro">
+      <soap12:operation soapAction="http://tempuri.org/BuscarCurriculosRastreadorAplicarFiltro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BuscarCurriculo">
+    <wsdl:port name="BuscarCurriculoSoap" binding="tns:BuscarCurriculoSoap">
+      <soap:address location="http://webservicesteste.bne.com.br/BuscarCurriculo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BuscarCurriculoSoap12" binding="tns:BuscarCurriculoSoap12">
+      <soap12:address location="http://webservicesteste.bne.com.br/BuscarCurriculo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

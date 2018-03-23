@@ -1,0 +1,6 @@
+﻿<label>{{label}}</label>
+<input type="text" class="form-control" style="width:62px;" name="{{nome}}" id="{{nome}}" {{required}} ano-dg ng-untouched="isEmpregoAtual" ng-disabled="isEmpregoAtual==true" ui-mask="99?99" ng-model="value" />
+<div class="tooltip right in" style="top:18px; left: 75px; display: block; width:150px;" ng-show="formPasso2.AnoSaida.$invalid && formPasso2.AnoSaida.$touched">
+    <div class="tooltip-arrow"></div>
+    <div class="tooltip-inner">A data de saída não pode ser menor que a data de início.</div>
+</div>

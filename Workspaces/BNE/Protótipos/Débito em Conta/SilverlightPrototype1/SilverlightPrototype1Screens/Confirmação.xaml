@@ -1,0 +1,25 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity"
+	mc:Ignorable="d"
+	x:Class="SilverlightPrototype1Screens.Confirmação"
+	Width="1366" Height="768">
+
+	<Grid x:Name="LayoutRoot" Background="White">
+		<Image Margin="0,0,20,94" Source="Image6.png" Stretch="Fill"/>
+		<TextBlock Margin="236,162,250,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18.667" FontWeight="Bold"><Run Text="Confirmação de "/><Run Text="Pagamento"/></TextBlock>
+		<Button Content="Voltar" Margin="649,0,648,97" VerticalAlignment="Bottom" Height="36">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<pi:NavigateBackAction/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+		<Image Margin="258,274,0,281" Source="/Image23.png" Stretch="Fill" HorizontalAlignment="Left" Width="258"/>
+		<TextBlock Margin="603,247,257,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18.667" FontWeight="Bold" Text="Seu pedido foi enviado!"/>
+		<TextBlock Margin="600,347,260,242" TextWrapping="Wrap" FontSize="18.667"><Run Text="Em breve você poderá achar o emprego que mais procura em "/><Run Text="mais de 4.000 empresas"/><Run Text="!"/><LineBreak/><Run/><LineBreak/><Run Text="Mantenha seu currículo atualizado"/><Run Text=", pesquise por sua vaga"/><Run Text=" e espere por nossos torpedos..."/></TextBlock>
+	</Grid>
+</UserControl>

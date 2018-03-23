@@ -1,0 +1,67 @@
+﻿@model BNE.PessoaJuridica.Web.Models.CadastroEmpresaConfirmacao
+
+<script>
+    ConfigurarConfirmacao();
+</script>
+<div class="mdl-grid ">
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone">
+        <!-- Tracker-->
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col md-progtrckr">
+                <ol class="progtrckr" data-progtrckr-steps="3">
+                    <li class="progtrckr-todo" id="step-nok"><span>Dados da Empresa</span></li>
+                    <li class="progtrckr-todo" id="step-nok"><span>Dados do Responsável</span></li>
+                    <li class="progtrckr-done"><span><strong>3. Selecione seu Plano</strong></span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <!-- Seleciona Plano -->
+    <div class="mdl-cell mdl-cell--12-col">
+        <h4 class="center darkgrey top36">Agora só falta escolher como será seu acesso!</h4>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--4-col seleciona-plano">
+        <a href="#">
+            <div class="plano-free">
+                <h6 class="center lighter">PLANO</h6>
+                <h3 class="center strong">FREE</h3>
+                <div class="vantagem"><p>Vagas divulgadas <strong>3 dias</strong> após o cadastro</p></div>
+                <div class="vantagem"><p>Acesso <strong>limitado</strong> aos currículos</p></div>
+                <div class="vantagem"><p>Envio <strong>limitado</strong> de SMS para candidatos</p></div>
+                <div class="vantagem"><p>Envio <strong>limitado</strong> de emails para candidatos</p></div>
+                <div class="vantagem last"><p>Vigente por prazo indeterminado</p></div>
+                <div class="valor"><p>Este plano é <strong>gratuito</strong></p></div>
+                <div class="eu-quero"><h6><a href="@Model.LinkPlanoFree">quero plano free</a></h6></div>
+            </div>
+        </a>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col seleciona-plano">
+        <a href="#">
+            <div class="plano-pago">
+                <div class="aba-plano">
+                    <h6 class="center lighter">PLANO</h6>
+                    <h3 class="center strong">EXPERIMENTE</h3>
+                </div>
+                <div class="vantagem"><p>Vagas divulgadas <strong>imediatamente</strong> no site</p></div>
+                <div class="vantagem"><p><strong>200</strong> acessos completos aos currículos</p></div>
+                <div class="vantagem"><p><strong>200</strong> envios de SMS para candidatos</p></div>
+                <div class="vantagem"><p><strong>200</strong> envios de email para candidatos</p></div>
+                <div class="vantagem"><p>Divulgação <strong>ilimitada</strong> de vagas</p></div>
+                <div class="vantagem"><p>Envio de <strong>alerta de vagas</strong> para os candidatos</p></div>
+                <div class="vantagem"><p>Vigente por 30 dias</p></div>
+                <div class="vantagem"><p>Não possui renovação automática</p></div>
+                <div class="valor">
+                    <div class="desconto"><strong>60% de desconto</strong> para novos cadastros</div>
+                    <p>de <span style="text-decoration: line-through;">R$320</span> por apenas</p>
+                    <h1><sup>R$</sup>128<sup>,00</sup></h1>
+                </div>
+                <div class="eu-quero"><a href="@Model.LinkPlanoPago"><h6>quero experimentar</h6></a></div>
+
+            </div>
+        </a>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+</div>

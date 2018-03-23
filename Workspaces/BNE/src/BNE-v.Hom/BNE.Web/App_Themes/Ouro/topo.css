@@ -1,0 +1,26 @@
+/*------------------------------------------------------------ Theme Ouro*/
+.topo {
+    background-image: url("/img/App_Themes/Ouro/bg_topo.gif");
+}
+
+.painel_filtro_vaga_escondido {
+    background-image: linear-gradient(90deg, #FAD30C 6%, #EB9125 18%, #FAD30C 72%, #FFE605 99%) !important;
+    background-image: -moz-linear-gradient(90deg, #FFE605 6%, #EB9125 18%, #FAD30C 72%, #FFE605 99%) !important;
+    background-image: -webkit-linear-gradient(90deg, #FFE605 6%, #EB9125 18%, #FAD30C 72%, #FFE605 99%) !important;
+    background-image: -ms-linear-gradient(90deg, #FFE605 6%, #EB9125 18%, #FAD30C 72%, #FFE605 99%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE605', endColorstr='#EB9125') !important;
+}
+
+#pnlBusca.painel_filtro_vaga {
+    background-image: linear-gradient(90deg, #FAD30C 6%, #EB9125 18%, #FAD30C 72%, #FFE605 99%) !important;
+    background-image: -moz-linear-gradient(90deg, #FFE605 6%, #EB9125 18%, #FAD30C 72%, #FFE605 99%) !important;
+    background-image: -webkit-linear-gradient(90deg, #FFE605 6%, #EB9125 18%, #FAD30C 72%, #FFE605 99%) !important;
+    background-image: -ms-linear-gradient(90deg, #FFE605 6%, #EB9125 18%, #FAD30C 72%, #FFE605 99%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE605', endColorstr='#EB9125') !important;
+    border-radius: 0 4px 4px 4px !important;
+}
+
+#aBuscarVagas, .btn_buscar a#btiPesquisarVaga {
+    background-color: #FFE605;
+}
+/*# sourceMappingURL=topo.css.map */

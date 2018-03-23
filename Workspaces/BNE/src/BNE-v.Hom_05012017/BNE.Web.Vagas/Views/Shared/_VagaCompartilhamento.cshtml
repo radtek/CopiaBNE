@@ -1,0 +1,76 @@
+﻿@using BNE.BLL.Custom
+@model BNE.Web.Vagas.Models.VagaCompartilhamento
+@{
+
+    var compartilhamentoEmail = string.Format("compartilhar.email('{0}','{1}')",
+                                    Model.Identificador,
+                                    Model.URLVaga);
+
+}
+
+<script>
+    var urlVagaSite = '@Model.URLVaga';
+</script>
+
+<ul class="rrssb-buttons share-buttons">
+    @if (Request.Browser.IsMobileDevice)
+    {
+        <li class="rrssb-whatsapp">
+            <a data-action="share/whatsapp/share">
+                <span class="rrssb-icon"><i class="fa fa-whatsapp"></i> </span><span class="rrssb-text">whatsapp</span>
+            </a>
+        </li>
+    }
+    @if (User.Identity != null && User.Identity.IsAuthenticated)
+    {
+        <li class="rrssb-email">
+            <a onclick="@compartilhamentoEmail">
+                <span class="rrssb-icon">
+                    <i class="fa fa-envelope"></i>
+                </span>
+                <span class="rrssb-text">email</span>
+            </a>
+        </li>
+    }
+    else
+    {
+        if (Request.Url != null)
+        {
+            using (Html.BeginForm("Entrar", "Base", new { redirectURL = Request.Url.AbsoluteUri }))
+            {
+                <li class="rrssb-email deslogado">
+                    <a class="share-button">
+                        <span class="rrssb-icon">
+                            <i class="fa fa-envelope"></i>
+                        </span>
+                        <span class="rrssb-text">email</span>
+                    </a>
+                </li>
+            }
+        }
+    }
+
+    <li class="rrssb-facebook">
+        <a class="popup">
+            <span class="rrssb-icon">
+                <i class="fa fa-facebook-square"></i>
+            </span>
+            <span class="rrssb-text">facebook</span>
+        </a>
+    </li>
+    <li class="rrssb-linkedin">
+        <a class="popup">
+            <span class="rrssb-icon"><i class="fa fa-linkedin"></i> </span><span class="rrssb-text">linkedin</span>
+        </a>
+    </li>
+    <li class="rrssb-twitter">
+        <a class="popup">
+            <span class="rrssb-icon"><i class="fa fa-twitter"></i> </span><span class="rrssb-text">twitter</span>
+        </a>
+    </li>
+    <li class="rrssb-googleplus">
+        <a class="popup">
+            <span class="rrssb-icon"><i class="fa fa-google-plus"></i> </span><span class="rrssb-text">google+</span>
+        </a>
+    </li>
+</ul>

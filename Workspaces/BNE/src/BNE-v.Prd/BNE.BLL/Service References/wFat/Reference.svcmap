@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f7833c76-298b-449c-88b3-46616eb55d8d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://wshomglobal.webfopag.com.br/WsIntegracaoFaturamentoFinanceiro.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsIntegracaoFaturamentoFinanceiro.xsd" MetadataType="Schema" ID="a2a33881-bc87-4981-88c2-e2ebdaff4085" SourceId="1" SourceUrl="http://wshomglobal.webfopag.com.br/WsIntegracaoFaturamentoFinanceiro.svc?xsd=xsd1" />
+    <MetadataFile FileName="WsIntegracaoFaturamentoFinanceiro.wsdl" MetadataType="Wsdl" ID="736e31b4-d5b7-4a57-bd0d-2621a4bbcff3" SourceId="1" SourceUrl="http://wshomglobal.webfopag.com.br/WsIntegracaoFaturamentoFinanceiro.svc?wsdl" />
+    <MetadataFile FileName="WsIntegracaoFaturamentoFinanceiro1.xsd" MetadataType="Schema" ID="87344919-0a08-454d-a93b-3da53ce2bfad" SourceId="1" SourceUrl="http://wshomglobal.webfopag.com.br/WsIntegracaoFaturamentoFinanceiro.svc?xsd=xsd0" />
+    <MetadataFile FileName="WsIntegracaoFaturamentoFinanceiro2.xsd" MetadataType="Schema" ID="2c9df4f7-474c-4118-b6c7-39c8d02a8168" SourceId="1" SourceUrl="http://wshomglobal.webfopag.com.br/WsIntegracaoFaturamentoFinanceiro.svc?xsd=xsd2" />
+    <MetadataFile FileName="WsIntegracaoFaturamentoFinanceiro3.xsd" MetadataType="Schema" ID="aaf73d8e-32a2-42fc-a7a2-b1723a6b4b08" SourceId="1" SourceUrl="http://wshomglobal.webfopag.com.br/WsIntegracaoFaturamentoFinanceiro.svc?xsd=xsd3" />
+    <MetadataFile FileName="WsIntegracaoFaturamentoFinanceiro.disco" MetadataType="Disco" ID="c7524541-31ae-403d-836a-c126615b7168" SourceId="1" SourceUrl="http://wshomglobal.webfopag.com.br/WsIntegracaoFaturamentoFinanceiro.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

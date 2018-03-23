@@ -1,0 +1,31 @@
+﻿@{ ViewBag.Title = "Entrar"; }
+<script src="~/Content/js/login.js"></script>
+
+@if (ViewBag.ErrorMessage != null) { <script type="text/javascript">swal('Opss!', '@Html.Raw(ViewBag.ErrorMessage)', 'warning');</script> }
+
+<div class="mdl-card mdl-shadow--2dp demo-card-wide login-card">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Login</h2>
+    </div>
+    <form id="loginForm" method="post" action="/Login/Entrar" novalidate>
+        <div class="mdl-card__supporting-text lgn-fld-holder">
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="cpf" name="cpf" autocomplete="off" />
+                <label class="mdl-textfield__label" for="cep">CPF</label>
+            </div>
+          
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="nascimento" name="nascimento" autocomplete="off" r />
+                <label class="mdl-textfield__label" for="nascimento">Data de Nascimento.</label>
+            </div>
+
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <button type="submit" id="btnEntrar" style="float: right; margin-bottom: 10px;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                Entrar
+            </button>
+        </div>
+    </form>
+</div>

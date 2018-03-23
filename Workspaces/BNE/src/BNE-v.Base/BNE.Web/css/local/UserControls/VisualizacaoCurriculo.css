@@ -1,0 +1,111 @@
+﻿.titulo_modal_cv { color: red; font-size: 19px; font-weight: normal; height: auto; margin: 40px 0 0 0; height: auto; }
+
+.dados_pessoais .linha { clear: none; }
+
+.titulo_painel_padrao_modal1 { color: #000; font-size: 14px; border-bottom: 1px solid #c5d3a9; height: auto; margin-top: 15px; }
+
+.titulo_painel_padrao_modal2 { color: #000; font-size: 12px; border-bottom: 1px solid #c5d3a9; height: auto; margin-top: 15px; }
+
+.rolagem_modal { height: 390px; overflow: auto; }
+
+
+.RadGrid_Default { margin: 0 auto; width: 820px; }
+
+.painel_padrao_linha { }
+
+.container_campo.atividades_exercidas { border-bottom: 1px solid #a8d9f0; width: 705px; }
+
+/*-.moldura_foto_cv {background:url('../../../img/moldura_foto_cv.png'); width:100px; height:132px; position:absolute;}-*/
+
+.foto { background-repeat: no-repeat; float: right; width: 133px; height: 178px; }
+
+.container_campo_modal, .painel_padrao_linha .container_campo { float: left; padding-left: 5px; }
+
+.painel_padrao_linha .label_principal { color: #1E3260; float: left; margin-left: 4px; padding-top: 8px; }
+/*-----------------------------------------------------------------------*/
+
+.modal_visu_curric { padding: 20px; overflow: hidden; background: #fff; }
+.nome_candidato { font-size: 20px; color: #000; font-weight: bold; }
+.cod_curriculo { color: #000; }
+/*.nome_curriculo { color: #000000; display: inline; font-size: 10px; margin-right: 10px; }*/
+.resumo_cv { background: url('../../../img/bg_resumo_cv.png'); font-size: 11px; margin: 5px 0 10px 0; overflow: hidden; }
+.resumo_cv div { margin: 3px 10px; }
+.resumo_cv div ul { margin: 0; padding: 0; display: inline; }
+.resumo_cv div ul li { display: inline; }
+.atual_cv { float: right; font-weight: bold; font-size: 11px; margin-top: 0; }
+.box_content { font-size: 11px; overflow: hidden; margin-bottom: 15px; }
+.col1 { width: 330px; float: left; }
+.col2 { width: 240px; float: left; }
+.col1 div, .col2 div, .box_content div { overflow: hidden; }
+.col1 div .descricao_bold, .descricao_bold { margin: 2px 10px; float: left; width: 120px; }
+.col2 div .descricao_bold { margin: 2px 10px; float: left; width: 105px; }
+.col1 div .texto_cor { margin-top: 2px; float: left; width: 180px; }
+.col2 div .texto_cor { margin-top: 2px; float: left; }
+
+
+.texto_cor ul { margin: 0; padding: 0; float: left; }
+.texto_cor ul li { list-style: none; margin-bottom: 3px; }
+
+.contato_telf { margin-top: 17px; }
+
+.bloco_dados { margin-bottom: 40px; }
+.idiomas { margin-top: 20px; }
+.box_content .titulo_exp_prof { font-size: 14px; font-style: italic; font-weight: normal; margin: 10px 0 5px 9px; }
+.texto_desc-atrib { float: left; max-width: 560px; }
+
+
+.bloco_form { background: #eef5fc; padding: 0 10px 10px 10px; overflow: hidden; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+.titulo_painel_form { border: none; margin: 10px 10px 5px 10px; height: auto; color: #00156E; }
+.box_formulario { overflow: hidden; }
+.avaliacao { margin: 18px 10px 0 10px; overflow: hidden; }
+.avaliacao .radio { vertical-align: middle; }
+.avaliacao img { vertical-align: middle; }
+.avaliacao .descricao_bold { margin: 5px 0 2px 0; float: left; }
+.texto-avaliacao .descricao_bold { margin: 2px 0 2px 0; float: left; }
+/*.avaliacao .aval_escolha {margin-right:10px; margin-left:5px;}*/
+.avaliacao .aval_escolha .radio { vertical-align: middle; }
+/*.avaliacao .aval_escolha  img {width: 24px; heigh:24px; float: left;}*/
+
+.texto-avaliacao { margin: 0 10px; float: left; width: 700px; }
+.textarea_avaliacao { width: 300px; height: 100px; margin-left: 5px; }
+.caracteres_cont { clear: both; color: gray; font-style: italic; margin-left: 167px; }
+
+.avaliacao_resultado { }
+
+.avaliacao_escolhida { clear: both; }
+.avaliacao_escolhida img { float: left; }
+.avaliacao_escolhida .texto { font-size: 14px; color: Green; font-weight: bold; float: left; margin: 10px 0 0 5px; }
+.avaliação_texto { }
+
+.btn_enviar_avaliacao, .btn_ver_curriculo { clear: both; margin-top: 15px; text-align: center; }
+.img_logo_filial { position: absolute; right: -15px; top: -8px; float: right; display: block; }
+.ultimo_salario { float: right; }
+.ico_pcd { display: inline-block; }
+
+@media screen {
+    .visualizacao_curriculo_container { width: 880px; }
+    .visualizacao_curriculo_container .borda { width: 810px; }
+    .visualizacao_curriculo_container .resumo { width: 550px; }
+    .visualizacao_curriculo_container .logo { margin-left: 700px; }
+    .visualizacao_curriculo_container .experiencia_profissional { width: 810px; }
+    .visualizacao_curriculo_container .observacoes { width: 810px; }
+    .visualizacao_curriculo_container .pretensoes { width: 810px; }
+    .visualizacao_curriculo_container .escolaridade { width: 810px; }
+    .visualizacao_curriculo_container .pretensoes .funcao_pretendida { width: 220px; }
+    .visualizacao_curriculo_container .pretensoes .contrato_pretendido { width: 220px; }
+    .visualizacao_curriculo_container .dados_pessoais { width: 810px; }
+}
+
+@media print {
+    .visualizacao_curriculo_container { width: 625px; }
+    .visualizacao_curriculo_container .borda { width: 570px; }
+    .visualizacao_curriculo_container .resumo { width: 400px; }
+    .visualizacao_curriculo_container .logo { margin-left: 521px; }
+    .visualizacao_curriculo_container .experiencia_profissional { width: 600px; }
+    .visualizacao_curriculo_container .observacoes { width: 600px; }
+    .visualizacao_curriculo_container .pretensoes { width: 600px; }
+    .visualizacao_curriculo_container .escolaridade { width: 600px; }
+    .visualizacao_curriculo_container .pretensoes .funcao_pretendida { width: 160px; }
+    .visualizacao_curriculo_container .pretensoes .contrato_pretendido { width: 160px; }
+    .visualizacao_curriculo_container .dados_pessoais { width: 600px; }
+}

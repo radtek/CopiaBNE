@@ -1,0 +1,10 @@
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Release\BNE.Cielo.dll.config
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Release\BNE.Cielo.dll
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Release\BNE.Cielo.pdb
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Release\Awesomely.dll
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Release\DynamicBuilder.dll
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Release\RestSharp.dll
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Release\DynamicBuilder.xml
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Release\RestSharp.xml
+C:\Projects\BNE-NugetServer\BNE.Cielo\obj\Release\BNE.Cielo.dll
+C:\Projects\BNE-NugetServer\BNE.Cielo\obj\Release\BNE.Cielo.pdb

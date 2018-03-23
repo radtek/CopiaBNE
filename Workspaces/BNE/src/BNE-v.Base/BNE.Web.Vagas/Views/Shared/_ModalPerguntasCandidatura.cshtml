@@ -1,0 +1,36 @@
+﻿@model BNE.Web.Vagas.Models.VagaCandidatura
+<div id="modalPergunta" class="modal">
+    <script>
+        modal.abrirModal('modalPergunta');
+    </script>
+    <link href="~/Content/ModalPerguntasCandidatura.css" rel="stylesheet" />
+    <a class="b-close modal_fechar" title="Close"></a>
+    <div class="modal_conteudo">
+        <p class="titulo">Questionário: </p>
+        @using (Ajax.BeginForm("Candidatar", "Vaga", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "container_candidatura_" + Model.IdentificadorVaga }))
+        {
+            @Html.HiddenFor(m => m.IdentificadorVaga)
+            for (int i = 0; i < @Model.Perguntas.Perguntas.Count; i++)
+            {
+            @Html.HiddenFor(m => m.Perguntas.Perguntas[i].Id)
+                //@Html.HiddenFor(m => m.Perguntas.Perguntas[i].Resposta)
+            @Html.HiddenFor(m => m.Perguntas.Perguntas[i].Descricao)
+            @Html.Raw(i.Equals(@Model.Perguntas.Perguntas.Count - 1) ? "<div class=\"painel_pergunta ultima\">" : "<div class=\"painel_pergunta\">")
+            <p>0@(i). @Html.Label(@Model.Perguntas.Perguntas[i].Descricao)</p>
+            <div class="opcoes_pergunta">
+                <span class="resposta_sim">
+                    <label>@Html.RadioButtonFor(m => m.Perguntas.Perguntas[i].Resposta, true)Sim</label>
+                </span>
+                <span class="resposta_nao">
+                    <label>@Html.RadioButtonFor(m => m.Perguntas.Perguntas[i].Resposta, false)Não</label>
+                </span>
+            </div>
+            @Html.Raw("</div>")
+            }
+            <div class="container_botoes">
+                <input type="submit" name="Enviar" value="Enviar" class="botao_padrao" />
+            </div>
+        
+        }
+    </div>
+</div>

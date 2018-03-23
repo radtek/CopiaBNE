@@ -1,0 +1,834 @@
+﻿/* reset ----------------------------------------------------------*/
+html, body, div, span, applet, object, iframe, caption,
+tfoot, thead, del, dfn, em, font, img, ins,
+kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+acronym, address, big, cite, code, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend {
+    font-family: inherit; /*font-weight: inherit;*/
+    font-style: inherit;
+    font-size: 100%;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+:focus {
+    outline: 0;
+}
+
+body {
+    background: white;
+    line-height: 1;
+    color: black;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    font-weight: normal;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+}
+
+blockquote, q {
+    -webkit-quotes: "" "";
+    quotes: "" "";
+}
+/* FIM:reset ----------------------------------------------------------*/
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.clear {
+    clear: both;
+}
+
+h1 {
+    color: gray;
+    font-size: 20px;
+    height: 20px;
+    font-weight: bold;
+    display: block;
+    margin-top: 13px;
+    margin-bottom: 13px;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+a {
+    color: #1E3260;
+    text-decoration: none;
+}
+
+.titulo_rodape {
+    margin-top: 18px;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.totalDeRegistros {
+    padding-right: 5px;
+    float: left;
+    color: gray;
+    font-size: 20px;
+    height: 20px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 13px;
+}
+
+/* topo----------------------------------------------------------*/
+.header {
+    background-image: url('/Images/bg_topo.png');
+    background-repeat: repeat-x;
+    height: 192px;
+    min-width: 670px;
+}
+
+    .header .busca {
+        height: 75px;
+        display: block;
+        position: absolute;
+        top: 80px; /*width: 410px;*/
+        width: 100%;
+    }
+
+    .header .logo {
+        background-repeat: no-repeat;
+        top: 3px;
+        position: absolute;
+    }
+
+    .header .busca .busca_superior .vaga {
+        clear: both;
+        display: block;
+        position: relative;
+        height: 30px;
+    }
+
+    .header .busca .busca_superior .curriculo {
+        clear: both;
+        display: block;
+        position: relative;
+        height: 30px;
+        background-color: black;
+    }
+
+    .header .busca .busca_inferior {
+        clear: both; /*background-image: url('/Images/pesquisa_vagas.png'); 
+        background-repeat: no-repeat;*/
+        display: block;
+        position: relative;
+        height: 73px;
+        margin-top: -4px; /* width: 883px;*/
+    }
+/*.header .conteudo-wrapper { padding-top: 3px; }*/
+.esquerda {
+    float: left;
+}
+
+.direita {
+    float: right;
+}
+
+.header .painel_informacoes {
+    background-image: url('/Images/painel_informacoes.png');
+    height: 30px; /* width: 346px;*/
+    width: 433px;
+    background-repeat: no-repeat;
+    position: absolute; /*right: 128px;*/
+    right: 70px;
+    padding-top: 2px;
+    text-align: center;
+}
+    /*.topo .painel_informacoes .icones { vertical-align: middle; }*/
+    .header .painel_informacoes .separar {
+        vertical-align: middle;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .header .painel_informacoes img {
+        vertical-align: middle;
+    }
+
+    .header .painel_informacoes .textos {
+        font-weight: bold;
+        vertical-align: middle;
+        margin-left: 6px;
+    }
+
+.header .painel_login {
+    position: absolute;
+    width: 50px;
+    right: 6px;
+    top: 5px;
+}
+
+.header .painel_atalho {
+    position: absolute;
+    right: 5px;
+    top: 85px;
+}
+/*.buscar .submit { border-radius: 4px 4px 4px 4px; background: none repeat scroll 0 0 #1F659B; width: 120px; }*/
+.header .busca .funcao {
+    float: left;
+    margin-left: 13px;
+}
+
+.header .busca .cidade {
+    float: left;
+    margin-left: 22px;
+}
+
+.header .busca .palavrachave {
+    float: left;
+    margin-left: 23px;
+}
+
+.header .busca .buscar {
+    float: left;
+    margin-left: 265px;
+    margin-top: 16px;
+}
+
+.pesquisa_topo_funcao, .pesquisa_topo_cidade, .pesquisa_topo_palavra_chave {
+    position: relative;
+    top: 16px;
+    border: none;
+    width: 230px;
+    height: 24px;
+    background: none repeat scroll 0 0 transparent;
+}
+/* rodape */
+.footer {
+    background-image: url('/Images/barra_rodape.png');
+    background-repeat: repeat-x;
+    height: 96px;
+    font-size: 11px;
+    top: 450px;
+    width: 100%;
+    clear: both;
+    min-width: 670px;
+}
+
+    .footer .wrapper {
+        margin: 0 auto;
+        width: 880px;
+    }
+
+    .footer .img_separar_rodape {
+        float: left;
+        margin-right: 13px;
+        margin-left: 13px;
+        margin-top: 15px;
+    }
+
+    .footer h4 {
+        margin-top: 18px;
+        font-size: 11px;
+    }
+
+    .footer .barra_rodape_candidato {
+        color: #143D75;
+        float: left;
+    }
+
+    .footer .barra_rodape_empresa {
+        color: #175007;
+        float: left;
+    }
+
+    .footer .barra_rodape_geral {
+        color: #424341;
+        float: left;
+    }
+
+    .footer .barra_rodape_rhoffice {
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    .footer ul {
+        list-style: none;
+        line-height: 16px;
+        float: left;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+
+        .footer ul li {
+            display: inline;
+            list-style-position: inside;
+        }
+
+    .footer .lista_rodape {
+        font-size: 11px;
+        width: 266px;
+    }
+
+    .footer .lista_rodape_candidato {
+        font-size: 11px;
+        width: 256px;
+    }
+
+    .footer .lista_rodape_empresa {
+        font-size: 11px;
+        width: 295px;
+    }
+
+    .footer .lista_rodape_geral {
+        font-size: 11px;
+        width: 273px;
+    }
+
+    .footer .link_rodape_nao_quebrar_linha {
+        white-space: nowrap;
+    }
+
+    .footer .lista_rodape .candidato, .barra_rodape_candidato ul li a {
+        color: #143d75;
+    }
+
+    .footer .lista_rodape .empresa, .barra_rodape_empresa ul li a {
+        color: #175007;
+    }
+
+    .footer .lista_rodape .geral, .barra_rodape_geral ul li a {
+        color: #424341;
+    }
+
+    .footer .lista_rodape .candidato li, .lista_rodape .empresa li, .lista_rodape .geral li {
+        display: inline;
+    }
+
+/* conteudo----------------------------------------------------------*/
+.content { /*background-color: #FFFFFF; */ /* clear: both; */ /* padding-bottom: 35px; */
+    min-width: 670px; /* height: 100%; */ /* overflow: hidden; */
+}
+
+.conteudo-wrapper {
+    margin: 0 auto;
+    max-width: 880px;
+    position: relative;
+}
+
+.pager {
+    height: 24px;
+    background-image: url('/Images/bg_barra_paginacao.png');
+    background-repeat: repeat-x;
+    border-color: #5D8CC9;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    padding: 2px 6px;
+}
+
+    .pager a, .current {
+        padding-top: 2px;
+        vertical-align: middle;
+        height: 14px;
+        margin-left: 3px;
+        margin-top: 1px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        font-size: 11px;
+        margin: 0 1px;
+        padding: 3px 4px;
+    }
+
+    .pager .input {
+        padding: 0px;
+    }
+
+    .pager .pagina:hover {
+        background-color: #e3efff;
+        border: 1px solid #5D8CC9;
+    }
+
+    .pager .current {
+        margin-left: 3px;
+        background-color: #e3efff;
+        border: 1px solid #5D8CC9;
+    }
+
+    .pager .disabled {
+        margin-left: 3px;
+    }
+
+    .pager * {
+        vertical-align: middle;
+    }
+
+    .pager div {
+        display: inline-block;
+    }
+
+.container_botoes {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.botao_padrao {
+    background-image: url('/Images/botao_padrao.png');
+    background-repeat: repeat-x;
+    border: 1px solid #c3c3c3;
+    cursor: pointer;
+    font-size: 12px;
+    overflow: visible;
+    padding: 0 11px !important;
+    height: 26px;
+    width: auto !important;
+    margin-bottom: 25px;
+    margin-left: 10px;
+}
+
+.linha {
+    clear: both;
+    padding: 3px 0;
+    overflow: auto;
+}
+
+label {
+    float: left;
+    color: #1e3260;
+    margin-left: 4px;
+    padding-top: 3px;
+}
+
+.label_principal {
+    text-align: right;
+    width: 155px;
+    float: left;
+    font-weight:bold;
+    color:black;
+}
+
+.container_campo {
+    float: left;
+    padding-left: 5px;
+}
+
+.field-validation-error {
+    color: #ff0000;
+    font-weight: normal;
+    font-size: 11px;
+    background-image: url('/Images/icone_validacao_campo.gif');
+    background-repeat: no-repeat;
+    padding-left: 11px;
+}
+
+.highlight {
+    font-weight: bold;
+}
+/* Modal */
+.modal {
+    background-color: #eceff1;
+    width: 600px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 0px 4px white,1px 1px 8px 0 white;
+    -moz-box-shadow: 0px 0px 0px 4px white,1px 1px 8px 0 white;
+    box-shadow: 0px 0px 0px 4px white,1px 1px 8px 0 white;
+}
+
+    .modal .modal_fechar {
+        background: url(/Images/modal/btn_fechar_modal.png) no-repeat;
+        width: 34px;
+        height: 34px;
+        display: inline;
+        z-index: 1003;
+        position: absolute;
+        top: -12px;
+        right: -15px;
+        cursor: pointer;
+    }
+
+    .modal.amarela {
+        background-color: #eceff1;
+    }
+
+        .modal.amarela .modal_fechar {
+            background: url(/Images/modal/btn_fechar_modal_amarela.png) no-repeat;
+            width: 36px;
+            height: 36px;
+            top: -14px;
+        }
+
+@media only screen and (max-device-width: 900px) {
+}
+
+
+
+[data-tooltip],
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+    /* Base styles for the entire tooltip */
+    [data-tooltip]:before,
+    [data-tooltip]:after,
+    .tooltip:before,
+    .tooltip:after {
+        position: absolute;
+        visibility: hidden;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+        -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+        -moz-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+        transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        pointer-events: none;
+    }
+
+    /* Show the entire tooltip on hover and focus */
+    [data-tooltip]:hover:before,
+    [data-tooltip]:focus:before,
+    .tooltip:hover:before,
+    .tooltip:focus:before {
+        visibility: visible;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+    }
+
+
+    [data-tooltip]:hover:after,
+    [data-tooltip]:focus:after,
+    .tooltip:hover:after,
+    .tooltip:focus:after {
+        visibility: visible;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+    }
+
+    /* Base styles for the tooltip's directional arrow */
+    .tooltip:before,
+    [data-tooltip]:before {
+        z-index: 1001;
+        border: 6px solid transparent;
+        background: transparent;
+        content: "";
+    }
+
+    /* Base styles for the tooltip's content area */
+    .tooltip:after,
+    [data-tooltip]:after {
+        z-index: 1000;
+        padding: 8px;
+        width: 156px;
+        background-color: #2b64b2 !important;
+        background-color: hsla(0, 0%, 0%, 0.9);
+        color: #fff;
+        content: attr(data-tooltip);
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    /* Directions */
+
+    /* Top (default) */
+    [data-tooltip]:before,
+    [data-tooltip]:after,
+    .tooltip:before,
+    .tooltip:after,
+    .tooltip-top:before,
+    .tooltip-top:after {
+        bottom: 100%;
+        left: 50%;
+    }
+
+    [data-tooltip]:before,
+    .tooltip:before,
+    .tooltip-top:before {
+        margin-left: -6px;
+        margin-bottom: -12px;
+        border-top-color: #000;
+        border-top-color: hsla(0, 0%, 20%, 0.9);
+    }
+
+    /* Horizontally align top/bottom tooltips */
+    [data-tooltip]:after,
+    .tooltip:after,
+    .tooltip-top:after {
+        margin-left: -80px;
+    }
+
+    [data-tooltip]:hover:before,
+    [data-tooltip]:hover:after,
+    [data-tooltip]:focus:before,
+    [data-tooltip]:focus:after,
+    .tooltip:hover:before,
+    .tooltip:hover:after,
+    .tooltip:focus:before,
+    .tooltip:focus:after,
+    .tooltip-top:hover:before,
+    .tooltip-top:hover:after,
+    .tooltip-top:focus:before,
+    .tooltip-top:focus:after {
+        -webkit-transform: translateY(-12px);
+        -moz-transform: translateY(-12px);
+        transform: translateY(-12px);
+    }
+
+/* Left */
+.tooltip-left:before,
+.tooltip-left:after {
+    right: 100%;
+    bottom: 50%;
+    left: auto;
+}
+
+.tooltip-left:before {
+    margin-left: 0;
+    margin-right: -12px;
+    margin-bottom: 0;
+    border-top-color: transparent;
+    border-left-color: #000;
+    border-left-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-left:hover:before,
+.tooltip-left:hover:after,
+.tooltip-left:focus:before,
+.tooltip-left:focus:after {
+    -webkit-transform: translateX(-12px);
+    -moz-transform: translateX(-12px);
+    transform: translateX(-12px);
+}
+
+/* Bottom */
+.tooltip-bottom:before,
+.tooltip-bottom:after {
+    top: 100%;
+    bottom: auto;
+    left: 630%;
+}
+
+.tooltip-bottom:before {
+    margin-top: -12px;
+    margin-bottom: 0;
+    border-top-color: transparent;
+    border-bottom-color: #000;
+    border-bottom-color: #2b64b2 !important;
+}
+
+.tooltip-bottom:hover:before,
+.tooltip-bottom:hover:after,
+.tooltip-bottom:focus:before,
+.tooltip-bottom:focus:after {
+    -webkit-transform: translateY(12px);
+    -moz-transform: translateY(12px);
+    transform: translateY(12px);
+}
+
+/* Right */
+.tooltip-right:before,
+.tooltip-right:after {
+    bottom: 50%;
+    left: 100%;
+}
+
+.tooltip-right:before {
+    margin-bottom: 0;
+    margin-left: -12px;
+    border-top-color: transparent;
+    border-right-color: #000;
+    border-right-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-right:hover:before,
+.tooltip-right:hover:after,
+.tooltip-right:focus:before,
+.tooltip-right:focus:after {
+    -webkit-transform: translateX(12px);
+    -moz-transform: translateX(12px);
+    transform: translateX(12px);
+}
+
+/* Move directional arrows down a bit for left/right tooltips */
+.tooltip-left:before,
+.tooltip-right:before {
+    top: 3px;
+}
+
+/* Vertically center tooltip content for left/right tooltips */
+.tooltip-left:after,
+.tooltip-right:after {
+    margin-left: 0;
+    margin-bottom: -16px;
+}
+
+.fa-question-circle {
+    color: #bdbdbd;
+}
+
+.Media {
+    line-height: 2.0;
+    font-size: 14px !important;
+}
+
+
+.progresso_texto {
+    height: 57px;
+    width: 195px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    margin-top: 20%;
+    opacity: 1;
+}
+
+
+.progresso {
+    display: none;
+    position: fixed;
+    margin-top: -50px;
+    margin-left: -100px;
+    /* vertical-align: middle; */
+    text-align: center; /* font-size: 16px; */ /* font-weight: bold; */
+    background-color: rgba(205, 225, 232, 0.6);
+    color: #0054ac;
+    font-weight: bold;
+    font-size: 14px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+
+
+
+.BannerTexto {
+    margin-top: 46px;
+    position: absolute;
+    color: #003e7d;
+    /*padding: 25px 20px 20px 170px;*/
+    font-size: 17px;
+    width: 613px;
+    text-align:center;
+    padding-left:94px;
+    padding-right:57px;
+    
+}
+
+.BannerTitulo {
+    margin-top: 0px;
+    position: absolute;
+    color: #003e7d;
+    padding:  20px 20px ;
+    font-size: 22px;
+    font-weight: bold;
+    text-align:center;
+    width:766px;
+}
+
+.btnComprarVip{
+    margin-top: 24px;
+    background-color: #0d47a1 !important;
+    color: #fff !important;
+    border: none !important;
+    width: 170px;
+    cursor: pointer;
+    padding: 12px 15px 12px 15px;
+}
+
+
+
+.comprar-vip input{
+	font-family: "Roboto","Helvetica","Arial",sans-serif;
+	border:none;
+	border-radius:4px;
+	padding:8px;
+	font-size:13px;
+	text-transform: uppercase;
+	font-weight:700;
+	color: #fff;
+    background-color: #015a9c;
+	margin-bottom:8px;
+	cursor:pointer;
+	text-decoration: none !important;
+	transition: all 0.5s;
+	outline: none;
+    width: 170px;
+    border-radius:5px 5px 5px 5px;
+
+}
+.comprar-vip input:hover{
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+	transition: all 0.5s;
+
+}
+
+.nao_agora input{
+	font-family: "Roboto","Helvetica","Arial",sans-serif;
+	border:none;
+	border-radius:4px;
+	padding:8px;
+	font-size:13px;
+	text-transform: uppercase;
+	font-weight:700;
+	color: rgba(0, 0, 0, 0.54);
+	margin-bottom:8px;
+	cursor:pointer;
+	text-decoration: none !important;
+	transition: all 0.5s;
+	outline: none;
+    width: 170px;
+    border-radius:5px 5px 5px 5px;
+}
+.nao_agora input:hover{
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+	transition: all 0.5s;
+
+}
+
+.nao_agora{
+    text-align:center;
+}

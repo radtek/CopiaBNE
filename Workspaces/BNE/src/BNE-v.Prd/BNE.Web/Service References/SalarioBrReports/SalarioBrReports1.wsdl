@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SalarioBrReports" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://wsprdrelatorios.salariobr.com/SalarioBrReports.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://wsprdrelatorios.salariobr.com/SalarioBrReports.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISalarioBrReports_ObtemPreviewRSM_SBR_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtemPreviewRSM_SBR" />
+  </wsdl:message>
+  <wsdl:message name="ISalarioBrReports_ObtemPreviewRSM_SBR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtemPreviewRSM_SBRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalarioBrReports_ObtemPreviewRSM_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtemPreviewRSM" />
+  </wsdl:message>
+  <wsdl:message name="ISalarioBrReports_ObtemPreviewRSM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtemPreviewRSMResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalarioBrReports_ObtemPreviewRSMSine_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtemPreviewRSMSine" />
+  </wsdl:message>
+  <wsdl:message name="ISalarioBrReports_ObtemPreviewRSMSine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtemPreviewRSMSineResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalarioBrReports_ObterRelatorioSalarialMercado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterRelatorioSalarialMercado" />
+  </wsdl:message>
+  <wsdl:message name="ISalarioBrReports_ObterRelatorioSalarialMercado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterRelatorioSalarialMercadoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISalarioBrReports">
+    <wsdl:operation name="ObtemPreviewRSM_SBR">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalarioBrReports/ObtemPreviewRSM_SBR" message="tns:ISalarioBrReports_ObtemPreviewRSM_SBR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalarioBrReports/ObtemPreviewRSM_SBRResponse" message="tns:ISalarioBrReports_ObtemPreviewRSM_SBR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtemPreviewRSM">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalarioBrReports/ObtemPreviewRSM" message="tns:ISalarioBrReports_ObtemPreviewRSM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalarioBrReports/ObtemPreviewRSMResponse" message="tns:ISalarioBrReports_ObtemPreviewRSM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtemPreviewRSMSine">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalarioBrReports/ObtemPreviewRSMSine" message="tns:ISalarioBrReports_ObtemPreviewRSMSine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalarioBrReports/ObtemPreviewRSMSineResponse" message="tns:ISalarioBrReports_ObtemPreviewRSMSine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterRelatorioSalarialMercado">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalarioBrReports/ObterRelatorioSalarialMercado" message="tns:ISalarioBrReports_ObterRelatorioSalarialMercado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalarioBrReports/ObterRelatorioSalarialMercadoResponse" message="tns:ISalarioBrReports_ObterRelatorioSalarialMercado_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISalarioBrReports" type="tns:ISalarioBrReports">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtemPreviewRSM_SBR">
+      <soap:operation soapAction="http://tempuri.org/ISalarioBrReports/ObtemPreviewRSM_SBR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtemPreviewRSM">
+      <soap:operation soapAction="http://tempuri.org/ISalarioBrReports/ObtemPreviewRSM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtemPreviewRSMSine">
+      <soap:operation soapAction="http://tempuri.org/ISalarioBrReports/ObtemPreviewRSMSine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterRelatorioSalarialMercado">
+      <soap:operation soapAction="http://tempuri.org/ISalarioBrReports/ObterRelatorioSalarialMercado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SalarioBrReports">
+    <wsdl:port name="BasicHttpBinding_ISalarioBrReports" binding="tns:BasicHttpBinding_ISalarioBrReports">
+      <soap:address location="http://wsprdrelatorios.salariobr.com/SalarioBrReports.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

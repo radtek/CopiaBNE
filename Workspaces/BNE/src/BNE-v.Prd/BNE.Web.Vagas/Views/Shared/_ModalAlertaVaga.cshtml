@@ -1,0 +1,60 @@
+﻿@model  BNE.Web.Vagas.Models.AlertaVaga
+
+@*@if (ViewBag.PerguntarAlerta)
+    {*@
+<script>
+    $(document).ready(function () {
+        modal.abrirModal('modalAlertaVaga');
+    });
+</script>
+@*}*@
+
+<div style="display:none;">
+    <div id="modalAlertaVaga" class="modal">
+
+        @*<link href="~/Content/modalAlertaVaga.css" rel="stylesheet" />*@
+
+        <a class="b-close modal_fechar" title="Close"></a>
+        <div class="modal_conteudo2">
+            <div class="container_degustacao_candidatura">
+                <div class="txt_modal">
+                    <span>
+                        Você ainda não tem um alerta de vagas para @Html.Raw(@Model.Funcao) em @Html.Raw(@Model.Cidade)/@Html.Raw(Model.Uf). <br />
+                        Deseja criar um?
+                    </span>
+                </div>
+                <input type="hidden" id="hdfIdCidade" value="@Model.IdCidade" />
+                <input type="hidden" id="hdfIdFuncao" value="@Model.IdFuncao" />
+                <input type="hidden" id="hdfCidade" value="@Model.Cidade" />
+                <input type="hidden" id="hdfUf" value="@Model.Uf" />
+                <input type="hidden" id="hdfFuncao" value="@Model.Funcao" />
+                <br />
+                <div class="txt_checkblox">
+                    <input id="chkAlerta" onchange="NaoMostarNovamente('ckfc')" type="checkbox" class="" />Não mostrar novamente
+                </div>
+                <br />
+                <div>
+                    <table style="padding-bottom: 8px;width:100%">
+                        <tr>
+                            <td>
+                                <div class="nao_agora" style="float:right;">
+                                    <a class="simplemodal-close b-close input_usar_bonus" title="Não agora">
+                                        <input type="button" value="Não">
+                                    </a>
+                                </div>
+                            </td>
+                            <td style="width: 25px;"></td>
+                            <td>
+                                <div class="comprar-vip">
+                                    <a class="input_quero_passar_vip"  onclick="SalvarAlerta()"><input type="button" value="Sim"></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,169 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity"
+	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+	mc:Ignorable="d"
+	x:Class="SilverlightPrototype1Screens.Financeiro"
+	Width="1366" Height="768">
+
+	<Grid x:Name="LayoutRoot" Background="White">
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="Show">
+				<VisualStateGroup.Transitions>
+					<VisualTransition GeneratedDuration="0" To="Show_detalhes"/>
+				</VisualStateGroup.Transitions>
+				<VisualState x:Name="Show_detalhes">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="gridDetalhes">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+			<VisualStateGroup x:Name="Hide">
+				<VisualStateGroup.Transitions>
+					<VisualTransition GeneratedDuration="0" To="Hide_detalhes"/>
+				</VisualStateGroup.Transitions>
+				<VisualState x:Name="Hide_detalhes">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="gridDetalhes">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<ScrollViewer Margin="-6,4,6,-4">
+			<Grid Height="1292" Width="1348">
+				<Image Source="Image26.png" Stretch="Fill"/>
+				<Image HorizontalAlignment="Right" Height="23" Source="Image28.png" Stretch="Fill" VerticalAlignment="Bottom" Width="15" Margin="0,0,315,254" Cursor="Hand">
+					<i:Interaction.Triggers>
+						<i:EventTrigger EventName="MouseLeftButtonDown">
+							<pi:ActivateStateAction TargetState="Show_detalhes"/>
+						</i:EventTrigger>
+					</i:Interaction.Triggers>
+				</Image>
+			</Grid>
+		</ScrollViewer>
+		<Grid x:Name="gridDetalhes" Margin="393,161,403,107">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Rectangle Fill="#FFF4F4F5" Margin="0,0,-2,2"/>
+			<Image Height="44" Source="Image29.png" Stretch="Fill" VerticalAlignment="Top" Margin="2,2,-1,0"/>
+			<TextBlock Margin="12,10,0,0" TextWrapping="Wrap" Text="Dados de Pagamento" VerticalAlignment="Top" Foreground="White" FontSize="18.667" HorizontalAlignment="Left"/>
+			<HyperlinkButton x:Name="hlFechar" Content="Fechar" Margin="0,12,4,0" VerticalAlignment="Top" FontSize="16" Foreground="White" HorizontalAlignment="Right">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="Click">
+						<pi:ActivateStateAction TargetState="Hide_detalhes"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</HyperlinkButton>
+			<Image Height="25" Source="Image30.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,13,62,0" HorizontalAlignment="Right" Width="23"/>
+			<TextBlock Margin="0,58,466,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" HorizontalAlignment="Right" TextAlignment="Right"><Run Text="Tipo do Plano"/><Run Text=":"/></TextBlock>
+			<TextBlock HorizontalAlignment="Left" Margin="116,58,0,0" TextWrapping="Wrap" Text="Acesso Vip" VerticalAlignment="Top"/>
+			<TextBlock Margin="0,82,466,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Text="Início:" HorizontalAlignment="Right" TextAlignment="Right"/>
+			<TextBlock HorizontalAlignment="Left" Margin="116,82,0,0" TextWrapping="Wrap" Text="30/10/2012" VerticalAlignment="Top"/>
+			<TextBlock Margin="0,82,310,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Text="Fim:" HorizontalAlignment="Right" TextAlignment="Right"/>
+			<TextBlock Margin="267,82,237,0" TextWrapping="Wrap" Text="29/11/2012" VerticalAlignment="Top" d:LayoutOverrides="Width"/>
+			<TextBlock Margin="0,56,310,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Text="Situação:" HorizontalAlignment="Right" TextAlignment="Right"/>
+			<TextBlock Margin="267,56,247,0" TextWrapping="Wrap" Text="Liberado" VerticalAlignment="Top"/>
+			<sdk:TabControl Height="364" Width="560" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,133,0,0">
+				<sdk:TabItem Header="Forma de Pagamento" Visibility="Visible">
+					<Grid Background="#FFE5E5E5" HorizontalAlignment="Left" Width="546" Height="332" VerticalAlignment="Top">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+						<Grid x:Name="gridFormaPagamento" Margin="9,18,4,11">
+							<TextBlock Margin="0,35,350,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" HorizontalAlignment="Right" Width="175" TextAlignment="Right" FontSize="13.333"><Run Text="Forma de Pagamento"/><Run Text=":"/></TextBlock>
+							<Grid x:Name="gridDadosFixos" Margin="200,35,140,74">
+								<TextBlock TextWrapping="Wrap" Text="Débito em Conta" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="13.333"/>
+								<TextBlock HorizontalAlignment="Left" Margin="0,29,0,0" TextWrapping="Wrap" Text="HSBC" VerticalAlignment="Top" FontSize="13.333"/>
+								<TextBlock HorizontalAlignment="Left" Margin="0,55,0,0" TextWrapping="Wrap" Text="0051" FontSize="13.333" VerticalAlignment="Top"/>
+								<TextBlock HorizontalAlignment="Left" Margin="0,0,0,30" TextWrapping="Wrap" Text="Luiz Fulano da Silva Pacheco" FontSize="13.333" VerticalAlignment="Bottom"/>
+								<TextBlock Margin="0,175,0,0" TextWrapping="Wrap" Text="123.456.789-09" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13.333"/>
+								<TextBlock Margin="0,85,0,90" TextWrapping="Wrap" Text="05521546-10" HorizontalAlignment="Left" FontSize="13.333" d:LayoutOverrides="HorizontalAlignment, Height"/>
+								<TextBlock Margin="0,0,0,56" TextWrapping="Wrap" Text="Sim" HorizontalAlignment="Left" FontSize="13.333" VerticalAlignment="Bottom"/>
+							</Grid>
+							<TextBlock Margin="0,64,350,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" HorizontalAlignment="Right" Width="145" TextAlignment="Right" Text="Banco:" FontSize="13.333"/>
+							<TextBlock Margin="0,90,350,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" HorizontalAlignment="Right" Width="145" TextAlignment="Right" Text="Agência:" FontSize="13.333"/>
+							<TextBlock Margin="0,0,350,104" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Width="145" TextAlignment="Right" Text="Nome Titular:" FontSize="13.333" VerticalAlignment="Bottom"/>
+							<TextBlock Margin="0,210,350,0" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Width="42" TextAlignment="Right" Text="CPF:" VerticalAlignment="Top" FontSize="13.333"/>
+							<TextBlock Margin="0,120,350,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" HorizontalAlignment="Right" Width="55" TextAlignment="Right" Text="Conta:" FontSize="13.333"/>
+							<TextBlock Margin="0,0,350,131" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Width="179" TextAlignment="Right" FontSize="13.333" VerticalAlignment="Bottom"><Run Text="Candidato é Titular"/><Run Text=":"/></TextBlock>
+						</Grid>
+						<Button x:Name="btnEditar" HorizontalAlignment="Left" Margin="4,3,0,0" VerticalAlignment="Top" Width="46" ToolTipService.ToolTip="Editar Forma de Pagamento" Click="Button_Click" Content="Editar"/>
+						<Grid x:Name="gridDadosEdicao" Margin="209,51,10,83">
+							<TextBox HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Text="Débito em Conta" Width="191" Margin="0,0,136,0"/>
+							<ComboBox Margin="0,28,136,0" SelectedIndex="0" Height="24" VerticalAlignment="Top">
+								<ComboBoxItem Content="HSBC"/>
+								<ComboBoxItem Content="Caixa"/>
+								<ComboBoxItem Content="Itaú"/>
+								<ComboBoxItem Content="Bradesco"/>
+							</ComboBox>
+							<TextBox HorizontalAlignment="Right" Margin="0,55,136,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0051" Width="191"/>
+							<TextBox HorizontalAlignment="Right" Margin="0,84,136,90" TextWrapping="Wrap" Text="05521546-10" Width="191" d:LayoutOverrides="Height"/>
+							<TextBox HorizontalAlignment="Right" Margin="0,0,132,30" TextWrapping="Wrap" Text="Luiz Fulano da Silva Pacheco" Width="195" VerticalAlignment="Bottom"/>
+							<RadioButton Content="Não" Margin="49,0,0,59" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+							<RadioButton Content="Sim" Margin="-1,0,0,59" VerticalAlignment="Bottom" IsChecked="True" HorizontalAlignment="Left"/>
+							<TextBox HorizontalAlignment="Right" Margin="0,0,227,0" TextWrapping="Wrap" Text="123.456.789-09" Width="100" VerticalAlignment="Bottom"/>
+						</Grid>
+						<Button x:Name="btnSalvar" HorizontalAlignment="Left" Margin="4,3,0,0" VerticalAlignment="Top" Width="51" ToolTipService.ToolTip="Editar Forma de Pagamento" Click="btnSalvar_Click" Content="Salvar"/>
+					</Grid>
+				</sdk:TabItem>
+				<sdk:TabItem Header="Histórico" Visibility="Visible">
+					<Grid Background="#FFE5E5E5">
+						<Grid x:Name="gridHistorico" Margin="10,86,9,50">
+							<Image Source="Image32.png" Stretch="Fill"/>
+							<TextBlock HorizontalAlignment="Left" Margin="7,0,0,13" TextWrapping="Wrap" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment" Width="145"><Run Text="01/10/2012"/><Run Text="  10:58:00"/></TextBlock>
+							<TextBlock HorizontalAlignment="Left" Margin="6,0,0,45" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="129" d:LayoutOverrides="HorizontalAlignment"><Run Text="01/10/2012"/><Run Text="  12:00:00"/></TextBlock>
+							<TextBlock HorizontalAlignment="Left" Margin="6,95,0,80" TextWrapping="Wrap" Width="129" d:LayoutOverrides="HorizontalAlignment, Height"><Run Text="01/10/2012"/><Run Text="  1"/><Run Text="4"/><Run Text=":00:00"/></TextBlock>
+							<TextBlock HorizontalAlignment="Left" Margin="6,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" d:LayoutOverrides="HorizontalAlignment"><Run Text="01/10/2012"/><Run Text="  1"/><Run Text="4"/><Run Text=":"/><Run Text="1"/><Run Text="0:00"/></TextBlock>
+							<TextBlock HorizontalAlignment="Left" Margin="170,0,0,13" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="325"><Run Text="[USU"/><Run Text="Á"/><Run Text="RIO] "/><Run Text="Compra do VIP"/></TextBlock>
+							<TextBlock HorizontalAlignment="Left" Margin="170,0,0,46" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="325"><Run Text="["/><Run Text="BNE"/><Run Text="] "/><Run Text="Solicitação de Débito Automático"/></TextBlock>
+							<TextBlock HorizontalAlignment="Left" Margin="170,94,0,81" TextWrapping="Wrap" Width="325" d:LayoutOverrides="Height"><Run Text="["/><Run Text="BANCO"/><Run Text="] "/><Run Text="Confirmação positiva de débito"/></TextBlock>
+							<TextBlock HorizontalAlignment="Left" Margin="170,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325"><Run Text="["/><Run Text="B"/><Run Text="NE"/><Run Text="] "/><Run Text="Liberação do Plano"/></TextBlock>
+							<TextBlock Margin="0,19,421,0" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Width="44" TextAlignment="Center" Text="Data" VerticalAlignment="Top"/>
+							<TextBlock Margin="0,19,287,0" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Width="63" Text="Histórico" VerticalAlignment="Top"/>
+						</Grid>
+						<ComboBox Margin="53,11,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" SelectedIndex="0">
+							<ComboBoxItem Content="Janeiro"/>
+							<ComboBoxItem Content="Fevereiro"/>
+							<ComboBoxItem Content="Março"/>
+							<ComboBoxItem Content="Abril"/>
+							<ComboBoxItem Content="Maio"/>
+							<ComboBoxItem Content="Junho"/>
+							<ComboBoxItem Content="Julho"/>
+							<ComboBoxItem Content="Agosto"/>
+							<ComboBoxItem Content="Setembro"/>
+							<ComboBoxItem Content="Outubro"/>
+							<ComboBoxItem Content="Novembro"/>
+							<ComboBoxItem Content="Dezembro"/>
+						</ComboBox>
+						<ComboBox Margin="234,12,194,0" VerticalAlignment="Top" SelectedIndex="2">
+							<ComboBoxItem Content="2011"/>
+							<ComboBoxItem Content="2012"/>
+							<ComboBoxItem Content="2013" IsSelected="True"/>
+						</ComboBox>
+						<TextBlock HorizontalAlignment="Left" Margin="14,13,0,0" TextWrapping="Wrap" Text="Mês:" VerticalAlignment="Top"/>
+						<TextBlock HorizontalAlignment="Left" Margin="201,13,0,0" TextWrapping="Wrap" Text="Ano:" VerticalAlignment="Top"/>
+						<Button Content="Filtrar" HorizontalAlignment="Right" Margin="0,12,100,0" VerticalAlignment="Top" Width="75" Height="20"/>
+					</Grid>
+				</sdk:TabItem>
+			</sdk:TabControl>
+			<TextBlock Margin="0,104,466,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" HorizontalAlignment="Right" TextAlignment="Right"><Run Text="Valor"/><Run Text=":"/></TextBlock>
+			<TextBlock Margin="116,104,230,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="R$ 12,50"/><Run Text=" ("/><Run Text="50% de desconto"/><Run Text=")"/></TextBlock>
+		</Grid>
+	</Grid>
+</UserControl>

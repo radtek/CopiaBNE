@@ -1,0 +1,28 @@
+﻿body
+{
+    /*background: none;*/
+    background-color: #fff;
+}
+
+.barra_rodape
+{
+    background-image: url("/img/barra_rodape_46px.png");
+}
+
+.rodape_centralizado {
+    padding: 16px 0;
+}
+
+.final_rodape div
+{
+    margin: 0 auto;
+    text-align: right;
+    width: 883px;    
+}
+
+.topo .interna, 
+.painel_filtro_curriculo, 
+.conteudo .interna, 
+.gridview_padrao.pesquisa_curriculo, 
+.painel_filtro_vaga, 
+.painel_botoes.painel_pesquisa_curriculo { width: 890px; }

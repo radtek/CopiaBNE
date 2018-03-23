@@ -1,0 +1,316 @@
+﻿<!-- ETAPA 04 -->
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col center">
+            <h3 class="darkgrey">Cadastre seu currículo!</h3>
+            <h5 class="mediumgrey">É fácil! É rápido! É sempre grátis.</h5>
+        </div>
+    </div>
+
+    <!-- Tracker-->
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col md-progtrckr">
+            <ol class="progtrckr" data-progtrckr-steps="5">
+                <li class="progtrckr-todo" id="step-ok"><span>Mini Curriculo</span></li>
+                <li class="progtrckr-todo" id="step-ok"><span>Dados Pessoais</span></li>
+                <li class="progtrckr-todo" id="step-ok"><span>Formação e Cursos</span></li>
+                <li class="progtrckr-done"><span><strong>4. Informações Extras</strong></span><br /><div class="substage">Seu novo emprego esta próximo.</div></li>
+                <li class="progtrckr-todo" id="step-nok"><span>Conferir</span></li>
+            </ol>
+        </div>
+    </div>
+
+@using (Ajax.BeginForm("Index", "PessoaFisica", null, new AjaxOptions
+{
+    HttpMethod = "Post",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "etapa"
+}, new { @id = "Etapa4Form" }))
+{
+    <!-- Funções Desejadas -->
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet title"><h6><strong>Função desejada.</strong><span> Qual as áres onde deseja atuar?</span></h6></div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="desiredfunc" class="mdl-textfield__input" />
+            <label for="desiredfunc" class="mdl-textfield__label">Função Desejada</label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-phone vertitemform">
+            Experiência nesta função:
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--3-col-tablet mdl-cell--1-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="funcyears" class="mdl-textfield__input" />
+            <label for="funcyears" class="mdl-textfield__label">Anos</label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--3-col-tablet mdl-cell--1-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="funcmonths" class="mdl-textfield__input" />
+            <label for="funcmonths" class="mdl-textfield__label">Meses</label>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="desiredfunc" class="mdl-textfield__input" />
+            <label for="desiredfunc" class="mdl-textfield__label">Função Desejada</label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-phone vertitemform">
+            Experiência nesta função:
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--3-col-tablet mdl-cell--1-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="funcyears" class="mdl-textfield__input" />
+            <label for="funcyears" class="mdl-textfield__label">Anos</label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--3-col-tablet mdl-cell--1-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="funcmonths" class="mdl-textfield__input" />
+            <label for="funcmonths" class="mdl-textfield__label">Meses</label>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="desiredfunc" class="mdl-textfield__input" />
+            <label for="desiredfunc" class="mdl-textfield__label">Função Desejada</label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-phone vertitemform">
+            Experiência nesta função:
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--3-col-tablet mdl-cell--1-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="funcyears" class="mdl-textfield__input" />
+            <label for="funcyears" class="mdl-textfield__label">Anos</label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--3-col-tablet mdl-cell--1-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="funcmonths" class="mdl-textfield__input" />
+            <label for="funcmonths" class="mdl-textfield__label">Meses</label>
+        </div>
+        <!-- Disponibilidade de Horários -->
+        <div class="mdl-cell mdl-cell--12-col"><h6><strong>Qual sua disponibilidade de horários?</strong><span> Selecione os horários que quer trabalhar.</span></h6></div>
+        <div class="mdl-cell mdl-cell--2-col">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="morning">
+                <input type="checkbox" id="morning" class="mdl-checkbox__input" name="morning" />
+                <span class="mdl-checkbox__label">Manhã</span>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="afternoon">
+                <input type="checkbox" id="afternoon" class="mdl-checkbox__input" name="afternoon" />
+                <span class="mdl-checkbox__label">Tarde</span>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="night">
+                <input type="checkbox" id="night" class="mdl-checkbox__input" name="night" />
+                <span class="mdl-checkbox__label">Noite</span>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="saturday">
+                <input type="checkbox" id="saturday" class="mdl-checkbox__input" name="saturday" />
+                <span class="mdl-checkbox__label">Sábado</span>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="sunday">
+                <input type="checkbox" id="sunday" class="mdl-checkbox__input" name="sunday" />
+                <span class="mdl-checkbox__label">Domingo</span>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="travel">
+                <input type="checkbox" id="travel" class="mdl-checkbox__input" name="travel" />
+                <span class="mdl-checkbox__label">Viagem</span>
+            </label>
+        </div>
+    </div>
+    <!-- E quanto a sua localização? -->
+    <div class="mdl-grid  mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--12-col spacing"><h6><strong>E quanto a sua localização?</strong><span> Selecione as cidade que quer trabalhar.</span></h6></div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col mdl-select-bne center top-12">
+                    <select class="mdl-select__input">
+                        <option value="1" class="mdl-select__option" disabled selected>Escolha uma cidade</option>
+                        <option value="2" class="mdl-select__option">Cidade 1</option>
+                        <option value="3" class="mdl-select__option">Cidade 2</option>
+                        <option value="4" class="mdl-select__option">Cidade 3</option>
+                        <option value="5" class="mdl-select__option">Outra</option>
+                    </select>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col center">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnform btnformmedium">Adicionar Localização</button>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+            <div class="mdl-grid ">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <table class="resp">
+                        <thead>
+                            <tr>
+                                <th>Localização</th>
+                                <th>Remover</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Localização">Curitiba/PR</td>
+                                <td data-label="Remover"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised btnformneg">Remover</button></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Localização">Curitiba/PR</td>
+                                <td data-label="Remover"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised btnformneg">Remover</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Você dirige? -->
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col title"><h6><strong>Você dirige?</strong><span> Informe seu tipo de habilitação e qual veículo você possui.</span></h6></div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone vertitemform ">Tipo de Habilitação:</div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-phone vertitemform center">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="a">
+                <input type="checkbox" id="a" class="mdl-checkbox__input" name="a" />
+                <span class="mdl-checkbox__label">A</span>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-phone vertitemform center">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="b">
+                <input type="checkbox" id="b" class="mdl-checkbox__input" name="b" />
+                <span class="mdl-checkbox__label">B</span>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-phone vertitemform center">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="ab">
+                <input type="checkbox" id="ab" class="mdl-checkbox__input" name="ab" />
+                <span class="mdl-checkbox__label">AB</span>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-phone vertitemform center">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="c">
+                <input type="checkbox" id="c" class="mdl-checkbox__input" name="c" />
+                <span class="mdl-checkbox__label">C</span>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-phone vertitemform center">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="d">
+                <input type="checkbox" id="d" class="mdl-checkbox__input" name="d" />
+                <span class="mdl-checkbox__label">D</span>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-phone vertitemform center">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="e">
+                <input type="checkbox" id="e" class="mdl-checkbox__input" name="e" />
+                <span class="mdl-checkbox__label">E</span>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="cnh" class="mdl-textfield__input" />
+            <label for="cnh" class="mdl-textfield__label">Número da CNH</label>
+        </div>
+    </div>
+    <!-- Possui Veículo próprio? -->
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col"><h6><strong>Possui Veículo próprio?</strong><span> Indique ano e modelo.</span></h6></div>
+        <div class="mdl-cell mdl-cell--12-col">
+            <table class="resp">
+                <thead>
+                    <tr>
+                        <th>Tipo de Veículo</th>
+                        <th>Modelo do Veículo</th>
+                        <th>Ano</th>
+                        <th>Editar</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Tipo de Veículo">Motocicleta</td>
+                        <td data-label="Modelo do Veículo">Virago</td>
+                        <td data-label="Ano">2004</td>
+                        <td data-label="Editar"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformmedium">Editar</button></td>
+                        <td data-label="Remover"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised btnformneg">Remover</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-select-bne center">
+            <select class="mdl-select__input">
+                <option value="1" class="mdl-select__option" disabled selected>Tipo de Veículo</option>
+                <option value="2" class="mdl-select__option">Veículo 1</option>
+                <option value="3" class="mdl-select__option">Veículo 2</option>
+                <option value="4" class="mdl-select__option">Veículo 3</option>
+                <option value="5" class="mdl-select__option">Outra</option>
+            </select>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--3-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="modelveic" class="mdl-textfield__input" />
+            <label for="modelveic" class="mdl-textfield__label">Modelo do Veículo</label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="yearveic" class="mdl-textfield__input" />
+            <label for="yearveic" class="mdl-textfield__label">Ano</label>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col center vert-middle top12">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnform btnformmedium">Adicionar Veículo</button>
+        </div>
+    </div>
+    <!-- Habilidades e conhecimentos / Outras experiência -->
+    <div class="mdl-grid  mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--12-col title spacing"><h6><strong>Outras características.</strong><span> Insira arquivos informações que podem lhe ajudar</span></h6></div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col suggestions darkgrey">
+                    <strong>Informe aqui suas habilidades e conhecimentos importantes para a função.</strong> Ex: (Vendedor) Facilidade em negociações comerciais, prospecção e reativação de carteira de clientes.
+                </div>
+                <div class="mdl-cell mdl-cell--12-col md-textarea-bne">
+                    <textarea class="mdl-textfield__input" type="text" rows="8" id="activ"></textarea>
+                    <label class="mdl-textfield__label" for="activ">Outros conhecimentos</label>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-grid ">
+                <div class="mdl-cell mdl-cell--12-col suggestions darkgrey">
+                    <strong>Utilize este campo para descrever dados como, trabalho voluntário,</strong> hobbies, intercâmbios, trabalhos temporários/ free lancer, religião, outras experiências profissionais, etc.
+                </div>
+                <div class="mdl-cell mdl-cell--12-col md-textarea-bne">
+                    <textarea class="mdl-textfield__input" type="text" rows="8" id="activ"></textarea>
+                    <label class="mdl-textfield__label" for="activ">Observações sobre você</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Upload de arquivos -->
+
+    <div class="mdl-grid  mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--12-col spacing"><h6><strong>Anexar Arquivos.</strong><span> Insira arquivos que pode lhe ajudar como: currículo já criado, artigos, portfólios, projetos, etc..</span></h6></div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col center ">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformmedium">Escolher Arquivo</button>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+            <div class="mdl-grid ">
+                <table class="resp">
+                    <thead>
+                        <tr>
+                            <th>Tipo Veículo</th>
+                            <th>Modelo</th>
+                            <th>Ano</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Nome do arquivo">Motocicleta</td>
+                            <td data-label="Data do envio">Virago</td>
+                            <td data-label="Remover"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised btnformneg">Remover</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col center">
+            <button type="submit" name="action:CadastrarInformacoesExtras" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformbig">Salvar e avançar</button>
+        </div>
+    </div>
+}

@@ -1,0 +1,83 @@
+﻿@using BNE.Web.Vagas.Models
+@model PerguntaCelular
+<div id="modalPerguntaCelular" class="modal amarela">
+    <script>
+        modal.abrirModal('modalPerguntaCelular');
+    </script>
+    <link href="~/Content/ModalExperienciaProfissional.css" rel="stylesheet" />
+    <a class="simplemodal-close b-close modal_fechar" title="Close"></a>
+    <div class="modal_conteudo">
+        <div class="container_confirmacao_candidatura">
+            <div class="icone_confirmacao">
+                <img alt="Ícone Confirmação" src="/Images/img_alerta_bne.png" />
+            </div>
+            <div class="texto_confirmacao">      
+                @using (Ajax.BeginForm("Candidatar", "Vaga", new AjaxOptions { OnFailure = "showError", InsertionMode = InsertionMode.Replace, UpdateTargetId = "upd_teste" + Model.IdentificadorVaga }))
+                {
+                    @Html.HiddenFor(m => m.Identificador, new { @id = "id_" + Model.Identificador })
+                    @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+                    @Html.HiddenFor(m => m.IdPerguntaHistorico, new { @id = "id_" + Model.IdPerguntaHistorico })
+                    @Html.HiddenFor(m => m.NumeroDDDCelularAntigo, new { @id = "id_" + Model.NumeroDDDCelularAntigo })
+                    @Html.HiddenFor(m => m.NumeroCelularAntigo, new { @id = "id_" + Model.NumeroCelularAntigo })
+
+                    
+                    <fieldset class=""><legend></legend>
+                <p class="texto_aviso">
+                   Confira o seu celular antes de enviar seu currículo para esta vaga:
+                </p>
+                        <div style="float:left; width:350px; margin-top: 15px;">
+                            <div class="editor-label">@Html.LabelFor(m => m.NumeroDDDCelular)</div>
+                            <div class="editor-label">@Html.LabelFor(m => m.NumeroCelular)</div>
+                            </div>
+                <div style="float:left; width:120px; margin-top: 15px;">
+                    <div class="editor-field-DDD">@Html.TextBoxFor(m => m.NumeroDDDCelular, new { @class = "textbox_telefone_DDD" })</div>
+                </div>
+                <div style="float:left; width:150px; margin-top: -5px;">
+                    <div class="editor-field-Telefone">@Html.TextBoxFor(m => m.NumeroCelular, new { @class = "textbox_telefone" })</div>
+                </div>
+                @if (!Model.FlagCelularConfirmado)
+                {
+                    <div style="float:left; width:350px; margin-top: 0;">
+                        <div class="editor-label">@Html.LabelFor(m => m.CodigoValidacao)</div>
+                    </div>
+                    <div style="float:left; width:130px; margin-top: 15px;">
+                    <div class="editor-field-Codigo">@Html.TextBoxFor(m => m.CodigoValidacao, new { @class = "textbox_telefone" })</div>
+                        </div>
+                }
+                        <div><button class="btn btn-danger btn-small espacoBotao" name="Button" value="AtualizarCelular">Atualizar número</button></div>
+                        </fieldset>
+                }
+
+                @using (Ajax.BeginForm("Candidatar", "Vaga", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "container_candidatura_" + Model.IdentificadorVaga }))
+                {
+                    @Html.HiddenFor(m => m.Identificador, new { @id = "id_" + Model.Identificador })
+                    @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+                    @Html.HiddenFor(m => m.IdPerguntaHistorico, new { @id = "id_" + Model.IdPerguntaHistorico })
+                    @Html.HiddenFor(m => m.NumeroDDDCelular, new { @id = "id_" + Model.NumeroDDDCelular })
+                    @Html.HiddenFor(m => m.NumeroCelular, new { @id = "id_" + Model.NumeroCelular })
+                    @Html.HiddenFor(m => m.NumeroDDDCelularAntigo, new { @id = "id_" + Model.NumeroDDDCelularAntigo })
+                    @Html.HiddenFor(m => m.NumeroCelularAntigo, new { @id = "id_" + Model.NumeroCelularAntigo })
+                    <button class="btn btn-primary btn-small botaoCorreto" name="Button" value="CelularCorreto">Está correto</button>
+                }
+
+                <span id="error" class="error" style="margin:20px 0 0 310px; color:red;font-size:15px;"></span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+
+        $('.modal_fechar').hide();
+
+        $('#NumeroDDDCelular').attr('onkeyDown', 'mascara( this, DDDtel);');
+        $('#NumeroDDDCelular').attr('maxlength', '2');
+
+        $('#NumeroCelular').attr('maxlength', '9');
+        $('#NumeroCelular').attr('onkeyDown', 'mascara( this, mtel );ValidarCelular();');
+        $('#NumeroCelular').attr('onblur', 'ValidarCelular();');
+
+        ValidarCelular();
+    });
+</script>

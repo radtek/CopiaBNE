@@ -1,0 +1,204 @@
+﻿@using BNE.Web.Vagas.Code
+@using BNE.Web.Vagas.Code.Helpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta property="og:image" content="http://www.bne.com.br/img/logo_facebook.png" />
+    <meta property="og:title" content="Banco Nacional de Empregos | BNE - Banco Nacional de Empregos" />
+    @Html.MetaTag(MetatagHelper.MetatagType.MetaData).Render()
+    <title>@Html.MetaTag(MetatagHelper.MetatagType.Title).Render()</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("css", false)
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body id="body">
+    @*Integração Facebook*@
+    <div id="fb-root">
+    </div>
+    <script type="text/javascript">
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: 450210698402153,
+                status: true,
+                cookie: true,
+                xfbml: true
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/pt_BR/all.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    @*Fim Integração Facebook*@
+    <div class="header">
+        <div class="conteudo-wrapper">
+            @*<div class="esquerda">*@
+            <div class="logo">
+                <a href='@Url.Action("Index", "Home")'>
+                    <img src='@Url.Content("~/Images/logo_bne.png")' alt="BNE" />
+                </a>
+            </div>
+            <div class="painel_informacoes">
+                @{ Html.RenderAction("RecuperarEstatistica", "Base"); }
+            </div>
+            <div class="painel_login">
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    <a href='@Url.Action("Sair", "Base")' rel="nofollow">
+                        Sair <i class="fa fa-sign-in"></i>
+
+                    </a>
+                }
+                else
+                {
+                    <a href='@if (Request.Url != null)
+                             {
+                                 @Url.Action("Entrar", "Base", new { redirectURL = Request.Url.AbsoluteUri })
+                             }' rel="nofollow">
+                        Entrar  <i class="fa fa-sign-in"></i>
+                    </a>
+                }
+            </div>
+            @*
+            </div>*@
+            @*
+            <div class="direita">
+            </div>
+            <div class="clear"></div>*@
+            <div class="painel_icones">
+                @{ Html.RenderAction("RecuperarAtalhosTopo", "Base");}
+            </div>
+            <div class="busca">
+                <div class="busca_superior">
+                    <a href="javascript:;" id="aBuscarVagas" rel="nofollow">
+                        Buscar VAGAS <i class="fa fa-caret-up"></i>
+                    </a>
+                    <a id="aBuscarCurriculos" href='@Url.Action("PesquisaCurriculoMasterPage", "Base")' rel="nofollow">
+                        Buscar CURRÍCULOS <i class="fa fa-caret-down"></i>
+                    </a>
+                </div>
+                <div class="busca_inferior">
+
+                    @using (Html.BeginForm("PesquisarVagas", "ResultadoPesquisaVaga", FormMethod.Post, new { autocomplete = "off" }))
+                    {
+                        <div class="funcao">
+                            @Html.TextBox("txtFuncao", (string)ViewBag.Funcao, new { @Class = "pesquisa_topo_funcao input", @value = (string)ViewBag.Funcao })
+                        </div>
+                        <div class="cidade">
+                            <input type="text" id="txtCidade" name="txtCidade" class="pesquisa_topo_cidade input" value="@ViewBag.Cidade" />
+                        </div>
+                        <span class="descricaoTopo DtFuncao">
+                            Função <i class="fa fa-level-up fa2"></i>
+                        </span>
+
+                        <span class="descricaoTopo DtCidade">
+                            Cidade <i class="fa fa-level-up fa2"></i>
+                        </span>
+@*<div class="palavrachave">
+    @Html.TextBox("PalavraChave", null, new { @Class = "pesquisa_topo_palavra_chave", id = "txtPalavraChave" })
+                        </div>*@
+                        <div class="buscar">
+                            <input type="submit" name="Buscar" value="Buscar Vagas" alt="Buscar Vagas" class="search" />
+                            <a ID="buscaavancada" runat="server" href="/pesquisa-de-vagas">
+                                Pesquisa avançada
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content" id="conteudo">
+        <section class="conteudo-wrapper">
+            @RenderBody()
+        </section>
+    </div>
+    <div class="footer" id="barra_rodape">
+        <div class="wrapper">
+            @{ Html.RenderAction("RecuperarRodape", "Base");}
+        </div>
+    </div>
+    <div id="modal_container"></div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/site")
+    <script src="~/Scripts/jquery.bpopup.min.js"></script>
+    @RenderSection("scripts", false)
+    <script type="text/javascript">
+        var appSubFolder = "@Html.GetApplicationSubfolder()";
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-1937941-6']);
+        _gaq.push(['_setDomainName', 'bne.com.br']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        $(function () {
+            if (!!navigator.userAgent.match(/Trident\/7\./)) {
+                $("#lista_rodape_empresa_empresa").css("font-size", "99%");
+                $("#lista_rodape_geral_geral").css("font-size", "99%");
+            }
+
+            //Evento para que as requisições ajax considerem o subdiretório
+            $(document).bind("ajaxSend", function (e, xhr, settings) {
+                var patt = /^(https?:\/\/[^\/]+)?(.*)/i;
+                var match = patt.exec(settings.url);
+                if (match.length >= 3 && !(match[2].indexOf(appSubFolder) === 0)) {
+                    var url = "";
+                    if (typeof match[1] !== typeof undefined) {
+                        url += match[1];
+                    }
+                    url += appSubFolder
+                    if (typeof match[2] !== typeof undefined) {
+                        url += match[2];
+                    }
+
+                    settings.url = url;
+                }
+            });
+
+            if (appSubFolder != "") {
+                $("a, form").each(function () {
+                    var t = $(this);
+                    var url = "";
+                    var notRedir = /^((https?:)?\/\/|\/(vagas?-de-emprego|resultado-pesquisa-avancada-de-vagas)|javascript:)/i;
+                    var attrName = ""
+                    var attr = t.is("[action]");
+                    if (typeof attr !== typeof undefined && attr !== false) {
+                        url = t.attr("action");
+                        attrName = "action";
+                    }
+                    var attr = t.is("[href]");
+                    if (typeof attr !== typeof undefined && attr !== false) {
+                        url = t.attr("href");
+                        attrName = "href"
+                    }
+                    if (url.match(notRedir) || attrName == "") {
+                        return;
+                    }
+
+                    t.attr(attrName, appSubFolder + t.attr(attrName));
+                });
+            }
+        });
+
+
+    </script>
+</body>
+</html>

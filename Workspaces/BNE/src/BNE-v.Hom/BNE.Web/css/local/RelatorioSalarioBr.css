@@ -1,0 +1,5 @@
+﻿body {
+}
+.banner_salariobr { 
+    background: url(/img/salariobr/banner-salario-relatorio.png); width: 890px; height: 121px; position: relative; cursor: pointer;  
+}

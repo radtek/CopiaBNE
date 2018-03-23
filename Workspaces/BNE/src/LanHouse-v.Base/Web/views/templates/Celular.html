@@ -1,0 +1,9 @@
+﻿<div class="form-group row">
+    <label for="{{eNome}}">{{eLabel}} <span class="required" ng-show="eRequired">*</span> <span class="required" ng-show="is9Digitos==true && celularTem9Digitos==false">falta 9º dígito</span></label>
+    <input type="text" class="form-control" name="{{eNome}}" id="{{eNome}}" ng-model="cadCV.curriculo.celular" ng-minlength="2" validar9-digitos only-num maxlength="9" {{eRequired}} />
+
+    <div class="tooltip right in" style="top: 6px; left: 126px; display: block;" ng-show="formPasso1.Celular.$invalid && formPasso1.Celular.$touched">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner">Número de celular inválido!</div>
+    </div>
+</div>

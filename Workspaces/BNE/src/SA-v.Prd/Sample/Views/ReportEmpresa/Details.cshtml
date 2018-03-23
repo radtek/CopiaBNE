@@ -1,0 +1,155 @@
+﻿@model AdminLTE_Application.CRM_Empresa
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CRM_Empresa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CRM_Situacao_Atendimento.Des_Situacao_atendimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CRM_Situacao_Atendimento.Des_Situacao_atendimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Idf_Filial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Idf_Filial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Raz_Social)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Raz_Social)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Cadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Cadastro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Ultimo_Acesso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Ultimo_Acesso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Idf_Plano)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Idf_Plano)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Des_Plano)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Des_Plano)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Fim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Fim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Qtd_Dias_Plano_Ativo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Qtd_Dias_Plano_Ativo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Qtd_Acabar_Plano)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Qtd_Acabar_Plano)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Ultimo_Atendimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Ultimo_Atendimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nme_Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nme_Cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sig_Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sig_Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Idf_Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Idf_Cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Retorno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Retorno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Idf_Area_BNE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Idf_Area_BNE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Num_CNPJ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

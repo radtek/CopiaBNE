@@ -1,0 +1,18 @@
+﻿.gridview_padrao td
+{
+    padding: 4px;
+}
+
+
+.gridview_padrao th.rgHeader
+{
+    color: #000 !important;
+    font-weight: bold;
+    padding: 4px;
+    text-align: center;
+}
+
+.textbox_sigla_instituicao
+{
+    width: 180px;
+}

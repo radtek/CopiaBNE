@@ -1,0 +1,23 @@
+/*------------------------------------------------------------ Theme Verde Monster*/
+.topo {
+  background-image: url("/img/App_Themes/VerdeMonnster/bg_topo.gif"); }
+
+.painel_filtro_vaga_escondido {
+  background-image: linear-gradient(90deg, #71E603 6%, #5ABD09 18%, #71E603 72%, #7FFF00 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #7FFF00 6%, #5ABD09 18%, #71E603 72%, #7FFF00 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #7FFF00 6%, #5ABD09 18%, #71E603 72%, #7FFF00 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #7FFF00 6%, #5ABD09 18%, #71E603 72%, #7FFF00 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7FFF00', endColorstr='#5ABD09') !important; }
+
+#pnlBusca.painel_filtro_vaga {
+  background-image: linear-gradient(90deg, #71E603 6%, #5ABD09 18%, #71E603 72%, #7FFF00 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #7FFF00 6%, #5ABD09 18%, #71E603 72%, #7FFF00 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #7FFF00 6%, #5ABD09 18%, #71E603 72%, #7FFF00 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #7FFF00 6%, #5ABD09 18%, #71E603 72%, #7FFF00 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7FFF00', endColorstr='#5ABD09') !important;
+  border-radius: 0 4px 4px 4px !important; }
+
+#aBuscarVagas {
+  border-bottom: 35px solid #7FFF00 !important; }
+
+/*# sourceMappingURL=topo.css.map */

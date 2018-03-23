@@ -1,0 +1,77 @@
+﻿<div id="log-controller" ng-controller="log" class="main-content">
+    <div class="header">
+        <h1 class="page-title">
+            <i class="fa fa-bug"></i>Erros
+        </h1>
+    </div>
+    <div class="toogle">
+        <span>Show Custom Message</span>
+        <div class="switches">
+            <input type="checkbox" class="sl" id="switch-custom-message" ng-click="changeCustomMessage()" ng-checked="{{showCustomMessage}}" />
+            <label class="switch sw2 green" for="switch-custom-message"></label>
+        </div>
+        <span>Show Exception Details</span>
+        <div class="switches">
+            <input type="checkbox" class="sl" id="switch-exception-details" ng-click="changeExceptionDetails()" ng-checked="{{showExceptionDetails}}" />
+            <label class="switch sw2 green" for="switch-exception-details"></label>
+        </div>
+    </div>
+    <div id="eTabs">
+        <ul class="etabs">
+            <li class="tab active">
+                <a id="realtime" href="#tabrealtime" class="active">Realtime</a>
+            </li>
+            <li class="tab">
+                <a id="grouped" href="#tabgrouped">Grouped</a>
+            </li>
+        </ul>
+        <div class="tabsContent">
+            <div id="tabrealtime" class="active">
+                <table ng-table="tablerealtime" show-filter="true" class="table table-bordered">
+                    <tr ng-repeat="log in $data" ng-click="log.$selected = !log.$selected; changeSelection(log)">
+                        <td data-title="'Aplicação'" header-class="'t'" filter="{ 'Aplicacao': 'text' }">{{log.Aplicacao}}</td>
+                        <td data-title="'Mensagem'" header-class="'t'" filter="{ 'Mensagem': 'text' }">{{log.Mensagem}}</td>
+                        <td data-title="'Custom Message'" header-class="'t'" filter="{ 'MensagemCustomizada': 'text' }" ng-if="tablerealtime.showCustomMessage">{{log.MensagemCustomizada}}</td>
+                        <td data-title="'Exception'" header-class="'t'" filter="{ 'DetalhesExcecao': 'text' }" ng-if="tablerealtime.showExceptionDetails">{{log.DetalhesExcecao}}</td>
+                        <td data-title="'Level'" header-class="''" filter="{ 'Nivel': 'select' }" filter-data="names($column)">{{log.Nivel | translateLogLevel}}</td>
+                        <td data-title="'Data'" header-class="''">
+                            {{log.UltimoIncidente | date:'dd/MM|HH:mm:ss'}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="tabgrouped" style="display: none;">
+                <span class="filtro-data">
+                    <span>Log dos últimos</span>
+                    <button ng-click="changeDataRange(1)" ng-class="dias == 1 ? 'btn btn-default active' : 'btn btn-default'">1 dia</button>
+                    <button ng-click="changeDataRange(7)" ng-class="dias == 7 ? 'btn btn-default active' : 'btn btn-default'">7 dias</button>
+                    <button ng-click="changeDataRange(30)" ng-class="dias == 30 ? 'btn btn-default active' : 'btn btn-default'">30 dias</button>
+                </span>
+                <table ng-table="tablealldata" show-filter="true" class="table table-bordered">
+                    <tr ng-repeat="log in $data" ng-click="log.$selected = !log.$selected; changeSelection(log)">
+                        <td data-title="'Aplicação'" sortable="'Aplicacao'" filter="{ 'Aplicacao': 'text' }">{{log.Aplicacao}}</td>
+                        <td data-title="'Mensagem'" sortable="'Mensagem'" filter="{ 'Mensagem': 'text' }">{{log.Mensagem}}</td>
+                        <td data-title="'Custom Message'" sortable="'MensagemCustomizada'" filter="{ 'MensagemCustomizada': 'text' }" ng-if="tablealldata.showCustomMessage">{{log.MensagemCustomizada}}</td>
+                        <td data-title="'Exception'" sortable="'DetalhesExcecao'" filter="{ 'DetalhesExcecao': 'text' }" ng-if="tablealldata.showExceptionDetails">{{log.DetalhesExcecao}}</td>
+                        <td data-title="'Level'" sortable="'Level'" filter="{ 'Nivel': 'select' }" filter-data="names($column)">{{log.Nivel | translateLogLevel}}</td>
+                        <td data-title="'Quantidade'" sortable="'Quantidade'">{{log.Quantidade}}</td>
+                        <td data-title="'Data Ultimo Incidente'">
+                            {{log.UltimoIncidente | date:'dd/MM|HH:mm:ss'}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-controller="ExtraInfo" id="container_extra_info">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="cancel()" aria-hidden="true" style="padding:0px 4px 0px 4px;">x</button>
+            <h3 id="myModalLabel">Detalhes do Evento</h3>
+        </div>
+        <div class="modal-body">
+            <pre id="eventDetails">{{mainDumpInfo}}</pre>
+        </div>
+    </script>
+</div>

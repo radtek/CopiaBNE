@@ -1,0 +1,42 @@
+﻿@model BNE.PessoaFisica.Web.Models.Curriculo
+<script>
+    $('#maisInfo').hide();
+</script>
+
+@Html.HiddenFor(p => p.IdPesquisa, new { @Value = Model.IdPesquisa })
+@Html.HiddenFor(p => p.UrlVoltarLogado, new { @Value = Model.UrlVoltarLogado })
+
+<div class="mdl-grid">
+    <div class="md-section-candidatura md-section-candidatvaga bottom20">
+
+        @if (Model.Vaga.FlgPremium && !Model.CurriculoVIP)
+        {
+            Html.RenderPartial("~/Views/Modal/_ModalCandidaturaPremium.cshtml", Model);
+            @Html.Partial("_EnviarCV", Model)
+        }
+        else if (Model.NumeroCandidaturasGratis < 0)
+        {
+            @Html.Partial("_ConfirmacaoAcabouCandidatura")
+        }
+        else if (Model.CurriculoVIP)
+        {
+            @Html.Partial("_ConfirmacaoVIP")
+        }
+        else if (Convert.ToInt32(Model.NumeroCandidaturasGratis) == 3)
+        {
+            @Html.Partial("_ConfirmacaoInicial")
+        }
+        else if (Convert.ToInt32(Model.NumeroCandidaturasGratis) == 0 && !Model.Candidatou)
+        {
+            @Html.Partial("_ConfirmacaoFormacao")
+        }
+        else if (Convert.ToInt32(Model.NumeroCandidaturasGratis) == 0 && Model.Candidatou)
+        {
+            @Html.Partial("_ConfirmacaoVIP")
+        }
+        else
+        {
+            @Html.Partial("_ConfirmacaoExperiencia")
+        }
+    </div>
+</div>

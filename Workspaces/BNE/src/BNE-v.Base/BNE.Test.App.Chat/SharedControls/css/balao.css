@@ -1,0 +1,113 @@
+.triangle-border {
+    position: relative;
+    padding: 10px;
+    margin: 2em 0 3em;
+    /*border:3px solid green ;*/
+    color: #333;
+    background: #fff;
+    /* css3 */
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 5px 10px 1px #ddd;
+    box-shadow: 0 5px 10px 1px #ddd;
+    width: 150px;
+    word-wrap: break-word;
+    min-height: 14px;
+}
+    /* Variant : for left positioned triangle
+------------------------------------------ */
+    .triangle-border.left {
+        border-color: #999;
+        margin-left: 64px;
+    }
+    /* Variant : for right positioned triangle
+------------------------------------------ */
+    .triangle-border.right {
+        /*background-color:#CCFFCC;*/
+        margin-left: 20px;
+        width: 178px;
+    }
+    /* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+    .triangle-border:before {
+        content: "";
+        position: absolute;
+        bottom: -20px; /* value = - border-top-width - border-bottom-width */
+        left: 40px; /* controls horizontal position */
+        border-width: 20px 20px 0;
+        border-style: solid;
+        border-color: #5a8f00 transparent;
+        /* reduce the damage in FF3.0 */
+        display: block;
+        width: 0;
+    }
+    /* creates the smaller  triangle */
+    .triangle-border:after {
+        content: "";
+        position: absolute;
+        bottom: -13px; /* value = - border-top-width - border-bottom-width */
+        left: 47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+        border-width: 13px 13px 0;
+        border-style: solid;
+        border-color: #fff transparent;
+        /* reduce the damage in FF3.0 */
+        display: block;
+        width: 0;
+    }
+    /* Variant : top
+------------------------------------------ */
+    /* creates the larger triangle */
+    .triangle-border.top:before {
+        top: -20px; /* value = - border-top-width - border-bottom-width */
+        bottom: auto;
+        left: auto;
+        right: 40px; /* controls horizontal position */
+        border-width: 0 20px 20px;
+    }
+    /* creates the smaller  triangle */
+    .triangle-border.top:after {
+        top: -13px; /* value = - border-top-width - border-bottom-width */
+        bottom: auto;
+        left: auto;
+        right: 47px; /* value = (:before right) + (:before border-right) - (:after border-right) */
+        border-width: 0 13px 13px;
+    }
+    /* Variant : left
+------------------------------------------ */
+    /* creates the larger triangle */
+    .triangle-border.left:before {
+        top: 9px; /* controls vertical position */
+        bottom: auto;
+        left: -20px; /* value = - border-left-width - border-right-width */
+        border-width: 9px 18px 7px 0;
+        border-color: transparent #999;
+    }
+    /* creates the smaller  triangle */
+    .triangle-border.left:after {
+        top: 11px; /* value = (:before top) +(:before border-top) - (:after border-top) */
+        bottom: auto;
+        left: -14px; /* value = - border-left-width - border-right-width */
+        border-width: 7px 15px 6px 0;
+        border-color: transparent #fff;
+    }
+    /* Variant : right
+------------------------------------------ */
+    /* creates the larger triangle */
+    .triangle-border.right:before {
+        top: 8px; /* controls vertical position */
+        bottom: auto;
+        left: auto;
+        right: -16px; /* value = - border-left-width - border-right-width */
+        border-width: 10px 0 10px 14px;
+        border-color: transparent #5a8f00;
+    }
+    /* creates the smaller  triangle */
+    .triangle-border.right:after {
+        top: 9px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+        bottom: auto;
+        left: auto;
+        right: -12px; /* value = - border-left-width - border-right-width */
+        border-width: 9px 0 9px 12px;
+        border-color: transparent #fff;
+    }

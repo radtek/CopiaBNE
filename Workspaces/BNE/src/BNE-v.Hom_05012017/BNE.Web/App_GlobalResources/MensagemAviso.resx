@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_100001" xml:space="preserve">
+    <value>Registro salvo com sucesso!</value>
+  </data>
+  <data name="_100002" xml:space="preserve">
+    <value>Estado Incorreto. Confira!</value>
+  </data>
+  <data name="_100004" xml:space="preserve">
+    <value>Nome Incorreto. Confira!</value>
+  </data>
+  <data name="_100005" xml:space="preserve">
+    <value>A data deve estar entre {0} e {1} anos, verifique o ano de nascimento informado.</value>
+  </data>
+  <data name="_100006" xml:space="preserve">
+    <value>Celular Inválido. Confira!</value>
+  </data>
+  <data name="_100007" xml:space="preserve">
+    <value>Cidade não encontrada. Por favor, confira!</value>
+  </data>
+  <data name="_100008" xml:space="preserve">
+    <value>Função não encontrada. Por favor, confira!</value>
+  </data>
+  <data name="_100009" xml:space="preserve">
+    <value>Currículo cadastrado com sucesso!</value>
+  </data>
+  <data name="_100010" xml:space="preserve">
+    <value>Ramo não encontrado. Por favor, confira!</value>
+  </data>
+  <data name="_100011" xml:space="preserve">
+    <value>Saldo insuficiente! {0} e envia sua mensagem.</value>
+  </data>
+  <data name="_100012" xml:space="preserve">
+    <value>Plano adicional cadastrado com sucesso!</value>
+  </data>
+  <data name="_100015" xml:space="preserve">
+    <value>Registro inativado!</value>
+  </data>
+  <data name="_100102" xml:space="preserve">
+    <value>Não há cadastros desta pessoa no sistema.</value>
+  </data>
+  <data name="_100104" xml:space="preserve">
+    <value>Faixa Salarial para a função 1: {0} até {1}</value>
+  </data>
+  <data name="_100105" xml:space="preserve">
+    <value>A idade deve estar entre 14 e 80 anos.</value>
+  </data>
+  <data name="_100107" xml:space="preserve">
+    <value>Por favor digite seu nome e sobrenome sem abreviações!</value>
+  </data>
+  <data name="_100108" xml:space="preserve">
+    <value>Seu CPF já consta cadastrado em nosso site, mas a sua data de nascimento não confere. Por favor, entre em contato com nosso Atendimento On-Line</value>
+  </data>
+  <data name="_100109" xml:space="preserve">
+    <value>Seu Currículo já existe em nosso site. Por favor, atualize seus dados.</value>
+  </data>
+  <data name="_100110" xml:space="preserve">
+    <value>Plano adicional liberado com sucesso!</value>
+  </data>
+  <data name="_100112" xml:space="preserve">
+    <value>Seu Currículo já está cadastrado em sistema parceiro. Por favor, atualize seus dados</value>
+  </data>
+  <data name="_100113" xml:space="preserve">
+    <value>Data Inválida. Confira!</value>
+  </data>
+  <data name="_100130" xml:space="preserve">
+    <value>Selecione um idioma válido.</value>
+  </data>
+  <data name="_100204" xml:space="preserve">
+    <value>Seu currículo pode estar desatualizado. Verifique e aumente suas chances de contratação.</value>
+  </data>
+  <data name="_100302" xml:space="preserve">
+    <value>Função não existente. Deve ser escolhida uma das funções da lista.</value>
+  </data>
+  <data name="_100801" xml:space="preserve">
+    <value>O usuário Master é o representante da empresa, escolhido na elaboração do contrato, que terá a responsabilidade de administrar o uso do sistema, cadastrando usuários, definindo os perfis de acesso (serviços a utilizar) e as alçadas de aprovação (limites financeiros para os representantes legais). Além disto, ele também é responsável por efetuar o primeiro acesso e o cadastro da empresa no sistema.</value>
+  </data>
+  <data name="_100810" xml:space="preserve">
+    <value>O cadastro da empresa {0} e do usuário master {1} foi realizado com sucesso. Deseja cadastrar outros usuários?</value>
+  </data>
+  <data name="_100812" xml:space="preserve">
+    <value>CNPJ já cadastrado, entre em contato com o Atendimento On-Line.</value>
+  </data>
+  <data name="_100813" xml:space="preserve">
+    <value>Os dados informados estão incorretos. Informe os dados corretamente ou entre em contato com nosso atendimento on-line.</value>
+  </data>
+  <data name="_101001" xml:space="preserve">
+    <value>Somente empresas cadastradas podem usar esta funcionalidade.</value>
+  </data>
+  <data name="_101002" xml:space="preserve">
+    <value>Nenhum currículo foi selecionado!</value>
+  </data>
+  <data name="_101003" xml:space="preserve">
+    <value>Primeiro efetue a pesquisa utilizando a busca no alto da tela.</value>
+  </data>
+  <data name="_101004" xml:space="preserve">
+    <value>Somente usuários com plano podem usar esta funcionalidade.</value>
+  </data>
+  <data name="_101007" xml:space="preserve">
+    <value>Selecione no mínimo 2 currículo para comparação.</value>
+  </data>
+  <data name="_101101" xml:space="preserve">
+    <value>Apenas empresas podem cadastrar vagas.</value>
+  </data>
+  <data name="_101402" xml:space="preserve">
+    <value>Não foi informado o nome para contato. Confira!</value>
+  </data>
+  <data name="_101501" xml:space="preserve">
+    <value>A compra de SMS tem um limite mínimo de 35. </value>
+  </data>
+  <data name="_101502" xml:space="preserve">
+    <value>O menor número possível para a compra é 10.</value>
+  </data>
+  <data name="_101601" xml:space="preserve">
+    <value>RHOffice solicitado com sucesso.</value>
+  </data>
+  <data name="_103501" xml:space="preserve">
+    <value>Apenas usuários logados podem usar o Atendimento On-Line</value>
+  </data>
+  <data name="_103701" xml:space="preserve">
+    <value>CPF Incorreto</value>
+  </data>
+  <data name="_103702" xml:space="preserve">
+    <value>Data inválida.</value>
+  </data>
+  <data name="_103703" xml:space="preserve">
+    <value>Conta inexistente. Dúvidas? Ligue para 0800 41 2400.</value>
+  </data>
+  <data name="_103710" xml:space="preserve">
+    <value>A última atualização de seu currículo foi a mais de 3 meses. Manter seus dados atualizados é importante para conseguir&lt;/br&gt;uma boa colocação profissional. Por favor, confirme o seu telefone celular para atualizar seu cadastro.</value>
+  </data>
+  <data name="_103711" xml:space="preserve">
+    <value>Seus dados não conferem! Por favor, entre em contato através do 0800 41 2400.</value>
+  </data>
+  <data name="_103901" xml:space="preserve">
+    <value>Necessário selecionar ao menos um meio de envio.</value>
+  </data>
+  <data name="_103902" xml:space="preserve">
+    <value>Ultrapassou o limite de caracteres, para poder enviar diminua a mensagem</value>
+  </data>
+  <data name="_103903" xml:space="preserve">
+    <value>Sua mensagem está muito curta. Confira!</value>
+  </data>
+  <data name="_103904" xml:space="preserve">
+    <value>É necessário escrever uma mensagem no campos SMS.</value>
+  </data>
+  <data name="_104001" xml:space="preserve">
+    <value>Foi identificado o e-mail: {0} inválido. Confira!</value>
+  </data>
+  <data name="_104002" xml:space="preserve">
+    <value>Foram identificados os e-mails: {0} inválidos. Confira!</value>
+  </data>
+  <data name="_201301" xml:space="preserve">
+    <value>Acesso a dados do currículo são exclusivos a empresas cadastradas.</value>
+  </data>
+  <data name="_201501" xml:space="preserve">
+    <value>A compra de SMS tem um limite mínimo de 35.</value>
+  </data>
+  <data name="_202001" xml:space="preserve">
+    <value>Faixa salarial para a Função 1: R$ {0} até R$ {1}</value>
+  </data>
+  <data name="_202005" xml:space="preserve">
+    <value>Necessário informar o turno do curso.Confira!</value>
+  </data>
+  <data name="_202402" xml:space="preserve">
+    <value>Caso você já tenha realizado este teste anteriormente, ou caso já tenha seu currículo cadastrado no BNE, ele buscará seus dados automaticamente, bastando informar seu CPF</value>
+  </data>
+  <data name="_202403" xml:space="preserve">
+    <value>Para alterar os dados da empresa é necessário estar logado como usuário MASTER</value>
+  </data>
+  <data name="_202404" xml:space="preserve">
+    <value>O Valor informado é inferior ao valor já pago para este plano. Será alterado somente o valor do plano.</value>
+  </data>
+  <data name="_202405" xml:space="preserve">
+    <value>Um ou mais pagamentos não foram localizados.</value>
+  </data>
+  <data name="_202406" xml:space="preserve">
+    <value>Conta inexistente. Dúvidas? Ligue para 0800 41 2400.</value>
+  </data>
+  <data name="_203016" xml:space="preserve">
+    <value>Mensagem enviada com sucesso! Em breve retornaremos o seu contato.</value>
+  </data>
+  <data name="_203018" xml:space="preserve">
+    <value>Mensagem enviada com sucesso! Obrigado pela confiança, em breve receberá o meu retorno.</value>
+  </data>
+  <data name="_206501" xml:space="preserve">
+    <value>Selecione no Mínimo 6 Colunas</value>
+  </data>
+  <data name="_206502" xml:space="preserve">
+    <value>Selecione no Máximo 7 Colunas</value>
+  </data>
+  <data name="_23003" xml:space="preserve">
+    <value>Perfil não pode ser inativado, existem usuários vinculados ao mesmo, verifique listagem de colaboradores.</value>
+  </data>
+  <data name="_23005" xml:space="preserve">
+    <value>Não existem permissões para vincular ao perfil.</value>
+  </data>
+  <data name="_23006" xml:space="preserve">
+    <value>A Combinar</value>
+  </data>
+  <data name="_23007" xml:space="preserve">
+    <value>Selecione a melhor resposta para sua pergunta.</value>
+  </data>
+  <data name="_23008" xml:space="preserve">
+    <value>Você ainda não informou uma pergunta.</value>
+  </data>
+  <data name="_23009" xml:space="preserve">
+    <value>Dados da Empresa</value>
+  </data>
+  <data name="_23010" xml:space="preserve">
+    <value>Essa empresa optou por deixar seus dados confidenciais.</value>
+  </data>
+  <data name="_23011" xml:space="preserve">
+    <value>Vaga enviada com sucesso</value>
+  </data>
+  <data name="_23012" xml:space="preserve">
+    <value>Confirmação</value>
+  </data>
+  <data name="_23013" xml:space="preserve">
+    <value>Vaga cadastrada com sucesso</value>
+  </data>
+  <data name="_23014" xml:space="preserve">
+    <value>Indique o BNE</value>
+  </data>
+  <data name="_23015" xml:space="preserve">
+    <value>Enviar para um Amigo</value>
+  </data>
+  <data name="_23016" xml:space="preserve">
+    <value>Mensagem enviada com sucesso.</value>
+  </data>
+  <data name="_24017" xml:space="preserve">
+    <value>Agradecimento enviado com sucesso!&lt;/br&gt;Em breve publicaremos sua mensagem em nosso site.</value>
+  </data>
+  <data name="_24018" xml:space="preserve">
+    <value>CPF já cadastrado na empresa.</value>
+  </data>
+  <data name="_24019" xml:space="preserve">
+    <value>Empresa cadastrada com sucesso!</value>
+  </data>
+  <data name="_24020" xml:space="preserve">
+    <value>Aviso</value>
+  </data>
+  <data name="_24021" xml:space="preserve">
+    <value>Empresa atualizada com sucesso</value>
+  </data>
+  <data name="_24022" xml:space="preserve">
+    <value>Solicitação enviada com sucesso. Em 1 dia útil você irá receber os currículos por e-mail.</value>
+  </data>
+  <data name="_24023" xml:space="preserve">
+    <value>Registro excluído com sucesso!</value>
+  </data>
+  <data name="_24024" xml:space="preserve">
+    <value>Registro atualizado com sucesso!</value>
+  </data>
+  <data name="_24025" xml:space="preserve">
+    <value>Alerta de currículo cadastrado com sucesso!&lt;/br&gt;A partir de agora você receberá currículos com o perfil desejado no seu e-mail.</value>
+  </data>
+  <data name="_24026" xml:space="preserve">
+    <value>Vaga divulgada com sucesso!&lt;/br&gt;Todos os candidatos dentro do perfil receberão, atráves das redes sociais, a sua vaga.</value>
+  </data>
+  <data name="_24027" xml:space="preserve">
+    <value>O Processo seletivo está em andamento.Seu currículo foi incluído e terá preferência na visualização desta empresa!</value>
+  </data>
+  <data name="_24028" xml:space="preserve">
+    <value>Confirmação de Envio</value>
+  </data>
+  <data name="_24029" xml:space="preserve">
+    <value>Somente candidatos cadastrados podem usar esta funcionalidade.</value>
+  </data>
+  <data name="_24030" xml:space="preserve">
+    <value>Acesso não autorizado</value>
+  </data>
+  <data name="_24031" xml:space="preserve">
+    <value>Empresa não cadastrada.</value>
+  </data>
+  <data name="_24032" xml:space="preserve">
+    <value>Usuário master já cadastrado</value>
+  </data>
+  <data name="_24033" xml:space="preserve">
+    <value>Senha incorreta</value>
+  </data>
+  <data name="_24034" xml:space="preserve">
+    <value>Campos Obrigatórios não preenchidos. Por favor confira!</value>
+  </data>
+  <data name="_300001" xml:space="preserve">
+    <value>É necessário estar logado para acessar esta tela.</value>
+  </data>
+  <data name="_300034" xml:space="preserve">
+    <value>Você não tem permissão para acessar esta tela.</value>
+  </data>
+  <data name="_300039" xml:space="preserve">
+    <value>Endereço já existe, escolha outro nome.</value>
+  </data>
+  <data name="_300040" xml:space="preserve">
+    <value>A pretensão salarial está fora da faixa. Altere para o valor sugerido ou altere a primeira função pretendida. Dúvidas acesso nosso Atendimento On-line.</value>
+  </data>
+  <data name="_300041" xml:space="preserve">
+    <value>Ocorreu um erro em sua candidatura.</value>
+  </data>
+  <data name="_304501" xml:space="preserve">
+    <value>O valor {0}  deve ser igual ou {1} do que o valor {2}.</value>
+  </data>
+  <data name="_304502" xml:space="preserve">
+    <value>A idade deve estar entre {0} e {1}.</value>
+  </data>
+  <data name="_304505" xml:space="preserve">
+    <value>Pelo menos um campo deve estar preenchido.</value>
+  </data>
+  <data name="_505702" xml:space="preserve">
+    <value>Por favor digite um valor numérico válido.</value>
+  </data>
+  <data name="_505705" xml:space="preserve">
+    <value>Aguarde o contato da nossa equipe. Caso tenha urgência ligue 0800 41 2400</value>
+  </data>
+  <data name="_505706" xml:space="preserve">
+    <value>Seu pedido foi registrado e em 30 dias seu currículo será excluído.</value>
+  </data>
+  <data name="_505707" xml:space="preserve">
+    <value>Horario de envio da SMS deve ser entre as 8:00 e 20:00 horas.</value>
+  </data>
+  <data name="_505708" xml:space="preserve">
+  <value>Selecione um Responsável.</value>
+</data>
+</root>

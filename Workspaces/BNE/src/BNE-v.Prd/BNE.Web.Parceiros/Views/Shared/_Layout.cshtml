@@ -1,0 +1,48 @@
+﻿@using BNE.Web.Parceiros.Models;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parceiros BNE | @ViewBag.Title</title>
+
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/css/material.indigo-pink.min.css" rel="stylesheet" />
+  
+
+    <script src="~/Content/js/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="~/Content/css/default.css" rel="stylesheet" />
+    <link href="~/Content/css/default.iphone.css" rel="stylesheet" />
+    <link href="~/Content/css/sweetalert.css" rel="stylesheet" />
+    
+
+
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/jquery-ui.js"></script>
+    <script src="~/Content/js/jquery.mask.min.js"></script>
+    <script src="~/Content/js/jquery.validate.min.js"></script>
+    <script src="~/Content/js/messages_pt_BR.js"></script>
+    <script src="~/Content/js/util.js"></script>
+    <script src="~/Content/js/sweetalert.min.js"></script>
+    <script src="~/Content/js/jquery.blockUI.js"></script>
+</head>
+<body>
+    @{ 
+        var item =  (ItemSession) Session["ItemSession"];
+        var NmePessoa = (item != null) ? item.NmePessoa : ""; 
+    }
+    <div id="wrapper">
+        <section id="header">
+            <span>@NmePessoa</span>
+        </section>
+        <section id="content">
+            @RenderBody()
+        </section>
+        <section id="footer">
+            <span>BNE - Banco Nacional de Empregos | CNPJ 82.344.425/0001-82 | 0800 41 2400</span>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hangfire.SqlServer.Msmq</name>
+    </assembly>
+    <members>
+        <member name="T:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions">
+            <summary>
+                The message queue extensions.
+            </summary>
+        </member>
+        <member name="F:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.PROPID_MGMT_QUEUE_MESSAGE_COUNT">
+            <summary>
+                The propi d_ mgm t_ queu e_ messag e_ count.
+            </summary>
+        </member>
+        <member name="F:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.VT_NULL">
+            <summary>
+                The v t_ null.
+            </summary>
+        </member>
+        <member name="F:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.VT_UI4">
+            <summary>
+                The v t_ u i 4.
+            </summary>
+        </member>
+        <member name="F:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.LockObject">
+            <summary>
+            The lock object
+            </summary>
+        </member>
+        <member name="M:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.GetCount(System.Messaging.MessageQueue)">
+            <summary>
+            The get count.
+            </summary>
+            <param name="queue">
+            The queue.
+            </param>
+            <returns>
+            The <see cref="T:System.UInt32"/>.
+            </returns>
+        </member>
+        <member name="M:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.GetCount(System.String)">
+            <summary>
+            The get count.
+            </summary>
+            <param name="path">
+            The path.
+            </param>
+            <returns>
+            The <see cref="T:System.UInt32"/>.
+            </returns>
+        </member>
+        <member name="M:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.MQMgmtGetInfo(System.Char*,System.Char*,Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.MQMGMTPROPS*)">
+            <summary>
+            The mq mgmt get info.
+            </summary>
+            <param name="computerName">
+            The computer name.
+            </param>
+            <param name="objectName">
+            The object name.
+            </param>
+            <param name="mgmtProps">
+            The mgmt props.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="T:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.MQMGMTPROPS">
+            <summary>
+                The mqmgmtprops.
+            </summary>
+        </member>
+        <member name="F:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.MQMGMTPROPS.cProp">
+            <summary>
+                The c prop.
+            </summary>
+        </member>
+        <member name="F:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.MQMGMTPROPS.aPropID">
+            <summary>
+                The a prop id.
+            </summary>
+        </member>
+        <member name="F:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.MQMGMTPROPS.aPropVar">
+            <summary>
+                The a prop var.
+            </summary>
+        </member>
+        <member name="F:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.MQMGMTPROPS.status">
+            <summary>
+                The status.
+            </summary>
+        </member>
+        <member name="T:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.MQPROPVariant">
+            <summary>
+                The mqprop variant.
+            </summary>
+        </member>
+        <member name="F:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.MQPROPVariant.vt">
+            <summary>
+                The vt.
+            </summary>
+        </member>
+        <member name="F:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.MQPROPVariant.spacer">
+            <summary>
+                The spacer.
+            </summary>
+        </member>
+        <member name="F:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.MQPROPVariant.spacer2">
+            <summary>
+                The spacer 2.
+            </summary>
+        </member>
+        <member name="F:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.MQPROPVariant.spacer3">
+            <summary>
+                The spacer 3.
+            </summary>
+        </member>
+        <member name="F:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.MQPROPVariant.ulVal">
+            <summary>
+                The ul val.
+            </summary>
+        </member>
+        <member name="F:Rsft.Lib.Msmq.MessageCounter.MessageQueueExtensions.MQPROPVariant.spacer4">
+            <summary>
+                The spacer 4.
+            </summary>
+        </member>
+    </members>
+</doc>

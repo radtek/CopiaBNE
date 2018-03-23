@@ -1,0 +1,307 @@
+﻿<telerik:RadComboBox
+    HighlightTemplatedItems="true"
+    runat="server"
+    Skin="Office2007"
+    MaxHeight="200px"
+    LoadingMessage="Carregando..." />
+
+<Employer:ComboCheckbox
+    HighlightTemplatedItems="true"
+    runat="server"
+    Skin="Office2007"
+    MaxHeight="200px"
+    LoadingMessage="Carregando..." />
+ 
+<telerik:RadGrid
+    runat="server"
+    AutoGenerateColumns="False"
+    CellSpacing="2"
+    CssClass="gridview_padrao" 
+    Skin="Office2007"
+    GridLines="None">
+    <PagerStyle
+        PagerTextFormat=" {4} Itens {2} a {3} de {5}"
+        FirstPageToolTip="Primeira página"
+        LastPageToolTip="Ultima página"
+        NextPageToolTip="Próxima página"
+        PrevPageToolTip="Página anterior"/>
+    <MasterTableView
+        NoMasterRecordsText="Nenhum item para mostrar."
+        PagerStyle-PageSizeLabelText="Tamanho da Página:">
+    </MasterTableView>
+</telerik:RadGrid>
+
+<asp:GridView
+    runat="server"
+    AutoGenerateColumns="False"
+    CssClass="gridview_padrao" />
+
+<componente:CNPJ
+    runat="server"
+    Obrigatorio="True"
+    MensagemErroFormato="CNPJ Inválido. Confira!"
+    MensagemErroObrigatorio="Campo Obrigatório"
+    CustomCssClass="validador"
+    RequiredCssClass="validador"
+    TextBoxCssClass="textbox_padrao campo_obrigatorio" />
+    
+<componente:CPF
+    runat="server"
+    Obrigatorio="True"
+    MensagemErroFormato="Seu CPF está digitado incorretamente, por favor verifique!"
+    MensagemErroObrigatorio="Campo Obrigatório."
+    CustomCssClass="validador"
+    RequiredCssClass="validador"
+    TextBoxCssClass="textbox_padrao campo_obrigatorio" />
+
+<componente:Data
+    runat="server"
+    MostrarCalendario = "False"
+    MensagemErroFormato= "Data Inválida. Confira!"
+    MensagemErroIntervalo= "Intervalo Inválido."
+    MensagemErroObrigatorio="Campo Obrigatório."
+    CssClassTextBox="textbox_padrao campo_obrigatorio"
+    CssClassCalendar="data"
+    CssClassCustomValidatorExpression="validador"
+    CssClassRangevalidator="validador"
+    CssClassRequiredField="validador"
+    Obrigatorio="True" />
+  
+<componente:Telefone
+    runat="server"
+    Formato="DDD"
+    Obrigatorio="True"
+    MensagemErroFormatoDDD="DDD Inválido."
+    MensagemErroFormatoDDI="DDI Inválido."
+    MensagemErroFormatoFone="Número Incorreto. Confira!"
+    MensagemErroObrigatorioDDD="Campo Obrigatório."
+    MensagemErroObrigatorioDDI="Campo Obrigatório."
+    MensagemErroObrigatorioFone="Campo Obrigatório."
+    CssClassTextBoxDDI="textbox_padrao ddi campo_obrigatorio"
+    CssClassTextBoxDDD="textbox_padrao ddd campo_obrigatorio"
+    CssClassTextBoxFone="textbox_padrao fone campo_obrigatorio"
+    CssClassRegularExpressionDDD="validador"
+    CssClassRegularExpressionDDI="validador"
+    CssClassRegularExpressionFone="validador"
+    CssClassRequiredFieldDDD="validador"
+    CssClassRequiredFieldDDI="validador"
+    CssClassRequiredFieldFone="validador"
+    ReadOnly="False"
+    SetFocusOnError="False"
+    Tipo="Fixo" />
+    
+<componente:AlfaNumerico
+    runat="server"
+    ContemIntervalo="False"
+    Obrigatorio="True"
+    Columns="30"
+    MaxLength="100"
+    CssClassRangeValidator="validador"
+    CssClassRegularExpression="validador"
+    CssClassRequiredField="validador"
+    CssClassTextBox="textbox_padrao campo_obrigatorio"
+    CssClassCustomValidator="validador"
+    MensagemErroValor="Valor Incorreto."
+    MensagemErroIntervalo="Intervalo Inválido."
+    MensagemErroObrigatorio="Campo Obrigatório."
+    MensagemErroFormato="Formato Incorreto"
+    ReadOnly="False"
+    Rows="0"
+    SetFocusOnError="False"
+    Tipo="AlfaNumerico"
+    TextMode="SingleLine" />
+    
+<asp:RadioButtonList
+    runat="server"
+    CssClass="radiobutton_padrao"
+    RepeatDirection="Horizontal"
+    RepeatLayout="Flow"
+    SkinID="Horizontal" >
+</asp:RadioButtonList>
+<asp:RadioButtonList
+    runat="server"
+    CssClass="radiobutton_padrao"
+    RepeatDirection="Vertical"
+    RepeatLayout="Table"
+    SkinID="Vertical" >
+</asp:RadioButtonList>
+
+<componente:CEP
+    runat="server"
+    ValidarCepValido="True"
+    MensagemErroObrigatorio="Campo Obrigatório."
+    CssClassTextBox="textbox_padrao campo_obrigatorio"
+    CssClassCustomValidator="validador"
+    CssClassLabelErro="validador"
+    CssClassRequiredField="validador"
+    MensagemErroFormato="Formato Incorreto."
+    CssClassRegularExpression="validador"
+    ReadOnly="False"
+    SetFocusOnError="False"
+    Obrigatorio="True" />
+    
+<componente:ListaSugestoes
+    runat="server"
+    ExibirSugestao="False"
+    Obrigatorio="True"
+    MensagemErroObrigatorio="Campo Obrigatório."
+    PosicaoSugestao="Direita"
+    Tipo="AlfaNumerico"
+    CssClassTextBox="textbox_padrao campo_obrigatorio"
+    CssClass="lista_sugestoes"
+    CssClassCodigo="codigo"
+    CssClassDescricao="descricao"
+    CssClassGridView="gridview"
+    CssClassLabel="label"
+    CssClassRegularExpression="validador"
+    CssClassRequiredField="validador" />
+    
+<componente:ValorDecimal
+    runat="server"
+    CasasDecimais="2"
+    Obrigatorio="True"
+    Columns="4"
+    ValorMaximo="999999999"
+    ValorMinimo="0"
+    CssClassTextBox="textbox_padrao campo_obrigatorio"
+    CssClassRangevalidator="validador"
+    CssClassRegularExpression="validador"
+    CssClassRequiredField="validador"
+    MensagemErroFormato="Valor Inválido."
+    MensagemErroIntervalo="Intervalo Inválido"
+    MensagemErroObrigatorio="Campo Obrigatório." />
+   
+<asp:RequiredFieldValidator
+    runat="server"
+    Display="Dynamic"
+    ErrorMessage="Campo Obrigatório."
+    CssClass="validador" />
+    
+<asp:RegularExpressionValidator
+    runat="server"
+    Display="Dynamic"
+    ErrorMessage="Valor Inválido."
+    CssClass="validador" />
+    
+<asp:CustomValidator
+    runat="server"
+    Display="Dynamic"
+    CssClass="validador"></asp:CustomValidator>
+    
+<asp:TextBox
+    runat="server"
+    CssClass="textbox_padrao campo_obrigatorio"
+    Columns="30"></asp:TextBox>
+    
+ <AjaxToolkit:AutoCompleteExtender
+    runat="server"
+    Enabled="True"
+    ServicePath="/WebServices/wsAutoComplete.asmx"
+    UseContextKey="True"
+    EnableCaching="False"
+    CompletionListCssClass="ajax_ace"
+    CompletionListHighlightedItemCssClass="selecionado"
+    CompletionListItemCssClass="item"
+    FirstRowSelected="true"
+    MinimumPrefixLength="3"
+    CompletionSetCount="10"
+    CompletionInterval="200"
+    OnClientItemSelected="employer.form.util.autoCompleteClientSelected">
+</AjaxToolkit:AutoCompleteExtender>
+
+<AjaxToolkit:ModalPopupExtender
+    BackgroundCssClass="modal_fundo"
+    runat="server"
+    RepositionMode="RepositionOnWindowResizeAndScroll" />
+    
+<telerik:RadEditor
+    EditModes="Design"
+    Language="pt-BR"
+    runat="server"
+    Skin="Office2007"
+    SkinId="RadEditorControlesBasicos">
+        <Tools>
+            <telerik:EditorToolGroup>
+                <telerik:EditorTool Name="Bold" ShowText="true" />
+                <telerik:EditorSeparator Visible="true" />
+                <telerik:EditorTool Name="Italic" ShowText="true" />
+                <telerik:EditorSeparator Visible="true" />
+                <telerik:EditorTool Name="InsertTable" Text="Inserir Tabela" ShowText="true" />
+                <telerik:EditorSeparator Visible="true" />
+                <telerik:EditorTool Name="InsertLink" ShowText="true" />
+                <telerik:EditorSeparator Visible="true" />
+                <telerik:EditorTool Name="Unlink" ShowText="true" />
+            </telerik:EditorToolGroup>
+        </Tools>
+</telerik:RadEditor>
+
+<Employer:EmployerGrid  
+    runat="server" 
+    CssClass="tabela" 
+    GridLines="None">
+    <HeaderStyle CssClass="cabecalho_tabela" />
+    <AlternatingRowStyle CssClass="even" />
+    <PagerStyle CssClass="pag_tab"/>
+    <EmployerPaginacaoStyle 
+        DivPaginacaoCss="paginacao" 
+        DivPaginacaoInfoCss="pagin_info"
+        DivPaginacaoPesquisaCss="pagin_itens"
+        DivPaginacaoPesquisaBotaoOkCss="pagin_pesq"
+        SpanPaginacaoInfoCss="btn_paginacao"
+        LinkSelecionadoPaginacaoInfoCss="selected"
+        PrimeiroImageUrl="~/img/icn_ff.png"
+        AnteriorImageUrl="~/img/icn_f.png"
+        ProximoImageUrl="~/img/icn_rw.png"
+        UltimoImageUrl="~/img/icn_rrw.png"
+        BotaoOkCss="btn_ok"
+        BotaoOkImageUrl="~/img/btn_ok.png"
+        TextBoxIrParaCss="pag_texto" />
+</Employer:EmployerGrid>
+
+ <Componentes:SelecionarFoto  
+    runat="server"
+    PainelFileUploadCssClass="painel_upload_foto"    
+    BackgroundCssClass="modal_fundo" 
+    BotaoConfirmarCssClass="botao_padrao"
+    TituloCss="titulo_modal"
+    ParagrafoLabelInformacaoCssClass="paragrafo_modal_foto"
+    ModalCssClass="modal_conteudo" 
+    PainelImagemFotoCssClass="painel_imagem_foto_logo"
+    PainelBotoesModalFotoCssClass="painel_botoes"
+    />
+
+<Componentes:DataTextBox
+    runat="server"
+    MensagemErroFormato= "Data Inválida. Confira!"
+    MensagemErroIntervalo= "Intervalo Inválido."
+    MensagemErroObrigatorio="Campo Obrigatório."
+    MensagemErroValorMinimo="Data Inválida. Confira!"
+    MensagemErroValorMaximo="Data Inválida. Confira!"
+    CssClassTextBox="textbox_padrao campo_obrigatorio"
+    CssClassCalendar="data"
+    CssClassRegularExpression="validador"
+    Obrigatorio="True" />
+
+<Componentes:ControlCNPJReceitaFederal
+    runat="server" 
+    Obrigatorio="True"
+    CssClassCustomValidator="validador" 
+    CssClassRequiredField="validador" 
+    RequiredCssClass="validador"
+    CustomCssClass="validador" 
+    CssClassLabelErros="" 
+    CssClassTextBox="textbox_padrao campo_obrigatorio"
+    CssClassBotaoValidarReceita="button_receita" 
+    CssClassTextBoxCpf="textbox_padrao campo_obrigatorio" 
+    CssClassBotaoEnviar="button_padrao" 
+    CssClassTextBoxCaptcha="textbox_padrao" 
+    CssClassPainelCaptcha="painel_captcha" 
+    CssClassImagemCaptcha="img_captcha" 
+    BtnFecharImageUrl="img/btn_fechar_captcha.jpg" 
+    CssClassBotaoFechar="btn_fechar_captcha"
+    CssClassBotaoRenovarCaptcha="btn_renovar_captcha"
+    MensagemErroFormato="CNPJ com formato inválido!"
+    MensagemErroObrigatorio="Campo Obrigatório."
+    ExibirValidadorReceitaFederal="False"
+    ValidarReceitaFederal="False"
+     />

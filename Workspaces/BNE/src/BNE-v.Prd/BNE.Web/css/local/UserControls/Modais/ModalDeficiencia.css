@@ -1,0 +1,327 @@
+﻿.alinha_btn_fechar_nova_modal
+{
+    margin-left:500px;
+    margin-top:400px;
+    position:absolute;
+    width:30px;
+}
+
+.titulo_modal_deficiencia
+{
+      margin: 10px 20px 10px !important;
+    height: auto !important;
+    color: #FFFFFF !important;
+    font-size: 19px !important;
+    font-weight: normal;
+    height: 44px;
+    margin: 0;
+    text-align: left;
+}
+
+.titulo_modal span
+{
+    display: inline-block;
+    margin: 10px;
+}
+.container_confirmacao
+{
+    width: 530px;
+    float: left;
+}
+.container_aviso
+{
+    border-top: 1px solid #B5CAEA !important;
+    float: left;
+    width: 535px;
+}
+.icone_confirmacao
+{
+    float:left;
+    margin-left:2px;
+    margin-top:31px;
+    position:relative;
+    text-align:center;
+    width: 100px;
+}
+.icone_aviso
+{
+    float:left;
+    margin-top:28px;
+    position:relative;
+    text-align:center;
+    vertical-align:middle;
+    width:100px;
+}
+.texto_aviso
+{
+    color:#1A3876;
+    font-size:16px;
+    margin-top:32px;
+    text-align:left;
+    margin-right:10px;
+    /*width: 430px;*/
+}
+.texto_enviado_sucesso
+{
+    color:#1A3876;
+    font-size:20px;
+    margin:90px 140px 0px;
+    text-align:left;
+    width:250px;
+}
+.texto_protocolo_envio
+{
+    color:#1A3876;
+    font-size:14px;
+    margin:0px 140px 0;
+    text-align:left;
+    width:425px;
+    float:left;
+}
+.texto_caso_seu_curriculo
+{
+    color:#1A3876;
+    padding:6px 20px;
+    text-align:center;
+}
+.painel_botoes
+{
+    margin:20px 0;
+}
+.painel_botoes .botao_padrao
+{
+    margin-bottom:0;
+}
+.modal_confirmacao_acao
+{
+    background-color:#FFFFFF;
+    background-image:url("/img/bg_topo_modal_candidato.png");
+    background-repeat:repeat-x;
+    border:medium none;
+    margin:0 auto;
+    width:420px;
+    min-height:215px;
+}
+.texto_confirmacao
+{
+    color:#1A3876;
+    font-size:13px;
+    text-align:center;
+    width:530px;
+    height:100px;
+    display:block;
+    width: 400px;
+    float: left;
+    margin: 10px;
+}
+.modal_confirmacao_registro.deficiencia
+{
+     background-color: #FFFFFF;
+    background-image: url("/img/bg_topo_modal_candidato.png");
+    background-repeat: repeat-x;
+    border: medium none;
+    height: 620px;
+    margin: 0 auto;
+    width: 600px !important;
+    margin-top: -33px !important;
+    left: 367px !important;
+}
+.imagem_cadastro_sucesso
+{
+    background-image: url("/img/icone_cadastro_sucesso.png");
+    background-repeat: no-repeat;
+    height: 128px;
+    margin: 20px auto;
+    width: 128px;
+}
+
+.imagem_cadastro_alert
+{
+     background-image: url("/img/modal_nova/img_alerta_bne.png");
+    background-repeat: no-repeat;
+    height: 128px;
+    margin: 20px auto;
+    width: 128px;
+}
+
+p.textocomplementar
+{
+    font-size: 13px;
+    margin: 10px;
+    font-weight: bold;
+}
+p.textoform
+{
+    margin: 10px;
+}
+.label_principal
+{
+    color: #1d325d;
+    font-weight: bold; /*- width: 150px;-*/
+    text-align: right;
+}
+.modal .label_principal
+{
+    color: #1d325d;
+    font-weight: bold;
+    width: 112px;
+    text-align: right;
+}
+
+.Check_box{
+       padding: 20px 10px 10px 10px;
+     max-height: 77px;
+     -moz-column-width: initial;
+   
+    column-width:10em;
+    -moz-column-width: 10em;
+    -webkit-column-width: 11em;
+}
+.texto_deficiencia
+{
+    color: Black;
+    font-size: 15px;
+    padding: 20px 10px 10px 10px;
+    text-align: left;
+}
+.modal_elastica
+{
+    overflow: hidden;
+}
+.texto_menor
+{
+    font-size: 11px;
+    line-height: normal;
+}
+.envio_curriculo .painel_botoes
+{
+    margin: 20px;
+}
+.gridview_padrao.trocar_empresa
+{
+    width: 630px !important;
+}
+.logo_empresa_trocar
+{
+    height: 31px;
+}
+.gridview_padrao.trocar_empresa .rgHeader
+{
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+}
+.logo_empresa_conteudo
+{
+    width: 20%;
+    text-align: center;
+}
+.logo_empresa_conteudo img
+{
+    padding: 5px;
+    background: #fff;
+}
+.nome_empresa_conteudo
+{
+    width: 70%;
+    text-align: center;
+}
+.selecionar_empresa
+{
+    width: 10%;
+    text-align: center;
+}
+.modal_trocar_empresa .titulo_modal
+{
+    color: #FFFFFF;
+    font-size: 19px;
+    font-weight: normal;
+    height: 44px;
+    margin: 10px;
+    text-align: left;
+}
+.modal_trocar_empresa .titulo_item_modal
+{
+    margin: 10px 0 10px 0;
+    font-size: 12px;
+    font-weight: normal;
+    color: #1d325d;
+}
+.modal_trocar_empresa
+{
+    background-color: #FFFFFF;
+    background-image: url("/img/bg_topo_modal_candidato.png");
+    background-repeat: repeat-x;
+    border: medium none;
+    height: auto;
+    margin: 0 auto;
+    width: 650px;
+}
+.TrocarEmpresaConteudo
+{
+    margin: 0 20px 20px 20px;
+}
+.TrocarEmpresaConteudo div
+{
+    margin-top: 15px;
+}
+.modal_trocar_empresa .textbox_padrao
+{
+    border: 1px solid #B5CAEA !important;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    width: 200px !important;
+    float: left;
+}
+.modal_trocar_empresa .filtrar
+{
+    font-size: 11px;
+    height: 22px;
+    margin-left: 5px;
+    width: auto !important;
+    margin-bottom: 0;
+}
+.FormularioEnviaAmigo
+{
+    margin: 20px 0;
+}
+.FormularioEnviaAmigo .linha
+{
+    clear: none;
+    padding: 5px 0;
+}
+.FormularioEnviaAmigo .linha .label_principal
+{
+    width: 130px;
+}
+.icone_enviar_amigo
+{
+    float: right;
+    margin: 5px 35px 0 0;
+}
+.modal_confirmacao_acao .painel_botoes .botao_padrao
+{
+    margin: 0 20px;
+}
+.alinha_btn_fechar_nova_modal
+{
+    margin-left: 363px;
+    margin-top: -12px;
+}
+
+.rodape{
+    margin:2px 0px 10px 204px;
+}
+
+.btn_Confirma {
+     position: relative;
+    padding: 10px 75px 10px 75px !important;
+    background: #1c4b8b !important;
+    font-size: 12px;
+    font-weight:bold;
+    color: #fff !important;
+}
+
+
+  

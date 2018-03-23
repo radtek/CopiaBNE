@@ -1,0 +1,90 @@
+﻿.topo { height: 55px; background-repeat: repeat-x; background-image: url('/img/bg_topo.gif'); }
+.topo .interna { margin: 0 auto; width: 880px; padding: 0; position: relative; }
+.topo .logo_sistema { height: 60px; background-repeat: no-repeat; position: absolute; top: 3px; }
+.topo .painel_informacoes { background-image: url('/img/painel_informacoes.png'); height: 30px; /* width: 346px;*/ width: 433px; background-repeat: no-repeat; position: absolute; /*right: 128px;*/ right: 70px; padding-top: 2px; text-align: center; }
+.topo .painel_informacoes .icones { vertical-align: middle; }
+.topo .painel_informacoes .separar { vertical-align: middle; margin-right: 5px; margin-left: 5px; }
+.topo .painel_informacoes img { vertical-align: middle; }
+.topo .painel_informacoes .textos { font-weight: bold; vertical-align: middle; margin-left: 6px; }
+.topo .painel_botoes_sistema { position: absolute; width: 140px; text-align: right; right: 0px; /*top: 3px;*/ top: 5px; }
+.topo .painel_botoes_sistema ul, .topo .painel_botoes_sistema li { margin: 0; padding: 0; display: inline; }
+.topo .campo_pesquisa { background-image: url('/img/campo_pesquisa.png'); background-repeat: no-repeat; height: 29px; width: 415px; right: 88px; position: absolute; top: 34px; }
+.topo .exemplo_pesquisa { position: absolute; top: 31px; color: #828282; }
+.topo .btn_buscar_vagas { position: absolute; top: 35px; right: 0; }
+.topo .textbox { border: none; position: absolute; top: 5px; height: 18px; width: 360px; right: 47px; background: transparent; }
+.barra_separacao { background-image: url('img/barrinha_separar_informacao.png'); background-repeat: no-repeat; }
+.painel_botoes_sistema ul li div { display: inline !important; }
+.logo_sistema .btiFoto { border: none; }
+.painel_menu { background-image: url('/img/painel_menu.png'); background-position: center bottom; padding-bottom: 1px; background-repeat: no-repeat; }
+.painel_menu_topo { background-image: url('/img/painel_menu_topo.png'); background-repeat: no-repeat; background-position: center top; padding: 0 0 4px; height: 4px; width: 743px; }
+.painel_menu_padrao { position: absolute; width: 743px; top: 88px; font-size: 11px; }
+.painel_menu_padrao .ul_padrao { margin-top: 0px; margin-left: 0px; padding-left: 20px; margin-bottom: 5px; background-color: #e9e9e9; }
+.painel_menu_padrao .ul_padrao a { text-decoration: underline; }
+.painel_menu_padrao .ul_padrao li { display: inline; margin-right: 20px; }
+.topo .painel_filtro { position: absolute; top: 80px; height: 40px; }
+.topo .button_buscar_curriculo { }
+.topo .button_buscar_vaga { }
+.painel_filtro_vaga { 
+    /*background-image: url('/img/pesquisa_vagas.png'); */ 
+    background-repeat: no-repeat;
+    height: 75px; top: 28px; position: absolute; width: 883px; 
+}
+.painel_filtro_curriculo { 
+    /*background-image: url('/img/pesquisa_curriculo.png');*/ 
+    background-repeat: no-repeat;
+    height: 75px; top: 28px; position: absolute; width: 883px; }
+.painel_filtro_vaga_escondido { 
+    /*background-image: url('/img/pesquisa_vagas_escondido.png');
+    background-repeat: no-repeat; */ 
+    height: 19px; top: 28px; position: absolute; width: 883px; 
+}
+.painel_filtro_curriculo_escondido { 
+    /*background-image: url('/img/pesquisa_curriculo_escondido.png'); 
+    background-repeat: no-repeat;*/ 
+    height: 19px; top: 28px; position: absolute; width: 883px; 
+
+}
+.btn_buscar_curriculo { border: none; position: absolute; right: 10px; }
+.btn_buscar { position: absolute; right: 12px; top: 16px; border: none; text-align:center; }
+.aba_buscar_curriculo { border: none; }
+.aba_buscar_vaga { border: none; }
+.topo .textbox_watermark { color: #999; font-size: 11px; font-style: italic; }
+.textbox_cidade, .textbox_funcao, .textbox_palavra_chave { position: absolute; top: 20px; border: none; width: 220px; background: none repeat scroll 0 0 transparent; }
+.textbox_palavra_chave { left: 524px; height: 20px; }
+.textbox_cidade { left: 268px; height: 20px; }
+.textbox_funcao { left: 16px; height: 20px; }
+.ajax_ace { list-style: none outside none; margin: 0; padding: 0; text-align: left; width: auto !important; min-width: 220px; }
+/* .painel_icones_padrao { position: absolute; width: 743px; top: 88px; font-size: 11px; }
+.painel_icones { position: absolute; right: 5px; top: 85px; }
+.painel_icones .ul_icones { margin-top: 0px; margin-left: 0px; padding-left: 15px; margin-bottom: 5px; }
+.painel_icones_padrao .ul_padrao a { text-decoration: underline; }
+.painel_icones_padrao .ul_padrao li { display: inline; margin-right: 20px; }
+.ul_icones li { display: inline; }
+.ul_icones li input { display: inline; margin-right: 3px; }
+.ul_icones li div { display: inline; }*/
+.a img { border: none !important; }
+.img_sem_borda { border: none; }
+.descricao_vaga { font-weight: bold; }
+/* Fun�oes inexistentes */
+.funcao_inexistente {background-image: url('/img/imagem_funcoes_inexistentes.gif');height: 50px;width: 232px;/* margin-top: 0px; *//* margin-left: 10px; *//* float: left; */position: absolute;top: 52px;}
+.cidade_inexistente {background-image: url('/img/imagem_funcoes_inexistentes.gif');height: 50px;width: 232px;/* margin-top: 48px; *//* margin-left: 265px; */position: absolute;top: 52px;left: 261px;z-index: 1003;}
+.texto_funcao_inexistente {position: absolute;2pxleft: 75pxfont-weight: bolder;top: 30px;left: 66px; font-weight:bold}
+.texto_cidade_inexistente {position: absolute;top: 30px;left: 66px;font-weight: bolder;}
+/* FIM: Fun�oes inexistentes */
+/*- botoes aidiconais e titulo da tela -*/
+.menu_secao { /*padding-top: 188px;*/ text-align: right; clear: both; }
+.menu_secaoSlim { /*padding-top: 133px;*/ text-align: right;  clear: both; }
+.btn_int { font-size: 11px; margin: 0 10px; float: right; }
+.btn_int img { margin-right: 5px; }
+.TituloTela { margin: 0 auto 0; /*margin-top: 145px;*/ width: 880px; color: #808080; }
+.TituloTelaSlim { margin: 0 auto 0; /*margin-top: 93px;*/ width: 880px; color: #808080; }
+.painel_dados_acesso { position: absolute; top: 35px; right: 0px; }
+.painel_dados_acesso .textos { font-weight: bold; vertical-align: middle; color: #143D75; }
+.div_liNomeUsuarioLogado { margin:2px 10px 30px 23px; float:right; height:3px;  } /*Cuidado ao alterar o height, essa div empurra outros elementos para baixo*/
+
+#changeUser { height:38px; color: #fff; font-size:15px; align-items:center; font-weight:500; font-family: Roboto !important; margin: 0; display: flex; line-height: 20px; }
+#changeUser a {color:#fff}
+#changeUser.empresa { background-color:#006658; }
+#changeUser.candidato { background-color:#1A4784; }
+#changeUser .empresa { width: 50%; text-align: left; float: left; }
+#changeUser .candidato { width: 50%; text-align: right; float: right; }

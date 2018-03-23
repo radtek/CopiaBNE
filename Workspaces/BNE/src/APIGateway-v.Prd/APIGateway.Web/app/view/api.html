@@ -1,0 +1,173 @@
+﻿<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">{{ api.UrlSuffix }}</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+<form role="form">
+    <div class="row">
+        <div class="form-group col-lg-6">
+            <label for="apiAddress">Address</label>
+            <div class="input-group">
+                <div class="input-group-addon">{{ gatewayUrl }}/</div>
+                <input type="text" class="form-control" id="apiAddress" ng-model="api.UrlSuffix" placeholder="Api SubDir">
+            </div>
+            <p class="help-block">Url de acesso aos endpoints da API.</p>
+        </div>
+        <div class="form-group col-lg-6">
+            <label for="authentication">Authentication Type</label>
+            <select class="form-control" id="authentication" ng-model="api.AuthenticationType.Interface">
+                <option value="null">None</option>
+                <option value="Base64_PJ_ApiKey">Base64_PJ_ApiKey</option>
+                <option value="ChaveSistemaCliente">ChaveSistemaCliente</option>
+                <option value="OAuth_PF">OAuth_PF</option>
+            </select>
+            <p class="help-block">Autenticação utilizada pela API.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-6">
+            <label for="apiAddress">Base Url</label>
+            <div class="input-group">
+                <div class="input-group-addon">http://</div>
+                <input type="text" class="form-control" id="apiAddress" ng-model="api.BaseUrl" placeholder="Url destino">
+            </div>
+            <p class="help-block">Url Base para onde as requisições devem ser redirecionadas em ambiente de produção.</p>
+        </div>
+        <div class="form-group col-lg-6">
+            <label for="apiAddress">Developement Url</label>
+            <div class="input-group">
+                <div class="input-group-addon">http://</div>
+                <input type="text" class="form-control" id="apiAddress" ng-model="api.DevUrl" placeholder="Url destino">
+            </div>
+            <p class="help-block">Url Base para onde as requisições devem ser redirecionadas em ambiente de desenvolvimento.</p>
+        </div>
+    </div>
+
+    <!-- Endpoints -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Endpoints
+                </div>
+                <table class="table table-striped table-hover table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Endpoint</th>
+                            <th>Destination Endpoint</th>
+                            <th class="text-center">Log Errors</th>
+                            <th class="text-center">Log Success</th>
+                            <th class="text-center">Log Response</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="endpoint in api.Endpoints">
+                            <td>
+                                <div ng-class="endpoint.MethodString | lowercase" class="method">
+                                    {{ endpoint.MethodString }}
+                                </div>
+                            </td>
+                            <th ng-click="showEndpointModal(endpoint)">{{ endpoint.RelativePath }}</th>
+                            <td>{{ endpoint.DestinationRelativePath || endpoint.RelativePath }}</td>
+                            <td class="text-center"><i class="fa fa-1" ng-class="endpoint.LogErro ? 'fa-check-circle text-success' : 'fa-times text-danger'"></i></td>
+                            <td class="text-center"><i class="fa fa-1" ng-class="endpoint.LogSucesso ? 'fa-check-circle text-success' : 'fa-times text-danger'"></i></td>
+                            <td class="text-center"><i class="fa fa-1" ng-class="endpoint.LogResponse ? 'fa-check-circle text-success' : 'fa-times text-danger'"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /Endpoints -->
+
+    <div class="row">
+        <!-- Sistemas -->
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Sistemas
+                    <a ng-click="showSistemasModal()" href="#" title="Adicionar Sistema com acesso" class="pull-right"><i class="fa fa-plus fa-1"></i></a>
+                </div>
+                <table class="table table-striped table-hover table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Chave de Acesso</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="sistema in sistemas">
+                            <th>{{ sistema.Nome }}</th>
+                            <td>{{ sistema.Chave }}</td>
+                            <td>
+                                <input bs-switch
+                                       ng-model="sistema.isPermited"
+                                       type="checkbox"
+                                       switch-size="mini"
+                                       ng-change="togglePermission(sistema)">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /Sistemas -->
+    </div>
+    <div class="row">
+        <!-- Swagger -->
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <img src="img/swagger-16x16.png" /> Swagger Config
+                    <a target="_blank" href="{{ api.SwaggerConfig.FullUIUrl }}" title="Acessar Swagger UI" class="pull-right"><i class="fa fa-external-link fa-1"></i></a>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-lg-12">
+                            <label for="theme">Theme</label>
+                            <select class="form-control" id="theme" ng-model="api.SwaggerConfig.Theme">
+                                <option value="bne">BNE</option>
+                                <option value="sine">Sine</option>
+                            </select>
+                            <p class="help-block">Autenticação utilizada pela API.</p>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="uiAddress">UI Url</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">{{ gatewayUrl }}/{{ api.UrlSuffix }}/</div>
+                                <input type="text" class="form-control" id="uiAddress" ng-model="api.SwaggerConfig.UIUrl" placeholder="Swagger UI Address">
+                            </div>
+                            <p class="help-block">Url de acesso à interface do Swagger.</p>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="fileAddress">Json File Url</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">{{ gatewayUrl }}/{{ api.UrlSuffix }}/</div>
+                                <input type="text" class="form-control" id="fileAddress" ng-model="api.SwaggerConfig.UIUrl" placeholder="Swagger UI Address">
+                            </div>
+                            <p class="help-block">Url de acesso ao arquivo JSON com as definições da API.</p>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="fileName">File Name</label>
+                            <input type="text" class="form-control" id="fileName" ng-model="api.SwaggerConfig.FileName" placeholder="Swagger File Name">
+                            <p class="help-block">Nome do arquivo salvo no servidor.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /Swagger -->
+    </div>
+</form>

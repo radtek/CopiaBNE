@@ -1,0 +1,18 @@
+﻿<!--<div class="form-group">-->
+    <label for="{{eNome}}">{{eLabel}}<span class="required">*</span></label>
+    <input type="text" id="{{eNome}}" name="{{eNome}}" class="form-control" ng-focus="mostrarMediaSalarioFuncao()" ng-mouseover="mostrarMediaSalarioFuncao()" ng-mouseleave="ocultarMediaSalarioFuncao()" ng-model="cadCV.curriculo.pretensaoSalarial" maxlength="10" validar-pretensao input-currency number-validator required />
+    <label class="small-x1"><input type="checkbox" value="S" ng-model="cadCV.curriculo.aceitoSalario"> Aceito vagas com salários próximos à minha pretensão.</label>    
+    <div id="avisoMediaSalario" class="tooltip top in" style="top: 220px; left: 163.5px; display: none;">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner" ng-show="!fezMedia"><img src="../../images/159.gif" /> Carregando média salarial.</div>
+        <div id="mediaSalarialFuncao" class="tooltip-inner" ng-show="fezMedia"></div>
+    </div>
+    <div class="tooltip top in" style="top: 234px; left: 73.5px; display: block;" ng-show="formPasso1.PretensaoSalarial.$invalid && formPasso1.PretensaoSalarial.$touched">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner">Sua pretensão deve ser maior que o valor do salário mínimo atual de R$ {{cadCV.salarioMinimo}},00</div>
+    </div>
+    <div class="tooltip top in" style="top: 234px; left: 73.5px; display: block;" ng-show="cadCV.curriculo.pretensaoSalarial > 10000 && formPasso1.PretensaoSalarial.$touched">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner">Você inseriu um valor fora da média para esta função. Tem certeza que o valor está correto?</div>
+    </div>
+<!--</div>-->

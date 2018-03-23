@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/favicon.ico">
+    <title>Daskboard VIP - BNE</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="Content/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="Content/navbar.css" rel="stylesheet">
+    <link href="Content/stylesheet.css" rel="stylesheet">
+    <link href="Content/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/Scripts/other/Ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="Scripts/other/Ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="Scripts/other/Ie10-viewport-bug-workaround.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <link rel="stylesheet" type="text/css" href="Content/injected.css">
+</head>
+
+<body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header col-md-2">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand " href="#">BNE</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Principal</a></li>
+                    <li><a href="#about">Empregos</a></li>
+                    <li><a href="#contact">Empresas</a></li>
+                    <li><a href="#contact">Jornal</a></li>
+                    <li><a href="#contact">Testes</a></li>
+                    <li><a href="#contact">Meu Salário</a></li>
+                    <li><a href="#contact">Minha Carreira</a></li>
+                    <li><a href="#contact">Avaliação de Currículo</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <div class="navbar sub-header" role="navigation">
+            <div class="container">
+                <div class="col-md-8">
+                    <div class="col-md-6"> </div>
+                    <ul class="list shortcuts filters hidden-xs">
+                        <li class="active"> <a href="#" data-filter="*"> Ver Tudo <span> (14) </span> </a> </li>
+                        <li> <a href="#" data-filter=".marcados"> Marcados <span class="num-mark"> (0) </span> </a> </li>
+                    </ul>
+                </div>
+                <a href="#" class="btn-link pull-left" role="button"><i class="fa fa-bar-chart-o fa-2x"></i></a> <a href="#" class="btn btn-primary" role="button"><i class="fa fa-user"> </i> Atendimento Online</a>
+            </div>
+        </div>
+    </div>
+    <div class="container main" role="main">
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="col-md-4 dark">
+            <h2 class="grid-100 mobile-grid-100"> Bem vinda Audrey <small> <i class="fa fa-edit"> </i> </small> </h2>
+            <div class="avatar col-md-4">
+                <img src="images/users/user_a.jpg" alt="Audrey Tautou Avatar" />
+                <p class="edit-photo"> <i class="fa fa-camera"> </i> <small> Editar Foto </small> </p>
+            </div>
+            <div class="col-md-7">
+                <small>Email: audreytautou@bne.com.br</small> <small>Plano: Gratuito</small>
+                <p><small>Ultima Atualização: <strong>124 dias</strong></small></p>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"> <span class="sr-only">60% Complete (warning)</span> </div>
+                </div>
+            </div>
+            <p class="clearfix"></p>
+
+            <a href="#" class="btn btn-primary calendar" role="button"><i class="fa fa-calendar"> </i> Testar no Formato Calendário</a>
+            <p class="clearfix">
+                <form role="form">
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    </div>
+                </form>
+            </p>
+            <ul class="list-filters col-md-6 filters">
+                <li> <a data-filter=".meu-salario" href="#" class="bt-mini bt-disabled"> <i class="fa fa-money"> </i> Meu Sálario </a> </li>
+                <li> <a data-filter=".minha-carreira" href="#" class="bt-mini bt-disabled"> <i class="fa fa-eye"> </i> Minha Carreira <span> (12) </span> </a> </li>
+                <li> <a data-filter=".visita-recebida" href="#" class="bt-mini bt-disabled"> <i class="fa fa-users"> </i> Visita Recebida </a> </li>
+                <li> <a data-filter=".menssagens" href="#" class="bt-mini bt-disabled"> <i class="fa fa-comments"> </i> Menssagens <span> (12) </span> </a> </li>
+                <li> <a data-filter=".onde-quero-trabalhar" href="#" class="bt-mini bt-disabled"> <i class="fa fa-crosshairs"> </i> Onde quero trabalhar </a> </li>
+                <li> <a data-filter=".pesquisa-de-vagas" href="#" class="bt-mini bt-disabled"><i class="fa fa-search"> </i> Pesquisa de Vagas </a> </li>
+                <li> <a data-filter=".meu-jornal-de-vagas" href="#" class="bt-mini bt-disabled"> <i class="fa fa-paper-plane"> </i> Meu jornal de vagas </a> </li>
+            </ul>
+            <ul class="list-filters col-md-6 filters">
+                <li> <a data-filter=".avaliacao-de-curriculo" href="#" class="bt-mini bt-disabled"><i class="fa fa-fire"> </i> Avaliação de Curriculo </a> </li>
+                <li> <a data-filter=".noticias" href="#" class="bt-mini bt-disabled"><i class="fa fa-bell"> </i> Notícias <span> 8 </span> </a> </li>
+                <li> <a data-filter=".meu-extrato" href="#" class="bt-mini bt-disabled"> <i class="fa fa-file-text-o"> </i> Meu Extrato </a> </li>
+                <li> <a data-filter=".dicas-para-voce" href="#" class="bt-mini bt-disabled"><i class="fa fa-flask"> </i> Dicas para você </a> </li>
+                <li> <a data-filter=".testes" href="#" class="bt-mini bt-disabled"><i class="fa fa-trophy"> </i> Testes <span> (12) </span> </a> </li>
+                <li> <a data-filter=".meus-selos" href="#" class="bt-mini bt-disabled"><i class="fa fa-star"> </i> Meus Selos </a> </li>
+                <li> <a data-filter=".redes-sociais-e-apps" href="#" class="bt-mini bt-disabled"> <i class="fa fa-th-large"> </i> Redes sociais e App's </a> </li>
+            </ul>
+        </div>
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="col-md-8 white">
+
+            <!-- Pesquisas de Vagas -->
+            <div class="filter-item row">
+                <span class="pull-right filter-icon"><i class="fa fa-search"> </i></span>
+                <h2><i class="fa fa-search"></i> Pesquisa de vagas</h2>
+                <div role="alert" class="alert alert-info"> <strong><i class="fa fa-info fa-2x pull-left"></i></strong> Aqui você encontrará a vaga que procura. Filtro completo para uma busca assertiva</div>
+
+                <form role="form">
+                    <div class="col-md-5">
+                        <p><input type="email" class="form-control row " id="exampleInputEmail1" placeholder="Função"></p>
+                    </div>
+                    <div class="col-md-5">
+                        <p><input type="email" class="form-control row " id="exampleInputEmail1" placeholder="Cidade"></p>
+                    </div>
+                    <p>
+                        <button type="submit" class="btn btn-default">Buscar</button>
+                    </p>
+                </form>
+
+                <strong>Resultado da Pesquisa de Vagas de Auxiliar Administrativo em Curitiba/PR</strong>
+
+                <div>
+                    <h3>Auxiliar Administrativo <small>(1 vaga)</small></h3>
+                    <p>Salário de R$ 1200,00 a R$ 140,00. São José dos Pinhais/PR</p>
+
+                    <p><strong>Atribuições:</strong></p>
+                    <p>Executar serviços administrativos tais como separação e classificação de documentos e correspondencia, fazer transição de dados, lançamentos, prestação de informações e orientações, arquivamento de documentos, facilit...</p>
+
+                    <a class="btn"><i class="fa fa-file-text-o"></i> Quero me Candidatar!</a>
+                    <a class="btn"><i class="fa fa-file-text-o"></i> Mais dados da Vaga</a>
+                    <a class="btn"><i class="fa fa-file-text-o"></i> Mais dados da Empresa</a>
+
+
+
+                    compartilhe
+                </div>
+
+            </div>
+            <!-- /filter-item -->
+            <!-- Onde quero trabalhar -->
+            <div class="filter-item row">
+                <span class="pull-right filter-icon"><i class="fa fa-crosshairs"> </i></span>
+                <h2><i class="fa fa-crosshairs"></i> Onde quero trabalhar</h2>
+                <div role="alert" class="alert alert-info"> <strong><i class="fa fa-info fa-3x pull-left"></i></strong> Aqui você pode escolher a empresa que deseja trabalhar, clique na empresa e veja as vagas que estão abertas.</div>
+                <form role="form">
+                    <div class="col-md-10">
+                        <input type="email" class="form-control row " id="exampleInputEmail1" placeholder="Você pode pesquisar por nome, ramo de atividade ou cidade">
+                    </div>
+                    <p>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </p>
+                </form>
+                <p class="clearfix">
+                    <hr>
+                </p>
+                <img src="images/client/salariobr.png" class="col-md-3"> <img src="images/client/activision.png" class="col-md-3"> <img src="images/client/red-bull.png" class="col-md-3"> <img src="images/client/google.png" class="col-md-3">
+                <p class="clearfix">
+                    <hr>
+                </p>
+                <img src="images/client/manchester.png" class="col-md-3"> <img src="images/client/DreamWorks.png" class="col-md-3"> <img src="images/client/virgin.png" class="col-md-3"> <img src="images/client/mazda.png" class="col-md-3">
+                <p class="clearfix">
+                    <hr>
+                </p>
+                <img src="images/client/Ubuntu.png" class="col-md-3"> <img src="images/client/Nickelodeon.png" class="col-md-3"> <img src="images/client/BMW.png" class="col-md-3"> <img src="images/client/miro.png" class="col-md-3">
+                <p class="clearfix">
+                    <hr>
+                </p>
+                <img src="images/client/coca_cola.png" class="col-md-3"> <img src="images/client/Kingdom_Hearts_III.png" class="col-md-3"> <img src="images/client/Skype.png" class="col-md-3"> <img src="images/client/Pokemon.png" class="col-md-3">
+            </div>
+            <!-- /filter-item -->
+            <!-- Visitas Recebidas -->
+            <div class="filter-item row">
+                <span class="pull-right filter-icon"><i class="fa fa-group"> </i></span>
+                <h2><i class="fa fa-group"></i> Visitas Recebidas</h2>
+                <div role="alert" class="alert alert-info">
+                    <strong><i class="fa fa-info fa-3x pull-left"></i></strong> Aqui você vai saber as empresas que visualizaram o seu currículo.
+                    <p>Clique na opção GOSTEI e diga a empresa que você gosta dela.</p>
+                </div>
+
+                <!-- company -->
+                <div class="company">
+                    <h4>BMW Motors visualizou seu currículo</h4>
+                    <img src="images/client/BMW.png" class="col-md-3">
+                    <div class="col-md-7">
+                        <p>Número de funcionários: 140</p>
+                        <p>Telefone: (41) 3312-1285</p>
+                        <p>Cidade: Curitiba/PR</p>
+                        <p>Bairro: Batel</p>
+                        <p>Vagas Divulgadas:432</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p><small><strong>25/03/2014</strong> - 11:56</small></p>
+                        <p><a class="btn row"> <i class="fa fa-bullhorn"></i> Vagas</a></p>
+                        <p><a class="btn btn-default row"><i class="fa fa-thumbs-up"></i> Gostei</a></p>
+                    </div>
+                </div>
+                <p class="clearfix">
+
+                    <hr>
+                </p>
+                <!-- /company -->
+                <!-- company -->
+                <div class="company">
+                    <h4>Google visualizou seu currículo</h4>
+                    <img src="images/client/google.png" class="col-md-3">
+                    <div class="col-md-7">
+                        <p>Número de funcionários: 140</p>
+                        <p>Telefone: (41) 3312-1285</p>
+                        <p>Cidade: Curitiba/PR</p>
+                        <p>Bairro: Batel</p>
+                        <p>Vagas Divulgadas:432</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p><small><strong>25/03/2014</strong> - 11:56</small></p>
+                        <p><a class="btn row"> <i class="fa fa-bullhorn"></i> Vagas</a></p>
+                        <p><a class="btn btn-default row"><i class="fa fa-thumbs-up"></i> Gostei</a></p>
+                    </div>
+                </div>
+                <p class="clearfix">
+
+                    <hr>
+                </p>
+                <!-- /company -->
+                <!-- company -->
+                <div class="company">
+                    <h4>Virgin visualizou seu currículo</h4>
+                    <img src="images/client/virgin.png" class="col-md-3">
+                    <div class="col-md-7">
+                        <p>Número de funcionários: 140</p>
+                        <p>Telefone: (41) 3312-1285</p>
+                        <p>Cidade: Curitiba/PR</p>
+                        <p>Bairro: Batel</p>
+                        <p>Vagas Divulgadas:432</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p><small><strong>25/03/2014</strong> - 11:56</small></p>
+                        <p><a class="btn row"> <i class="fa fa-bullhorn"></i> Vagas</a></p>
+                        <p><a class="btn btn-default row"><i class="fa fa-thumbs-up"></i> Gostei</a></p>
+                    </div>
+                </div>
+                <p class="clearfix">
+
+                    <hr>
+                </p>
+                <!-- /company -->
+
+                <div class="alert alert-warning" role="alert">
+                    <strong><i class="fa fa-warning"> </i> Alerta!</strong>
+                    <ul>
+                        <li>
+                            <p>18 empresas procuraram candidatos na sua função com salário inferior ao pretendido</p>
+                        </li>
+                        <li>
+                            <p>Verefique se sua pretenção esta de acordo com o mercado em <strong>Meu Salário</strong></p>
+                        </li>
+                        <li>
+                            <p>5 empresas procuraram candidatos na sua função com inglês fluente</p>
+                        </li>
+                        <li>
+                            <p>10% das empresas procuram profissionais na sua função com mais de 2 anos de experência</p>
+                        </li>
+                        <li>
+                            <p>20% dos candidatos com o seu pergil tem mais funções pretendidas</p>
+                        </li>
+                        <li>
+                            <p>Verefique em <strong>Minha Carreira</strong></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /filter-item -->
+            <!-- Meu Salário -->
+            <div class="filter-item row">
+                <span class="pull-right filter-icon"><i class="fa fa-money"> </i></span>
+                <h2><i class="fa fa-money"></i> Meu Salário</h2>
+                <div role="alert" class="alert alert-info"> <strong><i class="fa fa-info fa-3x pull-left"></i></strong> Em meu salário você terá acesso às informações salariais sobre sua função em comparação ao mercado. Além de obter informações detalhadas da amostra por: Gênero, Faixa Etária e Experiência. </div>
+                <p><strong><small>Função</small> Auxiliar Administrativo <span class="pull-right">11. 3.004.001.001</span></strong></p>
+                <div role="alert" class="alert alert-warning"> <strong><i class="fa fa-warning "></i></strong> COLOCAR O PLUGIN HICHART !!! </div>
+            </div>
+            <!-- /filter-item -->
+            <!-- Minha Carreira -->
+            <div class="filter-item row">
+                <span class="pull-right filter-icon"><i class="fa fa-eye"></i></span>
+                <h2><i class="fa fa-eye"> </i> Minha Carreira</h2>
+                <div role="alert" class="alert alert-info">
+                    <strong><i class="fa fa-info fa-3x pull-left"></i></strong> Aqui você vai encontrar dicas de como planejar e colocar em prática o plano de Carreira BNE.
+                    Totalmente exclusivo e que atendem as necessidades do seu currículo para a sua carreira decolar
+                </div>
+                <strong>Você esta exercendo sua função corretamente?</strong>
+                <p>Sua função: <strong>Assistente administrativo</strong> Veja aqui a descrição:</p>
+                <p>O assistente administrativo poderá realizar tarefas envolvidas na organização e controle de RH (Recursos Humanos). Para atuar especificamente nesta área, é preciso conhecer como funcionam as normas e políticas da epresa, além de questoes que envolvem diretamente os direitos e deveres dos trabalhadores.</p>
+                <h3><i class="fa fa-tag"> </i> Palavras mais buscadas na sua função:</h3>
+                <div class="tag-cloud"> <a class="tag4" href="#"> Web Design </a> <a class="tag3" href="#"> Front-End </a> <a class="tag7" href="#"> SEO Master </a> <a class="tag2" href="#"> Montador HTML </a> <a class="tag2" href="#"> Web Developer </a> <a class="tag4" href="#"> Ilustrador </a> <a class="tag3" href="#"> JAVA </a> <a class="tag7" href="#"> Analista PHP </a> <a class="tag6" href="#"> MVC Dev </a> <a class="tag2" href="#"> Zend Dev </a> <a class="tag7" href="#"> HTML5 </a> </div>
+                <h3><i class="fa fa-book"> </i> Cursos indicados:</h3>
+                <ul class="list">
+                    <li>Inglês</li>
+                    <li>Pacote Office Avançado</li>
+                    <li>Informática Avançado</li>
+                </ul>
+                <div role="alert" class="alert alert-warning"> <strong><i class="fa fa-warning "></i></strong> COLOCAR O PLUGIN HICHART !!! </div>
+            </div>
+            <!-- /filter-item -->
+
+        </div>
+
+        <!-- Minhas menssagens ( Fora dos filtros ele screen-fixe)-->
+        <div class="messages col-md-3">
+            <h4 class="messages-title"><i class="fa fa-comments"></i> Minhas Menssagens <i class="fa fa-times pull-right"></i> <i class="fa fa-gear pull-right"></i></h4>
+            <p class="messages-box"><i class="fa fa-info"></i> Aqui estão arquivadas todos os e-mails e SMS's que enviamos para você</p>
+            <div role="chat" class="chat chat-mobile">
+                <i class="fa fa-mobile"></i> <strong>Menssagem enviada dia 04/02 por SMS</strong>
+                <p>Sua pretenção salarial esta dentro do que o marcado esta pagando? Saiba mais, acesse www.bne.com.br e vá até a opção MEU SÁLARIO </p>
+            </div>
+            <div role="chat" class="chat">
+                <i class="fa fa-envelope"></i> <strong>Menssagem enviada dia 04/02 por Email</strong>
+                <p>Sua pretenção salarial esta dentro do que o marcado esta pagando?</p>
+                <p>No MEU SALÁRIO você tera acesso a informações salariais sobre sua função em comparação ao mercado. Além de obter informações detalhadas da amostra por Gênero, Faixa Etária e Experiência. Saiba Mais</p>
+            </div>
+        </div>
+        <!-- /filter-item -->
+
+    </div>
+    <!-- /container -->
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="Scripts/jquery-1.11.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+</body>
+</html>

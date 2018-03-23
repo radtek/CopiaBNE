@@ -1,0 +1,137 @@
+﻿h2
+{
+    border-bottom: 1px dotted #D1D5DC;
+    color: #000;
+    font-size: 18px;
+    height: auto;
+    margin-top: 0;
+    padding-bottom: 8px;
+}
+
+label
+{
+    font-size: 14px;
+    padding-right: 4px;
+    padding-top: 6px;
+}
+
+.linha
+{
+    padding: 8px 0;
+    position: relative;
+}
+
+.linha .campos
+{
+    padding-left: 150px;
+}
+
+.linha span
+{
+    display: inline-block;
+}
+
+.textbox_padrao
+{
+    font-size: 20px;
+}
+
+.painel_valor
+{
+    background-color: #e6f8bd;
+    border: 1px solid #D1D5DC;
+    border-radius: 10px;
+    clear: both;
+    font-size: 21px;
+    margin: 8px 0;
+    padding: 18px 12px;
+    overflow: auto;
+}
+
+.container_texto_por_mes
+{
+    
+}
+
+.painel_cartao_de_credito
+{
+    background-color: #fff;
+    border: 1px solid #D1D5DC;
+    border-radius: 10px;
+    clear: both;
+    margin: 8px 0;
+    padding: 18px 12px;
+    overflow: auto;
+}
+
+.painel_dados_do_cartao
+{
+    float: left;
+    padding-bottom: 20px;
+    width: 580px;
+}
+
+.painel_dados_do_cartao .label_principal
+{
+    width: 140px;
+    position: absolute;
+    bottom: 16px;
+}
+
+.painel_selecione_o_cartao
+{
+    float: right;
+}
+
+.painel_botao_opcao_bandeira
+{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 12px;
+    padding: 18px 0px;
+    overflow: auto;
+    text-align: center;
+}
+
+.painel_botao_opcao_bandeira img
+{
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.container_texto_sub_label
+{
+    margin-left: 20px;
+}
+
+.painel_botoes
+{
+    margin: 20px 0;
+}
+
+.botao_padrao
+{
+    font-size: 21px;
+    height: auto;
+    margin: 0;
+    padding: 10px 16px !important;
+}
+
+.link_voltar_cartao_de_credito
+{
+    font-size: 18px;
+    margin-left: 16px;
+}
+
+.painel_cartao_de_debito
+{
+    background-color: #fff;
+    border: 1px solid #D1D5DC;
+    border-radius: 10px;
+    clear: both;
+    margin: 8px 0;
+    padding: 18px 12px;
+    overflow: auto;
+}

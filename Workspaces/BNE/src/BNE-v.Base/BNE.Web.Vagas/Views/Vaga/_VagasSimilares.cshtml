@@ -1,0 +1,15 @@
+﻿@using BNE.Web.Vagas.Code
+@model List<BNE.Web.Vagas.Models.VagaSimilar>
+<div class="container_vagas_similares">
+    <div class="titulo"><span>Outras vagas</span></div>
+    <div class="vagas_similares">
+        <ul>
+            @for (int i = 0; i < @Model.Count; i++)
+            {
+                <li>
+                    <a href="@Model[i].URL">Vaga para @Model[i].Funcao em @Model[i].Cidade</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

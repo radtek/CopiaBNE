@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BNE_SALARIOBR_HOMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TAB_Resultado_Pesquisa_Salarial">
+          <Key>
+            <PropertyRef Name="Idf_Resultado_Pesquisa_Salarial" />
+          </Key>
+          <Property Name="Idf_Resultado_Pesquisa_Salarial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Idf_Funcao" Type="int" Nullable="false" />
+          <Property Name="Sig_Estado" Type="char" MaxLength="2" />
+          <Property Name="Xml_Resultado_Pesquisa" Type="xml" Nullable="false" />
+          <Property Name="Xml_Resultado_Metricas" Type="xml" Nullable="false" />
+          <Property Name="Idfs_Funcoes" Type="varchar(max)" />
+          <Property Name="Xml_Resultado_Escolaridade" Type="xml" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Qtd_Total_Amostra" Type="int" />
+          <Property Name="Qtd_Curriculos" Type="int" />
+        </EntityType>
+        <EntityContainer Name="BNE_SALARIOBR_HOMModelStoreContainer">
+          <EntitySet Name="TAB_Resultado_Pesquisa_Salarial" EntityType="Self.TAB_Resultado_Pesquisa_Salarial" Schema="pesquisasalarial" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BNE_SALARIOBR_HOMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TAB_Resultado_Pesquisa_Salarial">
+          <Key>
+            <PropertyRef Name="Idf_Resultado_Pesquisa_Salarial" />
+          </Key>
+          <Property Name="Idf_Resultado_Pesquisa_Salarial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Idf_Funcao" Type="Int32" Nullable="false" />
+          <Property Name="Sig_Estado" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Xml_Resultado_Pesquisa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Xml_Resultado_Metricas" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Idfs_Funcoes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Xml_Resultado_Escolaridade" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Qtd_Total_Amostra" Type="Int32" />
+          <Property Name="Qtd_Curriculos" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="BNE_SALARIOBR_HOMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TAB_Resultado_Pesquisa_Salarial" EntityType="Self.TAB_Resultado_Pesquisa_Salarial" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BNE_SALARIOBR_HOMModelStoreContainer" CdmEntityContainer="BNE_SALARIOBR_HOMEntities">
+          <EntitySetMapping Name="TAB_Resultado_Pesquisa_Salarial">
+            <EntityTypeMapping TypeName="BNE_SALARIOBR_HOMModel.TAB_Resultado_Pesquisa_Salarial">
+              <MappingFragment StoreEntitySet="TAB_Resultado_Pesquisa_Salarial">
+                <ScalarProperty Name="Idf_Resultado_Pesquisa_Salarial" ColumnName="Idf_Resultado_Pesquisa_Salarial" />
+                <ScalarProperty Name="Idf_Funcao" ColumnName="Idf_Funcao" />
+                <ScalarProperty Name="Sig_Estado" ColumnName="Sig_Estado" />
+                <ScalarProperty Name="Xml_Resultado_Pesquisa" ColumnName="Xml_Resultado_Pesquisa" />
+                <ScalarProperty Name="Xml_Resultado_Metricas" ColumnName="Xml_Resultado_Metricas" />
+                <ScalarProperty Name="Idfs_Funcoes" ColumnName="Idfs_Funcoes" />
+                <ScalarProperty Name="Xml_Resultado_Escolaridade" ColumnName="Xml_Resultado_Escolaridade" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Qtd_Total_Amostra" ColumnName="Qtd_Total_Amostra" />
+                <ScalarProperty Name="Qtd_Curriculos" ColumnName="Qtd_Curriculos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

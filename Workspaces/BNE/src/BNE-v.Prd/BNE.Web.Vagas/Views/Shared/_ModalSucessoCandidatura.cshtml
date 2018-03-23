@@ -1,0 +1,24 @@
+﻿@model BNE.Web.Vagas.Models.SucessoCandidatura
+<div id="modalSucesso" class="modal amarela">
+    <script>
+        modal.abrirModal('modalSucesso');
+    </script>
+    <link href="~/Content/ModalSucessoCandidatura.css" rel="stylesheet" />
+    <img class="sucesso-icon" src="~/Images/confirm/icon-success.png" />
+    <a class="simplemodal-close b-close modal_fechar" title="Close"></a>
+    <div class="modal_conteudo">
+        <div class="container_confirmacao_candidatura">
+         
+            <div class="texto_confirmacao">
+                <p class="texto_enviado_sucesso">
+                    <b> @Model.NomeCandidato!</b> <br />
+                    Seu currículo foi enviado
+                    com sucesso!
+                </p>
+                <p class="texto_protocolo_envio">
+                    Protocolo de envio: <span class="strong">@Model.Protocolo</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿h3{ margin-top:-3px;}
+.table-obs{padding-left:180px; display:block; width:800px;}
+.table-obs tr{width:100%; display:block}
+.table-obs tr td{width:100%; display:block}
+.table-obs tr a{ display:inline-block}
+.show-periodo{display:inline-block}
+.hide-periodo{display:none !important}
+.modal-header{border:1px solid red;display:none !important}
+.col-lg-8, .col-md-8, .col-md-9{width:65% !important;float:left !important; }
+.col-lg-4, .col-md-4{width:35% !important;float:left !important;}
+.col-lg-4 ul li  {font-size:12px !important; display:block;}
+.clearfix{margin:0}
+.col-lg-8{ position:absolute; right:0}
+
+.marginBNE{width:800px; font-size:16px!important; margin: 0 auto; margin-top:-50px;}
+
+h3{font-family:Georgia, Constantia, "Lucida Bright", "DejaVu Serif",  serif;}
+.col-lg-8 a , .col-lg-8 em, { font-size:14px !important;  display:block; font-family:Georgia, Constantia, "Lucida Bright", "DejaVu Serif",  serif;}
+td{ font-family:Georgia, Constantia, "Lucida Bright", "DejaVu Serif",  serif; font-size:14px !important; 
+.col-lg-8 em{font-size:12px !important;}
+.col-md-5 em a{display:inline-block;}
+pre{border:none; font-family:Georgia!important; padding:0; margin-left:0 !important;white-space: normal}
+ul{ list-style:none !important; padding-left:0 !important}
+.col-md-4 a{ display:inline-block;}
+.periodosTrabalhar{  padding: 0 !important}
+.periodosTrabalhar li {font-size:14px !important;}
+.periodosTrabalhar li span , .periodosTrabalhar li a{display:inline-block; padding:0; font-size:14px !important;}
+

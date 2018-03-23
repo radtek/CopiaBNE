@@ -1,0 +1,27 @@
+﻿.botao_quero_comprar
+{
+    background-image: url('/img/modal_nova/btn_quero_passar_para_vip.png');
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    margin-left: 20px;
+    margin-top: 17px;
+    width: 212px;
+    height: 40px;
+    color: #21190C;
+    font-size: 18px;
+    padding-left: 15px;
+    padding-top: 10px;
+    text-align: center;
+}
+.modal_nova_amarela .botao_fechar_modal
+{
+    position:absolute !important;
+    right:-16px !important;    
+    top:-16px;
+}
+.labelMaioresInformacoes
+{
+    color:#052769;
+    font-size:16px;
+}

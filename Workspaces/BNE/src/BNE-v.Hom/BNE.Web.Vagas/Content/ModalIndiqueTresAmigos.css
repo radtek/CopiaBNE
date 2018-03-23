@@ -1,0 +1,29 @@
+﻿* { margin: 0; padding: 0;}
+.i3_top_container { width: 500px; }
+.i3_modal_container {  background: #eeeeee; width: 500px; height: auto; margin: 0 auto; padding-bottom: 14px; -webkit-border-radius: 10px;/*Safari, Chrome*/ -moz-border-radius: 10px;/*Firefox*/border-radius: 10px; -webkit-box-shadow: 0px 0px 30px -2px rgba(0,0,0,0.5); -moz-box-shadow: 0px 0px 30px -2px rgba(0,0,0,0.5); box-shadow: 0px 0px 30px -2px rgba(0,0,0,0.5);}
+.i3_panel_top { background: #2b64b2; padding: 15px 0px 35px 0px; color: #fff; -webkit-border-radius: 10px 10px 0 0;/*Safari, Chrome*/ -moz-border-radius: 10px 10px 0 0;/*Firefox*/ border-radius: 10px 10px 0 0;}
+h4.i3_tit_modal { margin-left: 15px; font-family: 'Roboto', sans-serif; font-size: 18px; float: left;}
+.i3_section_btn { width: 100%;  font-family: 'Roboto', sans-serif; padding-top: 5px; margin-top: 8px; }
+.i3_btn_send { font-family: 'Roboto', sans-serif; padding: 10px 18px 10px 18px; background: #2b64b2; border: 0px; color: #fff; cursor: pointer; width: 110px; }
+.i3_btn_cancel {   margin-right: 20px; width: 110px; font-family: 'Roboto', sans-serif; padding: 10px 18px 10px 18px; margin-left: 26%; background: #999999; border: 0px; color: #fff; cursor: pointer; }
+.i3_content_dados {  font-family: 'Roboto', sans-serif; height: auto; position: relative; float: left; margin: 15px 15px 10px 15px; color: #666666;  width: 94%;}
+i.fa-times { float: right; margin-right: 15px; font-size: 22px; cursor: pointer;}
+.i3_btn_send:hover { background: #255494; }
+.i3_btn_cancel:hover { background: #8a8a8a; }
+i.fa-smile-o { font-size: 52px; float: left;}
+span.i3_tit_chances { font-size: 42px; font-weight: 700; float: left; margin: 2px 0px 0px 8px;}
+p.i3_txt_chances { margin-left: 100px;}
+.i3_nomes_indicar { float: left; position: relative;  width: 55%;}
+.i3_fone_indicar { float: right;  width: 40%; margin-right: 7px;}
+.i3_ipt_indic { width: 100%; padding: 6px 0px 6px 0px; border: 1px solid #cccccc; padding-left: 3px;}
+.i3_form_indicar { margin: 15px 0px 0px 0px;}
+.i3_lb_inp_t { font-size: 12px; font-weight: 300; margin-left: 2px; }
+hr.i3_linha {border: 1px solid #cccccc; width: 100%; clear: both;}
+.i3_label_error { color: red; float: none; margin-left: 0; margin-right: 0; }
+label.error { clear: both; color: red; display: block; font-weight: bold; }
+label { float: none; margin-top: 5px;}
+.i3_input_group { height: 50px; margin-bottom: 15px; }
+#i3_loading{ display: none; width: 30px; margin: 0 auto; padding-top: 20px; }
+.i3_message { text-align: center;  padding: 0 10px 0 0px; font-weight: bold; line-height: 20px; color:red;}
+.i3_btn_ir_vagas { font-family: 'Roboto', sans-serif; padding: 10px 18px 10px 18px; background: #2b64b2; border: 0px; color: #fff; cursor: pointer; width: 80px;
+                   margin-left: calc(50% - 60px); display: none; }

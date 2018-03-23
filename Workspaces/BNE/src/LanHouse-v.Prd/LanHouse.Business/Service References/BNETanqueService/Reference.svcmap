@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="af2e36fb-393e-4669-9579-018bf54a29f2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wspg.apprh.com.br/celulardaselecionadora/App.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="App4.xsd" MetadataType="Schema" ID="c569078d-f437-430a-947e-cf25485a33c2" SourceId="1" SourceUrl="http://wspg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd0" />
+    <MetadataFile FileName="App41.xsd" MetadataType="Schema" ID="a0e13900-7b29-4b16-b326-0969f835dbc2" SourceId="1" SourceUrl="http://wspg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd1" />
+    <MetadataFile FileName="App42.xsd" MetadataType="Schema" ID="a0c93cbc-06d8-41ff-97a2-a19143f598bb" SourceId="1" SourceUrl="http://wspg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd3" />
+    <MetadataFile FileName="App1.disco" MetadataType="Disco" ID="78eaacb0-1de5-468a-b201-3c4fdddf79b7" SourceId="1" SourceUrl="http://wspg.apprh.com.br/celulardaselecionadora/App.svc?disco" />
+    <MetadataFile FileName="App43.xsd" MetadataType="Schema" ID="303adce0-5441-4f17-ac79-61d7fe8de873" SourceId="1" SourceUrl="http://wspg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd2" />
+    <MetadataFile FileName="App1.wsdl" MetadataType="Wsdl" ID="ca0987c5-2f3e-4e2c-9628-6d2a437013b1" SourceId="1" SourceUrl="http://wspg.apprh.com.br/celulardaselecionadora/App.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,1560 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Comparers</name>
+    </assembly>
+    <members>
+        <member name="T:Comparers.AnonymousComparer`1">
+            <summary>
+            An object that implements a comparer using delegates.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="T:Comparers.Util.ComparerBase`1">
+            <summary>
+            Common implementations for comparers.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="T:EqualityComparers.Util.EqualityComparerBase`1">
+            <summary>
+            Common implementations for equality comparers.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="T:EqualityComparers.IFullEqualityComparer`1">
+            <summary>
+            An equality comparer that supports both generic and non-generic equality comparison.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="F:EqualityComparers.Util.EqualityComparerBase`1.allowNulls">
+            <summary>
+            A value indicating whether <c>null</c> values will be passed down to derived implementations.
+            </summary>
+        </member>
+        <member name="M:EqualityComparers.Util.EqualityComparerBase`1.DoGetHashCode(`0)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:EqualityComparers.Util.EqualityComparerBase`1.DoEquals(`0,`0)">
+            <summary>
+            Compares two objects and returns <c>true</c> if they are equal and <c>false</c> if they are not equal.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns><c>true</c> if <paramref name="x"/> is equal to <paramref name="y"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:EqualityComparers.Util.EqualityComparerBase`1.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:EqualityComparers.Util.EqualityComparerBase`1"/> class.
+            </summary>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <see cref="M:EqualityComparers.Util.EqualityComparerBase`1.DoGetHashCode(`0)"/> and <see cref="M:EqualityComparers.Util.EqualityComparerBase`1.DoEquals(`0,`0)"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <see cref="M:EqualityComparers.Util.EqualityComparerBase`1.DoGetHashCode(`0)"/> nor <see cref="M:EqualityComparers.Util.EqualityComparerBase`1.DoEquals(`0,`0)"/>.</param>
+        </member>
+        <member name="M:EqualityComparers.Util.EqualityComparerBase`1.System#Collections#IEqualityComparer#Equals(System.Object,System.Object)">
+            <summary>
+            Compares two objects and returns a value indicating whether they are equal.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns><c>true</c> if <paramref name="x"/> is equal to <paramref name="y"/>; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:EqualityComparers.Util.EqualityComparerBase`1.System#Collections#IEqualityComparer#GetHashCode(System.Object)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:EqualityComparers.Util.EqualityComparerBase`1.Equals(`0,`0)">
+            <summary>
+            Compares two objects and returns a value indicating whether they are equal.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns><c>true</c> if <paramref name="x"/> is equal to <paramref name="y"/>; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:EqualityComparers.Util.EqualityComparerBase`1.GetHashCode(`0)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="P:EqualityComparers.Util.EqualityComparerBase`1.AllowNulls">
+            <summary>
+            Gets a value indicating whether <c>null</c> values will be passed down to derived implementations.
+            </summary>
+        </member>
+        <member name="T:Comparers.IFullComparer`1">
+            <summary>
+            A comparer that also provides equality comparison (and hash codes) for both generic and non-generic usage.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="T:Comparers.IFullComparer">
+            <summary>
+            A non-generic comparer that also provides equality comparison (and hash codes).
+            </summary>
+        </member>
+        <member name="M:Comparers.Util.ComparerBase`1.DoCompare(`0,`0)">
+            <summary>
+            Compares two objects and returns a value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns>A value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Comparers.Util.ComparerBase`1.DoEquals(`0,`0)">
+            <summary>
+            Compares two objects and returns <c>true</c> if they are equal and <c>false</c> if they are not equal.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns><c>true</c> if <paramref name="x"/> is equal to <paramref name="y"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Comparers.Util.ComparerBase`1.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Comparers.Util.ComparerBase`1"/> class.
+            </summary>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <see cref="M:EqualityComparers.Util.EqualityComparerBase`1.DoGetHashCode(`0)"/> and <see cref="M:Comparers.Util.ComparerBase`1.DoCompare(`0,`0)"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <see cref="M:EqualityComparers.Util.EqualityComparerBase`1.DoGetHashCode(`0)"/> nor <see cref="M:Comparers.Util.ComparerBase`1.DoCompare(`0,`0)"/>.</param>
+        </member>
+        <member name="M:Comparers.Util.ComparerBase`1.System#Collections#IComparer#Compare(System.Object,System.Object)">
+            <summary>
+            Compares two objects and returns a value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns>A value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Comparers.Util.ComparerBase`1.Compare(`0,`0)">
+            <summary>
+            Compares two objects and returns a value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns>A value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Comparers.AnonymousComparer`1.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Comparers.AnonymousComparer`1"/> class.
+            </summary>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <see cref="P:Comparers.AnonymousComparer`1.Compare"/> and <see cref="P:Comparers.AnonymousComparer`1.GetHashCode"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <see cref="P:Comparers.AnonymousComparer`1.Compare"/> nor <see cref="P:Comparers.AnonymousComparer`1.GetHashCode"/>.</param>
+        </member>
+        <member name="M:Comparers.AnonymousComparer`1.DoGetHashCode(`0)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:Comparers.AnonymousComparer`1.DoCompare(`0,`0)">
+            <summary>
+            Compares two objects and returns a value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns>A value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Comparers.AnonymousComparer`1.ToString">
+            <summary>
+            Returns a short, human-readable description of the comparer. This is intended for debugging and not for other purposes.
+            </summary>
+        </member>
+        <member name="P:Comparers.AnonymousComparer`1.Compare">
+            <summary>
+            Gets or sets a delegate which compares two objects and returns a value less than 0 if its first argument is less than its second argument, 0 if its two arguments are equal, or greater than 0 if its first argument is greater than its second argument.
+            </summary>
+        </member>
+        <member name="P:Comparers.AnonymousComparer`1.GetHashCode">
+            <summary>
+            Gets or sets a delegate which calculates a hash code for an object.
+            </summary>
+        </member>
+        <member name="T:Comparers.ComparableBase`1">
+            <summary>
+            Provides implementations for comparison, equality, and hash code methods. These implementations assume that there will only be one derived type that defines comparison/equality.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:Comparers.ComparableBase`1.GetHashCode">
+            <summary>
+            Gets the hash code for this instance.
+            </summary>
+            <returns>The hash code for this instance.</returns>
+        </member>
+        <member name="M:Comparers.ComparableBase`1.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to the specified object.
+            </summary>
+            <param name="obj">The object to compare with this instance.</param>
+            <returns>A value indicating whether this instance is equal to the specified object.</returns>
+        </member>
+        <member name="M:Comparers.ComparableBase`1.Equals(`0)">
+            <summary>
+            Returns a value indicating whether this instance is equal to the specified object.
+            </summary>
+            <param name="other">The object to compare with this instance.</param>
+            <returns>A value indicating whether this instance is equal to the specified object.</returns>
+        </member>
+        <member name="M:Comparers.ComparableBase`1.System#IComparable#CompareTo(System.Object)">
+            <summary>
+            Returns a value indicating the relative order of this instance and the specified object: a negative value if this instance is less than the specified object; zero if this instance is equal to the specified object; and a positive value if this instance is greater than the specified object.
+            </summary>
+            <param name="obj">The object to compare with this instance.</param>
+            <returns>A value indicating the relative order of this instance and the specified object: a negative value if this instance is less than the specified object; zero if this instance is equal to the specified object; and a positive value if this instance is greater than the specified object.</returns>
+        </member>
+        <member name="M:Comparers.ComparableBase`1.CompareTo(`0)">
+            <summary>
+            Returns a value indicating the relative order of this instance and the specified object: a negative value if this instance is less than the specified object; zero if this instance is equal to the specified object; and a positive value if this instance is greater than the specified object.
+            </summary>
+            <param name="other">The object to compare with this instance.</param>
+            <returns>A value indicating the relative order of this instance and the specified object: a negative value if this instance is less than the specified object; zero if this instance is equal to the specified object; and a positive value if this instance is greater than the specified object.</returns>
+        </member>
+        <member name="P:Comparers.ComparableBase`1.DefaultComparer">
+            <summary>
+            Gets the default comparer for this type.
+            </summary>
+        </member>
+        <member name="T:Comparers.ComparableBaseWithOperators`1">
+            <summary>
+            Provides implementations for comparison, equality, and hash code methods, along with overloaded operators. Note: overloaded operators should only be considered for immutable reference types. These implementations assume that there will only be one derived type that defines comparison/equality.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:Comparers.ComparableBaseWithOperators`1.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to the specified object.
+            </summary>
+            <param name="obj">The object to compare with this instance.</param>
+            <returns>A value indicating whether this instance is equal to the specified object.</returns>
+        </member>
+        <member name="M:Comparers.ComparableBaseWithOperators`1.GetHashCode">
+            <summary>
+            Gets the hash code for this instance.
+            </summary>
+            <returns>The hash code for this instance.</returns>
+        </member>
+        <member name="M:Comparers.ComparableBaseWithOperators`1.op_Equality(Comparers.ComparableBaseWithOperators{`0},Comparers.ComparableBaseWithOperators{`0})">
+            <summary>
+            Returns <c>true</c> if two <typeparamref name="T"/> objects have the same value.
+            </summary>
+            <param name="left">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <param name="right">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <returns><c>true</c> if two <typeparamref name="T"/> objects have the same value; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Comparers.ComparableBaseWithOperators`1.op_Inequality(Comparers.ComparableBaseWithOperators{`0},Comparers.ComparableBaseWithOperators{`0})">
+            <summary>
+            Returns <c>true</c> if two <typeparamref name="T"/> objects have different values.
+            </summary>
+            <param name="left">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <param name="right">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <returns><c>true</c> if two <typeparamref name="T"/> objects have different values; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Comparers.ComparableBaseWithOperators`1.op_LessThan(Comparers.ComparableBaseWithOperators{`0},Comparers.ComparableBaseWithOperators{`0})">
+            <summary>
+            Returns <c>true</c> if <paramref name="left"/> has a value that is less than the value of <paramref name="right"/>.
+            </summary>
+            <param name="left">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <param name="right">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <returns><c>true</c> if <paramref name="left"/> has a value that is less than the value of <paramref name="right"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Comparers.ComparableBaseWithOperators`1.op_GreaterThan(Comparers.ComparableBaseWithOperators{`0},Comparers.ComparableBaseWithOperators{`0})">
+            <summary>
+            Returns <c>true</c> if <paramref name="left"/> has a value that is greater than the value of <paramref name="right"/>.
+            </summary>
+            <param name="left">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <param name="right">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <returns><c>true</c> if <paramref name="left"/> has a value that is greater than the value of <paramref name="right"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Comparers.ComparableBaseWithOperators`1.op_LessThanOrEqual(Comparers.ComparableBaseWithOperators{`0},Comparers.ComparableBaseWithOperators{`0})">
+            <summary>
+            Returns <c>true</c> if <paramref name="left"/> has a value that is less than or equal to the value of <paramref name="right"/>.
+            </summary>
+            <param name="left">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <param name="right">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <returns><c>true</c> if <paramref name="left"/> has a value that is less than or equal to the value of <paramref name="right"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Comparers.ComparableBaseWithOperators`1.op_GreaterThanOrEqual(Comparers.ComparableBaseWithOperators{`0},Comparers.ComparableBaseWithOperators{`0})">
+            <summary>
+            Returns <c>true</c> if <paramref name="left"/> has a value that is greater than or equal to the value of <paramref name="right"/>.
+            </summary>
+            <param name="left">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <param name="right">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <returns><c>true</c> if <paramref name="left"/> has a value that is greater than or equal to the value of <paramref name="right"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:Comparers.Compare`1">
+            <summary>
+            Provides sources for comparers.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:Comparers.Compare`1.Null">
+            <summary>
+            Gets the null comparer for this type, which evaluates all objects as equivalent.
+            </summary>
+        </member>
+        <member name="M:Comparers.Compare`1.Default">
+            <summary>
+            Gets the default comparer for this type.
+            </summary>
+        </member>
+        <member name="M:Comparers.Compare`1.OrderBy``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0},System.Boolean,System.Boolean)">
+            <summary>
+            Creates a key comparer.
+            </summary>
+            <typeparam name="TKey">The type of key objects being compared.</typeparam>
+            <param name="selector">The key selector. May not be <c>null</c>.</param>
+            <param name="keyComparer">The key comparer. Defaults to <c>null</c>. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <paramref name="selector"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <paramref name="selector"/>.</param>
+            <param name="descending">A value indicating whether the sorting is done in descending order. If <c>false</c> (the default), then the sort is in ascending order.</param>
+            <returns>A key comparer.</returns>
+        </member>
+        <member name="M:Comparers.Compare`1.OrderByDescending``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0},System.Boolean)">
+            <summary>
+            Creates a descending key comparer.
+            </summary>
+            <typeparam name="TKey">The type of key objects being compared.</typeparam>
+            <param name="selector">The key selector. May not be <c>null</c>.</param>
+            <param name="keyComparer">The key comparer. The returned comparer applies this key comparer in reverse. Defaults to <c>null</c>. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <paramref name="selector"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <paramref name="selector"/>.</param>
+            <returns>A key comparer.</returns>
+        </member>
+        <member name="T:Comparers.ComparerExtensions">
+            <summary>
+            Provides extension methods for comparers.
+            </summary>
+        </member>
+        <member name="M:Comparers.ComparerExtensions.Reverse``1(System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Returns a comparer that reverses the evaluation of the specified source comparer.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <returns>A comparer that reverses the evaluation of the specified source comparer.</returns>
+        </member>
+        <member name="M:Comparers.ComparerExtensions.ThenBy``1(System.Collections.Generic.IComparer{``0},System.Collections.Generic.IComparer{``0},System.Boolean)">
+            <summary>
+            Returns a comparer that uses another comparer if the source comparer determines the objects are equal.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="thenBy">The comparer that is used if <paramref name="source"/> determines the objects are equal. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="descending">A value indicating whether the sorting is done in descending order. If <c>false</c> (the default), then the sort is in ascending order.</param>
+            <returns>A comparer that uses another comparer if the source comparer determines the objects are equal.</returns>
+        </member>
+        <member name="M:Comparers.ComparerExtensions.ThenBy``2(System.Collections.Generic.IComparer{``0},System.Func{``0,``1},System.Collections.Generic.IComparer{``1},System.Boolean,System.Boolean)">
+            <summary>
+            Returns a comparer that uses a key comparer if the source comparer determines the objects are equal.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <typeparam name="TKey">The type of key objects being compared.</typeparam>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="selector">The key selector. May not be <c>null</c>.</param>
+            <param name="keyComparer">The key comparer. Defaults to <c>null</c>. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <paramref name="selector"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <paramref name="selector"/>.</param>
+            <param name="descending">A value indicating whether the sorting is done in descending order. If <c>false</c> (the default), then the sort is in ascending order.</param>
+            <returns>A comparer that uses a key comparer if the source comparer determines the objects are equal.</returns>
+        </member>
+        <member name="M:Comparers.ComparerExtensions.ThenByDescending``2(System.Collections.Generic.IComparer{``0},System.Func{``0,``1},System.Collections.Generic.IComparer{``1},System.Boolean)">
+            <summary>
+            Returns a comparer that uses a descending key comparer if the source comparer determines the objects are equal.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <typeparam name="TKey">The type of key objects being compared.</typeparam>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="selector">The key selector. May not be <c>null</c>.</param>
+            <param name="keyComparer">The key comparer. The returned comparer applies this key comparer in reverse. Defaults to <c>null</c>. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <paramref name="selector"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <paramref name="selector"/>.</param>
+            <returns>A comparer that uses a key comparer if the source comparer determines the objects are equal.</returns>
+        </member>
+        <member name="M:Comparers.ComparerExtensions.Sequence``1(System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Returns a comparer that will perform a lexicographical ordering on a sequence of items.
+            </summary>
+            <typeparam name="T">The type of sequence elements being compared.</typeparam>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <returns>A comparer that will perform a lexicographical ordering on a sequence of items.</returns>
+        </member>
+        <member name="T:Comparers.CompareSource`1">
+            <summary>
+            Provides sources for comparers.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:Comparers.CompareSource`1.Null">
+            <summary>
+            Gets the null comparer for this type, which evaluates all objects as equivalent.
+            </summary>
+        </member>
+        <member name="M:Comparers.CompareSource`1.Default">
+            <summary>
+            Gets the default comparer for this type.
+            </summary>
+        </member>
+        <member name="M:Comparers.CompareSource`1.OrderBy``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0},System.Boolean,System.Boolean)">
+            <summary>
+            Creates a key comparer.
+            </summary>
+            <typeparam name="TKey">The type of key objects being compared.</typeparam>
+            <param name="selector">The key selector. May not be <c>null</c>.</param>
+            <param name="keyComparer">The key comparer. Defaults to <c>null</c>. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <paramref name="selector"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <paramref name="selector"/>.</param>
+            <param name="descending">A value indicating whether the sorting is done in descending order. If <c>false</c> (the default), then the sort is in ascending order.</param>
+            <returns>A key comparer.</returns>
+        </member>
+        <member name="M:Comparers.CompareSource`1.OrderByDescending``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0},System.Boolean)">
+            <summary>
+            Creates a descending key comparer.
+            </summary>
+            <typeparam name="TKey">The type of key objects being compared.</typeparam>
+            <param name="selector">The key selector. May not be <c>null</c>.</param>
+            <param name="keyComparer">The key comparer. The returned comparer applies this key comparer in reverse. Defaults to <c>null</c>. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <paramref name="selector"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <paramref name="selector"/>.</param>
+            <returns>A key comparer.</returns>
+        </member>
+        <member name="T:Comparers.CompareSource">
+            <summary>
+            Provides sources for comparers, inferring the type being compared.
+            </summary>
+        </member>
+        <member name="M:Comparers.CompareSource.For``1">
+            <summary>
+            Creates a source for a comparer of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:Comparers.CompareSource.For``1(System.Func{``0})">
+            <summary>
+            Creates a source for a comparer of type <typeparamref name="T"/>. <paramref name="expression"/> is only used to infer the type <typeparamref name="T"/>; it is not evaluated.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="expression">An expression of the type of objects being compared. The expression is only used to infer the type <typeparamref name="T"/>; it is not evaluated.</param>
+        </member>
+        <member name="M:Comparers.CompareSource.ForElementsOf``1(System.Func{System.Collections.Generic.IEnumerable{``0}})">
+            <summary>
+            Creates a source for a comparer of type <typeparamref name="T"/>. <paramref name="expression"/> is only used to infer the type <typeparamref name="T"/>; it is not evaluated.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="expression">An expression whose results are a sequence of objects being compared. The expression is only used to infer the type <typeparamref name="T"/>; it is not evaluated.</param>
+        </member>
+        <member name="M:Comparers.CompareSource.ForElementsOf``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Creates a source for a comparer of type <typeparamref name="T"/>. <paramref name="sequence"/> is only used to infer the type <typeparamref name="T"/>; it is not enumerated.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="sequence">A sequence of objects being compared. This argument is only used to infer the type <typeparamref name="T"/>; it is not enumerated.</param>
+        </member>
+        <member name="T:Comparers.Linq.EnumerableExtensions">
+            <summary>
+            Extension methods for enumerable sequences.
+            </summary>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.OrderBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{Comparers.CompareSource{``1},Comparers.IFullComparer{``1}},System.Boolean)">
+            <summary>
+            Sorts the elements of a sequence in ascending order by using a specified comparer.
+            </summary>
+            <typeparam name="T">The type of the elements of <paramref name="source"/>.</typeparam>
+            <typeparam name="TKey">The type of the key returned by <paramref name="keySelector"/>.</typeparam>
+            <param name="source">A sequence of values to order.</param>
+            <param name="keySelector">A function to extract a key from an element.</param>
+            <param name="comparerFactory">The definition of a comparer to compare keys.</param>
+            <param name="descending">A value indicating whether the sorting is done in descending order. If <c>false</c> (the default), then the sort is in ascending order.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.OrderByDescending``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{Comparers.CompareSource{``1},Comparers.IFullComparer{``1}})">
+            <summary>
+            Sorts the elements of a sequence in descending order by using a specified comparer.
+            </summary>
+            <typeparam name="T">The type of the elements of <paramref name="source"/>.</typeparam>
+            <typeparam name="TKey">The type of the key returned by <paramref name="keySelector"/>.</typeparam>
+            <param name="source">A sequence of values to order.</param>
+            <param name="keySelector">A function to extract a key from an element.</param>
+            <param name="comparerFactory">The definition of a comparer to compare keys.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.ThenBy``2(System.Linq.IOrderedEnumerable{``0},System.Func{``0,``1},System.Func{Comparers.CompareSource{``1},Comparers.IFullComparer{``1}},System.Boolean)">
+            <summary>
+            Performs a subsequent ordering of the elements in a sequence in ascending order by using a specified comparer.
+            </summary>
+            <typeparam name="T">The type of the elements of <paramref name="source"/>.</typeparam>
+            <typeparam name="TKey">The type of the key returned by <paramref name="keySelector"/>.</typeparam>
+            <param name="source">A sequence of values to order.</param>
+            <param name="keySelector">A function to extract a key from an element.</param>
+            <param name="comparerFactory">The definition of a comparer to compare keys.</param>
+            <param name="descending">A value indicating whether the sorting is done in descending order. If <c>false</c> (the default), then the sort is in ascending order.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.ThenByDescending``2(System.Linq.IOrderedEnumerable{``0},System.Func{``0,``1},System.Func{Comparers.CompareSource{``1},Comparers.IFullComparer{``1}})">
+            <summary>
+            Performs a subsequent ordering of the elements in a sequence in descending order by using a specified comparer.
+            </summary>
+            <typeparam name="T">The type of the elements of <paramref name="source"/>.</typeparam>
+            <typeparam name="TKey">The type of the key returned by <paramref name="keySelector"/>.</typeparam>
+            <param name="source">A sequence of values to order.</param>
+            <param name="keySelector">A function to extract a key from an element.</param>
+            <param name="comparerFactory">The definition of a comparer to compare keys.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.Contains``1(System.Collections.Generic.IEnumerable{``0},``0,System.Func{EqualityComparers.EqualityCompareSource{``0},System.Collections.Generic.IEqualityComparer{``0}})">
+            <summary>
+            Determines whether a sequence contains a specified element by using a specified equality comparer.
+            </summary>
+            <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">A sequence in which to locate a value.</param>
+            <param name="value">The value to locate in the sequence.</param>
+            <param name="comparerFactory">The definition of a comparer to compare values.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.Distinct``1(System.Collections.Generic.IEnumerable{``0},System.Func{EqualityComparers.EqualityCompareSource{``0},System.Collections.Generic.IEqualityComparer{``0}})">
+            <summary>
+            Returns distinct elements from a sequence by using a specified equality comparer to compare values.
+            </summary>
+            <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">The sequence to remove duplicate elements from.</param>
+            <param name="comparerFactory">The definition of a comparer to compare values.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.Except``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{EqualityComparers.EqualityCompareSource{``0},System.Collections.Generic.IEqualityComparer{``0}})">
+            <summary>
+            Produces the set difference of two sequences by using the specified equality comparer to compare values.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the sequences.</typeparam>
+            <param name="first">A sequence whose elements that are not also in <paramref name="second"/> will be returned.</param>
+            <param name="second">A sequence whose elements that also occur in the first sequence will cause those elements to be removed from the returned sequence.</param>
+            <param name="comparerFactory">The definition of a comparer to compare values.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.GroupBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{EqualityComparers.EqualityCompareSource{``1},System.Collections.Generic.IEqualityComparer{``1}})">
+            <summary>
+            Groups the elements of a sequence according to a specified key selector function and compares the keys by using a specified equality comparer.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the sequence.</typeparam>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <param name="source">A sequence whose elements are grouped.</param>
+            <param name="keySelector">A function to extract the key for each element.</param>
+            <param name="comparerFactory">The definition of a comparer to compare keys.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.GroupBy``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Func{EqualityComparers.EqualityCompareSource{``1},System.Collections.Generic.IEqualityComparer{``1}})">
+            <summary>
+            Groups the elements of a sequence according to a key selector function. The keys are compared by using a comparer and each group's elements are projected by using a specified function.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the sequence.</typeparam>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TElement">The type of the elements in the grouping.</typeparam>
+            <param name="source">A sequence whose elements are grouped.</param>
+            <param name="keySelector">A function to extract the key for each element.</param>
+            <param name="elementSelector">A function to map each source element to an element in the grouping.</param>
+            <param name="comparerFactory">The definition of a comparer to compare keys.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.GroupBy``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``1,System.Collections.Generic.IEnumerable{``0},``2},System.Func{EqualityComparers.EqualityCompareSource{``1},System.Collections.Generic.IEqualityComparer{``1}})">
+            <summary>
+            Groups the elements of a sequence according to a specified key selector function and creates a result value from each group and its key. The keys are compared by using a specified comparer.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the sequence.</typeparam>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TResult">The type of the result values.</typeparam>
+            <param name="source">A sequence whose elements are grouped.</param>
+            <param name="keySelector">A function to extract the key for each element.</param>
+            <param name="resultSelector">A function to create a result value from each group.</param>
+            <param name="comparerFactory">The definition of a comparer to compare keys.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.GroupBy``4(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Func{``1,System.Collections.Generic.IEnumerable{``2},``3},System.Func{EqualityComparers.EqualityCompareSource{``1},System.Collections.Generic.IEqualityComparer{``1}})">
+            <summary>
+            Groups the elements of a sequence according to a specified key selector function and creates a result value from each group and its key. Key values are compared by using a specified comparer, and the elements of each group are projected by using a specified function.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the sequence.</typeparam>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TElement">The type of the elements in the grouping.</typeparam>
+            <typeparam name="TResult">The type of the result values.</typeparam>
+            <param name="source">A sequence whose elements are grouped.</param>
+            <param name="keySelector">A function to extract the key for each element.</param>
+            <param name="elementSelector">A function to map each source element to an element in the grouping.</param>
+            <param name="resultSelector">A function to create a result value from each group.</param>
+            <param name="comparerFactory">The definition of a comparer to compare keys.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.GroupJoin``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``2},System.Func{``1,``2},System.Func{``0,System.Collections.Generic.IEnumerable{``1},``3},System.Func{EqualityComparers.EqualityCompareSource{``2},System.Collections.Generic.IEqualityComparer{``2}})">
+            <summary>
+            Correlates the elements of two sequences based on key equality and groups the results. A specified equality comparer is used to compare keys.
+            </summary>
+            <typeparam name="TOuter">The type of the elements of the first sequence.</typeparam>
+            <typeparam name="TInner">The type of the elements of the second sequence.</typeparam>
+            <typeparam name="TKey">The type of the keys returned by the key selector functions.</typeparam>
+            <typeparam name="TResult">The type of the result elements.</typeparam>
+            <param name="outer">The first sequence to join.</param>
+            <param name="inner">The sequence to join to the first sequence.</param>
+            <param name="outerKeySelector">A function to extract the join key from each element of the first sequence.</param>
+            <param name="innerKeySelector">A function to extract the join key from each element of the second sequence.</param>
+            <param name="resultSelector">A function to create a result element from an element from the first sequence and a collection of matching elements from the second sequence.</param>
+            <param name="comparerFactory">The definition of a comparer to compare keys.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.Intersect``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{EqualityComparers.EqualityCompareSource{``0},System.Collections.Generic.IEqualityComparer{``0}})">
+            <summary>
+            Produces the set intersection of two sequences by using the specified equality comparer to compare values.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the input sequences.</typeparam>
+            <param name="first">A sequence whose distinct elements that also appear in <paramref name="second"/> will be returned.</param>
+            <param name="second">A sequence whose distinct elements that also appear in the first sequence will be returned.</param>
+            <param name="comparerFactory">The definition of a comparer to compare elements.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.Join``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``2},System.Func{``1,``2},System.Func{``0,``1,``3},System.Func{EqualityComparers.EqualityCompareSource{``2},System.Collections.Generic.IEqualityComparer{``2}})">
+            <summary>
+            Correlates the elements of two sequences based on matching keys. A specified equality comparer is used to compare keys.
+            </summary>
+            <typeparam name="TOuter">The type of the elements of the first sequence.</typeparam>
+            <typeparam name="TInner">The type of the elements of the second sequence.</typeparam>
+            <typeparam name="TKey">The type of the keys returned by the key selector functions.</typeparam>
+            <typeparam name="TResult">The type of the result elements.</typeparam>
+            <param name="outer">The first sequence to join.</param>
+            <param name="inner">The sequence to join to the first sequence.</param>
+            <param name="outerKeySelector">A function to extract the join key from each element of the first sequence.</param>
+            <param name="innerKeySelector">A function to extract the join key from each element of the second sequence.</param>
+            <param name="resultSelector">A function to create a result element from an element from the first sequence and a collection of matching elements from the second sequence.</param>
+            <param name="comparerFactory">The definition of a comparer to compare keys.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.SequenceEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{EqualityComparers.EqualityCompareSource{``0},System.Collections.Generic.IEqualityComparer{``0}})">
+            <summary>
+            Determines whether two sequences are equal by comparing their elements by using a specified equality comparer.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the input sequences.</typeparam>
+            <param name="first">A sequence to compare to <paramref name="second"/>.</param>
+            <param name="second">A sequence to compare to the first sequence.</param>
+            <param name="comparerFactory">The definition of a comparer to compare elements.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.ToDictionary``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{EqualityComparers.EqualityCompareSource{``1},System.Collections.Generic.IEqualityComparer{``1}})">
+            <summary>
+            Creates a dictionary from a sequence according to a specified key selector function and key comparer.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the input sequence.</typeparam>
+            <typeparam name="TKey">The type of the keys returned by the key selector function.</typeparam>
+            <param name="source">A sequence to create a dictionary from.</param>
+            <param name="keySelector">A function to extract the key for each element.</param>
+            <param name="comparerFactory">The definition of a comparer to compare keys.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.ToDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Func{EqualityComparers.EqualityCompareSource{``1},System.Collections.Generic.IEqualityComparer{``1}})">
+            <summary>
+            Creates a dictionary from a sequence according to a specified key selector function, a comparer, and an element selector function.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the input sequence.</typeparam>
+            <typeparam name="TKey">The type of the keys returned by the key selector function.</typeparam>
+            <typeparam name="TElement">The type of the elements returned by the element selector function.</typeparam>
+            <param name="source">A sequence to create a dictionary from.</param>
+            <param name="keySelector">A function to extract the key for each element.</param>
+            <param name="elementSelector">A transform function to produce a result element value from each element.</param>
+            <param name="comparerFactory">The definition of a comparer to compare keys.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.ToLookup``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{EqualityComparers.EqualityCompareSource{``1},System.Collections.Generic.IEqualityComparer{``1}})">
+            <summary>
+            Creates a lookup from a sequence according to a specified key selector function and key comparer.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the input sequence.</typeparam>
+            <typeparam name="TKey">The type of the keys returned by the key selector function.</typeparam>
+            <param name="source">A sequence to create a lookup from.</param>
+            <param name="keySelector">A function to extract the key for each element.</param>
+            <param name="comparerFactory">The definition of a comparer to compare keys.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.ToLookup``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Func{EqualityComparers.EqualityCompareSource{``1},System.Collections.Generic.IEqualityComparer{``1}})">
+            <summary>
+            Creates a lookup from a sequence according to a specified key selector function, a comparer, and an element selector function.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the input sequence.</typeparam>
+            <typeparam name="TKey">The type of the keys returned by the key selector function.</typeparam>
+            <typeparam name="TElement">The type of the elements returned by the element selector function.</typeparam>
+            <param name="source">A sequence to create a lookup from.</param>
+            <param name="keySelector">A function to extract the key for each element.</param>
+            <param name="elementSelector">A transform function to produce a result element value from each element.</param>
+            <param name="comparerFactory">The definition of a comparer to compare keys.</param>
+        </member>
+        <member name="M:Comparers.Linq.EnumerableExtensions.Union``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{EqualityComparers.EqualityCompareSource{``0},System.Collections.Generic.IEqualityComparer{``0}})">
+            <summary>
+            Produces the set union of two sequences by using a specified equality comparer.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the input sequences.</typeparam>
+            <param name="first">A sequence whose distinct elements form the first set for the union.</param>
+            <param name="second">A sequence whose distinct elements form the second set for the union.</param>
+            <param name="comparerFactory">The definition of a comparer to compare elements.</param>
+        </member>
+        <member name="T:Comparers.Util.ComparableImplementations">
+            <summary>
+            Provides implementations for comparison, equality, and hash code methods.
+            </summary>
+        </member>
+        <member name="M:Comparers.Util.ComparableImplementations.ImplementCompareTo``1(System.Collections.Generic.IComparer{``0},``0,``0)">
+            <summary>
+            Implements <see cref="M:System.IComparable`1.CompareTo(`0)"/>. Types implementing <see cref="T:System.IComparable`1"/> should also implement <see cref="T:System.IComparable"/> and <see cref="T:System.IEquatable`1"/>, and override <see cref="M:System.Object.Equals(System.Object)"/> and <see cref="M:System.Object.GetHashCode"/>.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="comparer">The comparer.</param>
+            <param name="this">The object doing the implementing.</param>
+            <param name="other">The other object.</param>
+        </member>
+        <member name="M:Comparers.Util.ComparableImplementations.ImplementCompareTo(System.Collections.IComparer,System.IComparable,System.Object)">
+            <summary>
+            Implements <see cref="M:System.IComparable.CompareTo(System.Object)"/>. Types implementing <see cref="T:System.IComparable"/> should also override <see cref="M:System.Object.Equals(System.Object)"/> and <see cref="M:System.Object.GetHashCode"/>.
+            </summary>
+            <param name="comparer">The comparer.</param>
+            <param name="this">The object doing the implementing.</param>
+            <param name="obj">The other object.</param>
+        </member>
+        <member name="M:Comparers.Util.ComparableImplementations.ImplementGetHashCode``1(System.Collections.Generic.IEqualityComparer{``0},``0)">
+            <summary>
+            Implements <see cref="M:System.Object.GetHashCode"/>. Types overriding <see cref="M:System.Object.GetHashCode"/> should also override <see cref="M:System.Object.Equals(System.Object)"/>.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="equalityComparer">The comparer.</param>
+            <param name="this">The object doing the implementing.</param>
+        </member>
+        <member name="M:Comparers.Util.ComparableImplementations.ImplementEquals``1(System.Collections.Generic.IEqualityComparer{``0},``0,``0)">
+            <summary>
+            Implements <see cref="M:System.IEquatable`1.Equals(`0)"/>. Types implementing <see cref="T:System.IEquatable`1"/> should also override <see cref="M:System.Object.Equals(System.Object)"/> and <see cref="M:System.Object.GetHashCode"/>.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="equalityComparer">The comparer.</param>
+            <param name="this">The object doing the implementing.</param>
+            <param name="other">The other object.</param>
+        </member>
+        <member name="M:Comparers.Util.ComparableImplementations.ImplementEquals(System.Collections.IEqualityComparer,System.Object,System.Object)">
+            <summary>
+            Implements <see cref="M:System.Object.Equals(System.Object)"/>. Types overriding <see cref="M:System.Object.Equals(System.Object)"/> should also override <see cref="M:System.Object.GetHashCode"/>.
+            </summary>
+            <param name="equalityComparer">The comparer.</param>
+            <param name="this">The object doing the implementing.</param>
+            <param name="obj">The other object.</param>
+        </member>
+        <member name="M:Comparers.Util.ComparableImplementations.ImplementEquals``1(System.Collections.Generic.IEqualityComparer{``0},``0,System.Object)">
+            <summary>
+            Implements <see cref="M:System.Object.Equals(System.Object)"/>. Types overriding <see cref="M:System.Object.Equals(System.Object)"/> should also override <see cref="M:System.Object.GetHashCode"/>.
+            </summary>
+            <param name="equalityComparer">The comparer.</param>
+            <param name="this">The object doing the implementing.</param>
+            <param name="obj">The other object.</param>
+        </member>
+        <member name="M:Comparers.Util.ComparableImplementations.ImplementOpEquality``1(System.Collections.Generic.IEqualityComparer{``0},``0,``0)">
+            <summary>
+            Implements <c>op_Eqality</c>. Types overloading <c>op_Equality</c> should also overload <c>op_Inequality</c> and override <see cref="M:System.Object.Equals(System.Object)"/> and <see cref="M:System.Object.GetHashCode"/>.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="equalityComparer">The comparer.</param>
+            <param name="left">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <param name="right">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+        </member>
+        <member name="M:Comparers.Util.ComparableImplementations.ImplementOpInequality``1(System.Collections.Generic.IEqualityComparer{``0},``0,``0)">
+            <summary>
+            Implements <c>op_Ineqality</c>. Types overloading <c>op_Inequality</c> should also overload <c>op_Equality</c> and override <see cref="M:System.Object.Equals(System.Object)"/> and <see cref="M:System.Object.GetHashCode"/>.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="equalityComparer">The comparer.</param>
+            <param name="left">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <param name="right">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+        </member>
+        <member name="M:Comparers.Util.ComparableImplementations.ImplementOpLessThan``1(System.Collections.Generic.IComparer{``0},``0,``0)">
+            <summary>
+            Implements <c>op_LessThan</c>. Types overloading <c>op_LessThan</c> should also overload <c>op_Equality</c>, <c>op_Inequality</c>, <c>op_LessThanOrEqual</c>, <c>op_GreaterThan</c>, and <c>op_GreaterThanOrEqual</c>; and override <see cref="M:System.Object.Equals(System.Object)"/> and <see cref="M:System.Object.GetHashCode"/>.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="comparer">The comparer.</param>
+            <param name="left">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <param name="right">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+        </member>
+        <member name="M:Comparers.Util.ComparableImplementations.ImplementOpGreaterThan``1(System.Collections.Generic.IComparer{``0},``0,``0)">
+            <summary>
+            Implements <c>op_GreaterThan</c>. Types overloading <c>op_LessThan</c> should also overload <c>op_Equality</c>, <c>op_Inequality</c>, <c>op_LessThanOrEqual</c>, <c>op_LessThan</c>, and <c>op_GreaterThanOrEqual</c>; and override <see cref="M:System.Object.Equals(System.Object)"/> and <see cref="M:System.Object.GetHashCode"/>.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="comparer">The comparer.</param>
+            <param name="left">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <param name="right">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+        </member>
+        <member name="M:Comparers.Util.ComparableImplementations.ImplementOpLessThanOrEqual``1(System.Collections.Generic.IComparer{``0},``0,``0)">
+            <summary>
+            Implements <c>op_LessThanOrEqual</c>. Types overloading <c>op_LessThan</c> should also overload <c>op_Equality</c>, <c>op_Inequality</c>, <c>op_LessThan</c>, <c>op_GreaterThan</c>, and <c>op_GreaterThanOrEqual</c>; and override <see cref="M:System.Object.Equals(System.Object)"/> and <see cref="M:System.Object.GetHashCode"/>.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="comparer">The comparer.</param>
+            <param name="left">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <param name="right">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+        </member>
+        <member name="M:Comparers.Util.ComparableImplementations.ImplementOpGreaterThanOrEqual``1(System.Collections.Generic.IComparer{``0},``0,``0)">
+            <summary>
+            Implements <c>op_GreaterThanOrEqual</c>. Types overloading <c>op_LessThan</c> should also overload <c>op_Equality</c>, <c>op_Inequality</c>, <c>op_LessThan</c>, <c>op_GreaterThan</c>, and <c>op_LessThanOrEqual</c>; and override <see cref="M:System.Object.Equals(System.Object)"/> and <see cref="M:System.Object.GetHashCode"/>.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="comparer">The comparer.</param>
+            <param name="left">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <param name="right">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+        </member>
+        <member name="T:Comparers.Util.ComparerHelpers">
+            <summary>
+            Provides helper methods for comparer implementations.
+            </summary>
+        </member>
+        <member name="M:Comparers.Util.ComparerHelpers.GetHashCodeFromComparer``1(System.Collections.Generic.IComparer{``0},``0)">
+            <summary>
+            Attempts to return a hash code for the specified object, using the specified comparer. If the comparer does not support hash codes, this method will throw an exception.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="comparer">The comparer to use to calculate a hash code. May not be <c>null</c>.</param>
+            <param name="obj">The object for which to return a hash code. May be <c>null</c>.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:Comparers.Util.ComparerHelpers.NormalizeDefault``1(System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Converts a <c>null</c> or default comparer into a default comparer that supports hash codes (and sequences, if necessary).
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="comparer">The comparer. May be <c>null</c>.</param>
+            <returns>A default comparer or <paramref name="comparer"/>.</returns>
+        </member>
+        <member name="T:Comparers.Util.CompoundComparer`1">
+            <summary>
+            A comparer that uses another comparer if the source comparer determines the objects are equal.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="T:Comparers.Util.SourceComparerBase`2">
+            <summary>
+            Common implementations for comparers that are based on a source comparer, possibly for a different type of object.
+            </summary>
+            <typeparam name="T">The type of objects compared by this comparer.</typeparam>
+            <typeparam name="TSource">The type of objects compared by the source comparer.</typeparam>
+        </member>
+        <member name="F:Comparers.Util.SourceComparerBase`2.source_">
+            <summary>
+            The source comparer.
+            </summary>
+        </member>
+        <member name="M:Comparers.Util.SourceComparerBase`2.#ctor(System.Collections.Generic.IComparer{`1},System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Comparers.Util.SourceComparerBase`2"/> class.
+            </summary>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <see cref="M:EqualityComparers.Util.EqualityComparerBase`1.DoGetHashCode(`0)"/> and <see cref="M:Comparers.Util.ComparerBase`1.DoCompare(`0,`0)"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <see cref="M:EqualityComparers.Util.EqualityComparerBase`1.DoGetHashCode(`0)"/> nor <see cref="M:Comparers.Util.ComparerBase`1.DoCompare(`0,`0)"/>.</param>
+        </member>
+        <member name="P:Comparers.Util.SourceComparerBase`2.Source">
+            <summary>
+            Gets the source comparer.
+            </summary>
+        </member>
+        <member name="F:Comparers.Util.CompoundComparer`1.secondSource_">
+            <summary>
+            The second comparer.
+            </summary>
+        </member>
+        <member name="M:Comparers.Util.CompoundComparer`1.#ctor(System.Collections.Generic.IComparer{`0},System.Collections.Generic.IComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Comparers.Util.CompoundComparer`1"/> class.
+            </summary>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="secondSource">The second comparer. If this is <c>null</c>, the default comparer is used.</param>
+        </member>
+        <member name="M:Comparers.Util.CompoundComparer`1.DoGetHashCode(`0)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code. This object may be <c>null</c>.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:Comparers.Util.CompoundComparer`1.DoCompare(`0,`0)">
+            <summary>
+            Compares two objects and returns a value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.
+            </summary>
+            <param name="x">The first object to compare. This object may be <c>null</c>.</param>
+            <param name="y">The second object to compare. This object may be <c>null</c>.</param>
+            <returns>A value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Comparers.Util.CompoundComparer`1.ToString">
+            <summary>
+            Returns a short, human-readable description of the comparer. This is intended for debugging and not for other purposes.
+            </summary>
+        </member>
+        <member name="P:Comparers.Util.CompoundComparer`1.SecondSource">
+            <summary>
+            Gets the second comparer.
+            </summary>
+        </member>
+        <member name="T:Comparers.Util.DefaultComparer`1">
+            <summary>
+            The default comparer.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:Comparers.Util.DefaultComparer`1.DoGetHashCode(`0)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code. This object may be <c>null</c>.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:Comparers.Util.DefaultComparer`1.DoCompare(`0,`0)">
+            <summary>
+            Compares two objects and returns a value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.
+            </summary>
+            <param name="x">The first object to compare. This object may be <c>null</c>.</param>
+            <param name="y">The second object to compare. This object may be <c>null</c>.</param>
+            <returns>A value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Comparers.Util.DefaultComparer`1.System#Collections#Generic#IEqualityComparer{T}#Equals(`0,`0)">
+            <summary>
+            Compares two objects and returns a value indicating whether they are equal.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns><c>true</c> if <paramref name="x"/> is equal to <paramref name="y"/>; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Comparers.Util.DefaultComparer`1.System#Collections#Generic#IEqualityComparer{T}#GetHashCode(`0)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:Comparers.Util.DefaultComparer`1.System#Collections#IEqualityComparer#Equals(System.Object,System.Object)">
+            <summary>
+            Compares two objects and returns a value indicating whether they are equal.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns><c>true</c> if <paramref name="x"/> is equal to <paramref name="y"/>; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Comparers.Util.DefaultComparer`1.System#Collections#IEqualityComparer#GetHashCode(System.Object)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:Comparers.Util.DefaultComparer`1.ToString">
+            <summary>
+            Returns a short, human-readable description of the comparer. This is intended for debugging and not for other purposes.
+            </summary>
+        </member>
+        <member name="P:Comparers.Util.DefaultComparer`1.Instance">
+            <summary>
+            Gets the default comparer for this type.
+            </summary>
+        </member>
+        <member name="P:Comparers.Util.DefaultComparer`1.IsImplementedByType">
+            <summary>
+            Gets a value indicating whether a default comparer is implemented by the compared type.
+            </summary>
+        </member>
+        <member name="P:Comparers.Util.DefaultComparer`1.IsEqualityComparerImplementedByType">
+            <summary>
+            Gets a value indicating whether a default equality comparer is implemented by the compared type.
+            </summary>
+        </member>
+        <member name="P:Comparers.Util.DefaultComparer`1.IsImplemented">
+            <summary>
+            Gets a value indicating whether a default comparer is implemented for this type.
+            </summary>
+        </member>
+        <member name="T:Comparers.Util.NullComparer`1">
+            <summary>
+            The null comparer.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:Comparers.Util.NullComparer`1.DoGetHashCode(`0)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code. This object may be <c>null</c>.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:Comparers.Util.NullComparer`1.DoCompare(`0,`0)">
+            <summary>
+            Compares two objects and returns a value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.
+            </summary>
+            <param name="x">The first object to compare. This object may be <c>null</c>.</param>
+            <param name="y">The second object to compare. This object may be <c>null</c>.</param>
+            <returns>A value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Comparers.Util.NullComparer`1.ToString">
+            <summary>
+            Returns a short, human-readable description of the comparer. This is intended for debugging and not for other purposes.
+            </summary>
+        </member>
+        <member name="P:Comparers.Util.NullComparer`1.Instance">
+            <summary>
+            Gets the null comparer for this type.
+            </summary>
+        </member>
+        <member name="T:Comparers.Util.ReverseComparer`1">
+            <summary>
+            A comparer that reverses the evaluation of the specified source comparer.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:Comparers.Util.ReverseComparer`1.#ctor(System.Collections.Generic.IComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Comparers.Util.ReverseComparer`1"/> class.
+            </summary>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+        </member>
+        <member name="M:Comparers.Util.ReverseComparer`1.DoGetHashCode(`0)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code. This object may be <c>null</c>.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:Comparers.Util.ReverseComparer`1.DoCompare(`0,`0)">
+            <summary>
+            Compares two objects and returns a value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.
+            </summary>
+            <param name="x">The first object to compare. This object may be <c>null</c>.</param>
+            <param name="y">The second object to compare. This object may be <c>null</c>.</param>
+            <returns>A value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Comparers.Util.ReverseComparer`1.ToString">
+            <summary>
+            Returns a short, human-readable description of the comparer. This is intended for debugging and not for other purposes.
+            </summary>
+        </member>
+        <member name="T:Comparers.Util.SelectComparer`2">
+            <summary>
+            A comparer that works by comparing the results of the specified key selector.
+            </summary>
+            <typeparam name="TSource">The type of key objects being compared.</typeparam>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="F:Comparers.Util.SelectComparer`2.selector">
+            <summary>
+            The key selector.
+            </summary>
+        </member>
+        <member name="M:Comparers.Util.SelectComparer`2.#ctor(System.Func{`0,`1},System.Collections.Generic.IComparer{`1},System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Comparers.Util.SelectComparer`2"/> class.
+            </summary>
+            <param name="selector">The key selector. May not be <c>null</c>.</param>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <paramref name="selector"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <paramref name="selector"/>.</param>
+        </member>
+        <member name="M:Comparers.Util.SelectComparer`2.DoGetHashCode(`0)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:Comparers.Util.SelectComparer`2.DoCompare(`0,`0)">
+            <summary>
+            Compares two objects and returns a value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns>A value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Comparers.Util.SelectComparer`2.ToString">
+            <summary>
+            Returns a short, human-readable description of the comparer. This is intended for debugging and not for other purposes.
+            </summary>
+        </member>
+        <member name="P:Comparers.Util.SelectComparer`2.Select">
+            <summary>
+            Gets the key selector.
+            </summary>
+        </member>
+        <member name="T:Comparers.Util.SequenceComparer`1">
+            <summary>
+            A comparer that performs a lexicographical ordering on a sequence.
+            </summary>
+            <typeparam name="T">The type of sequence elements being compared.</typeparam>
+        </member>
+        <member name="M:Comparers.Util.SequenceComparer`1.#ctor(System.Collections.Generic.IComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Comparers.Util.SequenceComparer`1"/> class.
+            </summary>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+        </member>
+        <member name="M:Comparers.Util.SequenceComparer`1.DoGetHashCode(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:Comparers.Util.SequenceComparer`1.DoCompare(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Compares two objects and returns a value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns>A value less than 0 if <paramref name="x"/> is less than <paramref name="y"/>, 0 if <paramref name="x"/> is equal to <paramref name="y"/>, or greater than 0 if <paramref name="x"/> is greater than <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Comparers.Util.SequenceComparer`1.ToString">
+            <summary>
+            Returns a short, human-readable description of the comparer. This is intended for debugging and not for other purposes.
+            </summary>
+        </member>
+        <member name="T:Comparers.Util.UtilityComparerExtensions">
+            <summary>
+            Provides extension methods for comparers.
+            </summary>
+        </member>
+        <member name="M:Comparers.Util.UtilityComparerExtensions.SelectFrom``2(System.Collections.Generic.IComparer{``1},System.Func{``0,``1},System.Boolean)">
+            <summary>
+            Returns a comparer that works by comparing the results of the specified key selector.
+            </summary>
+            <typeparam name="TSource">The type of key objects being compared.</typeparam>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="selector">The key selector. May not be <c>null</c>.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <paramref name="selector"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <paramref name="selector"/>.</param>
+            <returns>A comparer that works by comparing the results of the specified key selector.</returns>
+        </member>
+        <member name="T:System.Diagnostics.Contracts.ContractArgumentValidatorAttribute">
+            <summary>
+            Enables factoring legacy if-then-throw into separate methods for reuse and full control over
+            thrown exception and arguments
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.Contracts.ContractAbbreviatorAttribute">
+            <summary>
+            Enables writing abbreviations for contracts that get copied to other methods
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.Contracts.ContractOptionAttribute">
+            <summary>
+            Allows setting contract and tool options at assembly, type, or method granularity.
+            </summary>
+        </member>
+        <member name="T:EqualityComparers.AnonymousEqualityComparer`1">
+            <summary>
+            An object that implements an equality comparer using delegates.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:EqualityComparers.AnonymousEqualityComparer`1.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:EqualityComparers.AnonymousEqualityComparer`1"/> class.
+            </summary>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <see cref="P:EqualityComparers.AnonymousEqualityComparer`1.Equals"/> and <see cref="P:EqualityComparers.AnonymousEqualityComparer`1.GetHashCode"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <see cref="P:EqualityComparers.AnonymousEqualityComparer`1.Equals"/> nor <see cref="P:EqualityComparers.AnonymousEqualityComparer`1.GetHashCode"/>.</param>
+        </member>
+        <member name="M:EqualityComparers.AnonymousEqualityComparer`1.DoGetHashCode(`0)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:EqualityComparers.AnonymousEqualityComparer`1.DoEquals(`0,`0)">
+            <summary>
+            Compares two objects and returns <c>true</c> if they are equal and <c>false</c> if they are not equal.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns><c>true</c> if <paramref name="x"/> is equal to <paramref name="y"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:EqualityComparers.AnonymousEqualityComparer`1.ToString">
+            <summary>
+            Returns a short, human-readable description of the comparer. This is intended for debugging and not for other purposes.
+            </summary>
+        </member>
+        <member name="P:EqualityComparers.AnonymousEqualityComparer`1.Equals">
+            <summary>
+            Gets or sets a delegate which compares two objects and returns <c>true</c> if they are equal and <c>false</c> if they are not equal.
+            </summary>
+        </member>
+        <member name="P:EqualityComparers.AnonymousEqualityComparer`1.GetHashCode">
+            <summary>
+            Gets or sets a delegate which calculates a hash code for an object.
+            </summary>
+        </member>
+        <member name="T:EqualityComparers.EqualityCompare`1">
+            <summary>
+            Provides sources for equality comparers.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:EqualityComparers.EqualityCompare`1.Null">
+            <summary>
+            Gets the null equality comparer for this type, which evaluates all objects as equivalent.
+            </summary>
+        </member>
+        <member name="M:EqualityComparers.EqualityCompare`1.Default">
+            <summary>
+            Gets the default equality comparer for this type.
+            </summary>
+        </member>
+        <member name="M:EqualityComparers.EqualityCompare`1.Reference">
+            <summary>
+            Gets the reference equality comparer for this type.
+            </summary>
+        </member>
+        <member name="M:EqualityComparers.EqualityCompare`1.EquateBy``1(System.Func{`0,``0},System.Collections.Generic.IEqualityComparer{``0},System.Boolean)">
+            <summary>
+            Creates a key comparer.
+            </summary>
+            <typeparam name="TKey">The type of key objects being compared.</typeparam>
+            <param name="selector">The key selector. May not be <c>null</c>.</param>
+            <param name="keyComparer">The key comparer. Defaults to <c>null</c>. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <paramref name="selector"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <paramref name="selector"/>.</param>
+            <returns>A key comparer.</returns>
+        </member>
+        <member name="T:EqualityComparers.EqualityComparerExtensions">
+            <summary>
+            Provides extension methods for equality comparers.
+            </summary>
+        </member>
+        <member name="M:EqualityComparers.EqualityComparerExtensions.ThenEquateBy``1(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Returns an equality comparer that uses another comparer if the source comparer determines the objects are equal.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="thenBy">The comparer that is used if <paramref name="source"/> determines the objects are equal. If this is <c>null</c>, the default comparer is used.</param>
+            <returns>A comparer that uses another comparer if the source comparer determines the objects are equal.</returns>
+        </member>
+        <member name="M:EqualityComparers.EqualityComparerExtensions.ThenEquateBy``2(System.Collections.Generic.IEqualityComparer{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1},System.Boolean)">
+            <summary>
+            Returns an equality comparer that uses a key comparer if the source comparer determines the objects are equal.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <typeparam name="TKey">The type of key objects being compared.</typeparam>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="selector">The key selector. May not be <c>null</c>.</param>
+            <param name="keyComparer">The key comparer. Defaults to <c>null</c>. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <paramref name="selector"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <paramref name="selector"/>.</param>
+            <returns>A comparer that uses a key comparer if the source comparer determines the objects are equal.</returns>
+        </member>
+        <member name="M:EqualityComparers.EqualityComparerExtensions.EquateSequence``1(System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Returns an equality comparer that will perform a lexicographical ordering on a sequence of items.
+            </summary>
+            <typeparam name="T">The type of sequence elements being compared.</typeparam>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <returns>A comparer that will perform a lexicographical ordering on a sequence of items.</returns>
+        </member>
+        <member name="T:EqualityComparers.EqualityCompareSource`1">
+            <summary>
+            Provides sources for equality comparers.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:EqualityComparers.EqualityCompareSource`1.Null">
+            <summary>
+            Gets the null equality comparer for this type, which evaluates all objects as equivalent.
+            </summary>
+        </member>
+        <member name="M:EqualityComparers.EqualityCompareSource`1.Default">
+            <summary>
+            Gets the default equality comparer for this type.
+            </summary>
+        </member>
+        <member name="M:EqualityComparers.EqualityCompareSource`1.Reference">
+            <summary>
+            Gets the reference equality comparer for this type.
+            </summary>
+        </member>
+        <member name="M:EqualityComparers.EqualityCompareSource`1.EquateBy``1(System.Func{`0,``0},System.Collections.Generic.IEqualityComparer{``0},System.Boolean)">
+            <summary>
+            Creates a key comparer.
+            </summary>
+            <typeparam name="TKey">The type of key objects being compared.</typeparam>
+            <param name="selector">The key selector. May not be <c>null</c>.</param>
+            <param name="keyComparer">The key comparer. Defaults to <c>null</c>. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <paramref name="selector"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <paramref name="selector"/>.</param>
+            <returns>A key comparer.</returns>
+        </member>
+        <member name="T:EqualityComparers.EqualityCompareSource">
+            <summary>
+            Provides sources for equality comparers, inferring the type being compared.
+            </summary>
+        </member>
+        <member name="M:EqualityComparers.EqualityCompareSource.For``1">
+            <summary>
+            Creates a source for an equality comparer of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:EqualityComparers.EqualityCompareSource.For``1(System.Func{``0})">
+            <summary>
+            Creates a source for a comparer of type <typeparamref name="T"/>. <paramref name="expression"/> is only used to infer the type <typeparamref name="T"/>; it is not evaluated.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="expression">An expression of the type of objects being compared. The expression is only used to infer the type <typeparamref name="T"/>; it is not evaluated.</param>
+        </member>
+        <member name="M:EqualityComparers.EqualityCompareSource.ForElementsOf``1(System.Func{System.Collections.Generic.IEnumerable{``0}})">
+            <summary>
+            Creates a source for a comparer of type <typeparamref name="T"/>. <paramref name="expression"/> is only used to infer the type <typeparamref name="T"/>; it is not evaluated.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="expression">An expression whose results are a sequence of objects being compared. The expression is only used to infer the type <typeparamref name="T"/>; it is not evaluated.</param>
+        </member>
+        <member name="M:EqualityComparers.EqualityCompareSource.ForElementsOf``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Creates a source for a comparer of type <typeparamref name="T"/>. <paramref name="sequence"/> is only used to infer the type <typeparamref name="T"/>; it is not enumerated.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="sequence">A sequence of objects being compared. This argument is only used to infer the type <typeparamref name="T"/>; it is not enumerated.</param>
+        </member>
+        <member name="T:EqualityComparers.EquatableBase`1">
+            <summary>
+            Provides implementations for equality and hash code methods. These implementations assume that there will only be one derived type that defines equality.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:EqualityComparers.EquatableBase`1.GetHashCode">
+            <summary>
+            Gets the hash code for this instance.
+            </summary>
+            <returns>The hash code for this instance.</returns>
+        </member>
+        <member name="M:EqualityComparers.EquatableBase`1.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to the specified object.
+            </summary>
+            <param name="obj">The object to compare with this instance.</param>
+            <returns>A value indicating whether this instance is equal to the specified object.</returns>
+        </member>
+        <member name="M:EqualityComparers.EquatableBase`1.Equals(`0)">
+            <summary>
+            Returns a value indicating whether this instance is equal to the specified object.
+            </summary>
+            <param name="other">The object to compare with this instance.</param>
+            <returns>A value indicating whether this instance is equal to the specified object.</returns>
+        </member>
+        <member name="P:EqualityComparers.EquatableBase`1.DefaultComparer">
+            <summary>
+            Gets the default comparer for this type.
+            </summary>
+        </member>
+        <member name="T:EqualityComparers.EquatableBaseWithOperators`1">
+            <summary>
+            Provides implementations for equality and hash code methods, along with overloaded operators. Note: overloaded operators should only be considered for immutable reference types. These implementations assume that there will only be one derived type that defines equality.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:EqualityComparers.EquatableBaseWithOperators`1.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to the specified object.
+            </summary>
+            <param name="obj">The object to compare with this instance.</param>
+            <returns>A value indicating whether this instance is equal to the specified object.</returns>
+        </member>
+        <member name="M:EqualityComparers.EquatableBaseWithOperators`1.GetHashCode">
+            <summary>
+            Gets the hash code for this instance.
+            </summary>
+            <returns>The hash code for this instance.</returns>
+        </member>
+        <member name="M:EqualityComparers.EquatableBaseWithOperators`1.op_Equality(EqualityComparers.EquatableBaseWithOperators{`0},EqualityComparers.EquatableBaseWithOperators{`0})">
+            <summary>
+            Returns <c>true</c> if two <typeparamref name="T"/> objects have the same value.
+            </summary>
+            <param name="left">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <param name="right">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <returns><c>true</c> if two <typeparamref name="T"/> objects have the same value; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:EqualityComparers.EquatableBaseWithOperators`1.op_Inequality(EqualityComparers.EquatableBaseWithOperators{`0},EqualityComparers.EquatableBaseWithOperators{`0})">
+            <summary>
+            Returns <c>true</c> if two <typeparamref name="T"/> objects have different values.
+            </summary>
+            <param name="left">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <param name="right">A value of type <typeparamref name="T"/> or <c>null</c>.</param>
+            <returns><c>true</c> if two <typeparamref name="T"/> objects have different values; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:EqualityComparers.Util.CompoundEqualityComparer`1">
+            <summary>
+            A equality comparer that uses another comparer if the source comparer determines the objects are equal.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="T:EqualityComparers.Util.SourceEqualityComparerBase`2">
+            <summary>
+            Common implementations for equality comparers that are based on a source comparer, possibly for a different type of object.
+            </summary>
+            <typeparam name="T">The type of objects compared by this comparer.</typeparam>
+            <typeparam name="TSource">The type of objects compared by the source comparer.</typeparam>
+        </member>
+        <member name="F:EqualityComparers.Util.SourceEqualityComparerBase`2.source_">
+            <summary>
+            The source comparer.
+            </summary>
+        </member>
+        <member name="M:EqualityComparers.Util.SourceEqualityComparerBase`2.#ctor(System.Collections.Generic.IEqualityComparer{`1},System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:EqualityComparers.Util.SourceEqualityComparerBase`2"/> class.
+            </summary>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <see cref="M:EqualityComparers.Util.EqualityComparerBase`1.DoGetHashCode(`0)"/> and <see cref="M:EqualityComparers.Util.EqualityComparerBase`1.DoEquals(`0,`0)"/>. If <c>false</c>, then <c>null</c> values are considered not equal to any non-<c>null</c> values and are not passed to <see cref="M:EqualityComparers.Util.EqualityComparerBase`1.DoGetHashCode(`0)"/> nor <see cref="M:EqualityComparers.Util.EqualityComparerBase`1.DoEquals(`0,`0)"/>.</param>
+        </member>
+        <member name="P:EqualityComparers.Util.SourceEqualityComparerBase`2.Source">
+            <summary>
+            Gets the source comparer.
+            </summary>
+        </member>
+        <member name="F:EqualityComparers.Util.CompoundEqualityComparer`1.secondSource_">
+            <summary>
+            The second comparer.
+            </summary>
+        </member>
+        <member name="M:EqualityComparers.Util.CompoundEqualityComparer`1.#ctor(System.Collections.Generic.IEqualityComparer{`0},System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:EqualityComparers.Util.CompoundEqualityComparer`1"/> class.
+            </summary>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="secondSource">The second comparer. If this is <c>null</c>, the default comparer is used.</param>
+        </member>
+        <member name="M:EqualityComparers.Util.CompoundEqualityComparer`1.DoGetHashCode(`0)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code. This object may be <c>null</c>.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:EqualityComparers.Util.CompoundEqualityComparer`1.DoEquals(`0,`0)">
+            <summary>
+            Compares two objects and returns <c>true</c> if they are equal and <c>false</c> if they are not equal.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns><c>true</c> if <paramref name="x"/> is equal to <paramref name="y"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:EqualityComparers.Util.CompoundEqualityComparer`1.ToString">
+            <summary>
+            Returns a short, human-readable description of the comparer. This is intended for debugging and not for other purposes.
+            </summary>
+        </member>
+        <member name="P:EqualityComparers.Util.CompoundEqualityComparer`1.SecondSource">
+            <summary>
+            Gets the second comparer.
+            </summary>
+        </member>
+        <member name="T:EqualityComparers.Util.EqualityComparerHelpers">
+            <summary>
+            Provides helper methods for comparer implementations.
+            </summary>
+        </member>
+        <member name="M:EqualityComparers.Util.EqualityComparerHelpers.NormalizeDefault``1(System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Converts a <c>null</c> or default equality comparer into a default comparer that supports sequences, if necessary.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="comparer">The comparer. May be <c>null</c>.</param>
+            <returns>A default comparer or <paramref name="comparer"/>.</returns>
+        </member>
+        <member name="T:EqualityComparers.Util.ReferenceEqualityComparer`1">
+            <summary>
+            The reference equality comparer.
+            </summary>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="M:EqualityComparers.Util.ReferenceEqualityComparer`1.DoGetHashCode(`0)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:EqualityComparers.Util.ReferenceEqualityComparer`1.DoEquals(`0,`0)">
+            <summary>
+            Compares two objects and returns <c>true</c> if they are equal and <c>false</c> if they are not equal.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns><c>true</c> if <paramref name="x"/> is equal to <paramref name="y"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:EqualityComparers.Util.ReferenceEqualityComparer`1.ToString">
+            <summary>
+            Returns a short, human-readable description of the comparer. This is intended for debugging and not for other purposes.
+            </summary>
+        </member>
+        <member name="P:EqualityComparers.Util.ReferenceEqualityComparer`1.Instance">
+            <summary>
+            Gets the reference comparer for this type.
+            </summary>
+        </member>
+        <member name="T:EqualityComparers.Util.SelectEqualityComparer`2">
+            <summary>
+            An equality comparer that works by comparing the results of the specified key selector.
+            </summary>
+            <typeparam name="TSource">The type of key objects being compared.</typeparam>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+        </member>
+        <member name="F:EqualityComparers.Util.SelectEqualityComparer`2.selector">
+            <summary>
+            The key selector.
+            </summary>
+        </member>
+        <member name="M:EqualityComparers.Util.SelectEqualityComparer`2.#ctor(System.Func{`0,`1},System.Collections.Generic.IEqualityComparer{`1},System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:EqualityComparers.Util.SelectEqualityComparer`2"/> class.
+            </summary>
+            <param name="selector">The key selector. May not be <c>null</c>.</param>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <paramref name="selector"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <paramref name="selector"/>.</param>
+        </member>
+        <member name="M:EqualityComparers.Util.SelectEqualityComparer`2.DoGetHashCode(`0)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:EqualityComparers.Util.SelectEqualityComparer`2.DoEquals(`0,`0)">
+            <summary>
+            Compares two objects and returns <c>true</c> if they are equal and <c>false</c> if they are not equal.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns><c>true</c> if <paramref name="x"/> is equal to <paramref name="y"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:EqualityComparers.Util.SelectEqualityComparer`2.ToString">
+            <summary>
+            Returns a short, human-readable description of the comparer. This is intended for debugging and not for other purposes.
+            </summary>
+        </member>
+        <member name="P:EqualityComparers.Util.SelectEqualityComparer`2.Select">
+            <summary>
+            Gets the key selector.
+            </summary>
+        </member>
+        <member name="T:EqualityComparers.Util.SequenceEqualityComparer`1">
+            <summary>
+            A comparer that performs a lexicographical ordering on a sequence.
+            </summary>
+            <typeparam name="T">The type of sequence elements being compared.</typeparam>
+        </member>
+        <member name="M:EqualityComparers.Util.SequenceEqualityComparer`1.#ctor(System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:EqualityComparers.Util.SequenceEqualityComparer`1"/> class.
+            </summary>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+        </member>
+        <member name="M:EqualityComparers.Util.SequenceEqualityComparer`1.DoGetHashCode(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The object for which to return a hash code.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="M:EqualityComparers.Util.SequenceEqualityComparer`1.DoEquals(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Compares two objects and returns <c>true</c> if they are equal and <c>false</c> if they are not equal.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns><c>true</c> if <paramref name="x"/> is equal to <paramref name="y"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:EqualityComparers.Util.SequenceEqualityComparer`1.ToString">
+            <summary>
+            Returns a short, human-readable description of the comparer. This is intended for debugging and not for other purposes.
+            </summary>
+        </member>
+        <member name="T:EqualityComparers.Util.UtilityEqualityComparerExtensions">
+            <summary>
+            Provides extension methods for equality comparers.
+            </summary>
+        </member>
+        <member name="M:EqualityComparers.Util.UtilityEqualityComparerExtensions.SelectEquateFrom``2(System.Collections.Generic.IEqualityComparer{``1},System.Func{``0,``1},System.Boolean)">
+            <summary>
+            Returns an equality comparer that works by comparing the results of the specified key selector.
+            </summary>
+            <typeparam name="TSource">The type of key objects being compared.</typeparam>
+            <typeparam name="T">The type of objects being compared.</typeparam>
+            <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
+            <param name="selector">The key selector. May not be <c>null</c>.</param>
+            <param name="allowNulls">A value indicating whether <c>null</c> values are passed to <paramref name="selector"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <paramref name="selector"/>.</param>
+            <returns>A comparer that works by comparing the results of the specified key selector.</returns>
+        </member>
+    </members>
+</doc>

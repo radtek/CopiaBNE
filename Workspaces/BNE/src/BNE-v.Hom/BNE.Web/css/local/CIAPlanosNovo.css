@@ -1,0 +1,386 @@
+﻿.escolha-de-plano {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    /*margin-top: -70px;*/
+}
+
+section#selecionaTpPlanoCIA {
+    /*max-width: 880px;
+    width: 880px;*/
+    padding: 16px 0;
+    /*margin: auto;*/
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+}
+/*INICIO Cupom Aplicado*/
+.cupomAplicado .descontoPlanoCIA {
+    display: block;
+}
+
+
+/*FIM Cupom Aplicado*/
+input:focus {
+    outline: none !important;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
+
+section#selecionaTpPlanoCIA > div {
+    width: 32%;/*caso queira os 3 alinhas mudar para 32% / duas linhas 35%*/
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: solid 1px #c9c9c9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.25s ease;
+}
+
+    section#selecionaTpPlanoCIA > div:first-child {
+        margin-right: 8px;
+    }
+
+    section#selecionaTpPlanoCIA > div:last-child {
+        margin-left: 8px;
+    }
+
+    section#selecionaTpPlanoCIA > div:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+        transition: all 0.25s ease;
+        cursor: default;
+    }
+
+    section#selecionaTpPlanoCIA > div > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        section#selecionaTpPlanoCIA > div > ul > li {
+            margin: 0 16px;
+            padding: 16px 8px;
+            font-size: 15.3px;
+            text-align: center;
+            border-bottom: solid 1px #dedede;
+            color: rgba(0,0,0, .54);
+        }
+
+            section#selecionaTpPlanoCIA > div > ul > li:last-child {
+                border-bottom: none;
+            }
+
+.nomePlanoCIA {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    background-color: #006658;
+    color: #ffffff;
+    border-radius: 8px 8px 0 0;
+    font-size: 20px;
+    padding: 12px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    display: flex;
+    layout-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+    .nomePlanoCIA div {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        color: #006658;
+        font-weight: 500;
+        display: flex;
+        layout-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 8px;
+    }
+
+.desconto {
+    width: 100%;
+}
+
+.cancelaPlanoCIA {
+    background-color: #006658;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.descontoPlanoCIA {
+    text-align: center;
+    text-transform: uppercase;
+    color: #006658;
+    padding: 8px;
+    font-weight: 400;
+    background-color: #d0e0de;
+    display: none !important;
+    font-size: 16px;
+}
+
+    .descontoPlanoCIA > div:first-child {
+        text-decoration: line-through;
+    }
+
+.valorPlanoCIA {
+    padding: 8px;
+    background-color: #ffffff;
+    text-align: center;
+    color: #006658;
+    text-transform: uppercase;
+}
+
+    .valorPlanoCIA > div:first-child {
+        font-size: 42px;
+        font-weight: 400;
+    }
+
+    .valorPlanoCIA > div:last-child {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+.actionPlanoCIA {
+    background-color: #ffffff;
+    padding: 0 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 8px 8px;
+}
+
+    .actionPlanoCIA > div:first-child {
+        margin: 16px 0;
+    }
+
+        .actionPlanoCIA > div:first-child > a {
+            margin: 0;
+            height: 36px;
+            border-radius: 18px;
+            text-align: center;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #ffffff;
+            padding: 8px 32px;
+            border: 0;
+            background-color: #7cb342;
+            font-weight: bold;
+            font-family: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+            .actionPlanoCIA > div:first-child > a:hover {
+                background-color: #9ccc65;
+                cursor: pointer;
+            }
+
+    .actionPlanoCIA > div:last-child > a {
+        text-transform: uppercase;
+        color: rgba(0,0,0, .27);
+        text-decoration: none !important;
+        font-size: 10px !important;
+    }
+
+.PlanoIlimitado {
+    background-color: #006658 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nomePlanoIlimitado {
+    padding: 30px 0 42px 0;
+    margin: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: center;
+    border-bottom: solid 1px #ffffff;
+}
+
+.converseConsultores {
+    margin: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.iniciarChamada {
+    background-color: #ffffff;
+    border-radius: 0 0 8px 8px;
+    padding: 42px 16px;
+    text-align: center;
+    color: rgba(0,0,0, .54);
+    transition: all 0.25s ease;
+    border: 0;
+    width: 100%;
+    font-size: 15px;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+    .iniciarChamada:hover {
+        transition: all 0.25s ease;
+        cursor: pointer;
+    }
+
+        .iniciarChamada:hover img {
+            -ms-transform: rotate(-360deg);
+            -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+            transition: 0.25s ease all;
+            transition: all 0.25s ease;
+        }
+
+    .iniciarChamada > div:last-child {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 32px 0 8px 0;
+    }
+
+    .iniciarChamada .ligarAgora {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: solid 6px #9ccc65;
+        background-color: #ffffff;
+        margin: 8px auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+section#CupomDesconto {
+    /*max-width: 880px;*/
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+    padding: 12px;
+    /*width: 70%;*/
+    display: flex;
+    /*margin: auto;*/
+    justify-content: center;
+    align-items: center;
+}
+
+    section#CupomDesconto > div:first-child {
+        /*width: 160px;
+        float: left;*/
+        text-align: right;
+        font-size: 16px;
+        color: rgba(0, 0, 0, .54);
+    }
+
+    section#CupomDesconto > div:last-child {
+        /*width: calc(100% - 160px);
+        float: left;*/
+    }
+
+    section#CupomDesconto #cphConteudo_ctl00 {
+        width: 100%;
+    }
+
+    section#CupomDesconto > div > div {
+        width: calc(100% - 434px);
+        text-align: center;
+        color: rgba(0,0,0, .54);
+        font-size: 18px;
+        width: 100%;
+    }
+
+    section#CupomDesconto input {
+        padding: 10px;
+        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    }
+
+        section#CupomDesconto input[type="text"] {
+            width: 100%;
+            /*margin-left: 16px;*/
+            border: 0;
+            /*border-radius: 8px 0 0 8px;*/
+            text-transform: uppercase;
+        }
+
+        section#CupomDesconto input[type="submit"] {
+            /*width: 120px;*/
+            width:100%;
+            border: 0;
+            background-color: #7cb342;
+            /*border-radius: 0 8px 8px 0;*/
+            color: #ffffff;
+            transition: all 0.25s ease;
+            border-radius:4px;
+        }
+
+            section#CupomDesconto input[type="submit"]:hover {
+                background-color: #9ccc65;
+                cursor: pointer;
+                transition: all 0.25s ease;
+            }
+
+
+/*Customizado*/
+.plano_custom { width: 256px; height: 506px; background: #ddd; position: relative; float: left; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+p.planos_tit { margin-top: 14px; font-family: Arial, Helvetica, sans-serif; text-align: center; border-bottom: 1px solid #d0d0d0; padding: 10px 0px 20px 0px; font-size: 14px; }
+p.op_planos2 { font-family: Arial, Helvetica, sans-serif; text-align: center; border-bottom: 1px solid #d0d0d0; padding: 0px 0px 14px 0px; font-size: 13px; }
+p.op_planos3 { font-family: Arial, Helvetica, sans-serif; text-align: center; border-bottom: 1px solid #d0d0d0; padding: 0px 0px 19px 0px; font-size: 13px; }
+p.op_planos4 { font-family: Arial, Helvetica, sans-serif; text-align: center; border-bottom: 1px solid #d0d0d0; padding: 0px 0px 13px 0px; font-size: 13px; }
+p.op_planos5 { font-family: Arial, Helvetica, sans-serif; text-align: center; border-bottom: 1px solid #d0d0d0; padding: 0px 0px 13px 0px; font-size: 13px; }
+p.op_planos6 { font-family: Arial, Helvetica, sans-serif; text-align: center; border-bottom: 1px solid #d0d0d0; padding: 0px 0px 13px 0px; font-size: 13px; }
+span.desc_t { position: absolute; z-index: 999; font-family: Arial, Helvetica, sans-serif; font-size: 9.2px; top: 11px; text-align: center; color: #fff; }
+strong.t_maior { font-size: 14px; }
+.textarea_padrao { width: 130px; height: 60px; max-height: 60px; }
+.planos_contrato, .op_planos7 { display: none; }
+.op-planos-set-button { text-align: center; }
+p.plan_cinza { font-family: Arial, Helvetica, sans-serif; text-align: center; border-bottom: 1px solid #d0d0d0; padding: 22px 0px 22px 0px; font-size: 14px; color: #fff; background: #666666; margin-top: 0px; }
+.fechar-venda { text-decoration: none; position: relative; border: 0px; background: #ff9d04; color: #fff; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; font-family: Arial, Helvetica, sans-serif; padding: 10px 40px 10px 40px; margin: 15px 0px 0px 10px; cursor: pointer; }
+
+.tooltip-container .tooltip-label{
+    color: #006658 !important;
+}
+#cphConteudo_tooltip_Cancelamento_tooltip_Cancelamento_lbl{
+    color: #FFF !important;
+}
+
+#cphConteudo_tooltip_Cancelamento2_tooltip_Cancelamento2_lbl{
+    color: #FFF !important;
+}
+
+.tooltip-container {
+    margin-left:4px;
+}
+@media screen and (max-width:799px) {
+    section#selecionaTpPlanoCIA {        
+        flex-direction: column;
+    }
+    section#selecionaTpPlanoCIA > div {
+        width: 100%;
+        margin-bottom:24px;
+    }
+    section#CupomDesconto {
+        width:100%;
+        flex-direction:column;
+    }
+        section#CupomDesconto input[type="text"] {
+            margin:8px 0;
+        }
+        section#CupomDesconto > div:first-child {
+            text-align:center;
+        }
+}

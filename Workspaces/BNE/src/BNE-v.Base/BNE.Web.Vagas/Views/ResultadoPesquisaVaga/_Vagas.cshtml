@@ -1,0 +1,11 @@
+﻿@model IEnumerable<BNE.Web.Vagas.Models.Vaga>
+
+@if (Model != null)
+{
+    <div class="vagas">
+        @foreach (var vaga in Model)
+        {
+            Html.RenderPartial("_Vaga", vaga);
+        }
+    </div>
+}

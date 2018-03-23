@@ -1,0 +1,28 @@
+﻿.icone_confirmacao
+{
+    margin-top: 24px;
+    text-align: center;
+}
+
+.texto_pagamento_sucesso
+{
+    color: #1A3876;
+    font-size: 21px;
+    margin: 10px 0 0;
+    text-align: center;
+}
+
+.texto_utilizar_servicos
+{
+    color: #1A3876;
+    padding: 6px 20px;
+    text-align: center;
+}
+
+.painel_botoes
+{
+    margin: 20px 0 ;
+    
+}
+
+.painel_botoes .botao_padrao{ margin-bottom:0;}

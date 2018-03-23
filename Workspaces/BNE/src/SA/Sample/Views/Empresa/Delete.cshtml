@@ -1,0 +1,129 @@
+﻿@model AdminLTE_Application.VWEmpresa
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>VWEmpresa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Raz_Social)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Raz_Social)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.End_Site)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.End_Site)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Num_DDD_Comercial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Num_DDD_Comercial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Num_Comercial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Num_Comercial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Des_Natureza_Juridica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Des_Natureza_Juridica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Des_Plano)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Des_Plano)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Inicio_Plano)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Inicio_Plano)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Fim_plano)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Fim_plano)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sig_Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sig_Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nme_Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nme_Cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Des_Situacao_Filial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Des_Situacao_Filial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Cadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Cadastro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Des_URL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Des_URL)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

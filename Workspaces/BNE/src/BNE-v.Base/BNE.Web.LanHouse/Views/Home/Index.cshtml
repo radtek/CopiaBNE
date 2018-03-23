@@ -1,0 +1,525 @@
+﻿@using BNE.Web.LanHouse.Code.Enumeradores
+@model BNE.Web.LanHouse.Models.ModelHomeIndex
+@{
+    ViewBag.Title = Session[Chave.NomeFantasiaLAN.ToString()].ToString();
+    ViewBag.UrlLogo = Url.Action("logofilial", "home", new { id = Session[Chave.CnpjFilialLAN.ToString()].ToString() });
+    ViewBag.NomeLan = Session[Chave.NomeFantasiaLAN.ToString()].ToString();
+    ViewBag.Facebook = Session[Chave.DadosFacebook.ToString()];
+}
+
+@using (Html.BeginForm())
+{
+
+    <div id="div1" class="tela_principal" style="display: block">
+        @{ Html.RenderPartial("_ModalInformacao"); }
+        <div id="divEmpresas" class="empresas">&nbsp;</div>
+    </div>
+
+    <div id="youtube" class="tela youtube modal" style="display: none">
+        <a class="b-close modal_fechar" title="Fechar">X</a>
+        <iframe id="myythtml5player2" frameborder="0" allowfullscreen="1" title="YouTube video player" width="720" height="405" src="https://www.youtube.com/embed/-1CZ717AzjM?version=3&amp;origin=https%3A%2F%2Fgoogle-developers.appspot.com&amp;enablejsapi=1&amp;playerapiid=myythtml5player2&rel=0"></iframe>
+
+
+        @*<object type="application/x-shockwave-flash" id="myytflashplayer" data="https://www.youtube.com/v/-1CZ717AzjM?version=3&amp;origin=http://lanhouse.bne.com.br&rel=0" width="720" height="405"><param name="allowScriptAccess" value="always"><param name="bgcolor" value="#cccccc"></object>*@
+        @*&amp;enablejsapi=1&amp;playerapiid=myytflashplayer*@
+    </div>
+
+    <div id="div2" class="tela login modal" style="display: none">
+        <a class="b-close modal_fechar" title="Fechar" onclick="limparCampos();">X</a>
+        <div class="topo">
+            <div class="logo-empresa"></div>
+            <div class="dados">
+                <p id="nomeEmpresa" class="nome-empresa"></p>
+                <p id="cartaApresentacao" class="resenha"></p>
+            </div>
+        </div>
+        <div id="dadosPessoais" class="coluna-esquerda">
+            <div class="linha">
+                <label class="label_padrao" for="txtNomeCompleto">Seu nome</label>
+                <input type="text" name="txtNomeCompleto" id="txtNomeCompleto" size="100" maxlength="100" class="textbox_padrao" onblur="formatarNomeCompleto(this)" />
+            </div>
+            <div class="linha">
+                <label class="label_padrao" for="txtDDD">Celular</label>
+                <input type="text" name="txtDDD" id="txtDDD" size="2" maxlength="2" onblur="formatarDDD(this)" title="DDD" class="textbox_padrao ddd" />
+                <input type="text" name="txtNumCelular" id="txtNumCelular" size="10" maxlength="10" onblur="formatarNumCelular(this)" title="Número do celular" class="textbox_padrao fone" />
+            </div>
+            <div class="linha validacao-celular" id="validacao-celular" style="display: none;">
+                <label class="label_padrao" for="txtCodigoValidacaoCelular">Código de validação</label>
+                <input type="text" name="txtCodigoValidacaoCelular" id="txtCodigoValidacaoCelular" size="4" maxlength="7" title="Código de Validação do celular" class="textbox_padrao codigo-confirmacao-celular" />
+                <a class="continuar" onclick="validaCelularEnviarOutroCodigo();">Enviar outro código</a>
+            </div>
+            <div class="linha">
+                <label class="label_padrao" for="txtDataNasc">Sua data de nascimento</label><input type="text" name="txtDataNasc" id="txtDataNasc" size="10" onblur="formatarDataNasc(this)" class="textbox_padrao" />
+            </div>
+            <div class="linha">
+                <label class="label_padrao">Sexo</label>
+                <input type="radio" name="rbSexo" id="rbSexoMasc" value="1" class="radiobutton_padrao" /><label class="semdestaque" for="rbSexoMasc">Masculino</label>
+                <input type="radio" name="rbSexo" id="rbSexoFem" value="2" /><label for="rbSexoFem" class="semdestaque">Feminino</label>
+            </div>
+        </div>
+        <div class="coluna-direita">
+            <div class="linha-divisoria"></div>
+            <span class="login-com bold">
+                Ou faça login com:
+            </span>
+            <div class="container-facebook">
+                <img id="btnFacebook" src="@Url.Content("~/Content/img/botao_facebook.png")" alt="Login com Facebook" title="Login com Facebook" onclick="if (BNEFacebook.EfetuarLogin()) { alert('ok'); }" class="botao-facebook" />
+            </div>
+        </div>
+        <div class="botoes">
+            <a class="b-close anterior" onclick="primeiraTela(); limparCampos();">Voltar</a>
+            <a class="continuar" onclick="if (validarSegundaTela()) terceiraTela();">CONTINUAR</a>
+        </div>
+    </div>
+
+    <div id="div3" class="tela modal" style="display: none">
+        <a class="b-close modal_fechar" title="Fechar">X</a>
+        <div class="topo">
+            <div class="logo-empresa"></div>
+            <div class="dados">
+                <p class="resenha">Precisamos de mais informações para o envio dos dados:</p>
+            </div>
+        </div>
+        <div class="coluna-esquerda">
+            <div class="linha">
+                <label class="label_padrao" for="txtCpf">CPF</label><input type="text" name="txtCpf" id="txtCpf" size="14" onblur="formatarCpf(this)" class="textbox_padrao" />
+            </div>
+            <div class="linha">
+                <label class="label_padrao" for="txtEmail">Email</label><input type="text" name="txtEmail" id="txtEmail" size="80" onblur="formatarEmail(this)" class="textbox_padrao" />
+            </div>
+        </div>
+        <div class="coluna-direita">
+            <div class="linha-divisoria"></div>
+            <div class="linha">
+                <label class="label_padrao" for="txtCargo">Cargo Pretendido</label><input type="text" name="txtCargo" id="txtCargo" size="70" onblur="formatarCargo(this)" class="textbox_padrao" /><input type="hidden" id="hidCargo" />
+            </div>
+            <div class="linha">
+                <label class="label_padrao" for="txtSalario">Salário Desejado</label><input type="text" name="txtSalario" id="txtSalario" size="9" onblur="formatarSalario(this)" class="textbox_padrao" />
+            </div>
+        </div>
+
+        <div class="botoes">
+            <a class="b-close anterior" onclick="segundaTela()">Anterior</a>
+            <a class="continuar" onclick="if (validarTerceiraTela()) quartaTela();">CONTINUAR</a>
+        </div>
+    </div>
+
+    <div id="div4" class="tela comprovante modal" style="display: none">
+        <a class="b-close modal_fechar" title="Fechar">X</a>
+        <span class="destaque">
+            Parabéns <span class="nome-candidato"></span>,
+            <span class="resenha">
+                Agora a empresa <span class="nome-empresa"></span> já sabe do seu interesse e acaba de receber seus dados.
+            </span>
+        </span>
+        <div class="botoes">
+            <a onclick="comprovante();">Imprimir comprovante</a>
+            <a class="escolher-empresa" onclick="primeiraTela();">Escolher mais empresas</a>
+        </div>
+    </div>
+
+    <div id="div5" class="tela escolaridade modal" style="display: none">
+        <a class="b-close modal_fechar" title="Fechar">X</a>
+        <div class="topo">
+            <div class="logo-empresa"></div>
+            <div class="dados">
+                <p class="resenha">Precisamos de mais informações para o envio dos dados:</p>
+            </div>
+        </div>
+        <div class="scroll">
+            <div class="linha">
+                <input type="hidden" id="hidEscolaridade" value="-2" />
+                <label class="label_padrao" for="selEscolaridade">Escolaridade</label>
+                <select id="selEscolaridade" onchange="formatarEscolaridade(this)" class="textbox_padrao">
+                    <option value="-2">Selecione</option>
+                    <option value="4">Ensino fundamental</option>
+                    <option value="6">Ensino médio</option>
+                    <option value="8">Técnico ou pós-médio</option>
+                    <option value="10">Tecnólogo</option>
+                    <option value="11">Ensino superior</option>
+                </select>
+                <select id="selEscolaridadeCompleta" onchange="formatarEscolaridade(this)" class="textbox_padrao">
+                    <option>Incompleto</option>
+                    <option>Completo</option>
+                </select>
+                <div class="escolaridade" id="divEscolaridadeInstituicaoEnsino" style="display: none">
+                    <label class="label_padrao" for="txtEscolaridadeInstituicaoEnsino">Instituição de ensino</label>
+                    <input type="text" id="txtEscolaridadeInstituicaoEnsino" size="80" onchange="formatarInstituicaoEnsino(this)" class="textbox_padrao" />
+                    <input type="hidden" id="hidFonte" name="hidFonte" value="-1" />
+                    <br />
+                    <label class="label_padrao" for="txtEscolaridadeNomeCurso">Nome do curso</label>
+                    <input type="text" id="txtEscolaridadeNomeCurso" size="80" onchange="formatarNomeCurso(this)" class="textbox_padrao" />
+                    <br />
+                    <label class="label_padrao" for="txtEscolaridadeCidade">Cidade</label>
+                    <input type="text" id="txtEscolaridadeCidade" size="40" onchange="formatarEscolaridadeCidade(this)" class="textbox_padrao" />
+                    <input type="hidden" id="hidEscolaridadeCidade" name="hidEscolaridadeCidade" value="" />
+                </div>
+                <div class="escolaridade" id="divEscolaridadePeriodo" style="display: none">
+                    <label class="label_padrao" for="txtEscolaridadePeriodo">Período</label>
+                    <input type="text" id="txtEscolaridadePeriodo" size="2" onchange="formatarEscolaridadePeriodo(this)" class="textbox_padrao" />
+                </div>
+                <div class="escolaridade" id="divEscolaridadeIncompletaSituacao" style="display: none">
+                    <label class="label_padrao" for="selEscolaridadeSituacao">Situação</label>
+                    <select id="selEscolaridadeSituacao" name="selEscolaridadeSituacao" onchange="formatarEscolaridadeSituacao(this)" class="textbox_padrao">
+                        <option value="-1">Selecione uma opção</option>
+                        <option value="1">Cursando</option>
+                        <option value="2">Trancado</option>
+                        <option value="3">Cancelado</option>
+                    </select>
+                </div>
+                <div class="escolaridade" id="divEscolaridadeCompletaAnoConclusao" style="display: none">
+                    <label class="label_padrao" for="txtAnoConclusaoEscolaridade">Ano de conclusão</label>
+                    <input type="text" id="txtAnoConclusaoEscolaridade" name="txtAnoConclusaoEscolaridade" maxlength="4" size="4" class="textbox_padrao" />
+                </div>
+            </div>
+            <div class="linha">
+                <label class="label_padrao">Experiência profissional</label>
+                <div id="accordionProfissional">
+                    <h3>Empresa mais recente</h3>
+                    <div>
+                        <div class="coluna-esquerda">
+                            <div class="linha">
+                                <label class="label_padrao" for="txtNomeEmpresa1">Nome da Empresa</label>
+                                <input type="text" name="txtNomeEmpresa1" id="txtNomeEmpresa1" class="textbox_padrao" />
+                            </div>
+                            <div class="linha">
+                                <label class="label_padrao" for="txtDataAdmissao1">Data de admissão</label>
+                                <input type="text" name="txtDataAdmissao1" id="txtDataAdmissao1" class="data textbox_padrao" />
+                            </div>
+                            <div class="linha">
+                                <label class="label_padrao" for="txtFuncaoExercida1">Função exercida</label><input type="text" name="txtFuncaoExercida1" id="txtFuncaoExercida1" class="textbox_padrao" />
+                                @*<input type="hidden" name="hidFuncaoExercida1" id="hidFuncaoExercida1" value="-1" />*@
+                            </div>
+                            <div class="linha">
+                                <label class="label_padrao" for="txtUltimoSalario">Último salário</label>
+                                <input type="text" name="txtUltimoSalario" id="txtUltimoSalario" class="textbox_padrao" />
+                            </div>
+                        </div>
+                        <div class="coluna-direita">
+                            <div class="linha">
+                                <label class="label_padrao" for="selAreaEmpresa1">Empresa trabalha com</label>
+                                <select name="selAreaEmpresa1" id="selAreaEmpresa1" class="textbox_padrao">
+                                    <option value="0" selected="selected">Selecione</option>
+                                    <option value="22">Acess&#243;rios</option>
+                                    <option value="45">Administra&#231;&#227;o P&#250;blica</option>
+                                    <option value="44">Administrativo</option>
+                                    <option value="1">Agroneg&#243;cios</option>
+                                    <option value="25">&#193;gua e Esgoto</option>
+                                    <option value="3">Alimentos</option>
+                                    <option value="30">Arte e Cultura</option>
+                                    <option value="50">Associa&#231;&#245;es e Diversos</option>
+                                    <option value="4">Bebidas</option>
+                                    <option value="27">Com&#233;rcio</option>
+                                    <option value="31">Comunica&#231;&#227;o</option>
+                                    <option value="26">Constru&#231;&#227;o</option>
+                                    <option value="37">Consultoria</option>
+                                    <option value="55">Contabilidade</option>
+                                    <option value="46">Educa&#231;&#227;o</option>
+                                    <option value="18">El&#233;trico</option>
+                                    <option value="17">Eletr&#244;nico</option>
+                                    <option value="24">Energia</option>
+                                    <option value="49">Esporte</option>
+                                    <option value="2">Extra&#231;&#227;o</option>
+                                    <option value="12">Farmac&#234;utico</option>
+                                    <option value="34">Financeiro</option>
+                                    <option value="47">For&#231;as Armadas</option>
+                                    <option value="5">Fumo</option>
+                                    <option value="9">Gr&#225;fica</option>
+                                    <option value="29">Hotelaria e Turismo</option>
+                                    <option value="35">Imobili&#225;ria</option>
+                                    <option value="33">Inform&#225;tica</option>
+                                    <option value="53">Internacional</option>
+                                    <option value="36">Jur&#237;dico</option>
+                                    <option value="43">Limpeza</option>
+                                    <option value="40">Loca&#231;&#227;o</option>
+                                    <option value="28">Log&#237;stica</option>
+                                    <option value="7">Madeira</option>
+                                    <option value="23">Manuten&#231;&#227;o</option>
+                                    <option value="38">Marketing</option>
+                                    <option value="19">Mec&#226;nico</option>
+                                    <option value="16">Metal Mec&#226;nico</option>
+                                    <option value="15">Metalurgia</option>
+                                    <option value="14">Minerais</option>
+                                    <option value="21">M&#243;veis</option>
+                                    <option value="8">Papel </option>
+                                    <option value="10">Petr&#243;leo</option>
+                                    <option value="13">Pl&#225;stico</option>
+                                    <option value="56">Produ&#231;&#227;o</option>
+                                    <option value="11">Qu&#237;mico</option>
+                                    <option value="41">Recursos Humanos</option>
+                                    <option value="39">Sa&#250;de</option>
+                                    <option value="42">Seguran&#231;a</option>
+                                    <option value="52">Servi&#231;os Dom&#233;sticos</option>
+                                    <option value="51">Servi&#231;os Pessoais</option>
+                                    <option value="48">Social</option>
+                                    <option value="32">Telecomunica&#231;&#245;es</option>
+                                    <option value="6">T&#234;xteis</option>
+                                    <option value="20">Ve&#237;culos</option>
+                                </select>
+                            </div>
+                            <div class="linha">
+                                <label class="label_padrao" for="txtDataDemissao1">Data de demissão</label>
+                                <input type="text" name="txtDataDemissao1" id="txtDataDemissao1" class="data textbox_padrao" />
+                            </div>
+                            <div class="linha">
+                                <label class="label_padrao" for="txtAtribuicoes1">Tarefas realizadas</label>
+                                <textarea rows="6" cols="60" name="txtAtribuicoes1" id="txtAtribuicoes1" class="textarea_padrao"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Penúltima empresa</h3>
+                    <div>
+                        <div class="coluna-esquerda">
+                            <div class="linha">
+                                <label class="label_padrao" for="txtNomeEmpresa2">Nome da empresa</label><input type="text" name="txtNomeEmpresa2" id="txtNomeEmpresa2" class="textbox_padrao" />
+                            </div>
+                            <div class="linha">
+                                <label class="label_padrao" for="txtDataAdmissao2">Data de admissão</label><input type="text" name="txtDataAdmissao2" id="txtDataAdmissao2" class="data textbox_padrao" />
+                            </div>
+                            <div class="linha">
+                                <label class="label_padrao" for="txtFuncaoExercida2">Função exercida</label><input type="text" name="txtFuncaoExercida2" id="txtFuncaoExercida2" class="textbox_padrao" />
+                            </div>
+                        </div>
+                        <div class="coluna-direita">
+                            <div class="linha">
+                                <label class="label_padrao" for="selAreaEmpresa2">Empresa trabalha com</label>
+                                <select name="selAreaEmpresa2" id="selAreaEmpresa2" class="textbox_padrao">
+                                    <option value="0" selected="selected">Selecione</option>
+                                    <option value="22">Acess&#243;rios</option>
+                                    <option value="45">Administra&#231;&#227;o P&#250;blica </option>
+                                    <option value="44">Administrativo</option>
+                                    <option value="1">Agroneg&#243;cios</option>
+                                    <option value="25">&#193;gua e Esgoto</option>
+                                    <option value="3">Alimentos</option>
+                                    <option value="30">Arte e Cultura</option>
+                                    <option value="50">Associa&#231;&#245;es e Diversos</option>
+                                    <option value="4">Bebidas</option>
+                                    <option value="27">Com&#233;rcio</option>
+                                    <option value="31">Comunica&#231;&#227;o</option>
+                                    <option value="26">Constru&#231;&#227;o</option>
+                                    <option value="37">Consultoria</option>
+                                    <option value="55">Contabilidade</option>
+                                    <option value="46">Educa&#231;&#227;o</option>
+                                    <option value="18">El&#233;trico</option>
+                                    <option value="17">Eletr&#244;nico</option>
+                                    <option value="24">Energia</option>
+                                    <option value="49">Esporte</option>
+                                    <option value="2">Extra&#231;&#227;o</option>
+                                    <option value="12">Farmac&#234;utico</option>
+                                    <option value="34">Financeiro</option>
+                                    <option value="47">For&#231;as Armadas</option>
+                                    <option value="5">Fumo</option>
+                                    <option value="9">Gr&#225;fica</option>
+                                    <option value="29">Hotelaria e Turismo</option>
+                                    <option value="35">Imobili&#225;ria</option>
+                                    <option value="33">Inform&#225;tica</option>
+                                    <option value="53">Internacional</option>
+                                    <option value="36">Jur&#237;dico</option>
+                                    <option value="43">Limpeza</option>
+                                    <option value="40">Loca&#231;&#227;o</option>
+                                    <option value="28">Log&#237;stica</option>
+                                    <option value="7">Madeira</option>
+                                    <option value="23">Manuten&#231;&#227;o</option>
+                                    <option value="38">Marketing</option>
+                                    <option value="19">Mec&#226;nico</option>
+                                    <option value="16">Metal Mec&#226;nico</option>
+                                    <option value="15">Metalurgia</option>
+                                    <option value="14">Minerais</option>
+                                    <option value="21">M&#243;veis</option>
+                                    <option value="8">Papel </option>
+                                    <option value="10">Petr&#243;leo</option>
+                                    <option value="13">Pl&#225;stico</option>
+                                    <option value="56">Produ&#231;&#227;o</option>
+                                    <option value="11">Qu&#237;mico</option>
+                                    <option value="41">Recursos Humanos</option>
+                                    <option value="39">Sa&#250;de</option>
+                                    <option value="42">Seguran&#231;a</option>
+                                    <option value="52">Servi&#231;os Dom&#233;sticos</option>
+                                    <option value="51">Servi&#231;os Pessoais</option>
+                                    <option value="48">Social</option>
+                                    <option value="32">Telecomunica&#231;&#245;es</option>
+                                    <option value="6">T&#234;xteis</option>
+                                    <option value="20">Ve&#237;culos</option>
+                                </select>
+                            </div>
+                            <div class="linha">
+                                <label class="label_padrao" for="txtDataDemissao2">Data de demissão</label><input type="text" name="txtDataDemissao2" id="txtDataDemissao2" class="data textbox_padrao" />
+                            </div>
+                            <div class="linha">
+                                <label class="label_padrao" for="txtAtribuicoes2">Tarefas realizadas</label>
+
+                                <textarea rows="6" cols="60" name="txtAtribuicoes2" id="txtAtribuicoes2" class="textarea_padrao"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Antepenúltima empresa</h3>
+                    <div>
+                        <div class="coluna-esquerda">
+                            <div>
+                                <label class="label_padrao" for="txtNomeEmpresa3">Nome da empresa</label><input type="text" name="txtNomeEmpresa3" id="txtNomeEmpresa3" class="textbox_padrao" />
+                            </div>
+                            <div class="linha">
+                                <label class="label_padrao" for="txtDataAdmissao3">Data de admissão</label><input type="text" name="txtDataAdmissao3" id="txtDataAdmissao3" class="data textbox_padrao" />
+                            </div>
+                            <div class="linha">
+                                <label class="label_padrao" for="txtFuncaoExercida3">Função exercida</label><input type="text" name="txtFuncaoExercida3" id="txtFuncaoExercida3" class="textbox_padrao" />
+                            </div>
+                        </div>
+                        <div class="coluna-direita">
+                            <div class="linha">
+                                <label class="label_padrao" for="selAreaEmpresa3">Empresa trabalha com</label>
+                                <select name="selAreaEmpresa3" id="selAreaEmpresa3" class="textbox_padrao">
+                                    <option value="0" selected="selected">Selecione</option>
+                                    <option value="22">Acess&#243;rios</option>
+                                    <option value="45">Administra&#231;&#227;o P&#250;blica </option>
+                                    <option value="44">Administrativo</option>
+                                    <option value="1">Agroneg&#243;cios</option>
+                                    <option value="25">&#193;gua e Esgoto</option>
+                                    <option value="3">Alimentos</option>
+                                    <option value="30">Arte e Cultura</option>
+                                    <option value="50">Associa&#231;&#245;es e Diversos</option>
+                                    <option value="4">Bebidas</option>
+                                    <option value="27">Com&#233;rcio</option>
+                                    <option value="31">Comunica&#231;&#227;o</option>
+                                    <option value="26">Constru&#231;&#227;o</option>
+                                    <option value="37">Consultoria</option>
+                                    <option value="55">Contabilidade</option>
+                                    <option value="46">Educa&#231;&#227;o</option>
+                                    <option value="18">El&#233;trico</option>
+                                    <option value="17">Eletr&#244;nico</option>
+                                    <option value="24">Energia</option>
+                                    <option value="49">Esporte</option>
+                                    <option value="2">Extra&#231;&#227;o</option>
+                                    <option value="12">Farmac&#234;utico</option>
+                                    <option value="34">Financeiro</option>
+                                    <option value="47">For&#231;as Armadas</option>
+                                    <option value="5">Fumo</option>
+                                    <option value="9">Gr&#225;fica</option>
+                                    <option value="29">Hotelaria e Turismo</option>
+                                    <option value="35">Imobili&#225;ria</option>
+                                    <option value="33">Inform&#225;tica</option>
+                                    <option value="53">Internacional</option>
+                                    <option value="36">Jur&#237;dico</option>
+                                    <option value="43">Limpeza</option>
+                                    <option value="40">Loca&#231;&#227;o</option>
+                                    <option value="28">Log&#237;stica</option>
+                                    <option value="7">Madeira</option>
+                                    <option value="23">Manuten&#231;&#227;o</option>
+                                    <option value="38">Marketing</option>
+                                    <option value="19">Mec&#226;nico</option>
+                                    <option value="16">Metal Mec&#226;nico</option>
+                                    <option value="15">Metalurgia</option>
+                                    <option value="14">Minerais</option>
+                                    <option value="21">M&#243;veis</option>
+                                    <option value="8">Papel </option>
+                                    <option value="10">Petr&#243;leo</option>
+                                    <option value="13">Pl&#225;stico</option>
+                                    <option value="56">Produ&#231;&#227;o</option>
+                                    <option value="11">Qu&#237;mico</option>
+                                    <option value="41">Recursos Humanos</option>
+                                    <option value="39">Sa&#250;de</option>
+                                    <option value="42">Seguran&#231;a</option>
+                                    <option value="52">Servi&#231;os Dom&#233;sticos</option>
+                                    <option value="51">Servi&#231;os Pessoais</option>
+                                    <option value="48">Social</option>
+                                    <option value="32">Telecomunica&#231;&#245;es</option>
+                                    <option value="6">T&#234;xteis</option>
+                                    <option value="20">Ve&#237;culos</option>
+                                </select>
+                            </div>
+                            <div class="linha">
+                                <label class="label_padrao" for="txtDataDemissao3">Data de demissão</label><input type="text" name="txtDataDemissao3" id="txtDataDemissao3" class="data textbox_padrao" />
+                            </div>
+                            <div class="linha">
+                                <label class="label_padrao" for="txtAtribuicoes3">Tarefas realizadas</label>
+                                <textarea rows="6" cols="60" name="txtAtribuicoes3" id="txtAtribuicoes3" class="textarea_padrao"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="botoes">
+            <a class="b-close anterior" onclick="primeiraTela()">Anterior</a>
+            <a class="continuar" onclick="if (validarQuintaTela()) quartaTela();">CONTINUAR</a>
+        </div>
+    </div>
+
+    <div id="div6" class="tela modal" style="display: none">
+        <a class="b-close modal_fechar" title="Fechar">X</a>
+        <div class="topo">
+            <div class="logo-empresa"></div>
+            <div class="dados">
+                <p class="resenha">Precisamos de mais informações para o envio dos dados:</p>
+            </div>
+        </div>
+        <div class="linha">
+            <label class="label_padrao" for="selEstadoCivil">Estado civil</label>
+            <select name="selEstadoCivil" id="selEstadoCivil" onchange="formatarEstadoCivil(this)" class="textbox_padrao">
+                <option value="-1">Selecione</option>
+                <option value="7">Amasiado(a)</option>
+                <option value="2">Casado(a)</option>
+                <option value="4">Divorciado(a)</option>
+                <option value="6">Outros</option>
+                <option value="3">Separado(a) Judicialmente ou Desquitado(a)</option>
+                <option value="1">Solteiro(a)</option>
+                <option value="5">Vi&#250;vo(a)</option>
+            </select>
+        </div>
+        <div class="linha">
+            <label class="label_padrao" for="txtCep">CEP</label><input type="text" name="txtCep" id="txtCep" maxlength="9" onchange="formatarCep(this)" class="textbox_padrao" />
+        </div>
+        <div class="linha">
+            <label class="label_padrao" for="txtTelefoneRecado">Telefone de recado</label>
+            <input type="text" name="txtDDD" id="txtDDDRecado" size="2" maxlength="2" title="DDD" class="textbox_padrao ddd" />
+            <input type="text" name="txtTelefoneRecado" id="txtTelefoneRecado" size="10" maxlength="10" title="Número do telefone" class="textbox_padrao fone" />
+            @*onchange="formatarTelefoneRecado(this)"*@
+        </div>
+        <div class="linha">
+            <label class="label_padrao" for="txtFalarCom">Deixar recado com</label><input type="text" name="txtFalarCom" id="txtFalarCom" class="textbox_padrao" />@* onchange="formatarFalarCom(this)" *@
+        </div>
+        <div class="botoes">
+            <a class="b-close anterior" onclick="primeiraTela()">Anterior</a>
+            <a class="continuar" onclick="if (validarSextaTela()) quartaTela();">CONTINUAR</a>
+        </div>
+    </div>
+
+    <div id="divVip" class="tela codigo modal" style="display: none">
+        <a class="b-close modal_fechar" title="Fechar">X</a>
+        <div class="topo"></div>
+        <span class="resenha">
+            Tenha acesso ilimitado e envie seu perfil para outras empresas por apenas R$ @Model.ValorVIP
+            <p>Peça agora ao atendente!</p>
+        </span>
+        <div class="linha">
+            <label class="label_padrao" for="txtCodigoDesconto">Código</label><input type="text" name="txtCodigoDesconto" id="txtCodigoDesconto" size="80" class="textbox_padrao" />
+            <a class="continuar" onclick="if (vipOk()) quartaTela();">OK</a>
+        </div>
+        @*<div class="botoes">
+                <a class="b-close anterior" onclick="primeiraTela()">Anterior</a>
+            </div>*@
+    </div>
+
+    <div id="divJaCandidatou" class="modal candidatou" style="display: none">
+        <a class="b-close modal_fechar" title="Fechar">X</a>
+        <div class="logo-empresa"></div>
+        <div class="dados">
+            <p class="resenha">Você já se candidatou a essa empresa :)</p>
+        </div>
+    </div>
+
+    <div id="divComprovante" class="modal imprimircomprovante" style="display: none">
+        <a class="b-close modal_fechar" title="Fechar">X</a>
+        <div class="comprovante">
+            <img src="/content/img/comprovante-background.png" />
+            <p class="resenha">
+                <span class="nome-candidato">João da Silva</span>
+                <span class="curriculo"><span class="funcao-candidato">Auxiliar de produção</span>, <span class="idade-candidato">34</span> anos, enviou seu currículo para <b><span class="nome-empresa">Empresa</span></b> devido ao desejo de trabalhar nesta empresa.</span>
+                <span class="frase">Este é o comprovante de que agora o seu <b>sonho</b> está próximo de ser <b>realizado</b>! </span>
+                <span class="data">Curitiba, 14 de maio de 2014</span>
+            </p>
+        </div>
+    </div>
+
+}

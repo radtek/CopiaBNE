@@ -1,0 +1,107 @@
+﻿@model AdminLTE_Application.VW_EMPRESA_SEM_PLANO
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VW_EMPRESA_SEM_PLANO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Ultimo_Atendimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_Ultimo_Atendimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Ultima_Acao_Site)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_Ultima_Acao_Site)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_ultimo_ATC_empresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_ultimo_ATC_empresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Idf_Atendimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Idf_Atendimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Raz_Social)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Raz_Social)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sig_Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sig_Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Des_Area_BNE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Des_Area_BNE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nme_Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nme_Cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Fim_Plano)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Fim_Plano)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_Acao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_Acao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Retorno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Retorno)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

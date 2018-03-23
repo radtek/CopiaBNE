@@ -1,0 +1,64 @@
+﻿.painel_paginacao
+{
+    background-image: url('/img/bg_telerik_barra_paginacao.png');
+    background-repeat: repeat-x;
+    border-color: #5D8CC9;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    padding: 2px 6px;
+}
+
+.coluna_controles_paginacao
+{
+    float: left;
+    padding-left: 4px;
+    width: 600px;
+}
+
+.coluna_estado_paginacao
+{
+    padding: 4px 4px 4px 0;
+    text-align: right;
+    /*width: 254px;*/
+    width: auto;
+}
+
+.painel_paginacao a
+{
+    border: 1px solid transparent;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 11px;
+    margin: 0 1px;
+    padding: 3px 4px;
+}
+
+.painel_paginacao a:hover
+{
+    background-color: #e3efff;
+    border: 1px solid #5D8CC9;
+}
+
+.painel_paginacao a.PaginaCorrente
+{
+    background-color: #e3efff;
+    border: 1px solid #5D8CC9;
+}
+
+.painel_paginacao *
+{
+    vertical-align: middle;
+}
+
+.painel_paginacao div
+{
+    display: inline-block;
+}
+
+.painel_paginacao .estado_paginacao
+{
+    color: #333;
+    font-size: 11px;
+    padding: 3px;
+}

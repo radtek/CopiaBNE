@@ -1,0 +1,28 @@
+﻿@model BNE.PessoaFisica.Web.Models.PreCurriculo
+           <script>
+               $('#maisInfo').hide();
+           </script>
+
+@Html.HiddenFor(p => p.IdPesquisa, new {@Value = Model.IdPesquisa })
+@Html.HiddenFor(p => p.UrlVoltarLogado, new { @Value = Model.UrlVoltarLogado })
+
+<div class="mdl-grid">
+    <div class="md-section-candidatura md-section-candidatvaga bottom20">
+        @if (Model.NumeroCandidaturasGratis == "VIP")
+        {
+            @Html.Partial("_ConfirmacaoVIP")
+        }
+        else if (Convert.ToInt32(Model.NumeroCandidaturasGratis) == 3)
+        {
+            @Html.Partial("_ConfirmacaoInicial")
+        }
+        else if (Convert.ToInt32(Model.NumeroCandidaturasGratis) <= 0)
+        {
+            @Html.Partial("_ConfirmacaoFormacao")
+        }
+        else
+        {
+            @Html.Partial("_ConfirmacaoExperiencia")
+        }
+    </div>
+</div>

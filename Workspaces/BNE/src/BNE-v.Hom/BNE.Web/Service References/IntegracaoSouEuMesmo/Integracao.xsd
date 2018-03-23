@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wsdevgeral.soueumesmo.com.br/Integracao.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Employer.SouEuMesmo.Web.Services" />
+  <xs:element name="RegistrarFoto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cpf" type="xs:decimal" />
+        <xs:element minOccurs="0" name="telefone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="data" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="imagem" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarFotoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegistrarFotoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarPessoaFisicaCPF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cpf" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarPessoaFisicaCPFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Employer.SouEuMesmo.Web.Services" minOccurs="0" name="RecuperarPessoaFisicaCPFResult" nillable="true" type="q1:DadosPessoaFisica" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarPessoaFisica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Employer.SouEuMesmo.Web.Services" minOccurs="0" name="objDados" nillable="true" type="q2:DadosPessoaFisica" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarPessoaFisicaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AtualizarPessoaFisicaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UltimaFotoPessoaFisica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cpf" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UltimaFotoPessoaFisicaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Employer.SouEuMesmo.Web.Services" minOccurs="0" name="UltimaFotoPessoaFisicaResult" nillable="true" type="q3:FotoPessoaFisica" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetornoFotoPessoaFisica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cpf" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetornoFotoPessoaFisicaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RetornoFotoPessoaFisicaResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

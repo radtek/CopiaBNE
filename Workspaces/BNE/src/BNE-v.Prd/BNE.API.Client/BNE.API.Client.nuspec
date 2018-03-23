@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BNE.Api.Client</id>
+    <version>1.0.2</version>
+    <title>BNE.Api.Client</title>
+    <authors>Ramalho</authors>
+    <owners>Bne Equipe Devs</owners>
+    <description>Atualizaro curriculo.</description>
+    <releaseNotes>Atualizaro curriculo.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+  </metadata>
+</package>

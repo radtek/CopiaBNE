@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wsteste.sine.com.br/App.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" />
+  <xs:import schemaLocation="http://wsteste.sine.com.br/App.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO" />
+  <xs:import schemaLocation="http://wsteste.sine.com.br/App.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="CadastrarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroCPF" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dataNascimento" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ddd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="celular" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pretensao" type="xs:decimal" />
+        <xs:element minOccurs="0" name="sexo" type="xs:int" />
+        <xs:element minOccurs="0" name="funcao" type="xs:int" />
+        <xs:element minOccurs="0" name="cidade" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="CadastrarUsuarioResult" nillable="true" type="q1:RetornoOperacao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Candidatar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroCPF" type="xs:decimal" />
+        <xs:element minOccurs="0" name="vaga" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CandidatarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="CandidatarResult" nillable="true" type="q2:RetornoOperacao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarDetalhes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vaga" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarDetalhesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="RecuperarDetalhesResult" nillable="true" type="q3:RetornoDetalhes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarQuantidadeNovasVagas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idFuncao" type="xs:int" />
+        <xs:element minOccurs="0" name="idCidade" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="siglaEstado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dataSync" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarQuantidadeNovasVagasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="RecuperarQuantidadeNovasVagasResult" nillable="true" type="q4:RetornoQuantidade" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PesquisarVagas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paginaAtual" type="xs:int" />
+        <xs:element minOccurs="0" name="idFuncao" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="idCidade" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="sigEstado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vagaCandidatada" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="cPFUsuarioCandidatado" nillable="true" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PesquisarVagasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO" minOccurs="0" name="PesquisarVagasResult" nillable="true" type="q5:ArrayOfVaga" />
+        <xs:element minOccurs="0" name="maisPaginas" type="xs:boolean" />
+        <xs:element minOccurs="0" name="numRegistros" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarDataNascimento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroCPF" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarDataNascimentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecuperarDataNascimentoResult" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarDataNascimentoPorEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarDataNascimentoPorEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecuperarDataNascimentoPorEmailResult" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarCPFPorEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarCPFPorEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecuperarCPFPorEmailResult" nillable="true" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarVagas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idFuncao" type="xs:int" />
+        <xs:element minOccurs="0" name="idCidade" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="sigEstado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dataMinima" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarVagasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO" minOccurs="0" name="RecuperarVagasResult" nillable="true" type="q6:ArrayOfVaga" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogarErro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="classe" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mensagem" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogarErroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LogarErroResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarCandidaturas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroCPF" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarCandidaturasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="ListarCandidaturasResult" nillable="true" type="q7:ArrayOfRetornoCandidaturasDoUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CandidatarVaga">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroCPF" type="xs:decimal" />
+        <xs:element minOccurs="0" name="vaga" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CandidatarVagaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="CandidatarVagaResult" nillable="true" type="q8:RetornoOperacao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarCurriculo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroCPF" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarCurriculoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="RecuperarCurriculoResult" nillable="true" type="q9:RetornoCurriculo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarFuncao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="inRetornaFuncao" nillable="true" type="q10:InRetornaFuncao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarFuncaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="RecuperarFuncaoResult" nillable="true" type="q11:OutRetornaFuncao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarCidade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="inRetornaCidade" nillable="true" type="q12:InRetornaCidade" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarCidadeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="RecuperarCidadeResult" nillable="true" type="q13:OutRetornaCidade" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LiberarDestaqueVaga">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="desIdentificador" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nomeUsuarioLogado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cpfUsuariologado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dataPagamento" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LiberarDestaqueVagaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="LiberarDestaqueVagaResult" nillable="true" type="q14:RetornoLiberarDestaqueVaga" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizaNF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="atualizaNF" nillable="true" type="q15:InAtualizaNumNF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizaNFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="AtualizaNFResult" nillable="true" type="q16:OutAtualizaNumNF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InativarCV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cpf" type="xs:decimal" />
+        <xs:element minOccurs="0" name="motivo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InativarCVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InativarCVResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Bronquinha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="email" nillable="true" type="q17:ArrayOfstring" />
+        <xs:element minOccurs="0" name="motivo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BronquinhaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="BronquinhaResult" nillable="true" type="q18:RetornoBronquinha" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoverBronquinha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="email" nillable="true" type="q19:ArrayOfstring" />
+        <xs:element minOccurs="0" name="motivo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoverBronquinhaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" minOccurs="0" name="RemoverBronquinhaResult" nillable="true" type="q20:RetornoBronquinha" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

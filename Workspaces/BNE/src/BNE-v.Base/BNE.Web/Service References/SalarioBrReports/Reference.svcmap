@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4056f2ae-097e-44e8-abe1-b9b933789550" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wsdevrelatorios.salariobr.com/SalarioBrReports.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SalarioBrReports.disco" MetadataType="Disco" ID="68faf694-44bd-448d-8406-23fc1a8da820" SourceId="1" SourceUrl="http://wsdevrelatorios.salariobr.com/SalarioBrReports.svc?disco" />
+    <MetadataFile FileName="SalarioBrReports.xsd" MetadataType="Schema" ID="45d8b7a6-6a92-4647-af39-764c83da62b3" SourceId="1" SourceUrl="http://wsdevrelatorios.salariobr.com/SalarioBrReports.svc?xsd=xsd1" />
+    <MetadataFile FileName="SalarioBrReports.wsdl" MetadataType="Wsdl" ID="278d557d-4bde-429e-b89f-73e12f9c2a58" SourceId="1" SourceUrl="http://wsdevrelatorios.salariobr.com/SalarioBrReports.svc?wsdl" />
+    <MetadataFile FileName="SalarioBrReports1.xsd" MetadataType="Schema" ID="72f51e84-b738-400d-bb66-f45987aaa275" SourceId="1" SourceUrl="http://wsdevrelatorios.salariobr.com/SalarioBrReports.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,35 @@
+﻿<div class="row clearfix">
+    <div class="col-md-12 column">
+        <form class="navbar-form navbar-left" role="search" name="cadastroAluno">
+            <div class="form-group">
+                <input ng-model="cadastro.aluno.Nome" class="form-control largura" type="text" placeholder="NOME DO ALUNO" required>
+            </div> 
+            <button ng-hide="cadastro.aluno.Id > 0 " ng-disabled="!cadastroAluno.$valid" class="btn btn-primary" ng-click="cadastrarAluno()">CADASTRAR</button>
+            <button ng-show="cadastro.aluno.Id > 0" ng-disabled="!cadastroAluno.$valid" class="btn btn-primary" ng-click="EditarAluno()">Atualizar</button>
+        </form>
+    </div>
+    <div class="col-md-4 column">
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-md-12 column">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> NOME DO ALUNO</th>
+                    <th>AÇÕES </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="aluno in cadastro.alunos_cadastrados | orderBy: 'Nome'">
+                    <td>{{aluno.Nome}} </td>
+                    <td class="larguratd">
+                        <button class="btn btn-link" ng-click="CarregarAluno(aluno.Id)">Editar</button>
+                        <button class="btn btn-link" ng-click="apagarAluno(aluno.Id)">Apagar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a ng-href="#/disciplina" class="btn btn-warning btn-lg pull-right">PRÓXIMO</a>
+    </div>
+</div>

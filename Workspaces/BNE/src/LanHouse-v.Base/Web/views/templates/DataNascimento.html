@@ -1,0 +1,12 @@
+﻿<div class="form-group row">
+    <label for="{{eNome}}">{{eLabel}} <span class="required" ng-show="eRequired">*</span></label>
+    <input type="text" class="form-control" name="{{eNome}}" id="{{eNome}}" maxlength="8" ng-maxlength="10" only-num {{eRequired}} valid-date ng-model="cadCV.curriculo.dataNascimento" />
+    <div class="tooltip right in" style="top: 18px; left: 155px; display: block;" ng-show="formPasso1.DataNascimento.$invalid && formPasso1.DataNascimento.$touched">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner">Preencha a data no formato dd/mm/aaaa</div>
+    </div>
+    <div class="tooltip right in" style="top: 18px; left: 155px; display: block;" ng-show="Nascimentovalido==false">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner">A idade mínima é 14 anos.</div>
+    </div>
+</div>

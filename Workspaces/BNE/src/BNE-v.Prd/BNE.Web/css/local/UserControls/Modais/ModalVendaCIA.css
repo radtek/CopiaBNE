@@ -1,0 +1,136 @@
+﻿.botao_quero_comprar
+{
+    background-image: url('/img/modal_nova/btn_quero_passar_para_vip.png');
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    margin-left: 20px;
+    margin-top: 17px;
+    width: 212px;
+    height: 40px;
+    color: #21190C;
+    font-size: 18px;
+    padding-left: 15px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.modal_nova_amarela .botao_fechar_modal
+{
+    position:absolute !important;
+    right:-16px !important;    
+    top:-16px;
+}
+.labelMaioresInformacoes
+{
+    color:#052769;
+    font-size:16px;
+}
+
+p.tit_modal_vip {  text-transform: uppercase; width: 400px; font-weight: 700; font-size: 22px; text-align: center; margin-left: 4px;}
+p.text_modal_vip {   width: 340px; font-weight: 400; font-size: 18px; text-align: center; margin-left: 22px;}
+.botao_ver_planos {   
+    background-color: #015a9c;
+    display: block;
+  float: left;
+  margin-left: 80px;
+  margin-top: 15px;
+  width: 212px;
+  height: 30px;
+  color: #fff;
+  font-size: 18px;
+  padding-left: 12px;
+  text-align: center;
+  padding-top: 10px;
+  -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+margin-bottom: 20px;
+}
+.botao_ver_planos:hover { box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;}
+.modal_nova_conteudo{font-size:15px;float:none !important;
+    margin:0 auto !important;}
+
+.center {
+    text-align: center;
+}
+.aviso_cupom{position:absolute;bottom:12px;right:12px;}
+p, .conteudo .interna ul{line-height:120%;}
+#myModalLabel {
+    text-align:center !important;
+}
+.input-modal-vendacia {
+    padding:8px;
+    width:calc(100% - 22px);
+    color: #666666 !important;
+}
+.input-modal-vendacia-label {
+    margin:8px 0;
+}
+.modal-vendacia-label-ddd {
+    width:calc(20% - 16px);
+    padding:0 4px;
+    float:left;
+    margin: 8px 0 4px 0;
+}
+.modal-vendacia-label-telefone {
+    width:calc(80% - 16px);
+    float:left;
+    padding:0 4px;
+    margin: 8px 0 4px 0;
+}
+.input-modal-vendacia-ddd {
+    padding:7px;
+    width:calc(20% - 16px);
+    float:left;
+    margin-right:8px;
+    color: #666666 !important;
+}
+.input-modal-vendacia-fone {
+    padding:8px;
+    width:calc(80% - 28px);
+    float:left;
+    color: #666666 !important;
+}
+..textbox_padrao {
+    margin-right:0px !important;
+}
+#ucVisualizacaoCurriculo_ucModalVendaCIA_txtTelefone input {
+    float:left;
+    display:block;
+}
+.modal_nova_amarela {
+    background-image: none !important;
+    background-repeat: no-repeat;
+    height: auto !important;
+    margin: 0 auto;
+    width: 600px;
+    position: relative;
+    background-color: #F6EAD1;
+    border-radius: 8px;
+    border: solid 4px #ffffff;
+    padding-bottom:32px;
+}
+.modal_nova_conteudo{
+    height:auto !important;
+    
+}
+.input-group-addon {
+    text-align:center;
+}
+.modal-header {
+    min-height: auto !important;
+    padding: 0 !important;
+    border-bottom: none !important;
+    text-align:center;
+}
+#ucVisualizacaoCurriculo_ucModalVendaCIA_txtMensagemCliente {
+    font-size: 14px !important;
+    color: #666666 !important;
+    margin-bottom:24px;
+    width:100%;
+    resize:none;
+    width: 390px !important;
+    padding:8px;
+}

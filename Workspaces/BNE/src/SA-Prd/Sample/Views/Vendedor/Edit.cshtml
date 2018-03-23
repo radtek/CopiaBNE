@@ -1,0 +1,120 @@
+﻿@model AdminLTE_Application.CRM_Vendedor
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Vendedor
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active"><i class="fa fa-dashboard"></i> Vendedores</li>
+            <li class="active">Vendedor</li>
+        </ol>
+    </section>
+@using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <!-- Main content -->
+                        <section class="content">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="box">
+                                        <div class="box-header">
+                                            <h3 class="box-title">Edição de vendedor</h3>
+                                        </div><!-- /.box-header -->              
+                                            <div class="form-horizontal">                                               
+                                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                @Html.HiddenFor(model => model.Num_CPF)
+
+                                                <div class="form-group">
+                                                    <div class="control-label col-md-2">Nome:</div>
+                                                        <div class="col-md-10">
+                                                            @Html.EditorFor(model => model.Nme_Vendedor, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.Nme_Vendedor, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                               
+
+                                                <div class="form-group">
+                                                    <div class="control-label col-md-2">Faz atendimento:</div>
+                                                    <div class="col-md-10">
+                                                        <div class="checkbox">
+                                                            @Html.EditorFor(model => model.Flg_Efetua_Atendimento)
+                                                            @Html.ValidationMessageFor(model => model.Flg_Efetua_Atendimento, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="control-label col-md-2">E-mail:</div>
+                                                    <div class="col-md-10">
+                                                        @Html.EditorFor(model => model.Eml_Vendedor, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.ValidationMessageFor(model => model.Eml_Vendedor, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="control-label col-md-2">Inativo:</div>
+                                                    <div class="col-md-10">
+                                                        <div class="checkbox">
+                                                            @Html.EditorFor(model => model.Flg_Inativo)
+                                                            @Html.ValidationMessageFor(model => model.Flg_Inativo, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <div class="control-label col-md-2">Administrador:</div>
+                                                    <div class="col-md-10">
+                                                        <div class="checkbox">
+                                                            @Html.EditorFor(model => model.Flg_Administrador)
+                                                            @Html.ValidationMessageFor(model => model.Flg_Administrador, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="control-label col-md-2">Tada ultima distribuição:</div>
+                                                    <div class="col-md-10">
+                                                        <div class="calendar-time">
+                                                            @Html.EditorFor(model => model.Dta_Ultima_Distribuicao_Empresa)
+                                                            @Html.ValidationMessageFor(model => model.Dta_Ultima_Distribuicao_Empresa, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="control-label col-md-2">Tipo vendedor:</div>
+                                                    <div class="col-md-10">
+                                                        @Html.DropDownList("idf_Tipo_Vendedor", null, htmlAttributes: new { @class = "form-control" })
+                                                        @Html.ValidationMessageFor(model => model.idf_Tipo_Vendedor, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-offset-2 col-md-10">
+                                                        <input type="submit" value="Salvar" class="btn btn-default" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                   
+
+                                        <div>
+                                            @Html.ActionLink("Retornar a lista de vendedores", "Index")
+                                        </div>
+
+                   
+                                    </div>
+                                </div>
+                            </div>
+                       </section>
+                    }
+</aside>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

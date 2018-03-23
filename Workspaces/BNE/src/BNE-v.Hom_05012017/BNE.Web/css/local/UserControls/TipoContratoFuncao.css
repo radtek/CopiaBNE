@@ -1,0 +1,105 @@
+﻿.box_ajuda_tipo_contrato { float: left;position: relative;pointer-events: none;}
+.inner_box_tipo_contrato { position: absolute;top: -65px;}
+.img_box_tipo_contrato { width: 150px;}
+.label_principal { text-align: right; /*width: 140px;*/ width: 180px; clear: both; }
+.container_campo { float: left; padding-left: 5px; margin-left: 0; padding-top: 3px; }
+.container_campo .RadComboBox { margin-left: 0; margin-right: 5px; }
+.container_inner_campo_funcao {width:285px;}
+.linha,#linha_funcao { display: table; }
+.checkbox_quero_estagiarios { text-align: right; /*width: 140px;*/ width: 186px; clear: both;float: left;margin-left: 20px;}
+.label_quero_estagiarios { margin-left: -2px;}
+
+.inner_box_estagiario { position: absolute;top: -27px;left: -38px;}
+.img_box_estagiario {height: 92px;}
+
+
+.textoFuncao
+{
+    display:none;
+    font-size:19px;
+    height:300px;
+    margin-left:736px;
+    margin-top:15px;
+    position:absolute;
+    width:300px;
+}
+.balaoCidade
+{
+    display:none;
+}
+.balaoFuncao{
+    display:none;
+}
+
+
+.GridItems
+{ 
+    
+    float: left;
+    height: auto;
+    line-height: 100%;
+    list-style: none outside none;
+    /*margin-left: 158px;*/
+    margin-top:5px;
+    padding: 0 0 0 10px;
+    text-align: left;
+    width: 252px;
+    
+    position: relative;
+}
+
+.GridItems li
+{
+    background-color: #f9f9f9;  
+    padding: 3px;
+    float: left;
+    margin: 0 2px 5px 0 !important;
+    border: 1px solid #dfdfdf;
+    padding: 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;/*Safari, Chrome*/
+    -moz-border-radius: 5px 5px 5px 5px;/*Firefox*/
+    border-radius: 5px 5px 5px 5px;
+}
+
+.liActive
+{
+    border: 1px solid #0C71CC;
+}
+.liInactive
+{
+    border: 1px solid #FF0000;
+}
+
+.liEsconder
+{
+    display:none;    
+}
+
+.liSimilar
+{
+    background-color:#EEDD82 !important;
+}
+
+.GridItems li a
+{
+    text-decoration:none;
+}
+
+.container_alerta {   width: 884px;  height: auto;  min-height: 470px; position: relative; display: table; margin-bottom: 20px;   }
+.linha_cinza { width: 100%; height: 6px; background: #e4e4e4; margin-bottom: 25px;}
+.ct_funcao { float: left; width: 310px;  margin-right: 6px; }
+h4.tit_alerta { font-size: 18px; font-weight: 200;}
+*{ padding: 0; margin: 0;}
+i.icons_alert { float: left; margin: 2px 4px 0px 0px; color: #2b64b2; font-size: 18px;}
+.aside_funcoes { display: table; padding-bottom: 50px;  border: 1px solid #ededed; width: 280px; height: auto; margin: 14px 0px 0px 0px;  padding: 14px; -webkit-border-radius: 5px;/*Safari, Chrome*/ -moz-border-radius: 5px;/*Firefox*/ border-radius: 5px; }
+.dados_alert { float: left; background: #f5f5f5; border: 1px solid #dddddd; width: 236px; padding: 8px 0px 8px 4px;}
+.adicionar_alert  { margin-left: -7px; /*margin-left: 4px;*/ vertical-align: top; width: 32px; height: 23px; background: #72992f; border: 0px; font-size: 18px; color: #fff; cursor: pointer; -webkit-border-radius: 0 5px 5px 0;/*Safari, Chrome*/ -moz-border-radius: 0 5px 5px 0;/*Firefox*/ border-radius: 0 5px 5px 0;}
+.adicionar_alert_idioma  { vertical-align: top; width: 32px; height: 23px; background: #72992f; border: 0px; font-size: 18px; color: #fff; cursor: pointer; -webkit-border-radius: 5px 5px 5px 5px;/*Safari, Chrome*/ -moz-border-radius: 5px 5px 5px 5px;/*Firefox*/ border-radius: 5px 5px 5px 5px;}
+.adicionar_alert:hover { background: #65862c;}
+p.inf_alertav {font-family: 'Arial'; color: #aaaaaa; font-size: 11px; margin: 8px 0px 8px 0px; width: 260px;}
+p.inf_alertas {font-family: 'Arial'; color: #aaaaaa; font-size: 11px; margin: 8px 0px 8px 0px; width: 220px; position: relative;}
+i.icons_alert2 { float: left; margin: 10px 4px 0px 0px; color: #6b6b6b; font-size: 18px;} 
+.salvar_alerta_v { float: right; background: #2b64b2; border: 0px; padding: 20px; color: #fff; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; font-weight: 600;  cursor: pointer; margin: 55px 36px 0px 0px;} 
+.salvar_alerta_v:hover { background: #204b86;}
+.fechar_img { margin: 0px 0px 0px 0px; position: relative; float: right; }
+

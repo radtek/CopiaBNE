@@ -1,0 +1,23 @@
+/*------------------------------------------------------------ Theme Cargo*/
+.topo {
+  background-image: url("/img/App_Themes/Cargo/bg_topo.gif"); }
+
+.painel_filtro_vaga_escondido {
+  background-image: linear-gradient(90deg, #9CB6A6 6%, #6D7F74 18%, #9CB6A6 72%, #A4BFAE 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #A4BFAE 6%, #6D7F74 18%, #9CB6A6 72%, #A4BFAE 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #A4BFAE 6%, #6D7F74 18%, #9CB6A6 72%, #A4BFAE 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #A4BFAE 6%, #6D7F74 18%, #9CB6A6 72%, #A4BFAE 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#A4BFAE', endColorstr='#6D7F74') !important; }
+
+#pnlBusca.painel_filtro_vaga {
+  background-image: linear-gradient(90deg, #9CB6A6 6%, #6D7F74 18%, #9CB6A6 72%, #A4BFAE 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #A4BFAE 6%, #6D7F74 18%, #9CB6A6 72%, #A4BFAE 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #A4BFAE 6%, #6D7F74 18%, #9CB6A6 72%, #A4BFAE 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #A4BFAE 6%, #6D7F74 18%, #9CB6A6 72%, #A4BFAE 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#A4BFAE', endColorstr='#6D7F74') !important;
+  border-radius: 0 4px 4px 4px !important; }
+
+#aBuscarVagas {
+  border-bottom: 35px solid #A4BFAE !important; }
+
+/*# sourceMappingURL=topo.css.map */

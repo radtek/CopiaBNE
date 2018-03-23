@@ -1,0 +1,13 @@
+﻿@using System.Web.Optimization
+@model BNE.PessoaJuridica.Web.Models.CadastroEmpresa
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/cadastro-empresa")
+}
+@using (Ajax.BeginForm("Index", "Empresa", new AjaxOptions { HttpMethod = "Post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "minhaDiv", OnSuccess = "onSuccess" }, new { @id = "CadastroEmpresaForm" }))
+{
+    <div id="minhaDiv" class="mdl-grid">
+        @Html.Partial("_Passo1", Model)
+    </div>
+}

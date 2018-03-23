@@ -1,0 +1,293 @@
+﻿<div id="Progresso" class="DivProgresso" ng-show="carregando==true">
+    <img src="../../images/gif-load.gif" /> Carregando empresas... 
+</div>
+
+
+<ol class="container breadcrumb breadcrumb-margin">
+    <li><a href="#/Home">Home</a></li>
+    <li class="active">Empresas</li>
+</ol>
+<!--<div id="DivSemDados" class="DivSemEmpresas text-center" ng-show="empresas.length == 0">
+    <div class="text-center">
+        <i class="fa fa-thumbs-o-down fa-5x fa-color"></i>
+        <h3 class="text-modal">Não encontramos nenhuma empresa na sua região.</h3>
+        <h3 class="text-modal">Tente outra vez mais tarde.</h3>
+
+    </div>
+</div>-->
+<div class="container marginCadastroEmpresa">
+    <article class="col-lg-12" infinite-scroll="loadMore()" ng-show="primeiraVez==false">
+        <h2 class="col-lg-12 margin-top-20">Envie seu currículo</h2>
+        <p class="clearfix"></p>
+
+        <div class="col-lg-4 ajuste-col-lg-4" ng-repeat="empresa in empresas">
+            <div class="gradient-box">
+                <div class="b boxEmpresa1">
+                    <div class="col-lg-7 row">
+                        <h5><strong>{{empresa.nomeFantasia | limparNome}}</strong></h5>
+                        <p class="small">{{empresa.apresentacao || "Se você é um profissional qualificado, em busca de novos desafios e interessado em fazer parte de uma equipe de trabalho capaz de potencializar seu..."}}</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="data:image/png;base64,{{empresa.logoEmpresa}}" class="img-responsive" ng-show="empresa.logoEmpresa != null" />
+                        <img src="images/icone-empresa.png" class="img-responsive margin-left-20" ng-show="empresa.logoEmpresa == null" />
+                        <a class="btn space  candidatar col-lg-12" data-toggle="modal" data-target="#ModalDadosEmpresa" ng-click="MaisDadosEmpresa(this)">Enviar <br> currículo</a>
+                    </div><p class="clearfix"></p>
+                </div>
+            </div>
+        </div>
+        <div id="divError" class="alert alert-danger">Ocorreu um erro ao carregar as empresas, para tentar novamente <a href="" ng-click="CarregarEmpresas(21)">clique aqui</a></div>
+        <div id="Progresso" class="DivProgressoDemanda" ng-show="carregandoPorDemanda==true">
+            <div class="gradient-box">
+                Carregando mais empresas...
+            </div>
+        </div>
+        <a href="" class="btn btn-success" id="bntMaisEmpresas" ng-click="loadMore()">Carregar mais empresas</a>
+    </article>
+</div>
+<!-- START Modal Quero me Candidatar -->
+<div class="modal fade" id="ModalDadosEmpresa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modalDadosVagas">
+        <div class="modal-bg modalDadosVagas" ng-show="verDadosEmpresa">
+            <div class="modal-header modal-headerCVs">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="row clearfix">
+                                <div class="col-md-7 column">
+                                    <dl>
+                                        <dd>
+                                            <strong>{{listaEmpresasControle.empresa.nomeFantasia}}</strong>
+                                        </dd>
+                                        <p></p>
+                                        <dd>
+                                            {{listaEmpresasControle.empresa.apresentacao || "Se você é um profissional qualificado, em busca de novos desafios e interessado em fazer parte de uma equipe de trabalho capaz de potencializar seu crescimento profissional, teremos muito prazer em conhecê-lo."}}
+                                        </dd>
+                                    </dl>
+                                    <p class="clearfix"></p>
+
+                                </div>
+                                <div class="col-md-5 column">
+                                    <dl>
+                                        <dd><img src="data:image/png;base64,{{listaEmpresasControle.empresa.logoEmpresa}}" ng-show="listaEmpresasControle.empresa.logoEmpresa != null" class="img-responsive imgEmpresa" />
+                                            <img src="images/icone-empresa.png" ng-show="listaEmpresasControle.empresa.logoEmpresa == null" class="img-responsive" style="margin-left:70px;" />
+                                        </dd>
+                                        <p></p>
+                                        <p></p>
+                                        <dd class="dtSubtitule1c">OPORTUNIDADES</dd>
+                                        <p></p>
+                                        <p></p>
+                                        <dd>
+                                            <ul>
+                                                <li ng-class="{0:'li-no-type'}[vaga.funcao.length]" ng-repeat="vaga in listaEmpresasControle.empresa.vagas">{{vaga.funcao}}</li>
+                                            </ul>
+                                        </dd>
+                                        <p class="clearfix"></p>
+                                        <dd><button type="button" id="bntEnviarCV" class="btn btn-warning btn-lg btn-block" ng-click="EnviarCurriculo()">ENVIAR MEU CURRÍCULO</button></dd>
+                                        <p class="clearfix"></p>
+                                    </dl>
+                                    <div id="divProcessandoEnvio" class="col-md-12 column inativo alert alert-link alert-margin-top">
+                                        <img src="images/gif-load.gif" /> Enviando currículo...
+                                    </div>
+                                    <div id="DivIntencaoJaEnviada" class="col-md-12 column pull-right inativo alert alert-success">
+                                        <i class="fa fa-thumbs-o-up fa-2x"></i>
+                                        Você enviou o currículo para esta empresa em <strong>{{dataEnvio}}</strong>.
+                                    </div>
+                                    <div id="DivErroEnviarEmail" class="col-md-12 column pull-right inativo alert alert-warning">
+                                        <i class="fa fa-frown-o fa-2x"></i> Erro ao enviar e-mail. Por favor, tente novamente.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div id="DivReg3" class="modal-bg" ng-show="verReg3">
+            <div class="modal-header modal-headerCVs">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="row clearfix">
+                                <div>
+                                    <dl>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            <strong>Parabéns!</strong>  Seu currículo foi enviado para a empresa <strong>{{listaEmpresasControle.empresa.nomeFantasia}}</strong> com sucesso!
+                                        </dd>
+                                        <p></p>
+                                        <dt class="dtSubtitule1">
+                                            Você ainda tem 2 Envios gratuitos!
+                                        </dt>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Dica do BNE:
+                                        </dd>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Mais de 100.000 empresas procuram candidatos no BNE para suas vagas. Então mantenha seu currículo atualizado para ficar em destaque para essas empresas.
+                                        </dd>
+                                    </dl>
+                                    <p class="clearfix"></p>
+                                    <button type="button" class="btn btn-warning btn-lg" data-dismiss="modal">USAR MEU BÔNUS</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="DivReg2" class="modal-bg" ng-show="verReg2">
+            <div class="modal-header modal-headerCVs">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <dl>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            <strong>Parabéns!</strong>  Seu currículo foi enviado para a empresa <strong>{{listaEmpresasControle.empresa.nomeFantasia}}</strong> com sucesso!
+                                        </dd>
+                                        <p></p>
+                                        <dt class="dtSubtitule1">
+                                            Você ainda tem 1 Envio gratuito!
+                                        </dt>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Dica do BNE:
+                                        </dd>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Escolher empresas de ramos de atuação em que você possui experiência podem render bons resultados.
+                                        </dd>
+                                    </dl>
+                                    <p class="clearfix"></p>
+                                    <button type="button" class="btn btn-warning btn-lg" data-dismiss="modal">VER OUTRAS VAGAS</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="DivReg1" class="modal-bg" ng-show="verReg1">
+            <div class="modal-header modal-headerCVs">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <dl>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            <strong>Parabéns!</strong>  Seu currículo foi enviado para a empresa <strong>{{listaEmpresasControle.empresa.nomeFantasia}}</strong> com sucesso!
+                                        </dd>
+                                        <p></p>
+                                        <dt class="dtSubtitule1">
+                                            Seus envios de currículos gratuitos acabaram.
+                                        </dt>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Dica do BNE:
+                                        </dd>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Com o serviço VIP do BNE você pode mandar seu currículo para todas as empresas cadastradas.
+                                        </dd>
+                                    </dl>
+                                    <p class="clearfix"></p>
+                                    <button type="button" class="btn btn-warning btn-lg" ng-click="RedirecionaCompraVip()">QUERO CONHECER O VIP!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="DivRegFim" class="modal-bg" ng-show="verRegFim">
+            <div class="modal-header modal-headerCVs">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <dl>
+                                        <dd class="ddSubtitule1">
+                                            Seus envios de currículos gratuitos acabaram.
+                                        </dd>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Quer mandar seu perfil profissional para todas as empresas listadas?
+                                        </dd>
+                                        <p></p>
+                                        <dt class="dtSubtitule1">
+                                            Conheça o nosso <strong>serviço VIP</strong>
+                                        </dt>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            E saiba tudo o que ele pode fazer para seu novo emprego!
+                                        </dd>
+                                    </dl>
+                                    <p class="clearfix"></p>
+                                    <button type="button" class="btn btn-warning btn-lg" ng-click="RedirecionaCompraVip()">QUERO CONHECER O VIP!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="DivCandVip" class="modal-bg" ng-show="verVip==true">
+            <div class="modal-header modal-headerCVs">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="row clearfix">
+                                <div>
+                                    <dl>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            <strong>Parabéns!</strong>  Seu currículo foi enviado para a empresa <strong>{{listaEmpresasControle.empresa.nomeFantasia}}</strong> com sucesso!
+                                        </dd>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Confira <strong>todas as vagas</strong> que temos <strong>para você</strong>.
+                                        </dd>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Candidate-se e <strong>saia na frente</strong>!
+                                        </dd>
+                                    </dl>
+                                    <p class="clearfix"></p>
+                                    <button type="button" class="btn btn-warning btn-lg btn-block" data-dismiss="modal">VER OUTRAS VAGAS</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Modal Quero me Candidatar -->

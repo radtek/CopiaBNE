@@ -1,0 +1,41 @@
+﻿body { 
+}
+.ajusta {padding: 0 0 0px!important; 
+         margin-top:-18px!important;        
+}
+.containerTextos
+{
+    padding-top: 60px;
+    position: static;
+    width: 830px;
+}
+.containerImgRelatorioSalarialTelaMagica {
+    background-image: url("/img/RelatorioSalarialMercadoTelaMagica/imgRelatorioSalarial.jpg");
+    background-repeat: no-repeat;
+    height: 356px;
+    padding-right: 60px;
+}
+.containerBotao{
+    margin-top: 30px; margin-right: -10px;
+    text-align: right;
+}
+.containerTextoQuemMeViu {
+    font-family: 'Open Sans Condensed', sans-serif!important;
+    font-size: 49px;
+    font-weight: bold;
+    margin-top: 40px;
+    text-align: right;
+}
+.containerTextoSejaCliente{
+    color: #666;
+    display: block;
+    font-family: arial!important;
+    font-size: 16px;
+    font-weight: bold;
+    width: 290px;
+    margin-left: auto; margin-right: 0px; margin-top: 13px;
+    text-align: right;
+}
+.enfatizaTexto {
+    color: #f56e23;
+}

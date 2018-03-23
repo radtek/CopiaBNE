@@ -1,0 +1,108 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsJob.WindowsService", "WhatsJob.WindowsService\WhatsJob.WindowsService.csproj", "{23E40354-6C67-4FF0-89FD-33D1282CD493}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BNE.ExceptionLog", "BNE.ExceptionLog", "{BF3702E0-4038-496A-8796-23C3DB6F7B36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BNE.ExceptionLog", "..\BNE-New\BNE.ExceptionLog\BNE.ExceptionLog.csproj", "{5FF511DD-6705-4338-AAF7-0174B87DEE18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsJob.Model", "WhatsJob.Model\WhatsJob.Model.csproj", "{30C1C7A6-C076-4D35-84C0-3E804DA00A7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsJob.Data", "WhatsJob.Data\WhatsJob.Data.csproj", "{4B977210-819A-4402-A561-0FE08840E265}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsJob.Domain", "WhatsJobs.Domain\WhatsJob.Domain.csproj", "{03622514-51CA-4753-BB30-260CE7BC7101}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsAppApi", "C:\Users\franciscoribas\Documents\GitHub\WhatsAPINet\WhatsAppApi\WhatsAppApi.csproj", "{3FC9096A-C4D2-40C7-BE7B-D98ACAB3BD2B}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.employer.com.br:8080/tfs/defaultcollection
+		SccProjectUniqueName0 = ..\\BNE-New\\BNE.ExceptionLog\\BNE.ExceptionLog.csproj
+		SccProjectTopLevelParentUniqueName0 = WhatsJob.sln
+		SccProjectName0 = ../BNE-New/BNE.ExceptionLog
+		SccLocalPath0 = ..\\BNE-New\\BNE.ExceptionLog
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = C:\\Users\\franciscoribas\\Documents\\GitHub\\WhatsAPINet\\WhatsAppApi\\WhatsAppApi.csproj
+		SccProjectName2 = WhatsAppApi
+		SccLocalPath2 = C:\\Users\\franciscoribas\\Documents\\GitHub\\WhatsAPINet\\WhatsAppApi
+		SccProjectUniqueName3 = WhatsJob.Data\\WhatsJob.Data.csproj
+		SccProjectName3 = WhatsJob.Data
+		SccLocalPath3 = WhatsJob.Data
+		SccProjectUniqueName4 = WhatsJob.Model\\WhatsJob.Model.csproj
+		SccProjectName4 = WhatsJob.Model
+		SccLocalPath4 = WhatsJob.Model
+		SccProjectUniqueName5 = WhatsJob.WindowsService\\WhatsJob.WindowsService.csproj
+		SccProjectName5 = WhatsJob.WindowsService
+		SccLocalPath5 = WhatsJob.WindowsService
+		SccProjectUniqueName6 = WhatsJobs.Domain\\WhatsJob.Domain.csproj
+		SccProjectName6 = WhatsJobs.Domain
+		SccLocalPath6 = WhatsJobs.Domain
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23E40354-6C67-4FF0-89FD-33D1282CD493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23E40354-6C67-4FF0-89FD-33D1282CD493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23E40354-6C67-4FF0-89FD-33D1282CD493}.Debug|x64.ActiveCfg = Debug|x64
+		{23E40354-6C67-4FF0-89FD-33D1282CD493}.Debug|x64.Build.0 = Debug|x64
+		{23E40354-6C67-4FF0-89FD-33D1282CD493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23E40354-6C67-4FF0-89FD-33D1282CD493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23E40354-6C67-4FF0-89FD-33D1282CD493}.Release|x64.ActiveCfg = Release|x64
+		{23E40354-6C67-4FF0-89FD-33D1282CD493}.Release|x64.Build.0 = Release|x64
+		{5FF511DD-6705-4338-AAF7-0174B87DEE18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FF511DD-6705-4338-AAF7-0174B87DEE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FF511DD-6705-4338-AAF7-0174B87DEE18}.Debug|x64.ActiveCfg = Debug|x64
+		{5FF511DD-6705-4338-AAF7-0174B87DEE18}.Debug|x64.Build.0 = Debug|x64
+		{5FF511DD-6705-4338-AAF7-0174B87DEE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FF511DD-6705-4338-AAF7-0174B87DEE18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FF511DD-6705-4338-AAF7-0174B87DEE18}.Release|x64.ActiveCfg = Release|x64
+		{5FF511DD-6705-4338-AAF7-0174B87DEE18}.Release|x64.Build.0 = Release|x64
+		{30C1C7A6-C076-4D35-84C0-3E804DA00A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30C1C7A6-C076-4D35-84C0-3E804DA00A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30C1C7A6-C076-4D35-84C0-3E804DA00A7D}.Debug|x64.ActiveCfg = Debug|x64
+		{30C1C7A6-C076-4D35-84C0-3E804DA00A7D}.Debug|x64.Build.0 = Debug|x64
+		{30C1C7A6-C076-4D35-84C0-3E804DA00A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30C1C7A6-C076-4D35-84C0-3E804DA00A7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30C1C7A6-C076-4D35-84C0-3E804DA00A7D}.Release|x64.ActiveCfg = Release|x64
+		{30C1C7A6-C076-4D35-84C0-3E804DA00A7D}.Release|x64.Build.0 = Release|x64
+		{4B977210-819A-4402-A561-0FE08840E265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B977210-819A-4402-A561-0FE08840E265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B977210-819A-4402-A561-0FE08840E265}.Debug|x64.ActiveCfg = Debug|x64
+		{4B977210-819A-4402-A561-0FE08840E265}.Debug|x64.Build.0 = Debug|x64
+		{4B977210-819A-4402-A561-0FE08840E265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B977210-819A-4402-A561-0FE08840E265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B977210-819A-4402-A561-0FE08840E265}.Release|x64.ActiveCfg = Release|x64
+		{4B977210-819A-4402-A561-0FE08840E265}.Release|x64.Build.0 = Release|x64
+		{03622514-51CA-4753-BB30-260CE7BC7101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03622514-51CA-4753-BB30-260CE7BC7101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03622514-51CA-4753-BB30-260CE7BC7101}.Debug|x64.ActiveCfg = Debug|x64
+		{03622514-51CA-4753-BB30-260CE7BC7101}.Debug|x64.Build.0 = Debug|x64
+		{03622514-51CA-4753-BB30-260CE7BC7101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03622514-51CA-4753-BB30-260CE7BC7101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03622514-51CA-4753-BB30-260CE7BC7101}.Release|x64.ActiveCfg = Release|x64
+		{03622514-51CA-4753-BB30-260CE7BC7101}.Release|x64.Build.0 = Release|x64
+		{3FC9096A-C4D2-40C7-BE7B-D98ACAB3BD2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FC9096A-C4D2-40C7-BE7B-D98ACAB3BD2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FC9096A-C4D2-40C7-BE7B-D98ACAB3BD2B}.Debug|x64.ActiveCfg = Debug|x64
+		{3FC9096A-C4D2-40C7-BE7B-D98ACAB3BD2B}.Debug|x64.Build.0 = Debug|x64
+		{3FC9096A-C4D2-40C7-BE7B-D98ACAB3BD2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FC9096A-C4D2-40C7-BE7B-D98ACAB3BD2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FC9096A-C4D2-40C7-BE7B-D98ACAB3BD2B}.Release|x64.ActiveCfg = Release|x64
+		{3FC9096A-C4D2-40C7-BE7B-D98ACAB3BD2B}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5FF511DD-6705-4338-AAF7-0174B87DEE18} = {BF3702E0-4038-496A-8796-23C3DB6F7B36}
+	EndGlobalSection
+EndGlobal

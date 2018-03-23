@@ -1,0 +1,57 @@
+﻿.titulo_modal_exclusivo_vip
+{
+	color: #0A3079;
+	display: block;
+	text-align: center;
+	height: 13px;
+}
+
+
+.img_cartoes
+{
+	text-align: center;
+	margin-top: 30px;
+	height: 120px;
+}
+
+.img_cartoes span
+{
+	margin-right: 30px;
+	vertical-align: super;
+}
+
+.textbox_padrao.numero_cartao
+{
+	max-width: 40px;
+	border:1px solid #B5CAEA;
+	margin-left: 4px;
+	margin-bottom: 4px;
+	margin-right: 4px;
+	padding-left: 11px;	
+	vertical-align: middle;
+}
+
+/*
+.container_campo_numero_cartao span input
+{
+	display: inline;
+}
+*/
+.container_campo_numero_cartao span div
+{
+	display: inline;
+}
+
+
+
+
+/* DEPOSITO CONTA CORRENTE */
+
+
+/*
+#divContaCorrente table tr td
+{
+	background-color: Red;
+}*/
+
+/* FIM: DEPOSITO CONTA CORRENTE */

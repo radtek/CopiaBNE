@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD787B4C-B825-4D17-A807-90A84FE3138F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.Global.Data</RootNamespace>
+    <AssemblyName>BNE.Global.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrossCutting.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrossCutting.Infrastructure.1.0.4\lib\net461\CrossCutting.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="SharedKernel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharedKernel.1.2.24\lib\net461\SharedKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\CargoGlobalConfiguration.cs" />
+    <Compile Include="Configuration\CategoriaCargoGlobalConfiguration.cs" />
+    <Compile Include="Configuration\DeficienciaConfiguration.cs" />
+    <Compile Include="Configuration\DisponibilidadeGlobalConfiguration.cs" />
+    <Compile Include="Configuration\EscolaridadeConfiguration.cs" />
+    <Compile Include="Configuration\FuncaoConfiguration.cs" />
+    <Compile Include="Configuration\FuncaoSinonimoConfiguration.cs" />
+    <Compile Include="Configuration\EstadoConfiguration.cs" />
+    <Compile Include="Configuration\CidadeConfiguration.cs" />
+    <Compile Include="Configuration\BairroConfiguration.cs" />
+    <Compile Include="Configuration\GrauEscolaridadeConfiguration.cs" />
+    <Compile Include="Configuration\IdiomaConfiguration.cs" />
+    <Compile Include="Configuration\OrigemGlobalConfiguration.cs" />
+    <Compile Include="Configuration\RamoAtividadeConfiguration.cs" />
+    <Compile Include="Configuration\RankingEmailConfiguration.cs" />
+    <Compile Include="Configuration\SexoConfiguration.cs" />
+    <Compile Include="Configuration\TipoFuncaoGlobalConfiguration.cs" />
+    <Compile Include="Configuration\TipoOrigemGlobalConfiguration.cs" />
+    <Compile Include="Configuration\TipoTelefoneConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CargoRepository.cs" />
+    <Compile Include="Repositories\CategoriaCargoRepository.cs" />
+    <Compile Include="Repositories\CidadeRepository.cs" />
+    <Compile Include="Repositories\BairroRepository.cs" />
+    <Compile Include="Repositories\DeficienciaRepository.cs" />
+    <Compile Include="Repositories\DisponibilidadeRepository.cs" />
+    <Compile Include="Repositories\EscolaridadeRepository.cs" />
+    <Compile Include="Repositories\FuncaoSinonimoRepository.cs" />
+    <Compile Include="Repositories\GrauEscolaridadeRepository.cs" />
+    <Compile Include="Repositories\IdiomaRepository.cs" />
+    <Compile Include="Repositories\OrigemRepository.cs" />
+    <Compile Include="Repositories\RamoAtividadeRepository.cs" />
+    <Compile Include="Repositories\RankingEmailRepository.cs" />
+    <Compile Include="Repositories\SexoRepository.cs" />
+    <Compile Include="Repositories\TipoOrigemRepository.cs" />
+    <Compile Include="Repositories\TipoTelefoneRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BNE.Data\BNE.Data.csproj">
+      <Project>{287ba500-e16d-46ad-91b7-442cda127398}</Project>
+      <Name>BNE.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Global.Model\BNE.Global.Model.csproj">
+      <Project>{1C31B8D0-C2D2-4A48-893E-C2B43A852978}</Project>
+      <Name>BNE.Global.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

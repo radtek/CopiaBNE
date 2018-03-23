@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BNE.Dashboard.ServerMonitor" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SendStatisticsInterval" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5000</Value>
+    </Setting>
+    <Setting Name="GetStatisticInterval" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="AplicationName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SINE</Value>
+    </Setting>
+    <Setting Name="DashboardAPI" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://dashboard.bne.com.br/webapi/</Value>
+    </Setting>
+    <Setting Name="DashboardAPI_Dev" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:5048/</Value>
+    </Setting>
+    <Setting Name="SolrCheck" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SolrURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://10.114.113.205:8983/solr/SINE_VAGA_PRD/select?q=*%3A*&amp;wt=json&amp;sort=score+desc,Dta_Inicio+desc,Dta_Cadastro+desc</Value>
+    </Setting>
+    <Setting Name="SqlCheck" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SqlConnection" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=EMPHW0114209\PRD;Initial Catalog=SINE_PRD;User ID=SINE_app;Password=s1n3pr0d@2014;</Value>
+    </Setting>
+    <Setting Name="SqlCommand" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SELECT TOP 1 * FROM SINE.SIN_Vaga</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

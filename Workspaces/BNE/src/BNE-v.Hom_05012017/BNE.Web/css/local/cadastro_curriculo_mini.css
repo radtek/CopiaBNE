@@ -1,0 +1,47 @@
+﻿/*-.linha
+{
+	clear: none;
+}-*/
+
+.foto_mini_curriculo { 
+    position: absolute; 
+    float: left; 
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+
+.interna .painel_botoes
+{
+    margin-top: 20px;
+}
+
+input[id*='txtFuncaoPretendida']
+{
+    width: 277px;
+}
+
+input[id$='txtFuncaoPretendida1']
+{
+    width: 266px;
+}
+
+.textbox_nome
+{
+    width: 266px;
+}
+
+.painel_padrao .textbox_cidade_mini_cv
+{
+    position: static;
+    width: 266px;
+}
+
+.dropdown_escolaridade
+{
+    -webkit-appearance: none;
+    width: 280px;
+}
+.container_campoAdjust_cadMini {position:relative;}
+.textarea_padraoAdjust_cadMini {width: 55px;text-align: right;padding-right: 20px;}
+.decimais_cadMini {position: absolute; left: 73px; bottom: 1px;}

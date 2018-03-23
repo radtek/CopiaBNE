@@ -1,0 +1,62 @@
+/*
+Error: File to import not found or unreadable: ../../src/_color-definitions.scss.
+       Load path: C:/xampp/htdocs/bne_novo/sass
+        on line 17 of sass/materia.scss
+
+12:  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+13:  * See the License for the specific language governing permissions and
+14:  * limitations under the License.
+15:  *\/
+16: 
+17: @import '../../src/_color-definitions.scss';
+18: $color-primary: $palette-teal-500;
+19: $color-primary-dark: $palette-teal-800;
+20: $color-accent: $palette-red-A200;
+21: $color-primary-contrast: $color-dark-contrast;
+22: $color-accent-contrast: $color-dark-contrast;
+
+Backtrace:
+sass/materia.scss:17
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/import_node.rb:67:in `rescue in import'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/import_node.rb:45:in `import'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/import_node.rb:28:in `imported_file'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/import_node.rb:37:in `css_import?'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/perform.rb:157:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/engine.rb:295:in `render_with_sourcemap'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/lib/sass/plugin/compiler.rb:328:in `block in watch'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/vendor/listen/lib/listen/listener.rb:252:in `call'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.17/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: ../../src/_color-definitions.scss.\A        Load path: C:/xampp/htdocs/bne_novo/sass\A         on line 17 of sass/materia.scss\A \A 12:  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\A 13:  * See the License for the specific language governing permissions and\A 14:  * limitations under the License.\A 15:  */\A 16: \A 17: @import '../../src/_color-definitions.scss';\A 18: $color-primary: $palette-teal-500;\A 19: $color-primary-dark: $palette-teal-800;\A 20: $color-accent: $palette-red-A200;\A 21: $color-primary-contrast: $color-dark-contrast;\A 22: $color-accent-contrast: $color-dark-contrast;"; }

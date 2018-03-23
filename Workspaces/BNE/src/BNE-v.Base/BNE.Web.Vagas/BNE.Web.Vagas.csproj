@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EF601A10-6B77-4D0C-8860-8BA2B22A4336}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.Web.Vagas</RootNamespace>
+    <AssemblyName>BNE.Web.Vagas</AssemblyName>
+    <IgnoreDeployManagedRuntimeVersion>True</IgnoreDeployManagedRuntimeVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Employer.BNE.DAL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SolutionItens\Library\Employer.BNE.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Employer.DAL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SolutionItens\Library\Employer.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AutomapperConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Code\ActionFilter\AllowCrossSiteJsonActionFilterAttribute.cs" />
+    <Compile Include="Code\ActionFilter\FuncaoCidadeActionFilterAttribute.cs" />
+    <Compile Include="Code\ActionFilter\LoginActionFilterAttribute.cs" />
+    <Compile Include="Code\Helpers\FormatHelper.cs" />
+    <Compile Include="Code\Helpers\HtmlHelpers.cs" />
+    <Compile Include="Code\Helpers\MetatagHelper.cs" />
+    <Compile Include="Code\Helpers\Paginacao\IPagedList.cs" />
+    <Compile Include="Code\Helpers\Paginacao\LimitLessPagedCollection.cs" />
+    <Compile Include="Code\Helpers\Paginacao\PagedList.cs" />
+    <Compile Include="Code\Helpers\Paginacao\Pager.cs" />
+    <Compile Include="Code\Helpers\Paginacao\PagerExtesions.cs" />
+    <Compile Include="Code\Helpers\Paginacao\PagerOptions.cs" />
+    <Compile Include="Code\Helpers\Paginacao\PagerOptionsBuilder.cs" />
+    <Compile Include="Code\Helpers\Paginacao\PaginationModel.cs" />
+    <Compile Include="Code\Helpers\Paginacao\RouteValueDictionaryExtensions.cs" />
+    <Compile Include="Code\Helpers\SEO\Enumeradores.cs" />
+    <Compile Include="Code\Helpers\SEO\PageAttributes.cs" />
+    <Compile Include="Code\Helpers\SEO\SEOLink.cs" />
+    <Compile Include="Code\Helpers\SEO\LinkHelper.cs" />
+    <Content Include="Content\BuscaDeVagas.css" />
+    <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BuscaVagaController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ResultadoPesquisaVagaController.cs" />
+    <Compile Include="Controllers\VagaController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AtalhoTopo.cs" />
+    <Compile Include="Models\CompartilhamentoEmail.cs" />
+    <Compile Include="Models\DadosEmpresa.cs" />
+    <Compile Include="Models\DegustacaoCandidatura.cs" />
+    <Compile Include="Models\Estatistica.cs" />
+    <Compile Include="Models\ExperienciaProfissional.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\PerguntaCelular.cs" />
+    <Compile Include="Models\PerguntaEmail.cs" />
+    <Compile Include="Models\PerguntasCandidatura.cs" />
+    <Compile Include="Models\PesquisaVaga.cs" />
+    <Compile Include="Models\ResultadoPesquisaVaga.cs" />
+    <Compile Include="Models\Rodape.cs" />
+    <Compile Include="Models\SucessoCandidatura.cs" />
+    <Compile Include="Models\Vaga.cs" />
+    <Compile Include="Models\VagaCandidatura.cs" />
+    <Compile Include="Models\VagaCompartilhamento.cs" />
+    <Compile Include="Models\VagaSimilar.cs" />
+    <Compile Include="Models\VisualizarVaga.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\ModalCompartilhamentoEmail.css" />
+    <Content Include="Content\ModalDadosEmpresa.css" />
+    <Content Include="Content\ModalDegustacaoCandidatura.css" />
+    <Content Include="Content\ModalExperienciaProfissional.css" />
+    <Content Include="Content\ModalPerguntasCandidatura.css" />
+    <Content Include="Content\ModalSucessoCandidatura.css" />
+    <Content Include="Content\ModalSucessoVagaCompartilhamento.css" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Content\themes\base\custom.css" />
+    <Content Include="Content\Vaga.css" />
+    <Content Include="Content\VisualizarVaga.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\icone-we.png" />
+    <Content Include="Images\aba_buscar_curriculos_seta_baixa.png" />
+    <Content Include="Images\aba_buscar_curriculos_seta_cima.png" />
+    <Content Include="Images\aba_buscar_vagas_seta_baixa.png" />
+    <Content Include="Images\aba_buscar_vagas_seta_cima.png" />
+    <Content Include="Images\aba_pesquisa_vagas.png" />
+    <Content Include="Images\barra_rodape.png" />
+    <Content Include="Images\barra_separar_informacao.png" />
+    <Content Include="Images\barra_separar_rodape.png" />
+    <Content Include="Images\bg_barra_paginacao.png" />
+    <Content Include="Images\bg_callout_painel_esquerda.png" />
+    <Content Include="Images\bg_fundo_conteudo.png" />
+    <Content Include="Images\bg_topo.png" />
+    <Content Include="Images\botao_padrao.png" />
+    <Content Include="Images\btn_buscar_vagas.png" />
+    <Content Include="Images\btn_compartilhar_facebook.png" />
+    <Content Include="Images\btn_compartilhar_email.png" />
+    <Content Include="Images\btn_compartilhar_email_excluir.png" />
+    <Content Include="Images\btn_entrar.png" />
+    <Content Include="Images\btn_modal_empresa_eu_quero.png" />
+    <Content Include="Images\btn_paginacao_anterior_off.png" />
+    <Content Include="Images\btn_paginacao_anterior_on.png" />
+    <Content Include="Images\btn_paginacao_primeira_off.png" />
+    <Content Include="Images\btn_paginacao_primeira_on.png" />
+    <Content Include="Images\btn_paginacao_proxima_off.png" />
+    <Content Include="Images\btn_paginacao_proxima_on.png" />
+    <Content Include="Images\btn_paginacao_ultima_off.png" />
+    <Content Include="Images\btn_paginacao_ultima_on.png" />
+    <Content Include="Images\btn_quero_me_candidatar.png" />
+    <Content Include="Images\btn_quero_me_candidatar_ja_enviei.png" />
+    <Content Include="Images\btn_quero_passar_para_vip.png" />
+    <Content Include="Images\btn_sair.png" />
+    <Content Include="Images\btn_usar_bonus_cinza.png" />
+    <Content Include="Images\icone_atulizar_curriculo.png" />
+    <Content Include="Images\icone_curriculo.png" />
+    <Content Include="Images\icone_empresa.png" />
+    <Content Include="Images\icone_pesquisa_salarial.png" />
+    <Content Include="Images\icone_quem_me_viu.png" />
+    <Content Include="Images\icone_sala_vip.png" />
+    <Content Include="Images\icone_teste_cores.png" />
+    <Content Include="Images\icone_teste_sistmars.png" />
+    <Content Include="Images\icone_vaga.png" />
+    <Content Include="Images\icone_validacao_campo.gif" />
+    <Content Include="Images\img_alerta_bne.png" />
+    <Content Include="Images\img_bne_acessolivre.png" />
+    <Content Include="Images\img_bne_recomenda.png" />
+    <Content Include="Images\img_compartilhamento_vaga_sucesso.png" />
+    <Content Include="Images\img_confirmacao_curtir.png" />
+    <Content Include="Images\img_envelope_bne.png" />
+    <Content Include="Images\img_modal_empresa_confidencial_icone.png" />
+    <Content Include="Images\img_modal_empresa_fechadura.png" />
+    <Content Include="Images\img_modal_questionario_separador_perguntas.png" />
+    <Content Include="Images\img_vip_universitario_recomenda.png" />
+    <Content Include="Images\logo_bne.png" />
+    <Content Include="Images\logo_bne_facebook.png" />
+    <Content Include="Images\logo_vaga_facebook.png" />
+    <Content Include="Images\modal\btn_fechar_modal.png" />
+    <Content Include="Images\modal\btn_fechar_modal_amarela.png" />
+    <Content Include="Images\modal\btn_fechar_modal_vermelha.png" />
+    <Content Include="Images\modal\img_background_modal.png" />
+    <Content Include="Images\modal\img_background_modal_amarela.png" />
+    <Content Include="Images\old\accent.png" />
+    <Content Include="Images\old\bullet.png" />
+    <Content Include="Images\old\heroAccent.png" />
+    <Content Include="Images\old\orderedList0.png" />
+    <Content Include="Images\old\orderedList1.png" />
+    <Content Include="Images\old\orderedList2.png" />
+    <Content Include="Images\old\orderedList3.png" />
+    <Content Include="Images\old\orderedList4.png" />
+    <Content Include="Images\old\orderedList5.png" />
+    <Content Include="Images\old\orderedList6.png" />
+    <Content Include="Images\old\orderedList7.png" />
+    <Content Include="Images\old\orderedList8.png" />
+    <Content Include="Images\old\orderedList9.png" />
+    <Content Include="Images\painel_informacoes.png" />
+    <Content Include="Images\pesquisa_vagas.png" />
+    <Content Include="Images\vaga-bne.png" />
+    <Content Include="Images\vaga-parceiro.png" />
+    <None Include="Properties\PublishProfiles\BNEVagasTeste.pubxml" />
+    <None Include="Properties\PublishProfiles\f.pubxml" />
+    <None Include="Scripts\jquery-2.0.3.intellisense.js">
+      <DependentUpon>jquery-2.0.3.js</DependentUpon>
+    </None>
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js">
+      <DependentUpon>jquery-2.0.3.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-2.0.3.min.map">
+      <DependentUpon>jquery-2.0.3.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-ui-1.10.3.js">
+      <DependentUpon>jquery-ui-1.10.3.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\jquery.bpopup.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js">
+      <DependentUpon>jquery.unobtrusive-ajax.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js">
+      <DependentUpon>jquery.validate.js</DependentUpon>
+    </None>
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js">
+      <DependentUpon>jquery.validate.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js">
+      <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\knockout-2.2.0.debug.js">
+      <DependentUpon>knockout-2.2.0.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\local\Site.js" />
+    <Content Include="Scripts\local\Util.js" />
+    <Content Include="Scripts\local\Vagas.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\ResultadoPesquisaVaga\Index.cshtml" />
+    <Content Include="Views\ResultadoPesquisaVaga\_Vagas.cshtml" />
+    <Content Include="Views\ResultadoPesquisaVaga\_Vaga.cshtml" />
+    <Content Include="Views\Vaga\VisualizarVaga.cshtml" />
+    <Content Include="Views\Vaga\_VagasSimilares.cshtml" />
+    <Content Include="Views\Shared\_ModalSucessoCandidatura.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\Shared\_ModalDegustacaoCandidatura.cshtml" />
+    <Content Include="Views\Shared\_VagaCandidatura.cshtml" />
+    <Content Include="Views\Shared\_ModalPerguntasCandidatura.cshtml" />
+    <Content Include="Views\Shared\_Estatistica.cshtml" />
+    <Content Include="Views\Shared\_Rodape.cshtml" />
+    <Content Include="Views\Shared\_ModalDadosEmpresa.cshtml" />
+    <Content Include="Views\Shared\_LogoEmpresa.cshtml" />
+    <Content Include="Views\Shared\_VagaCompartilhamento.cshtml" />
+    <Content Include="Views\Shared\_ModalSucessoVagaCompartilhamento.cshtml" />
+    <Content Include="Views\Shared\_ModalCompartilhamentoEmail.cshtml" />
+    <Content Include="Views\Shared\_ModalLogin.cshtml" />
+    <Content Include="Views\Shared\_AtalhoTopo.cshtml" />
+    <Content Include="Views\Shared\_ModalPerguntaExperienciaProfissional.cshtml" />
+    <Content Include="Views\Shared\_ModalPerguntaEmail.cshtml" />
+    <Content Include="Views\Shared\_ModalPerguntaCelular.cshtml" />
+    <Content Include="Views\BuscaVaga\Index.cshtml" />
+    <None Include="Web.Homologacao.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\themes\fonts\" />
+    <Folder Include="Images\confirm\" />
+    <Folder Include="Views\Rodape\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BNE.Auth\BNE.Auth.csproj">
+      <Project>{a3cb21c5-ad27-4718-a361-c1578861a84c}</Project>
+      <Name>BNE.Auth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.BLL\BNE.BLL.csproj">
+      <Project>{B316CE73-6590-43E7-BD7A-2C24963C09FB}</Project>
+      <Name>BNE.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Bridge\BNE.Bridge.csproj">
+      <Project>{f185b177-5dc7-4800-a0b6-cb5f7cafe656}</Project>
+      <Name>BNE.Bridge</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Common\BNE.Common.csproj">
+      <Project>{8B630179-734F-47F0-9D72-CC500F4482EB}</Project>
+      <Name>BNE.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.EL\BNE.EL.csproj">
+      <Project>{328d2b86-dd73-410e-aa9c-42d59bd28796}</Project>
+      <Name>BNE.EL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|x64'">
+    <OutputPath>bin\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|x86'">
+    <OutputPath>bin\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>2500</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2500/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

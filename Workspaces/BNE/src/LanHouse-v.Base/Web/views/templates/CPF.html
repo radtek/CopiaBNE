@@ -1,0 +1,8 @@
+﻿<div class="form-group row">
+    <label for="{{eNome}}">{{eLabel}}<span class="required">*</span></label>
+    <input type="text" class="form-control" name="{{eNome}}" id="{{eNome}}" only-num {{eRequired}} cpf-validator ng-model="cadCV.curriculo.cpf" maxlength="11" ng-maxlength="14" />
+    <div class="tooltip right in" style="top: 6px; left: 186px; display: block;" ng-show="formPasso1.CPF.$invalid && formPasso1.CPF.$touched">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner">O CPF informado é inválido!</div>
+    </div>
+</div>

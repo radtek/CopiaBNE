@@ -1,0 +1,73 @@
+﻿.painel_padrao {
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.label_principal
+{
+    width: 60px;
+}
+ 
+.coluna_direita div input,
+.coluna_direita div textarea
+{
+	width: 420px;
+}
+
+
+.coluna_esquerda.presidente {
+    float: left;
+    margin-right: 41px;
+    padding: 0;
+    width: 260px;
+}
+
+.coluna_esquerda.presidente img {
+     margin: 30px 30px 44px 30px;
+    width: 85%;
+}
+
+
+.coluna_direita {
+    float: left;
+    margin-bottom: 25px;
+    width: 540px;
+}
+
+.formulario_pagina
+{
+    margin-top: 20px;
+}
+
+.assinatura
+{
+    margin: 0px 35px 10px 0;
+    text-align: right;
+}
+
+.assinatura span
+{
+    font-size: 12px;
+    margin-right: 15px;
+}
+
+.texto_ola
+{
+    font-size: 17px;
+    line-height: 100%;
+}
+
+.texto_mensagem_presidente
+{
+    /*-font-size: 14px;
+    line-height: 220%;-*/
+    font-size:12px;
+    line-height: 180%;
+    padding-right: 20px;
+}
+
+.enviar
+{
+    margin-right: 70px;
+}
+

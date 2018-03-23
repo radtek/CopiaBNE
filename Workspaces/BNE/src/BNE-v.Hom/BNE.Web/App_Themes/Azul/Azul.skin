@@ -1,0 +1,4 @@
+﻿<asp:Image
+    ImageUrl="/img/App_Themes/Azul/aba_buscar_vagas_seta_baixa.png"
+    runat="server"
+    SkinId="sknImgBuscarVaga" />

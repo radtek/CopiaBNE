@@ -1,0 +1,374 @@
+﻿#loader{margin: -463px;}
+#loader img{margin-top:-35px;}
+.loading-bg {background: url("../images/gif-load.gif") no-repeat  95% center}
+.imgUsuario{width:300px;height:302px;}
+.salvarPasso{width:200px; margin:4px; height: 15px;}
+.tooltipBNE{background-color: yellow;}
+
+/*classes de validação*/
+.error{border: 1px solid #b94a48 !important;background-color: #ffeeee !important;}
+label.error {-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;padding: 5px;}
+/*input.ng-invalid.ng-dirty {background-color: #f3c3c3;border-color:#e99595;}*/
+input.ng-invalid-cpf,input.ng-invalid-nome,input.ng-invalid-email,input.ng-invalid-pretensao,input.ng-invalid-ano {background-color: #f3c3c3;border-color:#e99595;}
+input.ng-valid-cpf,input.ng-valid-nome,input.ng-valid-email,input.ng-valid-pretensao,input.ng-valid-ano {background-color: #fff;border-color:#78FA89;}
+
+/*input.ng-invalid-nome {background-color: #f3c3c3;border-color:#e99595;}
+input.ng-invalid-email {background-color: #f3c3c3;border-color:#e99595;}*/
+
+
+input.ng-valid.ng-dirty {/*background-color: #78FA89;*/border-color:#78FA89;}
+
+/*validation helpers */
+.field-validation-error {color: #e80c4d;font-weight: bold;}
+.field-validation-valid {display: none;}
+input.input-validation-error {border: 1px solid #e80c4d;}
+input[type="checkbox"].input-validation-error {border: 0 none;}
+.validation-summary-errors {color: #e80c4d;font-weight: bold;font-size: 1.1em;}
+.validation-summary-valid {display: none;}
+.required{color:red;}
+
+
+/*mini visualização do currículo*/
+.mini{font-size:50%;}
+.ajusteColumn{margin-left:-33px;}
+.ajusteIcon{margin-top: 13px;}
+.imgMini{width:35px; height:40px;}
+.modeloTradicional{border:1px solid #333;font-family:Georgia, 'Times New Roman', Times, serif; overflow:hidden;padding:5px;height:243px;}
+.modeloModerno{font-family:Rockwell;overflow:hidden;padding:5px;height:243px;}
+.modeloBNE{overflow:hidden;padding:5px;height:243px;}
+hr{margin-top:0px;margin-bottom:4px;border-color: #333}
+.miniModernoMargin{margin:7px 0 0 -18px;}
+.miniModernoNoMargin{margin:8px -25px 0px -8px;}
+.miniModerno{color:#0066ff}
+.miniAjuste{text-align:left}
+.miniModernoMarginLeft{margin:0 0 0 -18px;}
+.mini7{margin:7px 0 0 0;}
+
+/*checked
+/*entire container, keeps perspective */
+.flip-container {perspective: 1000;transform-style: preserve-3d;}
+
+/* UPDATED! flip the pane when hovered */
+.flip-container:hover .back {transform: rotateY(0deg);}
+.flip-container:hover .front {transform: rotateY(180deg);}
+.flip-container, .front, .back {width:218px;height:260px;cursor:pointer}
+
+/*flip speed goes here */
+.flipper {transition: 0.6s;transform-style: preserve-3d;position: relative;}
+
+/* hide back of pane during swap */
+.front, .back {backface-visibility: hidden;transition: 0.6s;transform-style: preserve-3d;position: absolute;top: 0;left: 0;}
+
+/*UPDATED! front pane, placed above back */
+.front {z-index: 2;transform: rotateY(0deg);}
+
+/*back, initially hidden pane */
+.back {background-color:#e5e5e5;background-image:url(../images/ImgcheckedVaga.png);background-repeat:no-repeat;background-position:center center;transform:rotateY(180deg);-moz-transform:rotateY(180deg);-o-transform:rotateY(180deg);-ms-transform:rotateY(180deg);-webkit-transform:rotateY(180deg);}
+
+/*Some vertical flip updates*/
+.vertical.flip-container{position: relative;}
+.vertical .back {transform: rotateX(180deg);}
+.vertical.flip-container:hover .back {transform: rotateX(0deg);}
+.vertical.flip-container:hover .front {transform: rotateX(180deg);}
+
+/* div com as formações do candidato*/
+.escolaridade{height:auto; overflow:auto;}
+.escolaridade p span{float:right;}
+
+/*classes do editar CV na visualização*/
+.edit:hover {
+    background: #EEE;
+    cursor:pointer;
+}
+
+.animate-show {
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+    opacity: 1;
+    float: right;
+}
+
+.animate-show.ng-hide-add,
+.animate-show.ng-hide-remove {
+    display: inline-block !important;
+}
+.animate-show.ng-hide {
+    opacity: 0;
+}
+/*FIM classes do editar CV na visualização*/
+
+.comboDeficiencia{width:140px;}
+
+.botaoExperienciaPasso2{width: 300px; height:250px; padding:90px; font-size:29px;}
+.fotoMaskWoman{background-color: #f3c3c3; background:url('../images/icone_lan-feminino.png')no-repeat  95% center;  width: 320px; height:240px; position:absolute; margin:-245px 0 0 0;
+          opacity: 0.7;
+    filter: alpha(opacity=70); /* For IE8 and earlier */
+}
+.fotoMaskMan{background:url('../images/icone_lan_masculino.png') no-repeat  95% center;  width: 320px; height:240px; position:absolute; margin:-245px 0 0 0;
+          opacity: 0.7;
+    filter: alpha(opacity=70); /* For IE8 and earlier */
+}
+
+.demos {
+	margin-bottom: 100px;
+}
+
+.download {
+	margin-left: 15px;
+}
+.snapshot {
+    /*position: absolute;
+    margin: -40px 0 0 0;*/
+}
+.snapshot-data {
+	width: 330px;
+	height: 120px;
+	white-space: normal;
+}
+
+.webcam {
+	margin-top: 22px;
+}
+
+.CVModelos{font-family:Georgia, Constantia, "Lucida Bright", "DejaVu Serif", serif; font-size:29px;color:#336699; margin:25px 25px 25px 25px;}
+
+.EdicaoInformacoes{
+    padding: 4px 4px;
+    border: solid 1px !important;
+    border-color:#2ca9e2 !important;
+    background-color:#caecfc;
+    opacity:0.9;
+    color:#2ca9e2 !important;
+}
+
+#talkbubble {
+    width: 22px;
+    height: 18px;
+    background: #3cb0fd;
+    padding:7px 10px;
+    text-align:center;
+    position: relative;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin-left:5px; 
+}
+ /*#talkbubble:before {
+    content: "";
+    position: absolute;
+    right: 67%;
+    top: 4px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-right: 26px solid #3cb0fd;
+    border-bottom: 13px solid transparent;
+}*/
+ .alert-margin-top {margin-top: 5px;}
+ .alert-position {float:right; margin: -72px 75px 0 0;}
+ 
+ /*classes de ajuste de marge para uso geral*/
+ .margin-top-5{margin-top:5px;}
+ .margin-top-10{margin-top:10px;}
+ .margin-top-20{margin-top:20px;}
+ .margin-top-40{margin-top:40px;}
+
+ .margin-bottom-10{margin-bottom:10px;}
+ .margin-bottom-20{margin-bottom:20px;}
+ .margin-bottom-50{margin-bottom:50px;}
+
+ .margin-right-10{margin-right:10px;}
+ .margin-right-15{margin-right:15px;}
+
+ .margin-right-20{margin-right:20px;}
+
+ .margin-left-10{margin-left:10px;}
+ .margin-left-20{margin-left:20px;}
+ .margin-left-85{margin-left:105px;}
+
+ /*Classe usada em vagas*/
+ .suggestTerm{display:inline-block; list-style:none; margin-left:8px;}
+ .floatLeft{float:left;}
+
+ .imprimir-loading{float:left; margin-left:80px;color:white;font-size:17px;}
+
+ /*loading da home*/
+ /* Absolute Center CSS Spinner */
+.loading {
+  position: fixed;
+  z-index: 999999999999999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+  box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.imgEmpresa {
+    height: 170px;
+    width: auto;
+    margin: -30px 0 0 15px;
+}
+.li-no-type{list-style-type:none;}
+
+
+/*AZULZINHO*/
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+
+    .col-lg-2 {
+        width: 15.8%;
+    }
+}
+
+.col-lg-2{padding: 8px 0 0 0 !important;}
+.BOXVAGA{height:298px;overflow:hidden;margin:25px 0 0 10px;background-color:#fff;border: 1px solid #666;} /*margin:25px 0 0 25px;*/
+.BOXVAGA .TituloVaga{color:#666;font-size:15px;}
+.BOXVAGA .col-lg-12{padding: 8px 8px 8px 8px !important;}
+
+.BOXVAGA_AZUL{height:298px;overflow:hidden;margin:25px 0 0 10px;background-color:#fff;border: 1px solid #0057a4;} /*margin:25px 0 0 25px;*/
+.BOXVAGA_AZUL .TituloVaga{color:#0057a4;font-size:15px;}
+.BOXVAGA_AZUL .col-lg-12{padding: 8px 8px 8px 8px !important;}
+
+.icone-azul{color:#0057a4 !important;}
+.icone-cinza{color:#666 !important;}
+.text-azul{color:#0057a4 !important;}
+
+.btn-detalhes-vaga {
+    width: 100%;
+    padding: 8px 0 8px 0;
+    background-color: #fff;
+    color: #666;
+    font-size:21px;
+    font-weight:bold;
+    border-radius:0;
+}
+
+.btn-detalhes-vaga_azul {
+    width: 100%;
+    padding: 8px 0 8px 0;
+    background-color: #0057a4;
+    color: #fff;
+    font-size:21px;
+    font-weight:bold;
+    border-radius:0;
+}
+
+.btn-mais-vagas {
+    padding: 8px;
+    font-size:19px;
+    margin:50px 0 50px 0;
+}
+
+.inline-block{display:inline-block; margin-top:20px;}

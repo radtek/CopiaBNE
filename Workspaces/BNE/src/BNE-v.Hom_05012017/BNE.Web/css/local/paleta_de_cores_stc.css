@@ -1,0 +1,454 @@
+﻿#stc_select-theme {width:880px;margin:auto;}
+.stc_select-theme-col {width:412px; float:left;position:relative;}
+    .stc_select-theme-col:last-child {width:460px;margin-left:8px;}
+    .stc_select-col_bg{background-color:#F2F2F2;padding:12px; }
+    .stc_select-theme-col .left {height:350px;}
+#stc_select-address {}
+#stc_select-logo {margin-top:8px !important; height: 167px; }
+#stc_select-logo_area {height:124px;background-color:#fff;text-align:center;}
+#stc_select-logo_button {text-align:center;padding-top:4px;}
+#stc_selected-theme {margin-top:8px !important;height:69px;}
+#stc_select-theme_tit {margin-bottom:8px;}
+.color-themes {list-style: none;margin: 0;padding: 0;}
+.color-themes:after {content: "";clear: both;}
+.theme-color {box-sizing: border-box;float: left;height: 32px;position: relative;width: 69px;border-radius:4px;margin-left: 4px;margin-top:4px;}
+.theme-color:nth-child(6n+1){margin-left: 0px;}
+.theme-color:first-child{margin-left: 0px;}
+.theme-color label {background: #fff no-repeat center center;bottom: 0px;cursor: pointer;display: block;font-size: 0;left: 0px;position: absolute;right: 0px;text-indent: 100%;top: 0px;white-space: nowrap;border-radius:4px;}
+.theme-name {box-sizing: border-box;float: left;height: 32px;position: relative;border-radius:4px;margin-left: 8px;margin-top:12px;}
+.color-themes input:focus + label {border-radius:4px;filter: brightness(20%);}
+.clear {clear:both}
+#files {padding:4px;height:32px;}
+.selected-logo {margin-top:12px;}
+.stc_select-theme_titArea {color:rgb(83,121,24);padding-bottom:8px;}
+hr.stc {color:#f4f4f4;}
+.Rose label{ 
+    /*Rosé*/
+    background-image: linear-gradient( 90deg, #FF1D51 , #B51A3D) !important; 
+    background-image: -moz-linear-gradient( 90deg, #FF1D51, #B51A3D) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #FF1D51, #B51A3D) !important; 
+    background-image: -ms-linear-gradient( 90deg, #FF1D51, #B51A3D) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF1D51', endColorstr='#B51A3D') !important;
+}
+.Ambar label{ 
+    /*Âmbar*/
+    background-image: linear-gradient( 90deg, #FFBF00 , #B5850F) !important; 
+    background-image: -moz-linear-gradient( 90deg, #FFBF00, #B5850F) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #FFBF00, #B5850F) !important; 
+    background-image: -ms-linear-gradient( 90deg, #FFBF00, #B5850F) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBF00', endColorstr='#B5850F') !important;
+}
+.Aquamarinho label{ 
+    /*Aquamarinho*/
+    background-image: linear-gradient( 90deg, #2BDFFF , #33A2B5) !important; 
+    background-image: -moz-linear-gradient( 90deg, #2BDFFF, #33A2B5) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #2BDFFF, #33A2B5) !important; 
+    background-image: -ms-linear-gradient( 90deg, #2BDFFF, #33A2B5) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#2BDFFF', endColorstr='#33A2B5') !important;
+}
+.AzulCeleste label{ 
+    /*Azul Celeste*/
+    background-image: linear-gradient( 90deg, #68C3FF , #589FBD) !important; 
+    background-image: -moz-linear-gradient( 90deg, #68C3FF, #589FBD) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #68C3FF, #589FBD) !important; 
+    background-image: -ms-linear-gradient( 90deg, #68C3FF, #589FBD) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#68C3FF', endColorstr='#589FBD') !important;
+}
+.Bege label{ 
+    /*Bege*/
+    background-image: linear-gradient( 90deg, #FFFC9E , #B5B382) !important; 
+    background-image: -moz-linear-gradient( 90deg, #FFFC9E, #B5B382) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #FFFC9E, #B5B382) !important; 
+    background-image: -ms-linear-gradient( 90deg, #FFFC9E, #B5B382) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFC9E', endColorstr='#B5B382') !important;
+}
+.Preto label{ 
+    /*Preto*/
+    background-image: linear-gradient( 90deg, #313131 , #000) !important; 
+    background-image: -moz-linear-gradient( 90deg, #313131, #000) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #313131, #000) !important; 
+    background-image: -ms-linear-gradient( 90deg, #313131, #000) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#313131', endColorstr='#000') !important;
+}
+.AzulRoyal label{ 
+    /*Azul Royal*/
+    background-image: linear-gradient( 90deg, #2058FF , #1258BD) !important; 
+    background-image: -moz-linear-gradient( 90deg, #2058FF, #1258BD) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #2058FF, #1258BD) !important; 
+    background-image: -ms-linear-gradient( 90deg, #2058FF, #1258BD) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#2058FF', endColorstr='#1258BD') !important;
+}
+.VerdeAzulado label{ 
+    /*Verde Azulado*/
+    background-image: linear-gradient( 90deg, #00FFE5 , #00BDA9) !important; 
+    background-image: -moz-linear-gradient( 90deg, #00FFE5, #00BDA9) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #00FFE5, #00BDA9) !important; 
+    background-image: -ms-linear-gradient( 90deg, #00FFE5, #00BDA9) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#00FFE5', endColorstr='#00BDA9') !important;
+}
+.Violeta label{ 
+    /*Violeta*/
+    background-image: linear-gradient( 90deg, #7F19FF , #401578) !important; 
+    background-image: -moz-linear-gradient( 90deg, #7F19FF, #401578) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #7F19FF, #401578) !important; 
+    background-image: -ms-linear-gradient( 90deg, #7F19FF, #401578) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#7F19FF', endColorstr='#401578') !important;
+}
+.Castanho label{ 
+    /*Castanho*/
+    background-image: linear-gradient( 90deg, #B24D48 , #611E20) !important; 
+    background-image: -moz-linear-gradient( 90deg, #B24D48, #611E20) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #B24D48, #611E20) !important; 
+    background-image: -ms-linear-gradient( 90deg, #B24D48, #611E20) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#B24D48', endColorstr='#611E20') !important;
+}
+.Bizancio label{ 
+    /*Bizâncio*/
+    background-image: linear-gradient( 90deg, #724DB2 , #533861) !important; 
+    background-image: -moz-linear-gradient( 90deg, #724DB2, #533861) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #724DB2, #533861) !important; 
+    background-image: -ms-linear-gradient( 90deg, #724DB2, #533861) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#724DB2', endColorstr='#533861') !important;
+}
+.Carmin label{ 
+    /*Carmin*/
+    background-image: linear-gradient(90deg, #A93343, #B24A57) !important;
+    background-image: -moz-linear-gradient(90deg, #B24A57, #B24A57) !important;
+    background-image: -webkit-linear-gradient(90deg, #B24A57, #B24A57) !important;
+    background-image: -ms-linear-gradient(90deg, #B24A57, #B24A57) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B24A57', endColorstr='#960018') !important;        }
+.Celeste label{ 
+    /*Celeste*/
+    background-image: linear-gradient( 90deg, #007BA7 , #005A7A) !important; 
+    background-image: -moz-linear-gradient( 90deg, #007BA7, #005A7A) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #007BA7, #005A7A) !important; 
+    background-image: -ms-linear-gradient( 90deg, #007BA7, #005A7A) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#007BA7', endColorstr='#005A7A') !important;
+}
+.Champagne label{ 
+    /*Champagne*/
+    background-image: linear-gradient( 90deg, #F7E7CE , #BDAC92) !important; 
+    background-image: -moz-linear-gradient( 90deg, #F7E7CE, #BDAC92) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #F7E7CE, #BDAC92) !important; 
+    background-image: -ms-linear-gradient( 90deg, #F7E7CE, #BDAC92) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#F7E7CE', endColorstr='#BDAC92') !important;
+}
+.VerdeMonster label{ 
+    /*Verde Monster*/
+    background-image: linear-gradient( 90deg, #7FFF00 , #5ABD09) !important; 
+    background-image: -moz-linear-gradient( 90deg, #7FFF00, #5ABD09) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #7FFF00, #5ABD09) !important; 
+    background-image: -ms-linear-gradient( 90deg, #7FFF00, #5ABD09) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#7FFF00', endColorstr='#5ABD09') !important;
+}
+.Coral label{ 
+    /*Coral*/
+    background-image: linear-gradient( 90deg, #F88379 , #B55D56) !important; 
+    background-image: -moz-linear-gradient( 90deg, #F88379, #B55D56) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #F88379, #B55D56) !important; 
+    background-image: -ms-linear-gradient( 90deg, #F88379, #B55D56) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#F88379', endColorstr='#B55D56') !important;
+}
+.Carmesin label{ 
+    /*Carmesin*/
+    background-image: linear-gradient( 90deg, #DC143C , #B20022) !important; 
+    background-image: -moz-linear-gradient( 90deg, #DC143C, #B20022) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #DC143C, #B20022) !important; 
+    background-image: -ms-linear-gradient( 90deg, #DC143C, #B20022) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#DC143C', endColorstr='#B20022') !important;
+}
+.Ouro label{ 
+    /*Ouro*/
+    background-image: linear-gradient( 90deg, #FFE605 , #EB9125) !important; 
+    background-image: -moz-linear-gradient( 90deg, #FFE605, #EB9125) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #FFE605, #EB9125) !important; 
+    background-image: -ms-linear-gradient( 90deg, #FFE605, #EB9125) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE605', endColorstr='#EB9125') !important;
+}
+.ErvaDoce label{ 
+    /*Erva Doce*/
+    background-image: linear-gradient( 90deg, #5CCC65 , #224C26) !important; 
+    background-image: -moz-linear-gradient( 90deg, #5CCC65, #224C26) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #5CCC65, #224C26) !important; 
+    background-image: -ms-linear-gradient( 90deg, #5CCC65, #224C26) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#5CCC65', endColorstr='#224C26') !important;
+}
+.Arlequin label{ 
+    /*Arlequin*/
+    background-image: linear-gradient( 90deg, #39E500 , #1F7F00) !important; 
+    background-image: -moz-linear-gradient( 90deg, #39E500, #1F7F00) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #39E500, #1F7F00) !important; 
+    background-image: -ms-linear-gradient( 90deg, #39E500, #1F7F00) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#39E500', endColorstr='#1F7F00') !important;
+}
+.Indigo label{ 
+    /*Índigo*/
+    background-image: linear-gradient( 90deg, #4B0082 , #250040) !important; 
+    background-image: -moz-linear-gradient( 90deg, #4B0082, #250040) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #4B0082, #250040) !important; 
+    background-image: -ms-linear-gradient( 90deg, #4B0082, #250040) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#4B0082', endColorstr='#250040') !important;
+}
+.Marfim label{ 
+    /*Marfim*/
+    background-image: linear-gradient( 90deg, #BFB097 , #8F8371) !important; 
+    background-image: -moz-linear-gradient( 90deg, #BFB097, #8F8371) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #BFB097, #8F8371) !important; 
+    background-image: -ms-linear-gradient( 90deg, #BFB097, #8F8371) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#BFB097', endColorstr='#8F8371') !important;
+}
+.Jade label{ 
+    /*Jade*/
+    background-image: linear-gradient( 90deg, #87d6c0 , #0BBF8D) !important; 
+    background-image: -moz-linear-gradient( 90deg, #87d6c0, #0BBF8D) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #87d6c0, #0BBF8D) !important; 
+    background-image: -ms-linear-gradient( 90deg, #87d6c0, #0BBF8D) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#87d6c0', endColorstr='#0BBF8D') !important;
+}
+.Lavanda label{ 
+    /*Lavanda*/
+    background-image: linear-gradient( 90deg, #C39EFF , #9276BF) !important; 
+    background-image: -moz-linear-gradient( 90deg, #C39EFF, #9276BF) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #C39EFF, #9276BF) !important; 
+    background-image: -ms-linear-gradient( 90deg, #C39EFF, #9276BF) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#C39EFF', endColorstr='#9276BF') !important;
+}
+.Lilas label{ 
+    /*Lilás*/
+    background-image: linear-gradient( 90deg, #B740FF , #8930BF) !important; 
+    background-image: -moz-linear-gradient( 90deg, #B740FF, #8930BF) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #B740FF, #8930BF) !important; 
+    background-image: -ms-linear-gradient( 90deg, #B740FF, #8930BF) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#B740FF', endColorstr='#8930BF') !important;
+}
+.Magenta label{ 
+    /*Magenta*/
+    background-image: linear-gradient( 90deg, #FF39D0 , #BD009A) !important; 
+    background-image: -moz-linear-gradient( 90deg, #FF39D0, #BD009A) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #FF39D0, #BD009A) !important; 
+    background-image: -ms-linear-gradient( 90deg, #FF39D0, #BD009A) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF39D0', endColorstr='#BD009A') !important;
+}
+.Marrom label{ 
+    /*Marrom*/
+    background-image: linear-gradient( 90deg, #A27F5F , #7E564A) !important; 
+    background-image: -moz-linear-gradient( 90deg, #A27F5F, #7E564A) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #A27F5F, #7E564A) !important; 
+    background-image: -ms-linear-gradient( 90deg, #A27F5F, #7E564A) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#A27F5F', endColorstr='#7E564A') !important;
+}
+.Cafe label{ 
+    /*Café*/
+    background-image: linear-gradient( 90deg, #634F46 , #3F2F32) !important; 
+    background-image: -moz-linear-gradient( 90deg, #634F46, #3F2F32) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #634F46, #3F2F32) !important; 
+    background-image: -ms-linear-gradient( 90deg, #634F46, #3F2F32) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#634F46', endColorstr='#3F2F32') !important;
+}
+.AzulMarinho label{ 
+    /*Azul Marinho*/
+    background-image: linear-gradient( 90deg, #022064 , #011541) !important; 
+    background-image: -moz-linear-gradient( 90deg, #022064, #011541) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #022064, #011541) !important; 
+    background-image: -ms-linear-gradient( 90deg, #022064, #011541) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#022064', endColorstr='#011541') !important;
+}
+.VerdeOliva label{ 
+    /*Verde Oliva*/
+    background-image: linear-gradient( 90deg, #75A879 , #517554) !important; 
+    background-image: -moz-linear-gradient( 90deg, #75A879, #517554) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #75A879, #517554) !important; 
+    background-image: -ms-linear-gradient( 90deg, #75A879, #517554) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#75A879', endColorstr='#517554') !important;
+}
+.Caqui label{ 
+    /*Caqui*/
+    background-image: linear-gradient( 90deg, #FF6604 , #A84403) !important; 
+    background-image: -moz-linear-gradient( 90deg, #FF6604, #A84403) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #FF6604, #A84403) !important; 
+    background-image: -ms-linear-gradient( 90deg, #FF6604, #A84403) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF6604', endColorstr='#A84403') !important;
+}
+.LaranjaAverm label{ 
+    /*Laranja Averm.*/
+    background-image: linear-gradient( 90deg, #FF450D , #A8250F) !important; 
+    background-image: -moz-linear-gradient( 90deg, #FF450D, #A8250F) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #FF450D, #A8250F) !important; 
+    background-image: -ms-linear-gradient( 90deg, #FF450D, #A8250F) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF450D', endColorstr='#A8250F') !important;
+}
+.Pessego label{ 
+    /*Pêssego*/
+    background-image: linear-gradient( 90deg, #FF7841 , #BF5A31) !important; 
+    background-image: -moz-linear-gradient( 90deg, #FF7841, #BF5A31) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #FF7841, #BF5A31) !important; 
+    background-image: -ms-linear-gradient( 90deg, #FF7841, #BF5A31) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF7841', endColorstr='#BF5A31') !important;
+}
+.AzulPersa label{ 
+    /*Azul Persa*/
+    background-image: linear-gradient( 90deg, #0046A8 , #003175) !important; 
+    background-image: -moz-linear-gradient( 90deg, #0046A8, #003175) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #0046A8, #003175) !important; 
+    background-image: -ms-linear-gradient( 90deg, #0046A8, #003175) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#0046A8', endColorstr='#003175') !important;
+}
+.Rubro label{ 
+    /*Rubro*/
+    background-image: linear-gradient( 90deg, #FF0100 , #A80000) !important; 
+    background-image: -moz-linear-gradient( 90deg, #FF0100, #A80000) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #FF0100, #A80000) !important; 
+    background-image: -ms-linear-gradient( 90deg, #FF0100, #A80000) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF0100', endColorstr='#A80000') !important;
+}
+.Saara label{ 
+    /*Saara*/
+    background-image: linear-gradient( 90deg, #FFC95F , #C99F4B) !important; 
+    background-image: -moz-linear-gradient( 90deg, #FFC95F, #C99F4B) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #FFC95F, #C99F4B) !important; 
+    background-image: -ms-linear-gradient( 90deg, #FFC95F, #C99F4B) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFC95F', endColorstr='#C99F4B') !important;
+}
+.Salmao label{ 
+    /*Salmão*/
+    background-image: linear-gradient( 90deg, #FF9290 , #AD6462) !important; 
+    background-image: -moz-linear-gradient( 90deg, #FF9290, #AD6462) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #FF9290, #AD6462) !important; 
+    background-image: -ms-linear-gradient( 90deg, #FF9290, #AD6462) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9290', endColorstr='#AD6462') !important;
+}
+.Sambar label{ 
+    /*Sambar*/
+    background-image: linear-gradient( 90deg, #BF9A75 , #7F674E) !important; 
+    background-image: -moz-linear-gradient( 90deg, #BF9A75, #7F674E) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #BF9A75, #7F674E) !important; 
+    background-image: -ms-linear-gradient( 90deg, #BF9A75, #7F674E) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#BF9A75', endColorstr='#7F674E') !important;
+}
+.Bharal label{ 
+    /*Bharal*/
+    background-image: linear-gradient( 90deg, #B9BF98 , #7B7F65) !important; 
+    background-image: -moz-linear-gradient( 90deg, #B9BF98, #7B7F65) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #B9BF98, #7B7F65) !important; 
+    background-image: -ms-linear-gradient( 90deg, #B9BF98, #7B7F65) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#B9BF98', endColorstr='#7B7F65') !important;
+}
+.Cargo label{ 
+    /*Cargo*/
+    background-image: linear-gradient( 90deg, #A4BFAE , #6D7F74) !important; 
+    background-image: -moz-linear-gradient( 90deg, #A4BFAE, #6D7F74) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #A4BFAE, #6D7F74) !important; 
+    background-image: -ms-linear-gradient( 90deg, #A4BFAE, #6D7F74) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#A4BFAE', endColorstr='#6D7F74') !important;
+}
+.CinzaClaro label{ 
+    /*Cinza Claro*/
+    background-image: linear-gradient( 90deg, #dfdfdf , #c4c4c4) !important; 
+    background-image: -moz-linear-gradient( 90deg, #dfdfdf, #c4c4c4) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #dfdfdf, #c4c4c4) !important; 
+    background-image: -ms-linear-gradient( 90deg, #dfdfdf, #c4c4c4) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#c4c4c4') !important;
+}
+.CinzaMedio label{ 
+    /*Cinza Médio*/
+    background-image: linear-gradient( 90deg, #c4c4c4 , #858686) !important; 
+    background-image: -moz-linear-gradient( 90deg, #c4c4c4, #858686) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #c4c4c4, #858686) !important; 
+    background-image: -ms-linear-gradient( 90deg, #c4c4c4, #858686) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#c4c4c4', endColorstr='#858686') !important;
+}
+.CinzaEscuro label{ 
+    /*Cinza Escuro*/
+    background-image: linear-gradient( 90deg, #6d6d6d , #424242) !important; 
+    background-image: -moz-linear-gradient( 90deg, #6d6d6d, #424242) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #6d6d6d, #424242) !important; 
+    background-image: -ms-linear-gradient( 90deg, #6d6d6d, #424242) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#6d6d6d', endColorstr='#424242') !important;
+}
+.CinzaAzulado label{ 
+    /*Cinza Azulado*/
+    background-image: linear-gradient( 90deg, #9CB8BF , #687A7F) !important; 
+    background-image: -moz-linear-gradient( 90deg, #9CB8BF, #687A7F) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #9CB8BF, #687A7F) !important; 
+    background-image: -ms-linear-gradient( 90deg, #9CB8BF, #687A7F) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#9CB8BF', endColorstr='#687A7F') !important;
+}
+.Esmeralda label{ 
+    /*Esmeralda*/
+    background-image: linear-gradient( 90deg, #62ACAD , #243F40) !important; 
+    background-image: -moz-linear-gradient( 90deg, #62ACAD, #243F40) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #62ACAD, #243F40) !important; 
+    background-image: -ms-linear-gradient( 90deg, #62ACAD, #243F40) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#62ACAD', endColorstr='#243F40') !important;
+}
+.Agata label{ 
+    /*Ágata*/
+    background-image: linear-gradient( 90deg, #7f0039 , #40001a) !important; 
+    background-image: -moz-linear-gradient( 90deg, #7f0039, #40001a) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #7f0039, #40001a) !important; 
+    background-image: -ms-linear-gradient( 90deg, #7f0039, #40001a) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#7f0039', endColorstr='#40001a') !important;
+}
+.Opala label{ 
+    /*Opala*/
+    background-image: linear-gradient( 90deg, #FFE37B , #BFAA5C) !important; 
+    background-image: -moz-linear-gradient( 90deg, #FFE37B, #BFAA5C) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #FFE37B, #BFAA5C) !important; 
+    background-image: -ms-linear-gradient( 90deg, #FFE37B, #BFAA5C) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE37B', endColorstr='#BFAA5C') !important;
+}
+.Turquesa label{ 
+    /*Turquesa*/
+    background-image: linear-gradient( 90deg, #49737F , #243940) !important; 
+    background-image: -moz-linear-gradient( 90deg, #49737F, #243940) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #49737F, #243940) !important; 
+    background-image: -ms-linear-gradient( 90deg, #49737F, #243940) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#49737F', endColorstr='#243940') !important;
+}
+.Amarelo label{ 
+    /*Amarelo Antigo*/
+    background-image: linear-gradient( 90deg, #c7b829, #d5c631) !important; 
+    background-image: -moz-linear-gradient( 90deg, #c7b829, #d5c631) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #c7b829, #d5c631) !important; 
+    background-image: -ms-linear-gradient( 90deg, #c7b829, #d5c631) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#c7b829', endColorstr='#d5c631') !important;
+}
+.Cinza label{ 
+    /*Cinza*/
+    background-image: linear-gradient( 90deg, #767676, #888888) !important; 
+    background-image: -moz-linear-gradient( 90deg, #767676, #888888) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #767676, #888888) !important; 
+    background-image: -ms-linear-gradient( 90deg, #767676, #888888) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#767676', endColorstr='#888888') !important;
+}
+.Laranja label{ 
+    /*Laranja*/
+    background-image: linear-gradient( 90deg, #ea9b25, #eda841) !important; 
+    background-image: -moz-linear-gradient( 90deg, #ea9b25, #eda841) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #ea9b25, #eda841) !important; 
+    background-image: -ms-linear-gradient( 90deg, #ea9b25, #eda841) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#ea9b25', endColorstr='#eda841') !important;
+}
+.Verde label{ 
+    /*Verde*/
+    background-image: linear-gradient( 90deg, #4b7215, #6f972b) !important; 
+    background-image: -moz-linear-gradient( 90deg, #4b7215, #6f972b) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #4b7215, #6f972b) !important; 
+    background-image: -ms-linear-gradient( 90deg, #4b7215, #6f972b) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#4b7215', endColorstr='#6f972b') !important;
+}
+.Vermelho label{ 
+    /*Vermelho Antigo*/
+    background-image: linear-gradient( 90deg, #7F0013 , #40000A) !important; 
+    background-image: -moz-linear-gradient( 90deg, #7F0013, #40000A) !important; 
+    background-image: -webkit-linear-gradient( 90deg, #7F0013, #40000A) !important; 
+    background-image: -ms-linear-gradient( 90deg, #7F0013, #40000A) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#7F0013', endColorstr='#40000A') !important;
+}
+.PadraoBNE label{ 
+    /*Padrão BNE*/
+    background-image: -moz-linear-gradient( 90deg, rgb(35,87,160) 6%, rgb(20,61,117) 18%, rgb(39,93,168) 72%, rgb(43,100,178) 99%) !important;
+    background-image: -webkit-linear-gradient( 90deg, rgb(35,87,160) 6%, rgb(20,61,117) 18%, rgb(39,93,168) 72%, rgb(43,100,178) 99%) !important;
+    background-image: -ms-linear-gradient( 90deg, rgb(35,87,160) 6%, rgb(20,61,117) 18%, rgb(39,93,168) 72%, rgb(43,100,178) 99%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2B64B2', endColorstr='#2357A0');
+}

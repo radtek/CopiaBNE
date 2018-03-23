@@ -1,0 +1,57 @@
+﻿.texto_destaque_padronizacao
+{
+	color: #0A3079;
+	font-size: 20px;
+	
+}
+
+.coluna_esquerda
+ {
+    float: left;
+    margin-bottom: 25px;
+    margin-right: 24px;
+    width: 366px;
+    margin-left: 15px;
+ }
+ 
+ .coluna_esquerda div
+ {
+	margin: 12px 0;
+ }
+ 
+ .label_principal
+ {
+ 	width: 100px;
+ }
+ 
+ .coluna_direita
+ {
+    float: left;
+    padding-top: 20px;
+    width: 470px;
+  	
+ }
+ 
+ .painel_padrao
+ {
+	overflow: auto;
+	margin-bottom: 20px;
+ }
+ 
+ 
+ .coluna_direita div input,
+ .coluna_direita div textarea
+{
+	width: 335px;
+}
+
+.botao_padrao.enviar_contato
+{
+	width: auto !important;
+	margin-left: 75px;
+}
+
+.img 
+{
+    border: none;
+}

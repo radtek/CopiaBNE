@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cb69ff56-ed22-41eb-9499-eb084358c4ee" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wsprdintegracao.meuholerite.com.br/SiteComercial.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SiteComercial.xsd" MetadataType="Schema" ID="7cbf0f13-0538-473c-b0f5-8531e8e094fb" SourceId="1" SourceUrl="http://wsprdintegracao.meuholerite.com.br/SiteComercial.svc?xsd=xsd0" />
+    <MetadataFile FileName="SiteComercial.disco" MetadataType="Disco" ID="e054eb9f-826a-4cc3-b054-3ddec2432b74" SourceId="1" SourceUrl="http://wsprdintegracao.meuholerite.com.br/SiteComercial.svc?disco" />
+    <MetadataFile FileName="SiteComercial.wsdl" MetadataType="Wsdl" ID="3c09bc23-fad0-416e-be5c-7fccacfa8439" SourceId="1" SourceUrl="http://wsprdintegracao.meuholerite.com.br/SiteComercial.svc?wsdl" />
+    <MetadataFile FileName="SiteComercial1.xsd" MetadataType="Schema" ID="9e8dfc21-cccd-4298-b07d-fae80c413e9b" SourceId="1" SourceUrl="http://wsprdintegracao.meuholerite.com.br/SiteComercial.svc?xsd=xsd1" />
+    <MetadataFile FileName="SiteComercial2.xsd" MetadataType="Schema" ID="28647efc-ebb5-447c-828c-72754a256436" SourceId="1" SourceUrl="http://wsprdintegracao.meuholerite.com.br/SiteComercial.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

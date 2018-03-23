@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BNE.Domain.Events</id>
+    <version>1.0.5</version>
+    <title>BNE.Domain.Events</title>
+    <authors>Banco Nacional de Empregos</authors>
+    <owners>Banco Nacional de Empregos, Equipe Devs</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Projeto de Eventos de Dominio do BNE.</description>
+    <releaseNotes>Visualizacao de cv sem saldo</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+  </metadata>
+</package>

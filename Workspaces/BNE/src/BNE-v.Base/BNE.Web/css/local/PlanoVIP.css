@@ -1,0 +1,165 @@
+﻿body
+{
+    font-family: Arial,Helvetica,sans-serif !important;
+}
+.painel_padrao
+{
+    margin-bottom: 20px;
+    overflow: auto;
+}
+h1 .destaque
+{
+    color: #00678C;
+}
+.conteudo
+{
+    margin-top: 35px !important;
+}
+.box_painel
+{
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+    width: 210px;
+}
+
+.box_painel.promo
+{
+    width: auto;
+}
+
+.box_painel_ou
+{
+    margin-top:125px;
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+    width:210px;
+    vertical-align:top;
+}
+.box_plano
+{
+    display: block;
+    margin-top: 25px;
+    width: 200px;
+    color: #000;
+}
+.box_plano .mensal
+{
+    background-image: url('/img/pacotes_bne/img_fundo_pacote_mensal.png');
+    background-repeat: no-repeat;
+    height: 230px;
+    width: 200px;
+    color: #000;   
+}
+.box_plano .trimestral
+{
+    background-image: url('/img/pacotes_bne/img_fundo_pacote_tri.png');
+    background-repeat: no-repeat;
+    height: 230px;
+    width: 200px;
+    color: #000;   
+}
+.radiobutton_padrao input
+{
+    margin-top: 10px;
+    margin-left: 22px;
+}
+.radiobutton_padrao label {
+    float: none;
+}
+.label_ou
+{
+    font-weight: bold;
+    font-size: 25px;
+}
+.preco_sem_desconto_mensal
+{
+    color: #333333;
+    display: block;
+    float: left;
+    font-size: 26px;
+    margin-left: 74px;
+    margin-top: 104px;
+    position: relative;
+    width: 30px;
+    text-decoration: line-through;
+}
+.preco_desconto_mensal
+{
+    display: block;
+    float: left;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 72px;
+    margin-top: 9px;
+}
+.preco_sem_desconto_tri
+{
+    color: #333;
+    display: block;
+    float: left;
+    font-size: 26px;
+    margin-left: 74px;
+    margin-top: 104px;
+    text-decoration: line-through;
+}
+.preco_desconto_tri
+{
+    display: block;
+    float: left;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 72px;
+    margin-top: 9px;
+}
+
+.groupAll
+{
+  margin-left:20px;  
+  margin-top:5px;
+}
+.complementaTextbox
+{
+  width:140px; 
+  vertical-align:middle; 
+}
+.containerIsenrirCupom
+{
+   background-color:#EEE;
+   -webkit-border-radius:7px;
+   border:2px solid #F8AE22;
+   border-radius:7px;
+   display:inline-block;
+   float:left;
+   margin-left:328px;
+   margin-top:4px;
+   width:400px; 
+   float:left;
+   height:39px;
+   margin-left:37px;
+   margin-top:31px;
+   width:382px; 
+   
+}
+.buttonStyle
+{
+    border:1px solid #F8AE22;
+    border-radius:4px;
+    cursor:pointer;
+    height:25px;
+    vertical-align:middle;
+}
+.buttonStyle:hover,.buttonStyle:active
+{
+    color:#B26500;
+ 
+ }
+.btn_continuar_cinza
+{
+    display: block;
+    float: left;
+    margin-left:570px;
+    margin-top:-55px;
+    
+}

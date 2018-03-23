@@ -1,0 +1,56 @@
+﻿@using BNE.Web.Vagas.Code
+@model BNE.Web.Vagas.Models.DegustacaoCandidatura
+@{
+    var cssClassModal = @Model.QuantidadeCandidaturaRestante <= 0 ? "modal amarela" : "modal";
+}
+<div id="modalDegustacaoCandidatura" class="@cssClassModal">
+    <script>
+        modal.abrirModal('modalDegustacaoCandidatura');
+    </script>
+    <link href="~/Content/ModalDegustacaoCandidatura.css" rel="stylesheet" />
+    <a class="b-close modal_fechar" title="Close"></a>
+    @if (Model.QuantidadeCandidaturaRestante <= 0)
+    {
+        <div class="vip-pass-icon"><img src="~/Images/modal/Degustacao/vip-pass.png" /> </div>
+    }
+    <div class="modal_conteudo">
+        <div class="container_degustacao_candidatura">
+            @if (Model.QuantidadeCandidaturaRestante <= 0)
+            {
+                <div class="voce_ganhou que_pena">
+                    <span>@Html.Raw(@Model.TextoCandidatura)</span>
+                </div>
+            }
+            else
+            {
+                switch (@Model.QuantidadeCandidaturaRestante)
+                {
+                    case 3:
+                        <img class="degustacao-icon" src="~/Images/modal/Degustacao/3-candidaturas-coin.png" />
+                        break;
+                    case 2:
+                        <img class="degustacao-icon" src="~/Images/modal/Degustacao/2-candidaturas-coin.png" />
+                        break;
+                    case 1:
+                    <img class="degustacao-icon" src="~/Images/modal/Degustacao/1-candidaturas-coin.png" />
+                        break;
+                }
+
+                <div class="voce_ganhou">
+                    <span>@Html.Raw(@Model.TextoCandidatura)</span>
+                </div>
+            }
+            <div class="nao_agora">
+                <a class="simplemodal-close b-close input_usar_bonus" title="Não agora">
+                    <input type="button" value="Não agora">
+                </a>
+            </div>
+
+            <div class="comprar-vip">
+                <a class="input_quero_passar_vip" href="@Url.Action("QueroSerVip", "Vaga")"><input type="button" value="QUERO SER VIP!"></a>
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,106 @@
+﻿@model  Sample.Models.Empresa.GridProspect
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<script src="~/Scripts/plugins/DataTableOrdering/jquery.dataTables.js"></script>
+<script src="~/Scripts/plugins/DataTableOrdering/jquery-1.12.3.js"></script>
+<script src="~/Scripts/plugins/datatables/jquery.dataTables.js"></script>
+<link href="~/Scripts/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+<link href="~/Scripts/plugins/DataTableOrdering/jquery.dataTables.css" rel="stylesheet" />
+<script src="~/Scripts/plugins/datatables/dataTables.bootstrap.js"></script>
+
+<aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Painel Empresa
+            <small>prospcção</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="~/Views/Home/"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Lista de Empresas</li>
+            <li class="active">Empresa</li>
+        </ol>
+    </section>
+
+
+    <section class="content">
+        <div class="row">
+            <div id="carrregandoGrid">
+                <div class="progresso_texto">
+                    <img src="~/Content/img/ajax-loader.gif" />
+                    <br /> Carregando...
+                </div>
+            </div>
+            <table id="example" class="display" cellspacing="0" width="100%" style="display:none">
+                <thead>
+                    <tr>
+                        <th>Data Ultima ação Site</th>
+                        <th>Num CNPJ</th>
+                        <th>Empresa</th>
+                        <th>Area</th>
+                        <th>Cidade</th>
+                        <th>UF</th>
+                        <th>Total Ação</th>
+                        <th>Quantidade Funcionarios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var empresa in Model.lista)
+                    {
+                        <tr>
+                            <td>@empresa.Data_Ultima_Acao_Site</td>
+                            <td>@empresa.Num_CNPJ</td>
+                            <td>@Html.ActionLink((empresa.Raz_Social), "Details", new { controller = "Empresa", Id = empresa.Num_CNPJ })</td>
+                            <td>@empresa.Des_Area_BNE</td>
+                            <td>@empresa.Nme_Cidade</td>
+                            <td>@empresa.Sig_Estado</td>
+                            <td>@empresa.Total_Acao</td>
+                            <td>@empresa.qtd_Funcionarios</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div id="div_carregando" class="progresso_grid">
+                <div class="progresso_texto">
+                    <img src="~/Content/img/ajax-loader.gif" />
+                    <br /> Carregando...
+                </div>
+            </div>
+        </div>
+    </section>
+</aside>
+
+<script>
+
+
+    $(document).ready(function () {
+        $('#example').DataTable({
+            columnDefs: [{
+                targets: [0],
+                orderData: [0, 1]
+            }, {
+                targets: [1],
+                orderData: [1, 0]
+            }, {
+                targets: [4],
+                orderData: [4, 0]
+            }]
+        });
+
+
+
+
+    });
+    $(window).load(function () {
+        $("#carrregandoGrid").hide();
+        $("#example").show();
+    });
+
+    function carregou() {
+        $("#div_carregando").hide();
+    }
+</script>

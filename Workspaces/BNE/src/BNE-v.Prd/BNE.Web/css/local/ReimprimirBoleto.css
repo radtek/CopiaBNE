@@ -1,0 +1,68 @@
+﻿#reimprimir_boleto{
+			font-family: 'Roboto', sans-serif;
+			display:flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			margin-top:16px;
+		}
+		#reimprimir_boleto_icon{
+			width:120px;
+			height:120px;
+			display:flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			border-radius:50%;
+			background-color: #0182E5;
+			padding:16px;
+		}
+		#reimprimir_boleto h1{ line-height: 120%; color: rgba(0,0,0, .36);font-weight:bolder;}
+		#reimprimir_boleto h4{ line-height: 120%; color: rgba(0,0,0, .54);font-weight:lighter;}
+		#reimprimir_boleto_options{
+			display:flex;
+			flex-direction: column;
+			margin-top:32px;
+		}
+		#reimprimir_boleto_options > a{
+			margin-bottom:8px;
+		}
+		#reimprimir_boleto .btn{
+			text-transform: uppercase;
+			font-size:0.85em;
+			font-weight: 500;
+			outline: none !important;
+			padding:12px 32px;
+			border-radius:4px;
+			border:0;
+			min-width:200px;
+		}
+		#reimprimir_boleto .btn:hover{
+			cursor: pointer;
+		}
+		#reimprimir_boleto .btn.btn-success{
+			background-color:#8bc34a;
+            color: #FFF !important;
+            margin-bottom: 8px;
+		}
+		#reimprimir_boleto .btn.btn-success:hover{
+			background-color:#7fb047;
+		}
+		#reimprimir_boleto .btn.btn-default{
+			background-color:#f4f4f4;
+			color: rgba(0,0,0, .54);
+		}
+		#reimprimir_boleto .btn.btn-default:hover{
+			background-color:#e5e5e5;
+		}
+.printableBoleto{
+    display:none;
+}
+
+ @media print {
+    .noPrint{display:none;}
+    .barra_rodape,.topo{display:none;}
+    .noPrint{display:none;}
+    .printableBoleto {display:block;}
+
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BNE.Auth.NET45</id>
+    <version>1.0.6</version>
+    <authors>Gieyson Stelmak</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Authenticação usando Owin</description>
+    <dependencies>
+      <dependency id="BNE.Auth.Core" version="1.0.2"/>
+    </dependencies>
+  </metadata>
+</package>

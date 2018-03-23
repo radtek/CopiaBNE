@@ -1,0 +1,41 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity"
+	mc:Ignorable="d"
+	x:Class="SilverlightPrototype1Screens.Quem_me_Viu"
+	Width="1366" Height="768">
+
+	<Grid x:Name="LayoutRoot" Background="White">
+		<Image Margin="0,0,0,60" Source="Image34.png" Stretch="Fill">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="MouseLeftButtonDown">
+					<pi:NavigateBackAction/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Image>
+		<HyperlinkButton Content="                                                                              " Margin="263,373,362,356" FontSize="26.667">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<pi:NavigateToScreenAction TargetScreen="SilverlightPrototype1Screens.Pagamento"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</HyperlinkButton>
+		<HyperlinkButton Content="                                                                              " Margin="263,329,362,0" FontSize="26.667" Height="39" VerticalAlignment="Top">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<pi:NavigateToScreenAction TargetScreen="SilverlightPrototype1Screens.Pagamento"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</HyperlinkButton>
+		<Button Content="Voltar" Margin="655,0,653,289" VerticalAlignment="Bottom" Height="26">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<pi:NavigateBackAction/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+	</Grid>
+</UserControl>

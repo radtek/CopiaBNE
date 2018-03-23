@@ -1,0 +1,99 @@
+﻿/* reset ----------------------------------------------------------*/
+html, body, div, span, applet, object, iframe, caption,
+tfoot, thead, del, dfn, em, font, img, ins,
+kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+acronym, address, big, cite, code, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend { font-family: inherit; /*font-weight: inherit;*/ font-style: inherit; font-size: 100%; outline: 0; padding: 0; margin: 0; border: 0; }
+:focus { outline: 0; }
+body { background: white; line-height: 1; color: black; }
+ol, ul { list-style: none; }
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { font-weight: normal; }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { -webkit-quotes: "" ""; quotes: "" ""; }
+/* FIM:reset ----------------------------------------------------------*/
+
+html, body { height: 100%; }
+body { background-color: #fff; font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+.clear { clear: both; }
+h1 { color: gray; font-size: 20px; height: 20px; font-weight: bold; display: block; margin-top: 13px; margin-bottom: 13px; }
+h2 { font-weight: normal; }
+h3 { font-weight: bold; }
+a { color: #1E3260; text-decoration: none; }
+
+.titulo_rodape { margin-top: 18px; font-size: 11px; font-weight: bold; padding: 0; margin-left: 0; margin-bottom: 0; line-height: 1; }
+
+/* topo----------------------------------------------------------*/
+.header { background-image: url('/Images/bg_topo.png'); background-repeat: repeat-x; height: 192px; }
+    .header .busca { height: 75px; display: block; position: absolute; top: 80px; width: 410px; }
+    .header .logo { background-repeat: no-repeat; top: 3px; position: absolute; }
+    .header .busca .busca_superior .vaga { clear: both; display: block; position: relative; height: 30px; }
+    .header .busca .busca_superior .curriculo { clear: both; display: block; position: relative; height: 30px; background-color: black; }
+    .header .busca .busca_inferior { 
+        clear: both; 
+        /*background-image: url('/Images/pesquisa_vagas.png'); 
+        background-repeat: no-repeat;*/ 
+        display: block; position: relative; height: 73px; margin-top: -4px; width: 883px; }
+/*.header .conteudo-wrapper { padding-top: 3px; }*/
+.esquerda { float: left; }
+.direita { float: right; }
+.header .painel_informacoes { background-image: url('/Images/painel_informacoes.png'); height: 30px; /* width: 346px;*/ width: 433px; background-repeat: no-repeat; position: absolute; /*right: 128px;*/ right: 70px; padding-top: 2px; text-align: center; }
+    /*.topo .painel_informacoes .icones { vertical-align: middle; }*/
+    .header .painel_informacoes .separar { vertical-align: middle; margin-right: 5px; margin-left: 5px; }
+    .header .painel_informacoes img { vertical-align: middle; }
+    .header .painel_informacoes .textos { font-weight: bold; vertical-align: middle; margin-left: 6px; }
+.header .painel_login { position: absolute; width: 50px; right: 6px; top: 5px; }
+.header .painel_atalho { position: absolute; right: 5px; top: 85px; }
+/*.buscar .submit { border-radius: 4px 4px 4px 4px; background: none repeat scroll 0 0 #1F659B; width: 120px; }*/
+.header .busca .funcao { float: left; margin-left: 13px; }
+.header .busca .cidade { float: left; margin-left: 22px; }
+.header .busca .palavrachave { float: left; margin-left: 23px; }
+.header .busca .buscar { float: left; margin-left: 265px; margin-top: 16px; }
+.pesquisa_topo_funcao, .pesquisa_topo_cidade, .pesquisa_topo_palavra_chave { position: relative; top: 16px; border: none; width: 230px; height: 24px; background: none repeat scroll 0 0 transparent; }
+/* rodape */
+.footer { background-image: url('/Images/barra_rodape.png'); background-repeat: repeat-x; height: 96px; font-size: 11px; top: 450px; width: 100%; clear: both; }
+    .footer .wrapper { margin: 0 auto; width: 880px; }
+    .footer .img_separar_rodape { float: left; margin-right: 13px; margin-left: 13px; margin-top: 15px; }
+    .footer h4 { margin-top: 18px; font-size: 11px; }
+    .footer .barra_rodape_candidato { color: #143D75; float: left; }
+    .footer .barra_rodape_empresa { color: #175007; float: left; }
+    .footer .barra_rodape_geral { color: #424341; float: left; }
+    .footer .barra_rodape_rhoffice { width: 800px; margin: 0 auto; }
+    .footer ul { list-style: none; line-height: 16px; float: left; margin: 0; padding: 0; list-style-position: inside; }
+        .footer ul li { display: inline; list-style-position: inside; }
+    .footer .lista_rodape { font-size: 11px; width: 266px; }
+    .footer .lista_rodape_candidato { font-size: 11px; width: 256px; }
+    .footer .lista_rodape_empresa { font-size: 11px; width: 295px; }
+    .footer .lista_rodape_geral { font-size: 11px; width: 273px; }
+    .footer .link_rodape_nao_quebrar_linha { white-space: nowrap; }
+    .footer .lista_rodape .candidato, .barra_rodape_candidato ul li a { color: #143d75; }
+    .footer .lista_rodape .empresa, .barra_rodape_empresa ul li a { color: #175007; }
+    .footer .lista_rodape .geral, .barra_rodape_geral ul li a { color: #424341; }
+    .footer .lista_rodape .candidato li, .lista_rodape .empresa li, .lista_rodape .geral li { display: inline; }
+
+/* conteudo----------------------------------------------------------*/
+.content { /*background-color: #FFFFFF; */ /*clear: both;*/ padding-bottom: 35px; }
+.conteudo-wrapper { margin: 0 auto; max-width: 880px; position: relative; }
+.pager { height: 24px; background-image: url('/Images/bg_barra_paginacao.png'); background-repeat: repeat-x; border-color: #5D8CC9; border-style: solid; border-width: 1px; overflow: hidden; padding: 2px 6px; }
+    .pager a, .current { padding-top: 2px; vertical-align: middle; height: 14px; margin-left: 3px; margin-top: 1px; border: 1px solid transparent; border-radius: 3px; font-size: 11px; margin: 0 1px; padding: 3px 4px; }
+    .pager .input { padding: 0px; }
+    .pager .pagina:hover { background-color: #e3efff; border: 1px solid #5D8CC9; }
+    .pager .current { margin-left: 3px; background-color: #e3efff; border: 1px solid #5D8CC9; }
+    .pager .disabled { margin-left: 3px; }
+    .pager * { vertical-align: middle; }
+    .pager div { display: inline-block; }
+.container_botoes { margin: 20px 0; text-align: center; }
+.strong { font-weight: bold; }
+.botao_padrao { background-image: url('/Images/botao_padrao.png'); background-repeat: repeat-x; border: 1px solid #c3c3c3; cursor: pointer; font-size: 12px; overflow: visible; padding: 0 11px !important; height: 26px; width: auto !important; margin-bottom: 25px; margin-left: 10px; }
+.linha { clear: both; padding: 3px 0; overflow: auto; }
+label { float: left; color: #1e3260; margin-left: 4px; padding-top: 3px; }
+.label_principal { text-align: right; width: 155px; float: left; }
+.container_campo { float: left; padding-left: 5px; }
+.field-validation-error { color: #ff0000; font-weight: normal; font-size: 11px; background-image: url('/Images/icone_validacao_campo.gif'); background-repeat: no-repeat; padding-left: 11px; }
+.highlight { font-weight: bold; }
+/* Modal */
+.modal { background-color: #42caff; height: 250px; width: 600px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -webkit-box-shadow: 0px 0px 0px 4px white,1px 1px 8px 0 white; -moz-box-shadow: 0px 0px 0px 4px white,1px 1px 8px 0 white; box-shadow: 0px 0px 0px 4px white,1px 1px 8px 0 white; }
+    .modal .modal_fechar { background: url(/Images/modal/btn_fechar_modal.png) no-repeat; width: 34px; height: 34px; display: inline; z-index: 1003; position: absolute; top: -12px; right: -15px; cursor: pointer; }
+    .modal.amarela { background-color: #f6ead2; }
+        .modal.amarela .modal_fechar { background: url(/Images/modal/btn_fechar_modal_amarela.png) no-repeat; width: 36px; height: 36px; top: -14px; }

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Mensagens" targetNamespace="http://tempuri.org/Mensagens.xsd" xmlns:mstns="http://tempuri.org/Mensagens.xsd" xmlns="http://tempuri.org/Mensagens.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="BNE_DEVConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BNE_DEVConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.BNE_DEVConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Mensagens" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Mensagens" msprop:Generator_DataSetName="Mensagens" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BNE_Mensagem_CS" msprop:Generator_UserTableName="BNE_Mensagem_CS" msprop:Generator_RowDeletedName="BNE_Mensagem_CSRowDeleted" msprop:Generator_RowChangedName="BNE_Mensagem_CSRowChanged" msprop:Generator_RowClassName="BNE_Mensagem_CSRow" msprop:Generator_RowChangingName="BNE_Mensagem_CSRowChanging" msprop:Generator_RowEvArgName="BNE_Mensagem_CSRowChangeEvent" msprop:Generator_RowEvHandlerName="BNE_Mensagem_CSRowChangeEventHandler" msprop:Generator_TableClassName="BNE_Mensagem_CSDataTable" msprop:Generator_TableVarName="tableBNE_Mensagem_CS" msprop:Generator_RowDeletingName="BNE_Mensagem_CSRowDeleting" msprop:Generator_TablePropName="BNE_Mensagem_CS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Idf_Mensagem_CS" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Idf_Mensagem_CS" msprop:Generator_ColumnVarNameInTable="columnIdf_Mensagem_CS" msprop:Generator_ColumnPropNameInRow="Idf_Mensagem_CS" msprop:Generator_ColumnPropNameInTable="Idf_Mensagem_CSColumn" type="xs:int" />
+              <xs:element name="Idf_Usuario_Filial_Perfil" msprop:Generator_UserColumnName="Idf_Usuario_Filial_Perfil" msprop:Generator_ColumnVarNameInTable="columnIdf_Usuario_Filial_Perfil" msprop:Generator_ColumnPropNameInRow="Idf_Usuario_Filial_Perfil" msprop:Generator_ColumnPropNameInTable="Idf_Usuario_Filial_PerfilColumn" type="xs:int" />
+              <xs:element name="Idf_Curriculo" msprop:Generator_UserColumnName="Idf_Curriculo" msprop:Generator_ColumnVarNameInTable="columnIdf_Curriculo" msprop:Generator_ColumnPropNameInRow="Idf_Curriculo" msprop:Generator_ColumnPropNameInTable="Idf_CurriculoColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Des_Mensagem" msprop:Generator_UserColumnName="Des_Mensagem" msprop:Generator_ColumnVarNameInTable="columnDes_Mensagem" msprop:Generator_ColumnPropNameInRow="Des_Mensagem" msprop:Generator_ColumnPropNameInTable="Des_MensagemColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Dta_Envio" msprop:Generator_UserColumnName="Dta_Envio" msprop:Generator_ColumnVarNameInTable="columnDta_Envio" msprop:Generator_ColumnPropNameInRow="Dta_Envio" msprop:Generator_ColumnPropNameInTable="Dta_EnvioColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Idf_Rede_Social_CS" msprop:Generator_UserColumnName="Idf_Rede_Social_CS" msprop:Generator_ColumnVarNameInTable="columnIdf_Rede_Social_CS" msprop:Generator_ColumnPropNameInRow="Idf_Rede_Social_CS" msprop:Generator_ColumnPropNameInTable="Idf_Rede_Social_CSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Idf_Tipo_Mensagem_CS" msprop:Generator_UserColumnName="Idf_Tipo_Mensagem_CS" msprop:Generator_ColumnVarNameInTable="columnIdf_Tipo_Mensagem_CS" msprop:Generator_ColumnPropNameInRow="Idf_Tipo_Mensagem_CS" msprop:Generator_ColumnPropNameInTable="Idf_Tipo_Mensagem_CSColumn" type="xs:int" />
+              <xs:element name="Des_Email_Destinatario" msprop:Generator_UserColumnName="Des_Email_Destinatario" msprop:Generator_ColumnVarNameInTable="columnDes_Email_Destinatario" msprop:Generator_ColumnPropNameInRow="Des_Email_Destinatario" msprop:Generator_ColumnPropNameInTable="Des_Email_DestinatarioColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Des_Email_Assunto" msprop:Generator_UserColumnName="Des_Email_Assunto" msprop:Generator_ColumnVarNameInTable="columnDes_Email_Assunto" msprop:Generator_ColumnPropNameInRow="Des_Email_Assunto" msprop:Generator_ColumnPropNameInTable="Des_Email_AssuntoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Arq_Anexo" msprop:Generator_UserColumnName="Arq_Anexo" msprop:Generator_ColumnVarNameInTable="columnArq_Anexo" msprop:Generator_ColumnPropNameInRow="Arq_Anexo" msprop:Generator_ColumnPropNameInTable="Arq_AnexoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Idf_Status_Mensagem_CS" msprop:Generator_UserColumnName="Idf_Status_Mensagem_CS" msprop:Generator_ColumnVarNameInTable="columnIdf_Status_Mensagem_CS" msprop:Generator_ColumnPropNameInRow="Idf_Status_Mensagem_CS" msprop:Generator_ColumnPropNameInTable="Idf_Status_Mensagem_CSColumn" type="xs:int" />
+              <xs:element name="Dta_Cadastro" msprop:Generator_UserColumnName="Dta_Cadastro" msprop:Generator_ColumnVarNameInTable="columnDta_Cadastro" msprop:Generator_ColumnPropNameInRow="Dta_Cadastro" msprop:Generator_ColumnPropNameInTable="Dta_CadastroColumn" type="xs:dateTime" />
+              <xs:element name="Des_Email_Remetente" msprop:Generator_UserColumnName="Des_Email_Remetente" msprop:Generator_ColumnVarNameInTable="columnDes_Email_Remetente" msprop:Generator_ColumnPropNameInRow="Des_Email_Remetente" msprop:Generator_ColumnPropNameInTable="Des_Email_RemetenteColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Num_DDD_Celular" msprop:Generator_UserColumnName="Num_DDD_Celular" msprop:Generator_ColumnVarNameInTable="columnNum_DDD_Celular" msprop:Generator_ColumnPropNameInRow="Num_DDD_Celular" msprop:Generator_ColumnPropNameInTable="Num_DDD_CelularColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Num_Celular" msprop:Generator_UserColumnName="Num_Celular" msprop:Generator_ColumnVarNameInTable="columnNum_Celular" msprop:Generator_ColumnPropNameInRow="Num_Celular" msprop:Generator_ColumnPropNameInTable="Num_CelularColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Flg_Inativo" msprop:Generator_UserColumnName="Flg_Inativo" msprop:Generator_ColumnVarNameInTable="columnFlg_Inativo" msprop:Generator_ColumnPropNameInRow="Flg_Inativo" msprop:Generator_ColumnPropNameInTable="Flg_InativoColumn" type="xs:boolean" />
+              <xs:element name="Nme_Anexo" msprop:Generator_UserColumnName="Nme_Anexo" msprop:Generator_ColumnVarNameInTable="columnNme_Anexo" msprop:Generator_ColumnPropNameInRow="Nme_Anexo" msprop:Generator_ColumnPropNameInTable="Nme_AnexoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nme_Usuario" msprop:Generator_UserColumnName="Nme_Usuario" msprop:Generator_ColumnVarNameInTable="columnNme_Usuario" msprop:Generator_ColumnPropNameInRow="Nme_Usuario" msprop:Generator_ColumnPropNameInTable="Nme_UsuarioColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Nme_Pessoa" msdata:Caption="Des_Obs" msprop:Generator_UserColumnName="Nme_Pessoa" msprop:Generator_ColumnVarNameInTable="columnNme_Pessoa" msprop:Generator_ColumnPropNameInRow="Nme_Pessoa" msprop:Generator_ColumnPropNameInTable="Nme_PessoaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Forma_Envio" msdata:Caption="Idf_Sistema" msprop:Generator_UserColumnName="Forma_Envio" msprop:Generator_ColumnVarNameInTable="columnForma_Envio" msprop:Generator_ColumnPropNameInRow="Forma_Envio" msprop:Generator_ColumnPropNameInTable="Forma_EnvioColumn" type="xs:int" />
+              <xs:element name="Idf_Centro_Servico" msprop:Generator_UserColumnName="Idf_Centro_Servico" msprop:Generator_ColumnVarNameInTable="columnIdf_Centro_Servico" msprop:Generator_ColumnPropNameInRow="Idf_Centro_Servico" msprop:Generator_ColumnPropNameInTable="Idf_Centro_ServicoColumn" type="xs:int" />
+              <xs:element name="Nme_Fantasia" msprop:Generator_UserColumnName="Nme_Fantasia" msprop:Generator_ColumnPropNameInRow="Nme_Fantasia" msprop:Generator_ColumnVarNameInTable="columnNme_Fantasia" msprop:Generator_ColumnPropNameInTable="Nme_FantasiaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Des_Tipo_Mensagem" msprop:Generator_UserColumnName="Des_Tipo_Mensagem" msprop:Generator_ColumnPropNameInRow="Des_Tipo_Mensagem" msprop:Generator_ColumnVarNameInTable="columnDes_Tipo_Mensagem" msprop:Generator_ColumnPropNameInTable="Des_Tipo_MensagemColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BNE_Mensagem_CS" />
+      <xs:field xpath="mstns:Idf_Mensagem_CS" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

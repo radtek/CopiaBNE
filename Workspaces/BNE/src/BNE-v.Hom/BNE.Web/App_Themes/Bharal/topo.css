@@ -1,0 +1,23 @@
+/*------------------------------------------------------------ Theme Bharal*/
+.topo {
+  background-image: url("/img/App_Themes/Bharal/bg_topo.gif"); }
+
+.painel_filtro_vaga_escondido {
+  background-image: linear-gradient(90deg, #AEB48F 6%, #7B7F65 18%, #AEB48F 72%, #B9BF98 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #B9BF98 6%, #7B7F65 18%, #AEB48F 72%, #B9BF98 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #B9BF98 6%, #7B7F65 18%, #AEB48F 72%, #B9BF98 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #B9BF98 6%, #7B7F65 18%, #AEB48F 72%, #B9BF98 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B9BF98', endColorstr='#7B7F65') !important; }
+
+#pnlBusca.painel_filtro_vaga {
+  background-image: linear-gradient(90deg, #AEB48F 6%, #7B7F65 18%, #AEB48F 72%, #B9BF98 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #B9BF98 6%, #7B7F65 18%, #AEB48F 72%, #B9BF98 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #B9BF98 6%, #7B7F65 18%, #AEB48F 72%, #B9BF98 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #B9BF98 6%, #7B7F65 18%, #AEB48F 72%, #B9BF98 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B9BF98', endColorstr='#7B7F65') !important;
+  border-radius: 0 4px 4px 4px !important; }
+
+#aBuscarVagas, .btn_buscar a#btiPesquisarVaga {
+    background-color: #B9BF98;
+}
+/*# sourceMappingURL=topo.css.map */

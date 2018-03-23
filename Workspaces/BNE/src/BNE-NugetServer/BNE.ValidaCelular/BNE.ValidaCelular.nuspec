@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BNE.ValidaCelular</id>
+    <version>1.0.0</version>
+    <authors>Gieyson Stelmak</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Geração, verificação e utilização de código de validação para celular.</description>
+  </metadata>
+</package>

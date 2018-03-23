@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>IDataReader</Title>
+            <Shortcut>idr</Shortcut>
+            <Description>Gera um bloco de código para consumir um IDataReader</Description>
+            <Author>Gieyson Stelmak</Author>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>CommandType</ID>
+                    <ToolTip>Defina o tipo do comando.</ToolTip>
+                    <Default>Text</Default>
+                </Literal>
+                <Literal>
+                    <ID>CommandText</ID>
+                    <ToolTip>Defina o nome do comando.</ToolTip>
+                    <Default>query</Default>
+                </Literal>
+                <Literal>
+                    <ID>Parms</ID>
+                    <ToolTip>Defina o nome dos parametros.</ToolTip>
+                    <Default>parms</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp">
+
+            <![CDATA[
+            using (IDataReader dr = DataAccessLayer.ExecuteReader(CommandType.$CommandType$, $CommandText$, $Parms$))
+            {
+            while (dr.Read())
+            {
+
+            }
+            if (!dr.IsClosed)
+                dr.Close();
+            }
+
+            ]]>
+
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
+
+

@@ -1,0 +1,10 @@
+﻿/*VALIDAR RECEITA FEDERAL*/
+.painel_captcha { background-color: #DFE7EA; border: 1px solid #CCCCCC; padding: 10px; position: relative; top: 6px; width: 269px; height: 84px; margin-bottom: 10px; }
+.painel_captcha .button_padrao { background-image: url(/img/botao_padrao.png); background-repeat: repeat-x; border: 1px solid #c3c3c3; cursor: pointer; font-size: 12px; overflow: visible; height: 26px; width: auto !important; margin-bottom: 6px; margin-left: 10px; padding: 0 11px !important; }
+.painel_captcha label { color: Black; padding: 5px 0; width: 46px; float: left; }
+.painel_captcha input { float: left; }
+.painel_captcha .img_captcha { border: 1px solid #7e7e7e !important; float: left; margin: 0 auto 0 70px; }
+.btn_renovar_captcha { background-color: transparent !important; background-image: url("/img/btn_atualizar.png"); border: medium none !important; cursor: pointer; height: 16px; left: 8px; position: relative; top: 18px; width: 16px; }
+.titulo_checkox { position: relative; top: 1px; }
+.button_receita { color: #1d325d; background: #E7EEF1 url('/img/btn_receita_federal.gif') no-repeat !important; border: none !important; cursor: pointer; padding-left: 25px !important; }
+.button_receita:hover { text-decoration: underline; }

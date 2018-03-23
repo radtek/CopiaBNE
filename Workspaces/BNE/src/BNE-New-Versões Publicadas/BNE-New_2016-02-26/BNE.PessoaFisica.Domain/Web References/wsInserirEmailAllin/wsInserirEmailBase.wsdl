@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://painel02.allinmail.com.br/wsAllin/inserir_email_base.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="wsInserirEmailBase" targetNamespace="http://painel02.allinmail.com.br/wsAllin/inserir_email_base.php" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://painel02.allinmail.com.br/wsAllin/inserir_email_base.php" />
+  </wsdl:types>
+  <wsdl:message name="inserirEmailBaseIn">
+    <wsdl:part name="ticket" type="xsd:string" />
+    <wsdl:part name="dados" type="soap-enc:Array" />
+  </wsdl:message>
+  <wsdl:message name="inserirEmailBaseOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="wsInserirEmailBasePort">
+    <wsdl:operation name="inserirEmailBase">
+      <documentation>@param string $ticket 
+  @param array $dados
+  @return string</documentation>
+      <wsdl:input message="tns:inserirEmailBaseIn" />
+      <wsdl:output message="tns:inserirEmailBaseOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsInserirEmailBaseBinding" type="tns:wsInserirEmailBasePort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="inserirEmailBase">
+      <soap:operation soapAction="http://painel02.allinmail.com.br/wsAllin/inserir_email_base.php#inserirEmailBase" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://painel02.allinmail.com.br/wsAllin/inserir_email_base.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://painel02.allinmail.com.br/wsAllin/inserir_email_base.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsInserirEmailBaseService">
+    <wsdl:port name="wsInserirEmailBasePort" binding="tns:wsInserirEmailBaseBinding">
+      <soap:address location="http://painel02.allinmail.com.br/wsAllin/inserir_email_base.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

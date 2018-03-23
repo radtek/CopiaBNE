@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{68FDC1C2-7887-4869-9D7A-52F398E41A42}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LanHouse.Entities.BNE</RootNamespace>
+    <AssemblyName>LanHouse.Entities.BNE</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BNE_Adicional_Plano.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Carta_Email.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Carta_SMS.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Codigo_Desconto.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Codigo_Desconto_Plano.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Curriculo.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Curriculo_Idioma.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Curriculo_Observacao.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Curriculo_Origem.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Estatistica.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Experiencia_Profissional.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Formacao.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Funcao_Erro_Sinonimo.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Funcao_Pretendida.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Intencao_Filial.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Pagamento.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Plano.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Plano_Adquirido.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Plano_Adquirido_Detalhes.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Plano_Parcela.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Plano_Quantidade.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Ranking_Email.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Ranking_Email1.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Situacao_Formacao.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Tipo_Codigo_Desconto.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Tipo_Pagamento.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Usuario_Filial.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Vaga.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNE_Vaga_Candidato.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BUSCA_EMPRESA_RETORNO.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\DatabaseFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="LanHouse.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanHouse.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LanHouse.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LanHouse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanHouse.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="LAN_Administrador.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LAN_Companhia.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LAN_Fase_Cadastro.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LAN_Oportunidade.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LAN_Oportunidade_Cidade.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LAN_Oportunidade_Curriculo.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LAN_Oportunidade_Curriculo_Historico.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LAN_Perfil.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LAN_Plano_Adquirido.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LAN_Plano_Situacao.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AreaBNERepository.cs" />
+    <Compile Include="Repositories\CompanhiaRepository.cs" />
+    <Compile Include="Repositories\FaseCadastroRepository.cs" />
+    <Compile Include="Repositories\ParametroRepository.cs" />
+    <Compile Include="TAB_Area_BNE.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Cidade.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Contato.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Curso.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Deficiencia.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_DePara_Email.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Endereco.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Escolaridade.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Estado.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Estado_Civil.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Filial.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Filial_Logo.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Filial_Observacao.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Fonte.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Funcao.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Idioma.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Nivel_Idioma.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Origem_Filial.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Parametro.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Parametro_Curriculo.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Parametro_Filial.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Pesquisa_Salarial.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Pessoa_Fisica.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Pessoa_Fisica_Foto.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Pessoa_Fisica_Idioma.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Regiao_Metropolitana.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Regiao_Metropolitana_Cidade.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAB_Usuario_Filial_Perfil.cs">
+      <DependentUpon>LanHouse.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="LanHouse.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LanHouse.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="LanHouse.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LanHouse.Context.cs</LastGenOutput>
+      <DependentUpon>LanHouse.edmx</DependentUpon>
+    </None>
+    <None Include="LanHouse.edmx.diagram">
+      <DependentUpon>LanHouse.edmx</DependentUpon>
+    </None>
+    <None Include="LanHouse.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LanHouse.cs</LastGenOutput>
+      <DependentUpon>LanHouse.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

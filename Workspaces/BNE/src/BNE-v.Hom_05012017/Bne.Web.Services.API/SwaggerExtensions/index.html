@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>BNE Api Explorer</title>
+    <meta charset="U">
+    <link rel="icon" href="/SwaggerExtensions/favicon.ico" sizes="16x16" />
+    <link href='css/typography-css' media='screen' rel='stylesheet' type='text/css' />
+    <link href='css/reset-css' media='screen' rel='stylesheet' type='text/css' />
+    <link href='css/screen-css' media='screen' rel='stylesheet' type='text/css' />
+    <link href='css/reset-css' media='print' rel='stylesheet' type='text/css' />
+    <link href='css/print-css' media='print' rel='stylesheet' type='text/css' />
+    %(StylesheetIncludes)
+    <script src='lib/jquery-1-8-0-min-js' type='text/javascript'></script>
+    <script src='lib/jquery-slideto-min-js' type='text/javascript'></script>
+    <script src='lib/jquery-wiggle-min-js' type='text/javascript'></script>
+    <script src='lib/jquery-ba-bbq-min-js' type='text/javascript'></script>
+    <script src='lib/handlebars-2-0-0-js' type='text/javascript'></script>
+    <script src='lib/underscore-min-js' type='text/javascript'></script>
+    <script src='lib/backbone-min-js' type='text/javascript'></script>
+    <script src='swagger-ui-js' type='text/javascript'></script>
+    <script src='lib/highlight-7-3-pack-js' type='text/javascript'></script>
+    <script src='lib/marked-js' type='text/javascript'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.js' type='text/javascript'></script>
+
+    <script src='lib/swagger-oauth-js' type='text/javascript'></script>
+
+    <script type="text/javascript">
+        $(function () {
+            var url = window.location.search.match(/url=([^&]+)/);
+            if (url && url.length > 1) {
+                url = decodeURIComponent(url[1]);
+            } else {
+                url = "http://petstore.swagger.io/v2/swagger.json";
+            }
+            // Get Swashbuckle config into JavaScript
+            function arrayFrom(configString) {
+                return (configString !== "") ? configString.split('|') : [];
+            }
+            function stringOrNullFrom(configString) {
+                return (configString !== "null") ? configString : null;
+            }
+            window.swashbuckleConfig = {
+                rootUrl: '%(RootUrl)',
+                discoveryPaths: arrayFrom('%(DiscoveryPaths)'),
+                booleanValues: arrayFrom('%(BooleanValues)'),
+                validatorUrl: stringOrNullFrom('%(ValidatorUrl)'),
+                customScripts: arrayFrom('%(CustomScripts)'),
+                docExpansion: '%(DocExpansion)',
+                oAuth2Enabled: ('%(OAuth2Enabled)' == 'true'),
+                oAuth2ClientId: '%(OAuth2ClientId)',
+                oAuth2Realm: '%(OAuth2Realm)',
+                oAuth2AppName: '%(OAuth2AppName)'
+            };
+            window.swaggerUi = new SwaggerUi({
+                url: swashbuckleConfig.rootUrl + "/" + swashbuckleConfig.discoveryPaths[0],
+                dom_id: "swagger-ui-container",
+                booleanValues: swashbuckleConfig.booleanValues,
+                onComplete: function (swaggerApi, swaggerUi) {
+                    if (typeof initOAuth == "function" && swashbuckleConfig.oAuth2Enabled) {
+                        initOAuth({
+                            clientId: swashbuckleConfig.oAuth2ClientId,
+                            realm: swashbuckleConfig.oAuth2Realm,
+                            appName: swashbuckleConfig.oAuth2AppName
+                        });
+                    }
+                    $('pre code').each(function (i, e) {
+                        hljs.highlightBlock(e)
+                    });
+                    addApiKeyAuthorization();
+                    window.swaggerApi = swaggerApi;
+                    _.each(swashbuckleConfig.customScripts, function (script) {
+                        $.getScript(script);
+                    });
+                },
+                onFailure: function (data) {
+                    log("Unable to Load SwaggerUI");
+                },
+                docExpansion: swashbuckleConfig.docExpansion,
+                sorter: "alpha"
+            });
+            if (window.swashbuckleConfig.validatorUrl !== '')
+                window.swaggerUi.options.validatorUrl = window.swashbuckleConfig.validatorUrl;
+            function addApiKeyAuthorization() {
+                var cpf = $('#input_cpf')[0].value.replace(/[^0-9]/g, "");
+                var cnpj = $('#input_cnpj')[0].value.replace(/[^0-9]/g, "");
+                var guid = $('#input_guid')[0].value;
+                var dn = "";
+                if ($('#input_dn')[0] != "") {
+                    var split = $('#input_dn')[0].value.split("/");
+                    if (split.length == 3) {
+                        dn = split[2] + "-" + split[1] + "-" + split[0];
+                    }
+                }
+                if (cpf == "" || dn == "")
+                    return;
+
+                var info = { "CPF": parseInt(cpf), "DataNascimento": dn, "Sistema": guid }
+                if (cnpj != "") {
+                    info.CNPJ = parseInt(cnpj);
+                }
+
+                var key = Base64.encode(JSON.stringify(info));
+                if (key && key.trim() != "") {
+                    var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("apiKey", key, "header");
+                    window.swaggerUi.api.clientAuthorizations.add("apiKey", apiKeyAuth);
+                    log("added key " + key);
+                }
+            }
+
+            $('#input_cpf, #input_dn, #input_cnpj, #input_guid').change(addApiKeyAuthorization);
+            // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
+            /*
+              var apiKey = "myApiKeyXXXX123456789";
+              $('#input_apiKey').val(apiKey);
+              addApiKeyAuthorization();
+            */
+            window.swaggerUi.load();
+            function log() {
+                if ('console' in window) {
+                    console.log.apply(console, arguments);
+                }
+            }
+
+            //Definindo mascaras
+            $("#input_guid").mask('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX', {
+                translation: {
+                    'X': {
+                        pattern: /[0-9a-zA-Z]/, optional: false
+                    }
+                }
+            });
+            $("#input_cpf").mask('000.000.000-00');
+            $("#input_dn").mask('00/00/0000');
+            $("#input_cnpj").mask('00.000.000/0000-00');
+        });
+        function authPanelControl() {
+            if ($(".athenticationPanel").is(":visible"))
+                $(".athenticationPanel").hide(400);
+            else
+                $(".athenticationPanel").show(400);
+        }
+    </script>
+
+    <style>
+        .swagger-section .swagger-ui-wrap .info_subtitle {
+            padding-bottom: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        #swagger-ui-container .info {
+            display: none;
+        }
+
+        .swagger-section .swagger-ui-wrap {
+            max-width: 1110px;
+        }
+
+        .dadosUsuario li {
+            line-height: 25px;
+        }
+
+        .content {
+            background-color: #ebf7f0;
+            border: 1px solid #c3e8d1;
+            padding: 10px;
+        }
+
+            .content h4 {
+                color: #10a54a;
+                font-size: 1.1em;
+                margin: 0;
+                padding: 15px 0 5px;
+            }
+
+            .input {
+                display: block;
+                clear: none;
+                float: left;
+                margin: 0 10px 0 0;
+            }
+
+            .input input {
+                font-size: 0.9em;
+                padding: 3px;
+                margin: 0;
+                width: 135px;
+            }
+    </style>
+</head>
+<body class="swagger-section">
+    <div id='header' style="background-color: #072350;">
+        <div class="swagger-ui-wrap">
+            <img src="/SwaggerExtensions/logo.png" height="30" />
+            <form id='api_selector'>
+                <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text" style="width: 500px" /></div>
+                <div class='input'><a id="explore" href="#">Explore</a></div>
+            </form>
+        </div>
+    </div>
+    <div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
+    <div class="swagger-ui-wrap">
+        <div class="info" id="api_info">
+            <div class="info_title">BNE Api</div>
+            <div class="info_description">
+                <p>A Api do BNE fornece uma interface para que sitemas utilizados por clientes do BNE. Atrav&eacute;s dessa API &eacute; poss&iacute;vel o an&uacute;ncio de vagas e a pesquisa e visualiza&ccedil;&atilde;o de curr&iacute;culos diretamente na base do BNE.</p>
+            </div>
+            <div class="info_title">Par&acirc;metros de autentica&ccedil;&atilde;o</div>
+            <div class="info_description">
+                <p>
+                    Informe os campos a seguir para utilizar as API's atrav&eacute;s dessa p&aacute;gina:
+                    <div class='input'><input placeholder="Sistema" id="input_guid" name="guid" type="text" style="width: 285px"/></div>
+                    <div class='input'><input placeholder="CPF" id="input_cpf" name="cpf" type="text"/></div>
+                    <div class='input'><input placeholder="Data de Nascimento" id="input_dn" name="dn" type="text"/></div>
+                    <div class='input'><input placeholder="CNPJ" id="input_cnpj" name="cnpj" type="text"/></div>
+                </p>
+            </div>
+        </div>
+
+        <div class="container" id="resources_container">
+            <ul id="resources">
+                <li id="resource_Autenticacao" class="resource" style="border-bottom: 1px solid #dddddd;">
+                    <div class="heading">
+                        <h2>
+                            <a href="#!/Autenticacao" class="toggleEndpointList" data-id="Autenticacao" onclick="authPanelControl();">Autentica&ccedil;&atilde;o</a>
+                        </h2>
+                        <ul class="options">
+                            <li>
+                                <a href="#!/Autenticacao" id="endpointListTogger_Curriculo" class="toggleEndpointList" data-id="Curriculo" onclick="authPanelControl();">Show/Hide</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="content athenticationPanel" style="display: none;">
+                <div class="info_description">
+                    <p>A autentica&ccedil;&atilde;o da API do BNE se dar&aacute; atrav&eacute;s de Token gerado atrav&eacute;s das informa&ccedil;&otilde;es de login do Usu&aacute;rio no BNE.</p>
+                    <p>Para gerar um token, primeiramente um json deve ser construido com no seguinte formato:</p>
+                    <p>
+                        <div class="model-signature">
+                            <div>
+                                <ul class="signature-nav">
+                                    <li>
+                                        <a id="authModel" class="description-link selected" href="#" onclick="$('#descriptionJsonAuth').show(); $('#descriptionSnnipetAuth').hide(); $('#authModel').addClass('selected'); $('#authJson').removeClass('selected');">Model</a>
+                                    </li>
+                                    <li>
+                                        <a id="authJson" class="snippet-link" href="#" onclick="$('#descriptionJsonAuth').hide(); $('#descriptionSnnipetAuth').show(); $('#authModel').removeClass('selected'); $('#authJson').addClass('selected');">Model Schema</a>
+                                    </li>
+                                </ul>
+                                <div>
+                                    <div class="signature-container">
+                                        <div id="descriptionJsonAuth" class="description" style="display: block;">
+                                            <span class="strong">{</span>
+                                            <div>
+                                                <span class="propName ">Sistema</span> (<span class="propType">guid</span>, <span class="propOptKey">Obrigat&oacute;rio</span>),
+                                            </div>
+                                            <div>
+                                                <span class="propName ">CPF</span> (<span class="propType">number</span>, <span class="propOptKey">Obrigat&oacute;rio</span>),
+                                            </div>
+                                            <div>
+                                                <span class="propName ">DataNascimento</span> (<span class="propType">string</span>, <span class="propOptKey">Obrigat&oacute;rio</span>),
+                                            </div>
+                                            <div>
+                                                <span class="propName ">CNPJ</span> (<span class="propType">number</span>, <span class="propOptKey">Opcional</span>),
+                                            </div>
+                                            <span class="strong">}</span>
+                                        </div>
+                                        <div id="descriptionSnnipetAuth" class="snippet" style="display: none;">
+                                            <pre>
+                                            <code class="json">{
+"<span class="attribute">Sistema</span>": <span class="value"><span class="guid">a9a9a9a9-a9a9-a9a9-a9a9-a9a9a9a9a9a9</span></span>,
+"<span class="attribute">CPF</span>": <span class="value"><span class="string">99999999999</span></span>,
+"<span class="attribute">DataNascimento</span>": <span class="value"><span class="literal">"string"</span></span>,
+"<span class="attribute">CNPJ</span>": <span class="value"><span class="number">99999999999999</span><br>}</span></code>
+                                        </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                    <p>Ap&oacute;s a gera&ccedil;&atilde;o do Json com as informa&ccedil;&otilde;es do cliente, a string resultante desse json deve ser codificada em uma base64 e passada no item "apiKey" do cabe&ccedil;alho.</p>
+                </div>
+                <h4>Par&acirc;metros</h4>
+                <table class="fullwidth">
+                    <thead>
+                        <tr>
+                            <th style="width: 100px; max-width: 100px">Parameter</th>
+                            <th style="width: 200px; max-width: 200px">Description</th>
+                            <th style="width: 220px; max-width: 230px">Data Type</th>
+                        </tr>
+                    </thead>
+                    <tbody class="operation-params">
+                        <tr>
+                            <td class="code required">Sistema</td>
+                            <td><strong><span class="markdown"><p>Guid identificador do sistema que o usu&aacute;rio est&aacute; utilizando para na integra&ccedil;&atilde;o. Gerado pela equipe do BNE para cada sistema integrador. Obrigat&oacute;rio.</p></span></strong></td>
+                            <td><span class="model-signature">guid</span></td>
+                        </tr>
+                        <tr>
+                            <td class="code required">CPF</td>
+                            <td><strong><span class="markdown"><p>CPF do usu&aacute;rio cadastrado no BNE. Obrigat&oacute;rio.</p></span></strong></td>
+                            <td><span class="model-signature">numeric</span></td>
+                        </tr>
+                        <tr>
+                            <td class="code required">DataNascimento</td>
+                            <td><strong><span class="markdown"><p>Data de nascimento do usu&aacute;rio cadastrado no BNE. Obrigat&oacute;rio.</p></span></strong></td>
+                            <td><span class="model-signature">date</span></td>
+                        </tr>
+                        <tr>
+                            <td class="code required">CNPJ</td>
+                            <td><strong><span class="markdown"><p>CNPJ da empresa que o usu&aacute;rio est&aacute; vinculado. &Eacute; utilizado para decidir qual empresa utilizar caso o CPF esteja vinculado a mais de uma empresa no BNE. Se n&atilde;o informado, utilizar&aacute; a empresa em que o usu&aacute;rio est&aacute; registrado a mais tempo. Opcional.</p></span></strong></td>
+                            <td><span class="model-signature">numeric</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>Exemplo</h4>
+                <div class="info_description">
+                    <p>
+                        Para um usu&aacute;rio com as seguintes informa&ccedil;&otilde;es:
+                        <ul class="dadosUsuario" style="list-style: disc; margin-left: 25px;">
+                            <li>Sistema: 05119a36-a7ea-4101-ae58-dc58ce966668</li>
+                            <li>CPF: 012.345.678-90</li>
+                            <li>Data de nascimento: 26/09/1978</li>
+                            <li>CNPJ: 75.138.117/0001-35</li>
+                        </ul>
+                    </p>
+                    <p>O Json resultante ser&aacute;:</p>
+                    <pre><code class="json">{"Sistema": "05119a36-a7ea-4101-ae58-dc58ce966668", "CPF": 01234567890, "DataNascimento": "1978-09-26","CNPJ": 75138117000135}</code></pre>
+                    <p>
+                        Depois do Json definido, basta codificar a string resultante desse Json em Base64:
+                    </p>
+                    <pre><code class="json">eyJTaXN0ZW1hIjogIjA1MTE5YTM2LWE3ZWEtNDEwMS1hZTU4LWRjNThjZTk2NjY2OCIsICJDUEYiOiAwMTIzNDU2Nzg5MCwgIkRhdGFOYXNjaW1lbnRvIjogIjE5NzgtMDktMjYiLCJDTlBKIjogNzUxMzgxMTcwMDAxMzV9</code></pre>
+                    <p>
+                        O resultado da codifica&ccedil;&atilde;o em Base 64 ser&aacute; a api key utilizada para as requisi&ccedil;&otilde;es &agrave; API, devendo ser informada no item "apiKey" do header da requisi&ccedil;&atilde;o.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+</body>
+</html>

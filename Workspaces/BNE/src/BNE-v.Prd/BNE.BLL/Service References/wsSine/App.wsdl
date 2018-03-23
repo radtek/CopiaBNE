@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="App" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_CadastrarUsuario_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_Candidatar_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_RecuperarDetalhes_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_RecuperarQuantidadeNovasVagas_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_PesquisarVagas_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_RecuperarDataNascimento_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_RecuperarDataNascimentoPorEmail_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_RecuperarCPFPorEmail_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_RecuperarVagas_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_LogarErro_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_ListarCandidaturas_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_CandidatarVaga_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_RecuperarCurriculo_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_RecuperarFuncao_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_RecuperarCidade_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_LiberarDestaqueVaga_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_InativarCV_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_Bronquinha_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApp_RemoverBronquinha_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://wsteste.sine.com.br/App.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://wsteste.sine.com.br/App.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://wsteste.sine.com.br/App.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO.WS" />
+      <xsd:import schemaLocation="http://wsteste.sine.com.br/App.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO" />
+      <xsd:import schemaLocation="http://wsteste.sine.com.br/App.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://wsteste.sine.com.br/App.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Sine.BLL.Enumeradores" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IApp_CadastrarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IApp_CadastrarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_Candidatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Candidatar" />
+  </wsdl:message>
+  <wsdl:message name="IApp_Candidatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CandidatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarDetalhes_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarDetalhes" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarDetalhes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarDetalhesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarQuantidadeNovasVagas_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarQuantidadeNovasVagas" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarQuantidadeNovasVagas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarQuantidadeNovasVagasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_PesquisarVagas_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarVagas" />
+  </wsdl:message>
+  <wsdl:message name="IApp_PesquisarVagas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarVagasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarDataNascimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarDataNascimento" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarDataNascimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarDataNascimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarDataNascimentoPorEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarDataNascimentoPorEmail" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarDataNascimentoPorEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarDataNascimentoPorEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarCPFPorEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarCPFPorEmail" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarCPFPorEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarCPFPorEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarVagas_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarVagas" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarVagas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarVagasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_LogarErro_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogarErro" />
+  </wsdl:message>
+  <wsdl:message name="IApp_LogarErro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogarErroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_ListarCandidaturas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCandidaturas" />
+  </wsdl:message>
+  <wsdl:message name="IApp_ListarCandidaturas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCandidaturasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_CandidatarVaga_InputMessage">
+    <wsdl:part name="parameters" element="tns:CandidatarVaga" />
+  </wsdl:message>
+  <wsdl:message name="IApp_CandidatarVaga_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CandidatarVagaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarCurriculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarCurriculo" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarCurriculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarCurriculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarFuncao_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarFuncao" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarFuncao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarFuncaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarCidade_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarCidade" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecuperarCidade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarCidadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_LiberarDestaqueVaga_InputMessage">
+    <wsdl:part name="parameters" element="tns:LiberarDestaqueVaga" />
+  </wsdl:message>
+  <wsdl:message name="IApp_LiberarDestaqueVaga_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LiberarDestaqueVagaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_AtualizaNF_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizaNF" />
+  </wsdl:message>
+  <wsdl:message name="IApp_AtualizaNF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizaNFResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_InativarCV_InputMessage">
+    <wsdl:part name="parameters" element="tns:InativarCV" />
+  </wsdl:message>
+  <wsdl:message name="IApp_InativarCV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InativarCVResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_Bronquinha_InputMessage">
+    <wsdl:part name="parameters" element="tns:Bronquinha" />
+  </wsdl:message>
+  <wsdl:message name="IApp_Bronquinha_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BronquinhaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RemoverBronquinha_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoverBronquinha" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RemoverBronquinha_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoverBronquinhaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IApp">
+    <wsdl:operation name="CadastrarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/CadastrarUsuario" message="tns:IApp_CadastrarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/CadastrarUsuarioResponse" message="tns:IApp_CadastrarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Candidatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/Candidatar" message="tns:IApp_Candidatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/CandidatarResponse" message="tns:IApp_Candidatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarDetalhes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/RecuperarDetalhes" message="tns:IApp_RecuperarDetalhes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/RecuperarDetalhesResponse" message="tns:IApp_RecuperarDetalhes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarQuantidadeNovasVagas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/RecuperarQuantidadeNovasVagas" message="tns:IApp_RecuperarQuantidadeNovasVagas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/RecuperarQuantidadeNovasVagasResponse" message="tns:IApp_RecuperarQuantidadeNovasVagas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarVagas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/PesquisarVagas" message="tns:IApp_PesquisarVagas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/PesquisarVagasResponse" message="tns:IApp_PesquisarVagas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarDataNascimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/RecuperarDataNascimento" message="tns:IApp_RecuperarDataNascimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/RecuperarDataNascimentoResponse" message="tns:IApp_RecuperarDataNascimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarDataNascimentoPorEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/RecuperarDataNascimentoPorEmail" message="tns:IApp_RecuperarDataNascimentoPorEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/RecuperarDataNascimentoPorEmailResponse" message="tns:IApp_RecuperarDataNascimentoPorEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCPFPorEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/RecuperarCPFPorEmail" message="tns:IApp_RecuperarCPFPorEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/RecuperarCPFPorEmailResponse" message="tns:IApp_RecuperarCPFPorEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarVagas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/RecuperarVagas" message="tns:IApp_RecuperarVagas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/RecuperarVagasResponse" message="tns:IApp_RecuperarVagas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogarErro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/LogarErro" message="tns:IApp_LogarErro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/LogarErroResponse" message="tns:IApp_LogarErro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCandidaturas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/ListarCandidaturas" message="tns:IApp_ListarCandidaturas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/ListarCandidaturasResponse" message="tns:IApp_ListarCandidaturas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CandidatarVaga">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/CandidatarVaga" message="tns:IApp_CandidatarVaga_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/CandidatarVagaResponse" message="tns:IApp_CandidatarVaga_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCurriculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/RecuperarCurriculo" message="tns:IApp_RecuperarCurriculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/RecuperarCurriculoResponse" message="tns:IApp_RecuperarCurriculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarFuncao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/RecuperarFuncao" message="tns:IApp_RecuperarFuncao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/RecuperarFuncaoResponse" message="tns:IApp_RecuperarFuncao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCidade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/RecuperarCidade" message="tns:IApp_RecuperarCidade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/RecuperarCidadeResponse" message="tns:IApp_RecuperarCidade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LiberarDestaqueVaga">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/LiberarDestaqueVaga" message="tns:IApp_LiberarDestaqueVaga_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/LiberarDestaqueVagaResponse" message="tns:IApp_LiberarDestaqueVaga_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizaNF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/AtualizaNF" message="tns:IApp_AtualizaNF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/AtualizaNFResponse" message="tns:IApp_AtualizaNF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InativarCV">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/InativarCV" message="tns:IApp_InativarCV_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/InativarCVResponse" message="tns:IApp_InativarCV_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Bronquinha">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/Bronquinha" message="tns:IApp_Bronquinha_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/BronquinhaResponse" message="tns:IApp_Bronquinha_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoverBronquinha">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/RemoverBronquinha" message="tns:IApp_RemoverBronquinha_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/RemoverBronquinhaResponse" message="tns:IApp_RemoverBronquinha_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IApp" type="tns:IApp">
+    <wsp:PolicyReference URI="#WSHttpBinding_IApp_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CadastrarUsuario">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_CadastrarUsuario_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/CadastrarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Candidatar">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_Candidatar_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/Candidatar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarDetalhes">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_RecuperarDetalhes_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/RecuperarDetalhes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarQuantidadeNovasVagas">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_RecuperarQuantidadeNovasVagas_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/RecuperarQuantidadeNovasVagas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarVagas">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_PesquisarVagas_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/PesquisarVagas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarDataNascimento">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_RecuperarDataNascimento_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/RecuperarDataNascimento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarDataNascimentoPorEmail">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_RecuperarDataNascimentoPorEmail_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/RecuperarDataNascimentoPorEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCPFPorEmail">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_RecuperarCPFPorEmail_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/RecuperarCPFPorEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarVagas">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_RecuperarVagas_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/RecuperarVagas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogarErro">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_LogarErro_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/LogarErro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCandidaturas">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_ListarCandidaturas_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/ListarCandidaturas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CandidatarVaga">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_CandidatarVaga_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/CandidatarVaga" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCurriculo">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_RecuperarCurriculo_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/RecuperarCurriculo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarFuncao">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_RecuperarFuncao_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/RecuperarFuncao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCidade">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_RecuperarCidade_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/RecuperarCidade" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LiberarDestaqueVaga">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_LiberarDestaqueVaga_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/LiberarDestaqueVaga" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizaNF">
+      <soap12:operation soapAction="http://tempuri.org/IApp/AtualizaNF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InativarCV">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_InativarCV_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/InativarCV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Bronquinha">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_Bronquinha_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/Bronquinha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoverBronquinha">
+      <wsp:PolicyReference URI="#WSHttpBinding_IApp_RemoverBronquinha_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IApp/RemoverBronquinha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="App">
+    <wsdl:port name="WSHttpBinding_IApp" binding="tns:WSHttpBinding_IApp">
+      <soap12:address location="http://wsteste.sine.com.br/App.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://wsteste.sine.com.br/App.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

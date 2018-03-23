@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C7AB9CD-BCBA-4D26-B527-806834EE3A4C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.Mensagem.AsyncExecutor.Plugins</RootNamespace>
+    <AssemblyName>BNE.Mensagem.AsyncExecutor.Plugins</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OutputResult\Mensagem.cs" />
+    <Compile Include="PluginsEntrada\EnvioEmail.cs" />
+    <Compile Include="PluginsSaida\Email.cs" />
+    <Compile Include="Plugins\InputPlugin.cs" />
+    <Compile Include="Plugins\OutputPlugin.cs" />
+    <Compile Include="Plugins\PluginBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BNE.Data\BNE.Data.csproj">
+      <Project>{287BA500-E16D-46AD-91B7-442CDA127398}</Project>
+      <Name>BNE.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.ExceptionLog\BNE.ExceptionLog.csproj">
+      <Project>{5FF511DD-6705-4338-AAF7-0174B87DEE18}</Project>
+      <Name>BNE.ExceptionLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mensagem.AsyncServices.Base\BNE.Mensagem.AsyncServices.Base.csproj">
+      <Project>{7be52586-73f1-45a6-bf44-0fb3fe73b849}</Project>
+      <Name>BNE.Mensagem.AsyncServices.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mensagem.Data\BNE.Mensagem.Data.csproj">
+      <Project>{FECDFDE1-4616-4188-9961-ADD6426F2AB3}</Project>
+      <Name>BNE.Mensagem.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mensagem.Domain\BNE.Mensagem.Domain.csproj">
+      <Project>{3e0b85e7-75b3-414b-aab4-e9a538b79892}</Project>
+      <Name>BNE.Mensagem.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mensagem.Model\BNE.Mensagem.Model.csproj">
+      <Project>{526991DB-A4B4-4F85-9460-548D54E6B6AE}</Project>
+      <Name>BNE.Mensagem.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Services.AsyncServices.Base\BNE.Services.AsyncServices.Base.csproj">
+      <Project>{9D2EC96C-CD62-46A6-9F0E-A59C38DDEB21}</Project>
+      <Name>BNE.Services.AsyncServices.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

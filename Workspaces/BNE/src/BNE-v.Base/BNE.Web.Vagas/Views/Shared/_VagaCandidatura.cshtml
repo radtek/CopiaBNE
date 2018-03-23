@@ -1,0 +1,46 @@
+﻿@using BNE.Web.Vagas.Models
+@model VagaCandidatura
+@if (@Model.Candidatou)
+{
+    <div class="ja_enviei">
+        <i class="fa fa-check-circle fa-5x"></i>
+        <p>
+            Já enviei!
+        </p>
+    </div>
+}
+else
+{
+    <div id="upd_teste"></div>
+    
+    if (User.Identity != null && User.Identity.IsAuthenticated)
+    {
+        using (Ajax.BeginForm("Candidatar", "Vaga", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "container_candidatura_" + Model.IdentificadorVaga }))
+        {
+            @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+         <p class="btn"> <button  class="quero_me_candidatar" name="QueroCandidatar" ><i class="fa fa-file-text"></i>  Quero me Candidatar</button> 
+       
+   </p> 
+        }
+    }
+    else
+    {
+        using (Html.BeginForm("Entrar", "Base", new { redirectURL = Model.URL }))
+        {
+            @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+  <p class="btn">      <button  class="quero_me_candidatar" name="QueroCandidatar" ><i class="fa fa-file-text"></i>  Quero me Candidatar</button> 
+       </p> }
+    }
+}
+@if (Model.Perguntas != null)
+{
+    Html.RenderPartial("_ModalPerguntasCandidatura", Model);
+}
+@if (Model.Degustacao != null)
+{
+    Html.RenderPartial("_ModalDegustacaoCandidatura", new DegustacaoCandidatura { QuantidadeCandidaturaRestante = @Model.Degustacao.QuantidadeCandidaturaRestante, TextoCandidatura = @Model.Degustacao.DescricaoCandidaturaRestante });
+}
+@if (Model.Sucesso != null)
+{
+    Html.RenderPartial("_ModalSucessoCandidatura", new SucessoCandidatura { NomeCandidato = @Model.Sucesso.NomeCandidato, Protocolo = @Model.Sucesso.Protocolo });
+}

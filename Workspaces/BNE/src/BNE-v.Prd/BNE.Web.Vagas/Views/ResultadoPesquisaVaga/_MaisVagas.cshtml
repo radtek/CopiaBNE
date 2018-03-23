@@ -1,0 +1,20 @@
+﻿@model List<BNE.Web.Vagas.Code.Helpers.SEO.SEOLink>
+
+<link href="~/Content/MaisVagas.css" rel="stylesheet" />
+@{
+    if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <span class="maisVagas">
+                <a href="@item.URL" title="@item.Title" class="linkMaisVagas">@item.Descricao</a>
+                
+                    @if (Model.IndexOf(item) + 1 < Model.Count) 
+                    {
+                        <span class="separador">/</span>
+                    }
+                
+            </span>
+        }
+    }
+}

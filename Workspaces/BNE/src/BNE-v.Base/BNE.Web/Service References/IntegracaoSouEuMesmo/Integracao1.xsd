@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Employer.SouEuMesmo.Web.Services" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Employer.SouEuMesmo.Web.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DadosPessoaFisica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bairro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CEP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPF" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CidadeNaturalidade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CidadeResidencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataNascimento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EmailPessoa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Endereco" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomeMae" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomePai" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumCelular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumDDDCelular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroEndereco" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroRG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UFNaturalidade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UFResidencia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DadosPessoaFisica" nillable="true" type="tns:DadosPessoaFisica" />
+  <xs:complexType name="FotoPessoaFisica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataAtualizacao" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FotoBase64" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FotoPessoaFisica" nillable="true" type="tns:FotoPessoaFisica" />
+</xs:schema>

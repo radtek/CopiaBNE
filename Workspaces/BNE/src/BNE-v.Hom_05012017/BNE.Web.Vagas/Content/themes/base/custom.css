@@ -1,0 +1,189 @@
+.fa { font-family: FontAwesome !important; }
+.btnPadding { padding: 10px!important; }
+.btn, #btiSair { display: inline-block; margin-bottom: 0; font-size: 14px; font-weight: normal; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; background-image: none; border: 1px solid transparent; border-radius: 4px; }
+	.btn button { font-weight: bolder; padding: 10px; }
+	.btn i { margin-right: 2px; margin-left: 3px; }
+	.btn small { font-size: 12px; }
+#pnlBusca { margin-top: 7px !important; }
+	#pnlBusca.painel_filtro_vaga { height: 71px !important; }
+	#pnlBusca.painel_filtro_vaga, .busca .busca_inferior { border-radius: 0 4px 4px 4px; clear: both; 
+                                                           background-image: -moz-linear-gradient( 90deg, rgb(35,87,160) 6%, rgb(20,61,117) 18%, rgb(39,93,168) 72%, rgb(43,100,178) 99%) !important; 
+                                                           background-image: -webkit-linear-gradient( 90deg, rgb(35,87,160) 6%, rgb(20,61,117) 18%, rgb(39,93,168) 72%, rgb(43,100,178) 99%) !important; 
+                                                           background-image: -ms-linear-gradient( 90deg, rgb(35,87,160) 6%, rgb(20,61,117) 18%, rgb(39,93,168) 72%, rgb(43,100,178) 99%) !important; 
+                                                           filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#2B64B2', endColorstr='#2357A0');
+	}
+.painel_filtro_vaga_escondido { 
+    background-image: -moz-linear-gradient( 90deg, rgb(35,87,160) 6%, rgb(20,61,117) 18%, rgb(39,93,168) 72%, rgb(43,100,178) 99%) !important; 
+    background-image: -webkit-linear-gradient( 90deg, rgb(35,87,160) 6%, rgb(20,61,117) 18%, rgb(39,93,168) 72%, rgb(43,100,178) 99%) !important; 
+    background-image: -ms-linear-gradient( 90deg, rgb(35,87,160) 6%, rgb(20,61,117) 18%, rgb(39,93,168) 72%, rgb(43,100,178) 99%) !important; 
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#2B64B2', endColorstr='#2357A0');
+    border-radius: 0 4px 4px 4px; }
+#pnlBusca div { z-index: 10; }
+#pnlBusca.painel_filtro_curriculo { border-radius: 0 4px 4px 4px; clear: both; height: 71px; background-image: -moz-linear-gradient( 90deg, rgb(76,115,33) 0%, rgb(75,114,25) 5%, rgb(74,113,17) 11%, rgb(90,129,28) 22%, rgb(105,145,39) 53%, rgb(110,149,43) 55%, rgb(114,153,47) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(76,115,33) 0%, rgb(75,114,25) 5%, rgb(74,113,17) 11%, rgb(90,129,28) 22%, rgb(105,145,39) 53%, rgb(110,149,43) 55%, rgb(114,153,47) 100%); background-image: -ms-linear-gradient( 90deg, rgb(76,115,33) 0%, rgb(75,114,25) 5%, rgb(74,113,17) 11%, rgb(90,129,28) 22%, rgb(105,145,39) 53%, rgb(110,149,43) 55%, rgb(114,153,47) 100%); }
+.painel_filtro_curriculo_escondido { border-radius: 0 4px 4px 4px; background-image: -moz-linear-gradient( 90deg, rgb(76,115,33) 0%, rgb(75,114,25) 5%, rgb(74,113,17) 11%, rgb(90,129,28) 22%, rgb(105,145,39) 53%, rgb(110,149,43) 55%, rgb(114,153,47) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(76,115,33) 0%, rgb(75,114,25) 5%, rgb(74,113,17) 11%, rgb(90,129,28) 22%, rgb(105,145,39) 53%, rgb(110,149,43) 55%, rgb(114,153,47) 100%); background-image: -ms-linear-gradient( 90deg, rgb(76,115,33) 0%, rgb(75,114,25) 5%, rgb(74,113,17) 11%, rgb(90,129,28) 22%, rgb(105,145,39) 53%, rgb(110,149,43) 55%, rgb(114,153,47) 100%); }
+#pnlBusca.painel_filtro_curriculo input, .busca .busca_inferior .input { border: 1px solid #ccc; background: #fff; border-radius: 4px; padding: 5px; }
+.header .busca .buscar { margin: 15px 10px 0 0; float: right; padding: 0; text-align:center; }
+.busca_superior { width: 450px; }
+#btiPesquisarVaga, #btiPesquisarCurriculo { color: #000; }
+.busca .busca_inferior input.search, #btiPesquisarVaga, #btiPesquisarCurriculo { padding: 10px; width: 135px !important; text-align: center; font-weight: bolder; border-radius: 4px; border: none !important; 
+                                                                                 background-image: -moz-linear-gradient( 90deg, rgb(195,175,33) 0%, rgb(223,204,58) 5%, rgb(250,232,82) 11%, rgb(250,232,82) 75%, rgb(254,252,230) 89%, rgb(238,219,71) 100%); 
+                                                                                 background-image: -webkit-linear-gradient( 90deg, rgb(195,175,33) 0%, rgb(223,204,58) 5%, rgb(250,232,82) 11%, rgb(250,232,82) 75%, rgb(254,252,230) 89%, rgb(238,219,71) 100%); 
+                                                                                 background-image: -ms-linear-gradient( 90deg, rgb(195,175,33) 0%, rgb(223,204,58) 5%, rgb(250,232,82) 11%, rgb(250,232,82) 75%, rgb(254,252,230) 89%, rgb(238,219,71) 100%); 
+                                                                                 filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEDB47', endColorstr='#C3AF21');
+                                                                                 cursor: pointer; }
+#btiPesquisarVaga, #btiPesquisarCurriculo { width: 110px; display: block; font-size: 13px; padding: 11px; margin-top: -1px; margin-right: -2px; }
+.topo, .header { background: none; background-image: -moz-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(247,247,247) 31%, rgb(238,238,238) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(247,247,247) 31%, rgb(238,238,238) 100%); background-image: -ms-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(247,247,247) 31%, rgb(238,238,238) 100%); }
+.barra_rodape, .footer { background-image: -moz-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(247,247,247) 31%, rgb(238,238,238) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(247,247,247) 31%, rgb(238,238,238) 100%); background-image: -ms-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(247,247,247) 31%, rgb(238,238,238) 100%); }
+.jcarousel-control a { display: inline-block; border: 1px solid #999; background: #CCCCCC; width: 6px; height: 6px; border-radius: 50%; }
+.jcarousel-skin-carrousel_servicos .jcarousel-next-horizontal, .jcarousel-skin-carrousel_empresas .jcarousel-next-horizontal { width: 0; height: 0 !important; background-image: none !important; border-top: 5px solid transparent; border-left: 8px solid #999; border-bottom: 5px solid transparent; margin-top: -2px; margin-right: -2px; }
+.jcarousel-skin-carrousel_empresas .jcarousel-next-horizontal { margin-right: -10px; }
+.jcarousel-skin-carrousel_servicos .jcarousel-prev-horizontal, .jcarousel-skin-carrousel_empresas .jcarousel-prev-horizontal { width: 0; height: 0 !important; background-image: none !important; border-top: 5px solid transparent; border-right: 8px solid #999; border-bottom: 5px solid transparent; margin-left: -5px; margin-top: -2px; }
+.jcarousel-skin-carrousel_empresas .jcarousel-prev-horizontal { margin-left: -25px; }
+.jcarousel-control a img { display: none; }
+#aBuscarVagas { padding: 0px 30px 0px 30px; line-height: 35px; border-radius: 10px 0 0 0; color: #fff; display: inline-block; border-bottom: 35px solid #2b64b2; border-right: 20px solid transparent; height: 0; width: 100px; float: left; }
+#aBuscarVagas i, #aBuscarCurriculos i { margin-left: 5px; }
+#aBuscarCurriculos { padding: 0px 20px 0px 20px; line-height: 35px; border-radius: 10px 0 0 0; color: #fff; display: inline-block; border-bottom: 35px solid rgb(114,153,47); border-right: 20px solid transparent; height: 0; width: 140px; /*border-top-left-radius: 10px; -webkit-border-left-radius: 10px; -ms-border-radius: 10px!important;*/ } 
+
+#pnlBusca input { margin: 0; padding: 5px; background: #fff; border-radius: 4px; border: 1px solid #ccc; }
+.textbox_funcao { left: 13px; top: 16px; padding-left: 3px !important; }
+.textbox_cidade { left: 263px; top: 16px; padding-left: 3px !important; }
+#txtPalavraChaveMaster { top: 15px; left: 480px; }
+.col_action a { font-size: 14px; margin: 0 5px; }
+.modal_nova_amarela { background: #f3e3c4; border: 5px solid #fff; border-radius: 10px; }
+.modal_nova_imagem { font-size: 120px; margin-top: 40px; }
+.textbox_cidade, .textbox_cidade, #txtPalavraChaveMaster { width: 188px !important; }
+.btn_buscar a { color: #fff; padding:4px; }
+.btn_buscar buttom { background-image: -moz-linear-gradient( 90deg, rgb(195,175,33) 0%, rgb(250,232,82) 16%, rgb(250,232,82) 78%, rgb(254,252,230) 86%, rgb(246,227,78) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(195,175,33) 0%, rgb(250,232,82) 16%, rgb(250,232,82) 78%, rgb(254,252,230) 86%, rgb(246,227,78) 100%); background-image: -ms-linear-gradient( 90deg, rgb(195,175,33) 0%, rgb(250,232,82) 16%, rgb(250,232,82) 78%, rgb(254,252,230) 86%, rgb(246,227,78) 100%); padding: 6px 10px; margin-top: 4px; font-weight: bolder; border: 1px solid #eedb47; }
+#divInformacoes, .painel_informacoes { background: #ddd; background-image: none !important; border-radius: 0 0 4px 4px; }
+	#divInformacoes i, #divInformacoes p, .painel_informacoes i, .painel_informacoes p { margin-top: 7px; }
+.diver { border-right: 1px dotted #666; margin-right: 10px; padding-right: 10px; }
+.flex-control-nav li a { background: #999 !important; border-radius: 50%; }
+	.flex-control-nav li a.active { background: #eee !important; }
+.button_titulo_ultimas_vagas { height: 30px !important; text-align: center; color: #fff; font-size: 14px; font-weight: bolder; line-height: 30px; border-radius: 5px; display: block; background-image: -moz-linear-gradient( 90deg, rgb(186,132,17) 4%, rgb(214,124,3) 17%, rgb(214,123,3) 27%, rgb(214,122,3) 77%, rgb(222,156,53) 87%, rgb(213,131,3) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(186,132,17) 4%, rgb(214,124,3) 17%, rgb(214,123,3) 27%, rgb(214,122,3) 77%, rgb(222,156,53) 87%, rgb(213,131,3) 100%); background-image: -ms-linear-gradient( 90deg, rgb(186,132,17) 4%, rgb(214,124,3) 17%, rgb(214,123,3) 27%, rgb(214,122,3) 77%, rgb(222,156,53) 87%, rgb(213,131,3) 100%); }
+	.button_titulo_ultimas_vagas a { color: #fff; }
+.icones_pesquisa_curriculo i { font-size: 14px; }
+.painel_ultimas_vagas { margin-top: 10px !important; }
+.space-left { margin-left: 15px; }
+.menu_mensagens { color: #4e7413; }
+.quero_emprego { margin-top: 25px; border: 1px solid #ccc; border-radius: 5px 5px 10px 10px; border-top: none; width: 165px; position: relative; height: 210px; background: #d0d9e6; }
+.quero_contratar { margin-top: 25px; border: 1px solid #ccc; border-radius: 5px 5px 10px 10px; border-top: none; width: 165px; position: relative; height: 210px; background: #d0d9e6; }
+	.quero_emprego strong, .quero_contratar strong { display: block; margin-bottom: 10px; color: #fff; text-align: center; padding: 6px 0; border-radius: 5px; 
+                                                     background-image: -moz-linear-gradient( 90deg, rgb(82,128,191) 4%, rgb(20,61,117) 17%, rgb(20,61,117) 27%, rgb(20,61,117) 77%, rgb(82,128,191) 87%, rgb(9,46,98) 100%); 
+                                                     background-image: -webkit-linear-gradient( 90deg, rgb(82,128,191) 4%, rgb(20,61,117) 17%, rgb(20,61,117) 27%, rgb(20,61,117) 77%, rgb(82,128,191) 87%, rgb(9,46,98) 100%); 
+                                                     background-image: -ms-linear-gradient( 90deg, rgb(82,128,191) 4%, rgb(20,61,117) 17%, rgb(20,61,117) 27%, rgb(20,61,117) 77%, rgb(82,128,191) 87%, rgb(9,46,98) 100%); 
+                                                     filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#092E62', endColorstr='#5280BF');
+	}
+	.quero_contratar strong { background-image: -moz-linear-gradient( 90deg, rgb(100,138,53) 4%, rgb(110,153,46) 17%, rgb(109,150,43) 26%, rgb(108,147,40) 77%, rgb(151,180,96) 87%, rgb(80,117,21) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(100,138,53) 4%, rgb(110,153,46) 17%, rgb(109,150,43) 26%, rgb(108,147,40) 77%, rgb(151,180,96) 87%, rgb(80,117,21) 100%); background-image: -ms-linear-gradient( 90deg, rgb(100,138,53) 4%, rgb(110,153,46) 17%, rgb(109,150,43) 26%, rgb(108,147,40) 77%, rgb(151,180,96) 87%, rgb(80,117,21) 100%); }
+	.quero_emprego .icon-group, .quero_contratar .icon-group { position: relative; border: 1px solid #999; width: 150px; height: 160px; margin-left: 6px; border-radius: 4px; text-align: center; background-image: -moz-linear-gradient( 90deg, rgb(221,235,244) 0%, rgb(255,255,255) 48%, rgb(223,233,242) 64%, rgb(191,211,229) 100%, rgb(207,224,238) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(221,235,244) 0%, rgb(255,255,255) 48%, rgb(223,233,242) 64%, rgb(191,211,229) 100%, rgb(207,224,238) 100%); background-image: -ms-linear-gradient( 90deg, rgb(221,235,244) 0%, rgb(255,255,255) 48%, rgb(223,233,242) 64%, rgb(191,211,229) 100%, rgb(207,224,238) 100%); }
+		.quero_emprego .icon-group .fa-file-o, .quero_contratar .icon-group .fa-file-o { position: absolute; top: 30px; left: 45px; font-size: 70px; color: #2b9cc3; }
+		.quero_emprego .icon-group .fa-check { position: absolute; top: 50px; left: 60px; font-size: 70px; color: #85b966; }
+		.quero_contratar .icon-group .fa-search { position: absolute; top: 40px; left: 20px; font-size: 60px; color: #85b966; }
+	.quero_emprego .label-free, .quero_contratar .label-free { border: 1px solid red; color: #fff; text-align: center; padding: 1px 10px; border-radius: 4px; background-image: -moz-linear-gradient( 90deg, rgb(224,105,0) 0%, rgb(254,171,0) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(224,105,0) 0%, rgb(254,171,0) 100%); background-image: -ms-linear-gradient( 90deg, rgb(224,105,0) 0%, rgb(254,171,0) 100%); position: absolute; right: 10px; top: 10px; }
+#ucModalLogin_btiFechar { color: #fff !important; }
+.quero_emprego h3 small, .quero_contratar h3 small { display: block; font-size: 16px; }
+.quero_emprego h3, .quero_contratar h3 { margin-top: 110px; font-size: 26px; font-weight: bolder; color: #2b9cc3; }
+.modal_conteudo { background: #fff !important; z-index: 9999 !important; }
+.modal_fundo { z-index: 100 !important; }
+.modal_conteudo .titulo_modal, .head-modal, .titulo_modal_com_icone { margin-bottom: 10px; 
+                                                                      background-image: -moz-linear-gradient( 90deg, rgb(82,128,191) 4%, rgb(20,61,117) 17%, rgb(20,61,117) 27%, rgb(20,61,117) 77%, rgb(82,128,191) 87%, rgb(9,46,98) 100%); 
+                                                                      background-image: -webkit-linear-gradient( 90deg, rgb(82,128,191) 4%, rgb(20,61,117) 17%, rgb(20,61,117) 27%, rgb(20,61,117) 77%, rgb(82,128,191) 87%, rgb(9,46,98) 100%); 
+                                                                      background-image: -ms-linear-gradient( 90deg, rgb(82,128,191) 4%, rgb(20,61,117) 17%, rgb(20,61,117) 27%, rgb(20,61,117) 77%, rgb(82,128,191) 87%, rgb(9,46,98) 100%); 
+                                                                      filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#092E62', endColorstr='#5280BF');
+}
+.modal-a { height: 61px; padding-left: 15px }
+.modal_trocar_empresa h2, .modal-a h2 { margin-top: 0 !important; padding-top: 15px; }
+.modal-a h2 { color: #fff; padding-top: 20px; }
+.modal_trocar_empresa { background-image: none !important; }
+#ucModalLogin_upBtiFechar { font-size: 14px; float: right; margin-top: -40px; color: #fff; padding-right: 15px; }
+.ul_icones a { color: #000; }
+
+.ul_icones a i, .btn_int i { color: #427f9e; }
+.pager {clear:both; border: 1px solid #5d8cc9; background-image: -moz-linear-gradient( 90deg, rgb(206,225,244) 0%, rgb(192,218,244) 42%, rgb(178,211,244) 48%, rgb(197,221,247) 48%, rgb(215,231,249) 48%, rgb(215,231,249) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(206,225,244) 0%, rgb(192,218,244) 42%, rgb(178,211,244) 48%, rgb(197,221,247) 48%, rgb(215,231,249) 48%, rgb(215,231,249) 100%); background-image: -ms-linear-gradient( 90deg, rgb(206,225,244) 0%, rgb(192,218,244) 42%, rgb(178,211,244) 48%, rgb(197,221,247) 48%, rgb(215,231,249) 48%, rgb(215,231,249) 100%); }
+.pager .current { border: 1px solid #5d8cc9; display: inline-block; height: 14px; width: 15px; text-align: center; font-size: 10px; color: #394158; border-radius: 3px; margin-bottom: -3px; font-weight: bolder; line-height: 15px; background-image: -moz-linear-gradient( 90deg, rgb(232,241,252) 0%, rgb(224,236,251) 7%, rgb(215,231,249) 50%, rgb(224,236,251) 50%, rgb(233,241,252) 50%, rgb(233,241,252) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(232,241,252) 0%, rgb(224,236,251) 7%, rgb(215,231,249) 50%, rgb(224,236,251) 50%, rgb(233,241,252) 50%, rgb(233,241,252) 100%); background-image: -ms-linear-gradient( 90deg, rgb(232,241,252) 0%, rgb(224,236,251) 7%, rgb(215,231,249) 50%, rgb(224,236,251) 50%, rgb(233,241,252) 50%, rgb(233,241,252) 100%); }
+.pager span span { border: 1px solid #5d8cc9; display: inline-block; height: 20px; width: 20px; text-align: center; font-size: 10px; color: #394158; line-height: 20px; border-radius: 3px; background-image: -moz-linear-gradient( 90deg, rgb(232,241,252) 0%, rgb(224,236,251) 7%, rgb(215,231,249) 50%, rgb(224,236,251) 50%, rgb(233,241,252) 50%, rgb(233,241,252) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(232,241,252) 0%, rgb(224,236,251) 7%, rgb(215,231,249) 50%, rgb(224,236,251) 50%, rgb(233,241,252) 50%, rgb(233,241,252) 100%); background-image: -ms-linear-gradient( 90deg, rgb(232,241,252) 0%, rgb(224,236,251) 7%, rgb(215,231,249) 50%, rgb(224,236,251) 50%, rgb(233,241,252) 50%, rgb(233,241,252) 100%); }
+.footer .footer-bar { border-right: 1px solid #ccc; margin-right: 5px; }
+.footer .geral.footer-bar { border-left: 1px solid #ccc; border-right: none; margin-left: 5px; padding-left: 5px; }
+.footer .barra_rodape_geral h4 { margin-left: 12px; }
+.quero_emprego h3, .quero_contratar h3 { margin-top: 110px; font-size: 26px; font-weight: bolder; color: #2b9cc3; }
+.modal_conteudo { background: #fff !important; z-index: 9999 !important; }
+.modal_fundo { z-index: 100 !important;}
+.modal_conteudo .titulo_modal, .head-modal, .titulo_modal_com_icone { margin-bottom: 10px; 
+                                                                      background-image: -moz-linear-gradient( 90deg, rgb(82,128,191) 4%, rgb(20,61,117) 17%, rgb(20,61,117) 27%, rgb(20,61,117) 77%, rgb(82,128,191) 87%, rgb(9,46,98) 100%); 
+                                                                      background-image: -webkit-linear-gradient( 90deg, rgb(82,128,191) 4%, rgb(20,61,117) 17%, rgb(20,61,117) 27%, rgb(20,61,117) 77%, rgb(82,128,191) 87%, rgb(9,46,98) 100%); 
+                                                                      background-image: -ms-linear-gradient( 90deg, rgb(82,128,191) 4%, rgb(20,61,117) 17%, rgb(20,61,117) 27%, rgb(20,61,117) 77%, rgb(82,128,191) 87%, rgb(9,46,98) 100%); 
+                                                                      filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#092E62', endColorstr='#5280BF');
+}
+.modal-a { height: 61px; padding-left: 15px; }
+.modal_trocar_empresa h2, .modal-a h2 { margin-top: 0 !important; padding-top: 15px; }
+.modal-a h2 { color: #fff; padding-top: 20px; }
+.modal_trocar_empresa { background-image: none !important; }
+#ucModalLogin_upBtiFechar { font-size: 14px; float: right; margin-top: -40px; color: #fff; padding-right: 15px; }
+.ul_icones a {color: #000!important;}
+
+.pager { border: 1px solid #5d8cc9; background-image: -moz-linear-gradient( 90deg, rgb(206,225,244) 0%, rgb(192,218,244) 42%, rgb(178,211,244) 48%, rgb(197,221,247) 48%, rgb(215,231,249) 48%, rgb(215,231,249) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(206,225,244) 0%, rgb(192,218,244) 42%, rgb(178,211,244) 48%, rgb(197,221,247) 48%, rgb(215,231,249) 48%, rgb(215,231,249) 100%); background-image: -ms-linear-gradient( 90deg, rgb(206,225,244) 0%, rgb(192,218,244) 42%, rgb(178,211,244) 48%, rgb(197,221,247) 48%, rgb(215,231,249) 48%, rgb(215,231,249) 100%); }
+.pager .current { border: 1px solid #5d8cc9; display: inline-block; height: 14px; width: 15px; text-align: center; font-size: 10px; color: #394158; border-radius: 3px; margin-bottom: -3px; font-weight: bolder; line-height: 15px; background-image: -moz-linear-gradient( 90deg, rgb(232,241,252) 0%, rgb(224,236,251) 7%, rgb(215,231,249) 50%, rgb(224,236,251) 50%, rgb(233,241,252) 50%, rgb(233,241,252) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(232,241,252) 0%, rgb(224,236,251) 7%, rgb(215,231,249) 50%, rgb(224,236,251) 50%, rgb(233,241,252) 50%, rgb(233,241,252) 100%); background-image: -ms-linear-gradient( 90deg, rgb(232,241,252) 0%, rgb(224,236,251) 7%, rgb(215,231,249) 50%, rgb(224,236,251) 50%, rgb(233,241,252) 50%, rgb(233,241,252) 100%); }
+.pager span span { border: 1px solid #5d8cc9; display: inline-block; height: 20px; width: 20px; text-align: center; font-size: 10px; color: #394158; line-height: 20px; border-radius: 3px; background-image: -moz-linear-gradient( 90deg, rgb(232,241,252) 0%, rgb(224,236,251) 7%, rgb(215,231,249) 50%, rgb(224,236,251) 50%, rgb(233,241,252) 50%, rgb(233,241,252) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(232,241,252) 0%, rgb(224,236,251) 7%, rgb(215,231,249) 50%, rgb(224,236,251) 50%, rgb(233,241,252) 50%, rgb(233,241,252) 100%); background-image: -ms-linear-gradient( 90deg, rgb(232,241,252) 0%, rgb(224,236,251) 7%, rgb(215,231,249) 50%, rgb(224,236,251) 50%, rgb(233,241,252) 50%, rgb(233,241,252) 100%); }
+.footer .footer-bar { border-right: 1px solid #ccc; margin-right: 5px; }
+.footer .geral.footer-bar { border-left: 1px solid #ccc; border-right: none; margin-left: 5px; padding-left: 5px; }
+.footer .barra_rodape_geral h4 { margin-left: 12px; }
+.vaga .qualificacaoVaga.parceiro .img { border-top: 20px solid #666; background: none; border-left: 25px solid transparent; border-right: 25px solid transparent; height: 0; }
+	.vaga .qualificacaoVaga.parceiro .img span { margin-top: -20px; display: block; }
+.quero_me_candidatar { padding: 0; margin: 0 !important; cursor:pointer; }
+.painel_login a { margin-top: 5px; font-size: 14px; color: #427f9e; width: 70px; display: inline-block; }
+.compartilhamento p { float: right; padding: 0px 4px; font-size: 16px; cursor: pointer; }
+.linha_abas .aba, .aba_esquerda_selecionada { border: 1px solid #ccc !important; background: #eee; border-radius: 4px; background-image: none; margin-right: 10px; padding-left: 15px; padding-right: 15px; box-shadow: 1px 1px 5px #999 inset; }
+.aba span, .aba a { display: block; width: 100% !important; }
+.fundo_btn_ss { border: 1px solid #eee; background-image: none; border-radius: 10px; box-shadow: 1px 1px 10px #ccc; }
+	.fundo_btn_ss:hover { border: 1px solid #ccc; box-shadow: 1px 1px 10px #aaa; }
+.sombra_btn_ss { background-image: none; }
+	.sombra_btn_ss:hover { background: none; }
+	.sombra_btn_ss img { margin-top: 25px !important; }
+.fundo_btn_ss i { margin: 10px 0 0 10px; }
+.titulo_texto_btn { width: 160px; }
+.overflow { position: absolute; height: 55px; width: 65px; overflow: hidden; }
+.fundo_btn_ss { position: relative; }
+	.fundo_btn_ss .novo { position: absolute; top: 0; right: 0px; z-index: 100; height: 60px;}
+	.fundo_btn_ss .novo .img_faixaNovidade { position: absolute; -webkit-transform: rotate(44deg); -moz-transform: rotate(44deg); -o-transform: rotate(44deg); transform: rotate(44deg); writing-mode: lr-tb; text-align: center; margin: 6px 0 0 -8px; }
+.modal_nova_amarela { z-index: 999 !important; }
+	.modal_nova_amarela .botao_quero_comprar, .modalConfirmacaoAlerta .label_alerta_btnOk { background: #f7b53c; border-radius: 5px; -moz-box-shadow: inset 0 0 10px #c38f2f; -webkit-box-shadow: inset 0 0 10px #c38f2f; box-shadow: inset 0 0 10px #c38f2f; }
+.modalConfirmacaoAlerta .label_alerta_btnOk { height: 25px !important; }
+.modalConfirmacaoAlerta .botao_fechar_m { font-size: 30px; top: -15px; right: -15px; }
+.modal_nova_amarela .botao_agora_nao { background: #eeeeee; border-radius: 5px; -moz-box-shadow: inset 0 0 10px #bcbcbc; -webkit-box-shadow: inset 0 0 10px #bcbcbc; box-shadow: inset 0 0 10px #bcbcbc; height: 31px; }
+.modal_nova_amarela .botao_fechar_modal { color: #000; font-size: 30px; margin-top: -5px; }
+.img_container { background: #EEE; border-radius: 5px; border: 1px solid #ccc; }
+.block-ico { float: left; padding: 0 15px 0 0; width: 70px; }
+.modalConfirmacaoAlerta { background-image: none !important; border: 5px solid #fff; border-radius: 10px; }
+.btn_azul { border: 1px solid #1a4786; background: #2b64b2; border-radius: 5px; background-image: none !important; }
+.menu_secaoSlim { padding-top: 143px; width: 900px; margin: 0 auto; }
+.menu_secao .btn_int { margin-top: 5px; }
+#imgProgressTemplateAlternativo { margin: 10px 0 0 20px; float: left; }
+.progress_img_container .carregando { line-height: 55px; float: left; }
+.imagem_servico_destaque i { color: #1E3260; }
+.icone_enviar_amigo i { font-size: 120px; color: #1E3260; }
+.botao_fechar_modal { color: #fff; }
+.img_faixaNovidade { margin: 0 0 0 -30px; position: initial; border: 1px solid red; background-image: -moz-linear-gradient( 90deg, rgb(247,146,30) 0%, rgb(241,90,46) 100%); background-image: -webkit-linear-gradient( 90deg, rgb(247,146,30) 0%, rgb(241,90,46) 100%); background-image: -ms-linear-gradient( 90deg, rgb(247,146,30) 0%, rgb(241,90,46) 100%); height: 27px; width: 100px; font-size: 10px; color: #fff; text-shadow: 2px 2px 5px #666; text-align: center; font-weight: bolder; padding-right: 2px; line-height: 33px; -webkit-transform: rotate(321deg); -moz-transform: rotate(321deg); -o-transform: rotate(321deg); transform: rotate(321deg) writing-mode: lr-tb;}
+.ico-gg { font-size: 150px !important; padding-top: 30px; }
+.fa-stack.ico-gg { font-size: 80px !important; }
+.imagem_servico_destaque { text-align: center; }
+	.icone_servico .fa-stack, .imagem_servico_destaque .fa-stack.ico-gg { margin: 0; }
+.icone_servico .fa { font-size: 50px; }
+	.icone_servico .fa.fa-stack-1x { font-size: 30px; margin-top: 5px; }
+.painel_icones { position: absolute; display: block; width: auto; top: 95px; right: 0; z-index:1;}
+.painel_icones ul { list-style: none; padding: 0 !important; margin: 0 !important; }
+.painel_icones ul li { display: inline-block; height: 16px; border-right: 1px dotted #ccc; padding-right: 5px; }
+.painel_icones ul li#liAtendimentoOnline { position: absolute; right: 0; }
+.painel_icones ul li#liBtiAlterarCurriculo { margin-left: 70px; }
+.painel_icones ul li:last-child, .painel_icones ul li#liBtiTesteCores { border: none; }
+.painel_icones a, .painel_icones a small, .btn_int { font-size: 12px !important; padding: 0; line-height: normal; }
+.painel_icones a i { font-style: normal; }
+.painel_icones a {margin-left: 5px; padding: 6px; }
+.painel_icones a:hover {color:#c0c0c0}
+.coluna_meio_compartilhar { right: 40px; bottom: 5px; }
+.icone_sucesso { font-size: 150px !important; color: rgb(114,153,47); }
+.btn-defaut { border: 1px solid #c3c3c3; cursor: pointer; font-size: 12px; padding: 0 11px !important; height: 26px; width: auto !important; margin-bottom: 25px; margin-left: 10px; padding: 3px 10px !important; background: rgb(255,255,255); background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZWVlZWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, rgb(255,255,255) 0%, rgb(238,238,238) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(255,255,255)), color-stop(100%, rgb(238,238,238))); background: -webkit-linear-gradient(top, rgb(255,255,255) 0%, rgb(238,238,238) 100%); background: -o-linear-gradient(top, rgb(255,255,255) 0%, rgb(238,238,238) 100%); background: -ms-linear-gradient(top, rgb(255,255,255) 0%, rgb(238,238,238) 100%); background: linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(238,238,238) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0 );}
+.btn-primary { color: #000; padding: 5px 10px !important; border: 1px solid #c3c3c3; cursor: pointer; font-size: 12px; width: 55px; background: rgb(255,255,255); background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZWVlZWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, rgb(255,255,255) 0%, rgb(238,238,238) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(255,255,255)), color-stop(100%, rgb(238,238,238))); background: -webkit-linear-gradient(top, rgb(255,255,255) 0%, rgb(238,238,238) 100%); background: -o-linear-gradient(top, rgb(255,255,255) 0%, rgb(238,238,238) 100%); background: -ms-linear-gradient(top, rgb(255,255,255) 0%, rgb(238,238,238) 100%); background: linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(238,238,238) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0 );}
+.descricaoTopo { color: #fff; font-weight:bold; position:absolute;  top:57px; }
+.DtFuncao{ left: 190px; }
+.DtCidade{ left: 455px; }
+#ucAtendimentoOnline_aSOS img{width:95%;}
+.ui-autocomplete{max-height: 250px !important;overflow-y: auto !important;}

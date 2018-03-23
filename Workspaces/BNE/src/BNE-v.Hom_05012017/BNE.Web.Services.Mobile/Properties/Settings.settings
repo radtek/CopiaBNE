@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BNE.Web.Services.Mobile.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PessoaFisicaFotoChave" Type="System.Guid" Scope="Application">
+      <Value Profile="(Default)">0c088ab7-ae45-40a6-9736-cf344d801aa4</Value>
+    </Setting>
+    <Setting Name="EnviaCopia" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Versao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1.0.6</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

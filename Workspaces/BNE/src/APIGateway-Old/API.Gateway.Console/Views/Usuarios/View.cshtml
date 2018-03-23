@@ -1,0 +1,97 @@
+﻿@model API.Gateway.Console.APIModel.Usuario
+@{ ViewBag.Title = "Usuário"; }
+
+
+<br />
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Dados do usuário</h3>
+    </div>
+    <div class="panel-body">
+
+        <div class="form-group">
+            <label for="Idf_Usuario">IDF Usuário</label>
+            <input type="text" autocomplete="off" class="form-control" id="Idf_Usuario" name="Idf_Usuario"
+                   value="@Html.DisplayFor(model => model.Idf_Usuario)" disabled >
+        </div>
+
+        <div class="form-group">
+            <label for="Num_CPF">CPF</label>
+            <input type="text" autocomplete="off" class="form-control" id="Num_CPF" name="Num_CPF"
+                   value="@Html.DisplayFor(model => model.Num_CPF, "CPF")" disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="Idf_Filial">IDF Filial</label>
+            <input type="text" autocomplete="off" class="form-control" id="Idf_Filial" name="Idf_Filial" placeholder="" maxlength="10"
+                   value="@Html.DisplayFor(model => model.Idf_Filial)" disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="Senha">Senha</label>
+            <input type="text" class="form-control" id="Senha" name="Senha" placeholder="Senha" maxlength="20"
+                   autocomplete="off" disabled
+                   value="@Html.DisplayFor(model => model.Senha)">
+        </div>
+
+        <div class="form-group">
+            <label for="Dta_Nascimento">Data de Nascimento</label>
+            <input type="text" class="form-control" id="Dta_Nascimento" name="Dta_Nascimento" placeholder="00/00/0000"
+                   value="@Html.DisplayFor(model => model.Dta_Nascimento, "simpledate")" disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="Dta_Inicio_Plano">Data Início do Plano</label>
+            <input type="text" class="form-control" id="Dta_Inicio_Plano" name="Dta_Inicio_Plano" placeholder="00/00/0000"
+                   value="@Html.DisplayFor(model => model.Dta_Inicio_Plano)" disabled>
+        </div>
+
+
+        <div class="form-group">
+            <label for="Idf_Perfil">Perfil</label>
+            <input type="text" class="form-control" id="Idf_Perfil" name="Idf_Perfil" placeholder="00/00/0000"
+                   value="@Html.DisplayFor(model => model.Perfil.Des_Perfil)" disabled>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+<br />
+@if ( !Model.Flg_Inativo ) 
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Desativar</h3>
+        </div>
+        <div class="panel-body">
+            <div>
+                <b>Deseja realmente desativar este usuário?</b><br /><br />
+                @Html.ActionLink("Desativar", "Deactivate", "Usuarios", new { Id = Model.Idf_Usuario }, new { @class = "btn btn-danger" })
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Ativar</h3>
+        </div>
+        <div class="panel-body">
+            <div>
+                <b>Deseja realmente ativar este usuário?</b><br /><br />
+                @Html.ActionLink("Reativar", "Reactivate", "Usuarios", new { Id = Model.Idf_Usuario }, new { @class = "btn btn-success" })
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index", "Usuarios", null , new { @class = "btn btn-default" })
+</div>
+

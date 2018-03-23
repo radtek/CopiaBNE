@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BNE.Vaga.Model.Vaga">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <AssociationLine Name="TelefoneVaga" Type="BNE.Vaga.Model.TelefoneVaga" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.562" Y="3.911" />
+        <Point X="2.562" Y="4.999" />
+        <Point X="4.5" Y="4.999" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Grupo" Type="BNE.Vaga.Model.Grupo" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.312" Y="3.911" />
+        <Point X="2.312" Y="6.494" />
+        <Point X="4.5" Y="6.494" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAIAAACACAJoIAAAABQAQBAABAQAQAAAAIAEAAAAMA=</HashCode>
+      <FileName>Vaga.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TipoContrato" />
+      <Property Name="TelefoneVaga" />
+      <Property Name="Grupo" />
+      <Property Name="SituacaoVaga" />
+      <Property Name="Requisitos" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Beneficios" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BNE.Comum.Model.TelefoneComum" Collapsed="true">
+    <Position X="6.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="BNE.Vaga.Model.TelefoneVaga">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TelefoneVaga.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BNE.Vaga.Model.Beneficio">
+    <Position X="4.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAIAABAAAAAAACAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Beneficio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BNE.Vaga.Model.Grupo">
+    <Position X="4.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Grupo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BNE.Vaga.Model.TipoContrato">
+    <Position X="4.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TipoContrato.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BNE.Vaga.Model.Requisitos">
+    <Position X="1" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Requisitos.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Disponibilidades" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BNE.Vaga.Model.Disponibilidades">
+    <Position X="3.75" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Disponibilidades.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="BNE.Vaga.Model.Enumeradores.SituacaoVaga" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAABAAIAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enumeradores\SituacaoVaga.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,92 @@
+﻿@model BNE.PessoaJuridica.Web.Models.CadastroUsuarioEmpresa
+
+@if (ViewData["RunScripts"] != null && Convert.ToBoolean(ViewData["RunScripts"]))
+{
+    <script>
+        Configurar();
+    </script>
+}
+@if (ViewData["Erro"] != null && !string.IsNullOrWhiteSpace(ViewData["Erro"].ToString()))
+{
+    <script>
+        util.mostrarerro(@Html.Raw(ViewData["Erro"].ToString()));
+    </script>
+}
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet center darkgrey top36">
+    <h4>
+        <i class="material-icons mediumcolor">assignment_ind</i>
+        <strong>DADOS DO USUÁRIO</strong>
+    </h4>
+    Pesquisa diária, currículos de assinantes e divulgação de vagas ilimitadas<br />
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.Nome, new { id = "txtNomeResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtNomeResponsavel">Nome</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col tamanhos_fixo mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--3-col  tamanhos_fixo mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.NumeroCPF, new { id = "txtCPFResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtCPFResponsavel">CPF</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.DataNascimento, new { id = "txtDataNascimentoResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtDataNascimentoResponsavel">Data de Nascimento</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col  tamanhos_fixo mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--1-col mdl-cell--4-col-phone mdl-cell--2-col-tablet vertitemform">Sexo:</div>
+<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone mdl-cell--3-col-tablet vertitemform ">
+    <div class="mdl-radio-bne">
+        @Html.RadioButtonFor(m => m.Sexo, "F", new { @id = "option-f" })
+        <label for="option-f" class="label">Feminino</label>
+    </div>
+</div>
+<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone mdl-cell--3-col-tablet vertitemform ">
+    <div class="mdl-radio-bne">
+        @Html.RadioButtonFor(m => m.Sexo, "M", new { @id = "option-m" })
+        <label for="option-m" class="label">Masculino</label>
+    </div>
+</div>
+<div class="mdl-cell mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--3-col  mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.Funcao, new { id = "txtFuncaoResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtFuncaoResponsavel">Função</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.NumeroCelular, new { id = "txtNumeroCelularResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtNumeroCelularResponsavel">Celular</label>
+</div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.Email, new { id = "txtEmailResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtEmailResponsavel">E-mail Comercial</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--3-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.NumeroComercial, new { id = "txtNumeroComercialResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtNumeroComercialResponsavel">Telefone Comercial</label>
+</div>
+<div class="mdl-cell mdl-cell--2-col mdl-cell--1-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.NumeroComercialRamal, new { id = "txtNumeroComercialRamalResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtNumeroComercialRamalResponsavel">Ramal</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--12-col center">
+    <button id="btnContinuarPasso3" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformbig">
+        CONTINUAR
+    </button>
+</div>

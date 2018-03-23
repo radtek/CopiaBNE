@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wscep.bne.com.br/CEP.svc?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/BNE.BLL.CEP" />
+  <xs:element name="CompletarCEP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BNE.BLL.CEP" minOccurs="0" name="cep" nillable="true" type="q1:CEP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompletarCEPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BNE.BLL.CEP" minOccurs="0" name="cep" nillable="true" type="q2:CEP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarQuantidadeEnderecosPorCEP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BNE.BLL.CEP" minOccurs="0" name="cep" nillable="true" type="q3:CEP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarQuantidadeEnderecosPorCEPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecuperarQuantidadeEnderecosPorCEPResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaCEP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cep" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="logradouro" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoLogradouro" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bairro" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cidade" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ordenacao" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaCEPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BNE.BLL.CEP" minOccurs="0" name="ConsultaCEPResult" nillable="true" type="q4:ArrayOfCEP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaCEPPaginacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cep" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="logradouro" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoLogradouro" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bairro" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cidade" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BNE.BLL.CEP" minOccurs="0" name="nomeColuna" type="q5:Colunas" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BNE.BLL.CEP" minOccurs="0" name="direcaoOrdenacao" type="q6:DirecaoOrdenacao" />
+        <xs:element minOccurs="0" name="paginaCorrente" type="xs:int" />
+        <xs:element minOccurs="0" name="tamanhoPagina" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaCEPPaginacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BNE.BLL.CEP" minOccurs="0" name="ConsultaCEPPaginacaoResult" nillable="true" type="q7:ArrayOfCEP" />
+        <xs:element minOccurs="0" name="totalRegistros" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarCeps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="csvCEPs" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarCepsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BNE.BLL.CEP" minOccurs="0" name="ListarCepsResult" nillable="true" type="q8:ArrayOfCEP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

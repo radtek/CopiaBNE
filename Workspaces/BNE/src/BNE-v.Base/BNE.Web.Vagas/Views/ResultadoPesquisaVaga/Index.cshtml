@@ -1,0 +1,49 @@
+﻿@using BNE.Web.Vagas.Code.Helpers.Paginacao
+@model IPagedList<BNE.Web.Vagas.Models.Vaga>
+
+@section css
+{
+    
+    <link href="~/Content/Vaga.css" rel="stylesheet" />
+<link href="~/Content/themes/base/custom.css" rel="stylesheet" />
+<link href="~/Content/themes/base/font-awesome.min.css" rel="stylesheet" />
+}
+@section scripts
+{
+    <script src="~/Scripts/local/Vagas.js"></script>
+    <script type="text/javascript">
+        $("#ordenacaoVagas").change(function () {
+            var url = document.URL;
+            var patt = /ordenacaoVagas=[0-9]/i;
+            if (url.match(patt)) {
+                url = url.replace(patt, "ordenacaoVagas=" + $("#ordenacaoVagas").val());
+            } else {
+                if (url.indexOf('?') > 0) {
+                    url += "&";
+                } else {
+                    url += "?";
+                }
+                url += "ordenacaoVagas=" + $("#ordenacaoVagas").val();
+            }
+            window.location.href = url;
+        });
+    </script>
+}
+<h1>@ViewBag.H1</h1>
+<span id="block-filter" style="float:right; padding-bottom:10px;">
+    <label style="margin-right:5px">Ordernar por:</label>
+    <select id="ordenacaoVagas">
+        <option value="0" @(Request.QueryString["ordenacaoVagas"] == "0" ? "selected=\"selected\"" : "")>Busca Padrão</option>
+        <option value="1" @(Request.QueryString["ordenacaoVagas"] == "1" ? "selected=\"selected\"" : "")>Maior Salário</option>
+        <option value="2" @(Request.QueryString["ordenacaoVagas"] == "2" ? "selected=\"selected\"" : "")>Últimas Vagas</option>
+    </select>
+</span>
+
+@if (Session["DataCadastroPrimeiraVaga"+ViewBag.Identificador] != null)
+{
+    <h2>Última Atualização: @(((DateTime)Session["DataCadastroPrimeiraVaga" + ViewBag.Identificador]).ToShortDateString())</h2>
+}
+@Html.Partial("_Vagas", Model)
+<div class="pager">
+    @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount, Request.QueryString)
+</div>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CEP" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://wscep.bne.com.br/CEP.svc?xsd=xsd2" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://wscep.bne.com.br/CEP.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://wscep.bne.com.br/CEP.svc?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/BNE.BLL.CEP" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICEP_CompletarCEP_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompletarCEP" />
+  </wsdl:message>
+  <wsdl:message name="ICEP_CompletarCEP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompletarCEPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICEP_RecuperarQuantidadeEnderecosPorCEP_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarQuantidadeEnderecosPorCEP" />
+  </wsdl:message>
+  <wsdl:message name="ICEP_RecuperarQuantidadeEnderecosPorCEP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarQuantidadeEnderecosPorCEPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICEP_ConsultaCEP_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaCEP" />
+  </wsdl:message>
+  <wsdl:message name="ICEP_ConsultaCEP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaCEPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICEP_ConsultaCEPPaginacao_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaCEPPaginacao" />
+  </wsdl:message>
+  <wsdl:message name="ICEP_ConsultaCEPPaginacao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaCEPPaginacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICEP_ListarCeps_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCeps" />
+  </wsdl:message>
+  <wsdl:message name="ICEP_ListarCeps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCepsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICEP">
+    <wsdl:operation name="CompletarCEP">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICEP/CompletarCEP" message="tns:ICEP_CompletarCEP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICEP/CompletarCEPResponse" message="tns:ICEP_CompletarCEP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarQuantidadeEnderecosPorCEP">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICEP/RecuperarQuantidadeEnderecosPorCEP" message="tns:ICEP_RecuperarQuantidadeEnderecosPorCEP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICEP/RecuperarQuantidadeEnderecosPorCEPResponse" message="tns:ICEP_RecuperarQuantidadeEnderecosPorCEP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCEP">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICEP/ConsultaCEP" message="tns:ICEP_ConsultaCEP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICEP/ConsultaCEPResponse" message="tns:ICEP_ConsultaCEP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCEPPaginacao">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICEP/ConsultaCEPPaginacao" message="tns:ICEP_ConsultaCEPPaginacao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICEP/ConsultaCEPPaginacaoResponse" message="tns:ICEP_ConsultaCEPPaginacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCeps">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICEP/ListarCeps" message="tns:ICEP_ListarCeps_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICEP/ListarCepsResponse" message="tns:ICEP_ListarCeps_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICEP" type="tns:ICEP">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CompletarCEP">
+      <soap:operation soapAction="http://tempuri.org/ICEP/CompletarCEP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarQuantidadeEnderecosPorCEP">
+      <soap:operation soapAction="http://tempuri.org/ICEP/RecuperarQuantidadeEnderecosPorCEP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCEP">
+      <soap:operation soapAction="http://tempuri.org/ICEP/ConsultaCEP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCEPPaginacao">
+      <soap:operation soapAction="http://tempuri.org/ICEP/ConsultaCEPPaginacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCeps">
+      <soap:operation soapAction="http://tempuri.org/ICEP/ListarCeps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CEP">
+    <wsdl:port name="BasicHttpBinding_ICEP" binding="tns:BasicHttpBinding_ICEP">
+      <soap:address location="http://wscep.bne.com.br/CEP.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

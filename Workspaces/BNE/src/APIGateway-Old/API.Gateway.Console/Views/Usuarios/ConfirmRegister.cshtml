@@ -1,0 +1,10 @@
+﻿@model bool
+@{ ViewBag.Title = "Registro"; }
+
+<h2>Resultado</h2>
+@{ var clz = (@Model) ? "blue" : "red"; }
+<p style="color: @clz;">
+    @ViewBag.Message
+</p>
+<br />
+@Html.ActionLink("Voltar", "Index", "Usuarios", null, new { @class = "btn btn-primary" })

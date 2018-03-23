@@ -1,0 +1,881 @@
+﻿.vaga {
+    background-color: #fff;
+    border: 1px solid #D1D5DC;
+    overflow: hidden;
+    height: 165px; 
+    position: relative;
+    margin:8px;
+}
+
+    .vaga .funcao {
+        color: #172B49;
+        font-size: 21px;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        display: inline;
+    }
+
+    .vaga .coluna_web_estagios_vaga {
+        float: left;
+    }
+
+    .vaga .imagem_web_estagios {
+        width: 34px;
+        height: 34px;
+        margin-right: 5px;
+        border-style: none;
+    }
+
+    .vaga .quantidade_vaga {
+        font-size: 13px;
+        font-weight: normal;
+    }
+
+    .vaga .salario {
+        color: #172B49;
+        font-size: 16px;
+        line-height: 100%;
+        display: inline;
+    }
+
+    .vaga .cidade {
+        color: #172B49;
+        font-size: 16px;
+        line-height: 100%;
+    }
+
+    .vaga .mediaSalarial {
+        color: #172B49;
+        font-size: 13px;
+        line-height: 100%;
+    }
+
+    .vaga .atribuicao {
+        display: block;
+    }
+    .vaga-premium-detalhes .codigo_data_vaga{
+         color: #fff !important;
+        margin: 10px 0 0;
+    }
+
+    .vaga .codigo_data_vaga {
+        color: #999;
+        margin: 4px 0 ;
+    }
+
+    .vaga .titulo {
+        display: block;
+    }
+
+        .vaga .titulo a {
+            text-decoration: none;
+            color: #172B49;
+        }
+
+    .vaga h3 {
+        font-size: 12px;
+        margin-top: 14px;
+    }
+
+    .vaga .container_atribuicao {
+        margin-top: 15px;
+        display: block;
+    }
+
+    /*.vaga .painel_mais_dados_vaga { display: none; }*/
+    .vaga .painel_mais_dados_vaga {
+        visibility: hidden;
+    }
+
+        .vaga .painel_mais_dados_vaga .atribuicao {
+            display: none;
+        }
+
+        .vaga .painel_mais_dados_vaga .beneficio {
+            display: block;
+        }
+
+        .vaga .painel_mais_dados_vaga .requisito {
+            display: block;
+        }
+
+    .vaga .qualificacaoVaga {
+        position: relative;
+        top: -21px;
+        right: 0;
+        width: 100%; /*height: 21px;*/
+    }
+
+        .vaga .qualificacaoVaga .img {
+            background-repeat: no-repeat;
+            width: 144px;
+            height: 21px;
+            position: relative;
+            top: -4px;
+            color: White;
+            text-align: center;
+            padding-top: 4px;
+            font-size: 11px;
+            margin: 0 auto;
+        }
+
+        .vaga .qualificacaoVaga.bne {
+            border-top: 4px solid #103c73;
+        }
+
+        .vaga .qualificacaoVaga.parceiro {
+            border-top: 4px solid #666666;
+        }
+
+        .vaga .qualificacaoVaga.bne .img {
+            background-image: url('/Images/vaga-bne.png');
+        }
+
+        .vaga .qualificacaoVaga.parceiro .img {
+            background-image: url('/Images/vaga-parceiro.png');
+        }
+
+    .vaga .coluna_esquerda {
+        float: left;
+        line-height: 150%;
+        margin-right: 16px;
+        text-align: justify;
+        width: 600px;
+        padding-left: 12px;
+    }
+
+        .vaga .coluna_esquerda ul {
+            list-style-type: none;
+        }
+
+    .vaga .coluna_direita {
+        floaT: left;
+        margin-left: 37px;
+        width: 185px;
+        padding-bottom: 30px;
+        padding-right: 12px;
+    }
+
+
+        .vaga .coluna_direita ul {
+            line-height: 150%;
+            margin-top: 13px;
+            margin-bottom: 13px;
+        }
+
+        .vaga .coluna_direita ul,
+        .vaga .coluna_direita li {
+            color: #DBA600;
+            font-size: 13px;
+            list-style-position: inside;
+            list-style-type: disc;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .vaga .coluna_direita a:link,
+        .vaga .coluna_direita a:visited,
+        .vaga .coluna_direita a:hover .vaga .coluna_direita a:active {
+            text-decoration: underline;
+        }
+
+        .vaga .coluna_direita a:hover {
+            color: #EFC64A;
+        }
+
+        .vaga .coluna_direita a:link,
+        .vaga .coluna_direita a:visited,
+        .vaga .coluna_direita a:active {
+            color: #DBA600;
+        }
+
+    .vaga .quero_me_candidatar {
+        margin-top: 0px;
+        margin-left: 13px;
+    }
+
+    .vaga .ja_enviei {
+        color: #3e8830;
+        text-align: center;
+    }
+
+        .vaga .ja_enviei p {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+.vaga .painel_mais_dados_vaga p {
+    line-height: 160% !important;
+}
+.vaga p {
+    line-height: 160%;
+}
+
+    .vaga .data_vaga {
+    }
+
+    .vaga .ico_pcd {
+        float: left;
+        padding-right: 10px;
+        color: #172B49;
+    }
+
+.imagem_bne_recomenda { /* ATENÇÃO: Verificar estilos dinâmicos definidos via JQuery */
+}
+
+.imagem_vip_universitario_recomenda { /* ATENÇÃO: Verificar estilos dinâmicos definidos via JQuery */
+}
+
+.spanMaisDadosDaVaga { /* ATENÇÃO: Verificar estilos dinâmicos definidos via JQuery */
+                       text-align:center;
+                       padding:4px;
+}
+
+.imagem_candidatura_gratis {
+    z-index: 2;
+    position: absolute;
+    right: 0px;
+    top: 0px
+     /*margin-top: -19px; ATENÇÃO: Verificar estilos dinâmicos definidos via JQuery */
+}
+
+/*.buscar input {
+    display: block;
+    margin-top: -5px;
+    margin-bottom: 2px;
+}*/
+
+.buscar a {
+    color: #fff;
+}
+
+    .buscar a:hover {
+        text-decoration: underline;
+    }
+
+.compartilhamento .compartilhe {
+    text-align: left;
+    margin: 0;
+    display: block;
+    font-weight: bold;
+    margin-bottom:4px;
+}
+
+.rrssb-buttons {
+    cursor: pointer;
+}
+
+.rrssb-icon {
+    color: #fff;
+    font-size: 20px;
+}
+.share-buttons span.share-button-text { text-transform: uppercase; color: #ffffff; }
+.share-buttons { height: 36px; margin: 0; padding: 0; width: 100%; list-style-type: none; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+    .share-buttos li { float: left;  margin: 0; padding: 0 2px;  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+        .share-buttons li .share-button { font-size: 11px; font-weight: 700;  position: relative; text-align: center; border-radius: 2px; color: #fff; display: block; text-decoration: none; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+            .share-buttons li .share-button .share-button-icon { display: block;  font-size: 20px; }
+        .share-buttons li.share-button-email a { background-color: #0a88ff; }
+            .share-buttons li.share-button-email a:hover { background-color: #006ed6; }
+        .share-buttons li.share-button-facebook a { background-color: #306199; }
+            .share-buttons li.share-button-facebook a:hover { background-color: #244872; }
+        .share-buttons li.share-button-linkedin a { background-color: #007bb6; }
+            .share-buttons li.share-button-linkedin a:hover { background-color: #005983; }
+        .share-buttons li.share-button-twitter a { background-color: #26c4f1; }
+            .share-buttons li.share-button-twitter a:hover { background-color: #0eaad6; }
+        .share-buttons li.share-button-google-plus a { background-color: #e93f2e; }
+            .share-buttons li.share-button-google-plus a:hover { background-color: #ce2616; }
+        .share-buttons li.share-button-whatsapp a { background-color: #4CED69; }
+            .share-buttons li.share-button-whatsapp a:hover { background-color: #009688; }
+        .share-buttons li > .popup{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+        }
+.share-buttons li > .share-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.rrssb-text, .rssb-icon {
+    padding: 8px 0;
+}
+
+@media screen and (max-width:979px) {
+    .rrssb-buttons li a .rrssb-text {
+        display:none;
+    }
+    .share-button li a .rrssb-text {
+        display: none;
+    }
+}
+        
+        @media (max-width: 540px) {
+            /*.share-buttons li { width: 16%; }
+    .share-buttons span.share-button-text { display: none; }*/
+        }
+
+.areadasVagas_ {
+    flex-grow:2;
+    
+}
+
+.areadasVagas_legenda {
+    float: left;
+    right: 0;
+    height: 32px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    margin-right:8px;
+}
+
+ul.Vagas_legenda_ {
+    list-style: none;
+    display: table;
+   
+}
+
+    ul.Vagas_legenda_ li {
+        display: table-cell;
+    }
+
+li.Vagas_legenda_vaga {
+    background-color: #0d47a1;
+    width: 16px !important;
+    height: 12px;
+}
+
+li.Vagas_legenda_oportunidade {
+    background-color: #26a69a;
+    width: 16px !important;
+    height: 12px;
+}
+
+.legenda_vaga {
+    color: #0d47a1 !important;
+    font-weight: bold;
+}
+
+.legenda_oportunidade {
+    color: #26a69a !important;
+    font-weight: bold;
+}
+
+.vaga .coluna_esquerda_colorcol {
+    //float: left;
+    line-height: 150%;
+    //margin-right: 16px;
+    //padding-left: 12px;
+    text-align: justify;
+    //width: 585px;
+}
+
+.colorcol_vaga {
+    border-left: 15px solid #0d47a1;
+}
+
+.colorcol_oportunidade {
+    border-left: 15px solid #26a69a;
+}
+
+.vaga .quero_me_candidatar_vaga {
+    margin-top: 0;
+    background-color: #0d47a1 !important;
+    color: #fff !important;
+    border: none !important;
+    width: 150px;
+    cursor: pointer;
+    border-radius:4px;
+}
+    .vaga .quero_me_candidatar_vaga:hover {
+        background-color: #1964d8 !important;
+    }
+.vaga .quero_me_candidatar_vaga_premium {
+    width: 150px;
+}
+
+.vaga .quero_me_candidatar_oportunidade {
+    margin-top: 0;
+    background-color: #26a69a !important;
+    color: #fff !important;
+    border: none !important;
+    width: 150px;
+    cursor: pointer;
+}
+
+.vaga .quero_me_candidatar_oportunidade {
+    margin-top: 0;
+    background-color: #26a69a !important;
+    color: #fff !important;
+    border: none !important;
+    width: 150px;
+    cursor: pointer;
+}
+
+.balao {
+    font-size: 13px;
+    color: white;
+    cursor: pointer;
+    background-color: #26a69a;
+    border-radius: 100% !important;
+}
+
+a.tooltipB {
+    display: inline;
+    position: relative;
+}
+
+    a.tooltipB:hover {
+        text-decoration: none;
+    }
+
+    a.tooltipB span {
+        display: none;
+    }
+
+    a.tooltipB:hover span {
+        background: #111;
+        background: rgba(0,0,0,.8);
+        border-radius: .5em;
+        bottom: 1.35em;
+        background-color: #26a69a !important;
+        background-color: hsla(0, 0%, 0%, 0.9);
+        font-size: 12px;
+        line-height: 1.3;
+        bottom: 2em;
+        width: 156px;
+        color: #fff;
+        content: attr(title);
+        display: block;
+        left: -6.5em;
+        padding: .6em 1em;
+        position: absolute;
+        text-shadow: 0 1px 0 #000;
+        z-index: 98;
+    }
+
+a.tooltipOportunidade {
+    display: inline;
+    position: relative;
+}
+
+    a.tooltipOportunidade:hover {
+        text-decoration: none;
+    }
+
+    a.tooltipOportunidade span {
+        display: none;
+    }
+
+    a.tooltipOportunidade:hover span {
+        background: #111;
+        background: rgba(0,0,0,.8);
+        border-radius: .5em;
+        bottom: 1.35em;
+        background-color: #26a69a !important;
+        background-color: hsla(0, 0%, 0%, 0.9);
+        font-size: 12px;
+        line-height: 1.3;
+        bottom: -12em;
+        width: 626px;
+        color: #fff;
+        content: attr(title);
+        display: block;
+        left: 0.5em;
+        padding: .6em 1em;
+        position: absolute;
+        text-shadow: 0 1px 0 #000;
+        z-index: 98;
+    }
+
+
+
+
+
+#vaga-premium {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    margin-top: 120px;
+    width: 864px;
+    min-height: 217px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #2b6cb0;
+    border-left: solid 16px #0d47a1;
+    position: relative;
+}
+
+.vaga-premium-col01 {
+    width: 152px;
+    float: left;
+    background-color: #2b6cb0;
+    margin-left: -11px;
+    margin-top: -48px;
+}
+
+.vaga-premium-col02 {
+    width: 865px;
+    float: left;
+    background-color: #2b6cb0;
+    color: #fff;
+    text-align: justify;
+    position: relative;
+}
+
+.vaga-premium-funcao {
+    font-size: 21px;
+    font-weight: 500;
+    color: #f1c40f !important;
+    padding-top: 4px;
+    position: relative;
+}
+
+.vaga-premium-funcao a {
+    color: #f1c40f !important;
+    text-decoration: none;
+}
+
+.vaga-premium-salario-local {
+    margin-bottom: 16px;
+    font-size:15px;
+}
+
+.vaga-premium-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #f1c40f;
+    padding: 2px 4px 2px 4px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    position: absolute;
+    margin-top: -3px;
+    margin-left: 8px;
+}
+
+.vaga-premium-detalhes {
+    font-size: 12px;
+}
+
+.vaga-premium-col03 {
+    width: 264px;
+    float: left;
+    background-color: #2b6cb0;
+}
+
+.vaga-premium-candidatar {
+    text-align: left;
+    padding-top: 32px;
+}
+
+    .vaga-premium-candidatar input {
+        text-align: center;
+        padding-top: 32px;
+        font-family: "Roboto","Helvetica","Arial",sans-serif;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 16px 8px 16px;
+        font-size: 14px;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.54);
+        cursor: pointer;
+        text-decoration: none !important;
+        transition: all 0.2s;
+        outline: none;
+    }
+
+        .vaga-premium-candidatar input:hover {
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+            transition: all 0.2s;
+            padding: 8px 24px 8px 24px;
+        }
+
+.vaga-premium-options {
+    color: #fff;
+    font-size: 14px;
+}
+
+.vaga .coluna_direita_premium {
+        floaT: left;
+        margin-left: 37px;
+        width: 185px;
+        padding-right: 12px;
+    }
+
+
+        .vaga .coluna_direita_premium ul {
+            line-height: 150%;
+            margin-top: 13px;
+            margin-bottom: 13px;
+        }
+
+        .vaga .coluna_direita_premium ul,
+        .vaga .coluna_direita_premium li {
+            color: #DBA600;
+            font-size: 13px;
+            list-style-position: inside;
+            list-style-type: disc;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .vaga .coluna_direita_premium a:link,
+        .vaga .coluna_direita_premium a:visited,
+        .vaga .coluna_direita_premium a:hover .vaga .coluna_direita_premium a:active {
+            text-decoration: underline;
+        }
+
+        .vaga .coluna_direita_premium a:hover {
+            color: #EFC64A;
+        }
+
+        .vaga .coluna_direita_premium a:link,
+        .vaga .coluna_direita_premium a:visited,
+        .vaga .coluna_direita_premium a:active {
+            color: #DBA600;
+        }
+
+.vaga .coluna_direita_premium .vaga-premium-options a:link,
+        .vaga .coluna_direita_premium .vaga-premium-options a:visited,
+        .vaga .coluna_direita_premium .vaga-premium-options a:active {
+            color: #fff;
+        }
+
+.vaga .coluna_direita_premium .vaga-premium-options li {
+            color: #fff;
+            font-size: 13px;
+            list-style-position: inside;
+            list-style-type: disc;
+            margin-left: 0;
+            padding-left: 0;
+        }
+    .vaga-premium-options ul {
+        margin-left: 12px;
+    }
+
+.vaga-premium-share {
+    background-color: #2b6cb0;
+    width: 864px;
+    clear: both;
+}
+/* ----------------------------------------------------------- CSS Modal */
+.frame-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.87);
+    position: absolute;
+}
+
+    .frame-modal a {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.54);
+    }
+
+        .frame-modal a:visited {
+        }
+
+
+.coluna_esquerda_colorcol_premium {
+    float: left;
+    line-height: 150%;
+    margin-right: 16px;
+    padding-left: 12px;
+    text-align: justify;
+    width: 443px;
+}
+
+.ja_enviei_premium {
+    color: white;
+    text-align: center;
+}
+
+.funcao_premium {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    font-size: 21px;
+    font-weight: 500;
+    color: #f1c40f;
+    position: relative;
+}
+
+
+.modalPremiumCandidatura{
+    left: 369.5px !important; 
+     
+}
+
+.vaga-premium {
+    padding-bottom: 0px !important;
+}
+
+.compartilhe-link{
+    background-color:#fff;
+    margin-left:-140px;
+    margin-bottom:14px;
+    padding:5px 5px 5px 5px;
+}
+
+.compartilhe-premium{
+    margin-left:-140px;
+}
+
+.__b-popup1__{
+        background-color: rgb(0, 0, 0) !important;
+}
+
+
+#bannerCampanha-lista{
+			width:880px;
+			height:210px;
+			margin:0 auto;
+			border-radius:4px;
+			background-image:url(../Images/banner/201609-aquelas-moedinhas-lista.png);
+			font-family: 'Roboto', Helvetica, Arial, sans-serif;
+		}
+		#bannerCampanha-lista #link-area{
+			width:886px;
+			height:210px;
+		}
+		#bannerCampanha-lista #bannerCampanha-lista-titulo{
+			width:570px;
+			float:left;
+			text-align:center;
+			font-size:32px; 
+			text-transform: uppercase;
+			margin-top:16px;
+			color:#ffffff;
+			line-height: 105%;
+		}
+		#bannerCampanha-lista #bannerCampanha-lista-subtitulo{
+			width:570px;
+			float:left;
+			text-align:center;
+			font-size:20px; 
+			color:#ffffff;
+			padding:4px 0;
+			font-weight: lighter;
+		}
+		#bannerCampanha-lista #bannerCampanha-lista-subtitulo strong{font-weight: 500 !important;}
+		#bannerCampanha-lista #bannerCampanha-lista-complemento{
+			width:570px;
+			float:left;
+			text-align:center;
+			font-size:14px; 
+			text-transform: uppercase;
+			color:rgba(0,0,0, .40);
+			padding:4px 0;
+			margin-top:8px;
+		}
+		#bannerCampanha-lista #bannerCampanha-lista-button{
+			width:170px;
+			float:left;
+			text-align:center;
+			font-size:14px; 
+			text-transform: uppercase;
+			background-color:rgba(0,0,0, .40);
+			color:#ffffff;
+			padding:8px 24px;
+			margin-top:6px;
+			margin-left:176px;
+			border-radius:4px;
+		}
+
+
+#black-friday-2016 {
+    width: 880px;
+    height: 380px;
+    margin: 0 auto;
+    border-radius: 4px;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    position: relative;
+    background-image: url('../Images/BlackFriday/2016-black-friday-banner-01.jpg');
+    background-repeat: none;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+		.neon{
+		    position: absolute;
+		    top: 0px;
+		    left: 0px;
+		    width: 880px;
+		    height: 380px;
+		    border-radius:8px;
+		}
+		#bf16-txt{
+			display: flex;
+			justify-content: flex-end;
+			flex-direction: column;
+			align-items: center;
+			color:#ffffff;
+			position: absolute;
+			z-index: 99;
+			width:880px;
+			height: 380px;
+			top:0;
+			left: 0;
+		}
+		#bf16-btn{
+			padding:8px 16px;
+			background-color: #ffffff;
+			color: rgba(0,0,0, .87);
+			border-radius:4px;
+			margin-bottom: 24px;
+			margin-top:16px;
+			font-size:14px;
+			text-transform: uppercase;
+			text-decoration: none;
+			cursor:pointer;
+			font-weight: bold;
+		}
+		#bf16-btn:hover{
+			background-color: #48FFD3;
+			cursor:pointer;
+		}
+
+.vagas-rsp_vaga-content {
+    display:flex;
+    flex-direction:row;
+}
+.vagas-rsp_vaga-content_spec {
+    flex-grow: 2;
+    padding:16px;
+}
+.vagas-rsp_vaga-content_action {
+   min-width: 180px;
+   padding:16px;
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+   align-items:center;
+}
+    .vagas-rsp_vaga-content_action > ul a {
+        color: #ef6c00;
+        text-decoration:underline;
+    }
+    
+@media screen and (max-width:599px) {
+    .vaga {
+        
+    }
+    .vagas-rsp_vaga-content {
+        flex-wrap: wrap;
+    }
+    .vagas-rsp_vaga-content_spec {
+        width:100%;
+    }
+    .vagas-rsp_vaga-content_action {
+        width: 100%;
+    }
+}
+
+
+.popupEmail {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}

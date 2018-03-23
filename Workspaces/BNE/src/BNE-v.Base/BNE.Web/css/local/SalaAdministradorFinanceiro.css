@@ -1,0 +1,116 @@
+﻿.painel_financeiro_conteudo{overflow:hidden;	padding: 0 0 0 20px; 	margin:0; }
+
+.painel_financeiro_conteudo .painel_botoes{margin: 20px 0;}
+
+.ultimosBTN, .ultimosdados { margin-bottom: 0 !important ;}
+
+.painel_financeiro_conteudo p {margin: 0 0 10px 4px; color:#1D325D;}
+h2{margin:auto; height:auto; font-size:14px; font-weight:normal; border-bottom: 1px solid #eee; color:#1d325d;}
+
+
+
+a {color:#8c8c8c;}
+a:hover {text-decoration:underline; }
+
+.container_financeiro{ /*background: url('../../img/bg_msg_menu_lateral.png') no-repeat; overflow:hidden; */ }
+
+.tipo_financeiro {
+/*    float: left;
+    overflow: hidden;
+    padding-bottom: 5px;*/
+    background-color: #fcfcfc;
+}
+    
+.tipo_financeiro ul { list-style-type: none; margin-left: 0; padding-left: 20px; font-size: 12px; /*padding:0; margin:0; width:200px;*/ }
+.tipo_financeiro ul li { /*margin: 0 0 0 11px; border-bottom: white solid 1px; width: 175px; */ color: #8c8c8c; margin-left: 0; padding-left: 0; padding-right: 20px; display: inline; }
+.tipo_financeiro ul li img { /*float:left; margin-right: 7px;*/ }
+.tipo_financeiro ul li span {}
+/*--.tipo_financeiro ul li.selected { color:#4e7413; }--*/
+
+.gridview_padrao{ border: 1px solid #c6c7c8 !important; width:auto;}
+
+h3 {font-size:13px; font-weight:bold; color:#1d325d; padding:10px 0 3px 5px; background: url(../../../img/bg_table_msg_th.jpg) bottom repeat-x; margin: 0  0 7px 0 ;}
+
+.label_principal {color:#1d325d; font-weight:bold; width:190px;}
+
+/*-.label_principal {
+    float: left;
+    text-align: left;
+    width:auto;
+}-*/
+
+
+.blocodados{margin-bottom:10px;}
+.blocodados p {font-size:11px;}
+
+.container_campo {margin-right:10px;}
+
+.botao_padrao{margin:0;}
+
+.texto_exemplo{margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    font-size:11px;
+    font-style:italic;
+    color:#949596;}
+    
+.textbox_padrao_pesquisa{
+    border: 1px solid #B5CAEA !important;
+    margin-left: 4px !important;
+    margin-right: 4px !important;
+    vertical-align: middle !important;
+    width: 200px !important;
+    font-size:11px !important;
+    font-style:italic !important;
+    float:left;
+}
+
+.filtrar {
+    font-size: 11px;
+    height: 22px;
+    margin-left: 5px;
+    width: auto !important;
+}
+
+
+.textarea_padrao{font-size:12px; height:110px; width: 280px;}
+.prefixo {width:30px; border: 1px solid #B5CAEA;
+    margin-left: 4px;
+
+    padding-left: 11px;
+    vertical-align: middle;}
+    
+.telefone {width:156px; border: 1px solid #B5CAEA;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 11px;
+    vertical-align: middle;}
+
+.col_action input {margin: 3px 6px;}
+
+.col_funcao{font-size:11px;}
+
+.col_action{ width: 13%; text-align:center;}
+.dados_empresa {color:#1D325D;}
+
+.tab_tipoplano{width:13%;}
+.center{text-align:center;}
+.tab_boleto_avulso_pf, .tab_boleto_avulso_pj{width:13%;}
+.liberar_cliente{text-align:right; padding-right:10px;}
+
+.liberar_cliente a{color:#1D325D;}
+.liberar_cliente a:hover{text-decoration:underline;}
+
+.barra_lateral { /*width:200px; background: url(../../../img/BG_degrade_gigante_xunxo.png) top repeat-x #f2f3f3;-*/}
+/*.bordas_superior{ overflow: hidden;}
+.bordas_superior .borda_sup_esquerda{ float:left;}
+.bordas_superior .borda_sup_direita{ float: right;}
+.menu{ border-right:1px solid #cfd6df; width: 199px;}
+.bordas_inferior{ overflow: hidden;}
+.bordas_inferior .borda_inf_esquerda{ float:left;}
+.bordas_inferior .borda_inf_direita{ float: right;}
+.ultimoitem{border: none;}*/
+.small input{width: 50px;}
+.observacao{color:#ccc; font-style:italic;}
+
+.rcbCombo {width: 240px !important}

@@ -1,0 +1,105 @@
+﻿.titulo_modal
+{
+    color: #FFFFFF;
+    font-size: 19px;
+    font-weight: normal;
+    height: 44px;
+    margin: 0;
+    text-align: left;
+}
+
+.titulo_modal span
+{
+    display: inline-block;
+    margin: 10px;
+}
+
+.painel_uclogin
+{
+    float: left;
+    width: 100px;
+    margin-top: 15px;
+}
+
+.modal_conteudo.login .label_principal
+{
+     color: #1E3260 !important;
+}
+
+.modal_conteudo .painel_cadastreja 
+{
+    margin-left: 14px;
+    margin-top: 3px;
+    padding-right: 0;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.pnlLoginModal.modal_conteudo {width: 480px;}
+
+.pnlLoginModal .painel_botoes
+{
+    clear: both;
+    margin: 14px 0 0 0;
+    text-align: left;
+}
+
+.pnlLoginModal .textbox_ddd
+{
+    margin: 0;
+}
+
+/*.modal_conteudo .coluna_esquerda
+{
+    background-color: #eaf1fd;
+    float: left;
+    height: 256px;
+    width: 144px;
+    margin-right:0;
+}*/
+
+/*.modal_conteudo .painel_imagem
+{
+    background-color: #fff;
+    border: 1px dotted #f5e100;
+    cursor: pointer;
+    margin: 78px auto 0;
+    padding: 0 10px 10px;
+    text-align: center;
+    width: 100px;
+}*/
+
+/*.pnlLoginModal  .coluna_direita
+{
+    background-image: url("/img/bg_callout_painel_esquerda.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    float: left;
+    margin-top: 6px;
+    padding-left: 14px;
+    width: 316px;
+}*/
+
+
+
+ /*.coluna_direita .painel_login_campos {
+    background-color: #FFFFFF;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}*/
+
+ /*.coluna_direita .linha {
+    clear: both;
+    overflow: auto;
+    padding: 2px 0;
+}*/
+
+/* .coluna_direita .container_campo_login {
+    clear: both;
+}*/
+
+
+/*.coluna_direita.ajuste div input, .coluna_direita.ajuste div textarea {
+    width: auto;
+}*/

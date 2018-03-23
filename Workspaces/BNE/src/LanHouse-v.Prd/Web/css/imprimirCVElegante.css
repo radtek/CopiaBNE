@@ -1,0 +1,36 @@
+﻿.elegante-cv-header {font-family:Georgia!important; font-size:20px;}
+.elegante-cv-header-curso {font-family:Georgia!important; font-size:16px;}
+.elegant-cv .container { padding:0; margin-top:-25px;}
+.elegant-cv .container h1 ,.elegant-cv .container h2, .elegant-cv .container h3{font-size:25px !important; font-weight:bolder !important;}
+.elegant-cv .container h2{text-transform:uppercase !important;}
+/*.elegant-cv .container h2{border-bottom:2px solid #999; padding-bottom:15px; margin-top:80px !important;}*/
+.elegant-cv .container h2{border-bottom:1px solid #999;padding-bottom:7px;font-size:19px !important;}
+/*.dados_complementares{margin-top:-30px}*/
+
+.elegant-cv .container h3 span{ font-weight:normal; font-style:normal !important;font-size:17px !important;}
+.elegant-cv .container em span{font-style:normal !important;}
+.elegant-cv .container p, .elegant-cv .container em, .elegant-cv .container ul li{font-size:13px !important;}
+.elegant-cv .container .text-center {margin-top:-10px !important;}
+.elegant-cv .container .ass{margin-top:30px !important;}
+/*.elegant-cv .container div{margin-top:50px !important;}
+.elegant-cv .container ul{margin:20px 0 !important;}*/
+/*.elegant-cv .container .ass, .modern-cv .container .ass{margin-top:100px !important;}*/
+/*.elegant-cv .imgCVelegant{width:191px; height:192px !important;}*/
+.justifyText {text-align:justify; line-height:normal !important}
+.justifyText a{font-size:12px !important; line-height:normal !important; display:inline-block}
+.row{margin:0px 0!important;  padding:0 !important;}
+.rowTop{margin:-25px 0 0 0!important;}
+.maecurso {  margin-top:10px;}
+.col-lg-8{width:65% !important;float:left !important;}
+.col-lg-4{width:35% !important;float:left !important;}
+.col-md-7 {width:65% !important;float:left !important;}
+.elegante-cv-header .col-md-5 em a{display:inline-block;}
+.col-md-9 a, .col-md-5, .col-md-7 ,.clearfix{margin:0 !important;}
+.col-md-7 a, .col-md-5 a{font-size:12px; margin-right:5px;}
+.col-md-5 br{display:none;}
+.col-md-5{width:35% !important;float:left !important; text-align:right}
+pre{border:none; font-family:Georgia!important; padding:0; white-space: normal}
+ul{ list-style:none !important}
+br{border:2px solid #fff !important; display:block}
+.show-periodo{display:inline-block}
+.hide-periodo{display:none !important}

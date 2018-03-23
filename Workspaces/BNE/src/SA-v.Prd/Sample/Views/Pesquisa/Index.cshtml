@@ -1,0 +1,138 @@
+﻿@model IEnumerable<AdminLTE_Application.CRM_Empresa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Empresas
+            <small>Online</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li class="active">Online</li>
+        </ol>
+        <div class="box-body table-responsive">
+            <table id="example6" class="table table-bordered table-hover">
+                <thead>
+                    <tr role="row">
+                        <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" style="width: 295px;" aria-label="Rendering engine: activate to sort column ascending">Empresa</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" style="width: 423px;" aria-sort="ascending" aria-label="Browser: activate to sort column descending">CNPJ</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" style="width: 390px;" aria-label="Platform(s): activate to sort column ascending">Plano</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" style="width: 253px;" aria-label="Engine version: activate to sort column ascending">Inicio</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" style="width: 181px;" aria-label="CSS grade: activate to sort column ascending">Fim</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" style="width: 181px;" aria-label="CSS grade: activate to sort column ascending">Cidade-UF</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" style="width: 181px;" aria-label="CSS grade: activate to sort column ascending">Opções</th>
+                    </tr>
+                </thead>
+                <tbody role="alert" aria-live="polite" aria-relevant="all">
+                   @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Raz_Social)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Num_CNPJ)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Des_Plano)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dta_Inicio)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dta_Fim)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nme_Cidade)-@Html.DisplayFor(modelItem => item.Sig_Estado)
+                            </td>
+                            <td>
+                                @if (item != null)
+                                {
+                                    @Html.ActionLink("Details", "Details", new { controller = "Empresa", id = item.Num_CNPJ })
+                                }
+                                else
+                                {
+                                    <span>"Empresa a ser importada</span>
+                                }
+                         </td>
+                     </tr>
+                    }
+                </tbody>
+            </table>
+        </div><!-- /.box-body -->
+    </section>
+    <!-- Main content -->
+    <section class="content"></section><!-- /.content -->
+</aside><!-- /.right-side -->
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("li").removeClass("active");
+        $("#examples").addClass("active");
+        $("#examples_menu").css("display", "block");
+        $("#examples_empty").addClass("active");
+        $("#examples_arrow").addClass("fa-angle-down");
+    });
+</script>
+
+@Scripts.Render("~/bundles/datatables")
+<script type="text/javascript">
+    $(function () {
+        $("#example1").dataTable();
+        $('#example2').dataTable({
+            "bPaginate": true,
+            "bLengthChange": true,
+            "bFilter": true,
+            "bSort": true,
+            "bInfo": true,
+            "bAutoWidth": true
+        });
+    });
+</script>
+
+<!--<script type="text/javascript">
+    /**TODO Tem que tratar email.. e CNPJ */
+    user = '@HttpContext.Current.User.Identity.Name.ToString().Replace(".", "dott").Replace("@", "arroba")';
+    palavra = window.location.href.substring(window.location.href.indexOf("?q=") + 3, window.location.href.indexOf("&search="));
+    palavra = palavra.replace("+", " ");
+    $.ajax({
+        url: '/api/ApiPesquisa/' + palavra,
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        data: "{}",
+        success: function (response) {
+            preencheEmpresasRamo(response); // calling method
+        },
+
+        
+    });
+    function preencheEmpresasRamo(dataValues) {
+        var rows;
+        var table = document.getElementById('tableOnline');
+        table.innerHTML += '<table id="example2" class="table table-bordered table-hover"><thead>' +
+               '<tr role="row">' +
+                       '<th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 295px;" aria-label="Rendering engine: activate to sort column ascending">Empresa</th>' +
+                       '<th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 390px;" aria-label="Platform(s): activate to sort column ascending">Vendedor</th>' +
+                       '<th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 253px;" aria-label="Engine version: activate to sort column ascending">Plano</th>' +
+                       '<th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 181px;" aria-label="CSS grade: activate to sort column ascending">Obs</th>' +
+                       '<th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 181px;" aria-label="CSS grade: activate to sort column ascending">Ações</th>' +
+                   '</tr></thead>';
+        for (var i = 0; i < dataValues.length; i++) {
+            rows += '<tr><td>' + dataValues[i].Empresa + '</td>' +
+            '<td>' + dataValues[i].Vendedor + '</td>' +
+            '<td>' + dataValues[i].Plano + '</td>' +
+            '<td>' + dataValues[i].Obs + '</td>' +
+            '<td><a href="../Empresa/Details/' + dataValues[i].CNPJ + '">Detalhes</a></td></tr>';
+        }
+        $('#example2').append(rows);
+        table.innerHTML += '</table>';
+    }
+</script>-->

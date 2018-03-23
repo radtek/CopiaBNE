@@ -1,0 +1,13 @@
+﻿input[type=text] { border: none !important; }
+.topo .painel_informacoes .textos { font-size: 12px !important; }
+.conteudo .interna { width: 940px !important; margin-top: 85px !important; }
+.barra_rodape h4 { margin-top: 7px !important; }
+.barra_rodape ul { margin-top: 11px !important; }
+@media print {
+    .topo { display: none; }
+    .barra_rodape { display: none; }
+    .painel_rodape_padrao { display: none; }
+    .conteudo .interna { margin-top: 30px !important; }
+    #descricaoFaixaEtaria { padding-top: 180px; }
+    .painel_botoes { display: none; }
+}

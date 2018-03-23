@@ -1,0 +1,105 @@
+﻿@model AdminLTE_Application.CRM_Vendedor
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CRM_Vendedor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CRM_Tipo_Vendedor.Des_Tipo_Vendedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CRM_Tipo_Vendedor.Des_Tipo_Vendedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nme_Vendedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nme_Vendedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Ultimo_Atendimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Ultimo_Atendimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flg_Efetua_Atendimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flg_Efetua_Atendimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Eml_Vendedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Eml_Vendedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sen_Vendedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sen_Vendedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flg_Inativo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flg_Inativo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Ultimo_Acesso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Ultimo_Acesso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flg_Administrador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flg_Administrador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Ultima_Distribuicao_Empresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Ultima_Distribuicao_Empresa)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

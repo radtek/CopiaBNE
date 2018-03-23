@@ -1,0 +1,35 @@
+﻿@using BNE.Web.Vagas.Code
+@model BNE.Web.Vagas.Models.AtalhoTopo
+
+@if (Model.UsuarioCandidatoLogado)
+{
+    <div class="painel_icones-new">
+    <ul class="ul_icones">
+    <li>                      
+    <a href='@Url.Action("AtualizarCurriculo", "Base")' target="_blank">
+        <i class="fa fa-refresh"></i> Atualizar Currículo
+    </a></li>
+            <li>                      
+    <a href='@Url.Action("SalaVip", "Base")'>
+        <i class="fa fa-key"></i> Sala VIP
+    </a></li>
+                    <li>                      
+    <a href='@Url.Action("QuemMeViu", "Base")'>
+       <i class="fa fa-crosshairs"></i> Quem me viu
+    </a></li>
+        </ul>
+        </div>
+    
+}
+else
+{
+    <a href='http://www.salariobr.com' target="_blank">
+        <i class="fa fa-line-chart"></i> <small>Pesquisa Salarial</small>
+    </a>
+    <a href='@Url.Action("TesteSistmars", "Base")'>
+        <i class="fa fa-child"></i> <small>Teste SistMars</small>
+    </a>
+    <a href='@Url.Action("TesteDasCores", "Base")' target="_blank">
+   <i class="fa fa-pie-chart"></i>  <small>Teste das Cores</small>
+    </a>
+}

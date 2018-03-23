@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="testeHSBC.aspx.cs" Inherits="BNE.Web.teste" %>

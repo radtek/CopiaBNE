@@ -1,0 +1,181 @@
+﻿<div class="container marginPassos">
+    <article class="col-lg-12">
+                <div class="col-lg-9">
+                    <form role="form" id="formPasso1" name="formPasso1" class="pashe pashe1" novalidate>
+                        <ol class="breadcrumb">
+                            <li><a href="#/Home">Home</a></li>
+                            <li class="active">Criação de Currículo 1º Passo</li>
+                        </ol>
+                        <h3 class="col-lg-12 assistenteCV">Assistente de Criação de Currículo - 1º Passo</h3>
+                        <h4 class="col-lg-12 subTitle">Seus dados pessoais.</h4>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="Nome">Nome Completo <span class="required">*</span></label>
+                                <input type="text" class="form-control" id="txtNome" name="txtNome" maxlength="100" validar-nome-completo ng-model="cadCV.curriculo.nome" required />
+                                <div class="tooltip right in" style="top: 6px; left: 386px; display: block;" ng-show="formPasso1.txtNome.$invalid && formPasso1.txtNome.$touched">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">Preencha o seu nome completo </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-4">
+                                    <div class="form-group row">
+                                        <label for="DDDCelular">DDD <span class="required">*</span></label>
+                                        <input type="text" class="form-control" name="DDDCelular" id="DDDCelular" ng-model="cadCV.curriculo.dddCelular" maxlength="2" only-num required />
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-xs-push-1 pull-right">
+                                    <div class="form-group row">
+                                        <label for="Celular">Celular <span class="required">* <span ng-show="is9Digitos==true && celularTem9Digitos==false">falta 9º dígito</span></span></label>
+                                        <input type="text" class="form-control" name="Celular" id="Celular" ng-model="cadCV.curriculo.celular" ng-minlength="8" validar9-digitos only-num maxlength="9" required />
+
+                                        <div class="tooltip right in" style="top: 6px; left: 126px; display: block;" ng-show="formPasso1.Celular.$invalid && formPasso1.Celular.$touched">
+                                            <div class="tooltip-arrow"></div>
+                                            <div class="tooltip-inner">Número de celular inválido!</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="form-group row">
+                                    <label for="DataNascimento">Data de Nascimento <span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="DataNascimento" id="DataNascimento" maxlength="8" ng-maxlength="10" only-num required valid-date ng-model="cadCV.curriculo.dataNascimento" />
+                                    <div class="tooltip right in" style="top: 18px; left: 155px; display: block;" ng-show="formPasso1.DataNascimento.$invalid && formPasso1.DataNascimento.$touched">
+                                        <div class="tooltip-arrow"></div>
+                                        <div class="tooltip-inner">Preencha a data no formato dd/mm/aaaa</div>
+                                    </div>
+                                    <div class="tooltip right in" style="top: 18px; left: 155px; display: block;" ng-show="Nascimentovalido==false">
+                                        <div class="tooltip-arrow"></div>
+                                        <div class="tooltip-inner">A idade mínima é 14 anos.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xs-push-1 pull-right">
+                                <div class="form-group row">
+                                    <label for="CPF">CPF<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="CPF" id="CPF" only-num required cpf-validator ng-model="cadCV.curriculo.cpf" maxlength="11" ng-maxlength="14" />
+                                    <div class="tooltip right in" style="top: 6px; left: 186px; display: block;" ng-show="formPasso1.CPF.$invalid && formPasso1.CPF.$touched">
+                                        <div class="tooltip-arrow"></div>
+                                        <div class="tooltip-inner">O CPF informado é inválido!</div>
+                                    </div>
+                                </div>
+                            </div>
+                    <div class="form-group" ><cidade /></div>
+                    <div class="form-group"><funcao-pretendida /></div>
+                            </div>
+                        <div class="col-lg-5 col-xs-push-1 pull-right">
+                            <div class="form-group">
+                                <label for="Email">E-mail</label>
+                                <input type="text" class="form-control" name="Email" id="Email" ng-model="cadCV.curriculo.email" maxlength="100" autocomplete-email validar-email />
+                                <div class="tooltip right in AdjustooltipRightEmail" ng-show="formPasso1.Email.$invalid && formPasso1.Email.$touched">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">O email está inválido</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group row">
+                                    <label for="DDDTelefone">DDD</label>
+                                    <input type="text" class="form-control" name="DDDTelefone" ng-model="cadCV.curriculo.dddTelefone" maxlength="2" only-num />
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-xs-push-1 pull-right">
+                                <telefone-fixo label="Telefone fixo" maxl="8"></telefone-fixo>
+                            </div>
+                            <p class="clearfix"></p>
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <label>Sexo <span class="required">*</span></label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="Sexo" id="rbMasculino" ng-model="cadCV.curriculo.sexo" required value="1">Masculino
+                                    </label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="Sexo" id="rbFeminino" ng-model="cadCV.curriculo.sexo" required value="2">Feminino
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 spaceDeficiencia">
+                                <div class="row">
+                                    <label>Possui deficiência?</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="Deficiencia" id="rbDeficienciaNao" ng-model="cadCV.curriculo.temDeficiencia" ng-click="NaoTemDeficiencia()" value="false">Não
+                                    </label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="Deficiencia" id="rbDeficienciaSim" ng-model="cadCV.curriculo.temDeficiencia" ng-click="TemDeficiencia()" value="true">Sim
+                                    </label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <select class="form-control comboDeficiencia" id="ddlDeficiencia" ng-options="value.id as value.text for value in cadCV.deficiencias | filter:{id: '!0'} " ng-model="cadCV.curriculo.idDeficiencia" ng-show="isDeficiencia">
+                                        <option value="">Qual...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="clearfix"></p><p class="clearfix"></p>
+                            <div class="form-group">
+                                <label for="PretensaoSalarial">Pretensão Salarial<span class="required">*</span></label>
+                                <input type="text" id="PretensaoSalarial" name="PretensaoSalarial" class="form-control" ng-focus="mostrarMediaSalarioFuncao()" ng-mouseover="mostrarMediaSalarioFuncao()" ng-mouseleave="ocultarMediaSalarioFuncao()" ng-model="cadCV.curriculo.pretensaoSalarial" maxlength="10" validar-pretensao input-currency number-validator required />
+                                <div id="avisoMediaSalario" class="tooltip top in" style="top: 220px; left: 163.5px; display: none;">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner" ng-show="!fezMedia"><img src="../../images/159.gif" /> Carregando média salarial.</div>
+                                    <div id="mediaSalarialFuncao" class="tooltip-inner" ng-show="fezMedia"></div>
+                                </div>
+                                <!--<div ng-show="formPasso1.PretensaoSalarial.$invalid && formPasso1.PretensaoSalarial.$touched">
+                            Sua pretensão deve ser maior que o valor do salário mínimo atual de R$ {{cadCV.salarioMinimo}}
+                        </div>-->
+                                <div class="tooltip top in" style="top: 234px; left: 73.5px; display: block;" ng-show="formPasso1.PretensaoSalarial.$invalid && formPasso1.PretensaoSalarial.$touched">
+                                    <div class="tooltip-arrow"></div>
+                            <div class="tooltip-inner">Sua pretensão deve ser maior que o valor do salário mínimo atual de R$ {{cadCV.salarioMinimo}},00</div>
+                                </div>
+                                <div class="tooltip top in" style="top: 234px; left: 73.5px; display: block;" ng-show="cadCV.curriculo.pretensaoSalarial > 10000 && formPasso1.PretensaoSalarial.$touched">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">Você inseriu um valor fora da média para esta função. Tem certeza que o valor está correto?</div>
+                                </div>
+                            </div>
+                            <p class="clearfix"></p>
+                            <button type="button" ng-disabled="formPasso1.$invalid" ng-click="salvarCadastroPasso1()" class="btn btn-primary pull-right btn-lg btn-block bt-next-js">Próximo <i class="glyphicon glyphicon-chevron-right"></i></button>
+                            <p class="clearfix"></p>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="col-lg-3">
+            <div class="box">
+                        <h3>Meu Currículo</h3>
+                        <ul class="list-unstyled">
+                            <li>
+                                <h4><strong class="passosBox">1º Passo</strong><span class="dadosTitle">Dados Pessoais</span></h4>
+                                <small>Nome, idade, sexo, contato, cidade, função e pretensão salarial.</small>
+                                <span></span>
+                            </li>
+                            <li>
+                                <h4><strong class="passosBox">2º Passo</strong><span class="dadosTitle">Experiência profissional</span></h4>
+                                <small>Nome da empresa, o que fazia, por quanto tempo trabalhou nessa empresa,</small>
+                                <span></span>
+                            </li>
+                            <li>
+                                <h4><strong class="passosBox">3º Passo</strong><span class="dadosTitle">Escolaridade</span></h4>
+                                <small>Sua formação, nome da escola/faculdade e do curso feito, quando se formou.</small>
+                                <span></span>
+                            </li>
+                            <li>
+                                <h4><strong class="passosBox">4º Passo</strong> Dados Adicionais</h4>
+                                <small>Foto, suas caracteristicas, endereço completo, disponibilidade para trabalhar, idioma e estado Civil.</small>
+                                <span></span>
+                            </li>
+                            <li class="grid"></li>
+                        </ul>
+                    </div>
+                </div>
+
+    </article>
+</div>

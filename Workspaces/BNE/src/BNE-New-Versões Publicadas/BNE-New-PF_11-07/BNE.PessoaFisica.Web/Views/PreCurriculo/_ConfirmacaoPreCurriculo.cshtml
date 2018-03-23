@@ -1,0 +1,11 @@
+﻿@model BNE.PessoaFisica.Web.Models.PreCurriculo
+
+<div class="mdl-grid bottom20">
+    @Html.HiddenFor(m => m.CPF, new { @Value = Model.CPF })
+    @Html.HiddenFor(m => m.Nome, new { @Value = Model.Nome })
+    @Html.HiddenFor(m => m.DataNascimento, new { @Value = Model.DataNascimento.Value.ToString("dd/MM/yyyy") })
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center bottom20"><h4><strong class="darkgrey">Curriculo salvo com sucesso!</strong></h4></div>
+    <div class="mdl-cell mdl-cell--12-col center top-12">
+        <button type="submit" name="action:EnviarCurriculo" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformxbig">Candidatar-se </button>
+    </div>
+</div>

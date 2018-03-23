@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FF7B6DDB-EE8A-49F2-BB3A-73957312C6AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>APIGateway.Data</RootNamespace>
+    <AssemblyName>APIGateway.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\BNE-New\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\BNE-New\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=3.6.4.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\RabbitMQ.Client.3.6.4\lib\net45\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharedKernel.Logger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharedKernel.Logger.1.0.6\lib\net461\SharedKernel.Logger.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIGatewayContext.cs" />
+    <Compile Include="Configuration\ApiConfiguration.cs" />
+    <Compile Include="Configuration\AuthenticationConfiguration.cs" />
+    <Compile Include="Configuration\AuthorizationConfiguration.cs" />
+    <Compile Include="Configuration\EndpointConfiguration.cs" />
+    <Compile Include="Configuration\HeaderConfiguration.cs" />
+    <Compile Include="Configuration\OAuthConfigConfiguration.cs" />
+    <Compile Include="Configuration\RequisicaoConfiguration.cs" />
+    <Compile Include="Configuration\SistemaClienteConfiguration.cs" />
+    <Compile Include="Configuration\UsuarioConfiguration.cs" />
+    <Compile Include="Configuration\UsuarioPessoaFisicaConfiguration.cs" />
+    <Compile Include="Configuration\UsuarioPessoaJuridicaConfiguration.cs" />
+    <Compile Include="Configuration\UsuarioSistemaClienteConfiguration.cs" />
+    <Compile Include="Infrastructure\DatabaseFactory.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\201511041752570_Initial.cs" />
+    <Compile Include="Migrations\201511041752570_Initial.Designer.cs">
+      <DependentUpon>201511041752570_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511191805025_AutenticacaoOpcional.cs" />
+    <Compile Include="Migrations\201511192030213_AumentoTamanhoUrlPrefix.cs" />
+    <Compile Include="Migrations\201511192030213_AumentoTamanhoUrlPrefix.Designer.cs">
+      <DependentUpon>201511192030213_AumentoTamanhoUrlPrefix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511192101334_UsuarioESistemaNaoObrigatoriosNaRequisicao.cs" />
+    <Compile Include="Migrations\201511192101334_UsuarioESistemaNaoObrigatoriosNaRequisicao.Designer.cs">
+      <DependentUpon>201511192101334_UsuarioESistemaNaoObrigatoriosNaRequisicao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512222040398_InclusaoDestinationRelativePath.cs" />
+    <Compile Include="Migrations\201512222040398_InclusaoDestinationRelativePath.Designer.cs">
+      <DependentUpon>201512222040398_InclusaoDestinationRelativePath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512222200162_InclusaoSwaggerConfig.cs" />
+    <Compile Include="Migrations\201512222200162_InclusaoSwaggerConfig.Designer.cs">
+      <DependentUpon>201512222200162_InclusaoSwaggerConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512231704306_AlteracaoSwaggerConfig.cs" />
+    <Compile Include="Migrations\201512231704306_AlteracaoSwaggerConfig.Designer.cs">
+      <DependentUpon>201512231704306_AlteracaoSwaggerConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601291726280_UQ Nome sistema Cliente.cs" />
+    <Compile Include="Migrations\201601291726280_UQ Nome sistema Cliente.Designer.cs">
+      <DependentUpon>201601291726280_UQ Nome sistema Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610152013543_AddHeadersForSitema.cs" />
+    <Compile Include="Migrations\201610152013543_AddHeadersForSitema.Designer.cs">
+      <DependentUpon>201610152013543_AddHeadersForSitema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610242238177_AddAllowAnonymousToEndpoint.cs" />
+    <Compile Include="Migrations\201610242238177_AddAllowAnonymousToEndpoint.Designer.cs">
+      <DependentUpon>201610242238177_AddAllowAnonymousToEndpoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610310225508_DataNascimentoNaoObrigatoriaUsuPF.cs" />
+    <Compile Include="Migrations\201610310225508_DataNascimentoNaoObrigatoriaUsuPF.Designer.cs">
+      <DependentUpon>201610310225508_DataNascimentoNaoObrigatoriaUsuPF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ApiRepository.cs" />
+    <Compile Include="Configuration\SwaggerConfigConfiguration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\APIGateway.Model\APIGateway.Model.csproj">
+      <Project>{cd48d7bc-8aae-4509-8369-85245f2f1aae}</Project>
+      <Name>APIGateway.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BNE-New\BNE.Data\BNE.Data.csproj">
+      <Project>{287ba500-e16d-46ad-91b7-442cda127398}</Project>
+      <Name>BNE.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511041752570_Initial.resx">
+      <DependentUpon>201511041752570_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511192030213_AumentoTamanhoUrlPrefix.resx">
+      <DependentUpon>201511192030213_AumentoTamanhoUrlPrefix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511192101334_UsuarioESistemaNaoObrigatoriosNaRequisicao.resx">
+      <DependentUpon>201511192101334_UsuarioESistemaNaoObrigatoriosNaRequisicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512222040398_InclusaoDestinationRelativePath.resx">
+      <DependentUpon>201512222040398_InclusaoDestinationRelativePath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512222200162_InclusaoSwaggerConfig.resx">
+      <DependentUpon>201512222200162_InclusaoSwaggerConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512231704306_AlteracaoSwaggerConfig.resx">
+      <DependentUpon>201512231704306_AlteracaoSwaggerConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601291726280_UQ Nome sistema Cliente.resx">
+      <DependentUpon>201601291726280_UQ Nome sistema Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610152013543_AddHeadersForSitema.resx">
+      <DependentUpon>201610152013543_AddHeadersForSitema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610242238177_AddAllowAnonymousToEndpoint.resx">
+      <DependentUpon>201610242238177_AddAllowAnonymousToEndpoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610310225508_DataNascimentoNaoObrigatoriaUsuPF.resx">
+      <DependentUpon>201610310225508_DataNascimentoNaoObrigatoriaUsuPF.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

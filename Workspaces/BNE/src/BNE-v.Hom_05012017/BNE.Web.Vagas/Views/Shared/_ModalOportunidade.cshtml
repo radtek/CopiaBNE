@@ -1,0 +1,54 @@
+﻿@using BNE.Web.Vagas.Models
+@model VagaCandidatura
+
+<div id="modalOportunidade" class="modalOportunidade">
+    <script>
+        modal.abrirModal('modalOportunidade');
+    </script>
+    <link href="~/Content/ModalOportunidade.css" rel="stylesheet" />
+    <a class="simplemodal-close b-close modal_fechar" title="Close"></a>
+    <div class="container_oportunidade_candidatura">
+        <div class="vaga-oportunidade-content">
+
+            <span class="vaga-premium-title">Aviso!</span><br>
+            <hr />
+        </div>
+        <br />
+        <div class="vaga-oportunidade-body">
+            Este processo seletivo foi encerrado. Deseja enviar seu  currículo para a empresa para futuras contratações?
+        </div>
+        <div class="btn_rodape">
+            <div class="btn_form">
+                <button class="btn_oportunidade_not" onclick="modal.abrirModal('modalOportunidade');" name="NaoCandidatar">Não, obrigado</button>
+            </div>
+            <div class="btn_form">
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+
+                    using (Ajax.BeginForm("Candidatar", "Vaga", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "container_candidatura_" + Model.IdentificadorVaga }))
+                    {
+                        @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+                        @Html.HiddenFor(m => m.FlgVagaArquivada)
+                        @Html.HiddenFor(m => m.FlgInativa)
+                        @Html.HiddenFor(m => m.URL)
+                        @Html.HiddenFor(m => m.FlgCandidataOportunidade)
+                        if (Model.Perguntas != null)
+                        {
+                            for (int i = 0; i < Model.Perguntas.Perguntas.Count; i++)
+                            {
+                                @Html.HiddenFor(m => m.Perguntas.Perguntas[i].Descricao, new { @Value = Model.Perguntas.Perguntas[i].Descricao })
+                                @Html.HiddenFor(m => m.Perguntas.Perguntas[i].DescricaoResposta, new { @Value = Model.Perguntas.Perguntas[i].DescricaoResposta })
+                                @Html.HiddenFor(m => m.Perguntas.Perguntas[i].Id, new { @Value = Model.Perguntas.Perguntas[i].Id })
+                                @Html.HiddenFor(m => m.Perguntas.Perguntas[i].Resposta, new { @Value = Model.Perguntas.Perguntas[i].Resposta })
+                                @Html.HiddenFor(m => m.Perguntas.Perguntas[i].TipoResposta, new { @Value = Model.Perguntas.Perguntas[i].TipoResposta })
+                            }
+                        }
+                        <button class="btn_oportunidade" name="Button" value="CandidatarOportunidade">Sim, eu quero</button>
+                    }
+                }
+            </div>
+        </div>
+
+    </div>
+
+</div>

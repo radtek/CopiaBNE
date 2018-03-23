@@ -1,0 +1,294 @@
+﻿.painel_vaga {
+    background-color: #fff;
+    border: 1px solid #D1D5DC;
+    /*clear: both;*/
+    margin: 8px 0;
+    /*padding: 15px 12px;*/
+    overflow: hidden;
+    position: relative;
+    display:flex;
+}
+
+    .painel_vaga h2 {
+        color: #172B49;
+        font-size: 21px;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .painel_vaga h3 {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    .painel_vaga p {
+        margin-top: 0;
+    }
+
+    .painel_vaga .qualificacaoVaga {
+        position: absolute;
+        top: -21px;
+        right: 0;
+        width: 100%;
+        height: 21px;
+    }
+
+        .painel_vaga .qualificacaoVaga .img {
+            background-repeat: no-repeat;
+            width: 144px;
+            height: 21px;
+            position: absolute;
+            top: -4px;
+            right: calc(50% - 74px);
+            color: White;
+            text-align: center;
+            padding-top: 4px;
+            font-size: 11px;
+        }
+
+        .painel_vaga .qualificacaoVaga.bne {
+            border-top: 4px solid #103c73;
+        }
+
+        .painel_vaga .qualificacaoVaga.parceiro {
+            border-top: 4px solid #666666;
+        }
+
+        .painel_vaga .qualificacaoVaga.bne .img {
+            background-image: url('/img/lista_de_vagas/vaga-bne.png');
+        }
+
+        .painel_vaga .qualificacaoVaga.parceiro .img {
+            background-image: url('/img/lista_de_vagas/vaga-parceiro.png');
+        }
+
+.imagem_bne_recomenda {
+    /* ATENÇÃO: Verificar estilos dinâmicos definidos via JQuery */
+}
+
+.imagem_vip_universitario_recomenda {
+    /* ATENÇÃO: Verificar estilos dinâmicos definidos via JQuery */
+}
+
+.coluna_esquerda_vaga {
+    /*float: left;
+    line-height: 150%;
+    margin-right: 16px;
+    text-align: justify;
+    width: 630px;*/
+    width:calc(100% - 220px);
+    padding:16px;
+}
+
+.coluna_web_estagios_vaga {
+    /*float: left;*/
+    width:40px;
+}
+
+.imagem_web_estagios {
+    width: 34px;
+    height: 34px;
+    margin-right: 5px;
+    border-style: none;
+}
+
+.coluna_esquerda_vaga ul {
+    list-style-type: square;
+}
+
+.coluna_meio_compartilhar {
+    
+    display:flex;
+    /*width:240px;
+    height:32px;*/
+    /*display: block;
+    height: 27px;
+    margin-left: 459px;
+    margin-top: 16px;
+    position: absolute !important;
+    width: 162px;
+    float: right;*/
+}
+.coluna_meio_compartilhar > div{
+    background-color:rgba(0,0,0, .12);
+    padding:8px;
+}
+
+.labelCompartilhar {
+    /*color: #6D6E70;
+    display: block;
+    float: left;
+    font-family: Arial;
+    font-size: 10px !important;
+    font-weight: bold;
+    margin-left: 6px;
+    margin-top: 5px;
+    position: absolute;*/
+}
+
+.compartilharFacebook {
+    /*display: block;
+    float: left;
+    margin-left: 107px;
+    margin-top: 3px;
+    position: absolute;
+    width: 20px;
+    font-size: 19px;*/
+}
+
+.compartilharEmail {
+    /*display: block;
+    float: left;
+    margin-left: 131px;
+    margin-top: 3px;
+    position: absolute;
+    width: 20px;
+    font-size: 19px;*/
+}
+
+.coluna_direita_vaga {
+    position: relative;
+    /*top: 17px;
+    float: left;
+    margin-left: 10px;*/
+    width: 220px;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    justify-content:center;
+}
+    .coluna_direita_vaga ul {
+        list-style-position: inside;
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 0;
+        margin-bottom:0px;
+        margin-top:16PX
+    }
+    .coluna_direita_vaga li {
+        color: rgba(0,0,0, .54);
+        font-size: 13px;
+        
+        text-align:center;
+
+    }
+
+    .coluna_direita_vaga a:link,
+    .coluna_direita_vaga a:visited,
+    .coluna_direita_vaga a:active {
+        color: rgba(0,0,0, .54);
+        text-decoration: underline;
+    }
+
+    .coluna_direita_vaga a:hover {
+        color: rgba(0,0,0, .87);
+        text-decoration: underline;
+    }
+
+.botao_quero_me_candidatar {
+    color: rgba(0,0,0, .87);
+    font-weight: bold !important;
+    text-decoration: none !important;
+    /*margin-top: 33px;
+    margin-left: 13px;
+    padding: 11px !important;*/
+}
+
+.painel_ja_enviei {
+    color: #3e8830;
+    text-align: center;
+}
+
+    .painel_ja_enviei p {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 4px;
+    }
+
+.texto_quantidade_vagas {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.texto_resumo_vaga {
+    color: #172B49;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+.texto_codigo_vaga,
+.painel_vaga .texto_codigo_vaga {
+    color: #999;
+    margin: 10px 0 0;
+}
+
+.texto_atribuicoes_completo {
+    display: none;
+}
+
+.painel_mais_dados_vaga {
+    display: none;
+}
+
+    .painel_mais_dados_vaga li {
+        margin-top: 6px;
+    }
+
+.barra_rodape {
+    margin-top: 20px;
+}
+
+.texto_aviso {
+    text-align: center;
+    color: Black;
+    font-size: 15px;
+}
+#lnidentVaga {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;S
+    
+}
+#lnidentVaga_info {
+    display:flex;
+    flex-direction:row;
+
+}
+#lnidentVaga_txt {
+    display:flex;
+    flex-direction:column;
+}
+#lnidentVaga_compartilhar {
+    width:126px;
+}
+.coluna_web_estagios_vaga {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    width:40px;
+}
+@media screen and (max-width:799px) {
+    .coluna_esquerda_vaga {
+        width:100%;
+        padding:16px;
+    }
+    .coluna_direita_vaga {  
+        width: 100%;
+        display:flex;
+        align-items:center;
+        flex-direction:column;
+        justify-content:center;
+        margin-bottom:16px;
+    }
+    .painel_vaga {
+        display:flex;
+        flex-direction:column;
+    }
+     #lnidentVaga {
+        flex-direction:column;
+        justify-content:flex-start;
+    
+    }
+
+}

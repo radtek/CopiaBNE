@@ -1,0 +1,24 @@
+﻿@using BNE.Web.Vagas.Code
+@model List<BNE.Web.Vagas.Models.VagaSimilar>
+<!-- [BNE] Visualização de Vaga - Lateral Direita -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px;padding-top: 8px;"
+     data-ad-client="ca-pub-3558356218023688"
+     data-ad-slot="5027987452"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="container_vagas_similares">
+    <div class="titulo"><span>Outras vagas</span></div>
+    <div class="vagas_similares">
+        <ul>
+            @for (int i = 0; i < @Model.Count; i++)
+            {
+                <li>
+                    <a title="Vaga para @Model[i].Funcao em @Model[i].Cidade  Cód.: @Model[i].CodVaga" 
+                       href="@Model[i].URL">Vaga para @Model[i].Funcao em @Model[i].Cidade  Cód.: @Model[i].CodVaga</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

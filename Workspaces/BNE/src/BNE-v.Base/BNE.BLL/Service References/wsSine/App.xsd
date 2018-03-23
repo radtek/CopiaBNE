@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Sine.BLL.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfVaga">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Vaga" nillable="true" type="tns:Vaga" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVaga" nillable="true" type="tns:ArrayOfVaga" />
+  <xs:complexType name="Vaga">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ad" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cidade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataCadastro" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescricaoClasseCss" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescricaoFuncao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescricaoVaga" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCidade" type="xs:int" />
+      <xs:element minOccurs="0" name="IdFuncao" type="xs:int" />
+      <xs:element minOccurs="0" name="IdVaga" type="xs:int" />
+      <xs:element minOccurs="0" name="NomeEmpresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Posicao" type="xs:int" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="URL_Candidatar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vlr_Salario" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Vaga" nillable="true" type="tns:Vaga" />
+</xs:schema>

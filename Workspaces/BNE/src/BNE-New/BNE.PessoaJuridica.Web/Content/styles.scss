@@ -1,0 +1,249 @@
+﻿// ------------------------------------------------------------------ Perfil
+@import "juridica.scss";
+// ------------------------------------------------------------------ General Imports
+@import "__mixing";
+@import "__global";
+@import "__media";
+// ------------------------------------------------------------------ Especific Imports
+
+.btnformbig {
+    line-height: 50px !important;
+    @include border-radius(2px !important);
+}
+
+.btn_add_user {
+    width: 265px !important;
+    background: #999999 !important;
+    height: 48px !important;
+
+    &:hover {
+        background: #7e7e7e !important;
+    }
+}
+
+.btn_add_new_user {
+    padding: 8px 40px 10px 40px !important;
+    height: 48px !important;
+}
+
+.user-template {
+    display: none;
+}
+
+.content-add-user {
+    @include linear-gradient(#f1f1f1, #f2f2f2);
+    @include border-radius(4px);
+    border: 1px solid #e8e8e8;
+    border-bottom: 3px solid #dcdcdc;
+    position: relative;
+    float: left;
+    padding: 10px 0 10px 90px;
+    margin-bottom: 20px;
+
+    .box {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.button-remove-user {
+    top: 18px;
+    padding: 7px 0 38px 0;
+    position: relative;
+    font-size: 14px;
+    color: #fff !important;
+    background: #f44235 !important;
+    height: 48px !important;
+
+    &:hover {
+        background: #c0392f !important;
+    }
+}
+
+.float-left {
+    float: left;
+}
+
+#modal-content-header {
+    padding: 12px !important;
+    margin-bottom: -24px !important;
+}
+
+.btn-nao-sei-cep {
+    margin-bottom: -28px !important;
+}
+
+.seleciona-plano {
+    margin-top: 24px !important;
+    margin-bottom: 48px !important;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    & .plano-free {
+        background-color: #EEEEEE;
+        border-radius: 12px;
+        border: solid 2px #eeeeee;
+        height: 100%;
+        transition: all 0.5s ease;
+
+        h6 {
+            margin-top: 16px !important;
+        }
+
+        h3 {
+            margin-bottom: 16px !important;
+        }
+
+        & .vantagem {
+            border-top: solid 1px #eeeeee;
+            background-color: #fff;
+
+            p {
+                @extend .center;
+                padding: 8px 0 8px 0 !important;
+            }
+
+            &.last {
+                p {
+                    padding: 8px 0 130px 0 !important;
+                }
+            }
+        }
+
+        & .valor {
+            background-color: #eeeeee;
+            padding: 64px 16px 35px 16px;
+
+            p {
+                @extend .center;
+            }
+        }
+
+        & .eu-quero {
+            background-color: $mediumgrey;
+            border-radius: 12px;
+            margin: 16px;
+            transition: all 0.5s ease;
+
+            h6 {
+                @extend .center;
+                color: #fff !important;
+                text-transform: uppercase;
+                padding: 16px 0 16px 0 !important;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            border: solid 2px #7cb342;
+            transition: all 0.5s ease;
+
+            & .eu-quero {
+                transition: all 0.5s ease;
+                background-color: #7cb342;
+            }
+        }
+    }
+
+    & .plano-pago {
+        background-color: #eeeeee;
+        border-radius: 12px;
+        border: solid 2px #eeeeee;
+        transition: all 0.5s ease;
+
+        & .aba-plano {
+            background-color: #7cb342;
+            border-radius: 12px 12px 0 0;
+        }
+
+        h6 {
+            padding-top: 16px !important;
+            color: #fff !important;
+        }
+
+        h3 {
+            padding-bottom: 16px !important;
+            color: #fff !important;
+        }
+
+        & .vantagem {
+            border-top: solid 1px #eeeeee;
+            background-color: #fff;
+
+            p {
+                @extend .center;
+                padding: 8px 0 8px 0 !important;
+            }
+        }
+
+        & .valor {
+            padding: 16px 16px 0 16px;
+            background-color: #eeeeee;
+
+            & .desconto {
+                text-align: center;
+                color: #fff;
+                border-radius: 12px;
+                background-color: #7cb342;
+                padding: 4px;
+            }
+
+            p {
+                @extend .center;
+            }
+
+            h1 {
+                margin-top: 16px !important;
+                @extend .center;
+                font-size: 12.5*$un !important;
+
+                sup {
+                    @extend p;
+                    color: $darkgrey !important;
+                }
+            }
+        }
+
+        & .eu-quero {
+            background-color: #7cb342;
+            border-radius: 12px;
+            margin: 16px !important;
+            transition: all 0.5s ease;
+
+            h6 {
+                @extend .center;
+                color: #fff !important;
+                text-transform: uppercase;
+                padding: 16px 0 16px 0 !important;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            border: solid 2px #7cb342;
+            transition: all 0.5s ease;
+
+            & .eu-quero {
+                transition: all 0.5s ease;
+                background-color: #7cb342;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .seleciona-plano {
+        .plano-free {
+            & .vantagem {
+                &.last {
+                    p {
+                        padding: 8px 0 8px 0 !important;
+                    }
+                }
+            }
+        }
+    }
+}

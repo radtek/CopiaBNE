@@ -1,0 +1,9 @@
+﻿h1 .destaque{color:#00678C;}
+.conteudo{margin-top: 35px !important;}
+.containerImgTelaMagica{background-image:url('/img/vip_telaMagica/telaMagicaVip_ok.jpg');background-repeat:no-repeat;display:block;height:560px;margin-top:-15px;width:890px;}
+.container_TextoCandidateSe{display:block;font-family:'Open Sans Condensed', sans-serif !important;font-size:72px;font-weight:bold;color:#0054a6;letter-spacing:-0.05em;margin-left:348px;line-height:45px;margin-top:-375px;position:absolute;}
+.container_TextoSerVip{display:block;font-family:'Open Sans Condensed', sans-serif !important;font-size:40px;font-weight:bold;color:#0054a6;line-height:35px;letter-spacing:-0.05em;margin-left:478px;margin-top:-244px;position:absolute; text-align:right;}
+.container_btnVerde{background-repeat:no-repeat;display:block;height:80px;margin-left:597px;margin-top:-145px;position:absolute;width:250px;}
+.container_SaibaMais{display:block;font-family:'Open Sans Condensed', sans-serif !important;font-size:23px;color:#000;margin-left:700px;margin-top:-55px;position:absolute;text-decoration:underline}
+a:hover{color:#00678C;}
+.label80{color:#ff6600;font-family:'Open Sans Condensed', sans-serif !important; font-weight:bold;}

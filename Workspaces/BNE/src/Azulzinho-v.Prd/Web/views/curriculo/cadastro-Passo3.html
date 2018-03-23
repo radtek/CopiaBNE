@@ -1,0 +1,325 @@
+﻿<div class="container-fluid container-fluid-adjust" style="display:block">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="container-fluid container-fluid-adjust container-adjust-login" ng-init="init3()">
+                <div class="col-lg-9">
+                    <form role="form" class="pashe pashe3" name="formPasso3" novalidate>
+                        <ol class="breadcrumb">
+                            <li><a href="#/Home">Home</a></li>
+                            <li><a href="#/Cadastro">1º Passo</a></li>
+                            <li><a href="#/CadastroPasso2">2º Passo</a></li>
+                            <li class="active">Criação de Currículo 3º Passo</li>
+                        </ol>
+                        <h3 class="col-lg-12 assistenteCV">Assistente de Criação de Currículo - 3º Passo</h3>
+                        <div class="row col-lg-12">
+                            <h3 class="col-lg-12 bs-callout bs-callout-info">Sua escolaridade.</h3>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Nível de Formação</label>
+                                    <select ng-init="abrirCombo()" id="ddlNivel" name="ddlNivel" class="form-control" ng-options="value.id as value.text for value in cadCV.escolaridade" ng-model="cadCV.curriculo.IdNivelFormacao" ng-change="selecionarFormacao()">
+                                        <option value="" selected>Selecione... </option>
+                                    </select>
+                                </div>
+                                <div class="form-group" ng-show="cadCV.curriculo.IdNivelFormacao > 7 || is3Grau">
+                                    <label>Nome do Curso <span ng-show="cadCV.curriculo.IdNivelFormacao >7 || is3Grau" class="required">*</span></label>
+                                    <input type="text" class="form-control" name="curso" ng-maxlength="100" ng-required="cadCV.curriculo.IdNivelFormacao >7 || is3Grau" ng-model="cadCV.curriculo.curso" ng-show="cadCV.curriculo.IdNivelFormacao >7 || is3Grau" autocomplete-curso ng-minlength="5">
+                                </div>
+                                <div class="form-group" ng-show="cadCV.curriculo.IdNivelFormacao > 7 || is3Grau">
+                                    <label>Instituição de Ensino <span ng-show="cadCV.curriculo.IdNivelFormacao >7 || is3Grau" class="required">*</span></label>
+                                    <input class="form-control" name="instituicao" ng-required="cadCV.curriculo.IdNivelFormacao >7 || is3Grau" ng-maxlength="200" ng-model="cadCV.curriculo.instituicao" ng-show="cadCV.curriculo.IdNivelFormacao >7 || is3Grau" autocomplete-instituicao ng-minlength="3">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xs-push-1 escolaridade">
+
+                                <div class="form-group" ng-show="cadCV.curriculo.IdNivelFormacao >7 || is3Grau">
+                                    <label for="Cidade">Cidade</label>
+                                    <input type="text" class="form-control" name="CidadeFormacao" ng-maxlength="80" validar-cidade ng-model="cadCV.curriculo.cidadeFormacao" ng-show="cadCV.curriculo.IdNivelFormacao >7 || is3Grau" autocomplete-cidade />
+                                </div>
+                                <div class="col-lg-12 row" ng-show="!isFormacaoCompleta && isSelecionouEscolaridade==true">
+                                    <div class="form-group">
+                                        <label>Situação</label>
+                                        <select class="form-control" ng-options="value.id as value.text for value in cadCV.SituacaoFormacao" ng-model="cadCV.curriculo.IdSituacaoFormacao" ng-show="!isFormacaoCompleta && isSelecionouEscolaridade">
+                                            <option value="" selected>Selecione... </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 row">
+                                    <div class="form-group">
+                                        <label ng-show="(is3Grau || isFormacaoCompleta) && cadCV.curriculo.IdSituacaoFormacao != 3">Ano de Conclusão</label>
+                                        <input class="form-control" id="AnoConclusao" name="AnoConclusao" style="width:62px;" ng-model="cadCV.curriculo.anoConclusao" ng-show="(is3Grau || isFormacaoCompleta) && cadCV.curriculo.IdSituacaoFormacao != 3" ano-dg validar-ano ui-mask="99?99">
+                                        <div class="tooltip right in" style="top:18px; left: 75px; display: block; width:150px;" ng-show="formPasso3.AnoConclusao.$invalid && formPasso3.AnoConclusao.$touched">
+                                            <div class="tooltip-arrow"></div>
+                                            <div class="tooltip-inner">O ano deve ser maior que 1900.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 row adjustPaddingTop" ng-show="isSelecionouEscolaridade==true">
+                                        <div class="form-group">
+                                            <button type="button" ng-disabled="formPasso3.$invalid" ng-click="AddFormacaoPasso3()" class="btn btn-default btn-lg bt-next-js">Salvar formação <i class="fa fa-check-square-o fa-fw"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--GRID Exibir formações-->
+                        <div class="row col-lg-12">
+                            <div class="widget-content adjustMarginGrid" ng-show="cadCV.formacoes.length > 0">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Formação</th>
+                                            <th>Instituição</th>
+                                            <th>Cidade</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="value in cadCV.formacoes | orderBy:value.anoConclusao | filter:filtrarEscolaridade">
+                                            <td>{{value.nivel}} - {{value.curso}} - {{value.anoConclusao}}</td>
+                                            <td>{{value.instituicao}}</td>
+                                            <td>{{value.cidadeFormacao}}</td>
+                                            <td><a class="btn btn-link btn-link-color" ng-click="removerFormacao(value)"><i class="fa fa-times fa-fw"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--FIM Exibir formações-->
+                        <p class="clearfix"></p>
+                        <div class="row col-lg-12" ng-show="mostrarpnEspecializacao">
+                            <h3 class="col-lg-12">Especializações</h3>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Nível da Especialização</label>
+                                    <select class="form-control" ng-options="value.id as value.text for value in cadCV.especializacao" ng-model="cadCV.curriculo.IdNivelEspecializacao">
+                                        <option value="" selected>Selecione... </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Nome do Curso <span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="cursoEspecializacao" ng-maxlength="100" ng-model="cadCV.curriculo.cursoEspecializacao" autocomplete-curso ng-minlength="5" ng-required="cadCV.curriculo.IdNivelEspecializacao != null">
+                                </div>
+                                <div class="form-group">
+                                    <label>Instituição de Ensino <span class="required">*</span></label>
+                                    <input class="form-control" name="instituicaoEspecializacao" ng-maxlength="200" ng-model="cadCV.curriculo.instituicaoEspecializacao" autocomplete-instituicao ng-minlength="3" ng-required="cadCV.curriculo.IdNivelEspecializacao != null">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xs-push-1 escolaridade">
+
+                                <div class="form-group">
+                                    <label for="Cidade">Cidade</label>
+                                    <input type="text" class="form-control" name="CidadeFormacaoEspecializacao" ng-maxlength="80" validar-cidade ng-model="cadCV.curriculo.cidadeFormacaoEspecializacao" autocomplete-cidade />
+                                </div>
+                                <div class="col-lg-7 row">
+                                    <div class="form-group">
+                                        <label>Ano de Conclusão</label>
+                                        <input class="form-control" id="AnoConclusaoEspecializacao" name="AnoConclusaoEspecializacao" style="width:62px;" ng-model="cadCV.curriculo.anoConclusaoEspecializacao" ano-dg validar-ano ui-mask="99?99">
+                                        <div class="tooltip right in AdjustooltipRight" ng-show="formPasso3.AnoConclusaoEspecializacao.$invalid && formPasso3.AnoConclusaoEspecializacao.$touched">
+                                            <div class="tooltip-arrow"></div>
+                                            <div class="tooltip-inner">O ano deve ser maior que 1900.</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group adjustPaddingTop">
+                                        <button type="button" ng-disabled="cadCV.curriculo.IdNivelEspecializacao == null || (cadCV.curriculo.cursoEspecializacao == null || cadCV.curriculo.instituicaoEspecializacao ==null)" ng-click="AddEspecializacaoPasso3()" class="btn btn-default btn-lg bt-next-js">Salvar especialização <i class="fa fa-check-square-o"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--GRID Exibir especializações-->
+                        <div class="row col-lg-12">
+                            <div class="widget-content adjustMarginGrid" ng-show="([cadCV.formacoes] | filter:filtrarEspecializacao).length > -1">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Especialização</th>
+                                            <th>Instituição</th>
+                                            <th>Cidade</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="value in cadCV.formacoes | orderBy:value.anoConclusao | filter:filtrarEspecializacao">
+                                            <td>{{value.nivel}} - {{value.situacao}} {{value.curso}} - {{value.anoConclusao}}</td>
+                                            <td>{{value.instituicao}}</td>
+                                            <td>{{value.cidade}}</td>
+                                            <td><a href class="btn btn-link btn-link-color" ng-click="removerFormacao(value)"><i class="fa fa-times fa-fw"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- GRID FIM da Especialização-->
+                        <div class="col-lg-12" ng-show="mostrarCursos">
+                            <p class="clearfix"></p>
+                            <div class="row">
+                                <h3 class="col-lg-12">Cursos Complementares.</h3>
+                                <div class="row col-lg-12">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Nome do Curso <span ng-show="isFormacao2Completa" class="required">*</span></label>
+                                            <input class="form-control" name="curso2" ng-model="cadCV.curriculo.cursoNome">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Instituição de Ensino <span ng-show="isFormacao2Completa" class="required">*</span></label>
+                                            <input class="form-control" name="instituicao2" ng-model="cadCV.curriculo.cursoInstituicao">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-6 col-xs-push-1">
+                                        <div class="form-group">
+                                            <label for="Cidade">Cidade <span ng-show="isFormacao2Completa" class="required">*</span></label>
+                                            <input type="text" class="form-control" name="CidadeFormacao2" ng-model="cadCV.curriculo.cursoCidadeFormacao" ng-required="isFormacao2Completa" autocomplete-cidade />
+                                        </div>
+                                        <div class="col-lg-7 row">
+                                            <div class="form-group">
+                                                <label>Ano de Conclusão</label>
+                                                <input class="form-control" ng-model="cadCV.curriculo.cursoAnoConclusao" ui-mask="9999">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7 row">
+                                            <div class="form-group">
+                                                <label> Carga horária</label>
+                                                <input class="form-control" ng-model="cadCV.curriculo.cursoCargaHoraria" ui-mask="99?99">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="">
+                                                <button type="button" ng-click="adicionarCurso()" class="btn btn-default btn-lg btn-block bt-next-js">
+                                                    Salvar Curso <i class="fa fa-check-square-o fa-fw"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--GRID Exibir Cursos-->
+                        <div class="widget-content adjustMarginGrid" ng-show="cadCV.cursos.length > 0">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Curso Complementar</th>
+                                        <th>Instituição</th>
+                                        <th>Cidade</th>
+                                        <th>Ações</th>
+                                    </tr>
+
+                                <tbody>
+                                    <tr ng-repeat="value in cadCV.cursos | orderBy:value.anoConclusao">
+                                        <td>{{value.nivel}} - {{value.curso}} - {{value.anoConclusao}}</td>
+                                        <td>{{value.instituicao}}</td>
+                                        <td>{{value.cidadeFormacao}}</td>
+                                        <td><a href class="btn btn-link btn-link-color" ng-click="removerCurso(value)"><i class="fa fa-times fa-fw"></i></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--GRID FIM Cursos-->
+                        <!--<p class="clearfix"></p>
+                <h3 class="col-lg-12">Idiomas</h3>
+                <p class="col-lg-12">
+                </p>-->
+                        <div class="col-md-12 column" ng-show="mostrarIdiomas">
+                            <div class="row clearfix">
+                                <h3 class="col-lg-12">Idiomas</h3>
+                                <div class="col-md-4 column">
+                                    <div class="form-group">
+                                        <label>Selecione um Idioma abaixo</label>
+                                        <select class="form-control" ng-options="value.idIdioma as value.text for value in cadCV.idiomas" ng-model="cadCV.curriculo.IdIdioma">
+                                            <option value="" selected>Selecione...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 column">
+                                    <label class="checkbox inline">
+                                        <input class="adjustInput" type="radio" name="idioma" value="1" ng-model="cadCV.curriculo.NivelIdioma"><small class="">Básico</small>
+                                    </label>
+
+                                    <label class="checkbox inline">
+                                        <input class="adjustInput" type="radio" name="idioma" id="inlineCheckbox2" value="2" ng-model="cadCV.curriculo.NivelIdioma"><small>Intermediário</small>
+                                    </label>
+
+                                    <label class="checkbox inline">
+                                        <input class="adjustInput" type="radio" name="idioma" id="inlineCheckbox3" value="3" ng-model="cadCV.curriculo.NivelIdioma"><small>Avançado</small>
+                                    </label>
+
+                                    <label class="checkbox inline">
+                                        <input class="adjustInput" type="radio" name="idioma" id="inlineCheckbox4" value="4" ng-model="cadCV.curriculo.NivelIdioma"><small>Fluente</small>
+                                    </label>
+                                </div>
+                                <div class="col-md-4 column">
+                                    <button type="button" ng-click="inserirnaGridIdiomas()" class="btn btn-default btn-lg bt-next-js">Salvar idioma <i class="fa fa-check-square-o"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--GRID Exibir Idiomas-->
+                        <div class="widget-content adjustMarginGrid" ng-show="cadCV.idiomasCandidato.length > 0">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Idioma</th>
+                                        <th>Nível</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="value in cadCV.idiomasCandidato | orderBy: value.text">
+                                        <td>{{value.text}}</td>
+                                        <td>{{value.nivelTexto}}</td>
+                                        <td><a href class="btn btn-link btn-link-color" ng-click="removerIdioma(value)"><i class="fa fa-times fa-fw"></i></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- GRID FIM Idiomas-->
+
+                        <p class="clearfix"></p>
+                        <div class="col-lg-12">
+                            <div class="alert alert-warning">
+                                <a class="btn btn-default" ng-show="mostrarEspecializacao && informouFormacao && !mostrarpnEspecializacao" ng-click="exibirPanelAddEspecializacao()"><i class="fa fa-graduation-cap fa-2x"></i><br><strong>ADICIONAR ESPECIALIZAÇÕES</strong></a>
+                                <a class="btn btn-default" ng-show="informouFormacao && !mostrarCursos" ng-click="exibirPanelAddCursos()"><i class="fa fa-book fa-2x"></i><br> <strong>ADICIONAR CURSOS</strong></a>
+                                <a class="btn btn-default" ng-show="informouFormacao && !mostrarIdiomas" ng-click="exibirPanelAddIdiomas()"><i class="fa fa-comments-o fa-2x"></i><br> <strong> ADICIONAR IDIOMAS</strong></a>
+                            </div>
+                        </div>
+                        <p class="clearfix"></p>
+                        <button type="button" ng-click="go('/CadastroPasso2')" class="btn  btn-default pull-left btn-lg bt-prev-js"><i class="glyphicon glyphicon-chevron-left"></i> Voltar</button>
+                        <button type="button" ng-click="salvarCadastroPasso3()" class="btn  btn-primary pull-right btn-lg bt-next-js">Próximo <i class="glyphicon glyphicon-chevron-right"></i></button>
+                    </form>
+                    <p class="clearfix"></p>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="box hidden-xs">
+                        <h3>Meu Currículo</h3>
+                        <ul class="list-unstyled">
+                            <li>
+                                <h4><strong class="passosBox">1º Passo</strong><span class="dadosTitle">Dados Pessoais</span></h4>
+                                <small>Nome, idade, sexo, contato, cidade, função e pretensão salarial.</small>
+                                <span></span>
+                            </li>
+                            <li>
+                                <h4><strong class="passosBox">2º Passo</strong><span class="dadosTitle">Experiência profissional</span></h4>
+                                <small>Nome da empresa, o que fazia, por quanto tempo trabalhou nessa empresa,</small>
+                                <span></span>
+                            </li>
+                            <li>
+                                <h4><strong class="passosBox">3º Passo</strong><span class="dadosTitle">Escolaridade</span></h4>
+                                <small>Sua formação, nome da escola/faculdade e do curso feito, quando se formou.</small>
+                                <span></span>
+                            </li>
+                            <li>
+                                <h4><strong class="passosBox">4º Passo</strong> Dados Adicionais</h4>
+                                <small>Foto, suas características, endereço completo, disponibilidade para trabalhar, idioma e estado Civil.</small>
+                                <span></span>
+                            </li>
+                            <li class="gridPasso3"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

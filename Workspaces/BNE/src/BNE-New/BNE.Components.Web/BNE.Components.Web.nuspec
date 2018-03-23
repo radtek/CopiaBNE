@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BNE.Components.Web</id>
+    <version>0.1</version>
+    <title>BNE.Components.Web</title>
+    <authors>Banco Nacional de Empregos</authors>
+    <owners>Banco Nacional de Empregos, Gieyson Stelmak</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Projeto com os componentes a serem usados na parte de interface dos novos projetos do BNE</description>
+    <releaseNotes>Versão inicial</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+  </metadata>
+</package>

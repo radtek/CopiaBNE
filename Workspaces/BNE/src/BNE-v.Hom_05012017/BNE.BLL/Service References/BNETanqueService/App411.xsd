@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Employer.Mobile.BneEnvia.BLL.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Employer.Mobile.BneEnvia.BLL.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="OutConversaAtivaOld">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="l" nillable="true" type="tns:ArrayOfMensagemOld" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutConversaAtivaOld" nillable="true" type="tns:OutConversaAtivaOld" />
+  <xs:complexType name="ArrayOfMensagemOld">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MensagemOld" nillable="true" type="tns:MensagemOld" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMensagemOld" nillable="true" type="tns:ArrayOfMensagemOld" />
+  <xs:complexType name="MensagemOld">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ci" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dcm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fc" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fr" type="xs:boolean" />
+      <xs:element minOccurs="0" name="im" type="xs:int" />
+      <xs:element minOccurs="0" name="nc" type="xs:decimal" />
+      <xs:element minOccurs="0" name="np" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sm" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MensagemOld" nillable="true" type="tns:MensagemOld" />
+  <xs:complexType name="InHistoricoOld">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ci" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cv" type="xs:int" />
+      <xs:element minOccurs="0" name="im" type="xs:int" />
+      <xs:element minOccurs="0" name="nm" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="qm" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InHistoricoOld" nillable="true" type="tns:InHistoricoOld" />
+  <xs:complexType name="OutHistoricoOld">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="l" nillable="true" type="tns:ArrayOfMensagemOld" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutHistoricoOld" nillable="true" type="tns:OutHistoricoOld" />
+</xs:schema>

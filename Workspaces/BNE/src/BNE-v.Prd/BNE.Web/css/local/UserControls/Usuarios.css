@@ -1,0 +1,7 @@
+﻿.margemPadrao {width:0px; text-align:right }
+.margemButtonsStatus {margin-left:40px}
+.linhaUsuarios { padding: 3px 0; overflow: auto; }
+.label_Usuarios { text-align: right; float: left; }
+.label_UsuariosAlinhamento {width: 30px;}
+.margemBotoes {margin-left:10px; margin-top:0px; margin-bottom:-8px}
+.clear_background {background-image:none !important}

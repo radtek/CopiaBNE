@@ -1,0 +1,1452 @@
+﻿body {
+    font-family: Arial;
+    font-size: 12px;
+}
+
+/*Modal para Mobiles*/
+.modalMobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #143d75 url('/img/modal-app.jpg') center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+    .modalMobile .titulo {
+        height: 42px;
+    }
+
+        .modalMobile .titulo .descricao {
+            float: left;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .modalMobile .titulo .fechar {
+            float: right;
+            margin: 15px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 50px;
+        }
+
+    .modalMobile .conteudo {
+        text-align: center;
+        font-size: 40px;
+        color: #fff;
+    }
+
+        .modalMobile .conteudo .img {
+            float: left;
+            width: 95%;
+            display: block;
+        }
+
+            .modalMobile .conteudo .img img {
+                width: 100%;
+                display: block;
+            }
+
+    .modalMobile .botao {
+        position: absolute;
+        left: 0;
+        bottom: 40px;
+        width: 100%;
+    }
+
+        .modalMobile .botao a {
+            color: #fff;
+            display: block;
+            background: url('/img/get-on-google.png') center center no-repeat;
+            text-indent: -9999px;
+            height: 240px;
+            background-size: contain;
+        }
+
+
+/* PAINEL INFORMACAO PAGINA INICIAL */
+.painel_informacoes_inicial {
+    width: 100%;
+    position: absolute;
+    bottom: 1px;
+    margin: 0 auto;
+}
+/* FIM: PAINEL INFORMACAO PAGINA INICIAL */
+
+.atendimento_online {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+}
+
+.painel_informacoes .icones {
+    margin-bottom: 3px;
+}
+
+.painel_informacoes .textos {
+    vertical-align: 6px;
+}
+
+.painel_informacoes .icone_texto {
+    display: inline;
+    vertical-align: baseline;
+}
+
+.textbox {
+    width: 370px;
+    vertical-align: 9px;
+}
+
+.conteudo .interna {
+    margin: 0 auto;
+    /*margin-top: 130px;*/
+    /*width: 880px;*/
+    width: 900px;
+}
+
+.conteudo .internaSlim {
+    /*margin-top: 130px !important;*/
+}
+
+.exemplo_pesquisa {
+    color: #828282;
+    margin-left: 193px;
+    text-align: left;
+}
+
+.interna {
+    width: 880px;
+}
+
+.linha_pesquisa {
+    height: 100px;
+}
+
+.logo_sistema_home {
+    height: 110px;
+}
+
+.painel_botoes_home {
+    margin: 0 auto;
+}
+
+.btn_01 {
+    margin-right: 80px;
+}
+
+.btn_03 {
+    margin-left: 80px;
+}
+
+#divScrollVagas {
+    position: relative;
+    width: 880px; /*background-color: Yellow;*/
+    height: 225px;
+}
+
+    #divScrollVagas #buttons {
+        margin-bottom: 5px;
+        width: 679px;
+    }
+
+        #divScrollVagas #buttons a {
+            margin: 10px 10px;
+            color: #69C;
+        }
+
+    #divScrollVagas .prev {
+        float: left;
+    }
+
+    #divScrollVagas .next {
+        float: right;
+    }
+
+#divScrollVagasContainer {
+    overflow: hidden;
+    width: 880px;
+    position: relative; /*background-color: Red;*/
+    height: 190px;
+}
+
+    #divScrollVagasContainer ul {
+        width: 1000000px;
+        padding-left: 85px;
+        height: 100px;
+    }
+
+        #divScrollVagasContainer ul li a {
+            text-decoration: none;
+            display: block;
+            margin-left: 4px;
+            width: 139px;
+            margin-bottom: -10px;
+            color: #000;
+        }
+
+        #divScrollVagasContainer ul li {
+            float: left;
+            margin: 0 16px;
+            cursor: pointer;
+            height: 180px;
+            width: 152px; /*color: #0a2f62;*/
+            color: #000;
+            list-style: none;
+            text-align: center;
+            padding-top: 35px;
+            font-style: italic;
+            background-image: url('/img/post-it_vagas.png');
+            background-repeat: no-repeat;
+        }
+
+.funcao_vaga {
+    font-weight: bold;
+    color: #000;
+}
+
+
+.home_conteudo {
+}
+
+    .home_conteudo ul {
+        margin-top: 20px;
+        padding-top: 20px;
+        list-style: none;
+    }
+
+        .home_conteudo ul li a {
+            text-decoration: underline;
+        }
+
+/*
+.ultimas_vagas
+{
+	position: absolute;
+	right: 0;
+}
+*/
+
+.paineis_home {
+    background-color: white;
+    width: 100%;
+}
+
+.paineis_home_wrapper {
+    width: 880px;
+    margin: 0 auto;
+}
+
+.paineis_home,
+.quero_emprego,
+.quero_contratar,
+.ultimas_vagas {
+    float: left;
+}
+
+.texto_cadastrada_ha {
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.texto_num_dias {
+    margin-top: 2px;
+}
+
+.horario_vagas {
+    background-color: #EFEFEF;
+    clear: both;
+    float: left;
+    height: 36px;
+    line-height: 100%;
+    margin-right: 10px;
+    padding: 0 10px;
+    text-align: center;
+    width: 74px;
+}
+
+    .horario_vagas .horario {
+        font-size: 11px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+
+.descricao_funcao {
+    font-weight: bold;
+    padding: 4px 0;
+}
+
+.descricao_vaga .vaga {
+    font-size: 11px;
+    font-weight: normal;
+    color: #000;
+}
+
+.paineis_home .quero_emprego { /* Comentei para testar o ajuste do tamanho do cabecalho */ /* margin-top:  130px; */
+    margin-right: 43px;
+}
+
+    .paineis_home .quero_emprego.vaga_escondido,
+    .paineis_home .quero_contratar.vaga_escondido,
+    .paineis_home .ultimas_vagas.vaga_escondido,
+    .paineis_home .quero_emprego.curriculo_escondido,
+    .paineis_home .quero_contratar.curriculo_escondido,
+    .paineis_home .ultimas_vagas.curriculo_escondido {
+        margin-top: 76px;
+    }
+
+.paineis_home .quero_contratar {
+    margin-right: 43px; /* Comentei para testar o ajuste do tamanho do cabecalho */ /* margin-top:  130px; */
+}
+
+.paineis_home .ultimas_vagas { /* Comentei para testar o ajuste do tamanho do cabecalho */ /* margin-top:  130px; */
+}
+
+.button_titulo_ultimas_vagas {
+    margin-top: 27px;
+    height: 6px;
+}
+
+.painel_cadastre_curriculo {
+    margin-top: 27px;
+}
+
+.painel_pesquise_curriculo {
+    margin-top: 27px;
+}
+
+.painel_ultimas_vagas {
+    border: 1px solid #CCCCCC;
+    margin-top: 31px;
+    width: 453px;
+}
+
+    .painel_ultimas_vagas ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .painel_ultimas_vagas ul li {
+            border-bottom: 1px solid #E8E8E8;
+            height: 37px;
+            line-height: 100%;
+            background-color: white;
+        }
+
+            .painel_ultimas_vagas ul li a {
+                text-decoration: none;
+            }
+
+
+
+.botao_ver_mais_vagas {
+    z-index: 2;
+    float: left;
+    display: block;
+    width: 90px !important;
+    margin: 0 auto;
+    margin-left: 0px;
+    text-align: center;
+    border-top: 25px solid #EE9600;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    width: 100px;
+    line-height: -20px;
+    position: relative;
+}
+
+    .botao_ver_mais_vagas span {
+        position: absolute;
+        top: -20px;
+        left: 6px;
+        color: #fff;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+.painel_vagas_mais_buscadas {
+    border: 1px solid #CCCCCC;
+    margin-top: 11px;
+    width: 453px;
+    background-color: white;
+}
+
+    .painel_vagas_mais_buscadas ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid #E8E8E8;
+        line-height: 100%;
+    }
+
+        .painel_vagas_mais_buscadas ul li {
+            height: 150px;
+        }
+/*altura da div*/
+.botao_ver_vagas_mais_buscadas {
+    z-index: 1;
+    float: left;
+    display: block;
+    width: 155px !important;
+    margin: 0 auto;
+    margin-left: -50px;
+    text-align: center;
+    border-top: 25px solid #FF7E00;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    width: 150px;
+    line-height: -20px;
+    position: relative;
+}
+
+    .botao_ver_vagas_mais_buscadas span {
+        position: absolute;
+        top: -20px;
+        left: 25px;
+        color: #fff;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+.botao_ver_cidades_mais_buscadas {
+    z-index: 0;
+    display: block;
+    width: 170px !important;
+    margin: 0 auto;
+    margin-left: 235px;
+    text-align: center;
+    border-top: 25px solid #FF5722;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    width: 150px;
+    line-height: -20px;
+    position: relative;
+}
+
+    .botao_ver_cidades_mais_buscadas span {
+        position: absolute;
+        top: -20px;
+        left: 33px;
+        color: #fff;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+/* Vagas por area */
+.vagas_area {
+    background-color: #eee;
+    margin-top: 25px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0 20px;
+}
+
+    .vagas_area h2 {
+        border-bottom: solid 1px black;
+        height: 32px;
+        font-size: 25px;
+        color: black;
+        font-weight: bold;
+        padding: 20px 15px 10px;
+    }
+
+    .vagas_area .areas {
+        color: #666;
+        font-weight: bold;
+        padding: 20px 0px;
+        font-size: 14px;
+    }
+
+        .vagas_area .areas a {
+            color: #666;
+        }
+
+        .vagas_area .areas li {
+            width: 24%;
+            float: left;
+            margin: 10px 1% 10px 0;
+            height: 30px;
+        }
+
+            .vagas_area .areas li span {
+                font-weight: normal;
+                color: #1A4784;
+            }
+
+    .vagas_area .botao {
+        text-align: center;
+        clear: both;
+        font-size: 14px;
+        font-weight: bold;
+        height: 50px;
+        padding-top: 30px;
+    }
+
+        .vagas_area .botao a {
+            background-color: #1A4784;
+            color: #fff;
+            padding: 15px;
+            margin-top: 50px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+/* FIMV Vagas por area */
+
+/* rodape - home */
+.painel_rodape_padrao { /* position: absolute;/* 
+	width: 880px;
+	/*top: 480px;*/
+    left: 50%;
+    margin-left: -438px; /* font-size: 11px; */
+    font-size: 12px;
+}
+/* FIM: rodape - home */
+
+
+
+/*Rodape Novo -------------------------------------------------------------------------------------------*/
+.barra_rodape { /* position: absolute; */
+}
+
+.final_rodape {
+    position: absolute;
+}
+
+/* Fim Rodape Novo ------------------------------------------------------------------------------------------*/
+
+/*
+Custom Carrousel - Serviços
+*/
+.imgSlide {
+    display: inline;
+}
+
+    .imgSlide.empresa {
+        -webkit-filter: grayscale(100%) brightness(80%);
+        -moz-filter: grayscale(100%) brightness(80%);
+        filter: gray(100%) brightness(80%);
+        filter: gray(1);
+        filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    }
+
+        .imgSlide.empresa:hover {
+            -webkit-filter: grayscale(0) brightness(100%);
+            -moz-filter: grayscale(0) brightness(100%);
+            filter: gray(0) brightness(100%);
+            filter: gray(0);
+            filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+        }
+
+.jcarousel-skin-carrousel_servicos .jcarousel-container {
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 10px;
+    background: #F0F6F9;
+    border: 0px solid #c0c0c0;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-direction-rtl {
+    direction: rtl;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-container-horizontal {
+    width: 388px;
+    padding: 0px 0px;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-container-vertical {
+    width: 75px;
+    height: 245px;
+    padding: 40px 20px;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-clip {
+    overflow: hidden;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-clip-horizontal {
+    width: 388px;
+    height: 82px;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-clip-vertical {
+    width: 75px;
+    height: 245px;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-item {
+    width: 388px;
+    height: 82px;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-item-horizontal {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: white;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-direction-rtl .jcarousel-item-horizontal {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-item-vertical {
+    margin-bottom: 10px;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-carrousel_servicos .jcarousel-next-horizontal {
+    position: absolute;
+    top: 89px;
+    right: 161px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background: transparent url(../../img/banner_rotativo/seta-direita.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-direction-rtl .jcarousel-next-horizontal {
+    left: 5px;
+    right: auto;
+    background-image: url(../../img/banner_rotativo/seta-esquerda.png);
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-next-horizontal:hover,
+.jcarousel-skin-carrousel_servicos .jcarousel-next-horizontal:focus { /*background-position: -32px 0;*/
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-next-horizontal:active {
+    background-position: -64px 0;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-carrousel_servicos .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-carrousel_servicos .jcarousel-next-disabled-horizontal:focus,
+.jcarousel-skin-carrousel_servicos .jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 89px;
+    left: 150px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background: transparent url(../../img/banner_rotativo/seta-esquerda.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-direction-rtl .jcarousel-prev-horizontal {
+    left: auto;
+    right: 5px;
+    background-image: url(../../img/banner_rotativo/seta-direita.png);
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-prev-horizontal:hover,
+.jcarousel-skin-carrousel_servicos .jcarousel-prev-horizontal:focus { /*background-position: -32px 0;*/
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-prev-horizontal:active {
+    background-position: -64px 0;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-carrousel_servicos .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-carrousel_servicos .jcarousel-prev-disabled-horizontal:focus,
+.jcarousel-skin-carrousel_servicos .jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+/**
+ *  Vertical Buttons
+ */
+.jcarousel-skin-carrousel_servicos .jcarousel-next-vertical {
+    position: absolute;
+    bottom: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(../../img/banner_rotativo/seta-direita.png) no-repeat 0 0;
+}
+
+    .jcarousel-skin-carrousel_servicos .jcarousel-next-vertical:hover,
+    .jcarousel-skin-carrousel_servicos .jcarousel-next-vertical:focus {
+        background-position: 0 -32px;
+    }
+
+    .jcarousel-skin-carrousel_servicos .jcarousel-next-vertical:active {
+        background-position: 0 -64px;
+    }
+
+.jcarousel-skin-carrousel_servicos .jcarousel-next-disabled-vertical,
+.jcarousel-skin-carrousel_servicos .jcarousel-next-disabled-vertical:hover,
+.jcarousel-skin-carrousel_servicos .jcarousel-next-disabled-vertical:focus,
+.jcarousel-skin-carrousel_servicos .jcarousel-next-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}
+
+.jcarousel-skin-carrousel_servicos .jcarousel-prev-vertical {
+    position: absolute;
+    top: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(../../img/banner_rotativo/seta-esquerda.png) no-repeat 0 0;
+}
+
+    .jcarousel-skin-carrousel_servicos .jcarousel-prev-vertical:hover,
+    .jcarousel-skin-carrousel_servicos .jcarousel-prev-vertical:focus {
+        background-position: 0 -32px;
+    }
+
+    .jcarousel-skin-carrousel_servicos .jcarousel-prev-vertical:active {
+        background-position: 0 -64px;
+    }
+
+.jcarousel-skin-carrousel_servicos .jcarousel-prev-disabled-vertical,
+.jcarousel-skin-carrousel_servicos .jcarousel-prev-disabled-vertical:hover,
+.jcarousel-skin-carrousel_servicos .jcarousel-prev-disabled-vertical:focus,
+.jcarousel-skin-carrousel_servicos .jcarousel-prev-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}
+
+
+
+/*
+Custom Carrousel Empresas
+*/
+#carrousel_empresas {
+    margin-top: 17px !important;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-container {
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 10px;
+    background: #FFF;
+    border: 0px solid #c0c0c0;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-direction-rtl {
+    direction: rtl;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-container-horizontal {
+    width: 454px;
+    padding: 0 0px 0 0px;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-container-vertical {
+    width: 75px;
+    height: 245px;
+    padding: 40px 20px;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-clip {
+    overflow: hidden;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-clip-horizontal {
+    width: 460px;
+    height: 73px;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-clip-vertical {
+    width: 75px;
+    height: 245px;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-item {
+    width: 110px;
+    height: 38px;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-item-horizontal {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-direction-rtl .jcarousel-item-horizontal {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-item-vertical {
+    margin-bottom: 10px;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-carrousel_empresas .jcarousel-next-horizontal {
+    position: absolute;
+    top: 80px;
+    right: 163px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background: transparent url(../../img/banner_rotativo/seta-direita.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-direction-rtl .jcarousel-next-horizontal {
+    left: 5px;
+    right: auto;
+    background-image: url(../../img/banner_rotativo/seta-esquerda.png);
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-next-horizontal:hover,
+.jcarousel-skin-carrousel_empresas .jcarousel-next-horizontal:focus { /*background-position: -32px 0;*/
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-next-horizontal:active {
+    background-position: -64px 0;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-carrousel_empresas .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-carrousel_empresas .jcarousel-next-disabled-horizontal:focus,
+.jcarousel-skin-carrousel_empresas .jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 80px;
+    left: 220px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(../../img/banner_rotativo/seta-esquerda.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-direction-rtl .jcarousel-prev-horizontal {
+    left: auto;
+    right: 5px;
+    background-image: url(../../img/banner_rotativo/seta-direita.png);
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-prev-horizontal:hover,
+.jcarousel-skin-carrousel_empresas .jcarousel-prev-horizontal:focus { /*background-position: -32px 0;*/
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-prev-horizontal:active {
+    background-position: -64px 0;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-carrousel_empresas .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-carrousel_empresas .jcarousel-prev-disabled-horizontal:focus,
+.jcarousel-skin-carrousel_empresas .jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+/**
+ *  Vertical Buttons
+ */
+.jcarousel-skin-carrousel_empresas .jcarousel-next-vertical {
+    position: absolute;
+    bottom: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(../../img/banner_rotativo/seta-direita.png) no-repeat 0 0;
+}
+
+    .jcarousel-skin-carrousel_empresas .jcarousel-next-vertical:hover,
+    .jcarousel-skin-carrousel_empresas .jcarousel-next-vertical:focus {
+        background-position: 0 -32px;
+    }
+
+    .jcarousel-skin-carrousel_empresas .jcarousel-next-vertical:active {
+        background-position: 0 -64px;
+    }
+
+.jcarousel-skin-carrousel_empresas .jcarousel-next-disabled-vertical,
+.jcarousel-skin-carrousel_empresas .jcarousel-next-disabled-vertical:hover,
+.jcarousel-skin-carrousel_empresas .jcarousel-next-disabled-vertical:focus,
+.jcarousel-skin-carrousel_empresas .jcarousel-next-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}
+
+.jcarousel-skin-carrousel_empresas .jcarousel-prev-vertical {
+    position: absolute;
+    top: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(../../img/banner_rotativo/seta-esquerda.png) no-repeat 0 0;
+}
+
+    .jcarousel-skin-carrousel_empresas .jcarousel-prev-vertical:hover,
+    .jcarousel-skin-carrousel_empresas .jcarousel-prev-vertical:focus {
+        background-position: 0 -32px;
+    }
+
+    .jcarousel-skin-carrousel_empresas .jcarousel-prev-vertical:active {
+        background-position: 0 -64px;
+    }
+
+.jcarousel-skin-carrousel_empresas .jcarousel-prev-disabled-vertical,
+.jcarousel-skin-carrousel_empresas .jcarousel-prev-disabled-vertical:hover,
+.jcarousel-skin-carrousel_empresas .jcarousel-prev-disabled-vertical:focus,
+.jcarousel-skin-carrousel_empresas .jcarousel-prev-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}
+
+
+/*
+Custom Carrousel - Depoimento
+*/
+
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-container {
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 10px;
+    /*background: #F0F6F9;*/
+    border: 0px solid #c0c0c0;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-direction-rtl {
+    direction: rtl;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-container-horizontal {
+    width: 388px;
+    padding: 0px 0px;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-container-vertical {
+    width: 100%;
+    height: 245px;
+    padding: 40px 20px;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-clip {
+    overflow: hidden;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-clip-horizontal {
+    width: 800px;
+    height: 192px;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-clip-vertical {
+    width: 75px;
+    height: 245px;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-item {
+    width: 410px;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-item-horizontal {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: white;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-direction-rtl .jcarousel-item-horizontal {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-item-vertical {
+    margin-bottom: 10px;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-carrousel_depoimento .jcarousel-next-horizontal {
+    position: absolute;
+    top: 199px;
+    right: -48px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background: transparent url(../../img/banner_rotativo/seta-direita.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-direction-rtl .jcarousel-next-horizontal {
+    left: 5px;
+    right: auto;
+    background-image: url(../../img/banner_rotativo/seta-esquerda.png);
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-next-horizontal:hover,
+.jcarousel-skin-carrousel_depoimento .jcarousel-next-horizontal:focus { /*background-position: -32px 0;*/
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-next-horizontal:active {
+    background-position: -64px 0;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-carrousel_depoimento .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-carrousel_depoimento .jcarousel-next-disabled-horizontal:focus,
+.jcarousel-skin-carrousel_depoimento .jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 199px;
+    left: 355px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background: transparent url(../../img/banner_rotativo/seta-esquerda.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-direction-rtl .jcarousel-prev-horizontal {
+    left: auto;
+    right: 5px;
+    background-image: url(../../img/banner_rotativo/seta-direita.png);
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-prev-horizontal:hover,
+.jcarousel-skin-carrousel_depoimento .jcarousel-prev-horizontal:focus { /*background-position: -32px 0;*/
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-prev-horizontal:active {
+    background-position: -64px 0;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-carrousel_depoimento .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-carrousel_depoimento .jcarousel-prev-disabled-horizontal:focus,
+.jcarousel-skin-carrousel_depoimento .jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+/**
+ *  Vertical Buttons
+ */
+.jcarousel-skin-carrousel_depoimento .jcarousel-next-vertical {
+    position: absolute;
+    bottom: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(../../img/banner_rotativo/seta-direita.png) no-repeat 0 0;
+}
+
+    .jcarousel-skin-carrousel_depoimento .jcarousel-next-vertical:hover,
+    .jcarousel-skin-carrousel_depoimento .jcarousel-next-vertical:focus {
+        background-position: 0 -32px;
+    }
+
+    .jcarousel-skin-carrousel_depoimento .jcarousel-next-vertical:active {
+        background-position: 0 -64px;
+    }
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-next-disabled-vertical,
+.jcarousel-skin-carrousel_depoimento .jcarousel-next-disabled-vertical:hover,
+.jcarousel-skin-carrousel_depoimento .jcarousel-next-disabled-vertical:focus,
+.jcarousel-skin-carrousel_depoimento .jcarousel-next-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-prev-vertical {
+    position: absolute;
+    top: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(../../img/banner_rotativo/seta-esquerda.png) no-repeat 0 0;
+}
+
+    .jcarousel-skin-carrousel_depoimento .jcarousel-prev-vertical:hover,
+    .jcarousel-skin-carrousel_depoimento .jcarousel-prev-vertical:focus {
+        background-position: 0 -32px;
+    }
+
+    .jcarousel-skin-carrousel_depoimento .jcarousel-prev-vertical:active {
+        background-position: 0 -64px;
+    }
+
+.jcarousel-skin-carrousel_depoimento .jcarousel-prev-disabled-vertical,
+.jcarousel-skin-carrousel_depoimento .jcarousel-prev-disabled-vertical:hover,
+.jcarousel-skin-carrousel_depoimento .jcarousel-prev-disabled-vertical:focus,
+.jcarousel-skin-carrousel_depoimento .jcarousel-prev-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}
+
+
+.depoimento {
+    margin-left: 172px;
+    margin-top: 4px;
+    position: absolute;
+    width: 36px;
+}
+
+.preCadastroOpen {
+    background: #0164b7;
+    z-index: 999;
+    text-align: right;
+    border-radius: 3px;
+    Arial;
+    color: #333;
+    font-size: 16px;
+    padding: 20px 25px 53px 25px;
+    width: 320px;
+    box-shadow: 0px 5px 7px #666;
+    right: 120pt;
+    position: fixed;
+    bottom: 0;
+}
+
+.preCadastroClose {
+    background: #0164b7;
+    height: 15px;
+    border-radius: 3px;
+    color: #fff !important;
+    font-size: 16px;
+    padding: 20px !important;
+    -webkit-border-radius: 200px 200px 0px 0px;
+    -moz-border-radius: 200px 200px 0px 0px;
+    border-radius: 200px 200px 0px 0px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    box-shadow: 0px 5px 7px #666;
+    right: 120pt;
+    position: fixed;
+    bottom: 0;
+}
+
+
+.fa-chevron-up:before {
+    color: #fff !important;
+}
+
+input.form-control {
+    /*width: 100% !important;
+    font-size: 12px !important;
+    background: #fff;
+    border: 1px solid #143d75;
+    padding: 14px 0px 14px 4px;
+    margin-bottom: 10px;*/
+    /*irresponsável quem colocou isso ai em cima aqui na default!!!! kkk*/
+}
+
+input#cphConteudo_txtEmail {
+    width: 329px !important;
+    margin-left: -4.5px !important;
+}
+
+.input_modal {
+    margin-left: -10px;
+}
+
+h4.titulo-modal-gratis {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    margin-top: -17px !important;
+}
+
+i.bnt_sair_modal {
+    position: relative !important;
+    top: -2px !important;
+    color: #fff !important;
+    cursor: pointer;
+}
+
+.btn_eu_quero {
+    position: relative;
+    top: 20px !important;
+    left: -55px !important;
+    padding: 10px 75px 10px 75px !important;
+    background: #43a047 !important;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.txt_confirmacao {
+    text-align: center;
+    color: #fff !important;
+}
+
+.btn_eu_quero:hover {
+    background: #4caf50 !important;
+}
+
+.Validate2 {
+    font-size: 13px !important;
+    color: #fee940 !important;
+    font-weight: bold;
+    background-image: url('../../img/banners/201609-aquelas-moedinhas.png');
+    background-repeat: no-repeat;
+    padding-left: 12px !important;
+    text-align: left !important;
+}
+
+.valAlign {
+    text-align: left !important;
+}
+
+
+/*DEPOIMENTOS*/
+
+.Titulo-Depoimento {
+    margin-top: -10px;
+    color: #1A4784;
+    font-size: 26px;
+    text-align: center;
+    /* padding-top:151px; */
+    font-weight: bold;
+    /* height: 31px; */
+    /* padding-top: 20px; */
+}
+
+.depoimento1 {
+    background-color: #eee;
+    margin-top: 25px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 12px;
+    padding: 20px 20px 20px 20px;
+    line-height: 1.4;
+    width: 84%;
+    text-align: center;
+    height: 120px;
+}
+
+.depoimento2 {
+    background-color: #eee;
+    margin-top: 25px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 12px;
+    padding: 20px 20px 20px 20px;
+    line-height: 1.4;
+    width: 44%;
+    text-align: center;
+    margin-top: -152px;
+    float: right;
+}
+
+.depoimento_span {
+    background-color: #fff;
+    margin-top: -36px !important;
+    padding: 8px 8px 8px 8px;
+    position: absolute;
+    margin-left: -193px;
+}
+
+
+
+
+
+/*#sabadoFree{
+			width:880px;
+			height:200px;
+			margin:10px auto;
+			background-color:orange;
+			border-radius:4px;
+			 background-image: url('../../img/banners/sabado-free-banner.jpg');
+			font-family: 'Roboto', Helvetica, Arial, sans-serif;
+		}
+			#sabadoFree #sabadoFree-titulo{
+			width:570px;
+			float:right;
+			text-align:center;
+			font-size:20px; 
+			text-transform: uppercase;
+			margin-top:24px;
+			color:#1b4784;
+		}
+		#sabadoFree #sabadoFree-subtitulo{
+			width:570px;
+			float:right;
+			text-align:center;
+			font-size:18px; 
+			text-transform: uppercase;
+			color:#1b4784;
+			padding:4px 0;
+		}
+		#sabadoFree #sabadoFree-counter{
+			width:570px;
+			float:right;
+			text-align:center;			
+			color:#1b4784;
+			font-weight:500;
+			display:flex;
+			justify-content:center;
+			padding:16px 0;
+		}
+		#sabadoFree #sabadoFree-counter .counter-block{
+			font-size:70px;
+			
+		}
+		#sabadoFree #sabadoFree-counter .counter-desc{
+			font-size:16px;
+
+		}
+		#sabadoFree #sabadoFree-counter .counter-separator{
+			font-size:70px;
+			display:flex;
+			justify-content:center;
+			padding:0 16px;
+			font-weight:400;
+		}*/
+
+
+#bannerCampanha {
+    width: 881px;
+    height: 230px;
+    margin: 15px auto 0 auto;
+    border-radius: 4px;
+    background-image: url(../../img/banners/201609-aquelas-moedinhas.png);
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+
+    #bannerCampanha #link-area {
+        width: 886px;
+        height: 230px;
+    }
+
+    #bannerCampanha #bannerCampanha-titulo {
+        width: 570px;
+        float: left;
+        text-align: center;
+        font-size: 32px;
+        text-transform: uppercase;
+        margin-top: 24px;
+        color: #ffffff;
+        line-height: 105%;
+    }
+
+    #bannerCampanha #bannerCampanha-subtitulo {
+        width: 570px;
+        float: left;
+        text-align: center;
+        font-size: 20px;
+        color: #ffffff;
+        padding: 4px 0;
+        font-weight: lighter;
+    }
+
+        #bannerCampanha #bannerCampanha-subtitulo strong {
+            font-weight: 500 !important;
+        }
+
+    #bannerCampanha #bannerCampanha-complemento {
+        width: 570px;
+        float: left;
+        text-align: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: rgba(0,0,0, .40);
+        padding: 4px 0;
+        margin-top: 16px;
+    }
+
+    #bannerCampanha #bannerCampanha-button {
+        width: 170px;
+        float: left;
+        text-align: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        background-color: rgba(0,0,0, .40);
+        color: #ffffff;
+        padding: 8px 24px;
+        margin-top: 6px;
+        margin-left: 176px;
+        border-radius: 4px;
+    }
+#black-friday-2016 {
+    width: 880px;
+    height: 380px;
+    margin: 0 auto;
+    border-radius: 4px;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    background-image: url('../../img/BlackFriday/2016-black-friday-banner-01.jpg');
+    position: relative;
+    background-repeat: none;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+		.neon{
+		    position: absolute;
+		    top: 0px;
+		    left: 0px;
+		    width: 880px;
+		    height: 380px;
+		    border-radius:8px;
+		}
+		#bf16-txt{
+			display: flex;
+			justify-content: flex-end;
+			flex-direction: column;
+			align-items: center;
+			color:#ffffff;
+			position: absolute;
+			z-index: 99;
+			width:880px;
+			height: 380px;
+			top:0;
+			left: 0;
+		}
+		#bf16-btn{
+			padding:8px 16px;
+			background-color: #ffffff;
+			color: rgba(0,0,0, .87);
+			border-radius:4px;
+			margin-bottom: 24px;
+			margin-top:16px;
+			font-size:14px;
+			text-transform: uppercase;
+			text-decoration: none;
+			cursor:pointer;
+			font-weight: bold;
+		}
+		#bf16-btn:hover{
+			background-color: #48FFD3;
+			cursor:pointer;
+		}

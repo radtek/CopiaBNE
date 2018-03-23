@@ -1,0 +1,229 @@
+﻿@model IEnumerable<AdminLTE_Application.VWVagas>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<aside class="right-side">
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Vagas 
+        @*<small>Empresa @Html.DisplayFor(model => model.num_cnpj)</small>*@
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="~/Views/Home/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Empresa</li>
+        <li class="active">Vagas</li>
+    </ol>
+</section>
+<!-- Main content -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Vagas da empresa</h3>
+                       <br /><br /><br />
+                            @using (Html.BeginForm("Details", "VagasEmpresa", FormMethod.Get, new { @class = "form-group", id = "idForm" }))
+                            {
+                              
+                                <div class="box-body table-responsive">
+
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            @Html.Label("Data Abertura:")<br />
+                                                            <div class="input-group">
+                                                                @Html.TextBox("FlPeriodo", ViewBag.Periodo as string, new { @class = "form-control form-control-custom", @style = "width:169px;" })
+                                                            </div><!-- /.input group -->
+                                                        </td>
+                                                        <td width="10"></td>
+                                                        <td>
+                                                            <div class="input-group">
+                                                             
+                                                                <input  @(ViewBag.Ativo ?  "checked='checked'" : string.Empty) id="ckAtivo" name="Ativo" type="checkbox" value="true" /> Ativa
+                                                                <input  @(ViewBag.Oportunidade ?  "checked='checked'" : string.Empty) id="ckOportunidade" name="Oportunidade" type="checkbox" value="true" />  Oportunidade
+                                                                <input @(ViewBag.Inativa ? "checked='checked'" : string.Empty) id="ckInativa" name="Inativa" type="checkbox" value="true" />  Inativas
+                                                                <input  @(ViewBag.Confidencial ?  "checked='checked'" : string.Empty) id="ckConfidencial" name="Confidencial" type="checkbox" value="true" />  Confidencial
+
+                                                            </div><!-- /.input group -->
+                                                    
+                                                        </td>
+                                                        <td width="10"></td>
+                                                        <td>
+                                                            <br />
+                                                            @*@Html.TextBox("SearchString", ViewBag.currentFilter as string)*@
+                                                            <button type="submit" value="Filtrar" class="btn btn-default">
+                                                                <span class="glyphicon glyphicon-search"></span> Filtrar
+                                                            </button>
+                                                        
+                                                        </td>
+                                                      
+                                                    </tr>
+
+                                                </table>
+
+                                                <br />
+                                            </td>
+                                        </tr>
+                                       
+                                    </table>
+                                </div>
+                            } 
+                                
+                        <div class="box-tools">
+                        </div><!-- /.box-header -->
+                    <div class="box-body table-responsive">
+                        <table id="example6" class="table table-bordered table-hover">
+                            <thead>
+                                <tr role="row">
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1">Confidencial</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" >Função</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"  >Cidade</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"  >Data Cadastro</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" >Status</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" >Campanha</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" >Qtd</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" >E-mail</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" >Anunciante</th>
+
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Telefone Contato</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"  aria-label="CSS grade: activate to sort column ascending">Nome Contato</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"  aria-label="CSS grade: activate to sort column ascending">Pub Imediata</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"  aria-label="CSS grade: activate to sort column ascending">Candidatos Inscritos</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"  aria-label="CSS grade: activate to sort column ascending">Inscritos Não Lidos</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"  aria-label="CSS grade: activate to sort column ascending">Banco de Curriculos</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"  aria-label="CSS grade: activate to sort column ascending">Origem</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"  aria-label="CSS grade: activate to sort column ascending">URL</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"  aria-label="CSS grade: activate to sort column ascending">Qtd Visualização Completa VIP</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"  aria-label="CSS grade: activate to sort column ascending">Qtd Visualização Completa Não VIP</th>
+
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"  aria-label="CSS grade: activate to sort column ascending">Ações</th>
+
+                                </tr>
+                            </thead>
+                            <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@if (item.Confidencial)
+                                        {
+                                            <i class="fas fa-user-secret fa-5x" title="Vaga Confidencial"></i>
+                                        }</td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Funcao)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Cidade)
+                                        </td>
+                                       
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Dta_Cadastro)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Status_vaga)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Campanha)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.qtd_Vaga)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.eml_Vaga)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Nome)
+                                        </td>
+                                        <td>
+                                            @if (!string.IsNullOrEmpty(item.TelefoneVagaRapida))
+                                            {
+                                                @Html.DisplayFor(modelItem => item.TelefoneVagaRapida)
+                                            }
+                                            else
+                                            {
+                                                @Html.DisplayFor(modelItem => item.TelefoneUsuarioFilial)
+                                            }
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.nme_Contato)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Publicacao_Imediata)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Num_Cvs_Recebidos)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Num_Cvs_Recebidos_Nao_Lidos)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Qtd_Curriculos_Perfil)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Origem)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.url)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Qtd_Visualizacao_Completa_VIP)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Qtd_Visualizacao_Completa_Nao_VIP)
+                                        </td>
+                                     
+                                      
+                                        <td>
+                                            @Html.ActionLink("Observações", "VagaObservacao", new { idVaga = item.Codigo }, new { target = "new"}) <br>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
+                </div>
+
+            </div>
+        </div>
+    </section><!-- /.content -->
+</aside>
+@Scripts.Render("~/bundles/datatables")
+@Scripts.Render("~/bundles/daterangepicker")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("li").removeClass("active");
+        $("#dashboard").addClass("active");
+        $("#tables").addClass("active");
+        $("#tables_menu").css("display", "block");
+        $("#tables_datatables").addClass("active");
+        $("#tables_arrow").addClass("fa-angle-down");
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(function () {
+     
+        $('#example6').dataTable({
+            "bPaginate": true,
+            "bLengthChange": true,
+            "bFilter": true,
+            "bSort": true,
+            "bInfo": true,
+            "bAutoWidth": true,
+            "aaSorting": []
+        });
+
+        $('#FlPeriodo').daterangepicker();
+    });
+
+
+    
+</script>

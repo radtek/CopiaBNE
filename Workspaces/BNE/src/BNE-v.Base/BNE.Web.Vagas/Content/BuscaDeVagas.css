@@ -1,0 +1,28 @@
+﻿h2{
+  color: gray;
+  font-size: 15px;
+  height: 20px;
+  font-weight: bold;
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 13px;
+}
+
+.grid{
+    clear: both;
+    overflow: overlay;
+}
+
+.grid div{
+    float: left;
+    width: 30%;
+    padding: 10px;
+}
+
+.grid div a {
+    line-height: 20px;
+}
+
+.grid div a:first-child{
+    font-size: 15px;
+}

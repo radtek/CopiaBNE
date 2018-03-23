@@ -1,0 +1,179 @@
+﻿@model BNE.PessoaJuridica.Web.Models.CadastroEmpresa
+
+
+@if (ViewData["Erro"] != null && !string.IsNullOrWhiteSpace(ViewData["Erro"].ToString()))
+{
+    <script>
+        util.mostrarerro(@Html.Raw(ViewData["Erro"].ToString()));
+    </script>
+}
+
+<script>
+    ConfigurarPasso2();
+</script>
+
+@Html.HiddenFor(n => n.NumeroCNPJ)
+@Html.HiddenFor(n => n.Site)
+@Html.HiddenFor(n => n.NumeroComercial)
+@Html.HiddenFor(n => n.Logradouro)
+@Html.HiddenFor(n => n.CEP)
+@Html.HiddenFor(n => n.Numero)
+@Html.HiddenFor(n => n.Complemento)
+@Html.HiddenFor(n => n.Bairro)
+@Html.HiddenFor(n => n.Cidade)
+@Html.HiddenFor(n => n.RazaoSocial)
+@Html.HiddenFor(n => n.NomeFantasia)
+@Html.HiddenFor(n => n.CNAE)
+@Html.HiddenFor(n => n.NaturezaJuridica)
+@Html.HiddenFor(n => n.DataAbertura)
+@Html.HiddenFor(n => n.SituacaoCadastral)
+@Html.HiddenFor(n => n.QuantidadeFuncionario)
+
+<div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col md-progtrckr">
+            <ol class="progtrckr" data-progtrckr-steps="3">
+                <li class="progtrckr-todo mdl-cell--hide-phone"><span class="silver">Dados da Empresa</span></li>
+                <li class="progtrckr-done"><span class="ultradarkgreen"><strong>Dados do Responsável</strong></span></li>
+                <li class="progtrckr-todo mdl-cell--hide-phone"><span class="silver">Confirmação de Cadastro</span></li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet center darkgrey top36">
+    <h4>
+        <i class="material-icons mediumcolor">assignment_ind</i>
+        <strong>DADOS DO RESPONSÁVEL</strong>
+    </h4>
+    Pesquisa diária, currículos de assinantes e divulgação de vagas ilimitadas<br />
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+<div class="mdl-cell mdl-cell--3-col  mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.Usuario.Nome, new { id = "txtNomeResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtNomeResponsavel">Nome</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.Usuario.NumeroCPF, new { id = "txtCPFResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtCPFResponsavel">CPF</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.Usuario.DataNascimento, new { id = "txtDataNascimentoResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtDataNascimentoResponsavel">Data de Nascimento</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--1-col mdl-cell--4-col-phone mdl-cell--2-col-tablet vertitemform">Sexo:</div>
+<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone mdl-cell--3-col-tablet vertitemform">
+    <div class="mdl-radio-bne">
+        @Html.RadioButtonFor(m => m.Usuario.Sexo, "F", new { @id = "option-f" })
+        <label for="option-f">Feminino</label>
+    </div>
+</div>
+<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone mdl-cell--3-col-tablet vertitemform">
+    <div class="mdl-radio-bne">
+        @Html.RadioButtonFor(m => m.Usuario.Sexo, "M", new { @id = "option-m" })
+        <label for="option-m">Masculino</label>
+    </div>
+</div>
+<div class="mdl-cell mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.Usuario.Funcao, new { id = "txtFuncaoResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtFuncaoResponsavel">Função</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.Usuario.NumeroCelular, new { id = "txtNumeroCelularResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtNumeroCelularResponsavel">Celular</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.Usuario.Email, new { id = "txtEmailResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtEmailResponsavel">E-mail</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+
+<div class="mdl-cell mdl-cell--3-col  mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--3-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.Usuario.NumeroComercial, new { id = "txtNumeroComercialResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtNumeroComercialResponsavel">Telefone Comercial</label>
+
+</div>
+<div class="mdl-cell mdl-cell--2-col mdl-cell--1-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.Usuario.NumeroComercialRamal, new { id = "txtNumeroComercialRamalResponsavel", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtNumeroComercialRamalResponsavel">Ramal</label>
+
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--12-col center">
+    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnform btnformmedium btn_add_user">
+        <i class="material-icons user_add">person_add</i> ADICIONAR OUTROS USUÁRIOS
+    </button>
+</div>
+<div class="mdl-cell mdl-cell--12-col content-add-user" id="list-user">
+    <div id="div1" class="box">
+        <div class="user-template">
+            <div class="mdl-cell mdl-cell--5-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label float-left md-input-bne">
+                @Html.TextBox("Nome", null, new { id = "txtNomeResponsavelAdicional", @class = "mdl-textfield__input", @name = "NomeResponsavel" })
+                <label class="mdl-textfield__label" for="txtNomeResponsavelAdicional">Nome</label>
+            </div>
+            <div class="mdl-cell mdl-cell--5-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label float-left md-input-bne">
+                @Html.TextBox("Email", null, new { id = "txtEmailResponsavelAdicional", @class = "mdl-textfield__input", @name = "EmailResponsavel" })
+                <label class="mdl-textfield__label" for="txtEmailResponsavelAdicional">E-mail</label>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col float-left">
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformmedium button-remove-user">x</button>
+            </div>
+        </div>
+        @for (int i = 0; i < Model.UsuariosAdicionais.Count; i++)
+        {
+            var nome = "UsuariosAdicionais[" + @i + "].Nome";
+            var email = "UsuariosAdicionais[" + @i + "].Email";
+
+            <div class="user">
+                <div class="mdl-cell mdl-cell--5-col float-left">
+                    <div class="borda-input-add-user">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                            @Html.TextBox(@nome, Model.UsuariosAdicionais[i].Nome, new { id = "txtNomeResponsavelAdicional" + i, @class = "mdl-textfield__input" })
+                            <label class="mdl-textfield__label" for="txtNomeResponsavelAdicional">Nome</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--5-col float-left">
+                    <div class="borda-input-add-user">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                            @Html.TextBox(@email, Model.UsuariosAdicionais[i].Email, new { id = "txtEmailResponsavelAdicional" + i, @class = "mdl-textfield__input" })
+                            <label class="mdl-textfield__label" for="txtEmailResponsavelAdicional">E-mail</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col float-left">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformmedium button-remove-user">x</button>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="mdl-cell mdl-cell--4-col float-left">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnform btnformmedium btn_add_new_user" id="adicionarResponsavel">
+            ADICIONAR
+        </button>
+    </div>
+</div>
+<div class="mdl-cell mdl-cell--12-col center">
+    <input type="submit" value="CONTINUAR" name="action:Passo2" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformbig" />
+</div>

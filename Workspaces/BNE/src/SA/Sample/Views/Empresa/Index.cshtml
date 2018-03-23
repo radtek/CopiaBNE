@@ -1,0 +1,106 @@
+﻿@model IEnumerable<AdminLTE_Application.VWEmpresa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Raz_Social)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.End_Site)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Num_DDD_Comercial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Num_Comercial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Des_Natureza_Juridica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Des_Plano)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dta_Inicio_Plano)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dta_Fim_plano)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sig_Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nme_Cidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Des_Situacao_Filial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dta_Cadastro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Des_URL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Raz_Social)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.End_Site)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Num_DDD_Comercial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Num_Comercial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Des_Natureza_Juridica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Des_Plano)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dta_Inicio_Plano)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dta_Fim_plano)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sig_Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nme_Cidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Des_Situacao_Filial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dta_Cadastro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Des_URL)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Num_CNPJ }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Num_CNPJ }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Num_CNPJ })
+        </td>
+    </tr>
+}
+
+</table>

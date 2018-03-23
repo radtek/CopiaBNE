@@ -1,0 +1,38 @@
+﻿
+.container_campo_login { /*clear: both;*/ }
+#titulo_solicita_dados { /*margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;*/ }
+.label_principal.modal_login {
+    text-align: left; /* width: 120px;*/
+}
+.painel_login_padrao { /*float: left;*/ padding:16px;}
+/*.painel_login { background-color: #FFFFFF; }*/
+.painel_login_campos {
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;*/
+}
+.linha.combobox_modal { padding-left: 10%; }
+.painel_cadastreja { /*margin-top: 10px; padding-right: 5px; text-align: right;*/ text-decoration: underline; }
+.painel_login_esquerda { /*float: left; width: 240px;*/ }
+.painel_login_direita { /*float: left; width: 240px;*/ }
+.botao_entrar_facebook {
+    background-color: #3B5998;
+    border-radius: 4px;
+    /*cursor: pointer; display: inline-block; margin: 0 auto; */
+    padding-bottom: 8px;
+    padding-left: 12px;
+    padding-top: 5px;
+    width: 160px;
+    clear:both;
+}
+.container_botao_facebook > div{
+    /*position: relative; margin-top: 60px; margin-left: 35px;*/
+    display:flex;
+    justify-content:center;
+}
+.mantenha_logado label { float: none; /*display: inline;*/ }
+
+
+.mantenha_logado label {
+    margin-left: 8px;
+}

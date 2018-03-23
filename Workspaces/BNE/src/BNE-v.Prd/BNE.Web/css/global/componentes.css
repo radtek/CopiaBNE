@@ -1,0 +1,52 @@
+﻿.ajax_ace { position: relative; height: 156px; font-size: 13px; overflow-y: auto; overflow-x: hidden; }
+    .ajax_ace li { height: auto; line-height: 100%; white-space: pre; display: block; }
+.ajax_ace.funcao_topo { width: 265px !important; }
+/* Componente [Auto Completion Extender] */
+.ajax_ace { margin: 0; padding: 0; text-align: left; list-style: none; z-index: 999; }
+    .ajax_ace .item { cursor: hand; cursor: pointer; margin: 0; left: 0; padding: 6px 4px; border: 1px solid #f0ef9c; border-top: none; background-color: #fffeb7; }
+.ajax_ace .selecionado { cursor: hand; cursor: pointer; margin: 0; left: 0; padding: 6px 4px; border: 1px solid #f0ef9c; border-top: none; background-color: #fc3; }
+/* FIM: Componente [Auto Completion Extender] */
+/* Telerik RadComboBox */
+.campo_obrigatorio .rcbInputCell INPUT.rcbInput { background-image: url('/img/bg_campo_obrigatorio.gif'); background-repeat: no-repeat; background-position: left 4px; margin-right: 4px; padding-left: 10px; }
+/* FIM: Telerik RadComboBox */
+/* Buscar Cep */
+.ajax_ace.cep { margin: 0; padding: 0; text-align: left; list-style: none; left: 340px !important; z-index: 9999; }
+/* FIM: Buscar Cep */
+/*Código*/
+.button_nao_recebeu_cod{display: inline-block; padding: 0px 12px;margin-bottom: 0;font-size: 14px;font-weight: normal;line-height: 1.42857143;text-align: center;  white-space: nowrap;
+vertical-align: middle; -ms-touch-action: manipulation;touch-action: manipulation;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;
+user-select: none;background-image: none;border: 1px solid transparent;border-radius: 4px; color: #333;background-color: #fff;border-color: #ccc;}
+/* NOVA GRID */
+a { text-decoration: none; }
+.paginacao { background: url("/img/bgpaginacao.png") repeat-x top; height: 26px; /*border: 1px solid #5e8cc8;*/ font-size: 11px; }
+.paginacao div { display: inline-block; }
+.pagin_info { float: left; margin: 6px 0 0 6px; }
+.texto_pesq { margin: 4px 0 0 6px; }
+.pagin_pesq { float: right; margin: 2px 10px 0 0; overflow: hidden; clear: none; position: relative; }
+.pagin_pesq form { margin: 0; }
+.pagin_pesq label { color: black; float: left; font-weight: normal; margin: 0 5px 0 0; width: auto; }
+.pagin_pesq .pag_texto { width: 40px; border-radius: 3px 3px 3px 3px; -webkit-border-radius: 3px 3px 3px 3px; -moz-border-radius: 3px 3px 3px 3px; border: 1px solid #5D8CC9; padding: 2px; margin-right: 3px; float: left; }
+.btn_ok { }
+.pag_tab td { margin: 0; padding: 0 !important; }
+.pagin_itens * { vertical-align: middle; display: inline-block; }
+.pagin_itens { float: right; margin: 2px 2px 0 0; }
+.pagin_itens input { margin: 0 1px; }
+.pagin_itens a {display: inline-block; margin: 0 1px; padding: 3px 4px; vertical-align: middle; color: #1e3260; border-radius: 3px 3px 3px 3px; border: 1px solid transparent; }
+.btn_paginacao {vertical-align: middle; }
+a.selected { border-radius: 3px 3px 3px 3px; background-color: #E3EFFF; border: 1px solid #a6bbd8; }
+.pagin_itens a:hover { background-color: #E3EFFF; border: 1px solid #a6bbd8; }
+.icn_ff { margin: 2px; }
+.icn_f { margin: 2px; }
+.icn_rw { margin: 2px; }
+.icn_rrw { margin: 2px; }
+/* Tabela */
+.tabela { margin: 0 auto; width: 100%; border-collapse: separate !important; }
+.header_tabela { background-image: url('/img/header_table.png'); background-repeat: no-repeat; font-size: 14px; color: White; width: 845px; margin: 0 auto; padding: 6px 0 4px 15px; }
+.tabela tr { font-size: 12px; background: #fff; height: 26px; }
+.tabela tr.even { background: #e9f1fc; }
+.tabela tr:hover { background: #d5e3f4; }
+.tabela tr.cabecalho_tabela { font-size: 12px; }
+.tabela tr.cabecalho_tabela th { background-image: url('/img/bt_header_tabela.jpg'); font-size: 11px; }
+.tabela tr td, .tabela tr.cabecalho_tabela th { padding: 3px 5px; }
+.tabela tr.cabecalho_tabela td, .tabela tr td { padding: 2px 10px; }
+.coluna_valores { text-align: right; width: 200px; padding-right: 5px; }

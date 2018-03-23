@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ObtemPreviewRSM_SBR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="funcao" type="xs:int" />
+        <xs:element minOccurs="0" name="uf" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nivel" type="xs:int" />
+        <xs:element minOccurs="0" name="salario" type="xs:decimal" />
+        <xs:element minOccurs="0" name="usa_de_para" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtemPreviewRSM_SBRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtemPreviewRSM_SBRResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtemPreviewRSM">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="funcao" type="xs:int" />
+        <xs:element minOccurs="0" name="uf" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nivel" type="xs:int" />
+        <xs:element minOccurs="0" name="salario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtemPreviewRSMResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtemPreviewRSMResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtemPreviewRSMSine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="funcao" type="xs:int" />
+        <xs:element minOccurs="0" name="uf" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nivel" type="xs:int" />
+        <xs:element minOccurs="0" name="salario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtemPreviewRSMSineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtemPreviewRSMSineResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterRelatorioSalarialMercado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="funcao" type="xs:int" />
+        <xs:element minOccurs="0" name="uf" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nivel" type="xs:int" />
+        <xs:element minOccurs="0" name="salario" type="xs:decimal" />
+        <xs:element minOccurs="0" name="svg1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="svg2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="svg3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="svg4" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterRelatorioSalarialMercadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObterRelatorioSalarialMercadoResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

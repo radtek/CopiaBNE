@@ -1,0 +1,16 @@
+﻿.foto_mini_curriculo .modal { background-color: #FFFFFF; background-image: url("/img/bg_topo_modal_candidato.png"); background-repeat: repeat-x; margin: 0 auto; width: 535px; }
+.foto_mini_curriculo .painel_imagem_foto_logo { width: 133px; }
+.foto_mini_curriculo .painel_imagem_foto_logo img { width: 133px; }
+.foto_mini_curriculo .link_alterar_foto { display: block; text-align: center; width: 135px; /*margin-top: -45px;*/ }
+.container_candidato_tipo_contrato { background-image: url('/img/bg_campo_obrigatorio.gif'); background-repeat: no-repeat; background-position: left 4px; padding-left: 11px; }
+span.checkbox_text_right input[type='checkbox'] { float: left; }
+.alignCheckBox{vertical-align:-2px}
+.lineAdjust{margin-left:160px!important}
+.fade.in{opacity:1}
+.alert,.alert h4{color:#666}
+.alert{padding:14px 35px 8px 14px;margin-bottom:20px;text-shadow:0 1px 0 rgba(255,255,255,.5);background-color:#fcf8e3;border:1px solid #fbeed5;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;width:230px}
+.fade{opacity:0;-webkit-transition:opacity .15s linear;-moz-transition:opacity .15s linear;-o-transition:opacity .15s linear;transition:opacity .15s linear}
+.alert .close{position:relative;top:-2px;right:-21px;line-height:20px}
+button.close{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance:none}
+.close{float:right;font-size:20px;font-weight:700;line-height:20px;color:#000;text-shadow:0 1px 0 #fff;opacity:.2;filter:alpha(opacity=20)}
+.inputFuncaoPretendida{border:2px solid #ff6a00;border-radius:4px;height:23px;}

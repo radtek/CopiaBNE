@@ -1,0 +1,8 @@
+﻿div.RadToolTip div.rtTitlebar { font-weight: bold !important; font-size: 12px !important; }
+div.RadToolTip table.rtWrapper td.rtWrapperContent { font-size: 12px !important; font-family: Arial !important; }
+.campoEstado { width: 150px !important; }
+.campoEscolaridade { width: 230px !important; }
+/*.pesquisa_avancada { height: 726px; }*/
+.rcbSlide label { float: none; }
+#divSlowDown { position: absolute; margin-left: 800px; top: 250px; width: 100px; }
+label { padding-top: 5px;}

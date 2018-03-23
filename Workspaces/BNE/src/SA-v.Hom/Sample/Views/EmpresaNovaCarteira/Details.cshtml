@@ -1,0 +1,83 @@
+﻿@model AdminLTE_Application.CRM_Vendedor_Empresa
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CRM_Vendedor_Empresa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CRM_Empresa.Raz_Social)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CRM_Empresa.Raz_Social)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CRM_Situacao_Atendimento.Des_Situacao_atendimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CRM_Situacao_Atendimento.Des_Situacao_atendimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CRM_Vendedor.Nme_Vendedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CRM_Vendedor.Nme_Vendedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Fim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Fim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Cadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Cadastro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dta_Alteracao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dta_Alteracao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Des_Obs_VendedorEmpresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Des_Obs_VendedorEmpresa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Idf_Vendedor_Empresa }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

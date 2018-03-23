@@ -1,0 +1,222 @@
+.painel_padrao
+{
+    padding: 20px;
+}
+
+h1
+{
+    color: Gray;
+    font-size: 20px;
+    height: 20px;
+    text-align: left;
+}
+.cursos_banner
+{
+    background-repeat: no-repeat;
+    width: 850px;
+    height: 226px;
+}
+.conteudo_interno
+{
+    background-color: #FFF;
+    position: relative;
+    width: 888px;
+    text-align: left;
+}
+.btns_abas
+{
+    display: block;
+    padding-left: 25px;
+    padding-top: 192px;
+    text-align: left;
+}
+.container_topico_redesocial
+{
+    margin-left: 40px;
+    margin-top: 10px;
+}
+.container_redesocial
+{
+    float: right;
+    width: 240px;
+    height: 25px;
+}
+.facebook
+{
+    float: left;
+    width: 85px;
+    margin-left: 10px;
+    margin-top: 1px;
+}
+.tweeter
+{
+    float: left;
+    width: 85px;
+    margin-left: 10px;
+    margin-top: 1px;
+}
+.container_nome_curso
+{
+    background-image: url('/img/cursos/img_enfeite_links.png');
+    background-repeat: no-repeat;
+    background-position: 115px 40px;
+    color: #1B3752;
+    font-size: 28px;
+    font-weight: bold;
+    display: block;
+    float: left;
+    vertical-align: middle;
+    height: 50px;
+}
+.texto_paragrafo_descricao
+{
+    display: block;
+    float: left;
+    margin-left: 40px;
+    width: 400px;
+}
+.texto_paragrafo_descricao .normal
+{
+    color: #1B3752;
+}
+.texto_paragrafo_descricao .destaque
+{
+    color: #1B3752;
+    font-weight: bold;
+    font-size: 13px;
+}
+.texto_paragrafo_descricao .destaque_aumentado
+{
+    color: #1B3752;
+    font-weight: bold;
+    font-size: 16px;
+}
+.matriculese
+{
+    font-size: 14px;
+}
+a:hover
+{
+    color: #000;
+}
+.texto_paragrafo_conteudo
+{
+    display: block;
+    float: left;
+    margin-left: 40px;
+    width: 400px;
+}
+.box_azul_resumo_ementa
+{
+    display: block;
+    float: left;
+    margin-left: 50px;
+}
+
+.texto_box
+{
+    display: block;
+    float: left;
+    font-size: 14px;
+    margin-left: 550px;
+    margin-top: -525px;
+    text-align: justify;
+    width: 240px;
+}
+.h2
+{
+    color: #1B3752;
+}
+.limpa
+{
+    clear: both;
+}
+.botao_matricule_se
+{
+    display: block;
+    float: left;
+    margin-left: 544px;
+    margin-top: -60px;
+}
+.descricao_curso_azul
+{
+    background-image: url('/img/cursos/btn_descricao_azul.png');
+    background-repeat: no-repeat;
+    height: 34px;
+    width: 120px;
+    float: left;
+}
+.descricao_curso_cinza
+{
+    background-image: url('/img/cursos/btn_descricao_cinza.png');
+    background-repeat: no-repeat;
+    height: 34px;
+    width: 120px;
+    float: left;
+}
+.conteudo_curso_azul
+{
+    background-image: url('/img/cursos/btn_conteudo_azul.png');
+    background-repeat: no-repeat;
+    height: 34px;
+    width: 120px;
+    float: left;
+}
+.conteudo_curso_cinza
+{
+    background-image: url('/img/cursos/btn_conteudo_cinza.png');
+    background-repeat: no-repeat;
+    height: 34px;
+    width: 120px;
+    float: left;
+}
+.comentariosFacebook
+{
+    display: block;
+    overflow: auto;
+    position: absolute;
+    margin-top: 441px;
+    width: 490px;
+    height: 380px;
+}
+.curtirFacebook
+{
+    display: block;
+    overflow: hidden;
+    margin-left: 500px;
+    margin-top: 550px;
+    width: 300px;
+}
+
+.alinha_texto_modal
+{
+    font-size: 16px;
+    margin-left: 45px;
+    margin-top: 25px;
+}
+.me_leve_para_la
+{
+    background-color: #004876;
+    border: 1px solid #fff;
+    border-radius: 7px;
+    -webkit-box-shadow: 0px 0px 3px 3px #d6d6d6;
+    box-shadow: 0px 0px 3px 3px #d6d6d6;
+    color: #fff;
+    padding-bottom: 13px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 13px;
+    width: 100px;
+    margin-top: 20px;
+}
+.efeite_links
+{
+    position: absolute;
+    margin-left: -26px;
+    margin-top: -15px;
+}
+.painel_botoes.cursos
+{
+    margin-top: 70px;
+    width: 485px;
+}

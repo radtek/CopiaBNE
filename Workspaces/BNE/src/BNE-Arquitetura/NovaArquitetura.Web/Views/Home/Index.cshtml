@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div ng-controller="CadastroEscola as cadastro">
+    <div ng-hide="cadastro.cadastro_aluno_concluido">
+        @{
+            Html.RenderPartial("_cadastro_aluno");
+        }
+    </div>
+
+    <div ng-show="cadastro.cadastro_aluno_concluido && !cadastro.cadastro_disciplina_concluido">
+        @{
+            Html.RenderPartial("_cadastro_disciplina");
+        }
+    </div>
+
+    <div ng-show="cadastro.cadastro_disciplina_concluido">
+        @{
+            Html.RenderPartial("_aluno_disciplina");
+        }
+    </div>
+</div>

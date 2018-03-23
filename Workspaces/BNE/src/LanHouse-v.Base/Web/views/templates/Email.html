@@ -1,0 +1,8 @@
+﻿<div class="form-group row">
+    <label for="{{eNome}}">{{eLabel}}</label>
+    <input type="text" class="form-control" name="{{eNome}}" id="{{eNome}}" ng-model="cadCV.curriculo.email" maxlength="100" autocomplete-email validar-email />
+    <div class="tooltip right in AdjustooltipRightEmail" ng-show="formPasso1.Email.$invalid && formPasso1.Email.$touched">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner">O email está inválido</div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+﻿.content_dspc { width: 883px; height: 500px; margin: 0 auto; font-family: 'Roboto', sans-serif; }
+.section_banner { width: 45%; height: 500px; background: #666; float: left; background: url('/img/campanha-recrutamento/banner.jpg'); }
+.section_dados { width: 55%; height: 500px; background: #f1f1f1; float: right; }
+.aside_form { width: 360px; height: 190px; margin: 0 auto; padding-top: 15px; }
+.tit_camp { text-align: center; margin-top: 45px; font-size: 26px; color: #90c03d; font-weight: 300; font-family: 'Roboto', sans-serif; }
+.sub_camp { text-align: center; margin: 15px 0px 15px 0px; font-family: 'Roboto', sans-serif; }
+.disparar_btn { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+21,80c217+43,628c2b+100 */ background: rgb(157,213,58); /* Old browsers */ background: -moz-linear-gradient(top, rgba(157,213,58,1) 0%, rgba(161,213,79,1) 21%, rgba(128,194,23,1) 43%, rgba(98,140,43,1) 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(157,213,58,1)), color-stop(21%,rgba(161,213,79,1)), color-stop(43%,rgba(128,194,23,1)), color-stop(100%,rgba(98,140,43,1))); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, rgba(157,213,58,1) 0%,rgba(161,213,79,1) 21%,rgba(128,194,23,1) 43%,rgba(98,140,43,1) 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, rgba(157,213,58,1) 0%,rgba(161,213,79,1) 21%,rgba(128,194,23,1) 43%,rgba(98,140,43,1) 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, rgba(157,213,58,1) 0%,rgba(161,213,79,1) 21%,rgba(128,194,23,1) 43%,rgba(98,140,43,1) 100%); /* IE10+ */ background: linear-gradient(to bottom, rgba(157,213,58,1) 0%,rgba(161,213,79,1) 21%,rgba(128,194,23,1) 43%,rgba(98,140,43,1) 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#628c2b',GradientType=0 ); /* IE6-9 */ padding: 15px 20px 15px 20px; border: 0px; color: #fff; font-size: 16px; margin-left: 29%; cursor: pointer; -webkit-border-radius: 5px; /*Safari, Chrome*/ -moz-border-radius: 5px; /*Firefox*/ border-radius: 5px; }
+    .disparar_btn:hover { background: #72992f; }
+.qnt_camp { text-align: center; margin-top: 15px; font-size: 18px; font-family: 'Roboto', sans-serif; }
+.quant_txt { color: #7b9f3c; text-decoration: underline; }
+.aside_form label { float: none; }
+.aside_form .coluna-esquerda { width: 175px; float: left; }
+.aside_form .coluna-direita { width: 175px; float: left; }
+    .aside_form .coluna-direita .custom { width: 177px !important; }
+.textbox_padrao.funcao { width: 350px; height: 27px; }
+.textbox_padrao.cidade { width: 175px; height: 27px; }
+.textbox_padrao.salario { width: 136px; height: 27px; }

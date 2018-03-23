@@ -1,0 +1,25 @@
+﻿@model BNE.PessoaFisica.Web.Models.PreCurriculo
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#spaVagaOportunidade').html($('#hddVagaOportunidade').val());
+        ConfigurarJaEnviei();
+    });
+</script>
+
+<div class="mdl-grid bottom20">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center ">
+        <h1>
+            <img src="http://www.bne.com.br/img/img_check_vaga_ja_enviei.png" /> Seu Currículo já foi enviado para a <span id="spaVagaOportunidade"></span>!
+        </h1>
+        @if (!String.IsNullOrEmpty(ViewBag.UrlPesquisa))
+        {
+            <p class="white"><a href="@ViewBag.UrlPesquisa">Voltar para a tela de pesquisa</a></p>
+        }
+        else
+        {
+            <p class="white"><a href="" onclick="javascript: history.go(-1);">Voltar para a tela de pesquisa</a></p>
+        }
+       
+    </div>
+</div>

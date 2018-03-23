@@ -1,0 +1,1316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B316CE73-6590-43E7-BD7A-2C24963C09FB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.BLL</RootNamespace>
+    <AssemblyName>BNE.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>..\BNERules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BNE_Dev|AnyCPU'">
+    <OutputPath>bin\BNE_Dev\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\BNE.BLL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\BNERules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|AnyCPU'">
+    <OutputPath>bin\Homologacao\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisLogFile>bin\Release\BNE.BLL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Producao|AnyCPU'">
+    <OutputPath>bin\Producao\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;CODE_ANALYSIS;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisLogFile>bin\Release\BNE.BLL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <CodeAnalysisRuleSet>..\BNERules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BNE_Dev|x64'">
+    <OutputPath>bin\x64\BNE_Dev\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\BNERules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|x64'">
+    <OutputPath>bin\x64\Homologacao\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;CODE_ANALYSIS;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Producao|x64'">
+    <OutputPath>bin\x64\Producao\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;CODE_ANALYSIS;CODE_ANALYSIS;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <CodeAnalysisRuleSet>..\BNERules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BNE_Dev|x86'">
+    <OutputPath>bin\x86\BNE_Dev\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\BNERules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homologacao|x86'">
+    <OutputPath>bin\x86\Homologacao\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;CODE_ANALYSIS;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Producao|x86'">
+    <OutputPath>bin\x86\Producao\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;CODE_ANALYSIS;CODE_ANALYSIS;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ABCpdf, Version=9.0.0.4, Culture=neutral, PublicKeyToken=a7a0b3f5184f2169, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\ABCpdf.DLL</HintPath>
+    </Reference>
+    <Reference Include="BNE.Cache">
+      <HintPath>..\packages\BNE.Cache.0.1\lib\net40\BNE.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="BNE.Cryptography">
+      <HintPath>..\Library\BNE.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="BNE.ValidaCelular">
+      <HintPath>..\packages\BNE.ValidaCelular.1.0.0\lib\net40\BNE.ValidaCelular.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\Library\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\Library\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Mandrill, Version=1.0.85.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Mandrill.1.0.85\lib\net40\Mandrill.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\Library\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal">
+      <HintPath>..\Library\PayPal.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IdentityModel">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Uol.PagSeguro">
+      <HintPath>..\Library\Uol.PagSeguro.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcaoPublicacao_P1.cs" />
+    <Compile Include="AcaoPublicacao_P2.cs" />
+    <Compile Include="AdicionalPlanoSituacao_P1.cs" />
+    <Compile Include="AdicionalPlanoSituacao_P2.cs" />
+    <Compile Include="AdicionalPlano_P1.cs" />
+    <Compile Include="AdicionalPlano_P2.cs" />
+    <Compile Include="Agradecimento_P1.cs" />
+    <Compile Include="Agradecimento_P2.cs" />
+    <Compile Include="AlertaCidades_P1.cs" />
+    <Compile Include="AlertaCidades_P2.cs" />
+    <Compile Include="AlertaCurriculos_P1.cs" />
+    <Compile Include="AlertaCurriculos_P2.cs" />
+    <Compile Include="AlertaEmpresasExecao_P1.cs" />
+    <Compile Include="AlertaEmpresasExecao_P2.cs" />
+    <Compile Include="AlertaFuncoes_P1.cs" />
+    <Compile Include="AlertaFuncoes_P2.cs" />
+    <Compile Include="AlertaVagas_P1.cs" />
+    <Compile Include="AlertaVagas_P2.cs" />
+    <Compile Include="AllinCicloVida_P1.cs" />
+    <Compile Include="AllinCicloVida_P2.cs" />
+    <Compile Include="AllinTransacional_P1.cs" />
+    <Compile Include="AllinTransacional_P2.cs" />
+    <Compile Include="AreaBNE_P1.cs" />
+    <Compile Include="AreaBNE_P2.cs" />
+    <Compile Include="Arquivo_P1.cs" />
+    <Compile Include="Arquivo_P2.cs" />
+    <Compile Include="AuditorPublicador_P1.cs" />
+    <Compile Include="AuditorPublicador_P2.cs" />
+    <Compile Include="Avaliacao_P1.cs" />
+    <Compile Include="Avaliacao_P2.cs" />
+    <Compile Include="AlertaEnvioMensagens_P1.cs" />
+    <Compile Include="AlertaEnvioMensagens_P2.cs" />
+    <Compile Include="AlertaErroEnvioMensagens_P1.cs" />
+    <Compile Include="AlertaErroEnvioMensagens_P2.cs" />
+    <Compile Include="Banco_P1.cs" />
+    <Compile Include="Banco_P2.cs" />
+    <Compile Include="BandeiraCartao_P1.cs" />
+    <Compile Include="BandeiraCartao_P2.cs" />
+    <Compile Include="CadastroParceiro_P1.cs" />
+    <Compile Include="CadastroParceiro_P2.cs" />
+    <Compile Include="CampanhaCurriculo_P1.cs" />
+    <Compile Include="CampanhaCurriculo_P2.cs" />
+    <Compile Include="Campanha_P1.cs" />
+    <Compile Include="Campanha_P2.cs" />
+    <Compile Include="CampoIntegrador_P1.cs" />
+    <Compile Include="CampoIntegrador_P2.cs" />
+    <Compile Include="CampoPublicacao_P1.cs" />
+    <Compile Include="CampoPublicacao_P2.cs" />
+    <Compile Include="CartaEmail_P1.cs" />
+    <Compile Include="CartaEmail_P2.cs" />
+    <Compile Include="CartaSMS_P1.cs" />
+    <Compile Include="CartaSMS_P2.cs" />
+    <Compile Include="CelularSelecionador_P1.cs" />
+    <Compile Include="CelularSelecionador_P2.cs" />
+    <Compile Include="Celular_P1.cs" />
+    <Compile Include="Celular_P2.cs" />
+    <Compile Include="CobrancaBoletoLOG_P1.cs" />
+    <Compile Include="CobrancaBoletoLOG_P2.cs" />
+    <Compile Include="CobrancaBoletoStatusTransacao_P1.cs" />
+    <Compile Include="CobrancaBoletoStatusTransacao_P2.cs" />
+    <Compile Include="CobrancaBoletoTipoTransacao_P1.cs" />
+    <Compile Include="CobrancaBoletoTipoTransacao_P2.cs" />
+    <Compile Include="CobrancaBoletoTransacao_P1.cs" />
+    <Compile Include="CobrancaBoletoTransacao_P2.cs" />
+    <Compile Include="CobrancaBoleto_P1.cs" />
+    <Compile Include="CobrancaBoleto_P2.cs" />
+    <Compile Include="CodigoConfirmacaoEmail_P1.cs" />
+    <Compile Include="CodigoConfirmacaoEmail_P2.cs" />
+    <Compile Include="CodigoDescontoPlano_P1.cs" />
+    <Compile Include="CodigoDesconto_P1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodigoDesconto_P2.cs" />
+    <Compile Include="ConsultorCidadeR1_P1.cs" />
+    <Compile Include="ConsultorCidadeR1_P2.cs" />
+    <Compile Include="ConsultorR1_P1.cs" />
+    <Compile Include="ConsultorR1_P2.cs" />
+    <Compile Include="ContaBancaria_P1.cs" />
+    <Compile Include="ContaBancaria_P2.cs" />
+    <Compile Include="ConteudoHTML_P1.cs" />
+    <Compile Include="ConteudoHTML_P2.cs" />
+    <Compile Include="CodigoDescontoPlano_P2.cs" />
+    <Compile Include="ConversasAtivas_P1.cs" />
+    <Compile Include="ConversasAtivas_P2.cs" />
+    <Compile Include="CurriculoTipoVinculo_P1.cs" />
+    <Compile Include="CurriculoTipoVinculo_P2.cs" />
+    <Compile Include="Custom\GerarContratoPlanoPdf.cs" />
+    <Compile Include="Custom\NotificarPesquisaDeEstagiario.cs" />
+    <Compile Include="Custom\QueroContratarCurriculoEstudante.cs" />
+    <Compile Include="Custom\RetornoBoleto\RetornoBoleto.cs" />
+    <Compile Include="Custom\Solr\ResultadoBuscaVaga.cs" />
+    <Compile Include="Custom\Solr\Solr.cs" />
+    <Compile Include="Custom\Vaga\EnfileiraVaga.cs" />
+    <Compile Include="Custom\Vaga\IntegracaoVaga.cs" />
+    <Compile Include="DataAccessLayer\DataAccessLayer.cs" />
+    <Compile Include="DeParaEmail_P1.cs" />
+    <Compile Include="DeParaEmail_P2.cs" />
+    <Compile Include="DesistenteCadastro_P1.cs" />
+    <Compile Include="DesistenteCadastro_P2.cs" />
+    <Compile Include="DTO\AllInCurriculo.cs" />
+    <Compile Include="DTO\AllInFilial.cs" />
+    <Compile Include="DTO\CelularSelecionadorDestinatario.cs" />
+    <Compile Include="DTO\PessoaFisicaEnvioSMSTanque.cs" />
+    <Compile Include="DTO\UsuarioFilialPerfiEnvioAvisoSaldoSMS.cs" />
+    <Compile Include="DTO\VagaSemelhante.cs" />
+    <Compile Include="DTO\wsIntegracao\InVaga.cs" />
+    <Compile Include="EmailDestinatarioCidade_P1.cs" />
+    <Compile Include="EmailDestinatarioCidade_P2.cs" />
+    <Compile Include="EmailDestinatario_P1.cs" />
+    <Compile Include="EmailDestinatario_P2.cs" />
+    <Compile Include="EmailSituacao_P1.cs" />
+    <Compile Include="EmailSituacao_P2.cs" />
+    <Compile Include="Custom\Email\EmailSenderFactory.cs" />
+    <Compile Include="Custom\Email\EnviadorEmailComVerificacao.cs" />
+    <Compile Include="Custom\Email\EnviadorEmailPorSmtp.cs" />
+    <Compile Include="Custom\Email\EnviadorEmailPorFila.cs" />
+    <Compile Include="Custom\Email\AbstractComponenteEnviadorEmail.cs" />
+    <Compile Include="Custom\Email\AbstractEnviadorEmail.cs" />
+    <Compile Include="EmpresaHome_P1.cs" />
+    <Compile Include="EmpresaHome_P2.cs" />
+    <Compile Include="Enumeradores\CobrancaBoletoStatusTransacao.cs" />
+    <Compile Include="Enumeradores\EmailSituacao.cs" />
+    <Compile Include="Enumeradores\LoginEmpresaDestino.cs" />
+    <Compile Include="Enumeradores\OrdenacaoBuscaVaga.cs" />
+    <Compile Include="Enumeradores\PerguntaSalaVip.cs" />
+    <Compile Include="Enumeradores\Planos.cs" />
+    <Compile Include="Enumeradores\StatusTransacao.cs" />
+    <Compile Include="Enumeradores\TipoArquivo.cs" />
+    <Compile Include="Enumeradores\TipoGatilho.cs" />
+    <Compile Include="Enumeradores\TipoLinhaArquivo.cs" />
+    <Compile Include="Enumeradores\TipoPergunta.cs" />
+    <Compile Include="Enumeradores\TipoVinculo.cs" />
+    <Compile Include="Enumeradores\UsuarioSistemaTanque.cs" />
+    <Compile Include="FilialLogo_P1.cs" />
+    <Compile Include="FilialLogo_P2.cs" />
+    <Compile Include="GrupoCidade_P1.cs" />
+    <Compile Include="GrupoCidade_P2.cs" />
+    <Compile Include="IntegracaoAdmissao_P1.cs" />
+    <Compile Include="IntegracaoAdmissao_P2.cs" />
+    <Compile Include="Integracoes\ArquivosBanco\ArquivoDebitoHSBC.cs" />
+    <Compile Include="Integracoes\IEmailStatus.cs" />
+    <Compile Include="Integracoes\Mandrill\HttpClientMandrillApi.cs" />
+    <Compile Include="Integracoes\SendGrid\HttpClientSendGridApi.cs" />
+    <Compile Include="Integracoes\WFat\NotaFiscal.cs" />
+    <Compile Include="LinhaArquivo_P1.cs" />
+    <Compile Include="LinhaArquivo_P2.cs" />
+    <Compile Include="ListaCidade_P1.cs" />
+    <Compile Include="ListaCidade_P2.cs" />
+    <Compile Include="MensagemRetornoBoleto_P1.cs" />
+    <Compile Include="MensagemRetornoBoleto_P2.cs" />
+    <Compile Include="Pergunta_Sala_Vip_Historico_P1.cs" />
+    <Compile Include="Pergunta_Sala_Vip_Historico_P2.cs" />
+    <Compile Include="PesquisaCurriculoTipoVinculo_P1.cs" />
+    <Compile Include="PesquisaCurriculoTipoVinculo_P2.cs" />
+    <Compile Include="PlanoAdquiridoDetalhesCurriculo_P1.cs" />
+    <Compile Include="PlanoAdquiridoDetalhesCurriculo_P2.cs" />
+    <Compile Include="ResultadoBuscaCVSolr.cs" />
+    <Compile Include="Service References\BNETanqueService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitacaoR1Disponibilidade_P1.cs" />
+    <Compile Include="SolicitacaoR1Disponibilidade_P2.cs" />
+    <Compile Include="StatusTransacao_P1.cs" />
+    <Compile Include="StatusTransacao_P2.cs" />
+    <Compile Include="Struct\GerenteFilial.cs" />
+    <Compile Include="TipoArquivo_P1.cs" />
+    <Compile Include="TipoArquivo_P2.cs" />
+    <Compile Include="TipoGatilho_P1.cs" />
+    <Compile Include="TipoGatilho_P2.cs" />
+    <Compile Include="TipoLinhaArquivo_P1.cs" />
+    <Compile Include="TipoLinhaArquivo_P2.cs" />
+    <Compile Include="TipoParceiro_P2.cs" />
+    <Compile Include="CurriculoQuemMeViu_P1.cs" />
+    <Compile Include="CurriculoQuemMeViu_P2.cs" />
+    <Compile Include="CurriculoVisualizacaoHistorico_P1.cs" />
+    <Compile Include="CurriculoVisualizacaoHistorico_P2.cs" />
+    <Compile Include="Custom\LoginAutomatico.cs" />
+    <Compile Include="Custom\MandrillController.cs" />
+    <Compile Include="Enumeradores\EstadoCivil.cs" />
+    <Compile Include="Enumeradores\FormatoVisualizacaoImpressao.cs" />
+    <Compile Include="Enumeradores\TipoParceiro.cs" />
+    <Compile Include="Integracoes\Facebook\ProfileFacebook.cs" />
+    <Compile Include="Custom\ExtensionMethods.cs" />
+    <Compile Include="Custom\IntegrationObjects\Bne.cs" />
+    <Compile Include="Enumeradores\TipoCodigoDesconto.cs" />
+    <Compile Include="Enumeradores\IntegracaoSituacao.cs" />
+    <Compile Include="Enumeradores\MotivoRescisaoIntegracao.cs" />
+    <Compile Include="Enumeradores\TipoPagamentoIntegracao.cs" />
+    <Compile Include="Enumeradores\TipoVinculoIntegracao.cs" />
+    <Compile Include="IntegracaoSituacao_P1.cs" />
+    <Compile Include="IntegracaoSituacao_P2.cs" />
+    <Compile Include="Integracao_P1.cs" />
+    <Compile Include="Integracao_P2.cs" />
+    <Compile Include="Integracoes\IntegradorCurriculo\Curriculo.cs" />
+    <Compile Include="Integracoes\IntegradorCurriculo\RetornoIntegrador.cs" />
+    <Compile Include="Integracoes\Nexcore\HttpClientOperadoraCelular.cs" />
+    <Compile Include="Integracoes\SalarioBR\DadosRSM.cs" />
+    <Compile Include="MotivoRescisao_P1.cs" />
+    <Compile Include="MotivoRescisao_P2.cs" />
+    <Compile Include="OperadoraCelular_P1.cs" />
+    <Compile Include="OperadoraCelular_P2.cs" />
+    <Compile Include="Parceiro_P1.cs" />
+    <Compile Include="PessoaFisicaFoto_P1.cs" />
+    <Compile Include="PessoaFisicaFoto_P2.cs" />
+    <Compile Include="TipoCodigoDesconto_P2.cs" />
+    <Compile Include="StatusCodigoDesconto_P2.cs" />
+    <Compile Include="CurriculoAuditoria_P1.cs" />
+    <Compile Include="CurriculoAuditoria_P2.cs" />
+    <Compile Include="CurriculoDisponibilidadeCidade_P1.cs" />
+    <Compile Include="CurriculoDisponibilidadeCidade_P2.cs" />
+    <Compile Include="CurriculoDisponibilidade_P1.cs" />
+    <Compile Include="CurriculoDisponibilidade_P2.cs" />
+    <Compile Include="CurriculoObservacao_P1.cs" />
+    <Compile Include="CurriculoObservacao_P2.cs" />
+    <Compile Include="CurriculoPublicacao_P1.cs" />
+    <Compile Include="CurriculoPublicacao_P2.cs" />
+    <Compile Include="Curriculo_P3.cs" />
+    <Compile Include="CursoFuncaoTecla_P1.cs" />
+    <Compile Include="CursoFuncaoTecla_P2.cs" />
+    <Compile Include="CursoModalidadeTecla_P1.cs" />
+    <Compile Include="CursoModalidadeTecla_P2.cs" />
+    <Compile Include="CursoParceiroTecla_P1.cs" />
+    <Compile Include="CursoParceiroTecla_P2.cs" />
+    <Compile Include="CursoTecla_P1.cs" />
+    <Compile Include="CursoTecla_P2.cs" />
+    <Compile Include="Custom\ActiveDirectory.cs" />
+    <Compile Include="Custom\ArvoreBuscaFuncao.cs" />
+    <Compile Include="Custom\Busca.cs" />
+    <Compile Include="Custom\CompareObject.cs" />
+    <Compile Include="Custom\FormatObject.cs" />
+    <Compile Include="Custom\Helper.cs" />
+    <Compile Include="Custom\MailController.cs" />
+    <Compile Include="Custom\Maps\Bing\GeocodeService.cs" />
+    <Compile Include="Custom\Maps\GeocodeService.cs" />
+    <Compile Include="Custom\Maps\Google\GeocodeService.cs" />
+    <Compile Include="Custom\Maps\MapsResult.cs" />
+    <Compile Include="Custom\ModeloEmail.cs" />
+    <Compile Include="Custom\NoBuscaDescricao.cs" />
+    <Compile Include="Custom\NumeroPorExtenso.cs" />
+    <Compile Include="Custom\PDF.cs" />
+    <Compile Include="Custom\SalarioBr\PesquisaSalarial.cs" />
+    <Compile Include="Custom\SiteMapHelper.cs" />
+    <Compile Include="Custom\Validacao.cs" />
+    <Compile Include="Disponibilidade_P1.cs" />
+    <Compile Include="Disponibilidade_P2.cs" />
+    <Compile Include="DTO\CartaEmail.cs" />
+    <Compile Include="DTO\Curriculo.cs" />
+    <Compile Include="DTO\Filial.cs" />
+    <Compile Include="Enumeradores\Banco.cs" />
+    <Compile Include="Enumeradores\CampoIntegrador.cs" />
+    <Compile Include="Enumeradores\CartaSMS.cs" />
+    <Compile Include="Enumeradores\StatusCodigoDesconto.cs" />
+    <Compile Include="Enumeradores\TipoSistemaMobile.cs" />
+    <Compile Include="Enumeradores\CursoModalidade.cs" />
+    <Compile Include="Enumeradores\ParceiroCurso.cs" />
+    <Compile Include="Enumeradores\RouteCollection.cs" />
+    <Compile Include="Enumeradores\TipoIntegrador.cs" />
+    <Compile Include="Enumeradores\VantagensVIP.cs" />
+    <Compile Include="HistoricoPublicacaoVaga_P1.cs" />
+    <Compile Include="HistoricoPublicacaoVaga_P2.cs" />
+    <Compile Include="InscricaoCurso_P1.cs" />
+    <Compile Include="InscricaoCurso_P2.cs" />
+    <Compile Include="DTO\Vaga.cs" />
+    <Compile Include="Enumeradores\AdicionalPlanoSituacao.cs" />
+    <Compile Include="Enumeradores\BandeiraCartao.cs" />
+    <Compile Include="Enumeradores\CartaEmail.cs" />
+    <Compile Include="Enumeradores\CategoriaPermissao.cs" />
+    <Compile Include="Enumeradores\FormatoRelatorio.cs" />
+    <Compile Include="Enumeradores\Funcao.cs" />
+    <Compile Include="Enumeradores\FuncaoCategoria.cs" />
+    <Compile Include="Enumeradores\TipoAdicional.cs" />
+    <Compile Include="Enumeradores\PlanoParcelaSituacao.cs" />
+    <Compile Include="Enumeradores\ConteudoHTML.cs" />
+    <Compile Include="Enumeradores\Disponibilidade.cs" />
+    <Compile Include="Enumeradores\Escolaridade.cs" />
+    <Compile Include="Enumeradores\PlanoFormaPagamento.cs" />
+    <Compile Include="Enumeradores\Flag.cs" />
+    <Compile Include="Enumeradores\MensagemSistema.cs" />
+    <Compile Include="Enumeradores\Origem.cs" />
+    <Compile Include="Enumeradores\Permissoes.cs" />
+    <Compile Include="Enumeradores\PlanoTipo.cs" />
+    <Compile Include="Enumeradores\StatusCurriculoVaga.cs" />
+    <Compile Include="Enumeradores\StatusTransacaoGlobal.cs" />
+    <Compile Include="Enumeradores\Template.cs" />
+    <Compile Include="Enumeradores\TipoCartaoCredito.cs" />
+    <Compile Include="Enumeradores\Operadora.cs" />
+    <Compile Include="Enumeradores\TipoOrigem.cs" />
+    <Compile Include="Enumeradores\TipoPerfil.cs" />
+    <Compile Include="EnvioEmailSalBR_P1.cs" />
+    <Compile Include="EnvioEmailSalBR_P2.cs" />
+    <Compile Include="Estatistica_P1.cs" />
+    <Compile Include="Estatistica_P2.cs" />
+    <Compile Include="FalePresidente_P1.cs" />
+    <Compile Include="FilialObservacao_P1.cs" />
+    <Compile Include="FilialObservacao_P2.cs" />
+    <Compile Include="Flag_P1.cs" />
+    <Compile Include="Flag_P2.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="IndicacaoFilial_P1.cs" />
+    <Compile Include="IndicacaoFilial_P2.cs" />
+    <Compile Include="Integracoes\Pagamento\CartaoCredito.cs" />
+    <Compile Include="Integracoes\Pagamento\CobreBem\AprovaFacil.cs" />
+    <Compile Include="Integracoes\Pagamento\CobreBem\CartaoCredito.cs" />
+    <Compile Include="Integracoes\Pagamento\DebitoOnline\HSBC.cs" />
+    <Compile Include="IntegradorCurriculo_P1.cs" />
+    <Compile Include="IntegradorCurriculo_P2.cs" />
+    <Compile Include="Integrador_P1.cs" />
+    <Compile Include="Integrador_P2.cs" />
+    <Compile Include="MensagemMailing_P2.cs" />
+    <Compile Include="MensagemSistema_P1.cs" />
+    <Compile Include="Mensagem_P2.cs" />
+    <Compile Include="MobileToken_P1.cs" />
+    <Compile Include="MobileToken_P2.cs" />
+    <Compile Include="NivelCurso_P1.cs" />
+    <Compile Include="NivelCurso_P2.cs" />
+    <Compile Include="NoticiaVisualizacao_P1.cs" />
+    <Compile Include="NoticiaVisualizacao_P2.cs" />
+    <Compile Include="Noticia_P1.cs" />
+    <Compile Include="Noticia_P2.cs" />
+    <Compile Include="OrigemFilialFuncao_P1.cs" />
+    <Compile Include="OrigemFilialFuncao_P2.cs" />
+    <Compile Include="PalavraChave_P1.cs" />
+    <Compile Include="PalavraChave_P2.cs" />
+    <Compile Include="PalavraProibida_P2.cs" />
+    <Compile Include="PalavraPublicacao_P1.cs" />
+    <Compile Include="PalavraPublicacao_P2.cs" />
+    <Compile Include="ParametroBuscaCV_P1.cs" />
+    <Compile Include="ParametroBuscaCV_P2.cs" />
+    <Compile Include="ParametroCurriculo_P1.cs" />
+    <Compile Include="ParametroCurriculo_P2.cs" />
+    <Compile Include="ParametroFilial_P1.cs" />
+    <Compile Include="ParametroFilial_P2.cs" />
+    <Compile Include="ParceiroTecla_P1.cs" />
+    <Compile Include="ParceiroTecla_P2.cs" />
+    <Compile Include="PesquisaCurriculoDisponibilidade_P1.cs" />
+    <Compile Include="PesquisaCurriculoDisponibilidade_P2.cs" />
+    <Compile Include="PesquisaCurriculoIdioma_P1.cs" />
+    <Compile Include="PesquisaCurriculoIdioma_P2.cs" />
+    <Compile Include="PesquisaCurriculo_P1.cs" />
+    <Compile Include="PesquisaCurriculo_P2.cs" />
+    <Compile Include="PesquisaVagaDisponibilidade_P1.cs" />
+    <Compile Include="PesquisaVagaDisponibilidade_P2.cs" />
+    <Compile Include="PesquisaVagaTipoVinculo_P1.cs" />
+    <Compile Include="PesquisaVagaTipoVinculo_P2.cs" />
+    <Compile Include="PesquisaVaga_P1.cs" />
+    <Compile Include="PesquisaVaga_P2.cs" />
+    <Compile Include="PessoaFisicaTemp_P2.cs" />
+    <Compile Include="PlanoAdquiridoDetalhes_P1.cs" />
+    <Compile Include="PlanoAdquiridoDetalhes_P2.cs" />
+    <Compile Include="PlanoAdquirido_P3.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RastreadorCurriculo_P1.cs" />
+    <Compile Include="RastreadorCurriculo_P2.cs" />
+    <Compile Include="RastreadorDisponibilidade_P1.cs" />
+    <Compile Include="RastreadorDisponibilidade_P2.cs" />
+    <Compile Include="RastreadorIdioma_P1.cs" />
+    <Compile Include="RastreadorIdioma_P2.cs" />
+    <Compile Include="Rastreador_P1.cs" />
+    <Compile Include="Rastreador_P2.cs" />
+    <Compile Include="RegraCampoPublicacao_P1.cs" />
+    <Compile Include="RegraCampoPublicacao_P2.cs" />
+    <Compile Include="RegraPublicacao_P1.cs" />
+    <Compile Include="RegraPublicacao_P2.cs" />
+    <Compile Include="RegraSubstituicaoIntegracao_P1.cs" />
+    <Compile Include="RegraSubstituicaoIntegracao_P2.cs" />
+    <Compile Include="RequisicaoIntegradorCurriculo_P1.cs" />
+    <Compile Include="RequisicaoIntegradorCurriculo_P2.cs" />
+    <Compile Include="RespostaAutomatica_P1.cs" />
+    <Compile Include="RespostaAutomatica_P2.cs" />
+    <Compile Include="Rota_P1.cs" />
+    <Compile Include="Rota_P2.cs" />
+    <Compile Include="Service References\BINGGeocodeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsSine\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SimulacaoR1_P1.cs" />
+    <Compile Include="SimulacaoR1_P2.cs" />
+    <Compile Include="Sistema_P2.cs" />
+    <Compile Include="StatusCodigoDesconto_P1.cs" />
+    <Compile Include="StatusCurriculoVaga_P1.cs" />
+    <Compile Include="StatusCurriculoVaga_P2.cs" />
+    <Compile Include="SubstituicaoIntegracao_P1.cs" />
+    <Compile Include="SubstituicaoIntegracao_P2.cs" />
+    <Compile Include="Template_P1.cs" />
+    <Compile Include="Template_P2.cs" />
+    <Compile Include="TipoAdicional_P1.cs" />
+    <Compile Include="TipoAdicional_P2.cs" />
+    <Compile Include="TipoCodigoDesconto_P1.cs" />
+    <Compile Include="TipoIntegrador_P1.cs" />
+    <Compile Include="TipoIntegrador_P2.cs" />
+    <Compile Include="TipoOrigem_P1.cs" />
+    <Compile Include="TipoOrigem_P2.cs" />
+    <Compile Include="TipoParceiro_P1.cs" />
+    <Compile Include="TipoPerfil_P1.cs" />
+    <Compile Include="TipoPerfil_P2.cs" />
+    <Compile Include="TipoPublicacao_P1.cs" />
+    <Compile Include="TipoPublicacao_P2.cs" />
+    <Compile Include="TipoResposta_P1.cs" />
+    <Compile Include="TipoResposta_P2.cs" />
+    <Compile Include="TipoSistemaMobile_P1.cs" />
+    <Compile Include="TipoSistemaMobile_P2.cs" />
+    <Compile Include="TipoVinculoIntegracao_P1.cs" />
+    <Compile Include="TipoVinculoIntegracao_P2.cs" />
+    <Compile Include="TipoVinculo_P1.cs" />
+    <Compile Include="TipoVinculo_P2.cs" />
+    <Compile Include="TipoContrato_P1.cs" />
+    <Compile Include="TipoContrato_P2.cs" />
+    <Compile Include="TransacaoMensagemErro_P1.cs" />
+    <Compile Include="TransacaoMensagemErro_P2.cs" />
+    <Compile Include="TransacaoResposta_P1.cs" />
+    <Compile Include="TransacaoResposta_P2.cs" />
+    <Compile Include="TransacaoRetorno_P1.cs" />
+    <Compile Include="TransacaoRetorno_P2.cs" />
+    <Compile Include="Transacao_P1.cs" />
+    <Compile Include="Transacao_P2.cs" />
+    <Compile Include="UsuarioFilial_P1.cs" />
+    <Compile Include="UsuarioFilial_P2.cs" />
+    <Compile Include="Usuario_P1.cs" />
+    <Compile Include="Usuario_P2.cs" />
+    <Compile Include="VagaCandidatoPergunta_P1.cs" />
+    <Compile Include="VagaCandidatoPergunta_P2.cs" />
+    <Compile Include="VagaDisponibilidade_P1.cs" />
+    <Compile Include="VagaDisponibilidade_P2.cs" />
+    <Compile Include="VagaIntegracao_P1.cs" />
+    <Compile Include="VagaIntegracao_P2.cs" />
+    <Compile Include="VagaPalavraChave_P1.cs" />
+    <Compile Include="VagaPalavraChave_P2.cs" />
+    <Compile Include="VagaPergunta_P1.cs" />
+    <Compile Include="VagaPergunta_P2.cs" />
+    <Compile Include="VagaRedeSocial_P2.cs" />
+    <Compile Include="RedeSocialCS_P2.cs" />
+    <Compile Include="CurriculoClassificacao_P1.cs" />
+    <Compile Include="CurriculoClassificacao_P2.cs" />
+    <Compile Include="CurriculoCorrecao_P1.cs" />
+    <Compile Include="CurriculoCorrecao_P2.cs" />
+    <Compile Include="Custom\AuxilioDev.cs" />
+    <Compile Include="CategoriaHabilitacao_P1.cs" />
+    <Compile Include="CategoriaHabilitacao_P2.cs" />
+    <Compile Include="CategoriaPermissao_P1.cs" />
+    <Compile Include="CategoriaPermissao_P2.cs" />
+    <Compile Include="CentroServico_P1.cs" />
+    <Compile Include="Cidade_P1.cs" />
+    <Compile Include="Cidade_P2.cs" />
+    <Compile Include="ClasseSalarial_P1.cs" />
+    <Compile Include="ClasseSalarial_P2.cs" />
+    <Compile Include="CNAEClasse_P1.cs" />
+    <Compile Include="CNAEClasse_P2.cs" />
+    <Compile Include="CNAEDivisao_P1.cs" />
+    <Compile Include="CNAEDivisao_P2.cs" />
+    <Compile Include="CNAEGrupo_P1.cs" />
+    <Compile Include="CNAEGrupo_P2.cs" />
+    <Compile Include="CNAESecao_P1.cs" />
+    <Compile Include="CNAESecao_P2.cs" />
+    <Compile Include="CNAESubClasse_P1.cs" />
+    <Compile Include="CNAESubClasse_P2.cs" />
+    <Compile Include="Contato_P1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contato_P2.cs" />
+    <Compile Include="CurriculoBusca_P1.cs" />
+    <Compile Include="CurriculoEntrevista_P1.cs" />
+    <Compile Include="CurriculoEntrevista_P2.cs" />
+    <Compile Include="CurriculoOrigem_P1.cs" />
+    <Compile Include="CurriculoOrigem_P2.cs" />
+    <Compile Include="CurriculoPermissao_P1.cs" />
+    <Compile Include="CurriculoVisualizacao_P1.cs" />
+    <Compile Include="CurriculoVisualizacao_P2.cs" />
+    <Compile Include="Curriculo_P1.cs" />
+    <Compile Include="Curriculo_P2.cs" />
+    <Compile Include="CursoFonte_P1.cs" />
+    <Compile Include="CursoFonte_P2.cs" />
+    <Compile Include="CursoGrauEscolaridade_P1.cs" />
+    <Compile Include="Curso_P1.cs" />
+    <Compile Include="Curso_P2.cs" />
+    <Compile Include="Deficiencia_P1.cs" />
+    <Compile Include="Deficiencia_P2.cs" />
+    <Compile Include="Endereco_P1.cs" />
+    <Compile Include="Endereco_P2.cs" />
+    <Compile Include="Enumeradores\CentroServico.cs" />
+    <Compile Include="Enumeradores\CurriculoClassificacao.cs" />
+    <Compile Include="Enumeradores\NivelCurso.cs" />
+    <Compile Include="Enumeradores\PagamentoSituacao.cs" />
+    <Compile Include="Enumeradores\Perfil.cs" />
+    <Compile Include="Enumeradores\PlanoSituacao.cs" />
+    <Compile Include="Enumeradores\RedeSocial.cs" />
+    <Compile Include="Enumeradores\Parametro.cs" />
+    <Compile Include="Enumeradores\Sexo.cs" />
+    <Compile Include="Enumeradores\Sistema.cs" />
+    <Compile Include="Enumeradores\SituacaoCurriculo.cs" />
+    <Compile Include="Enumeradores\SituacaoFilial.cs" />
+    <Compile Include="Enumeradores\StatusMensagem.cs" />
+    <Compile Include="Enumeradores\TipoContato.cs" />
+    <Compile Include="Enumeradores\TipoCurriculo.cs" />
+    <Compile Include="Enumeradores\TipoMensagem.cs" />
+    <Compile Include="Enumeradores\TipoPagamento.cs" />
+    <Compile Include="Escolaridade_P1.cs" />
+    <Compile Include="Escolaridade_P2.cs" />
+    <Compile Include="EstadoCivil_P1.cs" />
+    <Compile Include="EstadoCivil_P2.cs" />
+    <Compile Include="Estado_P1.cs" />
+    <Compile Include="Estado_P2.cs" />
+    <Compile Include="ExperienciaProfissional_P1.cs" />
+    <Compile Include="ExperienciaProfissional_P2.cs" />
+    <Compile Include="FeriadoModelo_P1.cs" />
+    <Compile Include="FeriadoModelo_P2.cs" />
+    <Compile Include="Feriado_P1.cs" />
+    <Compile Include="Feriado_P2.cs" />
+    <Compile Include="Filial_P1.cs" />
+    <Compile Include="Filial_P2.cs" />
+    <Compile Include="Financeiro_P1.cs" />
+    <Compile Include="Fonte_P1.cs" />
+    <Compile Include="Fonte_P2.cs" />
+    <Compile Include="Formacao_P1.cs" />
+    <Compile Include="Formacao_P2.cs" />
+    <Compile Include="FPASAliquota1_P1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FPASAliquota1_P2.cs" />
+    <Compile Include="FuncaoCategoria_P1.cs" />
+    <Compile Include="FuncaoCategoria_P2.cs" />
+    <Compile Include="FuncaoErroSinonimo_P1.cs" />
+    <Compile Include="FuncaoErroSinonimo_P2.cs" />
+    <Compile Include="FuncaoPretendida_P1.cs" />
+    <Compile Include="FuncaoPretendida_P2.cs" />
+    <Compile Include="Funcao_P1.cs" />
+    <Compile Include="Funcao_P2.cs" />
+    <Compile Include="GrauEscolaridade_P1.cs" />
+    <Compile Include="GrauEscolaridade_P2.cs" />
+    <Compile Include="Idioma_P1.cs" />
+    <Compile Include="Idioma_P2.cs" />
+    <Compile Include="Importacao_P1.cs" />
+    <Compile Include="IntencaoFilial_P1.cs" />
+    <Compile Include="IntencaoFilial_P2.cs" />
+    <Compile Include="MensagemCS_P1.cs" />
+    <Compile Include="MensagemCS_P2.cs" />
+    <Compile Include="Mensagem_P1.cs" />
+    <Compile Include="MiniCurriculo_P1.cs" />
+    <Compile Include="MiniCurriculo_P2.cs" />
+    <Compile Include="Nacionalidade_P1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Nacionalidade_P2.cs" />
+    <Compile Include="NaturezaJuridica_P1.cs" />
+    <Compile Include="NaturezaJuridica_P2.cs" />
+    <Compile Include="NivelIdioma_P1.cs" />
+    <Compile Include="NivelIdioma_P2.cs" />
+    <Compile Include="Operadora_P1.cs" />
+    <Compile Include="Operadora_P2.cs" />
+    <Compile Include="OrigemFilial_P1.cs" />
+    <Compile Include="OrigemFilial_P2.cs" />
+    <Compile Include="Origem_P1.cs" />
+    <Compile Include="Origem_P2.cs" />
+    <Compile Include="PagamentoSituacao_P1.cs" />
+    <Compile Include="PagamentoSituacao_P2.cs" />
+    <Compile Include="Pagamento_P1.cs" />
+    <Compile Include="Pagamento_P2.cs" />
+    <Compile Include="PalavraProibida_P1.cs" />
+    <Compile Include="Parametro_P1.cs" />
+    <Compile Include="Parametro_P2.cs" />
+    <Compile Include="PerfilPermissao_P1.cs" />
+    <Compile Include="PerfilPermissao_P2.cs" />
+    <Compile Include="PerfilUsuario_P1.cs" />
+    <Compile Include="PerfilUsuario_P2.cs" />
+    <Compile Include="Perfil_P1.cs" />
+    <Compile Include="Perfil_P2.cs" />
+    <Compile Include="Permissao_P1.cs" />
+    <Compile Include="Permissao_P2.cs" />
+    <Compile Include="PesquisaSalarial_P1.cs" />
+    <Compile Include="PesquisaSalarial_P2.cs" />
+    <Compile Include="PessoaFisicaComplemento_P1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PessoaFisicaComplemento_P2.cs" />
+    <Compile Include="PessoafisicaIdioma_P1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PessoafisicaIdioma_P2.cs" />
+    <Compile Include="PessoaFisicaRedeSocial_P1.cs" />
+    <Compile Include="PessoaFisicaRedeSocial_P2.cs" />
+    <Compile Include="PessoaFisicaTemp_P1.cs" />
+    <Compile Include="PessoaFisicaVeiculo_P1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PessoaFisicaVeiculo_P2.cs" />
+    <Compile Include="PessoaFisica_P1.cs" />
+    <Compile Include="PessoaFisica_P2.cs" />
+    <Compile Include="PlanoAdquirido_P1.cs" />
+    <Compile Include="PlanoAdquirido_P2.cs" />
+    <Compile Include="PlanoFormaPagamento_P1.cs" />
+    <Compile Include="PlanoFormaPagamento_P2.cs" />
+    <Compile Include="PlanoParcelaSituacao_P1.cs" />
+    <Compile Include="PlanoParcelaSituacao_P2.cs" />
+    <Compile Include="PlanoParcela_P1.cs" />
+    <Compile Include="PlanoParcela_P2.cs" />
+    <Compile Include="PlanoQuantidade_P1.cs" />
+    <Compile Include="PlanoQuantidade_P2.cs" />
+    <Compile Include="PlanoSituacao_P1.cs" />
+    <Compile Include="PlanoSituacao_P2.cs" />
+    <Compile Include="PlanoTipo_P1.cs" />
+    <Compile Include="PlanoTipo_P2.cs" />
+    <Compile Include="Plano_P1.cs" />
+    <Compile Include="Plano_P2.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raca_P1.cs" />
+    <Compile Include="Raca_P2.cs" />
+    <Compile Include="RedeSocialConta_P1.cs" />
+    <Compile Include="RedeSocialConta_P2.cs" />
+    <Compile Include="RedeSocialCS_P1.cs" />
+    <Compile Include="RedeSocial_P1.cs" />
+    <Compile Include="RedeSocial_P2.cs" />
+    <Compile Include="RegiaoMetropolitanaCidade_P1.cs" />
+    <Compile Include="RegiaoMetropolitanaCidade_P2.cs" />
+    <Compile Include="RegiaoMetropolitana_P1.cs" />
+    <Compile Include="RegiaoMetropolitana_P2.cs" />
+    <Compile Include="Regiao_P1.cs" />
+    <Compile Include="Regiao_P2.cs" />
+    <Compile Include="Sexo_P1.cs" />
+    <Compile Include="Sexo_P2.cs" />
+    <Compile Include="Sistema_P1.cs" />
+    <Compile Include="SituacaoCurriculo_P1.cs" />
+    <Compile Include="SituacaoCurriculo_P2.cs" />
+    <Compile Include="SituacaoFilial_P1.cs" />
+    <Compile Include="SituacaoFilial_P2.cs" />
+    <Compile Include="SituacaoFormacao_P1.cs" />
+    <Compile Include="SituacaoFormacao_P2.cs" />
+    <Compile Include="SolicitacaoR1_P1.cs" />
+    <Compile Include="SolicitacaoR1_P2.cs" />
+    <Compile Include="StatusMensagemCS_P1.cs" />
+    <Compile Include="StatusMensagemCS_P2.cs" />
+    <Compile Include="TipoContato_P1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TipoContato_P2.cs" />
+    <Compile Include="TipoCurriculo_P1.cs" />
+    <Compile Include="TipoCurriculo_P2.cs" />
+    <Compile Include="TipoFeriado_P1.cs" />
+    <Compile Include="TipoFeriado_P2.cs" />
+    <Compile Include="TipoMensagemCS_P1.cs" />
+    <Compile Include="TipoPagamento_P1.cs" />
+    <Compile Include="TipoPagamento_P2.cs" />
+    <Compile Include="TipoSanguineo_P1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TipoSanguineo_P2.cs" />
+    <Compile Include="TipoVeiculo_P1.cs" />
+    <Compile Include="TipoVeiculo_P2.cs" />
+    <Compile Include="UsuarioFilialPerfil_P1.cs" />
+    <Compile Include="UsuarioFilialPerfil_P2.cs" />
+    <Compile Include="VagaCandidato_P1.cs" />
+    <Compile Include="VagaCandidato_P2.cs" />
+    <Compile Include="VagaRedeSocial_P1.cs" />
+    <Compile Include="VagaTipoVinculo_P1.cs" />
+    <Compile Include="VagaTipoVinculo_P2.cs" />
+    <Compile Include="VagaVisualizada_P1.cs" />
+    <Compile Include="VagaVisualizada_P2.cs" />
+    <Compile Include="Vaga_P1.cs" />
+    <Compile Include="Vaga_P2.cs" />
+    <Compile Include="Web References\wFim\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSCep\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsIntegracaoWFat\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsTRANSACAO\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BNE.Auth\BNE.Auth.csproj">
+      <Project>{a3cb21c5-ad27-4718-a361-c1578861a84c}</Project>
+      <Name>BNE.Auth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.BLL.AsyncServices\BNE.BLL.AsyncServices.csproj">
+      <Project>{2d01ab29-8bc5-46f0-9af9-3de70ffe6510}</Project>
+      <Name>BNE.BLL.AsyncServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.BLL.Commom\BNE.BLL.Common.csproj">
+      <Project>{f41b8060-1ea8-4c42-9fa0-02868dac7f8e}</Project>
+      <Name>BNE.BLL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.BLL.Security\BNE.BLL.Security.csproj">
+      <Project>{E006078B-F337-4BDD-BB41-8FA26CBFD3B6}</Project>
+      <Name>BNE.BLL.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Chat\BNE.Chat.csproj">
+      <Project>{aadea832-eff4-42aa-8d81-89f294be1a6c}</Project>
+      <Name>BNE.Chat</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Common\BNE.Common.csproj">
+      <Project>{8b630179-734f-47f0-9d72-cc500f4482eb}</Project>
+      <Name>BNE.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.EL\BNE.EL.csproj">
+      <Project>{328D2B86-DD73-410E-AA9C-42D59BD28796}</Project>
+      <Name>BNE.EL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.RedesSociais\BNE.RedesSociais.csproj">
+      <Project>{6531a217-e16c-476d-9ddd-ede23087308d}</Project>
+      <Name>BNE.RedesSociais</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Services.Base\BNE.Services.Base.csproj">
+      <Project>{043f37e4-113a-4bce-af0d-d05b61ddbea4}</Project>
+      <Name>BNE.Services.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://wshomglobal.webfopag.com.br/IntegracaoFaturamentoFinanceiro.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsIntegracaoWFat\</RelPath>
+      <UpdateFromURL>http://wshomglobal.webfopag.com.br/IntegracaoFaturamentoFinanceiro.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BNE_BLL_wsIntegracaoWFat_IntegracaoFaturamentoFinanceiro</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://wshomglobal.webfopag.com.br/wstransacao.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsTRANSACAO\</RelPath>
+      <UpdateFromURL>http://wshomglobal.webfopag.com.br/wstransacao.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BNE_BLL_wsTRANSACAO_wsTRANSACAO</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://wsprdgeral.webfopag.com.br/cepws.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSCep\</RelPath>
+      <UpdateFromURL>http://wsprdgeral.webfopag.com.br/cepws.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BNE_BLL_WSCep_cepws</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://wstesteglobal.webfopag.com.br/wstransacao.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wFim\</RelPath>
+      <UpdateFromURL>http://wstesteglobal.webfopag.com.br/wstransacao.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BNE_BLL_wFim_wsTRANSACAO</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BINGGeocodeService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BINGGeocodeService\BNE.BLL.BINGGeocodeService.GeocodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BINGGeocodeService\common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BINGGeocodeService\contracts.wsdl" />
+    <None Include="Service References\BINGGeocodeService\contracts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BINGGeocodeService\geocode.wsdl" />
+    <None Include="Service References\BINGGeocodeService\geocode.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BINGGeocodeService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BNETanqueService\App.wsdl" />
+    <None Include="Service References\BNETanqueService\App.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BNETanqueService\App1.wsdl" />
+    <None Include="Service References\BNETanqueService\App1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BNETanqueService\App2.wsdl" />
+    <None Include="Service References\BNETanqueService\App2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BNETanqueService\App3.wsdl" />
+    <None Include="Service References\BNETanqueService\App3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BNETanqueService\App4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BNETanqueService\App5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BNETanqueService\App6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BNETanqueService\App7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BNETanqueService\BNE.BLL.BNETanqueService.OutAlteraStatusMensagem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\BNE.BLL.BNETanqueService.OutConversaAtiva.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\BNE.BLL.BNETanqueService.OutEnviarMensagem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\BNE.BLL.BNETanqueService.OutEnviaSMSCelular.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\BNE.BLL.BNETanqueService.OutHistorico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\BNE.BLL.BNETanqueService.OutInatividadeCelular.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\BNE.BLL.BNETanqueService.OutInformacaoSaldo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\BNE.BLL.BNETanqueService.OutReceberMensagem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\BNE.BLL.BNETanqueService.OutRecebeSMSCelular.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\BNE.BLL.BNETanqueService.OutStatusCelular.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\BNE.BLL.BNETanqueService.OutStatusDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\BNE.BLL.BNETanqueService.OutVerificaCelulares.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSine\App.wsdl" />
+    <None Include="Service References\wsSine\App.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSine\App1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSine\App2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSine\App3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSine\BNE.BLL.wsSine.OutAtualizaNumNF.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSine\BNE.BLL.wsSine.RetornoCandidaturasDoUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSine\BNE.BLL.wsSine.RetornoCurriculo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSine\BNE.BLL.wsSine.RetornoDetalhes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSine\BNE.BLL.wsSine.RetornoLiberarDestaqueVaga.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSine\BNE.BLL.wsSine.RetornoOperacao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSine\BNE.BLL.wsSine.RetornoQuantidade.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSine\BNE.BLL.wsSine.Vaga.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Web References\wFim\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wFim\wstransacao.wsdl" />
+    <None Include="Web References\WSCep\CEP.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSCep\cepws.wsdl" />
+    <None Include="Web References\WSCep\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsIntegracaoWFat\IntegracaoFaturamentoFinanceiro.wsdl" />
+    <None Include="Web References\wsIntegracaoWFat\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsTRANSACAO\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsTRANSACAO\wsTRANSACAO.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wsTRANSACAO\wsTRANSACAO.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WSCep\cepws.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assincronos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BINGGeocodeService\" />
+    <WCFMetadataStorage Include="Service References\BNETanqueService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BINGGeocodeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BINGGeocodeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BINGGeocodeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\wsSine\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsSine\App.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsSine\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsSine\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsSine\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wFim\wstransacao.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\PagSeguroConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\BNETanqueService\App1.disco" />
+    <None Include="Web References\wsIntegracaoWFat\IntegracaoFaturamentoFinanceiro.disco" />
+    <None Include="Service References\BNETanqueService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BNETanqueService\configuration.svcinfo" />
+    <None Include="Service References\BNETanqueService\configuration91.svcinfo" />
+    <None Include="Service References\BNETanqueService\App.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

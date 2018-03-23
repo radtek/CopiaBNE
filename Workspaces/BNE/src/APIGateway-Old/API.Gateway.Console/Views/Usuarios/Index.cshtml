@@ -1,0 +1,74 @@
+﻿@model PagedList.IPagedList<API.Gateway.Console.APIModel.Usuario>
+@using PagedList.Mvc;
+@{ ViewBag.Title = "Usuários"; }
+
+<h2>Usuários</h2>
+
+<div>
+    @Html.ActionLink("Registrar", "Register", "Usuarios", null, new { @class = "btn btn-default" })
+</div>
+<br/>
+<table class="table">
+    
+    <tr>
+        <th>
+            Idf_Usuario
+        </th>
+        <th>
+            Num_CPF 
+        </th>
+        <th>
+            Idf_Filial
+        </th>
+        <th>
+            Dta_Nascimento 
+        </th>
+        <th>
+            Dta_Inicio_Plano 
+        </th>
+        <th>
+            Idf_Perfil
+        </th>
+        <th>
+            Dta_Cadastro
+        </th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        var clz = (item.Flg_Inativo) ? "warning" : "";
+        <tr class="@clz">
+            <td>
+                @Html.DisplayFor(modelItem => item.Idf_Usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Num_CPF, "CPF")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idf_Filial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dta_Nascimento, "SimpleDate")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dta_Inicio_Plano, "SimpleDate")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idf_Perfil)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dta_Cadastro)
+            </td>
+            <td>
+                <a href="Usuarios/View/@item.Idf_Usuario" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+
+@Html.PagedListPager(Model, Pagina => Url.Action("Index", new { Pagina }))

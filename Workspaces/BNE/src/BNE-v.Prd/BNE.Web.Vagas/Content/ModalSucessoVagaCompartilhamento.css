@@ -1,0 +1,29 @@
+﻿.imagem_cadastro_sucesso_compartilhamento_vaga {
+    background-repeat: no-repeat;
+    margin-top: 70px;
+}
+
+.label_sucesso_compartilhamento_vaga {
+    margin: 12px auto;
+}
+
+.texto_cadastro_sucesso_compartilhamento_vaga {
+    float: none !important;
+    font-family: 'open sans', sans-serif !important;
+    font-size: 16px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.modal.amarela.compartilhamento {
+    width: 455px;
+    height: 130px;
+}
+
+.sucesso-icon {
+    position: absolute;
+    /*left:50%;*/
+    left: 39%;
+    top: -65px;
+    margin-left: -75;
+}

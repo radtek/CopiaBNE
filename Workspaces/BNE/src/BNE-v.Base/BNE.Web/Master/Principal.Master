@@ -1,0 +1,671 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs"
+    Inherits="BNE.Web.Master.Principal" %>
+
+<%@ Register Src="../UserControls/Modais/ucAtendimentoOnline.ascx" TagName="ucAtendimentoOnline"
+    TagPrefix="uc1" %>
+<%@ Register Src="../UserControls/Modais/TrocarEmpresa.ascx" TagName="TrocarEmpresa"
+    TagPrefix="uc2" %>
+<%@ Register Src="../UserControls/Modais/ModalConfirmacao.ascx" TagName="ModalConfirmacao"
+    TagPrefix="uc4" %>
+<%@ Register Src="../UserControls/Modais/ucModalLogin.ascx" TagName="ucModalLogin"
+    TagPrefix="uc5" %>
+<%@ Register Src="../UserControls/ucEstatistica.ascx" TagName="ucEstatistica" TagPrefix="uc6" %>
+<%@ Register TagPrefix="chat" TagName="RenderizarChat" Src="~/UserControls/RenderizarChat.ascx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.1//EN" "http://www.w3.org/TR/xhtml-rdfa/DTD/xhtml-rdfa-2.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head id="Head1" runat="server">
+    <asp:ContentPlaceHolder ID="cphExperimentos" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        var uri = document.baseURI || document.URL;
+
+        var baseAddress = uri.replace("http://", "").replace("https://", "");
+        if (baseAddress.indexOf("www.bne.com.br") == 0 || baseAddress.indexOf("bne.com.br") == 0)
+            _gaq.push(['_setAccount', 'UA-1937941-6']);
+        else
+            _gaq.push(['_setAccount', 'UA-1937941-8']);
+        _gaq.push(['_trackPageview']);
+    </script>
+    <%-- Meta tags --%>
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="language" content="pt-br" />
+    <meta name="content-language" content="pt-br" />
+    <meta http-equiv="Page-Enter" content="blendTrans(Duration=0.2)" />
+    <meta http-equiv="Page-Exit" content="blendTrans(Duration=0.2)" />
+    <meta name="google-site-verification" content="1mn_PuF0kt1i_cwvr8IZH9uas_F5wV_4evkOAfiSf4s" />
+    <meta property="og:image" content="http://www.bne.com.br/img/logo_facebook.png" />
+    <meta property="og:title" content="BNE - Banco Nacional de Empregos" />
+    <%-- FIM: Meta tags --%>
+    <title>BNE</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <Employer:DynamicHtmlLink runat="server" Href="/css/global/geral.css" type="text/css" rel="stylesheet" />
+    <Employer:DynamicHtmlLink runat="server" Href="/css/global/topo.css" type="text/css" rel="stylesheet" />
+    <Employer:DynamicHtmlLink runat="server" Href="/css/global/conteudo.css" type="text/css" rel="stylesheet" />
+    <Employer:DynamicHtmlLink runat="server" Href="/css/global/componentes.css" type="text/css" rel="stylesheet" />
+    <Employer:DynamicHtmlLink runat="server" Href="/css/global/custom.css" type="text/css" rel="stylesheet" />
+
+    <Employer:DynamicScript runat="server" Src="/js/jquery-1.8.3.js" type="text/javascript" />
+    <Employer:DynamicScript runat="server" Src="/js/local/Principal.Master.js" type="text/javascript" />
+    <Employer:DynamicScript runat="server" Src="/js/employerFramework.combined.js" type="text/javascript" />
+    <Employer:DynamicScript runat="server" Src="/js/global/geral.js" type="text/javascript" />
+    <Employer:DynamicScript runat="server" Src="/js/global/topo.js" type="text/javascript" />
+    <Employer:DynamicScript runat="server" Src="/js/Controle.js" type="text/javascript" />
+    <Employer:DynamicScript runat="server" Src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript" />
+
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <%--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">--%>
+    <!--FINALIZAÇÃO DO CÓDIGO DO GA PARA PERMITIR USO NAS PÁGINAS FILHAS -->
+    <script type="text/javascript">
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+    <%--Integração Facebook--%>
+    <div id="fb-root">
+    </div>
+    <script type="text/javascript">
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: 450210698402153,
+                status: true,
+                cookie: true,
+                xfbml: true
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/pt_BR/all.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        $(function () {
+            if (!!navigator.userAgent.match(/Trident\/7\./)) {
+                $("#lista_rodape_empresa_empresa").css("font-size", "99%");
+                $("#lista_rodape_geral_geral").css("font-size", "99%");
+                $("#lista_rodape_candidato_candidato").css("font-size", "99%");
+            }
+        });
+
+    </script>
+    <%--Fim Integração Facebook--%>
+    <%--Integração Twitter--%>
+    <script type="text/javascript">
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, "script", "twitter-wjs"));
+    </script>
+    <%--Fim Integração Twitter--%>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="smGlobal" runat="server" AsyncPostBackTimeout="900" EnablePartialRendering="True"
+            EnableScriptLocalization="True" EnableScriptGlobalization="True" EnablePageMethods="True" ScriptMode="Release">
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="upTopo" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div id="topo">
+                    <div class="topo">
+                        <div class="interna">
+                            <div class="logo_sistema">
+                                <a href="/">
+                                    <telerik:RadBinaryImage runat="server" CssClass="btiFoto" ImageUrl="/img/logo_bne.gif"
+                                        ID="imgLogo" ResizeMode="None" AutoAdjustImageControlSize="False" AlternateText="BNE - Banco Nacional de Empregos" />
+                                    <asp:Literal ID="litRazaoEmpresa" runat="server"></asp:Literal>
+                                </a>
+                            </div>
+                            <div class="painel_informacoes" runat="server" id="divInformacoes">
+                                <uc6:ucEstatistica ID="ucEstatistica" runat="server" />
+                            </div>
+                            <div class="painel_botoes_sistema">
+                                <asp:UpdatePanel ID="upBotoesSistemaLogin" runat="server" UpdateMode="Conditional">
+                                    <ContentTemplate>
+                                        <asp:LinkButton  runat="server" OnClick="btiSair_Click" CausesValidation="False" class="color-a" ID="btiSair">
+                                            Sair <i class="fa fa-sign-in"></i>
+                                        </asp:LinkButton>
+                                        <asp:LinkButton runat="server" ID="btiEntrar" OnClick="btiEntrar_Click" 
+                                                CausesValidation="false" class="color-a">Entrar  <i class="fa fa-sign-in"></i>
+                                        </asp:LinkButton>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </div>
+                            <%--<div class="painel_dados_acesso">
+                            <asp:Literal ID="litNomeUsuarioLogado" runat="server"></asp:Literal>
+                        </div>--%>
+                            <div class="painel_icones">
+                                <ul class="ul_icones">
+                                    <li id="liBtiPesquisaSalarial" runat="server" visible="false" class="li_pesquisa_salarial">
+                                        <a href="http://www.salariobr.com" target="_blank"><i class="fa fa-line-chart"></i><small>Pesquisa Salarial</small> </a>
+                                    </li>
+                                    <li id="liBtiSistmars" runat="server" visible="false">
+                                        <asp:UpdatePanel ID="upBtiSistmars" runat="server" UpdateMode="Conditional" RenderMode="Inline">
+                                            <ContentTemplate>
+                                                <asp:LinkButton runat="server" ID="btiSistmars" CausesValidation="false"> <i class="fa fa-child"></i> <small>Teste SistMars</small> </asp:LinkButton>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </li>
+                                    <li id="liBtiSalaAdministrador" runat="server" visible="false">
+                                        <asp:UpdatePanel ID="upBtiSalaAdministrador" runat="server" UpdateMode="Conditional"
+                                            RenderMode="Inline">
+                                            <ContentTemplate>
+                                                <asp:LinkButton runat="server" ID="btiSalaAdministrador" CausesValidation="false" PostBackUrl="/SalaAdministrador.aspx"> <i class="fa fa-cogs"></i> <small>Sala Administrador</small> </asp:LinkButton>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </li>
+                                    <li id="liBtiTesteCores" runat="server" visible="false">
+                                        <asp:UpdatePanel ID="upBtiTesteCores" runat="server" UpdateMode="Conditional" RenderMode="Inline">
+                                            <ContentTemplate>
+                                                <asp:LinkButton runat="server" CausesValidation="false"  ID="btiTesteCores"> <i class="fa fa-pie-chart"></i>  <small>Teste das Cores</small> </asp:LinkButton>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </li>
+                                    <li id="liBtiCadastrarCurriculo" runat="server" visible="false">
+                                        <asp:LinkButton ID="btiCadastrarCurriculo" runat="server"
+                                            CausesValidation="false" OnClick="btiCadastrarCurriculo_Click"><i class="fa fa-file-text-o"></i> Cadastrar Currículo</asp:LinkButton>
+                                    </li>
+
+                                    <li id="liBtiAlterarCurriculo" runat="server" visible="false">
+
+                                        <asp:LinkButton ID="btiAlterarCurriculo" runat="server"
+                                            CausesValidation="false" OnClick="btiAlterarCurriculo_Click"><i class="fa fa-refresh"></i> Atualizar Currículo</asp:LinkButton>
+
+                                    </li>
+                                    <li id="liBtiSalaVip" runat="server" visible="false">
+                                        <asp:LinkButton ID="btiSalaVip" runat="server"
+                                            CausesValidation="false" PostBackUrl="~/SalaVip.aspx"> <i class="fa fa-key"></i> Sala VIP </asp:LinkButton>
+                                    </li>
+                                    <li id="liBtiUltimasVagas" runat="server" visible="false">
+                                        <asp:LinkButton ID="btiUltimasVagas" runat="server"
+                                            CausesValidation="false" OnClick="btiUltimasVagas_Click"><i class="fa fa-arrow-down"></i> Últimas Vagas</asp:LinkButton>
+                                    </li>
+
+                                    <li id="liBtiQuemMeViu" runat="server" visible="false">
+                                        <asp:LinkButton ID="btiQuemMeViu" runat="server"
+                                            CausesValidation="false" PostBackUrl="~/SalaVipQuemMeViu.aspx"><i class="fa fa-crosshairs"></i> Quem me viu</asp:LinkButton>
+                                    </li>
+                                    <li id="liBtiPesquisaAvancada" runat="server" visible="false">
+                                        <asp:LinkButton ID="btiPesquisaAvancada" runat="server"
+                                            CausesValidation="false" PostBackUrl="~/PesquisaCurriculoAvancada.aspx"><i class="fa fa-search"></i> Pesquisar CVs</asp:LinkButton>
+                                    </li>
+                                    <li id="liBtiAnuncieVagas" runat="server" visible="false">
+                                        <asp:LinkButton runat="server" ID="btiAnuncieVagas" OnClick="btiAnuncieVagas_Click" CausesValidation="false">
+                                           <i class="fa fa-bullhorn"></i> <small> Anunciar Vagas</small>
+                                        </asp:LinkButton>
+                                    </li>
+                                    <li id="liBtiSalaSelecionadorSTC" runat="server" visible="false">
+                                        <asp:LinkButton runat="server"  ID="btiSalaSelecionadorSTC" CausesValidation="false" PostBackUrl="~/SiteTrabalheConoscoMenu.aspx">
+                                            <i class="fa fa-key"></i> <small> Sala da Selecionadora</small>
+                                        </asp:LinkButton>
+                                    </li>
+                                    <li id="liBtiCvsRecebidos" runat="server" visible="false">
+
+                                        <asp:LinkButton ID="btiCvsRecebidos" runat="server"
+                                            CausesValidation="false" OnClick="btiCvsRecebidos_Click">
+                                           <i class="fa fa-files-o"></i> <small> CVs Recebidos</small>
+                                        </asp:LinkButton>
+
+                                    </li>
+                                    <li id="liBtiSalaSelecionador" runat="server" visible="false">
+                                        <asp:LinkButton ID="btiSalaSelecionador" runat="server"
+                                            CausesValidation="false" PostBackUrl="/SalaSelecionador.aspx">
+                                           <i class="fa fa-key"></i> <small> Sala da Selecionadora</small>
+                                        </asp:LinkButton>
+                                    </li>
+                                    <li id="liBtiSalaAdmFaleComPresidente" runat="server" visible="false">
+                                       <asp:LinkButton ID="btiSalaAdmFaleComPresidente" runat="server"
+                                            CausesValidation="false" PostBackUrl="/SalaAdministradorPresidente.aspx">
+                                           <i class="fa fa-gavel"></i> <small> Fale Presidente</small>
+                                        </asp:LinkButton>
+
+                                    </li>
+                                    <li id="liAtendimentoOnline" runat="server">
+                                        <uc1:ucAtendimentoOnline ID="ucAtendimentoOnline" runat="server" />
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="painel_filtro">
+                                <div>
+                                    <a href="javascript:;" onclick="AjustarParametrosAbasBusca('V')" runat="server" id="aBuscarVagas">Buscar VAGAS <i class="fa fa-caret-down"></i></a>
+                                    <a href="javascript:;" onclick="AjustarParametrosAbasBusca('C')" runat="server" id="aBuscarCurriculos">Buscar CURRÍCULOS <i class="fa fa-caret-down"></i></a>
+                                </div>
+                                <asp:Panel ID="pnlBusca" runat="server" style="border-color:red; border-style:solid; border: 2px;">
+                                    <div class="b">
+                                        <asp:CustomValidator ID="cvFuncaoMaster" runat="server" CssClass="texto_funcao_inexistente"
+                                            ErrorMessage="Função Inexistente." ClientValidationFunction="cvFuncaoPrincipal_Validate"
+                                            ControlToValidate="txtFuncaoMaster" ValidationGroup="Pesquisa">
+                                        </asp:CustomValidator>
+                                                <div id="divFuncaoInexistente" class="funcao_inexistente" style="display: none"></div>
+                                        <asp:TextBox ID="txtFuncaoMaster" runat="server" CssClass="textbox_funcao"
+                                            OnTextChanged="txtFuncaoMaster_TextChanged"></asp:TextBox>
+                                        <AjaxToolkit:AutoCompleteExtender ID="aceFuncaoMaster" runat="server" TargetControlID="txtFuncaoMaster"
+                                            UseContextKey="True" ServiceMethod="ListarFuncoes">
+                                        </AjaxToolkit:AutoCompleteExtender>
+                                        <asp:CustomValidator ID="cvCidadeMaster" runat="server" CssClass="texto_cidade_inexistente"
+                                            ErrorMessage="Cidade Inexistente." ClientValidationFunction="cvCidadePrincipal_Validate"
+                                            ControlToValidate="txtCidadeMaster" ValidationGroup="Pesquisa"></asp:CustomValidator>
+                                        <div id="divCidadeInexistente" class="cidade_inexistente" style="display: none">
+                                            &nbsp;
+                                        </div>
+                                        <asp:TextBox ID="txtCidadeMaster" runat="server" CssClass="textbox_cidade"
+                                            OnTextChanged="txtCidadeMaster_TextChanged"></asp:TextBox>
+                                        <AjaxToolkit:AutoCompleteExtender ID="aceCidade" runat="server" TargetControlID="txtCidadeMaster"
+                                            UseContextKey="True" ServiceMethod="ListarCidadesSiglaEstadoPorNomeParcialEstado"
+                                            FirstRowSelected="True">
+                                        </AjaxToolkit:AutoCompleteExtender>
+                                        <asp:TextBox ID="txtPalavraChaveMaster" runat="server" CssClass="textbox_palavra_chave"
+                                                OnTextChanged="txtPalavraChaveMaster_TextChanged"></asp:TextBox>
+                                        <div class="btn_buscar">
+                                                <asp:UpdatePanel ID="upPesquisaCurriculo" runat="server"  UpdateMode="Conditional">
+                                                <ContentTemplate>
+                                                    <asp:LinkButton class="search" style="display:none" runat="server" ID="btiPesquisarVaga" OnClick="btiPesquisarVaga_Click" CausesValidation="true" ValidationGroup="Pesquisa">
+                                                        Buscar Vagas
+                                                    </asp:LinkButton>
+                                                    <asp:LinkButton class="search" style="display:none" runat="server" ID="btiPesquisarCurriculo"  CausesValidation="true" ValidationGroup="Pesquisa" OnClick="btiPesquisarCurriculo_Click" >
+                                                        Pesquisar Currículos
+                                                    </asp:LinkButton>
+                                                    <asp:HyperLink ID="buscaavancada" style="display:none; color:#fff;" runat="server" NavigateUrl="/pesquisa-de-vagas" Text="Pesquisa avançada"></asp:HyperLink>
+                                                    <asp:HyperLink ID="buscaavancadacv" style="display:none" runat="server" NavigateUrl="javascript:__doPostBack('ctl00$btlPesquisaCurriculo','')" Text="Pesquisa avançada"></asp:HyperLink>
+                                                </ContentTemplate>
+                                            </asp:UpdatePanel>
+                                        </div>
+                                    </div>
+                                    <span id="descFuncaoTopo" class="descricaoTopo DtFuncao">
+                                        Função <i class="fa fa-level-up fa2"></i>
+                                    </span>
+                                    <span id="descCidadeTopo" class="descricaoTopo DtCidade">
+                                        Cidade <i class="fa fa-level-up fa2"></i>
+                                    </span>
+                                    <span id="descPalavraChaveTopo" class="descricaoTopo DtPalavraChave">
+                                        Palavra Chave <i class="fa fa-level-up fa2"></i>
+                                    </span>
+                                </asp:Panel>
+                            </div>
+                            <asp:Panel ID="pnlMenuSecaoEmpresa" CssClass="menu_secao" Visible="false" runat="server">
+                                <span class="btn_int">
+                                    <asp:LinkButton ID="btiTrocarEmpresa" ToolTip="Trocar Empresa" runat="server"
+                                        CausesValidation="false" OnClick="btiTrocarEmpresa_Click" >
+                                                 <i class="fa fa-exchange"></i>  Trocar Empresa
+                                    </asp:LinkButton>
+                                </span>
+                                <span class="btn_int"">
+                                     <asp:LinkButton ID="btiAtualizarEmpresa" runat="server"
+                                        OnClick="btiAtualizarEmpresa_Click" CausesValidation="false"  >
+                                                 <i class="fa fa-refresh"></i>  Atualizar Empresa
+                                    </asp:LinkButton>
+                                </span>
+                                <span class="btn_int">
+                                    <asp:LinkButton ID="btiAtualizarUsuario" runat="server" OnClick="btiAtualizarUsuario_Click" CausesValidation="false"  >
+                                    <i class="fa fa-user"></i>  Atualizar Usuário
+                                    </asp:LinkButton>
+                                </span>
+                            </asp:Panel>
+                            <asp:Panel ID="pnlMenuSecaoCandidato" CssClass="menu_secao" Visible="false" runat="server">
+                                <span class="btn_int">
+                                    <asp:LinkButton ID="btiMensagens" ToolTip="Mensagens" runat="server"
+                                        CausesValidation="false" OnClick="btiMensagens_Click" Style="margin-top: 9px !important;"><i class="fa fa-envelope"></i> Mensagem</asp:LinkButton>
+                                </span>
+                                <span class="btn_int">
+                                    <asp:LinkButton ID="btiJaEnviei" ToolTip="Já Enviei" runat="server"
+                                        CausesValidation="false" OnClick="btiJaEnviei_Click"><i class="fa fa-check"></i> Já Enviei</asp:LinkButton>
+                                </span>
+                            </asp:Panel>
+                        </div>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <h1 id="h1TituloTela" class="TituloTela" visible="false" runat="server">
+            <asp:Literal ID="litTituloTela" runat="server"></asp:Literal></h1>
+        <div id="conteudo" class="conteudo">
+            <div class="interna" id="conteudo_interna">
+                <asp:ContentPlaceHolder ID="cphConteudo" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <asp:UpdatePanel ID="upTE" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:Panel ID="pnlTE" runat="server" Visible="false">
+                        <uc2:TrocarEmpresa ID="ucTrocarEmpresa" runat="server" />
+                    </asp:Panel>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <asp:UpdatePanel ID="upM" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:Panel ID="pnlM" runat="server" Visible="false">
+                        <uc4:ModalConfirmacao ID="ucModalConfirmacao" runat="server" />
+                    </asp:Panel>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <asp:UpdatePanel ID="upL" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:Panel ID="pnlL" runat="server" Visible="false">
+                        <uc5:ucModalLogin ID="ucModalLogin" runat="server" />
+                    </asp:Panel>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <asp:UpdatePanel ID="upCphModais" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:PlaceHolder ID="cphModaisMaster" runat="server"></asp:PlaceHolder>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <asp:UpdatePanel ID="up" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:Panel ID="pnl" runat="server">
+                    </asp:Panel>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <div class="barra_rodape">
+            <div class="rodape_centralizado">
+                <asp:Panel ID="pnlLinkBNE" runat="server">
+                    <div class="barra_rodape_candidato">
+                        <h4 class="titulo_rodape">Candidato</h4>
+                        <ul class="lista_rodape_candidato candidato" id="lista_rodape_candidato_candidato">
+                            <li>
+                                <asp:LinkButton ID="btlAtualizarCurriculo" Text="Atualizar Currículo" runat="server"
+                                    OnClick="btlAtualizarCurriculo_Click" CausesValidation="false">
+                                </asp:LinkButton>
+                            </li>
+                            <li>|
+                            <asp:LinkButton ID="lnkCadastrarCurriculo" runat="server" Text="Cadastrar Currículo"
+                                OnClick="lnkCadastrarCurriculo_Click" CausesValidation="false">
+                            </asp:LinkButton>
+                            </li>
+                            <li>|
+                            <asp:LinkButton ID="btlSalaVIP" runat="server" Text="Sala Vip" CssClass="link_rodape_nao_quebrar_linha"
+                                CausesValidation="false" OnClick="btlSalaVIP_Click">
+                            </asp:LinkButton>
+                            </li>
+                            <li>|
+                            <asp:HyperLink ID="hlUltimasVagas" runat="server" Text="Últimas Vagas" CausesValidation="false"
+                                OnClick="btlUltimasVagas_Click"></asp:HyperLink>
+                            </li>
+                            <li>|
+                                <asp:HyperLink ID="hlBuscarVagas" runat="server" Text="Buscar Vagas" CssClass="link_rodape_nao_quebrar_linha">
+                                </asp:HyperLink>
+                            </li>
+                            <li>|
+                            <asp:HyperLink ID="hlCompreServicoVIP" runat="server" Text="Compre Serviço Vip" CssClass="link_rodape_nao_quebrar_linha">
+                            </asp:HyperLink>
+                            </li>
+                            <li>|
+                            <asp:LinkButton ID="btlSalaVipQuemMeViu" runat="server" Text="Quem me Viu?" CssClass="link_rodape_nao_quebrar_linha"
+                                CausesValidation="false" OnClick="btlSalaVipQuemMeViu_Click">
+                            </asp:LinkButton>
+                            </li>
+                            <li>|
+                            <asp:HyperLink ID="hlPesquisaVagas" runat="server" Text="Pesquisa de Vagas">
+                            </asp:HyperLink>
+                            </li>
+                        </ul>
+                    </div>
+                    <img src="/img/barra_separar_rodape.png" alt="|" class="img_separar_rodape" />
+                    <div class="barra_rodape_empresa">
+                        <h4 class="titulo_rodape">Empresa</h4>
+                        <ul class="lista_rodape_empresa empresa" id="lista_rodape_empresa_empresa">
+                            <li>
+                            <asp:UpdatePanel ID="upBtlAnuncieVagas" runat="server" UpdateMode="Conditional" RenderMode="Inline">
+                                <ContentTemplate>
+                                    <asp:LinkButton ID="btlAnuncieVagas" runat="server" Text="Anunciar Vagas" CausesValidation="false"
+                                        OnClick="btlAnuncieVagas_Click"></asp:LinkButton>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            </li>
+                            <li>|
+                            <asp:LinkButton ID="btlPesquisaCurriculo" runat="server" Text="Pesquisar Currículos" CausesValidation="false"
+                                OnClick="btlPesquisaCurriculo_Click">
+                            </asp:LinkButton>
+                            </li>
+                            <li>|
+                            <asp:UpdatePanel ID="upBtlCVsRecebidos" runat="server" UpdateMode="Conditional" RenderMode="Inline">
+                                <ContentTemplate>
+                                    <asp:LinkButton ID="btlCVsRecebidos" runat="server" Text="Currículos Recebidos" CausesValidation="false"
+                                        OnClick="btlCVsRecebidos_Click"></asp:LinkButton>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            </li>
+                            <li>|
+                            <asp:UpdatePanel ID="upBtlSalaSelecionador" runat="server" UpdateMode="Conditional"
+                                RenderMode="Inline">
+                                <ContentTemplate>
+                                    <asp:LinkButton ID="btlSalaSelecionador" runat="server" Text="Sala Selecionadora"
+                                        CausesValidation="false" OnClick="btlSalaSelecionador_Click">
+                                    </asp:LinkButton>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            </li>
+                            <li>|
+                            <asp:HyperLink ID="hlCompreCVs" runat="server" Text="Planos de acesso">
+                            </asp:HyperLink>
+                            </li>
+                            <li>|
+                            <asp:HyperLink ID="hlRecrutamentoR1" runat="server" Text="Recrutamento R1">
+                            </asp:HyperLink>
+                            </li>
+                            <li>|
+                            <asp:HyperLink ID="hlCadastrarEmpresa" runat="server" Text="Criar Conta">
+                            </asp:HyperLink>
+                            </li>
+                            <li>|
+                                <asp:LinkButton ID="btlAtualizarEmpresa" runat="server" Text="Atualizar dados da conta"
+                                    OnClick="btlAtualizarEmpresa_Click">
+                                </asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <img src="/img/barra_separar_rodape.png" alt="|" class="img_separar_rodape" />
+                    <div class="barra_rodape_geral">
+                        <h4 class="titulo_rodape">Geral</h4>
+                        <ul class="lista_rodape_geral geral" id="lista_rodape_geral_geral">
+                            <li>
+                                <asp:HyperLink ID="hlPaginaInicial" runat="server" Text="Página Inicial" NavigateUrl="/Default.aspx">
+                                </asp:HyperLink>
+                            </li>
+                            <li>|
+                            <asp:HyperLink ID="hlPesquisaSalarial" runat="server" Text="Pesquisa Salarial" NavigateUrl="http://www.salariobr.com"
+                                Target="_blank">
+                            </asp:HyperLink>
+                            </li>
+                            <li>|
+                            <asp:UpdatePanel ID="upBtlSistmars" runat="server" UpdateMode="Conditional" RenderMode="Inline">
+                                <ContentTemplate>
+                                    <asp:LinkButton ID="btlSistmars" runat="server" Text="Teste Sistmars" CausesValidation="false"></asp:LinkButton>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            </li>
+                            <li>|
+                            <asp:UpdatePanel ID="upBtlTesteCores" runat="server" UpdateMode="Conditional" RenderMode="Inline">
+                                <ContentTemplate>
+                                    <asp:LinkButton ID="btlTesteCores" runat="server" Text="Teste das Cores" CausesValidation="false"></asp:LinkButton>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            </li>
+                            <li>|
+                            <asp:HyperLink ID="hlOndeEstamos" runat="server">Onde Estamos</asp:HyperLink>
+                            </li>
+                            <li>|
+                            <asp:HyperLink ID="hlFalePresidente" runat="server" Text="Fale com o Presidente">
+                            </asp:HyperLink>
+                            </li>
+                            <li>|
+                            <asp:HyperLink ID="hlAgradecimentos" runat="server" Text="Agradecimentos">
+                            </asp:HyperLink>
+                            </li>
+                            <li>|
+                            <asp:HyperLink ID="hlEmployer" runat="server" Text="Employer" NavigateUrl="http://www.employer.com.br"
+                                Target="_blank">
+                            </asp:HyperLink>
+                            </li>
+                            <li style="display: none">|
+                            <uc1:ucAtendimentoOnline ID="ucAtendimentoOnlineRodape" runat="server" />
+                                |</li>
+                            <li>
+                                <asp:UpdatePanel ID="upIndiqueBNE" runat="server" UpdateMode="Conditional" RenderMode="Inline">
+                                    <ContentTemplate>
+                                        <asp:LinkButton ID="btlIndiqueBNE" CausesValidation="false" runat="server" Text="| Indique o BNE"
+                                            OnClick="btlIndiqueBNE_Click"></asp:LinkButton>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </li>
+                        </ul>
+                    </div>
+                </asp:Panel>
+                <asp:Panel ID="pnlLinkRHOffice" runat="server">
+                    <div class="barra_rodape_rhoffice">
+                        <ul>
+                            <li>
+                                <asp:HyperLink ID="hlPaginaInicialRHOffice" runat="server" Text="Página Inicial"
+                                    NavigateUrl="/">
+                                </asp:HyperLink>
+                            </li>
+                            <li>|
+                            <asp:LinkButton ID="btlUltimasVagasRHOffice" runat="server" Text="Últimas Vagas"
+                                CausesValidation="false" OnClick="btlUltimasVagasRHOffice_Click"></asp:LinkButton>
+                            </li>
+                            <li>|
+                             <asp:HyperLink ID="hlPesquisaVagasRhOffice" runat="server" Text="Pesquisa de Vagas">
+                             </asp:HyperLink>
+                            </li>
+                            <li>|
+                            <asp:HyperLink ID="hlCadastrarCurriculoRHOffice" runat="server" Text="Cadastrar Currículo">
+                            </asp:HyperLink>
+                            </li>
+                            <li>|
+                            <asp:LinkButton ID="btlAtualizarCurriculoRHOffice" CausesValidation="false" Text="Atualizar Currículo"
+                                runat="server" OnClick="btlAtualizarCurriculo_Click">
+                            </asp:LinkButton>
+                            </li>
+                            <li runat="server" id="liHlPesquisaSalarialRHOffice">|
+                            <asp:HyperLink ID="hlPesquisaSalarialRHOffice" runat="server" Text="Pesquisa Salarial"
+                                NavigateUrl="http://www.salariobr.com" Target="_blank">
+                            </asp:HyperLink>
+                            </li>
+                            <li>|
+                            <asp:UpdatePanel ID="upBtlSistmarsRHOffice" runat="server" UpdateMode="Conditional"
+                                RenderMode="Inline">
+                                <ContentTemplate>
+                                    <asp:LinkButton ID="btlSistmarsRHOffice" runat="server" Text="Teste Sistmars" CausesValidation="false"
+                                        OnClick="btlSistmarsRHOffice_Click"></asp:LinkButton>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            </li>
+                            <li>|
+                            <asp:UpdatePanel ID="upBtlTesteCoresRHOffice" runat="server" UpdateMode="Conditional"
+                                RenderMode="Inline">
+                                <ContentTemplate>
+                                    <asp:LinkButton ID="btlTesteCoresRHOffice" CausesValidation="false" CssClass="link_rodape_nao_quebrar_linha"
+                                        Text="Teste das  Cores" runat="server">
+                                    </asp:LinkButton>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            </li>
+                            <li runat="server" id="liAtendimentoOnlineRodape">|
+                            <uc1:ucAtendimentoOnline ID="ucAtendimentoOnlineRHOffice" runat="server" />
+                            </li>
+                            <li runat="server" id="liBtlBNE">|
+                            <asp:LinkButton ID="btlBNE" Text="BNE" runat="server" OnClick="BtlBNE_Click" CausesValidation="false"></asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+                </asp:Panel>
+            </div>
+        </div>
+        <asp:Panel runat="server" CssClass="final_rodape" ID="pnlFinalRodape" Visible="False">
+            <div>
+                <span class="contato_rodape">
+                    <asp:HyperLink ID="hlkContato" runat="server" Text="Contato: (41) 3037-9400" NavigateUrl="/ContatoSite.aspx">
+                    </asp:HyperLink>
+                </span>
+                <asp:UpdatePanel ID="upAtendimentoOnline" runat="server" RenderMode="Inline" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <asp:ImageButton ID="btiAtendimentoOnline" runat="server" CssClass="atendimento_online_rodape"
+                            ImageUrl="/img/btn_atendimento_online_rodape.png" OnClick="btiAtendimentoOnline_Click"
+                            CausesValidation="False" />
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <asp:ImageButton ID="btiTwitter" ImageUrl="/img/btn_twitter_rodape.png" runat="server"
+                    CssClass="twitter_rodape" CausesValidation="false" />
+                <asp:Panel ID="pnlOndeEstamos" runat="server" Style="display: inline">
+                    <asp:HyperLink ID="hlOndeEstamosRodape" runat="server">
+                        <asp:Image ID="imgOndeEstamosRodape" ImageUrl="/img/btn_onde_estamos_home.png" runat="server"
+                            CssClass="ondeestamos_rodape" />
+                    </asp:HyperLink>
+                </asp:Panel>
+            </div>
+        </asp:Panel>
+        <div class="painel_rodape_padrao">
+            <div id="conteudoRodape">
+                <asp:ContentPlaceHolder ID="cphRodape" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <asp:Panel ID="pnlAviso" runat="server" class="painel_avisos" Style="display: none">
+            <asp:UpdatePanel ID="updAviso" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div style="position: relative">
+                        <span id="icoavisos_img_container" class="icoavisos_img_container">
+                            <i class="fa fa-exclamation-triangle fa-3x"></i>
+                        </span>
+                        <asp:Label ID="lblAviso" runat="server" Text=""></asp:Label>
+                        <div class="botao_fechar_aviso" onclick="OcultarAviso();"> 
+                            <div style="margin-top:22px;">Fechar <i class="fa fa-times-circle"></i></div>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </asp:Panel>
+        <asp:UpdateProgress ID="upgGlobalCarregandoInformacoes" runat="server" DisplayAfter="5">
+            <ProgressTemplate>
+                <div class="progress_background" style="z-index: 100;">
+                    &nbsp;
+                </div>
+                <div class="progress_img_container" id="progress_img_container" style="z-index: 101;">
+                    <div class="img_container" id="img_container">
+                        <i ID="imgProgressTemplateAlternativo" runat="server" class="fa fa-spinner fa-spin fa-3x"></i>
+                        <asp:Label ID="Label1" CssClass="carregando" runat="server" Text="carregando..."></asp:Label>
+                    </div>
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+
+        <chat:RenderizarChat runat="server" ID="chat_controle" />
+    </form>
+    <!-- Adwords -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 998802791;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+
+
+    <noscript>
+        <div style="display: inline;">
+            <img height="1" width="1" style="border-style: none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/998802791/?value=0&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript>
+    <!-- END Adwords -->
+
+        <script type="text/javascript" src="js/custom.js"></script>
+
+</body>
+</html>

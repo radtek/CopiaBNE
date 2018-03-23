@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://painel02.allinmail.com.br/wsAllin/remover_email_base.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="wsRemoverEmailBase" targetNamespace="http://painel02.allinmail.com.br/wsAllin/remover_email_base.php" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://painel02.allinmail.com.br/wsAllin/remover_email_base.php" />
+  </wsdl:types>
+  <wsdl:message name="removerEmailBaseIn">
+    <wsdl:part name="ticket" type="xsd:string" />
+    <wsdl:part name="email" type="xsd:string" />
+    <wsdl:part name="nm_lista" type="xsd:string" />
+    <wsdl:part name="campo" type="xsd:string" />
+    <wsdl:part name="value" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="removerEmailBaseOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="wsRemoverEmailBasePort">
+    <wsdl:operation name="removerEmailBase">
+      <documentation>@param string $ticket 
+  @param string $email
+  @param string $nm_lista
+  @param string $campo
+  @param string $value
+  @return string</documentation>
+      <wsdl:input message="tns:removerEmailBaseIn" />
+      <wsdl:output message="tns:removerEmailBaseOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsRemoverEmailBaseBinding" type="tns:wsRemoverEmailBasePort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="removerEmailBase">
+      <soap:operation soapAction="http://painel02.allinmail.com.br/wsAllin/remover_email_base.php#removerEmailBase" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://painel02.allinmail.com.br/wsAllin/remover_email_base.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://painel02.allinmail.com.br/wsAllin/remover_email_base.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsRemoverEmailBaseService">
+    <wsdl:port name="wsRemoverEmailBasePort" binding="tns:wsRemoverEmailBaseBinding">
+      <soap:address location="http://painel02.allinmail.com.br/wsAllin/remover_email_base.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

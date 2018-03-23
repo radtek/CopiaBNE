@@ -1,0 +1,11 @@
+﻿@model IEnumerable<BNE.Web.LanHouse.Models.ModelCompanhia>
+
+@if (Model != null)
+{
+    <div class="companhias">
+        @foreach (var companhia in Model)
+        {
+            Html.RenderPartial("_Companhia", companhia);
+        }
+    </div>
+}

@@ -1,0 +1,17 @@
+﻿@model BNE.PessoaFisica.Web.Models.PreCurriculo
+
+<script>
+    $('#maisInfo').hide();
+    $(".linkLogin").hide();
+    $(".linkCadastro").hide();
+
+</script>
+<div class="mdl-grid">
+
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center"><h4>A vaga está Bloqueada pois é de uma empresa que você bloqueou. Pode acessar o menu escolher empresa na sala vip e desbloquear. O que quer fazer? </h4></div>
+
+    <div class="mdl-cell mdl-cell--12-col center top24">
+        <a href="@Model.vagaTela.LinkVagasFuncaoCidade.URL"><input type="button" value="Ir para a pesquisa" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformxbig  " /></a>
+        <a href="http://www.bne.com.br/escolher-empresa"><input type="button" value="Desbloquear Empresa" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformxbig  " /></a>
+    </div>
+</div>

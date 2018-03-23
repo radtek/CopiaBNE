@@ -1,0 +1,41 @@
+﻿<Window x:Class="AllInMail.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ext="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid;assembly=Xceed.Wpf.Toolkit"
+        Title="{Binding ProcessType, Mode=OneWay}" Height="350" Width="525">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <TextBlock Text="Output"/>
+            <DockPanel >
+                <DockPanel DockPanel.Dock="Right">
+                    <Button DockPanel.Dock="Left" Width="75" Content="File" Click="File_Click"/>
+                    <Button DockPanel.Dock="Right" Width="75" IsEnabled="{Binding CanInvokeAction}" Click="Process_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                        <TextBlock  Text="{Binding ActionTitle}" Foreground="Red" />
+                    </Button>
+                </DockPanel>
+                <TextBox  Text="{Binding OutputFile}"/>
+            </DockPanel>
+        </DockPanel>
+
+        <Grid Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition  Width="5"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition  Width="5"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <ext:PropertyGrid SelectedObject="{Binding}"  />
+                <ext:PropertyGrid SelectedObject="{Binding Progress}" IsReadOnly="True" Grid.Column="2" />
+                <ext:PropertyGrid SelectedObject="{Binding StartSettings}" IsEnabled="{Binding EnableEditStartedSettings}"  Grid.Column="4" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

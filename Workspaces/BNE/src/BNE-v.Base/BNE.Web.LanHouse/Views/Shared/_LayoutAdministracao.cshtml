@@ -1,0 +1,32 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @RenderSection("css", false)
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <form id="__AjaxAntiForgeryForm" action="#" method="post">@Html.AntiForgeryToken()</form>
+    <header class="clear">
+    </header>
+    <div id="main">
+        @RenderBody()
+    </div>
+    <div id="footer">
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/controles/employer")
+    @Scripts.Render("~/bundles/site")
+
+    <script src="/Scripts/jquery.bpopup.min.js"></script>
+    <script src="@Url.Content("~/Scripts/jquery.inputmask/jquery.inputmask-2.4.13.js")" type="text/javascript"></script>
+    @RenderSection("scripts", false)
+
+</body>
+</html>

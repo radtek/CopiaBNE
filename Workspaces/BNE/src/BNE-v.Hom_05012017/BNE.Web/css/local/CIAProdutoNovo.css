@@ -1,0 +1,80 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Alegreya+SC:400,900italic,900,700italic,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300);
+
+body { font-family: Arial,Helvetica,sans-serif !important; }
+.painel_padrao { margin-bottom: 0px !important; overflow: auto; }
+h1 .destaque { color: #00678C; }
+.conteudo { margin-top: 0px !important; }
+    .conteudo .interna { margin-top: 130px !important; }
+.containerLabelSlogan { color: #062646; font-size: 30px !important; font-weight: 800; margin-left: 38px; padding-top: 15px; }
+.enfatizaTexto { color: #ec6802; }
+.containerMetricas { color: #062646; display: inline-block; float: left; font-size: 14px; margin-left: 560px; margin-top: -383px; }
+.labelServicosEmpresa { font-size: 16px; color: #666; }
+.imgCurriculo { background-image: url('/img/pacotes_cia/img_cv.png'); background-repeat: no-repeat; display: block; height: 222px; margin-top: 40px; margin-left: 15px; margin-top: 20px; width: 207px; }
+.imgIpad { background-image: url('/img/pacotes_cia/ciaProduto/bgImageIpad.png'); background-repeat: no-repeat; display: block; height: 385px; margin-top: 40px; margin-bottom: -10px; margin-left: 0px; margin-top: 20px; width: 528px; }
+.textoTopo { color: #062646; font-weight: 800; }
+.textoLabelLaranja { color: #F16523; font-size: 12px; font-weight: bolder; }
+.texto1Topico { color: #666; font-size: 12px; text-align: justify; width: 229px; }
+.ajusteDiagramacao { text-align: left; }
+.textoBottom { margin-top: 5px; }
+.linha_1 { background-color: #D7ECFF; height: 1px; margin-top: 27px; }
+.linha_2 { background-color: #FFF8CB; height: 1px; /*margin-top: 383px;*/ }
+.ImgChecked_1 { background-image: url('/img/pacotes_cia/checked.png'); background-repeat: no-repeat; display: block; height: 80px; margin-left: -25px; margin-top: 0; position: absolute; vertical-align: text-top; width: 80px; }
+.ImgChecked_2 { background-image: url('/img/pacotes_cia/checked.png'); background-repeat: no-repeat; display: block; height: 80px; margin-left: -25px; margin-top: 0; position: absolute; vertical-align: text-top; width: 80px; }
+.ImgChecked_3 { background-image: url('/img/pacotes_cia/checked.png'); background-repeat: no-repeat; display: block; height: 80px; margin-left: -25px; margin-top: 0; position: absolute; vertical-align: text-top; width: 80px; }
+.btn_verde { display: block; background-image: url("/img/pacotes_cia/banner-comercial.jpg"); background-repeat: no-repeat; height: 770px; background-size: contain; }
+.label_verde_continuar { color: #fff; display: block; position: relative; font-size: 16px; }
+.container-fa-adjust-online { border-radius: 38%; position: absolute; right: 98px !important; text-align: center; bottom: 220px; width: 100px; }
+.fa-adjust-online { margin-right: 0px !important; display: inline-block; width: 1em; height: 1em; line-height: 1em; vertical-align: middle; }
+.btn-atendimentoOnline { background: #3498db; background-image: -webkit-linear-gradient(top,#3498db,#2980b9); background-image: -moz-linear-gradient(top,#3498db,#2980b9); background-image: -ms-linear-gradient(top,#3498db,#2980b9); background-image: -o-linear-gradient(top,#3498db,#2980b9); background-image: linear-gradient(to bottom,#3498db,#2980b9); -webkit-border-radius: 5; -moz-border-radius: 5; border-radius: 5px; -webkit-box-shadow: 0 1px 3px silver; -moz-box-shadow: 5px 5px 28px silver; box-shadow: -5px 5px 28px #666; font-family: Arial; color: #fff; font-size: 16px; padding: 20px 15px 13px 20px; text-decoration: none; }
+    .btn-atendimentoOnline:hover { background: #3cb0fd; background-image: -webkit-linear-gradient(top,#3cb0fd,#3498db); background-image: -moz-linear-gradient(top,#3cb0fd,#3498db); background-image: -ms-linear-gradient(top,#3cb0fd,#3498db); background-image: -o-linear-gradient(top,#3cb0fd,#3498db); background-image: linear-gradient(to bottom,#3cb0fd,#3498db); text-decoration: none; }
+.containerNosLigamos { display: block; position: fixed; right: 0; bottom: 215px; }
+.modal-size { width: 400px !important; }
+.input-group-adjust { height: 36px; padding-left: 10px !important; font-size: 21px; }
+.painel_login_padrao input, textarea, .uneditable-input { width: 200px;  /* hack bootstrap*/ }
+.bg_msg { margin: 0 auto; width: 851px; background: #fff; height: 380px; border: 1px solid #f2f2f2; overflow: hidden;-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;}
+.ld_assinar { float: left; width: 400px; height: 380px; margin: 15px 0px 0px 15px;}
+.ld_recrutador { float: right; width: 400px; height: 380px; margin: 15px 0px 0px 15px; }
+.bola { float: left; width: 40px; height: 40px; background: #15a9ec; -moz-border-radius: 70px;  -webkit-border-radius: 70px;   border-radius: 70px; margin-top: 14px; margin-left: 18px; }
+.bola2 { float: left; width: 35px; height: 35px; background: #15a9ec; -moz-border-radius: 70px;  -webkit-border-radius: 70px;   border-radius: 70px; margin: 18px 5px 0px 18px;  }
+.bola3 { float: left; width: 35px; height: 35px; background: #15a9ec; -moz-border-radius: 70px;  -webkit-border-radius: 70px;   border-radius: 70px; margin: 4px 5px 0px 18px;  }
+.bola4 { float: left; width: 35px; height: 35px; background: #15a9ec; -moz-border-radius: 70px;  -webkit-border-radius: 70px;   border-radius: 70px; margin: 14px 5px 0px 18px;  }
+.bola5 { float: left; width: 35px; height: 35px; background: #15a9ec; -moz-border-radius: 70px;  -webkit-border-radius: 70px;   border-radius: 70px; margin: 8px 5px 0px 18px;  }
+.bola6 { float: left; width: 35px; height: 35px; background: #15a9ec; -moz-border-radius: 70px;  -webkit-border-radius: 70px;   border-radius: 70px; margin: 8px 5px 0px 18px;  }
+.bola7 { float: left; width: 35px; height: 35px; background: #15a9ec; -moz-border-radius: 70px;  -webkit-border-radius: 70px;   border-radius: 70px; margin: 4px 5px 0px 18px;  }
+h5.tit_azulc { float: left; font-size: 18px; color: #18a8e2; position: relative; margin: 10px 0px 0px 10px; font-family: 'Alegreya SC', serif; }
+h4.tit_azulf { font-size: 22px; color: #527595;  position: absolute; margin-left: 6%; font-family: 'Alegreya SC', serif; font-weight: 800;}
+.div_ponti { width: 90%; height: 0px;  position: relative; margin: 0 auto; top: 70px; border-top: 2px dotted #999; opacity: 0.2}
+.list_vant { width: 360px; height: 480px;  float: left; position: relative; margin: 32px 0px 0px 20px;   }
+p.txt_vantagens { color: #527595; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 500; width: 340px; margin-top: 20px; line-height: 14px; position: relative;}
+p.txt_vantagens2 { color: #527595; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 500; width: 340px; margin-top: 32px; line-height: 18px; position: relative;}
+p.txt_vantagens3 { color: #527595; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 500; width: 340px; margin-top: 24px; line-height: 14px; position: relative;}
+p.txt_vantagens4 { color: #527595; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 500; width: 340px; margin-top: 27px; line-height: 14px; position: relative;}
+p.txt_vantagens5 { color: #527595; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 500; width: 340px; margin-top: 28px; line-height: 18px; position: relative;}
+p.txt_vantagens6 { color: #527595; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 500; width: 340px; margin-top: 28px; line-height: 18px; position: relative;}
+p.txt_vantagens7 { color: #527595; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 500; width: 340px; margin-top: 32px; line-height: 14px; position: relative;}
+.bg_msg2 { margin: 0 auto; width: 851px; position: relative; z-index: 96; height: 150px; border: 1px solid #f2f2f2; background: #fff; overflow: hidden;-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; margin-top: 15px;}
+img.img_homem { float: left; z-index: 999; position: relative; margin-top: -26px;}
+img.img_mulher { float: right; z-index: 999; position: relative; margin-top: -72px;}
+h4.azul_maior { float: left; font-size: 32px; color: #18a8e2; position: relative; margin: 20px 0px 0px 9px; font-family: 'Alegreya SC', serif; }
+p.azul_maior { float: left; font-size: 20px; color: #647994; position: relative; margin: 10px 0px 0px 105px; font-family: 'Open Sans', sans-serif; width: 300px; text-align: center;}
+.btn_planos { background: #8acb00; font-family: 'Open Sans', sans-serif; font-weight: 800; color: #fff; padding: 6px 25px 6px 25px; font-size: 18px; margin: 2px 0px 44px 345px; border: 0px; cursor: pointer; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;}
+.btn_planos:hover {background:#78b001}	
+i.fa-desktop { color: #fff; text-align: center; margin: 11px 0px 0px 9px; font-size: 16px;}
+i.fa-users { color: #fff; text-align: center; margin: 11px 0px 0px 9px; font-size: 16px;}
+i.fa-building { color: #fff; text-align: center; margin: 11px 0px 0px 12px; font-size: 16px; }
+i.fa-users { color: #fff; text-align: center; margin: 11px 0px 0px 9px; font-size: 16px;}
+i.fa-lightbulb-o { color: #fff; text-align: center; margin: 11px 0px 0px 13px; font-size: 18px;}
+
+i.fa-bullhorn { color: #fff; text-align: center; margin: 11px 0px 0px 9px; font-size: 16px;}
+i.fa-graduation-cap { color: #fff; text-align: center; margin: 11px 0px 0px 9px; font-size: 16px;}
+i.fa-pencil-square-o { color: #fff; text-align: center; margin: 11px 0px 0px 9px; font-size: 16px;}
+#branco { color: #fff; text-align: center; margin: 11px 0px 0px 9px; font-size: 16px;}
+i.fa-trophy { color: #fff; text-align: center; margin: 11px 0px 0px 9px; font-size: 16px;}
+i.fa-birthday-cake { color: #fff; text-align: center; margin: 11px 0px 0px 9px; font-size: 16px;} 
+
+/*Classes para teste AB*/
+.conhecaPlanosTopo, .conhecaPlanosAbaixo { display: none; }
+.exibirTopo .conhecaPlanosTopo { display: block; }
+.exibirAbaixo .conhecaPlanosAbaixo { display: block; }
+.conhecaPlanosTopo .btn_planos { background: #eab240; }

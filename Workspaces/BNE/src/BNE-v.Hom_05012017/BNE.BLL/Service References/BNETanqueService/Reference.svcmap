@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1dc22b65-eef5-4142-b9cb-e5008f6907c4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?wsdl/mex" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="App4.xsd" MetadataType="Schema" ID="35af52ec-1c5d-4128-ab88-266ea3455f00" SourceId="1" SourceUrl="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd3" />
+    <MetadataFile FileName="App5.xsd" MetadataType="Schema" ID="ae4e6d8c-e354-4a7c-8955-8ddec572e528" SourceId="1" SourceUrl="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd1" />
+    <MetadataFile FileName="App8.xsd" MetadataType="Schema" ID="9fad0a77-f94b-42ad-be44-c06c5067c646" SourceId="1" SourceUrl="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd4" />
+    <MetadataFile FileName="App6.xsd" MetadataType="Schema" ID="e270aab3-2249-4781-8cb8-729961cfc428" SourceId="1" SourceUrl="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd2" />
+    <MetadataFile FileName="App2.wsdl" MetadataType="Wsdl" ID="a687bec2-6794-4824-9920-e7a02f9bf520" SourceId="1" SourceUrl="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?wsdl" />
+    <MetadataFile FileName="App1.disco" MetadataType="Disco" ID="8613b0af-67e9-4a7b-8cfb-9fd2b5a4b276" SourceId="1" SourceUrl="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?disco" />
+    <MetadataFile FileName="App7.xsd" MetadataType="Schema" ID="a0a9e787-28af-44d4-bcc2-8e041963a102" SourceId="1" SourceUrl="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

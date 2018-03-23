@@ -1,0 +1,812 @@
+﻿a:hover
+{
+    text-decoration: underline;
+}
+
+.container_carta, .container_presidente
+{
+    background: url('../../img/bg_msg_menu_lateral.png') no-repeat;
+    overflow: hidden;
+}
+
+.tipo_carta, .container_presidente
+{
+    border-bottom: 1px solid #fff;
+    float: left;
+    padding-left: 10px;
+    overflow: hidden;
+    padding-bottom: 5px;
+    height: 300px;
+    width: 190px;
+}
+
+.menu_carta {border-bottom:1px solid White;}
+.menu_cartas2, .menu_presidente {width: 180px;}
+.menu_cartas2 li ,.menu_presidente li{border-bottom: 1px solid White;font-size:13px !important; padding: 6px 0;}
+.menu_cartas2 li a, .menu_presidente li a{color:#8c8c8c;}
+
+
+
+.tipo_carta h2, .container_presidente h2
+{
+    font-size: 13px;
+    font-weight:bold;
+    height: auto !important;
+    line-height: normal !important;
+    margin: 10px 0 10px 0;
+    color: #8c8c8c;
+}
+
+.tipo_carta ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0 10px 0 0 ;
+    font-size: 11px;
+}
+
+.container_presidente ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 11px;
+}
+.tipo_carta ul li, .container_presidente ul li
+{
+    margin: 5px 0;
+}
+.tipo_carta ul li img, .container_presidente ul li img
+{
+    float: left;
+    margin-right: 7px;
+}
+
+.tipo_carta ul li span, ..container_presidente ul li span
+{
+}
+
+.tipo_carta ul li.selected, .container_presidente ul li.selected
+{
+    color: #153e78;
+    font-weight: bold;
+}
+.selecionado
+{color: #153e78;
+    font-weight: bold;
+}
+.painelinterno {margin:0 5px;}
+
+
+.label_principal
+{
+    color: #1d325d;
+    font-weight: bold;
+    width: 224px;
+}
+
+.titulo_carta_content, .titulo_sms_content
+{
+    float: left;
+    font-size: 14px !important;
+    margin: 5px 10px 0 0 !important;
+    font-weight: bold;
+    height:auto;
+}
+
+
+.RadComboBox input
+{
+    width: 200px;
+}
+
+.titulo_filtro
+{
+overflow: hidden;
+    margin-bottom: 4px;}
+
+
+.painel_configuracao_conteudo
+{
+    overflow: hidden;
+    padding: 0 0 0 20px;
+    margin: 0;
+ /*-- float:right;--*/
+}
+
+.painel_configuracao_conteudo h3
+{
+   border-bottom:1px solid #d9e0e9; padding-bottom: 3px; margin: 0 0 10px 0; color: #153e78;}
+}
+
+
+.blocodados
+{
+    margin-bottom: 15px;
+}
+.blocodados p
+{
+    font-size: 11px;
+}
+
+.texto_normal{font-weight: normal;}
+
+
+.titulo_configuracao_content
+{
+
+    font-size: 14px !important;
+    margin: 0 0 10px 0 !important;
+    /*-font-weight:normal;-*/
+    border-bottom:1px solid #d9e0e9;
+    color:#153e78;
+    width: auto;
+    padding-bottom:5px;
+}
+
+
+/*- configurações Aviso Index --*/
+
+
+.aviso{}
+
+.aviso div{ margin:15% 24%; background:#fcf8c4; border:1px solid #b5caea; overflow:hidden; width: 260px; padding:30px;}
+
+.aviso div img {float:left;}
+
+.texto_aviso{color: #153e78; font-size:16px; font-weight:bold; text-align:center; margin: 5px  0 0 0 !important;}
+
+.painel_configuracao_conteudo p
+{
+    margin: 0 0 10px 4px;
+    color: #1D325D;
+}
+
+.painel_configuracao_conteudo .linha
+{
+    margin-left:95px;    
+}
+
+.textbox_padrao_pesquisa
+{
+    border: 1px solid #B5CAEA !important;
+    margin-left: 4px !important;
+    margin-right: 4px !important;
+    vertical-align: middle !important;
+    width: 200px !important;
+    font-size: 11px !important;
+    font-style: italic !important;
+    float: left;
+}
+
+.filtrar
+{
+    font-size: 11px;
+    height: 22px;
+    margin-left: 5px;
+    width: auto !important;
+    margin-bottom:0;
+}
+
+.conteudo .editar {margin: 0 0 4px 0;}
+
+.linha .textarea_padrao.editar {margin:0;}
+.editar, .titulo {text-align:left; margin:0 0 4px 0; padding:0; float: none;}
+.editar input {margin:0; padding:0;}
+
+.titulo_noticia{ margin-bottom:5px;}
+
+.titulo_input .campo_obrigatorio {margin:4px 0 0 0 !important; padding-bottom:1px ;}
+
+.form_menor{margin-top:5px;}
+.form_menor .linha .label_principal {width:auto;}
+.textbox_SMS { border: 1px solid #ccc; font-size:12px;}
+.textbox_SMS{width: 618px; height: 215px; border: 1px solid #c6c7c8;}
+.contagem_caracteres{text-align:right; margin-top:5px; color:#153e78;}
+
+.extras{background:#fcf8c4;}
+
+.small {width: 80px;}
+.idade{width: 40px;}
+
+
+/*-----ajustes dos grids -----------*/
+.cod_resp_auto{width:17%;}
+.tit_resp_auto{width:65%;}
+.dt_publicacao {width: 22%;}
+.tit_noticia {width: 44%;}
+.tit_agradecimento {width: 44%;}
+.exibir_site {width:17%;}
+.col_action{ width: 18%; text-align:center;}
+.col_action.agradecimento{ width: 13%; text-align:center;}
+.col_action input{margin: 3px 6px;}
+.center{    text-align: center;}
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+
+
+
+
+.RadGrid_Office2007, .RadGrid_Office2007 .rgMasterTable, .RadGrid_Office2007 .rgDetailTable, .RadGrid_Office2007 .rgGroupPanel table, .RadGrid_Office2007 .rgCommandRow table, .RadGrid_Office2007 .rgEditForm table, .RadGrid_Office2007 .rgPager table, .GridToolTip_Office2007
+{
+	font-family: Arial, Helvetica, sans-serif !important; 
+	font-size: 12px; 
+}
+
+.RadGrid_Office2007 .rgRow a, .RadGrid_Office2007 .rgAltRow a, .RadGrid_Office2007 .rgEditRow a, .RadGrid_Office2007 .rgFooter a, .RadGrid_Office2007 .rgEditForm a
+{
+	color: #1E3260 /*- !important--*/; 
+}
+.gridview_padrao
+{
+	margin-top: 15px;
+    width: 99% !important;
+}
+.gridview_padrao th.rgHeader{ font-weight:bold; font-size:12px; text-align:center; padding: 10px 0; color:Black;}
+
+.gridview_padrao tr {
+    font-size: 11px;
+}
+
+
+
+.container_campo label {margin-left:0; padding-left:0; margin-right:10px;}
+
+
+
+
+.painel_configuracao_conteudo .painel_botoes{margin-bottom:0;}
+
+
+.radeditor_boas_vindas_candidato.noticias_editar {overflow:hidden;}
+
+.container_campo .RadComboBox 
+{
+    width: 200px !important;
+}
+
+.container_campo .textbox
+{
+    margin-left: 0px;
+}
+
+.container_campo.filial
+{
+    padding-left: 4px;
+}
+
+.label_principal.filial
+{
+    width: 130px !important;
+}
+
+/*-
+.container_campo
+{
+    margin-right: 10px;
+}
+
+.botao_padrao
+{
+    margin: 0;
+}
+
+/*-- Ajustes Email Retorno PF --*/
+
+/*-
+.preview_carta
+{
+    width: 74%;
+    background: white;
+    float: right;
+}
+
+.preview_carta h2
+{
+    color: #4e7413;
+    font-size: 14px;
+    height: auto !important;
+    line-height: normal !important;
+    margin: 0 0 10px 0;
+}
+
+.preview_carta .mensagem
+{
+    border: 1px solid #ccc;
+    overflow: auto;
+    height: 300px;
+    padding: 10px;
+    background: url('../../img/bg_mensagens.jpg') repeat-x;
+}
+.preview_carta .navegacao
+{
+    float: right;
+}
+.preview_carta .navegacao img
+{
+    border: none;
+}
+.titulo_msg
+{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info_adicionais
+{
+    font-size: 11px;
+}
+
+.info_adicionais ul
+{
+    list-style-type: none;
+    padding: 0;
+}
+
+.remetente
+{
+    font-size: 12px;
+    color: #476D11;
+    font-weight: bold;
+}
+.remetente img
+{
+    margin-right: 7px;
+}
+
+ul.anexo
+{
+}
+ul.anexo li
+{
+    margin: 0 5px;
+}
+
+.data_hora
+{
+}
+.destinatario
+{
+}
+.anexos
+{
+    margin-top: 10px;
+}
+.anexos span
+{
+    margin-top: 5px;
+    padding: 0 5px;
+}
+
+.msg
+{
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.msg p
+{
+    line-height: 100%;
+    font-size: 11px;
+}
+ -*/
+/*- Configuração do miolo de mensagens recebidas e enviadas-*/
+
+}
+/*-
+.mensagens
+{
+    width: 620px;
+    margin-top: 5px;
+}
+.gridview_padrao
+{
+    border: 1px solid #c6c7c8 !important;
+}
+
+.rgMasterTable tr td.rgPagerCell
+{
+    border: none !important;
+    background: url('../../img/bg_table_msg_th.jpg') repeat-x bottom !important;
+}
+
+.rgMasterTable tr:hover
+{
+    background: url('../../img/bg_table_msg_th.jpg') repeat-x bottom !important;
+}
+
+.rgMasterTable tr
+{
+    cursor: pointer !important;
+    background: #fff !important;
+}
+
+.rgMasterTable tr td
+{
+    border-bottom: 1px solid #e1e1e1 !important;
+}
+
+thead
+{
+    background: #fff !important;
+}
+
+.rgPager td
+{
+    border: none !important;
+}
+
+.rgInfoPart
+{
+    font-size: 11px;
+}
+
+td.rgPagerCell
+{
+    border-bottom: none !important;
+}
+
+.gridview_padrao tr:hover
+{
+    background: url('../../img/bg_table_msg_pg.jpg') repeat-x bottom;
+}
+
+.titulo
+{
+    color: #8C8C8C !important;
+    font-weight: bold !important;
+    font-size: 12px;
+    background: url('../../img/bg_table_msg_pg.jpg') repeat-x bottom !important;
+    border: none !important;
+    padding-top: 10px !important;
+    padding-bottom: 2px !important;
+}
+
+.dadoscol1, .dadoscol2, .dadoscol3
+{
+    font-size: 11px;
+    border: none !important;
+    padding: 10px 7px 5px 7px !important;
+}
+
+.alt_row:hover
+{
+    background: url('../../img/bg_table_msg_th.jpg') repeat-x bottom #fff !important;
+}
+
+.dadoscol2
+{
+    width: 250px;
+}
+.esquerda
+{
+    color: #4e7413;
+    font-weight: bold !important;
+}
+
+.mensagem_nodata
+{
+    padding: 102px 0 !important;
+    text-align: center !important;
+}
+.rgMasterTable .rgNoRecords:hover
+{
+    background: #fff !important;
+    border: none;
+    cursor: default !important;
+}
+.rgMasterTable .rgNoRecords td
+{
+    border: none !important;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/*-
+h2
+{
+    margin: auto;
+    height: auto;
+    font-size: 14px;
+    font-weight: normal;
+    color: #1d325d;
+}
+
+
+
+.ultimosBTN, .ultimosdados
+{
+    margin-bottom: 0 !important;
+}
+.painel_financeiro_conteudo .painel_botoes
+{
+    margin: 20px 0;
+}
+.painel_financeiro_conteudo p
+{
+    margin: 0 0 10px 4px;
+    color: #1D325D;
+}
+
+
+
+
+a
+{
+    color: #8c8c8c;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+
+.container_financeiro
+{
+    /*-- background: url('../../img/bg_msg_menu_lateral.png') no-repeat;
+    overflow: hidden;
+}
+
+.tipo_financeiro
+{
+    float: left;
+    overflow: hidden;
+    padding-bottom: 5px;
+}
+
+.tipo_financeiro ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    width: 200px;
+}
+.tipo_financeiro ul li
+{
+    margin: 0 0 0 11px;
+    color: #8c8c8c;
+    border-bottom: white solid 1px;
+    width: 175px;
+    padding: 10px 0;
+}
+.tipo_financeiro ul li img
+{
+    float: left;
+    margin-right: 7px;
+}
+
+.tipo_financeiro ul li span
+{
+}
+
+/*--.tipo_financeiro ul li.selected { color:#4e7413;}
+
+
+.gridview_padrao
+{
+    border: 1px solid #c6c7c8 !important;
+    width: auto;
+}
+
+h3
+{
+    font-size: 13px;
+    font-weight: bold;
+    color: #1d325d;
+    padding: 10px 0 3px 5px;
+    background: url(../../../img/bg_table_msg_th.jpg) bottom repeat-x;
+    margin: 0 0 7px 0;
+}
+
+
+
+
+
+.texto_exemplo
+{
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    font-size: 11px;
+    font-style: italic;
+    color: #949596;
+}
+
+.textarea_padrao
+{
+    font-size: 12px;
+    height: 110px;
+    width: 280px;
+}
+.prefixo
+{
+    width: 30px;
+    border: 1px solid #B5CAEA;
+    margin-left: 4px;
+    padding-left: 11px;
+    vertical-align: middle;
+}
+
+.telefone
+{
+    width: 156px;
+    border: 1px solid #B5CAEA;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 11px;
+    vertical-align: middle;
+}
+
+
+
+.col_funcao
+{
+    font-size: 11px;
+}
+
+.col_action
+{
+    width: 17%;
+    text-align: center;
+}
+
+
+
+
+
+.dados_empresa
+{
+    color: #1D325D;
+}
+
+.tab_tipoplano
+{
+    width: 13%;
+}
+
+.tab_boleto_avulso_pf, .tab_boleto_avulso_pj
+{
+    width: 13%;
+}
+.liberar_cliente
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+.liberar_cliente a
+{
+    color: #1D325D;
+}
+.liberar_cliente a:hover
+{
+    text-decoration: underline;
+}
+
+.barra_lateral
+{
+    width: 200px;
+    background: url(../../../img/BG_degrade_gigante_xunxo.png) top repeat-x #f2f3f3;
+}
+.bordas_superior
+{
+    overflow: hidden;
+}
+.bordas_superior .borda_sup_esquerda
+{
+    float: left;
+}
+.bordas_superior .borda_sup_direita
+{
+    float: right;
+}
+.menu
+{
+    border-right: 1px solid #cfd6df;
+    width: 199px;
+}
+.bordas_inferior
+{
+    overflow: hidden;
+}
+.bordas_inferior .borda_inf_esquerda
+{
+    float: left;
+}
+.bordas_inferior .borda_inf_direita
+{
+    float: right;
+}
+.ultimoitem
+{
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
+/*- Configuração do miolo de mensagens recebidas e enviadas
+.titulo_msg_content{ float:left; 
+                     font-size:16px !important; 
+                     margin:0 !important;}
+                     
+.filtro_pesquisa{ float: right; 
+                  border: 1px solid #cacaca; 
+                  padding: 1px;}
+                  
+.filtro_pesquisa input{border: none !important;
+                       background-image:none !important; 
+                       vertical-align:middle; 
+                       color:#cacaca; 
+                       font-style: italic; 
+                       padding: 2px !important; 
+                       font-size:11px;}
+                       
+.btn_pesquisa{ margin:0;}
+
+.titulo_filtro{overflow:hidden;}
+
+.mensagens { width:620px; margin-top:5px;}
+
+
+.rgMasterTable tr td.rgPagerCell {border:none !important; background: url('../../img/bg_table_msg_th.jpg') repeat-x bottom !important;}
+
+.rgMasterTable tr:hover {background: url('../../img/bg_table_msg_th.jpg') repeat-x bottom !important; }
+
+.rgMasterTable tr {cursor:pointer !important; background: #fff !important;}
+                        
+.rgMasterTable tr td {border-bottom: 1px solid #e1e1e1 !important;}
+
+thead {background:#fff !important;}
+
+
+.rgPager td {border:none !important;}
+
+.rgInfoPart{ font-size: 11px;}
+
+td.rgPagerCell {border-bottom: none !important;}
+
+.gridview_padrao tr:hover {background: url('../../img/bg_table_msg_pg.jpg') repeat-x bottom;}
+
+.titulo{ color: #8C8C8C !important;
+            font-weight: bold !important; 
+            font-size: 12px; 
+            background: url('../../img/bg_table_msg_pg.jpg') repeat-x bottom !important;
+            border:none !important;
+            padding-top:10px !important;
+            padding-bottom: 2px !important;
+}
+        
+.dadoscol1, .dadoscol2, .dadoscol3 {font-size:11px; border: none !important;  padding: 10px 7px 5px 7px !important;}
+
+.alt_row:hover {background: url('../../img/bg_table_msg_th.jpg') repeat-x bottom #fff !important;}
+
+.dadoscol2 {width: 250px;}
+.esquerda{color:#4e7413; font-weight:bold !important;}
+
+.mensagem_nodata {padding: 102px 0 !important;text-align:center !important;}
+.rgMasterTable .rgNoRecords:hover {background: #fff !important; border: none;  cursor:default !important;}
+.rgMasterTable .rgNoRecords td {border: none !important;}
+
+
+
+
+

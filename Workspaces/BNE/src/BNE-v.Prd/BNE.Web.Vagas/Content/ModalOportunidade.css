@@ -1,0 +1,118 @@
+﻿
+.modalOportunidade {
+    width: 630px;
+    border-radius: 5px;
+    margin-left:-200px;
+   
+}
+
+    .modalOportunidade .modal_fechar {
+        background: url(/Images/modal/btn_fechar_modal.png) no-repeat;
+        width: 34px;
+        height: 34px;
+        display: inline;
+        z-index: 1003;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+
+    }
+.container_oportunidade_candidatura {
+    background-color: white;
+    text-align: center;
+    position: absolute;
+    border-radius: 8px 8px 8px 8px;
+}
+
+
+
+.vaga-oportunidade-content {
+    background-color: white;
+    border-radius: 8px 8px 0 0;
+    color: black;
+    font-size: 22px;
+    text-align: left;
+    padding: 10px 10px 22px 10px;
+    height: 10px;
+}
+
+.vaga-oportunidade-body {
+    background-color: white;
+    border-radius: 8px 8px 0 0;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 10px 44px 10px;
+    height: 10px;
+}
+
+.btn_oportunidade {
+    color: black;
+    background-color: #26a69a;
+    padding: 8px;
+    float: left;
+}
+
+.btn_oportunidade_not {
+    color: black;
+    background-color: #fff;
+    text-underline-position: below;
+    text-decoration: underline;
+    border: none;
+    padding: 8px;
+    top:-8px !important;
+}
+
+    .btn_oportunidade:hover,
+    .btn_oportunidade_not:hover {
+        cursor: pointer;
+    }
+
+.btn_rodape {
+    white-space: nowrap;
+    text-align: center;
+}
+
+    .btn_rodape form {
+        display: inline-block;
+        margin: 0;
+        padding-bottom:12px;
+
+    }
+
+    .btn_form{
+        width:50%;
+        float:left;
+        text-align:right;
+        
+    }
+     .btn_form + .btn_form{
+        text-align:left;
+    }
+
+     .btn_form .btn_oportunidade_not{
+        margin-top: 8px;
+
+    }
+
+
+.titulo_modal_Oportunidade {
+    font-size: 30px;
+    text-align: center;
+        margin: 24px 8px 0 8px;
+}
+
+.Texto_oportunidade{
+            font-size: 18px;
+            margin:50px 0px 20px 0px;
+            text-align: center;
+            line-height: 150%;
+            font-weight:bold;
+}
+
+.linha_botoes{
+        display: flex !important;
+    justify-content: space-around;
+    margin: 30px 101px 12px 90px;
+}

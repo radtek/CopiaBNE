@@ -1,0 +1,11 @@
+﻿.modal_deposito_conta_corrente h1
+{
+    height: auto;
+    margin: 0;
+    padding: 8px 0;
+}
+
+.modal_deposito_conta_corrente td p
+{
+    margin-top: 0;
+}

@@ -1,0 +1,62 @@
+body{ background:#2a6975; padding:0;}
+small{ font-size:11px}
+input{ border-radius:}
+
+.navbar-toggle{ border:1px solid #fff;}
+.navbar-toggle span{ background:#fff;}
+.navbar {background:#368a98;border-top:2px solid #2a6975;border-radius:0; padding-top:5px}
+.navbar .navbar-brand{ background:url(../images/logo.png) no-repeat; min-height:42px; min-width:71px; text-indent:-9999px;}
+.nav li:hover a{ background:#2a6975;}
+.nav li.active{ font-weight:bolder} .nav li a{ color:#fff;}
+
+.sub-header{ background:#1d2123; margin-bottom:0; border-radius:0; padding-top:8px;}
+
+.btn{border:1px solid #68b66f;border-radius:0;background:#7dce84;padding-left:30px;padding-right:30px;color:#fff;}
+.btn:hover{ background:#68b66f; border:1px solid #7dce84; color:#fff;}
+.btn-default{ background:#368a98; border:1px solid #2a6975}
+.btn-default:hover{ background:#2a6975; border:1px solid #368a98; color:#fff;}
+.btn-link{ color:#7dce84; margin: 2px 10px 0; }
+.btn-link .fa-2x{ margin-bottom;}
+.btn-link:hover{ color:#68b66f}
+.list{padding:0}
+.list li{ display:inline-block; margin-right:15px; line-height:30px; font-size:16px;}
+
+.shortcuts li a{ color:#666;}
+.shortcuts li a span{ color:#999}
+.shortcuts li.active a{ color:#fff;}
+.main{ margin-top:108px;}
+.main .white{ background:#fff}
+.main .white .filter-item{ border-left:8px solid #ccc; padding:10px 10px; border-top:1px solid #ccc;}
+.main .white .filter-item .filter-icon{background:#ebeef5;border:1px solid #ccc;display:inline-block;height:35px;width:35px;text-align:center;line-height:35px;font-size:20px;margin-top:-11px;}
+.main .white .filter-item .tag-cloud a{ margin:0 5px;}
+.main .white .filter-item .tag-cloud .tag1{ font-size:23px}
+.main .white .filter-item .tag-cloud .tag2{ font-size:21px}
+.main .white .filter-item .tag-cloud .tag3{ font-size:19px}
+.main .white .filter-item .tag-cloud .tag4{ font-size:17px}
+.main .white .filter-item .tag-cloud .tag5{ font-size:15px}
+.main .white .filter-item .tag-cloud .tag6{ font-size:13px}
+.main .white .filter-item .tag-cloud .tag7{ font-size:11px}
+
+
+.main .dark , .main .dark i{ color:#fff;}
+.main .dark .list-filters{ color:#fff; list-style:none; padding:0}
+.main .dark .list-filters li{ background:#ccc; border-radius:10px; padding:0 5px; margin:0 5px 5px; cursor:pointer}
+.main .dark .list-filters li a { color:#333; font-size:11px;}
+.main .dark .list-filters li a i{ margin-right:5px; color:#333;}
+.main .dark .calendar{ padding-left:8px; padding-right:8px; }
+
+.progress{height:13px; background:#23252b;	}
+.avatar{display:inline-block;background:#fff;border:1px solid #ccc;padding:8px;position:relative;}
+
+.avatar img{ width:100%}
+.avatar .edit-photo small{ display:none}
+.avatar .edit-photo:hover small{ display: inline-block; font-size:10px;}
+.avatar .edit-photo{position:absolute;bottom:-2px;left:8px;padding:8px 6px;width:86%;cursor:pointer;}
+.avatar .edit-photo:hover{background: rgb(0, 0, 0);background: rgba(0, 0, 0, .7);}
+
+.messages{ display:none; border:2px solid #68b66f; border-bottom:none; padding:0; position:fixed; bottom:0; right:5%; background:#F8F8F8; font-size:12px;}
+.messages .messages-box{margin:15px;}
+.messages .messages-title{ display:block;margin:0; border-bottom:1px dotted #ccc; width:100%; padding:5px 15px; color:#fff; margin-bottom:20px; background:#68b66f}
+.messages .chat { border:1px solid #7dce84; margin:15px; border-radius:5px; padding:5px; background:#a3f9aa;	}
+.messages .chat-mobile{ background:#f2f2f2; border:1px solid #ccc;}
+.messages .alert{ padding:8px;}

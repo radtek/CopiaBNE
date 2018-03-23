@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.Enumeradores" />
+  <xs:complexType name="InReceberMensagem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="conversa" nillable="true" type="tns:ConversaDTO" />
+      <xs:element minOccurs="0" name="cu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="e" type="xs:boolean" />
+      <xs:element minOccurs="0" name="idCel" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="idMsgCampanha" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="l" nillable="true" type="tns:ArrayOfMensagem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InReceberMensagem" nillable="true" type="tns:InReceberMensagem" />
+  <xs:complexType name="ConversaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="campanha" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="cidade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="funcao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuarioOrigem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="vaga" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConversaDTO" nillable="true" type="tns:ConversaDTO" />
+  <xs:complexType name="ArrayOfMensagem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Mensagem" nillable="true" type="tns:Mensagem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMensagem" nillable="true" type="tns:ArrayOfMensagem" />
+  <xs:complexType name="Mensagem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ci" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dcm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dta" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fr" type="xs:boolean" />
+      <xs:element minOccurs="0" name="im" type="xs:int" />
+      <xs:element minOccurs="0" name="imc" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="nc" type="xs:decimal" />
+      <xs:element minOccurs="0" name="np" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sm" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Mensagem" nillable="true" type="tns:Mensagem" />
+  <xs:complexType name="OutReceberMensagem">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="l" nillable="true" type="q1:ArrayOfint" />
+      <xs:element minOccurs="0" name="me" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qtdAgendadaAmanha" type="xs:int" />
+      <xs:element minOccurs="0" name="qtdDisp" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutReceberMensagem" nillable="true" type="tns:OutReceberMensagem" />
+  <xs:complexType name="InEnviarMensagem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InEnviarMensagem" nillable="true" type="tns:InEnviarMensagem" />
+  <xs:complexType name="OutEnviarMensagem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="l" nillable="true" type="tns:ArrayOfMensagem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutEnviarMensagem" nillable="true" type="tns:OutEnviarMensagem" />
+  <xs:complexType name="InRecebeSMSCelular">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="i" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="n" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InRecebeSMSCelular" nillable="true" type="tns:InRecebeSMSCelular" />
+  <xs:complexType name="OutRecebeSMSCelular">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="mr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="s" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutRecebeSMSCelular" nillable="true" type="tns:OutRecebeSMSCelular" />
+  <xs:complexType name="InStatusDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="i" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="t" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InStatusDTO" nillable="true" type="tns:InStatusDTO" />
+  <xs:complexType name="OutStatusDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="da" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ec" type="xs:boolean" />
+      <xs:element minOccurs="0" name="me" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qc" type="xs:int" />
+      <xs:element minOccurs="0" name="s" type="xs:int" />
+      <xs:element minOccurs="0" name="v" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutStatusDTO" nillable="true" type="tns:OutStatusDTO" />
+  <xs:complexType name="InAlteraStatusMensagem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="i" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="l" nillable="true" type="tns:ArrayOfMensagem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InAlteraStatusMensagem" nillable="true" type="tns:InAlteraStatusMensagem" />
+  <xs:complexType name="OutAlteraStatusMensagem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="r" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutAlteraStatusMensagem" nillable="true" type="tns:OutAlteraStatusMensagem" />
+  <xs:complexType name="InEfetuarLigacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="i" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InEfetuarLigacao" nillable="true" type="tns:InEfetuarLigacao" />
+  <xs:complexType name="InStatusCelular">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="c" type="xs:int" />
+      <xs:element minOccurs="0" name="es" type="xs:int" />
+      <xs:element minOccurs="0" name="et" type="xs:int" />
+      <xs:element minOccurs="0" name="i" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nb" type="xs:int" />
+      <xs:element minOccurs="0" name="ns" type="xs:int" />
+      <xs:element minOccurs="0" name="o" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="oth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sb" type="xs:int" />
+      <xs:element minOccurs="0" name="sc" type="xs:int" />
+      <xs:element minOccurs="0" name="tc" type="xs:int" />
+      <xs:element minOccurs="0" name="vs" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InStatusCelular" nillable="true" type="tns:InStatusCelular" />
+  <xs:complexType name="OutStatusCelular">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="s" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutStatusCelular" nillable="true" type="tns:OutStatusCelular" />
+  <xs:complexType name="InInformacaoSaldo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="i" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InInformacaoSaldo" nillable="true" type="tns:InInformacaoSaldo" />
+  <xs:complexType name="OutInformacaoSaldo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="s" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutInformacaoSaldo" nillable="true" type="tns:OutInformacaoSaldo" />
+  <xs:complexType name="InInatividadeCelular">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="i" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="on" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InInatividadeCelular" nillable="true" type="tns:InInatividadeCelular" />
+  <xs:complexType name="OutInatividadeCelular">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="s" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutInatividadeCelular" nillable="true" type="tns:OutInatividadeCelular" />
+  <xs:complexType name="InVerificaCelulares">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ic" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InVerificaCelulares" nillable="true" type="tns:InVerificaCelulares" />
+  <xs:complexType name="OutVerificaCelulares">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="r" nillable="true" type="tns:ArrayOfOutInfoCelular" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutVerificaCelulares" nillable="true" type="tns:OutVerificaCelulares" />
+  <xs:complexType name="ArrayOfOutInfoCelular">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OutInfoCelular" nillable="true" type="tns:OutInfoCelular" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOutInfoCelular" nillable="true" type="tns:ArrayOfOutInfoCelular" />
+  <xs:complexType name="OutInfoCelular">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="batStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="batValue" type="xs:int" />
+      <xs:element minOccurs="0" name="cel" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="celId" type="xs:int" />
+      <xs:element minOccurs="0" name="chip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="con" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cred" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="dtaCred" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dtaStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="est" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lig" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="n" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="op" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valCred" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutInfoCelular" nillable="true" type="tns:OutInfoCelular" />
+  <xs:complexType name="InEnviaSMSResposta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="n" type="xs:decimal" />
+      <xs:element minOccurs="0" name="np" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InEnviaSMSResposta" nillable="true" type="tns:InEnviaSMSResposta" />
+  <xs:complexType name="OutEnviaSMSCelular">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="s" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutEnviaSMSCelular" nillable="true" type="tns:OutEnviaSMSCelular" />
+  <xs:complexType name="InConversaAtiva">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cUsu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dIn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dLi" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="idC" type="xs:int" />
+      <xs:element minOccurs="0" name="qtd" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InConversaAtiva" nillable="true" type="tns:InConversaAtiva" />
+  <xs:complexType name="OutConversaAtiva">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="l" nillable="true" type="tns:ArrayOfMensagem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutConversaAtiva" nillable="true" type="tns:OutConversaAtiva" />
+  <xs:complexType name="InHistorico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ci" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cv" type="xs:int" />
+      <xs:element minOccurs="0" name="im" type="xs:int" />
+      <xs:element minOccurs="0" name="nm" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="qm" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InHistorico" nillable="true" type="tns:InHistorico" />
+  <xs:complexType name="OutHistorico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="l" nillable="true" type="tns:ArrayOfMensagem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutHistorico" nillable="true" type="tns:OutHistorico" />
+  <xs:complexType name="InHabilitarUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ddd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="df" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="di" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="h" type="xs:boolean" />
+      <xs:element minOccurs="0" name="n" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qtd" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InHabilitarUsuario" nillable="true" type="tns:InHabilitarUsuario" />
+  <xs:complexType name="OutHabilitarUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="erro" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.Enumeradores" minOccurs="0" name="s" type="q2:TipoRetorno" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutHabilitarUsuario" nillable="true" type="tns:OutHabilitarUsuario" />
+</xs:schema>

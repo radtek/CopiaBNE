@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BNE.Auth.Core</id>
+    <version>1.0.6</version>
+    <authors>Gieyson Stelmak</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Core da autenticação do BNE</description>
+  </metadata>
+</package>

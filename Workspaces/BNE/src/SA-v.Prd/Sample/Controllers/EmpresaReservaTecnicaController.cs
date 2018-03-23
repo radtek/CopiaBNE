@@ -1,0 +1,200 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Sample.Models;
+using AdminLTE_Application;
+using PagedList;
+using System.Globalization;
+using System.Security.Claims;
+
+namespace Sample.Controllers
+{
+    [Authorize]
+    public class EmpresaReservaTecnicaController : Controller
+    {
+        // GET: EmpresaReservaTecnica
+        public ActionResult Index(GridReservaTecnica model)
+        {
+            Model db = new Model();
+            var empresas = from emp in db.VWbancoEmpresasReservaTecnica select emp;
+           // model.lista = empresas.ToList();
+            return View("~/Views/Reservatecnica/Index.cshtml", model);
+        }
+
+        public ActionResult Reserva(string button, GridReservaTecnica model)
+        {
+            try
+            {
+                if (button != null)
+                    model.pag = 1;
+
+                using (var context = new Model())
+                {
+                    var userWithClaims = (ClaimsPrincipal)User;
+                    var cpf = userWithClaims.Claims.First(c => c.Type == "cpf");
+                    decimal Num_CPF = Convert.ToDecimal(cpf.Value.ToString());
+                    model.pag = model.pag <= 0 ? 1 : model.pag;
+                    model.rowsPag = model.rowsPag <= 1 ? 100 : model.rowsPag;
+                  
+                    var baseEmpresas = from s in context.VWbancoEmpresasReservaTecnica select s;
+
+                    //mostrar as empresas dele e as sem vendedor.
+                    baseEmpresas = baseEmpresas.Where(s => s.Num_CPF == null || s.Num_CPF == Num_CPF);
+
+                    if (model.FlSituacaoEmpresa.HasValue && model.FlSituacaoEmpresa.Value > 0)
+                        baseEmpresas = baseEmpresas.Where(s => s.Idf_Situacao_Filial.Equals(model.FlSituacaoEmpresa.Value));
+                    if (!string.IsNullOrEmpty(model.FlPlano))
+                        baseEmpresas = baseEmpresas.Where(s => s.Ultimo_Plano.Contains(model.FlPlano));
+                    if (!string.IsNullOrEmpty(model.FlArea))
+                        baseEmpresas = baseEmpresas.Where(s => s.Des_Area_BNE.Contains(model.FlArea));
+                    if (!string.IsNullOrEmpty(model.FlCidade))
+                        baseEmpresas = baseEmpresas.Where(s => s.Nme_Cidade.Contains(model.FlCidade));
+                    if (!string.IsNullOrEmpty(model.FlEstado))
+                        baseEmpresas = baseEmpresas.Where(s => s.Sig_Estado.Contains(model.FlEstado));
+                    if (!string.IsNullOrEmpty(model.FlEmpresa))
+                    {
+                        model.FlEmpresa = model.FlEmpresa.Replace(".", "").Replace("/", "").Replace("-", "");
+                        baseEmpresas = baseEmpresas.Where(s => s.Raz_Social.Contains(model.FlEmpresa.ToUpper()) || s.Num_CNPJ.ToString().Equals(model.FlEmpresa.ToUpper()));
+                    }
+                    if (!string.IsNullOrEmpty(model.FlDataUltimoPlano))
+                    {
+                        try
+                        {
+                            DateTime datainicio;
+                            DateTime datafim;
+                            datainicio = DateTime.ParseExact(model.FlDataUltimoPlano.Substring(0, 10), "dd/MM/yyyy", new CultureInfo("pt-BR"));
+                            datafim = DateTime.ParseExact(model.FlDataUltimoPlano.Substring(13, 10), "dd/MM/yyyy", new CultureInfo("pt-BR"));
+                            datafim = datafim.AddDays(1);
+                            baseEmpresas = baseEmpresas.Where(s => s.Dta_Fim_Plano >= datainicio);
+                            baseEmpresas = baseEmpresas.Where(s => s.Dta_Fim_Plano <= datafim);
+                        }
+                        catch (Exception)
+                        {
+                            ViewBag.erro = "Data do Fim Plano em formato errado";
+                        }
+
+                    }
+
+                    if (!string.IsNullOrEmpty(model.FlDataCadastro))
+                    {
+                        try
+                        {
+                            DateTime datainicio;
+                            DateTime datafim;
+                            datainicio = DateTime.ParseExact(model.FlDataCadastro.Substring(0, 10), "dd/MM/yyyy", new CultureInfo("pt-BR"));
+                            datafim = DateTime.ParseExact(model.FlDataCadastro.Substring(13, 10), "dd/MM/yyyy", new CultureInfo("pt-BR"));
+                            datafim = datafim.AddDays(1);
+                            baseEmpresas = baseEmpresas.Where(s => s.Dta_Cadastro >= datainicio);
+                            baseEmpresas = baseEmpresas.Where(s => s.Dta_Cadastro <= datafim);
+                        }
+                        catch (Exception)
+                        {
+                            ViewBag.erro = "Data de cadastro em formato errado.";
+                        }
+
+                    }
+                    switch (model.Ordenacao)
+                    {
+
+                        case "Data_Ultima_acao desc":
+                            baseEmpresas = baseEmpresas.OrderByDescending(s => s.Data_Ultima_Acao_Site);
+                            break;
+                        case "Data_Ultima_acao asc":
+                            baseEmpresas = baseEmpresas.OrderBy(s => s.Data_Ultima_Acao_Site);
+                            break;
+                        case "Data_Ultimo_Atendimento desc":
+                            baseEmpresas = baseEmpresas.OrderByDescending(s => s.Dta_Ultimo_Atendimento);
+                            break;
+                        case "Data_Ultimo_Atendimento asc":
+                            baseEmpresas = baseEmpresas.OrderBy(s => s.Dta_Ultimo_Atendimento);
+                            break;
+                        case "Data_Cadastro desc":
+                            baseEmpresas = baseEmpresas.OrderByDescending(s => s.Dta_Cadastro);
+                            break;
+                        case "Data_Cadastro asc":
+                            baseEmpresas = baseEmpresas.OrderBy(s => s.Dta_Cadastro);
+                            break;
+                        case "num_cnpj desc":
+                            baseEmpresas = baseEmpresas.OrderByDescending(s => s.Num_CNPJ);
+                            break;
+                        case "num_cnpj asc":
+                            baseEmpresas = baseEmpresas.OrderBy(s => s.Num_CNPJ);
+                            break;
+                        case "empresa desc":
+                            baseEmpresas = baseEmpresas.OrderByDescending(s => s.Raz_Social);
+                            break;
+                        case "empresa asc":
+                            baseEmpresas = baseEmpresas.OrderBy(s => s.Raz_Social);
+                            break;
+                        case "area desc":
+                            baseEmpresas = baseEmpresas.OrderByDescending(s => s.Des_Area_BNE);
+                            break;
+                        case "area asc":
+                            baseEmpresas = baseEmpresas.OrderBy(s => s.Des_Area_BNE);
+                            break;
+                        case "cidade desc":
+                            baseEmpresas = baseEmpresas.OrderByDescending(s => s.Nme_Cidade);
+                            break;
+                        case "cidade asc":
+                            baseEmpresas = baseEmpresas.OrderBy(s => s.Nme_Cidade);
+                            break;
+                        case "uf desc":
+                            baseEmpresas = baseEmpresas.OrderByDescending(s => s.Sig_Estado);
+                            break;
+                        case "uf asc":
+                            baseEmpresas = baseEmpresas.OrderBy(s => s.Sig_Estado);
+                            break;
+                        case "Dta_Fim_Plano desc":
+                            baseEmpresas = baseEmpresas.OrderByDescending(s => s.Dta_Fim_Plano);
+                            break;
+                        case "Dta_Fim_Plano asc":
+                            baseEmpresas = baseEmpresas.OrderBy(s => s.Dta_Fim_Plano);
+                            break;
+                        case "Ultimo_Plano desc":
+                            baseEmpresas = baseEmpresas.OrderByDescending(s => s.Ultimo_Plano);
+                            break;
+                        case "Ultimo_Plano asc":
+                            baseEmpresas = baseEmpresas.OrderBy(s => s.Ultimo_Plano);
+                            break;
+                        case "total_acao desc":
+                            baseEmpresas = baseEmpresas.OrderByDescending(s => s.Total_Acao);
+                            break;
+                        case "total_acao asc":
+                            baseEmpresas = baseEmpresas.OrderBy(s => s.Total_Acao);
+                            break;
+                        case "Dta_Vencimento desc":
+                            baseEmpresas = baseEmpresas.OrderByDescending(s => s.dta_Vencimento);
+                            break;
+                        case "Dta_Vencimento asc":
+                            baseEmpresas = baseEmpresas.OrderBy(s => s.dta_Vencimento);
+                            break;
+                        case "qtd_funcionario desc":
+                            baseEmpresas = baseEmpresas.OrderByDescending(s => s.qtd_Funcionarios);
+                            break;
+                        case "qtd_funcionario asc":
+                            baseEmpresas = baseEmpresas.OrderBy(s => s.qtd_Funcionarios);
+                            break;
+
+                        default:
+                            baseEmpresas = baseEmpresas.OrderByDescending(s => s.Data_Ultima_Acao_Site);
+                            model.Ordenacao = "Data_Ultima_acao desc";
+                            break;
+                    }
+
+                    model.lista = baseEmpresas.ToPagedList(model.pag, model.rowsPag);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                model.lista = null;// new List<VW_Banco_Empresas>();
+                ViewBag.Error = ex.ToString();
+            }
+
+
+            return View("~/Views/Reservatecnica/Index.cshtml", model);
+        }
+    }
+}

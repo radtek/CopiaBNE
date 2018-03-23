@@ -1,0 +1,24 @@
+﻿
+/*------------------------------------------------------------ Theme Bege */
+.topo {
+  background-image: url("/img/App_Themes/Bege/bg_topo.gif"); }
+
+.painel_filtro_vaga_escondido {
+  background-image: linear-gradient(90deg, #E6E395 6%, #B5B382 18%, #E6E395 72%, #FFFC9E 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #FFFC9E 6%, #B5B382 18%, #E6E395 72%, #FFFC9E 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #FFFC9E 6%, #B5B382 18%, #E6E395 72%, #FFFC9E 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #FFFC9E 6%, #B5B382 18%, #E6E395 72%, #FFFC9E 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFC9E', endColorstr='#B5B382') !important; }
+
+#pnlBusca.painel_filtro_vaga {
+  background-image: linear-gradient(90deg, #E6E395 6%, #B5B382 18%, #E6E395 72%, #FFFC9E 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #FFFC9E 6%, #B5B382 18%, #E6E395 72%, #FFFC9E 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #FFFC9E 6%, #B5B382 18%, #E6E395 72%, #FFFC9E 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #FFFC9E 6%, #B5B382 18%, #E6E395 72%, #FFFC9E 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFC9E', endColorstr='#B5B382') !important;
+  border-radius: 0 4px 4px 4px !important; }
+
+#aBuscarVagas {
+  border-bottom: 35px solid #FFFC9E !important; }
+
+/*# sourceMappingURL=topo.css.map */

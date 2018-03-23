@@ -1,0 +1,130 @@
+﻿@model IEnumerable<AdminLTE_Application.CRM_Empresa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CRM_Situacao_Atendimento.Des_Situacao_atendimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Idf_Filial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Raz_Social)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dta_Cadastro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dta_Ultimo_Acesso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Idf_Plano)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Des_Plano)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dta_Inicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dta_Fim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qtd_Dias_Plano_Ativo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qtd_Acabar_Plano)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dta_Ultimo_Atendimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nme_Cidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sig_Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Idf_Cidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dta_Retorno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Idf_Area_BNE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CRM_Situacao_Atendimento.Des_Situacao_atendimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idf_Filial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Raz_Social)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dta_Cadastro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dta_Ultimo_Acesso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idf_Plano)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Des_Plano)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dta_Inicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dta_Fim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qtd_Dias_Plano_Ativo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qtd_Acabar_Plano)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dta_Ultimo_Atendimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nme_Cidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sig_Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idf_Cidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dta_Retorno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idf_Area_BNE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Num_CNPJ }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Num_CNPJ }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Num_CNPJ })
+        </td>
+    </tr>
+}
+
+</table>

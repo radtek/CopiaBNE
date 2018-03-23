@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CompletarCEP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cep" type="tns:CEP" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CEP">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Logradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Numero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoLogradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bairro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BairroAbreviado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cidade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cep" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Encontrou" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CompletarCEPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CompletarCEPResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cep" type="tns:CEP" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceAuthHeader" type="tns:ServiceAuthHeader" />
+      <s:complexType name="ServiceAuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodHash" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="RecuperarQuantidadeEnderecosPorCEP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cep" type="tns:CEP" />
+            <s:element minOccurs="1" maxOccurs="1" name="qtdeEnderecosEncontrados" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarQuantidadeEnderecosPorCEPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RecuperarQuantidadeEnderecosPorCEPResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="qtdeEnderecosEncontrados" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaCEP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logradouro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoLogradouro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bairro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cidade" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ordenacao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaCEPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaCEPResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaCEPPaginacao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logradouro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoLogradouro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bairro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cidade" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nomeColuna" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direcaoOrdenacao" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="paginaCorrente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tamanhoPagina" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaCEPPaginacaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaCEPPaginacaoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="totalRegistros" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CompletarCEPSoapIn">
+    <wsdl:part name="parameters" element="tns:CompletarCEP" />
+  </wsdl:message>
+  <wsdl:message name="CompletarCEPSoapOut">
+    <wsdl:part name="parameters" element="tns:CompletarCEPResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompletarCEPServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarQuantidadeEnderecosPorCEPSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarQuantidadeEnderecosPorCEP" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarQuantidadeEnderecosPorCEPSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarQuantidadeEnderecosPorCEPResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarQuantidadeEnderecosPorCEPServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaCEPSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaCEP" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaCEPSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaCEPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaCEPServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaCEPPaginacaoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaCEPPaginacao" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaCEPPaginacaoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaCEPPaginacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaCEPPaginacaoServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="cepwsSoap">
+    <wsdl:operation name="CompletarCEP">
+      <wsdl:input message="tns:CompletarCEPSoapIn" />
+      <wsdl:output message="tns:CompletarCEPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarQuantidadeEnderecosPorCEP">
+      <wsdl:input message="tns:RecuperarQuantidadeEnderecosPorCEPSoapIn" />
+      <wsdl:output message="tns:RecuperarQuantidadeEnderecosPorCEPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCEP">
+      <wsdl:input message="tns:ConsultaCEPSoapIn" />
+      <wsdl:output message="tns:ConsultaCEPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCEPPaginacao">
+      <wsdl:input message="tns:ConsultaCEPPaginacaoSoapIn" />
+      <wsdl:output message="tns:ConsultaCEPPaginacaoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="cepwsSoap" type="tns:cepwsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CompletarCEP">
+      <soap:operation soapAction="http://tempuri.org/CompletarCEP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CompletarCEPServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarQuantidadeEnderecosPorCEP">
+      <soap:operation soapAction="http://tempuri.org/RecuperarQuantidadeEnderecosPorCEP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarQuantidadeEnderecosPorCEPServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCEP">
+      <soap:operation soapAction="http://tempuri.org/ConsultaCEP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultaCEPServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCEPPaginacao">
+      <soap:operation soapAction="http://tempuri.org/ConsultaCEPPaginacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultaCEPPaginacaoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="cepwsSoap12" type="tns:cepwsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CompletarCEP">
+      <soap12:operation soapAction="http://tempuri.org/CompletarCEP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CompletarCEPServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarQuantidadeEnderecosPorCEP">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarQuantidadeEnderecosPorCEP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarQuantidadeEnderecosPorCEPServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCEP">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaCEP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultaCEPServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCEPPaginacao">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaCEPPaginacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultaCEPPaginacaoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="cepws">
+    <wsdl:port name="cepwsSoap" binding="tns:cepwsSoap">
+      <soap:address location="http://wsprdgeral.webfopag.com.br/cepws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="cepwsSoap12" binding="tns:cepwsSoap12">
+      <soap12:address location="http://wsprdgeral.webfopag.com.br/cepws.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

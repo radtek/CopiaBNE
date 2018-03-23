@@ -1,0 +1,107 @@
+﻿.icone_modal_envio_curriculo {
+    position: absolute;
+    top: -7px;
+    left: 6px;
+}
+
+.label_principal.envio_curriculo {
+    width: 98px;
+    font-weight: normal;
+}
+
+.titulo_painel_padrao_modal.empresa {
+    margin-left: 75px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.container_checkbox label {
+    float: none !important;
+}
+
+.modal_envio_curriculo .textbox_padrao.envio_curriculo.campo_obrigatorio, .modal_envio_curriculo .textarea_padrao.envio_curriculo.campo_obrigatorio {
+    color: #6e6d72;
+    width: 340px;
+}
+
+.modal_envio_curriculo .textbox_padrao.campo_obrigatorio, .modal_envio_curriculo .textarea_padrao.campo_obrigatorio {
+    width: 340px;
+}
+
+.chekbox_ocultar_foto {
+    margin-left: 50px;
+}
+
+.chekbox_aberto_email {
+    margin-left: 111px;
+}
+
+.chekbox_anexo_pdf {
+    margin-left: 66px;
+}
+
+.modal_envio_curriculo .textbox_padrao, .modal_envio_curriculo .textarea_padrao {
+    width: 351px;
+    font-size: 12px;
+}
+
+.botao_padrao {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/* Componente [Auto Completion Extender] */
+.ajax_ace_delete {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style: none;
+    z-index: 999;
+}
+
+
+    .ajax_ace_delete .item {
+        cursor: hand;
+        cursor: pointer;
+        margin: 0;
+        left: 0;
+        padding: 6px 4px;
+        border: 1px solid #f0ef9c;
+        border-top: none;
+        background-color: #fffeb7;
+    }
+
+    .ajax_ace_delete .selecionado {
+        cursor: hand;
+        cursor: pointer;
+        margin: 0;
+        left: 0;
+        padding: 6px 4px;
+        border: 1px solid #f0ef9c;
+        border-top: none;
+        background-color: #fc3;
+    }
+/* FIM: Componente [Auto Completion Extender] */
+
+.btnExcluir {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 8px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #F44336;
+    border: none;
+    border-radius: 50%;
+}
+
+    .btnExcluir:hover {
+        background-color: #D32F2F;
+    }
+
+
+

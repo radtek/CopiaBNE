@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace BNE.PessoaFisica.WebAPI.Models
+{
+    public class Vaga
+    {
+        public string Funcao { get; set; }
+        public int? IdFuncao { get; set; }
+        public int? IdCidade { get; set; }
+        public int IdVaga { get; set; }
+
+        public string SalarioDe { get; set; }
+        public string SalarioAte { get; set; }
+        public string Cidade { get; set; }
+        public string UF { get; set; }
+
+        public string CodigoVaga { get; set; }
+        public string Atribuicoes { get; set; }
+        public DateTime DataAnuncio { get; set; }
+    }
+}

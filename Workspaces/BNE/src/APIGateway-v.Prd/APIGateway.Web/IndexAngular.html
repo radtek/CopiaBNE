@@ -1,0 +1,100 @@
+﻿<html lang="en">
+<head>
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+</head>
+<body ng-app="ApiGateway" layout="row" ng-cloak>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        
+        <md-content layout-padding>
+            <md-menu>
+                <!-- Trigger element is a md-button with an icon -->
+                <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open sample menu">
+                    <md-icon md-svg-icon="call:phone"></md-icon>
+                </md-button>
+                <md-menu-content>
+                    <md-menu-item><md-button ng-click="doSomething()">Do Something</md-button></md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </md-content>
+    </md-sidenav>
+    <div layout="column" flex>
+        <md-toolbar ng-controller="MenuCtrl">
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggle();" ng-show="!bigScreen">
+                    <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+                </md-button>
+                <h2>
+                    <span>API Gateway Admin</span>
+                </h2>
+            </div>
+        </md-toolbar>
+        <md-content flex layout-padding>
+            <div layout-fill layout-align="top center">
+                <p>
+                    The left sidenav will 'lock open' on a medium (>=960px wide) device.
+                </p>
+                <p>
+                    The right sidenav will focus on a specific child element.
+                </p>
+                <div>
+                    <md-button ng-click="toggleLeft()"
+                               class="md-primary" hide-gt-md>
+                        Toggle left
+                    </md-button>
+                </div>
+                <div>
+                    <md-button ng-click="toggleRight()"
+                               ng-hide="isOpenRight()"
+                               class="md-primary">
+                        Toggle right
+                    </md-button>
+                </div>
+            </div>
+            <div flex></div>
+        </md-content>
+        <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+            <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools">Sidenav Right</h1>
+            </md-toolbar>
+            <md-content ng-controller="RightCtrl" layout-padding>
+                <form>
+                    <md-input-container>
+                        <label for="testInput">Test input</label>
+                        <input type="text" id="testInput"
+                               ng-model="data" md-autofocus>
+                    </md-input-container>
+                </form>
+                <md-button ng-click="close()" class="md-primary">
+                    Close Sidenav Right
+                </md-button>
+            </md-content>
+        </md-sidenav>
+    </div>
+    <!--
+      Your HTML content here
+    -->
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-modal-service/dst/angular-modal-service.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+    <!-- Application -->
+    <script src="app/config.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/apicontroller.js"></script>
+    <script src="app/controllers/endpointcontroller.js"></script>
+    <script src="app/controllers/sistemacontroller.js"></script>
+
+    <script src="app/resources/apiresource.js"></script>
+    <script src="app/resources/sistemaresource.js"></script>
+
+</body>
+</html>

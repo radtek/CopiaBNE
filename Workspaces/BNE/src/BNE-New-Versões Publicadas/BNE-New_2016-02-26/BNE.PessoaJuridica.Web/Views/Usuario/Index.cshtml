@@ -1,0 +1,25 @@
+﻿@using System.Web.Optimization
+@model BNE.PessoaJuridica.Web.Models.CadastroUsuarioEmpresa
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/cadastro-usuario")
+
+    <script type="text/javascript">
+        Configurar();
+    </script>
+}
+
+@if (ViewData["RunScripts"] != null && Convert.ToBoolean(ViewData["RunScripts"]))
+{
+    <script>
+        Configurar();
+    </script>
+}
+
+@using (Ajax.BeginForm("Index", "Usuario", new AjaxOptions { HttpMethod = "Post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "minhaDiv", OnSuccess = "onSuccess" }, new { @id = "CadastroUsuarioForm" }))
+{
+    <div id="minhaDiv" class="mdl-grid">
+        @Html.Partial("_Cadastro", Model)
+    </div>
+}

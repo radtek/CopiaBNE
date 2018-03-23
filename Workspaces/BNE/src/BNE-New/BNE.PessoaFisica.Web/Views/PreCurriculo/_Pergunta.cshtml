@@ -1,0 +1,92 @@
+﻿@model BNE.PessoaFisica.Web.Models.Curriculo
+
+
+@if (Model.Formacao != null)
+{
+    @Html.HiddenFor(m => m.Formacao.CPF, new { @Value = Model.Formacao.CPF })
+    @Html.HiddenFor(m => m.Formacao.DataNascimento, new { @Value = Model.Formacao.DataNascimento.Value.ToString("dd/MM/yyyy") })
+    @Html.HiddenFor(m => m.CPF, new { @Value = Model.Formacao.CPF })
+    @Html.HiddenFor(m => m.DataNascimento, new { @Value = Model.Formacao.DataNascimento })
+}
+else if (Model.ExperienciaProfissional != null)
+{
+    @Html.HiddenFor(m => m.ExperienciaProfissional.CPF, new { @Value = Model.ExperienciaProfissional.CPF })
+    @Html.HiddenFor(m => m.ExperienciaProfissional.DataNascimento, new { @Value = Model.ExperienciaProfissional.DataNascimento.Value.ToString("dd/MM/yyyy") })
+    @Html.HiddenFor(m => m.CPF, new { @Value = Model.ExperienciaProfissional.CPF })
+    @Html.HiddenFor(m => m.DataNascimento, new { @Value = Model.ExperienciaProfissional.DataNascimento.Value.ToString("dd/MM/yyyy") })
+}
+else
+{
+    @Html.HiddenFor(m => m.CPF, new { @Value = Model.CPF })
+    @Html.HiddenFor(m => m.Nome, new { @Value = Model.Nome })
+    @Html.HiddenFor(m => m.DataNascimento, new { @Value = Model.DataNascimento.HasValue ? Model.DataNascimento.Value.ToString("dd/MM/yyyy") : null })
+
+}
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        Pergunta();
+    });
+</script>
+
+
+<div class="mdl-grid bottom20">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center ">
+
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center bold ">
+                <b>Pergunta da Selecionadora</b>
+            </div>
+        </div>
+        @for (int i = 0; i < Model.Vaga.Perguntas.Count; i++)
+        {
+            @Html.HiddenFor(m => m.Vaga.Perguntas[i].descricaoVagaPergunta, new { @Value = Model.Vaga.Perguntas[i].descricaoVagaPergunta })
+            @Html.HiddenFor(m => m.Vaga.Perguntas[i].flagResposta, new { @Value = Model.Vaga.Perguntas[i].flagResposta })
+            @Html.HiddenFor(m => m.Vaga.Perguntas[i].tipoResposta, new { @Value = Model.Vaga.Perguntas[i].tipoResposta })
+            @Html.HiddenFor(m => m.Vaga.Perguntas[i].idVagaPergunta, new { @Value = Model.Vaga.Perguntas[i].idVagaPergunta })
+
+            @*RESPOSTA DESCRITIVA*@
+            if (Model.Vaga.Perguntas[i].tipoResposta == 2)
+            {
+                <div class="mdl-cell mdl-cell--2-col "></div>
+
+                <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--8-col-tablet vert-middle mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    @Html.TextBoxFor(m => m.Vaga.Perguntas[i].resposta, new { id = "txtResposta" + i, @maxlength = "199", @class = "mdl-textfield__input validar",  Rows = "5", Cols = "100" })
+                    <label class="mdl-textfield__label" for="txtNome">@Model.Vaga.Perguntas[i].descricaoVagaPergunta</label>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col "></div>
+            }
+            else
+            {
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--2-col  left"></div>
+                    <div class="mdl-cell mdl-cell--8-col  mdl-typography--text-left">
+
+
+                        <label>@Model.Vaga.Perguntas[i].descricaoVagaPergunta</label>
+                    </div>
+                    <div class="mdl-cell left mdl-cell--2-col  "></div>
+                    <div class="mdl-cell mdl-cell--2-col  mdl-typography--text-left left"></div>
+                    <div class="mdl-cell left mdl-cell--3-col mdl-cell--2-col-phone mdl-cell--6-col-tablet mdl-typography--text-left ">
+                        @Html.RadioButtonFor(m => m.Vaga.Perguntas[i].flgRespostaPergunta, true, new { @id = "option-S" + i, @class = "mdl-radio__button  validarRadio" })
+                        <label for="option-S" class="label">Sim</label>
+
+                        @Html.RadioButtonFor(m => m.Vaga.Perguntas[i].flgRespostaPergunta, false, new { @id = "option-N", @class = "mdl-radio__button" })
+                        <label for="option-N" class="label">Não</label>
+                    </div>
+                    <div class="mdl-cell mdl-cell--7-col  left"></div>
+                  
+                </div>
+            }
+        }
+        <br />
+        <div class="center">
+            <button type="submit" name="action:EnviarCurriculo" onclick="trackEvent('PreCurriculo','Click','Pergunta');" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformxbig">Continuar </button>
+        </div>
+
+    </div>
+</div>
+

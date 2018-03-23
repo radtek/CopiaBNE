@@ -1,0 +1,149 @@
+﻿h3
+{
+    clear: both;
+    color: #143D75;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.conteudo .textbox_ddd
+{
+    margin: 0;
+}
+
+.painel_botoes_login
+{
+    display: inline;
+    float: left;
+    width: 650px;
+}
+
+.painel_botoes_login li
+{
+    display: block;
+    line-height: 120%;
+    margin-right: 20px;
+    text-align: center;
+    width: 140px;
+    float: left;
+    height: 170px;
+}
+
+.painel_botoes_login ul
+{
+    padding: 5px;
+}
+
+.painel_imagem
+{
+    height: 45px;
+    padding: 15px;
+}
+
+.span_titulo
+{
+    font-size: 12px;
+    display: block;
+    color: #1E3260;
+}
+
+.span_texto
+{
+    font-size: 11px;
+    display: block;
+    font-size: 11px;
+}
+
+.painel_texto
+{
+    margin: 10px 0px 10px 0px;
+    height: 50px;
+}
+
+.painel_uclogin
+{
+    float: left;
+    width: 100px;
+    margin-top: 15px !important;
+}
+
+.painel_botoes_principal
+{
+    float: left;
+    width: 650px;
+}
+
+.painel_servico_destaque
+{
+    float: left;
+    height: 244px;
+    margin-right: 40px;
+    width: 620px;
+}
+
+.painel_servico_destaque .imagem_servico_destaque
+{
+    float: left;
+    text-align: center;
+    width: 270px;
+}
+
+.painel_servico_destaque .nome_descricao_servico_destaque
+{
+    float: left;
+    width: 342px;
+}
+
+.painel_servico_destaque .nome_descricao_servico_destaque h2
+{
+    color: #143D75;
+    font-size: 28px;
+    height: auto;
+    margin: 24px 0 6px;
+    padding: 0;
+}
+
+.painel_servico_destaque .nome_descricao_servico_destaque p
+{
+    color: #143D75;
+    font-size: 16px;
+    margin: 6px 0;
+}
+
+.painel_servicos_baixo
+{
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    background-color: #cfe0f1;
+    border-radius: 8px;
+    clear: both;
+    margin: 4px 0 20px;
+    overflow: hidden;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.painel_servicos_baixo a img
+{
+    border: none;
+}
+
+.painel_servico
+{
+    display: inline-block;
+    font-size: 11px;
+    margin: 0 80px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.painel_servico .icone_servico
+{
+    height: 61px;
+}
+
+.painel_servico .texto_nome_servico
+{
+    color: #143D75;
+}

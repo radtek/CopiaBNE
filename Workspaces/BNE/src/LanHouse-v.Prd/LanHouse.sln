@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanHouse.API", "LanHouse.API\LanHouse.API.csproj", "{3E33DD6B-6E81-4D37-B599-AF150566B8B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanHouse.API.Authentication", "LanHouse.API.Authentication\LanHouse.API.Authentication.csproj", "{64707D83-74E3-4ED8-B8DC-986B88ACFB62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanHouse.Business", "LanHouse.Business\LanHouse.Business.csproj", "{B9728E78-1F0F-433D-B506-901B6A642198}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanHouse.Entities.BNE", "LanHouse.Entities.BNE\LanHouse.Entities.BNE.csproj", "{68FDC1C2-7887-4869-9D7A-52F398E41A42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanHouse.Web", "Web\LanHouse.Web.csproj", "{5B10DDD6-E96F-4411-A585-3E4759862D59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{3843652C-A25F-44F7-B4F7-6CEF34BEFFD7}"
+	ProjectSection(SolutionItems) = preProject
+		Library\BNE.BLL.AsyncServices.dll = Library\BNE.BLL.AsyncServices.dll
+		Library\BNE.Cache.dll = Library\BNE.Cache.dll
+		Library\BNE.EL.dll = Library\BNE.EL.dll
+		Library\BNE.Services.Base.dll = Library\BNE.Services.Base.dll
+		Library\Employer.BNE.DAL.dll = Library\Employer.BNE.DAL.dll
+		Library\Employer.DAL.dll = Library\Employer.DAL.dll
+		Library\Employer.Plataforma.DAL.dll = Library\Employer.Plataforma.DAL.dll
+		Library\Employer.PlataformaLog.dll = Library\Employer.PlataformaLog.dll
+		Library\Newtonsoft.Json.dll = Library\Newtonsoft.Json.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanHouse.Entities.SalarioBR", "LanHouse.Entities.SalarioBR\LanHouse.Entities.SalarioBR.csproj", "{FA399AD5-DF1A-4D79-B6FF-2B0CEE218636}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.employer.com.br:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = LanHouse.API.Authentication\\LanHouse.API.Authentication.csproj
+		SccProjectName1 = LanHouse.API.Authentication
+		SccLocalPath1 = LanHouse.API.Authentication
+		SccProjectUniqueName2 = LanHouse.API\\LanHouse.API.csproj
+		SccProjectName2 = LanHouse.API
+		SccLocalPath2 = LanHouse.API
+		SccProjectUniqueName3 = LanHouse.Business\\LanHouse.Business.csproj
+		SccProjectName3 = LanHouse.Business
+		SccLocalPath3 = LanHouse.Business
+		SccProjectUniqueName4 = LanHouse.Entities.BNE\\LanHouse.Entities.BNE.csproj
+		SccProjectName4 = LanHouse.Entities.BNE
+		SccLocalPath4 = LanHouse.Entities.BNE
+		SccProjectUniqueName5 = Web\\LanHouse.Web.csproj
+		SccProjectName5 = Web
+		SccLocalPath5 = Web
+		SccProjectUniqueName6 = LanHouse.Entities.SalarioBR\\LanHouse.Entities.SalarioBR.csproj
+		SccProjectName6 = LanHouse.Entities.SalarioBR
+		SccLocalPath6 = LanHouse.Entities.SalarioBR
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E33DD6B-6E81-4D37-B599-AF150566B8B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E33DD6B-6E81-4D37-B599-AF150566B8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E33DD6B-6E81-4D37-B599-AF150566B8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E33DD6B-6E81-4D37-B599-AF150566B8B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64707D83-74E3-4ED8-B8DC-986B88ACFB62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64707D83-74E3-4ED8-B8DC-986B88ACFB62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64707D83-74E3-4ED8-B8DC-986B88ACFB62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64707D83-74E3-4ED8-B8DC-986B88ACFB62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9728E78-1F0F-433D-B506-901B6A642198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9728E78-1F0F-433D-B506-901B6A642198}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9728E78-1F0F-433D-B506-901B6A642198}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9728E78-1F0F-433D-B506-901B6A642198}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68FDC1C2-7887-4869-9D7A-52F398E41A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68FDC1C2-7887-4869-9D7A-52F398E41A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68FDC1C2-7887-4869-9D7A-52F398E41A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68FDC1C2-7887-4869-9D7A-52F398E41A42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B10DDD6-E96F-4411-A585-3E4759862D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B10DDD6-E96F-4411-A585-3E4759862D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B10DDD6-E96F-4411-A585-3E4759862D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B10DDD6-E96F-4411-A585-3E4759862D59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA399AD5-DF1A-4D79-B6FF-2B0CEE218636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA399AD5-DF1A-4D79-B6FF-2B0CEE218636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA399AD5-DF1A-4D79-B6FF-2B0CEE218636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA399AD5-DF1A-4D79-B6FF-2B0CEE218636}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

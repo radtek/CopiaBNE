@@ -1,0 +1,13 @@
+﻿.box_ajuda_tipo_contrato { float: left;position: relative;pointer-events: none;}
+.inner_box_tipo_contrato { position: absolute;top: -65px;}
+.img_box_tipo_contrato { width: 150px;}
+.label_principal { text-align: right; /*width: 140px;*/ width: 180px; clear: both; }
+.container_campo { float: left; padding-left: 5px; margin-left: 0; padding-top: 3px; }
+.container_campo .RadComboBox { margin-left: 0; margin-right: 5px; }
+.container_inner_campo_funcao {width:285px;}
+.linha,#linha_funcao { display: table; }
+.checkbox_quero_estagiarios { text-align: right; /*width: 140px;*/ width: 186px; clear: both;float: left;margin-left: 20px;}
+.label_quero_estagiarios { margin-left: -2px;}
+
+.inner_box_estagiario { position: absolute;top: -27px;left: -38px;}
+.img_box_estagiario {height: 92px;}

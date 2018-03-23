@@ -1,0 +1,13 @@
+﻿<div class="row">
+    <label>{{eLabel}} <span class="required" ng-show="eRequired">*</span></label>
+</div>
+<div class="col-lg-6">
+    <label class="radio-inline">
+        <input type="radio" name="{{eNome}}" id="rbMasculino" ng-model="cadCV.curriculo.sexo" {{eRequired}} value="1">Masculino
+    </label>
+</div>
+<div class="col-lg-6">
+    <label class="radio-inline">
+        <input type="radio" name="{{eNome}}" id="rbFeminino" ng-model="cadCV.curriculo.sexo" {{eRequired}} value="2">Feminino
+    </label>
+</div>

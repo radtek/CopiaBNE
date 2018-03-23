@@ -1,0 +1,7 @@
+﻿Para instalar, executar o seguinte comando
+
+c:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe BNE.Dashboard.ServerMonitor.exe
+
+Para desintalar, executar o seguinte comando
+
+c:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /u BNE.Dashboard.ServerMonitor.exe

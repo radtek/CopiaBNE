@@ -1,0 +1,424 @@
+﻿@using BNE.Core.Common
+@using BNE.PessoaFisica.Web.Helpers
+@model BNE.PessoaFisica.Web.Models.Curriculo
+
+@section jsonSchema {
+<script type="application/ld+json">
+    {
+    "@@context": "http://schema.org",
+    "@@type": "JobPosting",
+    "employmentType" : "@if (Model.Vaga.DescricaoTipoVinculo.Length > 0)
+    {
+        switch (Model.Vaga.DescricaoTipoVinculo[0].ToLower() as string)
+        {
+            case "aprendiz":
+                <text>INTERN</text>
+                break;
+            case "autônomo":
+            case "autonomo":
+                <text>CONTRACTOR</text>
+                break;
+            case "efetivo":
+                <text>FULL_TIME</text>
+                break;
+            case "estágio":
+            case "estagio":
+                <text>INTERN</text>
+                break;
+            case "freelancer":
+                <text>PART_TIME</text>
+                break;
+            case "temporário":
+            case "temporario":
+                <text>TEMPORARY</text>
+                break;
+            default:
+                <text>FULL_TIME</text>
+                break;
+        }
+    }",
+        "title": "@Model.Vaga.Funcao",
+        "description": "@Model.Vaga.Atribuicoes",
+        "datePosted": "@Model.Vaga.DataAnuncio.ToString("yyyy-MM-dd")",
+        "hiringOrganization": {
+        "@@type": "Organization",
+        "name": "@Model.Vaga.FlgConfidencial ? Confidencial : @string.IsNullOrEmpty(Model.Vaga.NomeEmpresa) ? Confidencial : @Model.Vaga.NomeEmpresa"
+    },
+    "jobLocation": {
+        "@@type": "Place",
+        "address": {
+        "@@type": "PostalAddress",
+        "addressLocality": "@Model.Vaga.Cidade",
+        "addressRegion": "@Model.Vaga.UF",
+        "addressCountry": "BR"
+    }
+    },
+    @if (Model.Vaga.SalarioDe > 0 || Model.Vaga.SalarioAte > 0 ||
+        (Model.Vaga.faixaSalarialDe.HasValue && Model.Vaga.faixaSalarialDe.Value >= 0) ||
+        (Model.Vaga.faixaSalarialAte.HasValue && Model.Vaga.faixaSalarialAte.Value >= 0))
+    {
+        <text>
+        "baseSalary" : {
+            "@@type": "MonetaryAmount",
+            "currency": "BRL",
+            "value": {
+                "@@type": "QuantitativeValue",
+        </text>
+                if (Model.Vaga.SalarioDe <= 0 && Model.Vaga.SalarioAte <= 0)
+                {
+                    if (Model.Vaga.faixaSalarialDe.HasValue && Model.Vaga.faixaSalarialDe.Value > 0)
+                    {
+                        <text>"minValue": @Model.Vaga.faixaSalarialDe.Value.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US")),</text>
+                    }
+                    if (Model.Vaga.faixaSalarialDe.HasValue && Model.Vaga.faixaSalarialDe.Value > 0)
+                    {
+                        <text>"maxValue": @Model.Vaga.faixaSalarialAte.Value.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US")),</text>
+                    }
+                }
+                else
+                {
+                    if(Model.Vaga.SalarioDe == Model.Vaga.SalarioAte)
+                    {
+                        <text>"value": @Model.Vaga.SalarioDe.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US")),</text>
+                    }else if (Model.Vaga.SalarioDe > 0 && Model.Vaga.SalarioAte < 0){
+                        <text>"value": @Model.Vaga.SalarioDe.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US")),</text>
+                    }else if (Model.Vaga.SalarioDe < 0 && Model.Vaga.SalarioAte > 0){
+                        <text>"value": @Model.Vaga.SalarioAte.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US")),</text>
+                    }else {
+                    
+                        if (Model.Vaga.SalarioDe > 0){
+                            <text>"minValue": @Model.Vaga.SalarioDe.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US")),</text>
+                        }
+                        if (Model.Vaga.SalarioAte > 0)
+                        {
+                            <text>"maxValue": @Model.Vaga.SalarioAte.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US")),</text>
+                        }
+                    }
+                }
+                <text>
+                "unitText": "MONTH"
+            }
+        },</text>
+    }
+    "validThrough": "@Model.Vaga.DataAnuncio.AddDays(60).ToString("s")"
+    }
+</script>
+}
+
+    @section scripts {
+        @Scripts.Render("~/bundles/pre-curriculo")
+    <script src="~/Scripts/jquery.bpopup.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+                    Inicializar();
+                });
+    </script>
+    <script src="http://m2d.m2.ai/m2d.bne.js"></script>
+}
+
+            @using (Ajax.BeginForm("Index", "PreCurriculo", null, new AjaxOptions
+{
+    HttpMethod = "Post",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "renderTela"
+}, new { id = "PreCadastroLoginForm" }))
+{
+    if (Model.Vaga != null)
+    {
+        @Html.HiddenFor(m => m.IdVaga, new { Value = Model.Vaga.IdVaga })
+        @Html.HiddenFor(m => m.IdFuncao, new { Value = Model.Vaga.IdFuncao })
+        @Html.HiddenFor(m => m.DescricaoFuncao, new { Value = Model.Vaga.Descricao })
+        @Html.HiddenFor(m => m.IdPesquisa, new { Value = Model.Vaga.IdPesquisa })
+        @Html.HiddenFor(m => m.UrlPesquisa, new { Value = Model.Vaga.urlPesquisa })
+        @Html.HiddenFor(m => m.IdCidade, new { Value = Model.Vaga.IdCidade })
+        if (Model.Vaga.LinkVagasFuncaoCidade != null)
+        {
+            @Html.HiddenFor(m => m.Vaga.LinkVagasFuncaoCidade.URL, new { Value = Model.Vaga.LinkVagasFuncaoCidade.URL })
+        }
+        @Html.HiddenFor(m => m.EstaEmBH, new { Value = Model.EstaEmBH })
+        @Html.HiddenFor(m => m.EmpresaBloqueada, new { Value = Model.EmpresaBloqueada })
+        @Html.HiddenFor(m => m.CurriculoVIP, new { Value = Model.CurriculoVIP })
+        @Html.HiddenFor(m => m.Vaga.FlgArquivada, new { Value = Model.Vaga.FlgArquivada })
+
+
+
+        <input type="hidden" id="hddVagaOportunidade" value="@Model.VagaOportunidade" />
+
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col center">
+                <h3 class="darkgrey">Olá, você quer se candidatar a esta @ViewBag.CssVagaOportunidade?</h3>
+            </div>
+        </div>
+        <!-- HTML da VAGA -->
+        <div class="mdl-grid top12 headbox-@ViewBag.CssVagaOportunidade">
+            <div class="mdl-cell mdl-cell--1-col navegacao">
+                @if (Model.Vaga.Navegacao != null)
+        {
+            if (!string.IsNullOrEmpty(Model.Vaga.Navegacao.UrlVagaAnterior))
+            {
+                        <a href="@Model.Vaga.Navegacao.UrlVagaAnterior" data-role="none" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                    }
+                }
+            </div>
+            <div class="mdl-cell mdl-cell--10-col">
+                <div class="mdl-cell mdl-cell--10-col  mdl-cell--6-col-tablet ">
+                    <h1 class="white">
+                        @if (!string.IsNullOrEmpty(Model.Vaga.DescricaoDeficiencia) && Model.Vaga.Idf_Deficiencia > 0)
+        {
+            @Html.Raw(File.ReadAllText(Server.MapPath("~/svg/pcd.svg")))
+                        }
+                        else
+                        {
+                            @Model.Vaga.Funcao
+                        }
+
+                    </h1>
+                </div>
+
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone ">
+
+                </div>
+                @if (Model.Vaga.SalarioDe == 0 && Model.Vaga.SalarioAte == 0)
+        {
+                    <div class="mdl-cell mdl-cell--10-col white mdl-cell--6-col-tablet">
+                        @if (Model.Vaga.faixaSalarial == "combinar")
+        {
+                            <p class="white">Salário a combinar em @Model.Vaga.Cidade/@Model.Vaga.UF</p>
+                        }
+                        else
+                        {
+                            <p>
+                                @Model.Vaga.Cidade/@Model.Vaga.UF
+                                @if (!string.IsNullOrEmpty(Model.Vaga.Bairro))
+        {
+                                    <span> no bairro @Model.Vaga.Bairro</span>
+                                }
+                            </p>
+                            <p class="white">@Model.Vaga.faixaSalarial </p>
+                        }
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col "></div>
+                }
+                else
+                {
+                    <div class="mdl-cell mdl-cell--12-col white">
+
+                        <p>
+                            @Model.Vaga.Cidade/@Model.Vaga.UF
+                            @if (!string.IsNullOrEmpty(Model.Vaga.Bairro))
+        {
+                                <span> no bairro @Model.Vaga.Bairro</span>
+                            }
+                        </p>
+                        <p class="white">
+                            @Utils.FormatarExibicaoSalario(Model.Vaga.SalarioDe, Model.Vaga.SalarioAte)
+                        </p>
+                    </div>
+                }
+
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                    @Ajax.ActionLink("Mais dados da empresa", "DadosDaEmpresa2", "PreCurriculo", new { idVaga = Model.Vaga.IdVaga, idCurriculo = Model.IdCurriculo }, new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "renderTela" }, new { @class = "mdl-button mdl-js-button mdl-js-ripple-effect", @Style = "color: #fff !important; border: solid 1px #fff !important; border-radius:4px;", onClick = "trackEvent('PreCurriculo','Click','DadosDaEmpresa');" })
+                </div>
+
+            </div>
+            <div class="mdl-cell mdl-cell--1-col navegacao">
+                @if (Model.Vaga.Navegacao != null)
+        {
+            if (!string.IsNullOrEmpty(Model.Vaga.Navegacao.UrlVagaProxima))
+            {
+                        <a href="@Model.Vaga.Navegacao.UrlVagaProxima" data-role="none" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    }
+                }
+            </div>
+
+
+            @*<div class="navegacao anterior">
+
+                </div>*@
+
+
+            @*<div class="navegacao proxima">
+
+                </div>*@
+        </div>
+
+        <div class="mdl-grid headcont-vaga">
+            <div class="mdl-cell mdl-cell--12-col">
+                <h5 class="h5Vaga">Atribuições</h5>
+            </div>
+            <div class="mdl-cell mdl-cell--12-col justify">
+                <p>@Html.Raw(Model.Vaga.Atribuicoes)</p>
+            </div>
+
+
+            @if (!string.IsNullOrEmpty(Model.Vaga.DescricaoDeficiencia) && Model.Vaga.Idf_Deficiencia > 0)
+            {
+                <div class="mdl-cell mdl-cell--12-col">
+                    <h5 class="h5Vaga">Deficiência</h5>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col justify">
+                    <p>@Model.Vaga.DescricaoDeficiencia</p>
+                </div>
+            }@if (Model.Vaga.Beneficios != null)
+            {
+                <div class="mdl-cell mdl-cell--12-col">
+                    <h5 class="h5Vaga">Benefícios</h5>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col justify">
+                    <p>@Model.Vaga.Beneficios</p>
+                </div>
+            }
+            @if (Model.Vaga.Requisitos != null)
+            {
+                <div class="mdl-cell mdl-cell--12-col">
+                    <h5 class="h5Vaga">Requisições</h5>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col justify">
+                    <p>@Model.Vaga.Requisitos</p>
+                </div>
+            }
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                Código da @ViewBag.CssVagaOportunidade: <strong class="darkcolor">@Model.Vaga.CodigoVaga</strong>
+            </div>
+            @if (!Model.Vaga.FlgArquivada && !Model.Vaga.FlgInativo)
+            {
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                    Anunciada em:
+                    <strong class="darkcolor">@Model.Vaga.DataAnuncio.ToString("dd/MM/yyyy")</strong>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                    @if (Model.Vaga.FlgAuditada)
+                    {
+                        <span>@ViewBag.CssVagaOportunidade Auditada.</span>
+                    }
+                </div>
+            }
+
+            <div class="mdl-cell mdl-cell--12-col">
+                <p class="small mediumgrey lighter">
+                    @ViewBag.CssVagaOportunidade encontrada em:<br />
+                    @if (Model.Vaga.LinkVagasFuncao != null)
+                    {
+                        @Model.Vaga.LinkVagasFuncao.GetLink()
+                    }
+                    /
+                    @if (Model.Vaga.LinkVagasCidade != null)
+                    {
+                        @Model.Vaga.LinkVagasCidade.GetLink()
+                    }
+                    /
+                    @if (Model.Vaga.LinkVagasFuncaoCidade != null)
+                    {
+                        @Model.Vaga.LinkVagasFuncaoCidade.GetLink()
+                    }
+                    /
+                    @if (Model.Vaga.LinkVagasArea != null)
+                    {
+                        @Model.Vaga.LinkVagasArea.GetLink()
+                    }
+                </p>
+            </div>
+        </div>
+
+        <div class="mdl-grid top24">
+            <div class="mdl-cell mdl-cell--12-col center ">
+                @if (!HtmlHelpers.IsMobileDevice())
+                {
+                    <div id="BNE_JobView_728x90_Desktop"></div>
+                }
+                else
+                {
+                    <div id="BNE_JobView_300x250_Mobile"></div>
+                }
+            </div>
+        </div>
+
+        if (ViewBag.JaEnviei != null && !ViewBag.JaEnviei)
+        {
+            <div class="mdl-grid top24">
+                <div class="mdl-cell mdl-cell--12-col center ">
+                    <h3 id="maisInfo" class="darkgrey">
+                        <span class="lighter">Para isso precisamos de </span>algumas informações:
+                    </h3>
+                </div>
+            </div>
+        }
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col center">
+                <h6 class="linkLogin">
+                    <span class="lighter darkgrey">Já possui cadastro?</span> <span class="italic">
+                        @Ajax.ActionLink("Clique Aqui", "FazerLogin", "PreCurriculo", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "renderTela" }, new { @class = "color", onClick = "trackEvent('PreCurriculo','Click','FazerLogin');" })
+                    </span>
+                </h6>
+            </div>
+        </div>
+
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col center">
+                <h6 class="linkCadastro">
+                    <span class="lighter darkgrey">Não possui cadastro?</span> <span class="italic">
+                        @Ajax.ActionLink("Clique Aqui", "Passo1", "PreCurriculo", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "renderTela" }, new { @class = "color", onClick = "trackEvent('PreCurriculo','Click','FazerCadastro');" })
+                    </span>
+                </h6>
+            </div>
+        </div>
+        <!--FIM da VAGA-->
+        <!-- FORM -->
+        <div class="md-section-candidatvaga" id="renderTela">
+            <input type="hidden" id="hddMinimoNacional" value="@ViewBag.MinimoNacional" />
+
+
+            @if (ViewBag.JaEnviei != null && !ViewBag.JaEnviei)
+            {
+                if (ViewBag.Bloqueada != null && ViewBag.Bloqueada)
+                {
+                    @Html.Partial("_VagaDeEmpresaBloqueadaPeloUsuario", Model)
+                }
+                else if (ViewBag.PedirExperiencia)
+                {
+                    @Html.Partial("_UltimaExperiencia", Model)
+                }
+                else if (ViewBag.PedirFormacao)
+                {
+                    @Html.Partial("_Formacao", Model)
+                }
+                else if (ViewBag.EnviarCV)
+                {
+                    @Html.Partial("_EnviarCV", Model)
+                }
+                else if (ViewBag.PedirIndicacao)
+                {
+                    @Html.Partial("_PedirIndicacaoBH", Model)
+                }
+                else
+                {
+                    @Html.Partial("_CadastroPasso1", Model)
+                }
+            }
+            else
+            {
+                @Html.Partial("_JaEnviei", Model)
+            }
+        </div>
+        <!--Fim do FORM-->
+    }
+    else
+    {
+        <div class="mdl-grid headbox-vaga top12">
+            <div class="mdl-cell mdl-cell--12-col">
+                <h1 class="white">OPS!</h1>
+            </div>
+            <div class="mdl-cell mdl-cell--12-col white">
+                <p class="white">Vaga não encontrada!</p>
+                <p class="white">
+                    <a href="" onclick="javascript: history.go(-1);">Voltar para a tela de pesquisa</a>
+                </p>
+
+            </div>
+        </div>
+    }
+}

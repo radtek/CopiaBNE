@@ -1,0 +1,77 @@
+﻿.vaga { background-color: #fff; border: 1px solid #D1D5DC; clear: both; margin: 8px 0; padding-bottom: 15px; padding-left: 0px; padding-right: 0px; padding-top: 15px; overflow: hidden; /*position: relative;*/ }
+    .vaga .funcao { color: #172B49; font-size: 21px; height: auto; margin: 0; padding: 0; display: inline; }
+    .vaga .coluna_web_estagios_vaga { float: left; }
+    .vaga .imagem_web_estagios { width: 34px; height: 34px; margin-right: 5px; border-style: none; }
+    .vaga .quantidade_vaga { font-size: 13px; font-weight: normal; }
+    .vaga .salario { color: #172B49; font-size: 16px; line-height: 100%; display: inline; }
+    .vaga .cidade { color: #172B49; font-size: 16px; line-height: 100%; }
+    .vaga .atribuicao { display: block; line-height: 150%; }
+    .vaga .codigo_data_vaga { color: #999; margin: 10px 0 0; }
+    .vaga .titulo { display: block; }
+        .vaga .titulo a { text-decoration: none; color: #172B49; }
+    .vaga h3 { font-size: 12px; margin-top: 14px; }
+    .vaga .container_atribuicao { margin-top: 15px; display: block; }
+    .vaga .painel_mais_dados_vaga { display: none; }
+        .vaga .painel_mais_dados_vaga .atribuicao { display: none; line-height: 150%; }
+        .vaga .painel_mais_dados_vaga .beneficio { display: block; line-height: 150%; }
+        .vaga .painel_mais_dados_vaga .requisito { display: block; line-height: 150%; }
+    .vaga .qualificacaoVaga { position: relative; top: -37px; right: 0; width: 100%; /*height: 21px;*/ }
+        .vaga .qualificacaoVaga .img { background-repeat: no-repeat; width: 144px; height: 21px; position: relative; top: -4px; color: White; text-align: center; padding-top: 4px; font-size: 11px; margin: 0 auto; }
+        .vaga .qualificacaoVaga.bne { border-top: 4px solid #103c73; }
+        .vaga .qualificacaoVaga.parceiro { border-top: 4px solid #666666; }
+        .vaga .qualificacaoVaga.bne .img { background-image: url('/Images/vaga-bne.png'); }
+        .vaga .qualificacaoVaga.parceiro .img { background-image: url('/Images/vaga-parceiro.png'); }
+    .vaga .coluna_esquerda { float: left; line-height: 150%; margin-right: 16px; text-align: justify; width: 570px; padding-left: 12px; }
+        .vaga .coluna_esquerda ul { list-style-type: square; }
+    .vaga .coluna_direita { floaT: left; margin-left: 37px; width: 164px; padding-bottom: 30px; padding-right: 12px; }
+        .vaga .coluna_direita ul { line-height: 150%; margin-top: 13px; margin-bottom: 13px; }
+        .vaga .coluna_direita ul,
+        .vaga .coluna_direita li { color: #DBA600; font-size: 13px; list-style-position: inside; list-style-type: disc; margin-left: 0; padding-left: 0; }
+        .vaga .coluna_direita a:link,
+        .vaga .coluna_direita a:visited,
+        .vaga .coluna_direita a:hover .vaga .coluna_direita a:active { text-decoration: underline; }
+        .vaga .coluna_direita a:hover { color: #EFC64A; }
+        .vaga .coluna_direita a:link,
+        .vaga .coluna_direita a:visited,
+        .vaga .coluna_direita a:active { color: #DBA600; }
+    .vaga .compartilhamento { background-color: #DDD; display: block; height: 40px; line-height: 40px; /*margin-left: 459px; margin-top: 16px;*/ position: absolute; /*!important; */ width: 162px; }
+        .vaga .compartilhamento .compartilhe { color: #6D6E70; display: block; float: left; font-family: Arial; font-size: 10px; font-weight: bold; margin-left: 15px; position: absolute; }
+        .vaga .compartilhamento .facebook { display: block; float: left; margin-left: 107px; margin-top: 3px; position: absolute; width: 20px; }
+    .vaga .quero_me_candidatar { margin-top: 0px; margin-left: 13px; }
+    .vaga .ja_enviei { color: #3e8830; text-align: center; }
+        .vaga .ja_enviei p { font-size: 16px; font-weight: bold; margin-top: 4px; }
+    .vaga p { line-height: 40px; }
+    .vaga .data_vaga { }
+    .vaga .ico_pcd { float: left; padding-right: 10px; color: #172B49; }
+.imagem_bne_recomenda { /* ATENÇÃO: Verificar estilos dinâmicos definidos via JQuery */ }
+.imagem_vip_universitario_recomenda { /* ATENÇÃO: Verificar estilos dinâmicos definidos via JQuery */ }
+.spanMaisDadosDaVaga { /* ATENÇÃO: Verificar estilos dinâmicos definidos via JQuery */ }
+.imagem_candidatura_gratis { z-index: 2; /* ATENÇÃO: Verificar estilos dinâmicos definidos via JQuery */ }
+.buscar input { display:block; margin-top:-5px; margin-bottom:2px
+}
+.buscar a { color:#fff
+}
+.buscar a:hover {
+text-decoration:underline
+}
+.envioEmailCompartilhamento
+{
+    background:none; border:none; color: #1E3260; cursor: pointer; padding:0;
+}
+.envioEmailCompartilhamento:hover{
+    color:#efc64a;
+}
+.compartilhamentoFacebook{
+    cursor: pointer; 
+}
+.DivCompartilhamento{
+    font-size: 18px;
+    margin-right: 10px;
+}
+.DivCompartilhamentoEmail{
+    margin-left:8px;
+    float:right;
+}
+.DivCompartilhamentoFB{
+    float:right;
+}

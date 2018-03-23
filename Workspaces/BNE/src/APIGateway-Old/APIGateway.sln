@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Gateway", "API.Gateway\API.Gateway.csproj", "{4739A403-0436-4305-95C3-4B2DF2323DCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Gateway.Console", "API.Gateway.Console\API.Gateway.Console.csproj", "{DB5C4DF6-CD0A-4D8C-B130-981A3CC0AE87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.GatewayV2", "API.GatewayV2\API.GatewayV2.csproj", "{F05A0DAD-790A-4335-89D5-FB272E6B4C51}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.employer.com.br:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = API.Gateway\\API.Gateway.csproj
+		SccProjectName1 = API.Gateway
+		SccLocalPath1 = API.Gateway
+		SccProjectUniqueName2 = API.Gateway.Console\\API.Gateway.Console.csproj
+		SccProjectName2 = API.Gateway.Console
+		SccLocalPath2 = API.Gateway.Console
+		SccProjectUniqueName3 = API.GatewayV2\\API.GatewayV2.csproj
+		SccProjectName3 = API.GatewayV2
+		SccLocalPath3 = API.GatewayV2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4739A403-0436-4305-95C3-4B2DF2323DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4739A403-0436-4305-95C3-4B2DF2323DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4739A403-0436-4305-95C3-4B2DF2323DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4739A403-0436-4305-95C3-4B2DF2323DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB5C4DF6-CD0A-4D8C-B130-981A3CC0AE87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB5C4DF6-CD0A-4D8C-B130-981A3CC0AE87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB5C4DF6-CD0A-4D8C-B130-981A3CC0AE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB5C4DF6-CD0A-4D8C-B130-981A3CC0AE87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F05A0DAD-790A-4335-89D5-FB272E6B4C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F05A0DAD-790A-4335-89D5-FB272E6B4C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F05A0DAD-790A-4335-89D5-FB272E6B4C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F05A0DAD-790A-4335-89D5-FB272E6B4C51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

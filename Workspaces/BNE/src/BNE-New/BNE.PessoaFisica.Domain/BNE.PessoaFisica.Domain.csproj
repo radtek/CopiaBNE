@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0040D95A-8CBF-4180-A8BC-02B13F6ED3AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.PessoaFisica.Domain</RootNamespace>
+    <AssemblyName>BNE.PessoaFisica.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SharedKernel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharedKernel.1.2.24\lib\net461\SharedKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aggregates\Candidatura.cs" />
+    <Compile Include="Aggregates\InformacaoCurriculo.cs" />
+    <Compile Include="Command\GetInstituicaoEnsinoCommand.cs" />
+    <Compile Include="Command\GetPlanoCommand.cs" />
+    <Compile Include="Command\SalvarIndicarAmigoCommand.cs" />
+    <Compile Include="Command\SalvarIndicarAmigoIndicadoCommand.cs" />
+    <Compile Include="Command\SalvarExperienciaProfissionalCommand.cs" />
+    <Compile Include="Command\SalvarFormacaoCommand.cs" />
+    <Compile Include="Command\SalvarPreCurriculoCommand.cs" />
+    <Compile Include="Configuration\AutoMapper.cs" />
+    <Compile Include="Enumeradores\Origem.cs" />
+    <Compile Include="Enumeradores\TipoCurriculo.cs" />
+    <Compile Include="Model\CurriculoOrigem.cs" />
+    <Compile Include="Model\CurriculoParametro.cs" />
+    <Compile Include="Model\DadosEmpresa.cs" />
+    <Compile Include="Model\Vaga.cs" />
+    <Compile Include="Model\VagaPergunta.cs" />
+    <Compile Include="Repositories\IDadosEmpresaRepository.cs" />
+    <Compile Include="Repositories\IPlanoRepository.cs" />
+    <Compile Include="Repositories\IVagaPerguntaRepository.cs" />
+    <Compile Include="Repositories\IVagaRepository.cs" />
+    <Compile Include="Services\SOLR\ISOLRService.cs" />
+    <Compile Include="Services\SOLR\Vaga.cs" />
+    <Compile Include="Specs\InstituicaoEnsinoSpecs.cs" />
+    <Compile Include="Command\SalvarCandidatarPreCurriculoSalvarPerguntaCommand.cs" />
+    <Compile Include="Command\SalvarCurriculoCommand.cs" />
+    <Compile Include="Command\SalvarCandidatarCurriculoCommand.cs" />
+    <Compile Include="Command\GetCursoCommand.cs" />
+    <Compile Include="Specs\CursoSpecs.cs" />
+    <Compile Include="Enumeradores\Parametro.cs" />
+    <Compile Include="Model\CidadePretendida.cs" />
+    <Compile Include="Model\CodigoConfirmacaoEmail.cs" />
+    <Compile Include="Model\Curriculo.cs" />
+    <Compile Include="Model\CurriculoAnexo.cs" />
+    <Compile Include="Model\CurriculoDisponibilidade.cs" />
+    <Compile Include="Model\Curso.cs" />
+    <Compile Include="Model\Email.cs" />
+    <Compile Include="Model\Endereco.cs" />
+    <Compile Include="Model\EstadoCivil.cs" />
+    <Compile Include="Model\ExperienciaProfissional.cs" />
+    <Compile Include="Model\Formacao.cs" />
+    <Compile Include="Model\Foto.cs" />
+    <Compile Include="Model\FuncaoPretendida.cs" />
+    <Compile Include="Model\Idioma.cs" />
+    <Compile Include="Model\InstituicaoEnsino.cs" />
+    <Compile Include="Model\NivelCurso.cs" />
+    <Compile Include="Model\NivelIdioma.cs" />
+    <Compile Include="Model\Parametro.cs" />
+    <Compile Include="Model\PessoaFisica.cs" />
+    <Compile Include="Model\Plano.cs" />
+    <Compile Include="Model\PreCurriculo.cs" />
+    <Compile Include="Model\SituacaoCurriculo.cs" />
+    <Compile Include="Model\SituacaoFormacao.cs" />
+    <Compile Include="Model\Telefone.cs" />
+    <Compile Include="Model\TelefoneCelular.cs" />
+    <Compile Include="Model\TelefoneRecado.cs" />
+    <Compile Include="Model\TelefoneResidencial.cs" />
+    <Compile Include="Model\TipoCurriculo.cs" />
+    <Compile Include="Model\TipoVeiculo.cs" />
+    <Compile Include="Model\Veiculo.cs" />
+    <Compile Include="ValueObjects\ResultadoBuscaVagaSolr.cs" />
+    <Compile Include="Enumeradores\SituacaoCurriculo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ICodigoConfirmacaoEmailRepository.cs" />
+    <Compile Include="Repositories\ICurriculoParametroRepository.cs" />
+    <Compile Include="Repositories\ICurriculoRepository.cs" />
+    <Compile Include="Repositories\ISituacaoCurriculoRepository.cs" />
+    <Compile Include="Repositories\ICursoRepository.cs" />
+    <Compile Include="Repositories\IEmailRepository.cs" />
+    <Compile Include="Repositories\IExperienciaProfissionalRepository.cs" />
+    <Compile Include="Repositories\IFormacaoRepository.cs" />
+    <Compile Include="Repositories\IFuncaoPretendidaRepository.cs" />
+    <Compile Include="Repositories\IInstituicaoEnsinoRepository.cs" />
+    <Compile Include="Repositories\IParametroRepository.cs" />
+    <Compile Include="Repositories\IPessoaFisicaRepository.cs" />
+    <Compile Include="Repositories\IPreCurriculoRepository.cs" />
+    <Compile Include="Repositories\ICurriculoOrigemRepository.cs" />
+    <Compile Include="Repositories\ITelefoneCelularRepository.cs" />
+    <Compile Include="Repositories\ITipoCurriculoRepository.cs" />
+    <Compile Include="Specs\CodigoConfirmacaoEmailSpecs.cs" />
+    <Compile Include="Specs\PlanoSpecs.cs" />
+    <Compile Include="Specs\RankingEmailSpecs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BNE.Comum.Model\BNE.Comum.Model.csproj">
+      <Project>{962132f9-4293-4ac7-b044-2590667cd2e9}</Project>
+      <Name>BNE.Comum.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Core\BNE.Core.csproj">
+      <Project>{1c0e9fda-4b7f-4f28-bdef-9733c99aa46a}</Project>
+      <Name>BNE.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Data\BNE.Data.csproj">
+      <Project>{287BA500-E16D-46AD-91B7-442CDA127398}</Project>
+      <Name>BNE.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Global.Domain\BNE.Global.Domain.csproj">
+      <Project>{0ed6a49e-b926-4088-a7b5-40de1085e084}</Project>
+      <Name>BNE.Global.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Global.Model\BNE.Global.Model.csproj">
+      <Project>{1c31b8d0-c2d2-4a48-893e-c2b43a852978}</Project>
+      <Name>BNE.Global.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mapper.ToOld\BNE.Mapper.ToOld.csproj">
+      <Project>{d4fcefda-3d86-42bc-9dcb-b1e2d3c0d639}</Project>
+      <Name>BNE.Mapper.ToOld</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mapper\BNE.Mapper.csproj">
+      <Project>{bc671d33-cfd9-4868-888f-4266aedb3b13}</Project>
+      <Name>BNE.Mapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Model\PF.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

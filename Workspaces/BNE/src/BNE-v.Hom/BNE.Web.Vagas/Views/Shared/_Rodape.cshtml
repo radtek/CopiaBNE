@@ -1,0 +1,184 @@
+﻿@using BNE.Web.Vagas.Code
+@model BNE.Web.Vagas.Models.Rodape
+
+@if (Model.STC)
+{
+    <div class="barra_rodape_rhoffice">
+        <ul>
+            <li>
+                <a href='@Url.Action("Index", "Home")'>Página Inicial</a>
+                |
+            </li>
+            <li>
+                @Html.ActionLink("Últimas Vagas", "PesquisarVagas", "ResultadoPesquisaVaga")
+                |
+            </li>
+            <li>
+                @Html.ActionLink("Buscar Vagas", "Index", "BuscaVaga")
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("PesquisaVaga", "Base")'>Pesquisa de Vagas</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("CadastrarCurriculo", "Base")'>Cadastrar Currículo</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("AtualizarCurriculo", "Base")'>Atualizar Currículo</a>
+                |
+            </li>
+            <li>
+                @Html.HyperLink("http://www.salariobr.com", "Pesquisa Salarial", "_blank")
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("TesteSistmars", "Base")'>Teste Sistmars</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("TesteDasCores", "Base")'>Teste das Cores</a>
+                |
+            </li>
+            @*<li>*@
+                @*<uc1:ucatendimentoonline id="ucAtendimentoOnlineRHOffice" runat="server" />*@
+                @*Atendimento Online
+                |
+            </li>*@
+            <li>
+                <a href='@Url.Action("RetornarBNE", "Base")'>BNE</a>
+            </li>
+        </ul>
+    </div>
+}
+else
+{
+    <div id="rodapeVagas">
+        <div id="rodapeVagas_logo">
+            <div>
+                <img src="/images/logo-bne-white-transp.png">
+            </div>
+            @if (Model.PerfilLogadoEmpresa)
+            {
+            <ul>
+                <li>
+                    <h3 class="telefone_destaque">0800 41 2400</h3>
+                </li>
+            </ul>
+            }
+        </div>
+        <div id="rodapeVagas_candidato">
+            <h4 class="titulo_rodape">Para Candidatos</h4>
+            <ul >
+                <li style="display:none">
+                    <a href='@Url.Action("AtualizarCurriculo", "Base")' rel="nofollow">Atualizar Currículo</a>
+                </li>
+                <li>
+                    @Html.HyperLink("http://www.salariobr.com", "Média Salarial", "_blank")
+                </li>
+                <li>
+                    <a href='@Url.Action("CadastrarCurriculo", "Base")'>Cadastrar Currículo</a>
+                </li>
+                <li>
+                    <a href='@Url.Action("SalaVip", "Base")' rel="nofollow">Sala VIP</a>
+                </li>
+                <li>
+                    <a href='@Url.Action("TesteSistmars", "Base")'>Teste Sistmars</a>
+                </li>
+                <li>
+                    <a href='@Url.Action("TesteDasCores", "Base")'>Teste das Cores</a>
+                </li>
+                <li style="display:none">
+                    @Html.ActionLink("Últimas Vagas", "PesquisarVagas", "ResultadoPesquisaVaga")
+                </li>
+                <li style="display:none">
+                    @Html.ActionLink("Buscar Vagas", "Index", "BuscaVaga")
+                </li>
+                <li style="display:none">
+                    <a href='@Url.Action("CompreVip", "Base")'>Compre Serviço Vip</a>
+                </li>
+                <li style="display:none">
+                    <a href='@Url.Action("QuemMeViu", "Base")' rel="nofollow">Quem me Viu?</a>
+                </li>
+                <li style="display:none">
+                    <a href='@Url.Action("PesquisaVaga", "Base")'>Pesquisa de Vagas</a>
+                </li>
+                <li>
+                    @Html.HyperLink("http://www.bne.com.br/inativar-curriculo", "Inativar meu Currículo", "")
+                </li>
+            </ul>
+        </div>
+        <div id="rodapeVagas_empresa">
+            <h4 class="titulo_rodape">Para Empresas</h4>
+            <ul>
+                <li>
+                    <a href='@Url.Action("AnunciarVaga", "Base")' rel="nofollow">Anunciar Vaga</a>
+
+                </li>
+                <li style="display:none">
+                    <a href='@Url.Action("PesquisaCurriculo", "Base")' rel="nofollow">Pesquisar Currículos</a>
+
+                </li>
+                <li style="display:none">
+                    <a href='@Url.Action("CvsRecebidos", "Base")' rel="nofollow">Currículos Recebidos</a>
+
+                </li>                
+                <li style="display:none">
+                    @Html.HyperLink("http://www.bne.com.br/cia", "Planos de Acesso", "")
+                    @*<a href='@Url.Action("CadastrarEmpresa", "Base")'>Cadastrar Empresa</a>*@
+                </li>                
+                <li>
+                    <a href='@Url.Action("CadastrarEmpresa", "Base")'>Cadastrar Empresa</a>
+                    @*<a href='@Url.Action("CompreCVs", "Base")'>Compre CVs</a>*@
+                </li>
+                <li>
+                    @Html.HyperLink("http://www.bne.com.br/campanha", "Criar Campanha", "")
+                    @*<a href='@Url.Action("AnunciarVaga", "Base")' rel="nofollow">Anunciar Vagas</a>*@
+                </li>
+                <li>
+                    <a href='@Url.Action("SalaSelecionador", "Base")' rel="nofollow">Sala da Selecionadora</a>
+                </li>
+                <li  style="display:none">
+                    <a href='@Url.Action("AtualizarEmpresa", "Base")' rel="nofollow">Atualizar dados da conta</a>
+                    @*<a href='@Url.Action("ExclusivoBancoCurriculo", "Base")' rel="nofollow">Exclusivo Banco de Currículos</a>*@
+                </li>
+            </ul>
+        </div>
+        <div id="rodapeVagas_institucional">
+            <h4 class="titulo_rodape">Institucional</h4>
+            <ul>
+                <li style="display:none">
+                    <a href='http://@Html.RecuperarURLAmbiente()'>Página Inicial</a>
+                </li>
+                <li>
+                    <a href='@Url.Action("Agradecimentos", "Base")'>Agradecimentos</a>
+                </li>
+                <li>
+                    <a href='@Url.Action("OndeEstamos", "Base")'>Onde Estamos</a>
+                </li>
+                <li>
+                    <a href='@Url.Action("FaleComPresidente", "Base")'>Fale com o Presidente</a>
+                </li>                
+                <li style="display:none">
+                    @Html.HyperLink("http://www.employer.com.br", "Employer", "_blank")
+                </li>
+                <li style="display:none">
+                    <a href='@Url.Action("IndiqueBNE", "Base")'>Indique o BNE</a>
+                </li>
+                <li>
+                    @Html.HyperLink("http://www.trabaje.com.co/?utm_source=bne.com.br&utm_medium=link&utm_campaign=sites-internos", "Empleos en Colombia", "_blank")
+                </li>
+                <li>
+                    @Html.HyperLink("http://www.trabaje.com.mx/?utm_source=bne.com.br&utm_medium=link&utm_campaign=sites-internos", "Empleos en Mexico", "_blank")
+                </li>
+                <li>
+                    @Html.HyperLink("http://www.trabajemos.com.ar/?utm_source=bne.com.br&utm_medium=link&utm_campaign=sites-internos", "Empleos en Argentina", "_blank")
+                </li>
+                <li>
+                    @Html.HyperLink("http://www.trabaje.com.py/?utm_source=bne.com.br&utm_medium=link&utm_campaign=sites-internos", "Empleos en Paraguay", "_blank")
+                </li>
+            </ul>
+        </div>
+    </div>
+}

@@ -1,0 +1,15 @@
+﻿.painel_upload_foto { margin-top: -177px; overflow: hidden; width: 108px; opacity: 0; filter: alpha(opacity=0); }
+.painel_upload_foto input { border: medium none; cursor: pointer !important; font-size: 100px; height: 252px; margin-left: -1423px; margin-top: -80px; }
+.cpn_foto { min-width: 350px; }
+.cpn_foto img { margin-top: 0px !important; }
+.balao_foto { background-color: White; border: 1px solid #80A9BA; border-radius: 5px 5px 5px 5px; cursor: pointer; font-size: 11px; margin-left: 3px; text-align: left; white-space: normal; width: 128px; behavior: url(../css/global/PIE.htc); }
+.marcador_fotos { bottom: -56px; display: block; height: 9px; left: 54px; position: absolute; width: 21px; z-index: 1; behavior: url(../css/global/PIE.htc); }
+.balao_foto:hover { text-decoration: underline; }
+.modal_padrao .button_padrao { cursor: hand; cursor: pointer; height: 32px; margin: 0 5px; padding: 6px 10px; background-image: url('../../img/global/bg_btn_padrao.gif'); background-repeat: repeat-x; background-position: bottom; border: 1px solid #7c785d; overflow: visible; }
+.botao_fechar_modal { float: right; margin-top: 4px; }
+.paragrafo_modal_foto { clear: both; color: #000000; font-size: 12px; margin-top: 32px; padding: 0; }
+.modal { background: scroll 0 0 #FFFFFF; border: medium none; font-size: 12px; height: auto; padding: 15px; }
+.modal .BotoesTopo .textbox_padrao { max-width: 560px !important; }
+.modal h1 { float: left; margin: 0 0 8px; width: 85%; }
+.modal div { text-align: center; margin-bottom: 10px; }
+.EmployerPanel { padding: 0; }

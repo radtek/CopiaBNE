@@ -1,0 +1,58 @@
+﻿@section css
+{
+    <link href="~/Content/BuscaDeVagas.css" rel="stylesheet" />
+}
+
+<h1>@ViewBag.H1</h1>
+
+@if (ViewBag.linksEstado != null)
+{
+    <h2>Vagas por Estado</h2>
+    <div class="grid">
+        @foreach (var item in ViewBag.linksEstado)
+        {
+            <div>
+                @item.GetLink()
+            </div>
+        }
+    </div>
+}
+
+@if (ViewBag.linksArea != null)
+{
+    <h2>Vagas por Área</h2>
+    <div class="grid">
+        @foreach (var item in ViewBag.linksArea)
+        {
+            <div>
+                @item[0].GetLink()<br />
+                @item[1].GetLink()
+            </div>
+        }
+    </div>
+}
+
+@if (ViewBag.linksESublinks != null)
+{
+    <div class="grid">
+        @foreach (var item in ViewBag.linksESublinks)
+        {
+            <div>
+                @item[0].GetLink()<br />
+                @item[1].GetLink()
+            </div>
+        }
+    </div>
+}
+
+@if (ViewBag.links != null)
+{
+    <div class="grid">
+        @foreach (var item in ViewBag.links)
+        {
+            <div>
+                @item.GetLink()
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,597 @@
+﻿@model Sample.Models.GridEmpresaComPlano
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Empresas
+            <small>com plano</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li class="active">Com plano</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+    
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Lista de empresas</h3>
+                    </div><!-- /.box-header -->
+                    <div class="aviso_erro"> @ViewBag.erro</div>
+                    @using (Html.BeginForm("Index", "EmpresaComPlano", FormMethod.Get, new { @class = "form-group", id = "idForm" }))
+                    {
+                        @Html.HiddenFor(m => m.pag, new { @Value = Model.pag })
+                        @Html.HiddenFor(m => m.Ordenacao, new { @Value = Model.Ordenacao })
+                        @Html.HiddenFor(m => m.FlSituacao, new { @Value = Model.FlSituacao })
+                        <input type="submit" id="btnSubmit" style="display:none" />
+                        <div class="box-body table-responsive">
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.DropDownList("rowsPag", new SelectList(new Dictionary<string, int> { { "10", 10 }, { "25", 25 }, { "50", 50 }, { "100", 100 } }, "Key", "Value"), new { teste = "", @class = "pro_pag_tf1", id = "pagesizelist", onchange = "this.form.submit()" })
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    @Html.Label("CNJP / Empresa:")<br />
+                                                    @Html.TextBox("FlEmpresa", ViewBag.Empresa as string, new { style = "width:170px;border-radius: 4px !important;", @maxlength = "100", @class = "form-control" })
+                                                </td>
+                                                <td width="10"></td>
+                                                <td>
+                                                    @Html.Label("Plano:")<br />
+                                                    @Html.TextBox("FlPlano", ViewBag.FlPlano as string, new { style = "width:170px;border-radius: 4px !important;", @maxlength = "100", @class = "form-control" })
+                                                </td>
+                                                <td width="10"></td>
+                                                <td>
+
+                                                    @Html.Label("Area: ")<br />
+                                                    @Html.TextBox("FlArea", ViewBag.Area as string, new { style = "border-radius: 4px !important;", @maxlength = "100", @class = "form-control" })
+                                                </td>
+                                                <td width="10"></td>
+                                                <td>
+                                                    @Html.Label("Cidade:")<br />
+                                                    @Html.TextBox("FlCidade", ViewBag.Cidade as string, new { style = "width:170px;border-radius: 4px !important;", @maxlength = "100", @class = "form-control" })
+                                                </td>
+                                                <td width="10"></td>
+                                                <td>
+                                                    @Html.Label("UF:")<br />
+                                                    @Html.TextBox("FlEstado", ViewBag.Uf as string, new { style = "width:45px;border-radius: 4px !important;", @maxlength = "2", @class = "form-control" })
+                                                </td>
+                                                <td width="10"></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    @Html.Label("Data Retorno:")<br />
+                                                    <div class="input-group">
+                                                        @Html.TextBox("FlDataRetorno", ViewBag.DtaRetorno as string, new { @class = "form_datetime form-control", @style = "width:175px;" })
+
+                                                    </div><!-- /.input group -->
+
+                                                </td>
+                                                <td width="10"></td>
+                                                <td>
+                                                    @Html.Label("Data Cadastro:")<br />
+                                                    <div class="input-group">
+                                                        @Html.TextBox("FlDataCadastro", ViewBag.DtaRetorno as string, new { @class = "form_datetime form-control", @style = "width:175px;" })
+
+                                                    </div><!-- /.input group -->
+
+                                                </td>
+                                                <td width="10"></td>
+                                                <td>
+                                                    @Html.Label("Situação Filial:")<br />
+                                                    @Html.DropDownList("FlSituacaoEmpresa", new SelectList(new Dictionary<int, string> {
+                                                   {0, "Selecionar..." },
+                                                   {1, "Publicado Empresa"},
+                                                   {2, "Publicado Agência"},
+                                                   {3, "Aguardando Publicação"},
+                                                   {4, "Com Crítica"},
+                                                   {5, "Bloqueado"},
+                                                   {6, "Cancelado"},
+                                                {7, "Pré Cadastro Vaga Rápida"},
+                                                {8, "Faltando dados Receita"},
+                                                {9, "Cadastrada fora do Horário Comercial"}}, "Key", "Value"), new
+                                                {
+
+                                                    @class = "form-control",
+                                                    id = "flSituacaoFilial",
+                                                    rowsPag = Model.rowsPag,
+                                                    pag = Model.pag,
+                                                    name = "button"
+
+                                                })
+                                                </td>
+                                                <td width="10"></td>
+                                                <td>
+                                                    <br />
+                                                    @*@Html.TextBox("SearchString", ViewBag.currentFilter as string)*@
+                                                    <button type="submit" value="Filtrar" class="btn btn-default">
+                                                        <span class="glyphicon glyphicon-search"></span> Pesquisar
+                                                    </button>
+                                                    @*<button type="reset" value="Filtrar" onclick="Limpar();" class="btn btn-default">
+                                                        <span class="glyphicon glyphicon-trash"></span> Limpar
+                                                        </button>*@
+
+                                                </td>
+                                            </tr>
+
+                                        </table>
+
+                                        <br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="submit" class="btn btn-default btn-flat" name="button" value="Todas" />
+                                        <input type="submit" class="btn btn-primary btn-flat" name="button" value="Final de prazo" />
+                                        <input type="submit" class="btn btn-danger btn-flat" name="button" value="Sem atendimento" />
+                                        <input type="submit" class="btn btn-warning btn-flat" name="button" value="Atendido" />
+                                        <input type="submit" class="btn btn-success btn-flat" name="button" value="Negociado" />
+                                    </td>
+                                </tr>
+                            </table>
+
+                            Página @(Model.Empresas.PageCount < Model.Empresas.PageNumber ? 0 : Model.Empresas.PageNumber) de @String.Format("{0:0,0}", Model.Empresas.PageCount) - Total de @String.Format("{0:0,0}", Model.Empresas.TotalItemCount) empresas
+                            <table id="EmpresaSemPlano" class="table table-bordered table-hover dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Todos
+                                            <input type="checkbox" id="ckbTodos" onclick="checkTodo" class="chkbEmpresaEnvio" />
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Ultimo_Atendimento desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Ultimo Atendimento " onclick='Ordenar("Ultimo_Atendimento desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Ultimo Atendimento " onclick='Ordenar("Ultimo_Atendimento asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Ultima_Acao_Cliente desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Ultima Ação Cliente" onclick='Ordenar("Ultima_Acao_Cliente desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Ultima Ação Cliente" onclick='Ordenar("Ultima_Acao_Cliente asc");' />
+                                            }
+                                        </th>
+
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Data_Cadastro desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Data Cadastro" onclick='Ordenar("Data_Cadastro desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Data Cadastro" onclick='Ordenar("Data_Cadastro asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Empresa desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Empresa" onclick='Ordenar("Empresa desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Empresa" onclick='Ordenar("Empresa asc");' />
+                                            }
+                                        </th>
+
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Area desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Area" onclick='Ordenar("Area desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Area" onclick='Ordenar("Area asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Cidade desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Cidade" onclick='Ordenar("Cidade desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Cidade" onclick='Ordenar("Cidade asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("UF desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="UF" onclick='Ordenar("UF desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="UF" onclick='Ordenar("UF asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("ISS desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="ISS" onclick='Ordenar("ISS desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="ISS" onclick='Ordenar("ISS asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Plano desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Plano" onclick='Ordenar("Plano desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Plano" onclick='Ordenar("Plano asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Fim_Plano desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Fim Plano" onclick='Ordenar("Fim_Plano desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Fim Plano" onclick='Ordenar("Fim_Plano asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Qtd_de_acoes desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Qtd de ações" onclick='Ordenar("Qtd_de_acoes desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Qtd de ações" onclick='Ordenar("Qtd_de_acoes asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Num_Funcionario desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Num Funcionario" onclick='Ordenar("Num_Funcionario desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Num Funcionario" onclick='Ordenar("Num_Funcionario asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Boleto_Vencimento desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Vencimento Boleto" onclick='Ordenar("Boleto_Vencimento desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Vencimento Boleto" onclick='Ordenar("Boleto_Vencimento asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            <label>Ultimas cobranças</label>
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Data_Retorno desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Data Retorno" onclick='Ordenar("Data_Retorno desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Data Retorno" onclick='Ordenar("Data_Retorno asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Situação desc"))
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Situação" onclick='Ordenar("Situação desc");' />
+                                            }
+                                            else
+                                            {
+                                            <input type="submit" class="botao_grid" name="button" value="Situação" onclick='Ordenar("Situação asc");' />
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (!Model.Ordenacao.Equals("Situacao_Empresa desc"))
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Situação" onclick='Ordenar("Situacao_Empresa desc");' />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" class="botao_grid" name="button" value="Situação" onclick='Ordenar("Situacao_Empresa asc");' />
+                                            }
+                                        </th>
+                                    </tr>
+                                </thead>
+                                @foreach (var item in Model.Empresas)
+                                {
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="chkbEmpresaEnvio" id="@item.Num_CNPJ" />
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Data_Ultimo_Atendimento)
+                                        </td>
+                                        @if (!(item.Data_Ultima_Acao_Site == null) && item.Data_Ultima_Acao_Site.Value.ToString("MM/dd/yyyy") == System.DateTime.Now.ToString("MM/dd/yyyy"))
+                                        {
+                                            <td bgcolor="#CEF6D8">
+                                                @Html.DisplayFor(modelItem => item.Data_Ultima_Acao_Site)
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Data_Ultima_Acao_Site)
+                                            </td>
+                                        }
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Dta_Cadastro)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink(item.Raz_Social, "Details", new { controller = "Empresa", Id = item.Num_CNPJ })
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Des_Area_BNE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Nme_Cidade)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Sig_Estado)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ISS) %
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Des_Plano)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Dta_Fim_Plano)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Total_Acao)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.qtd_Funcionarios)
+                                        </td>
+                                        <td>
+
+                                            @if (item.dta_vencimento >= DateTime.Now.AddDays(-1) && item.dta_vencimento <= DateTime.Now.AddDays(1))
+                                            {
+                                                <div style="color:red;">@Html.DisplayFor(modelItem => item.dta_vencimento)</div>
+                                            }
+                                            else
+                                            {
+                                                @Html.DisplayFor(modelItem => item.dta_vencimento);
+                                            }
+                                        </td>
+                                        <td>
+
+                                            @if (Model.Recorrencia.Where(x => x.num_cnpj.Equals(item.Num_CNPJ)).FirstOrDefault() != null)
+                                            {
+                                                foreach (var item2 in Model.Recorrencia.Where(x => x.num_cnpj.Equals(item.Num_CNPJ)))
+                                                {
+                                                    <div class="tooltips" href="#" style='color: @(item2.flg_transacao_aprovada ? "green" : "red") '>
+                                                        @item2.dta_cadastro.ToString("dd/MM/yyyy")
+                                                        <span>
+                                                            <b> Plano:</b> @item2.des_plano
+                                                            <br /><b> Valor:</b> @item2.Vlr_Documento
+                                                            <br /> @item2.dta_cadastro
+                                                            <br />
+
+                                                            @item2.des_resultado_solicitacao_aprovacao
+                                                        </span>
+                                                    </div>
+                                                }
+
+                                            }
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Dta_Retorno)
+                                        </td>
+                                        <td>
+                                            @if (item.Idf_Atendimento == 1)
+                                            {
+                                                <span class="badge bg-yellow">Atendido @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                                <br><br>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-yellow" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                                </div>
+                                            }
+                                            @if (item.Idf_Atendimento == 2)
+                                            {
+                                                <span class="badge bg-green">Negociado @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                                <br><br>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-success" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                                </div>
+                                            }                                        @if (item.Idf_Atendimento == 3)
+                                            {
+                                                <span class="badge bg-red">Sem atendimento @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                                <br><br>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-danger" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                                </div>
+                                            }                                        @if (item.Idf_Atendimento == 4)
+                                            {
+                                                <span class="badge bg-red">Venda efetuada @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                                <br><br>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-success" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                                </div>
+                                            }
+                                            @if (item.Idf_Atendimento == 6)
+                                            {
+                                                <span class="badge bg-blue">Final de prazo @Html.DisplayFor(modelItem => item.Vlr_Percentual)%</span>
+                                                <br><br>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-primary" style="width: @Html.DisplayFor(modelItem => item.Vlr_Percentual)%"></div>
+                                                </div>
+                                            }
+                                        </td>
+                                        @switch (item.Idf_Situacao_Filial)
+                                        {
+                                            case (int)Sample.Enumerador.SituacaoFilial.PublicadoEmpresa:
+                                            case (int)Sample.Enumerador.SituacaoFilial.PublicadoAgencia:
+                                                <td class="alert alert-success" role="alert">
+                                                    @item.Des_Situacao_Filial
+                                                </td>
+                                                break;
+                                            case (int)Sample.Enumerador.SituacaoFilial.ComCritica:
+                                            case (int)Sample.Enumerador.SituacaoFilial.FaltandoDadosReceita:
+                                                <td class="alert alert-warning" role="alert">
+                                                    @item.Des_Situacao_Filial
+                                                </td>
+                                                break;
+                                            case (int)Sample.Enumerador.SituacaoFilial.AguardandoPublicacao:
+                                            case (int)Sample.Enumerador.SituacaoFilial.PreCadastroVagaRapida:
+                                            case (int)Sample.Enumerador.SituacaoFilial.CadastradaForaHorarioComercial:
+                                                <td class="alert alert-info" role="alert">
+                                                    @item.Des_Situacao_Filial
+                                                </td>
+                                                break;
+                                            case (int)Sample.Enumerador.SituacaoFilial.Bloqueado:
+                                            case (int)Sample.Enumerador.SituacaoFilial.Cancelado:
+
+                                                <td class="alert alert-danger" role="alert">
+                                                    @item.Des_Situacao_Filial
+                                                </td>
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    </tr>
+                                }
+                            </table>
+                            Página @(Model.Empresas.PageCount < Model.Empresas.PageNumber ? 0 : Model.Empresas.PageNumber) de @String.Format("{0:0,0}", Model.Empresas.PageCount) - Total de @String.Format("{0:0,0}", Model.Empresas.TotalItemCount) empresas
+                            <div class="container">
+                                <nav aria-label="Page navigation" style="margin-left: -4%;">
+                                    <ul class="pagination" id="pagination"></ul>
+                                </nav>
+                            </div>
+                        </div>
+                    } @*fim using form*@
+                    <div id="div_carregando" class="progresso">
+                        <div class="progresso_texto">
+                            <img src="~/Content/img/ajax-loader.gif" />
+                            <br /> Carregando...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- /.content -->
+</aside><!-- /.right-side -->
+@Scripts.Render("~/bundles/datatables")
+<style type="text/css">
+    div.tooltips {
+        position: relative;
+        display: inline;
+    }
+
+        div.tooltips span {
+            position: absolute;
+            width: 140px;
+            color: #FFFFFF;
+            background: #000000;
+            height: auto;
+            line-height: 30px;
+            text-align: center;
+            visibility: hidden;
+            border-radius: 6px;
+        }
+
+            div.tooltips span:after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -8px;
+                width: 0;
+                height: 0;
+                border-top: 8px solid #000000;
+                border-right: 8px solid transparent;
+                border-left: 8px solid transparent;
+            }
+
+    div:hover.tooltips span {
+        visibility: visible;
+        opacity: 0.8;
+        bottom: 30px;
+        left: 50%;
+        margin-left: -76px;
+        z-index: 999;
+    }
+</style>
+<script type="text/javascript">
+
+
+
+    $(document).ready(function () {
+        $("li").removeClass("active");
+        $("#tables").addClass("active");
+        $("#tables_menu").css("display", "block");
+        $("#tables_datatables").addClass("active");
+
+        $("#tables_arrow").addClass("fa-angle-down");
+
+        $("#idForm").submit(function(e) {
+            $("#div_carregando").show();
+        });
+        var itens =  document.getElementsByClassName("page-link");
+        var pagina = @Model.pag;
+        for (var i=0; i< itens.length;i++ ){
+            if(itens[i].text == pagina){
+                document.getElementsByClassName("page-item")[i].className += " active"
+            }
+        }
+
+        $(function () {
+            var obj = $('#pagination').twbsPagination({
+                totalPages: @Model.Empresas.PageCount,
+                visiblePages: 10,
+                startPage: @Model.pag,
+                onPageClick: function (event, page) {
+                    Pagina(page);
+
+                }
+            });
+
+        });
+    });
+</script>
+@Scripts.Render("~/bundles/input-mask")
+@Scripts.Render("~/bundles/daterangepicker")
+@Scripts.Render("~/bundles/colorpicker")
+@Scripts.Render("~/bundles/timepicker")
+@Scripts.Render("~/Scripts/Local/EmpresaComPlano.js");
+
+@section scripts {
+    <script type="text/javascript">
+        $('#pagesizelist').on('change', function (event) {
+            var form = $(event.target).parents('form');
+
+            form.submit();
+        });
+    </script>
+}
+
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax2.js");
+@Scripts.Render("~/Scripts/jquery.twbsPagination.min.js");
+
+

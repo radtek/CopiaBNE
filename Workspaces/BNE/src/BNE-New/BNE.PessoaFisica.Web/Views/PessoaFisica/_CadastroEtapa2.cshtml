@@ -1,0 +1,230 @@
+﻿@model BNE.PessoaFisica.Web.Models.Curriculo
+
+<!-- ETAPA 02 -->
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col center">
+        <h3 class="darkgrey">Cadastre seu currículo!</h3>
+        <h5 class="mediumgrey subtitle">Conte mais sobre você.</h5>
+    </div>
+</div>
+<!-- Tracker -->
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col md-progtrckr">
+        <ol class="progtrckr" data-progtrckr-steps="5">
+            <li class="progtrckr-todo" id="step-ok"><span>Mini Curriculo</span></li>
+            <li class="progtrckr-done"><span><strong>2. Dados Pessoais</strong></span><br /><div class="substage">Conte mais sobre você.</div></li>
+            <li class="progtrckr-todo" id="step-nok"><span>Formação e Cursos</span></li>
+            <li class="progtrckr-todo" id="step-nok"><span>Informações Extras</span></li>
+            <li class="progtrckr-todo" id="step-nok"><span>Conferir</span></li>
+        </ol>
+    </div>
+</div>
+
+@using (Ajax.BeginForm("Index", "PessoaFisica", null, new AjaxOptions
+{
+    HttpMethod = "Post",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "etapa"
+}, new { @id = "Etapa2Form" }))
+{
+    
+    <!-- Dados Pessoais -->
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col title"><h6><strong>Seus dados pessoais.</strong><span> Estas informações agilizam o processo de contratação</span></h6></div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone md-button-bne center">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnform btnformmedium">Enviar Foto</button>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="cpfc" class="mdl-textfield__input" pattern="[0-9,-,., ]*" />
+            <label for="cpfc" class="mdl-textfield__label">CPF</label>
+            <span class="mdl-textfield__error">Somente números</span>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="rgc" class="mdl-textfield__input" pattern="[0-9,-,., ]*" />
+            <label for="rgc" class="mdl-textfield__label">RG</label>
+            <span class="mdl-textfield__error">Somente números</span>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="emitrg" class="mdl-textfield__input" />
+            <label for="emitrg" class="mdl-textfield__label">Órgão Emissor</label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet"></div>
+        <div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="civilstat" class="mdl-textfield__input" />
+            <label for="civilstat" class="mdl-textfield__label">Estado Civil</label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col vertitemform">Possui filhos?</div>
+        <div class="mdl-cell mdl-cell--1-col vertitemform">
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="son-yes">
+                <input type="radio" class="mdl-radio__button" id="son-yes" value="1" name="def" />
+                <span class="mdl-radio__label">Sim</span>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--1-col vertitemform">
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="son-no">
+                <input type="radio" class="mdl-radio__button" id="son-no" value="1" name="def" />
+                <span class="mdl-radio__label">Não</span>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--12-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="qtdson" class="mdl-textfield__input" />
+            <label for="qtdson" class="mdl-textfield__label">Quantos?</label>
+        </div>
+    </div>
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <!-- Seus contatos -->
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col title"><h6><strong>Seus contatos.</strong><span>  As empresas querem falar com você! </span></h6></div>
+                <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne ">
+                    <input type="text" name="mailc" class="mdl-textfield__input" />
+                    <label for="mailc" class="mdl-textfield__label">Email</label>
+                    <span class="mdl-textfield__error">Sem espaços ou caracteres especiais</span>
+                </div>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    <input type="text" name="mobphone" class="mdl-textfield__input" pattern="[0-9,-, ]*" />
+                    <label for="mobphone" class="mdl-textfield__label">Número Celular</label>
+                    <span class="mdl-textfield__error">Somente números</span>
+                </div>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne ">
+                    <input type="text" name="mobres" class="mdl-textfield__input" pattern="[0-9,-, ]*" />
+                    <label for="mobres" class="mdl-textfield__label">Número Residencial</label>
+                    <span class="mdl-textfield__error">Somente números</span>
+                </div>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne ">
+                    <input type="text" name="recphone" class="mdl-textfield__input" pattern="[0-9,-, ]*" />
+                    <label for="recphone" class="mdl-textfield__label">Número Recado</label>
+                    <span class="mdl-textfield__error">Somente números</span>
+                </div>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    <input type="text" name="talkto" class="mdl-textfield__input" pattern="[A-Z, ,a-z ]*" />
+                    <label for="talkto" class="mdl-textfield__label">Falar com</label>
+                    <span class="mdl-textfield__error">Somente letras e espaços</span>
+                </div>
+            </div>
+        </div>
+        <!-- Onde você mora -->
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet ">
+            <div class="mdl-grid ">
+                <div class="mdl-cell mdl-cell--12-col title"><h6><strong>Onde você mora?</strong><span>  Isso é muito importante!</span></h6></div>
+                <div class="mdl-cell mdl-cell--8-col mdl-cell--2-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    <input type="text" name="cepc" class="mdl-textfield__input cep" pattern="[0-9,-, ]*" />
+                    <label for="cepc" class="mdl-textfield__label">CEP</label>
+                    <span class="mdl-textfield__error">Somente números</span>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--2-col-phone md-button-bne center">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnform btnformmedium">Não sei meu CEP</button>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    <input type="text" name="mobphone" class="mdl-textfield__input" />
+                    <label for="mobphone" class="mdl-textfield__label">Endereço</label>
+                    <span class="mdl-textfield__error">&nbsp;</span>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    <input type="text" name="number" class="mdl-textfield__input" />
+                    <label for="number" class="mdl-textfield__label">Núm.</label>
+                </div>
+                <div class="mdl-cell mdl-cell--5-col mdl-cell--3-col-tablet mdl-cell--2-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    <input type="text" name="compc" class="mdl-textfield__input" />
+                    <label for="compc" class="mdl-textfield__label">Complemento</label>
+                </div>
+                <div class="mdl-cell mdl-cell--5-col mdl-cell--3-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    <input type="text" name="neighbc" class="mdl-textfield__input" />
+                    <label for="neighbc" class="mdl-textfield__label">Bairro</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Onde você já trabalhou? -->
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col title"><h6><strong>Onde você já trabalhou?</strong><span>  Conte suas experiências. Quem contrata valoriza isso!</span></h6></div>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <table class="resp">
+                <thead>
+                    <tr>
+                        <th>Empresa</th>
+                        <th>Função</th>
+                        <th>Entrada</th>
+                        <th>Saída</th>
+                        <th>Editar</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Empresa">Sine</td>
+                        <td data-label="Função">Analista de CRM</td>
+                        <td data-label="Entrada">25/03/2014</td>
+                        <td data-label="Saída">-</td>
+                        <td data-label="Editar"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformmedium">Editar</button></td>
+                        <td data-label="Remover"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised btnformneg">Remover</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <!-- Adicionar Experiências-->
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    <input type="text" name="corpname" class="mdl-textfield__input" />
+                    <label for="corpname" class="mdl-textfield__label">Nome da Empresa</label>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    <input type="text" name="function" class="mdl-textfield__input" />
+                    <label for="function" class="mdl-textfield__label">Função Exercida</label>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col md-textarea-bne">
+                    <textarea class="mdl-textfield__input" type="text" rows="8" id="activ"></textarea>
+                    <label class="mdl-textfield__label" for="activ">Descreva o que você fazia na empresa</label>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            <div class="mdl-grid ">
+                <div class="mdl-cell mdl-cell--12-col mdl-select-bne">
+                    <select class="mdl-select__input">
+                        <option value="1" class="mdl-select__option" disabled selected>A empresa trabalha com</option>
+                        <option value="2" class="mdl-select__option">Atividade 1</option>
+                        <option value="3" class="mdl-select__option">Atividade 2</option>
+                        <option value="4" class="mdl-select__option">Atividade 3</option>
+                        <option value="5" class="mdl-select__option">Outra</option>
+                    </select>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    <input type="text" name="indate" class="mdl-textfield__input" />
+                    <label for="indate" class="mdl-textfield__label">Data da entrada</label>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    <input type="text" name="outdate" class="mdl-textfield__input" />
+                    <label for="outdate" class="mdl-textfield__label">Data da saída</label>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--2-col-phone ">
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect vertitemform" for="atualjob">
+                        <input type="checkbox" id="atualjob" class="mdl-checkbox__input" name="atualjob" />
+                        <span class="mdl-checkbox__label"><p>Emprego Atual</p></span>
+                    </label>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--2-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    <input type="text" name="address" class="mdl-textfield__input" />
+                    <label for="address" class="mdl-textfield__label">Último Salário</label>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--hide-tablet mdl-cell--hide-phone suggestions darkgrey">
+                    <strong>Sugestão de Tarefas:</strong><br />
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--2-col-tablet center">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnform btnformmedium">Adicionar experiência</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col center">
+            <button type="submit" name="action:CadastrarDadosPessoais" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformbig" id="btnSave2">Salvar e avançar</button>
+        </div>
+    </div>
+}

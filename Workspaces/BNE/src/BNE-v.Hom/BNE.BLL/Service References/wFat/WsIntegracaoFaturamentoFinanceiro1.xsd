@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wshomglobal.webfopag.com.br/WsIntegracaoFaturamentoFinanceiro.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Employer.Plataforma.Web.Services.Global" />
+  <xs:element name="IntegrarFaturamentoFinanceiro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Employer.Plataforma.Web.Services.Global" minOccurs="0" name="enumSistemaOrigem" type="q1:WsIntegracaoFaturamentoFinanceiro.SistemaOrigem" />
+        <xs:element minOccurs="0" name="dtaPagamento" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="vlrPagamento" type="xs:decimal" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Employer.Plataforma.Web.Services.Global" minOccurs="0" name="enumTipoTransacao" type="q2:WsIntegracaoFaturamentoFinanceiro.TipoTransacao" />
+        <xs:element minOccurs="0" name="strNumeroTransacao" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Employer.Plataforma.Web.Services.Global" minOccurs="0" name="enumTipoContrato" type="q3:WsIntegracaoFaturamentoFinanceiro.TipoContrato" />
+        <xs:element minOccurs="0" name="dtaInicioContrato" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtaTerminoContrato" type="xs:dateTime" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Employer.Plataforma.Web.Services.Global" minOccurs="0" name="enumTipoDocumento" type="q4:WsIntegracaoFaturamentoFinanceiro.TipoDocumento" />
+        <xs:element minOccurs="0" name="strDocumento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strRazaoSocial_Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCEP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLogradouro" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intNumeroEndereco" type="xs:int" />
+        <xs:element minOccurs="0" name="strComplemento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBairro" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCidade" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUF" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strNomeFantasia" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCNAE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strEmailContato" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDDD" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTelefone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strNomeContato" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numCPFUsuario" type="xs:decimal" />
+        <xs:element minOccurs="0" name="strNomeUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strEmailRemetente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strNomeRemetente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTituloEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTextoEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dtaVencimento" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="strTextoAdicionalNFE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlrTotalNFE" type="xs:decimal" />
+        <xs:element minOccurs="0" name="strTextoEmailCancelamentoNFE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strApelidoFilial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strNumeroAgenciaBancaria" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strNumContaBancaria" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strNumeroBanco" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegrarFaturamentoFinanceiroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IntegrarFaturamentoFinanceiroResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarIntegracaoHistorico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Employer.Plataforma.Web.Services.Global" minOccurs="0" name="enumTipoTransacao" type="q5:WsIntegracaoFaturamentoFinanceiro.TipoTransacao" />
+        <xs:element minOccurs="0" name="strIdentificacaoTranscacao" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Employer.Plataforma.Web.Services.Global" minOccurs="0" name="enumTipoDocumento" type="q6:WsIntegracaoFaturamentoFinanceiro.TipoDocumento" />
+        <xs:element minOccurs="0" name="strDocumento" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarIntegracaoHistoricoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultarIntegracaoHistoricoResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarNotaFiscalIntegracao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Employer.Plataforma.Web.Services.Global" minOccurs="0" name="enumTipoTransacao" type="q7:WsIntegracaoFaturamentoFinanceiro.TipoTransacao" />
+        <xs:element minOccurs="0" name="strIdentificacaoTranscacao" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Employer.Plataforma.Web.Services.Global" minOccurs="0" name="enumTipoDocumento" type="q8:WsIntegracaoFaturamentoFinanceiro.TipoDocumento" />
+        <xs:element minOccurs="0" name="strDocumento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numCPFUsuario" type="xs:decimal" />
+        <xs:element minOccurs="0" name="strNomeUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strEmailCancelamentoNFE" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarNotaFiscalIntegracaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancelarNotaFiscalIntegracaoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarIntegracao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numTransacao" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numDocumento" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarIntegracaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerificarIntegracaoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

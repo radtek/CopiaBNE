@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AGRADECIMENTOS" xml:space="preserve">
+    <value>Agradecimentos de quem confia no BNE</value>
+  </data>
+  <data name="ANUNCIARVAGA" xml:space="preserve">
+    <value>Anunciar vagas grátis</value>
+  </data>
+  <data name="CADASTROCURRICULO" xml:space="preserve">
+    <value>Vagas, empregos, Oportunidades, cadastro de currículo grátis</value>
+  </data>
+  <data name="CADASTROCURRICULOCOMPLEMENTAR" xml:space="preserve">
+    <value>Cadastro de currículo grátis</value>
+  </data>
+  <data name="CADASTROCURRICULODADOS" xml:space="preserve">
+    <value>Cadastro de currículo grátis</value>
+  </data>
+  <data name="CADASTROCURRICULOFORMACAO" xml:space="preserve">
+    <value>Cadastro de currículo grátis</value>
+  </data>
+  <data name="CADASTROCURRICULOMINI" xml:space="preserve">
+    <value>Cadastro de currículo grátis</value>
+  </data>
+  <data name="CADASTROEMPRESACURSO" xml:space="preserve">
+    <value>Cadastro de cursos</value>
+  </data>
+  <data name="CADASTROEMPRESADADOS" xml:space="preserve">
+    <value>Cadastro de empresa gratuito</value>
+  </data>
+  <data name="CADASTROEMPRESAUSUARIO" xml:space="preserve">
+    <value>Recrutamento, Seleção, Currículo, Triagem</value>
+  </data>
+  <data name="CONTATOSITE" xml:space="preserve">
+    <value>Atendimento 24h por dia</value>
+  </data>
+  <data name="DEFAULT" xml:space="preserve">
+    <value>Vagas, currículos e candidatos no Brasil</value>
+  </data>
+  <data name="FALEPRESIDENTE" xml:space="preserve">
+    <value>Fale com o Presidente</value>
+  </data>
+  <data name="LISTAVAGAS" xml:space="preserve">
+    <value>Empregos, Vagas, Oportunidades, cadastro de currículo grátis</value>
+  </data>
+  <data name="LOGIN" xml:space="preserve">
+    <value>Empregos, Vagas, Oportunidades, cadastro de currículo grátis</value>
+  </data>
+  <data name="LOGINCOMERCIALCANDIDATO" xml:space="preserve">
+    <value>Acesso para busca de um novo emprego</value>
+  </data>
+  <data name="LOGINCOMERCIALEMPRESA" xml:space="preserve">
+    <value>Acesso para utilizar o Recrutamento</value>
+  </data>
+  <data name="ONDEESTAMOS" xml:space="preserve">
+    <value>Unidades do BNE</value>
+  </data>
+  <data name="PAGINAERRO" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="PESQUISACURRICULO" xml:space="preserve">
+    <value>Currículos atualizados de todo o Brasil</value>
+  </data>
+  <data name="PESQUISASALARIAL" xml:space="preserve">
+    <value>A melhor pesquisa salarial do mercado</value>
+  </data>
+  <data name="PESQUISAVAGA" xml:space="preserve">
+    <value>Milhares de vagas em todo Brasil</value>
+  </data>
+  <data name="PESQUISAVAGAAVANCADA" xml:space="preserve">
+    <value>Busca de vagas, seu novo emprego aqui</value>
+  </data>
+  <data name="PRODUTOVIP" xml:space="preserve">
+    <value>Serviço VIP para encontrar novo emprego</value>
+  </data>
+  <data name="R1DETALHES" xml:space="preserve">
+    <value>Detalhes do Recrutamento R1 para sua seleção</value>
+  </data>
+  <data name="R1PRODUTO_R1_RECRUTAMENTO" xml:space="preserve">
+    <value>Recrutamento R1 para sua seleção</value>
+  </data>
+  <data name="R1PRODUTO_RECRUTAMENTO_R1" xml:space="preserve">
+    <value>Recrutamento R1 para seu processo seletivo</value>
+  </data>
+  <data name="R1PROPOSTACOMERCIAL" xml:space="preserve">
+    <value>Proposta de Recrutamento R1 para sua seleção</value>
+  </data>
+  <data name="R1VALORES" xml:space="preserve">
+    <value>Simulação entrega de candidatos pelo Recrutamento R1</value>
+  </data>
+  <data name="SALASELECIONADOR" xml:space="preserve">
+    <value>Recrutamento, Seleção, Currículo, Triagem</value>
+  </data>
+  <data name="SALASELECIONADORMENSAGENS" xml:space="preserve">
+    <value>Recrutamento, Seleção, Currículo, Triagem</value>
+  </data>
+  <data name="SALASELECIONADORNOTICIAS" xml:space="preserve">
+    <value>Recrutamento, Seleção, Currículo, Triagem</value>
+  </data>
+  <data name="SALASELECIONADORPLANOILIMITADO" xml:space="preserve">
+    <value>Recrutamento, Seleção, Currículo, Triagem</value>
+  </data>
+  <data name="SALASELECIONADORRASTREADORCV" xml:space="preserve">
+    <value>Recrutamento, Seleção, Currículo, Triagem</value>
+  </data>
+  <data name="SALASELECIONADORVAGASANUNCIADAS" xml:space="preserve">
+    <value>Recrutamento, Seleção, Currículo, Triagem</value>
+  </data>
+  <data name="SALAVIP" xml:space="preserve">
+    <value>Empregos, Vagas, Oportunidades, cadastro de currículo grátis</value>
+  </data>
+  <data name="SALAVIPCURSOS" xml:space="preserve">
+    <value>Cursos</value>
+  </data>
+  <data name="SALAVIPESCOLHEREMPRESA" xml:space="preserve">
+    <value>Empregos, Vagas, Oportunidades, cadastro de currículo grátis</value>
+  </data>
+  <data name="SALAVIPJAENVIEI" xml:space="preserve">
+    <value>Empregos, Vagas, Oportunidades, cadastro de currículo grátis</value>
+  </data>
+  <data name="SALAVIPMENSAGENS" xml:space="preserve">
+    <value>Empregos, Vagas, Oportunidades, cadastro de currículo grátis</value>
+  </data>
+  <data name="SALAVIPMEUPLANO" xml:space="preserve">
+    <value>Empregos, Vagas, Oportunidades, cadastro de currículo grátis</value>
+  </data>
+  <data name="SALAVIPQUEMMEVIU" xml:space="preserve">
+    <value>Empregos, Vagas, Oportunidades, cadastro de currículo grátis</value>
+  </data>
+  <data name="SALAVIPRASTREADORVAGA" xml:space="preserve">
+    <value>Empregos, Vagas, Oportunidades, cadastro de currículo grátis</value>
+  </data>
+  <data name="SISTMARS" xml:space="preserve">
+    <value>SistMars</value>
+  </data>
+  <data name="SOLICITACAOR1" xml:space="preserve">
+    <value>Recrutamento, Seleção, Currículo, Triagem</value>
+  </data>
+  <data name="TITULOPADRAOPROJETO" xml:space="preserve">
+    <value>Banco Nacional de Empregos</value>
+  </data>
+</root>

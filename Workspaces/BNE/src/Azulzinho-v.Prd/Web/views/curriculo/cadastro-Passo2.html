@@ -1,0 +1,291 @@
+﻿<div class="container-fluid container-fluid-adjust" style=" display:block">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="container-fluid container-fluid-adjust container-adjust-login" ng-init="init()">
+                <div class="col-lg-9">
+                    <ol class="breadcrumb">
+                        <li><a href="#/Home">Home</a></li>
+                        <li><a href="#/Cadastro">1º Passo</a></li>
+                        <li class="active">Criação de Currículo 2º Passo</li>
+                    </ol>
+                    <h3 class="col-lg-12 assistenteCV" ng-show="temExperienciaProfissional && cadCV.curriculo.temExperienciaProfissional">Assistente de Criação de Currículo - 2º Passo</h3>
+
+                    <form role="form" name="formPasso2" ng-show="!naoTemExperienciaProfissional" class="pashe pashe2" novalidate>
+
+                        <div class="row col-lg-12" style="float:left;">
+                            <div class="col-lg-6" style="float:left;">
+                                <h4 class="col-lg-12 subTitle editMargin">
+                                    <label class="assistenteCV" ng-show="!temExperienciaProfissional">Você tem experiência profissional?</label>
+                                </h4>
+                            </div>
+                        </div>
+                        <span class="clearfix"></span>
+                        <div class="row col-lg-12 editMarginExperience" ng-show="!temExperienciaProfissional">
+                            <span class="col-lg-6">
+                                <a class="btn btn-primary btn-lg btn-block btn-experience" ng-model="cadCV.curriculo.temExperienciaProfissional" href ng-click="temExperiencia()">SIM</a>
+                            </span>
+                            <span class="col-lg-6">
+                                <a class="btn btn-default btn-lg btn-block btn-experience" ng-model="cadCV.curriculo.temExperienciaProfissional" href ng-click="naoTemExperiencia()">NÃO</a>
+                            </span>
+                        </div>
+                        <div ng-show="temExperienciaProfissional && cadCV.curriculo.temExperienciaProfissional">
+                            <h4 class="col-lg-12 subTitle editMargin">Seu último emprego.</h4>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="Empresa">Empresa <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="txtNome" name="Empresa" maxlength="100" ng-model="cadCV.curriculo.empresa" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>A Empresa trabalha com</label>
+                                    <select class="form-control" ng-options="value.id as value.text for value in cadCV.areaBNE" ng-model="cadCV.curriculo.idAreaBNE">
+                                        <option value="" selected>Selecione...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="FuncaoEmpresa">Função <span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="FuncaoEmpresa" maxlength="50" ng-blur="CarregarSugestaoAtividade('txtAtividade','SugestaoAtividade',cadCV.curriculo.funcaoEmpresa)" ng-model="cadCV.curriculo.funcaoEmpresa" autocomplete-funcao required />
+                                </div>
+                                <div class="form-group form-size">
+                                    <label>Este é o seu emprego atual?</label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="empregoAtual" id="rbEmpregoAtualSim" ng-model="cadCV.curriculo.empregoAtual" ng-click="eEmpregoAtual()" value="true">Sim
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="empregoAtual" id="rbEmpregoAtualNao" ng-model="cadCV.curriculo.empregoAtual" ng-click="naoeEmpregoAtual()" value="false">Não
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-xs-push-1 pull-right">
+                                <div class="col-lg-12">
+                                    <div class="form-group row">
+                                        <div class="col-lg-3">
+                                            <label style=" margin-top:20px;">Início</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Mês <span class="required">*</span></label>
+                                            <select class="form-control" id="MesInicio" name="MesInicio" ng-options="value.id as value.text for value in cadCV.mesesAno" ng-model="cadCV.curriculo.mesInicio"></select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <label for="AnoInicio">Ano <span class="required">*</span></label>
+                                            <input type="text" class="form-control" style="width:62px;" id="AnoInicio" name="AnoInicio" validar-datas-experiencia-profissional ui-mask="99?99" ano-dg validar-ano required ng-model="cadCV.curriculo.anoInicio" />
+                                            <div class="tooltip right in" style="top:18px; left: 75px; display: block; width:150px;" ng-show="formPasso2.AnoInicio.$invalid && formPasso2.AnoInicio.$touched">
+                                                <div class="tooltip-arrow"></div>
+                                                <div class="tooltip-inner">A data de início não pode ser maior que a data de saída.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xs-push-1 pull-right" ng-show="isEmpregoAtual==false">
+                                    <div class="form-group row">
+                                        <div class="col-lg-3">
+                                            <label style=" margin-top:20px;">Saída</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Mês</label>
+                                            <select class="form-control" id="MesSaida" name="MesSaida" ng-options="value.id as value.text for value in cadCV.mesesAno" ng-model="cadCV.curriculo.mesSaida"></select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <label>Ano</label>
+                                            <input type="text" class="form-control" style="width:62px;" id="AnoSaida" name="AnoSaida" ano-dg validar-datas-experiencia-profissional ng-untouched="isEmpregoAtual" ng-disabled="isEmpregoAtual==true" ui-mask="99?99" ng-model="cadCV.curriculo.anoSaida" />
+                                            <div class="tooltip right in" style="top:18px; left: 75px; display: block; width:150px;" ng-show="formPasso2.AnoSaida.$invalid && formPasso2.AnoSaida.$touched">
+                                                <div class="tooltip-arrow"></div>
+                                                <div class="tooltip-inner">A data de saída não pode ser menor que a data de início.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Descreva as tarefas que você realizava</label>
+                                    <textarea class="form-control" id="txtAtividade" name="txtAtividade" ng-focus="CarregarSugestaoAtividade('txtAtividade','SugestaoAtividade',cadCV.curriculo.funcaoEmpresa)" rows="3" ng-trim="false" ng-model="cadCV.curriculo.atividades" maxlength="2000" ng-maxlength="2000"></textarea>
+                                    <span ng-show="cadCV.curriculo.atividades.length > 1798">{{2000 - cadCV.curriculo.atividades.length}} caracteres restantes</span>
+                                    <blockquote ng-show="mostrarSugestao"><p>Sugestão de atividades</p><span id="SugestaoAtividade">{{sugestaoAtividade}}</span></blockquote>
+                                </div>
+
+                                <p class="adjustPaddingTop">
+                                    <a class="btn btn-default btn-block pull-right" ng-show="!addPenultimoEmprego==true" ng-click="adicionarPenultimoEmprego()" scroll-penultimo-emprego>Adicionar outra experiência <i class="fa fa-plus fa-fw"></i></a>
+                                    <a class="btn btn-default btn-block pull-right" ng-show="addPenultimoEmprego==true" ng-click="RemoverPenultimoEmprego()" scroll-ultimo-emprego>Remover experiência <i class="fa fa-chevron-down fa-fw"></i></a>
+                                </p>
+                            </div>
+                            <p class="clearfix"></p>
+
+
+                            <span class="col-lg-12" ng-show="addPenultimoEmprego==true">
+                                <h4 id="pnPenultimoEmprego" class="col-lg-12 subTitle editMargin">Adicionar outra experiência.</h4>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="EmpresaPE">Empresa</label>
+                                        <input type="text" class="form-control" id="txtEmpresaPE" name="EmpresaPE" maxlength="100" ng-model="cadCV.curriculo.empresape" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Ramo da Empresa</label>
+                                        <select class="form-control" ng-options="value.id as value.text for value in cadCV.areaBNE" ng-model="cadCV.curriculo.idAreaBNEpe">
+                                            <option value="0" selected>Selecione...</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="FuncaoEmpresaPE">Função</label>
+                                        <input type="text" class="form-control" name="FuncaoEmpresaPE" maxlength="50" ng-model="cadCV.curriculo.funcaoEmpresape" ng-focus="CarregarSugestaoAtividade('txtAtividadepe','SugestaoAtividadepe',cadCV.curriculo.funcaoEmpresape)" autocomplete-funcao />
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-xs-push-1 pull-right">
+                                    <div class="form-group row">
+                                        <div class="col-lg-3">
+                                            <label style=" margin-top:20px;">Início</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Mês <span ng-show="cadcv.curriculo.empresape.length>0" class="required">*</span></label>
+                                            <select class="form-control" id="MesInicioPE" name="MesInicioPE" ng-options="value.id as value.text for value in cadCV.mesesAno" ng-model="cadCV.curriculo.mesIniciope"></select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <label for="AnoInicioPE">Ano <span ng-show="cadcv.curriculo.empresape.length>0" class="required">*</span></label>
+                                            <input type="text" class="form-control" style="width:62px;" id="AnoInicioPE" name="AnoInicioPE" ui-mask="99?99" validar-datas-experiencia-profissional-pe ano-dg validar-ano ng-required="cadCV.curriculo.empresape.length >0" ng-model="cadCV.curriculo.anoIniciope" />
+                                            <div class="tooltip right in" style="top:18px; left: 75px; display: block; width:150px;" ng-show="formPasso2.AnoInicioPE.$invalid && formPasso2.AnoInicioPE.$touched">
+                                                <div class="tooltip-arrow"></div>
+                                                <div class="tooltip-inner">A data de início não pode ser maior que a data de saída.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-3">
+                                            <label style=" margin-top:20px;">Saída</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Mês</label>
+                                            <select class="form-control" id="MesSaidaPE" name="MesSaidaPE" ng-options="value.id as value.text for value in cadCV.mesesAno" ng-model="cadCV.curriculo.mesSaidape"></select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <label>Ano</label>
+                                            <input type="text" class="form-control" style="width:62px;" id="AnoSaidaPE" name="AnoSaidaPE" ui-mask="99?99" ano-dg validar-ano validar-datas-experiencia-profissional-pe ng-model="cadCV.curriculo.anoSaidape" />
+                                            <div class="tooltip right in" style="top:18px; left: 75px; display: block; width:150px;" ng-show="formPasso2.AnoSaidaPE.$invalid && formPasso2.AnoSaidaPE.$touched">
+                                                <div class="tooltip-arrow"></div>
+                                                <div class="tooltip-inner">A data de saída não pode ser menor que a data de início.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="clearfix"></p>
+                                    <div class="form-group">
+                                        <label>Descreva as tarefas que você realizava</label>
+                                        <textarea class="form-control" rows="3" ng-trim="false" ng-focus="CarregarSugestaoAtividade('txtAtividadepe','SugestaoAtividadepe',cadCV.curriculo.funcaoEmpresape)" maxlength="2000" ng-maxlength="2000" ng-model="cadCV.curriculo.atividadespe"></textarea>
+                                        <span ng-show="cadCV.curriculo.atividadesPE.length > 1798">{{2000 - cadCV.curriculo.atividadespe.length}} caracteres restantes</span>
+                                        <blockquote ng-show="mostrarSugestaope"><p>Sugestão de atividades</p><span id="SugestaoAtividadepe">{{sugestaoAtividade}}</span></blockquote>
+                                    </div>
+                                    <p class="">
+                                        <a class="btn btn-default btn-block pull-right" ng-show="addPenultimoEmprego==true && !addOutroEmprego" ng-click="adicionarOutroEmprego()" scroll3-emprego>Adicionar outra experiência <i class="fa fa-plus fa-fw"></i></a>
+                                        <a class="btn btn-default btn-block pull-right" ng-show="addOutroEmprego==true" ng-click="RemoverOutroEmprego()" scroll-penultimo-emprego>Remover experiência <i class="fa fa-chevron-down fa-fw"></i></a>
+                                    </p>
+                                </div>
+                            </span>
+                            <p class="clearfix"></p>
+
+                            <span class="col-lg-12" ng-show="addOutroEmprego">
+                                <h4 class="col-lg-12 subTitle editMargin">Adicionar outra experiência.</h4>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="Empresa3">Empresa</label>
+                                        <input type="text" class="form-control" id="txtEmpresa3" name="Empresa3" maxlength="100" ng-model="cadCV.curriculo.empresa3" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Ramo da Empresa</label>
+                                        <select class="form-control" ng-options="value.id as value.text for value in cadCV.areaBNE" ng-model="cadCV.curriculo.idAreaBNE3">
+                                            <option value="0" selected>Selecione...</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="FuncaoEmpresa3">Função</label>
+                                        <input type="text" class="form-control" name="FuncaoEmpresa3" maxlength="50" ng-blur="CarregarSugestaoAtividade('txtAtividade3','SugestaoAtividade3',cadCV.curriculo.funcaoEmpresa3)" ng-model="cadCV.curriculo.funcaoEmpresa3" autocomplete-funcao />
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-xs-push-1 pull-right">
+                                    <div class="form-group row">
+                                        <div class="col-lg-3">
+                                            <label style=" margin-top:20px;">Início</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Mês <span ng-show="cadcv.curriculo.empresa3.length>0" class="required">*</span></label>
+                                            <select class="form-control" id="MesInicio3" name="MesInicio3" ng-options="value.id as value.text for value in cadCV.mesesAno" ng-model="cadCV.curriculo.mesInicio3"></select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <label for="AnoInicioPE">Ano <span ng-show="cadcv.curriculo.empresa3.length>0" class="required">*</span></label>
+                                            <input type="text" class="form-control" style="width:62px;" id="AnoInicio3" name="AnoInicio3" ui-mask="99?99" ano-dg validar-ano validar-datas-experiencia-profissional-tres ng-required="cadCV.curriculo.empresa3.length >0" ng-model="cadCV.curriculo.anoInicio3" />
+                                            <div class="tooltip right in" style="top:18px; left: 75px; display: block; width:150px;" ng-show="formPasso2.AnoInicio3.$invalid && formPasso2.AnoInicio3.$touched">
+                                                <div class="tooltip-arrow"></div>
+                                                <div class="tooltip-inner">A data de início não pode ser maior que a data de saída.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-3">
+                                            <label style=" margin-top:20px;">Saída</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Mês</label>
+                                            <select class="form-control" id="MesSaida3" name="MesSaida3" ng-options="value.id as value.text for value in cadCV.mesesAno" ng-model="cadCV.curriculo.mesSaida3"></select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <label>Ano</label>
+                                            <input type="text" class="form-control" style="width:62px;" id="AnoSaida3" name="AnoSaida3" ui-mask="99?99" ano-dg validar-ano validar-datas-experiencia-profissional-tres ng-model="cadCV.curriculo.anoSaida3" />
+                                            <div class="tooltip right in" style="top:18px; left: 75px; display: block; width:150px;" ng-show="formPasso2.AnoSaida3.$invalid && formPasso2.AnoSaida3.$touched">
+                                                <div class="tooltip-arrow"></div>
+                                                <div class="tooltip-inner">A data de saída não pode ser menor que a data de início.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="clearfix"></p>
+                                    <div class="form-group">
+                                        <label>Descreva as tarefas que você realizava</label>
+                                        <textarea class="form-control" rows="3" ng-trim="false" ng-focus="CarregarSugestaoAtividade('txtAtividade3','SugestaoAtividade3',cadCV.curriculo.funcaoEmpresa3)" maxlength="2000" ng-maxlength="2000" ng-model="cadCV.curriculo.atividades3"></textarea>
+                                        <span ng-show="cadCV.curriculo.atividades3.length > 1798">{{2000 - cadCV.curriculo.atividades3.length}} caracteres restantes</span>
+                                        <blockquote ng-show="mostrarSugestao3"><p>Sugestão de atividades</p><span id="SugestaoAtividade3">{{sugestaoAtividade}}</span></blockquote>
+                                    </div>
+
+                                </div>
+
+                            </span>
+                            <p class="clearfix"></p>
+                            <button type="button" ng-click="go('/Cadastro')" class="btn  btn-default pull-left btn-lg bt-prev-js"><i class="glyphicon glyphicon-chevron-left"></i> Voltar</button>
+                            <button ng-show="!temExperienciaProfissional" type="button" ng-click="salvarCadastroPasso2()" class="btn  btn-primary pull-right btn-lg bt-next-js">Próximo <i class="glyphicon glyphicon-chevron-right"></i></button>
+                            <button ng-show="temExperienciaProfissional" type="button" ng-click="salvarCadastroPasso2()" ng-disabled="formPasso2.$invalid" class="btn  btn-primary pull-right btn-lg bt-next-js">Próximo <i class="glyphicon glyphicon-chevron-right"></i></button>
+                        </div>
+                    </form>
+                    <button id="bntSalvarPasso2" type="button" ng-click="salvarCadastroPasso2()" ng-show="naoTemExperienciaProfissional" class="btn  btn-primary pull-right btn-lg bt-next-js">Próximo <i class="glyphicon glyphicon-chevron-right"></i></button>
+                    <p class="clearfix"></p>
+
+                </div>
+                <div class="col-lg-3">
+                    <div class="box hidden-xs">
+                        <h3>Meu Currículo</h3>
+                        <ul class="list-unstyled">
+                            <li>
+                                <h4><strong class="passosBox">1º Passo</strong><span class="dadosTitle">Dados Pessoais</span></h4>
+                                <small>Nome, idade, sexo, contato, cidade, função e pretensão salarial.</small>
+                                <span id="upPasso1"><img src="images/gif-load.gif" /> Salvando dados...</span>
+
+                            </li>
+                            <li>
+                                <h4><strong class="passosBox">2º Passo</strong><span class="dadosTitle">Experiência profissional</span></h4>
+                                <small>Nome da empresa, o que fazia, por quanto tempo trabalhou nessa empresa,</small>
+                                <span></span>
+                            </li>
+                            <li>
+                                <h4><strong class="passosBox">3º Passo</strong><span class="dadosTitle">Escolaridade</span></h4>
+                                <small>Sua formação, nome da escola/faculdade e do curso feito, quando se formou.</small>
+                                <span></span>
+                            </li>
+                            <li>
+                                <h4><strong class="passosBox">4º Passo</strong> Dados Adicionais</h4>
+                                <small>Foto, suas caracteristicas, endereço completo, disponibilidade para trabalhar, idioma e estado Civil.</small>
+                                <span></span>
+                            </li>
+                            <li class="grid"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

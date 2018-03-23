@@ -1,0 +1,17 @@
+﻿body
+{
+    background-color: #f0f0f0;
+    background-image: url("/img/App_Themes/Cinza/bg_fundo_conteudo.gif");
+    background-position: 0 50px;
+}
+
+.rodape_centralizado {
+    padding: 36px 0;
+}
+
+.final_rodape div
+{
+    margin: 0 auto;
+    text-align: right;
+    width: 883px;    
+}

@@ -1,0 +1,1 @@
+﻿This API provides all operation to BNE solution.

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Employer.PlataformaLog</id>
+    <version>0.4</version>
+    <title>Employer.PlataformaLog</title>
+    <authors>Banco Nacional de Empregos</authors>
+    <owners>Banco Nacional de Empregos, Gieyson Stelmak</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Projeto que implementa o log no banco de dados</description>
+    <releaseNotes>Versão inicial</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <dependencies>
+      <dependency id="Employer.Plataforma.DAL" version="0.3" />
+    </dependencies>
+  </metadata>
+</package>

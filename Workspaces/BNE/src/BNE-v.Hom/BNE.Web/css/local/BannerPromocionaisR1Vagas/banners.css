@@ -1,0 +1,27 @@
+﻿.thumbnail{display:block;float:left;max-width:100%;padding:5px;line-height:1.42857;background-color:#FFF;border:1px solid #DDD;border-radius:4px;height:400px;margin-right:306px;transition:all .2s ease-in-out 0s;width:290px;margin-top:30px;-webkit-box-shadow:0 0 5px 5px #9E9E9E;box-shadow:0 0 20px 5px #9E9E9E}
+.thumbnail2{float:left;padding:4px;line-height:1.42857;background-color:#FFF;border:1px solid #ef841b;border-radius:4px;margin-bottom:45px;transition:all .2s ease-in-out 0s;width:338px;}
+.img-thumbnail{display:inline-block;height:auto;max-width:100%;padding:4px;line-height:1.428571429;background-color:#fff;border:1px solid #ddd;border-radius:4px;position:relative;-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out}
+a.thumbnail:hover,a.thumbnail:focus,a.thumbnail.active{border-color:#428bca}
+.thumbnail .caption{padding:9px;color:#333}
+.titulo{color:inherit;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:19px;font-weight:700;line-height:1.1;margin-left:26px;text-align:left;width:322px}
+.tituloR1{font-size:22px}
+p {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;margin: 0px 0px 0px;}
+.btn{background-color:#3276B1;padding:11px 43px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857;text-align:center;white-space:nowrap;text-decoration:none;vertical-align:middle;cursor:pointer;background-image:none;border:1px solid transparent;border-radius:4px;-moz-user-select:none;margin-top:50px}
+.btn2{padding:11px 94px}
+.btn-primary{color:#fff;background-color:#428bca;border-color:#357ebd}
+.btn-primary.active,.btn-primary:active,.btn-primary:focus,.btn-primary:hover,.open .dropdown-toggle.btn-primary{color:#fff;background-color:#3276b1;border-color:#285e8e}
+.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary{background-image:none}
+small{font-weight:400;font-size:13px;line-height:1;}
+.fa{display:inline-block;font-family:FontAwesome;font-style:normal;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+@font-face {font-family: 'FontAwesome';src: url('./font/fontawesome-webfont.ttf?v=4.1.0') format('truetype');}
+.fa-check:before{font-family: 'FontAwesome';content: "\f00c";}
+.fa-phone:before {font-family: 'FontAwesome';content: "\f095";}
+.fa{display:inline-block;font-family:FontAwesome;font-style:normal;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.fa-phone{font-size:20px;vertical-align:top;color:#00264e}
+.metric{font-size:17px; color:#444;}
+.beforePrice{color:gray;display:block;font-size:15px;line-height:10px;text-decoration:line-through;text-align:center}
+.afterPrice{display:block;font-family:"open sans";font-size:28px;font-weight:700;line-height:55px;margin-top:-12px;text-align:center;padding-bottom:7px}
+.align{text-align:center;}
+.button {margin:0 auto}
+.phone {font-size:34px;}
+

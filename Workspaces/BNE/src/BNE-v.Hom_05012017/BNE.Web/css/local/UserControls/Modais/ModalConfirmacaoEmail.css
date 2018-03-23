@@ -1,0 +1,6 @@
+﻿.botao_quero_comprar { background-image: url('/img/modal_nova/btn_quero_passar_para_vip.png'); background-repeat: no-repeat; display: block; float: left; margin-left: 20px; margin-top: 17px; width: 222px; height: 31px; color: #21190C; font-size: 18px; padding-left: 0px; padding-top: 10px; text-align: center; }
+.modal_nova_amarela .botao_fechar_modal { position: absolute !important; right: -16px !important; top: -16px; }
+.labelMaioresInformacoes { color: #052769; font-size: 16px; }
+.botao_agora_nao { background-image: url('/img/modal_nova/btn_usar_bonus_cinza.png'); background-repeat: no-repeat; text-align: center; padding-top: 10px; display: block; float: left; margin-left: 10px; margin-top: 17px; width: 151px; height: 40px; color: #21190C; font-size: 18px; }
+.modal_nova_conteudo { width: 380px; padding-top: 35px; margin-left: 43px; }
+.modal_nova_imagem  { margin-left: 45px; }

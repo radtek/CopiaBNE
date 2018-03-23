@@ -1,0 +1,34 @@
+﻿@using BNE.Web.Vagas.Code
+@model BNE.Web.Vagas.Models.VagaCandidatura.PremiumCandidatura
+
+<div id="modalPremiumCandidatura" class="modalPremiumCandidatura">
+    <script>
+        modal.abrirModal('modalPremiumCandidatura');
+    </script>
+    <link href="~/Content/ModalPremiumCandidatura.css" rel="stylesheet" />
+    @*<a class="b-close modal_fechar" title="Close"></a>*@
+
+    <div class="container_premium_candidatura ">
+        <div class="vaga-premium-icon"><img src="~/Images/modal/vaga-premium-trofeu-small.png" /> </div>
+        <div class="vaga-premium-content">
+
+            <span class="vaga-premium-title">Esta é uma Vaga Premium!</span><br>
+            <span class="vaga-premium-desc">Gostou dela, não é?</span><br>
+            <span class="vaga-premium-desc">Mas o que você prefere?</span>
+            <div class="vaga-premium-options">
+                <div class="vaga-premium-option">
+                    <a href="@Url.Action("ComprarCandidatura", "Vaga", new { idVaga = Model.idVaga })"><input type="button" value="Quero me candidatar" class="option1"></a><br>
+                    <span class="value">por apenas <strong>R$ @Model.PrecoCandidatura</strong></span>
+                </div>
+                <div class="vaga-premium-vs">x</div>
+                <div class="vaga-premium-option">
+                    <a href="@Url.Action("queroservip", "Vaga" )"><input type="button" value="Quero acesso ilimitado" class="option2"></a><br>
+                    <span class="value">por apenas <strong>R$ @Model.PrecoVip</strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="vaga-premium-close b-close"><a href="#">Nenhuma, não gosto de salários acima da média.</a></div>
+    </div>
+
+</div>
+

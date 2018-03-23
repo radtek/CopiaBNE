@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DynamicBuilder</name>
+    </assembly>
+    <members>
+        <member name="T:DynamicBuilder.Xml">
+            <summary>
+            A tiny C# 4 internal-DSL for declaratively generating XML.
+            The generated XML can be used as-is, exported as string content, or as virtually 
+            every native .NET XML type for further manipulation/usage/querying.
+            
+            Inpired quite heavily by the Builder library for Ruby http://builder.rubyforge.org/, 
+            and made possible thanks to C# 4's dynamic invocation support.
+            </summary>
+        </member>
+        <member name="M:DynamicBuilder.Xml.Fragment(System.Action)">
+            <summary>
+            Returns a lambda as a strongly-typed Action for use by lambda-accepting
+            dynamic dispatch on Xml.  Not unequivalent to simply casting the same 
+            lambda when passing to Xml, except slightly cleaner syntax.  This is only 
+            necessary since dynamic calls cannot accept weakly-typed lambdas /sigh
+            </summary>
+            <param name="fragmentBuilder"></param>
+            <returns>passed block, typed as an action</returns>
+        </member>
+        <member name="M:DynamicBuilder.Xml.Fragment(System.Action{System.Object})">
+            <summary>
+            Returns a lambda as a strongly-typed Generic Actions of type dynamic for
+            use by the lambda-accepting dynamic dispatch on Xml.  Not unequivalent to 
+            simply casting the same lambda when passing to Xml, except slightly cleaner syntax
+            This is only necessary since dynamic calls cannot accept weakly-typed lambdas /sigh
+            </summary>
+            <param name="fragmentBuilder"></param>
+            <returns>passed lambda, typed as an Action&lt;dynamic&gt;</returns>
+        </member>
+        <member name="M:DynamicBuilder.Xml.Build(System.Action{System.Object})">
+            <summary>
+            Alternate syntax for generating an XML object via this static factory
+            method instead of expliclty creating a "dynamic" in client code.
+            </summary>
+            <param name="builder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynamicBuilder.Xml.#ctor">
+            <summary>
+            Constructs a new Dynamic XML Builder
+            </summary>
+        </member>
+        <member name="M:DynamicBuilder.Xml.TryInvokeMember(System.Dynamic.InvokeMemberBinder,System.Object[],System.Object@)">
+            <summary>
+            Converts dynamically invoked method calls into nodes.  
+            example 1:  xml.hello("world") becomes <hello>world</hello>
+            example 2:  xml.hello("world2", new { foo = "bar" }) becomes <hello foo="bar">world</hello>
+            </summary>
+            <param name="binder">invoke member binder</param>
+            <param name="args">args</param>
+            <param name="result">result (always true)</param>
+            <returns></returns>
+        </member>
+        <member name="M:DynamicBuilder.Xml.Tag(System.String,System.Object[])">
+            <summary>
+            Builds an XML node along with setting its inner content, attributes, and possibly nested nodes
+            Usually No need to call this directly as it's mainly used as the implementation for dynamicaly invoked
+            members on an XML instance.
+            </summary>
+            <param name="tagName">name for node tag</param>
+            <param name="args">text content and/or attributes represented as an anonymous object 
+            and/or lambda for generating child nodes</param>
+        </member>
+        <member name="M:DynamicBuilder.Xml.Comment(System.String)">
+            <summary>
+            Add a literal comment to the XML
+            </summary>
+            <param name="comment">comment content</param>
+        </member>
+        <member name="M:DynamicBuilder.Xml.CData(System.String)">
+            <summary>
+            Add literal CData content to the XML
+            </summary>
+            <param name="data">data</param>
+        </member>
+        <member name="M:DynamicBuilder.Xml.Text(System.String)">
+            <summary>
+            Add a text node to the XML (not commonly needed)
+            </summary>
+            <param name="text">text content</param>
+        </member>
+        <member name="M:DynamicBuilder.Xml.Declaration(System.String,System.String,System.String)">
+            <summary>
+            Apply a declaration to the XML
+            </summary>
+            <param name="version">XML version</param>
+            <param name="encoding">XML encoding (currently only supports utf-8 or utf-16)</param>
+            <param name="standalone">"yes" or "no"</param>
+        </member>
+        <member name="M:DynamicBuilder.Xml.DocumentType(System.String,System.String,System.String,System.String)">
+            <summary>
+            Apply a document type to the XML
+            </summary>
+            <param name="name">name of the DTD</param>
+            <param name="publicId">public identifier for the DTD</param>
+            <param name="systemId">system identifier for the DTD</param>
+            <param name="internalSubset">internal subset for the DTD</param>
+        </member>
+        <member name="M:DynamicBuilder.Xml.op_Implicit(DynamicBuilder.Xml)~System.String">
+            <summary>
+            Implicit conversion to non-indented xml content string
+            </summary>
+            <param name="xml"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynamicBuilder.Xml.ToString(System.Boolean)">
+            <summary>
+            Converts the Xml content to a string
+            </summary>
+            <param name="indent">whether or not to indent the output</param>
+            <returns></returns>
+        </member>
+        <member name="M:DynamicBuilder.Xml.ToXDocument">
+            <summary>
+            Exports the Xml content as a Linq-queryable XDocument
+            </summary>
+            <returns>Linq-queryable XDocument</returns>
+        </member>
+        <member name="M:DynamicBuilder.Xml.ToXElement">
+            <summary>
+            Exports the Xml content as a Linq-queryable XElement
+            </summary>
+            <returns>Linq-queryable XElement</returns>
+        </member>
+        <member name="M:DynamicBuilder.Xml.ToXmlDocument">
+            <summary>
+            Exports the Xml content as a standard XmlDocument
+            </summary>
+            <returns>XmlDocument</returns>
+        </member>
+        <member name="M:DynamicBuilder.Xml.ToXmlNode">
+            <summary>
+            Exports the Xml content as a standard XmlNode by returning the 
+            first node in the XDocument, excluding the DocumentType if it's set
+            </summary>
+            <returns>XmlNode</returns>
+        </member>
+        <member name="M:DynamicBuilder.Xml.ToXmlElement">
+            <summary>
+            Exports the Xml content as a standard XmlElement
+            </summary>
+            <returns>XmlElement</returns>
+        </member>
+        <member name="P:DynamicBuilder.Xml.UseDashInsteadUnderscore">
+            <summary>
+            Replace underscore _ by dash - when its set to true
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,73 @@
+﻿<span id="hero"></span>
+<div class="container-fluid container-fluid-adjust" style="display:block">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="container-fluid container-fluid-adjust  container-adjust-login">
+                <div class="row clearfix">
+                    <form role="form" id="loginForm" name="loginForm" class="pashe pashe1 marginLogin" novalidate>
+                        <div class="col-lg-6 margin-bottom-50 loginAdjust">
+                            <div class="col-lg-6  pull-left hidden-sm hidden-xs">
+                                <img src="../images/img-login-b.png" class="img-responsive img-login-b" />
+                            </div>
+                                <div class="col-lg-6 pull-right h2 adjustMetricas">
+                                <p>Faça seu cadastro em apenas  <span class="adjustStrongDinamico">4 passos!</span></p>
+                                <p>Temos mais de <span class="adjustStrongDinamico" id="pnEstatisticas">{{loginCon.numeros.qtd_Vaga || "200.000"}} vagas!</span></p>
+                            </div>
+                        </div>
+                        <p></p>
+                        <div class="col-lg-5 margin-bottom-50 col-xs-push-2 pull-right camposLogin" id="divFormsLogin">
+                            <h2 class="text-center text-azul">Vamos começar!</h2>
+                            <div class="alert-success" id="msgSucesso"></div>
+                            <div class="row margin-top-20">
+                                <div class="form-group col-lg-6 margin-top-20 margin-bottom-20">
+                                    <label for="CPF">CPF <span class="required">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Digite o seu CPF" data-ng-model="loginData.userName" name="CPF" id="CPF" maxlength="11" ng-maxlength="14" only-num required cpf-validator>
+                                </div>
+                                <div class="form-group  col-lg-6 margin-top-20 margin-bottom-20">
+                                    <label for="DataNascimento">Data de nascimento <span class="required">*</span></label>
+                                    <input type="text" class="form-control" get-name name="DataNascimento" placeholder="Por ex.: 10/01/1980" id="DataNascimento" data-ng-model="loginData.password" ng-minlength="8" maxlength="8" ng-maxlength="10" required only-num valid-date>
+                                    <div class="tooltip right in" style="top: 10px; left: 160px; display: block;" ng-show="Nascimentovalido==false">
+                                        <div class="tooltip-arrow"></div>
+                                        <div class="tooltip-inner">A idade mínima é 14 anos.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group margin-top-20 margin-bottom-20">
+                                <label for="Nome">Nome completo <span class="required">*</span></label>
+                                <input type="text" class="form-control" id="Nome" name="Nome" data-ng-model="loginData.nome" placeholder="Digite o seu nome completo" required validar-nome-completo>
+                                <div class="tooltip right in" style="top: 156px; left: 352px; display: block;" ng-show="loginForm.Nome.$invalid && loginForm.Nome.$touched">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">Preencha o seu nome completo </div>
+                                </div>
+                            </div>
+                            <button id="bntLogin" ng-disabled="loginForm.$invalid" class="btn btn-block btn-enter btn-lg" ng-click="login()">Entrar</button>
+                            <div id="divProcessandoLogin" class="col-md-12 column inativo alert alert-link alert-margin-top">
+                                <img src="images/gif-load.gif" /> Efetuando login...
+                            </div>
+                        </div>
+                    </form>
+                    <p></p>
+                    <!--<div class="form-group">
+                            <label><i>Otimize tempo se identificando pelo</i></label>
+                    <a class="btn btn-block facebook-bt btn-lg">
+                        <span class="icon icon-facebook" data-icon="e"></span> Facebook
+                    </a>
+                    <div id="customBtn" class="btn btn-block google-plus-bt btn-lg">
+                        <span class="icon icon-google"></span> Google
+                    </div>-->
+                    <!--<a class="btn btn-block google-plus-bt"><span class="icon icon-google"></span> Google</a>
+                    <span id="signinButton">
+                        <span class="g-signin "
+                              data-callback="signinCallback"
+                              data-clientid="1047246326023-ggjcgru9eb90ih649ud6h93hpnv0rpr4.apps.googleusercontent.com"
+                              data-cookiepolicy="single_host_origin"
+                              data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                              data-scope="https://www.googleapis.com/auth/plus.login">
+                        </span>
+                    </span>
+                        </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

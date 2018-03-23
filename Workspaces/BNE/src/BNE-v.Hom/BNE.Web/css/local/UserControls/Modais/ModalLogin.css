@@ -1,0 +1,19 @@
+﻿.titulo_modal { color: #FFFFFF; font-size: 19px; font-weight: normal; margin: 0; text-align: left; }
+    .titulo_modal span { display: inline-block; margin: 10px; }
+.painel_uclogin { float: left; width: 100px; margin-top: 15px; }
+.modal_conteudo.login .label_principal { color: #1E3260 !important; }
+.modal_conteudo .painel_cadastreja { text-align: center; text-decoration: underline; }
+.pnlLoginModal.modal_conteudo { min-width: 280px; width: 50vw; max-width: 480px; box-shadow: 0 0 8px rgba(0,0,0, .27); border-radius: 5px; }
+.pnlLoginModal .painel_botoes { clear: both; margin: 14px 0 0 0; text-align: left; height: 60px; }
+.pnlLoginModal .textbox_ddd { margin: 0; }
+.conteudo .inputlogin input.textbox_padrao.campo_obrigatorio { width: 100% !important; min-height: 40px; height: 40px; margin-bottom: 8px; }
+.label_principal.modal_login { width: 100% !important; }
+.painel_botoes { text-align: center !important; }
+.botao_padrao { height: 40px !important; width: 100% !important; margin-left: 0px !important; }
+.painel_botoes { margin: 0 !important; }
+.modal_conteudo .titulo_modal h2 { margin: 0; padding: 0; margin-left: 8px; color: #fff; font-size: 16px; font-weight: bold; }
+#ucModalLogin_upBtiFechar { margin-top: 0px; padding-right: 0px; }
+.titulo_modal { display: flex; align-items: center; justify-content: space-between; }
+.titulo_modal_logo { overflow: hidden; }
+    .titulo_modal_logo img { width: 220px; height: inherit; padding: 16px; }
+.modal_fundo { background-color: #0c3d6b; }

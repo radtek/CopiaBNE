@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BNE_DEVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BNE_Curriculo">
+          <Key>
+            <PropertyRef Name="Idf_Curriculo" />
+          </Key>
+          <Property Name="Idf_Curriculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Idf_Pessoa_Fisica" Type="int" Nullable="false" />
+          <Property Name="Vlr_Pretensao_Salarial" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="Idf_Tipo_Curriculo" Type="int" Nullable="false" />
+          <Property Name="Idf_Situacao_Curriculo" Type="int" Nullable="false" />
+          <Property Name="Des_Mini_Curriculo" Type="varchar(max)" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Atualizacao" Type="datetime" Nullable="false" />
+          <Property Name="Flg_Manha" Type="bit" />
+          <Property Name="Flg_Tarde" Type="bit" />
+          <Property Name="Flg_Noite" Type="bit" />
+          <Property Name="Obs_Curriculo" Type="varchar" MaxLength="2000" />
+          <Property Name="Des_Analise" Type="varchar" MaxLength="2000" />
+          <Property Name="Des_Sugestao_Carreira" Type="varchar" MaxLength="2000" />
+          <Property Name="Des_Cursos_Oferecidos" Type="varchar" MaxLength="2000" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Vlr_Ultimo_Salario" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="Des_IP" Type="char" MaxLength="15" Nullable="false" />
+          <Property Name="Idf_Cidade_Pretendida" Type="int" />
+          <Property Name="Flg_Final_Semana" Type="bit" />
+          <Property Name="Flg_VIP" Type="bit" Nullable="false" />
+          <Property Name="Flg_Boas_Vindas" Type="bit" />
+          <Property Name="Flg_MSN" Type="bit" Nullable="false" />
+          <Property Name="Idf_Cidade_Endereco" Type="int" />
+          <Property Name="Des_Localizacao" Type="geography" />
+          <Property Name="Dta_Modificacao_CV" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BNE_Curriculo_Origem">
+          <Key>
+            <PropertyRef Name="Idf_Curriculo_Origem" />
+          </Key>
+          <Property Name="Idf_Origem" Type="int" Nullable="false" />
+          <Property Name="Idf_Curriculo_Origem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Idf_Curriculo" Type="int" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Alteracao" Type="datetime" Nullable="false" />
+          <Property Name="Des_IP" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="TAB_Origem">
+          <Key>
+            <PropertyRef Name="Idf_Origem" />
+          </Key>
+          <Property Name="Idf_Origem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Des_Origem" Type="varchar" MaxLength="100" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Des_URL" Type="varchar" MaxLength="120" />
+          <Property Name="Idf_Tipo_Origem" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TAB_Cidade">
+          <Key>
+            <PropertyRef Name="Idf_Cidade" />
+          </Key>
+          <Property Name="Idf_Cidade" Type="int" Nullable="false" />
+          <Property Name="Nme_Cidade" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Sig_Estado" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Txa_ISS" Type="float" Nullable="false" />
+          <Property Name="Idf_Tipo_Base" Type="int" />
+          <Property Name="Cod_Rais" Type="numeric" Precision="7" Scale="0" />
+        </EntityType>
+        <Association Name="FK_BNECUR_BNECOR">
+          <End Role="BNE_Curriculo" Type="Self.BNE_Curriculo" Multiplicity="1" />
+          <End Role="BNE_Curriculo_Origem" Type="Self.BNE_Curriculo_Origem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Curriculo" />
+            </Principal>
+            <Dependent Role="BNE_Curriculo_Origem">
+              <PropertyRef Name="Idf_Curriculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BNETCI_BNECUR">
+          <End Role="TAB_Cidade" Type="Self.TAB_Cidade" Multiplicity="0..1" />
+          <End Role="BNE_Curriculo" Type="Self.BNE_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Cidade_Pretendida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABCID_BNECUR">
+          <End Role="TAB_Cidade" Type="Self.TAB_Cidade" Multiplicity="0..1" />
+          <End Role="BNE_Curriculo" Type="Self.BNE_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Cidade_Endereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABORI_BNECOR">
+          <End Role="TAB_Origem" Type="Self.TAB_Origem" Multiplicity="1" />
+          <End Role="BNE_Curriculo_Origem" Type="Self.BNE_Curriculo_Origem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Origem">
+              <PropertyRef Name="Idf_Origem" />
+            </Principal>
+            <Dependent Role="BNE_Curriculo_Origem">
+              <PropertyRef Name="Idf_Origem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BNE_DEVModelStoreContainer">
+          <EntitySet Name="BNE_Curriculo" EntityType="Self.BNE_Curriculo" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="BNE_Curriculo_Origem" EntityType="Self.BNE_Curriculo_Origem" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="TAB_Origem" EntityType="Self.TAB_Origem" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="TAB_Cidade" EntityType="Self.TAB_Cidade" Schema="plataforma" store:Type="Tables" />
+          <AssociationSet Name="FK_BNECUR_BNECOR" Association="Self.FK_BNECUR_BNECOR">
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+            <End Role="BNE_Curriculo_Origem" EntitySet="BNE_Curriculo_Origem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BNETCI_BNECUR" Association="Self.FK_BNETCI_BNECUR">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABCID_BNECUR" Association="Self.FK_TABCID_BNECUR">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABORI_BNECOR" Association="Self.FK_TABORI_BNECOR">
+            <End Role="TAB_Origem" EntitySet="TAB_Origem" />
+            <End Role="BNE_Curriculo_Origem" EntitySet="BNE_Curriculo_Origem" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BNE_DEVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BNE_Curriculo_Origem">
+          <Key>
+            <PropertyRef Name="Idf_Curriculo_Origem" />
+          </Key>
+          <Property Name="Idf_Origem" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Curriculo_Origem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Idf_Curriculo" Type="Int32" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dta_Alteracao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Des_IP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TAB_Origem" Relationship="Self.FK_TABORI_BNECOR" FromRole="BNE_Curriculo_Origem" ToRole="TAB_Origem" />
+          <NavigationProperty Name="BNE_Curriculo" Relationship="BNE_DEVModel.FK_BNECUR_BNECOR" FromRole="BNE_Curriculo_Origem" ToRole="BNE_Curriculo" />
+        </EntityType>
+        <EntityType Name="TAB_Origem">
+          <Key>
+            <PropertyRef Name="Idf_Origem" />
+          </Key>
+          <Property Name="Idf_Origem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Des_Origem" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Des_URL" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="Idf_Tipo_Origem" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BNE_Curriculo_Origem" Relationship="Self.FK_TABORI_BNECOR" FromRole="TAB_Origem" ToRole="BNE_Curriculo_Origem" />
+        </EntityType>
+        <Association Name="FK_TABORI_BNECOR">
+          <End Role="TAB_Origem" Type="Self.TAB_Origem" Multiplicity="1" />
+          <End Role="BNE_Curriculo_Origem" Type="Self.BNE_Curriculo_Origem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Origem">
+              <PropertyRef Name="Idf_Origem" />
+            </Principal>
+            <Dependent Role="BNE_Curriculo_Origem">
+              <PropertyRef Name="Idf_Origem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BNEEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BNE_Curriculo_Origem" EntityType="Self.BNE_Curriculo_Origem" />
+          <EntitySet Name="TAB_Origem" EntityType="Self.TAB_Origem" />
+          <AssociationSet Name="FK_TABORI_BNECOR" Association="Self.FK_TABORI_BNECOR">
+            <End Role="TAB_Origem" EntitySet="TAB_Origem" />
+            <End Role="BNE_Curriculo_Origem" EntitySet="BNE_Curriculo_Origem" />
+          </AssociationSet>
+          <EntitySet Name="BNE_Curriculo" EntityType="BNE_DEVModel.BNE_Curriculo" />
+          <AssociationSet Name="FK_BNECUR_BNECOR" Association="BNE_DEVModel.FK_BNECUR_BNECOR">
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+            <End Role="BNE_Curriculo_Origem" EntitySet="BNE_Curriculo_Origem" />
+          </AssociationSet>
+          <EntitySet Name="TAB_Cidade" EntityType="BNE_DEVModel.TAB_Cidade" />
+          <AssociationSet Name="FK_BNETCI_BNECUR" Association="BNE_DEVModel.FK_BNETCI_BNECUR">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABCID_BNECUR" Association="BNE_DEVModel.FK_TABCID_BNECUR">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BNE_Curriculo">
+          <Key>
+            <PropertyRef Name="Idf_Curriculo" />
+          </Key>
+          <Property Name="Idf_Curriculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Idf_Pessoa_Fisica" Type="Int32" Nullable="false" />
+          <Property Name="Vlr_Pretensao_Salarial" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Idf_Tipo_Curriculo" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Situacao_Curriculo" Type="Int32" Nullable="false" />
+          <Property Name="Des_Mini_Curriculo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dta_Atualizacao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_Manha" Type="Boolean" />
+          <Property Name="Flg_Tarde" Type="Boolean" />
+          <Property Name="Flg_Noite" Type="Boolean" />
+          <Property Name="Obs_Curriculo" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Des_Analise" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Des_Sugestao_Carreira" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Des_Cursos_Oferecidos" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Vlr_Ultimo_Salario" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="Des_IP" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="Idf_Cidade_Pretendida" Type="Int32" />
+          <Property Name="Flg_Final_Semana" Type="Boolean" />
+          <Property Name="Flg_VIP" Type="Boolean" Nullable="false" />
+          <Property Name="Flg_Boas_Vindas" Type="Boolean" />
+          <Property Name="Flg_MSN" Type="Boolean" Nullable="false" />
+          <Property Name="Idf_Cidade_Endereco" Type="Int32" />
+          <Property Name="Des_Localizacao" Type="Geography" />
+          <Property Name="Dta_Modificacao_CV" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="BNE_Curriculo_Origem" Relationship="BNE_DEVModel.FK_BNECUR_BNECOR" FromRole="BNE_Curriculo" ToRole="BNE_Curriculo_Origem" />
+          <NavigationProperty Name="TAB_Cidade" Relationship="BNE_DEVModel.FK_BNETCI_BNECUR" FromRole="BNE_Curriculo" ToRole="TAB_Cidade" />
+          <NavigationProperty Name="TAB_Cidade1" Relationship="BNE_DEVModel.FK_TABCID_BNECUR" FromRole="BNE_Curriculo" ToRole="TAB_Cidade" />
+        </EntityType>
+        <Association Name="FK_BNECUR_BNECOR">
+          <End Type="BNE_DEVModel.BNE_Curriculo" Role="BNE_Curriculo" Multiplicity="1" />
+          <End Type="BNE_DEVModel.BNE_Curriculo_Origem" Role="BNE_Curriculo_Origem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Curriculo" />
+            </Principal>
+            <Dependent Role="BNE_Curriculo_Origem">
+              <PropertyRef Name="Idf_Curriculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TAB_Cidade">
+          <Key>
+            <PropertyRef Name="Idf_Cidade" />
+          </Key>
+          <Property Name="Idf_Cidade" Type="Int32" Nullable="false" />
+          <Property Name="Nme_Cidade" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sig_Estado" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Txa_ISS" Type="Double" Nullable="false" />
+          <Property Name="Idf_Tipo_Base" Type="Int32" />
+          <Property Name="Cod_Rais" Type="Decimal" Precision="7" Scale="0" />
+          <NavigationProperty Name="BNE_Curriculo" Relationship="BNE_DEVModel.FK_BNETCI_BNECUR" FromRole="TAB_Cidade" ToRole="BNE_Curriculo" />
+          <NavigationProperty Name="BNE_Curriculo1" Relationship="BNE_DEVModel.FK_TABCID_BNECUR" FromRole="TAB_Cidade" ToRole="BNE_Curriculo" />
+        </EntityType>
+        <Association Name="FK_BNETCI_BNECUR">
+          <End Type="BNE_DEVModel.TAB_Cidade" Role="TAB_Cidade" Multiplicity="0..1" />
+          <End Type="BNE_DEVModel.BNE_Curriculo" Role="BNE_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Cidade_Pretendida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABCID_BNECUR">
+          <End Type="BNE_DEVModel.TAB_Cidade" Role="TAB_Cidade" Multiplicity="0..1" />
+          <End Type="BNE_DEVModel.BNE_Curriculo" Role="BNE_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Cidade_Endereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BNE_DEVModelStoreContainer" CdmEntityContainer="BNEEntities">
+          <EntitySetMapping Name="BNE_Curriculo_Origem">
+            <EntityTypeMapping TypeName="BNE_DEVModel.BNE_Curriculo_Origem">
+              <MappingFragment StoreEntitySet="BNE_Curriculo_Origem">
+                <ScalarProperty Name="Idf_Origem" ColumnName="Idf_Origem" />
+                <ScalarProperty Name="Idf_Curriculo_Origem" ColumnName="Idf_Curriculo_Origem" />
+                <ScalarProperty Name="Idf_Curriculo" ColumnName="Idf_Curriculo" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Dta_Alteracao" ColumnName="Dta_Alteracao" />
+                <ScalarProperty Name="Des_IP" ColumnName="Des_IP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Origem">
+            <EntityTypeMapping TypeName="BNE_DEVModel.TAB_Origem">
+              <MappingFragment StoreEntitySet="TAB_Origem">
+                <ScalarProperty Name="Idf_Origem" ColumnName="Idf_Origem" />
+                <ScalarProperty Name="Des_Origem" ColumnName="Des_Origem" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Des_URL" ColumnName="Des_URL" />
+                <ScalarProperty Name="Idf_Tipo_Origem" ColumnName="Idf_Tipo_Origem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BNE_Curriculo">
+            <EntityTypeMapping TypeName="BNE_DEVModel.BNE_Curriculo">
+              <MappingFragment StoreEntitySet="BNE_Curriculo">
+                <ScalarProperty Name="Dta_Modificacao_CV" ColumnName="Dta_Modificacao_CV" />
+                <ScalarProperty Name="Des_Localizacao" ColumnName="Des_Localizacao" />
+                <ScalarProperty Name="Idf_Cidade_Endereco" ColumnName="Idf_Cidade_Endereco" />
+                <ScalarProperty Name="Flg_MSN" ColumnName="Flg_MSN" />
+                <ScalarProperty Name="Flg_Boas_Vindas" ColumnName="Flg_Boas_Vindas" />
+                <ScalarProperty Name="Flg_VIP" ColumnName="Flg_VIP" />
+                <ScalarProperty Name="Flg_Final_Semana" ColumnName="Flg_Final_Semana" />
+                <ScalarProperty Name="Idf_Cidade_Pretendida" ColumnName="Idf_Cidade_Pretendida" />
+                <ScalarProperty Name="Des_IP" ColumnName="Des_IP" />
+                <ScalarProperty Name="Vlr_Ultimo_Salario" ColumnName="Vlr_Ultimo_Salario" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Des_Cursos_Oferecidos" ColumnName="Des_Cursos_Oferecidos" />
+                <ScalarProperty Name="Des_Sugestao_Carreira" ColumnName="Des_Sugestao_Carreira" />
+                <ScalarProperty Name="Des_Analise" ColumnName="Des_Analise" />
+                <ScalarProperty Name="Obs_Curriculo" ColumnName="Obs_Curriculo" />
+                <ScalarProperty Name="Flg_Noite" ColumnName="Flg_Noite" />
+                <ScalarProperty Name="Flg_Tarde" ColumnName="Flg_Tarde" />
+                <ScalarProperty Name="Flg_Manha" ColumnName="Flg_Manha" />
+                <ScalarProperty Name="Dta_Atualizacao" ColumnName="Dta_Atualizacao" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Des_Mini_Curriculo" ColumnName="Des_Mini_Curriculo" />
+                <ScalarProperty Name="Idf_Situacao_Curriculo" ColumnName="Idf_Situacao_Curriculo" />
+                <ScalarProperty Name="Idf_Tipo_Curriculo" ColumnName="Idf_Tipo_Curriculo" />
+                <ScalarProperty Name="Vlr_Pretensao_Salarial" ColumnName="Vlr_Pretensao_Salarial" />
+                <ScalarProperty Name="Idf_Pessoa_Fisica" ColumnName="Idf_Pessoa_Fisica" />
+                <ScalarProperty Name="Idf_Curriculo" ColumnName="Idf_Curriculo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Cidade">
+            <EntityTypeMapping TypeName="BNE_DEVModel.TAB_Cidade">
+              <MappingFragment StoreEntitySet="TAB_Cidade">
+                <ScalarProperty Name="Cod_Rais" ColumnName="Cod_Rais" />
+                <ScalarProperty Name="Idf_Tipo_Base" ColumnName="Idf_Tipo_Base" />
+                <ScalarProperty Name="Txa_ISS" ColumnName="Txa_ISS" />
+                <ScalarProperty Name="Sig_Estado" ColumnName="Sig_Estado" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Nme_Cidade" ColumnName="Nme_Cidade" />
+                <ScalarProperty Name="Idf_Cidade" ColumnName="Idf_Cidade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

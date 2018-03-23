@@ -1,0 +1,236 @@
+﻿body{font-family:Arial,Helvetica,sans-serif !important;}
+
+.container_avatar
+{
+    display:block;
+    height:380px;
+    margin-left:382px;
+    margin-top:-168px;
+    position:absolute;
+    width:280px;
+}
+/*
+.body1{
+    background-image:url('/img/pacote_alertavaga/men_avatar_3.png');
+    background-repeat:no-repeat;
+    display:block;
+    height:400px;
+    margin-left:0px;
+    margin-top:0px;
+    position:absolute;
+    width:400px;
+}
+*/
+.body2{
+    background-image:url('/img/pacote_alertavaga/men_avatar_2.png');
+    background-repeat:no-repeat;
+    display:block;
+    height:500px;
+    margin-left:-10px;
+    margin-top:26px;
+    position:absolute;
+    width:500px;
+}
+.textoNaoQueroEmpresa
+{
+    display:block;
+    font-size:16px;
+    height:300px;
+    margin-left:653px;
+    margin-top:-77px;
+    position:absolute;
+    width:380px;
+}
+/*.balao
+{
+    background-image:url('/img/pacote_alertavaga/baloon_3.png');
+    background-repeat:no-repeat;
+    display:block;
+    height:300px;
+    margin-left:118px;
+    margin-top:-31px;
+    position:absolute;
+    width:380px;
+}
+*/
+.textoSalario
+{
+    display:none;
+    font-size:16px;
+    height:300px;
+    margin-left:611px;
+    margin-top:-127px;
+    position:absolute;
+    width:380px;
+}
+
+.container_alertaVaga
+{
+    background-color:#EEF5F7;
+    background-repeat:no-repeat;
+    border: 1px solid #0C71CC;
+    border-radius:0px;
+    display:block;
+    height:auto;
+    margin-bottom:10px;
+    margin-left:100px;
+    margin-top:40px;
+    width:420px;
+}
+.controlador_detalhes
+{
+    margin-bottom:25px;
+    margin-top:25px;
+    text-align:center; 
+}
+.label_tituloAlerta
+{
+    color:#1E325F;
+    font-family:Verdana;
+    font-size:25px;
+}
+.controlador_detalhes2
+{
+   margin-left:50px;
+   margin-bottom:10px;
+   width:371px;
+   
+}
+.label_textoParagrafo
+{
+    font-size:12px; 
+    text-align:left; 
+    width:320px;
+}
+.detalheLarguraCampoField
+{
+    margin-left:45px !important;
+    width:250px;    
+}
+.detalheLarguraCampoFieldEmpresa
+{
+     margin-left:45px !important;
+     margin-top:10px;
+     width:320px;     
+}
+.label_acimaDe
+{
+   margin-bottom:5px;
+   margin-left:50px;
+   margin-top:5px;
+}
+.label_empresasNaoQueroTrabalhar
+{
+    margin-left:50px;
+    margin-top:10px;
+} 
+.margemBottom
+{
+    margin-bottom:30px; 
+}
+.GridEmpresasNaoQueroTrabalhar
+{ 
+    background-color: #FFEFBF;
+    clear:both;
+    float:left;
+    height:20px;
+    line-height:100%;
+    margin-left:50px;
+    padding-top:10px;
+    padding: 5px 10px 0px 10px;
+    text-align:left;
+    width:303px;
+}
+.btnDeletarEmpresaGrid
+{
+    background-image:url('/img/pacote_alertavaga/btn_excluir.png');
+    background-repeat: no-repeat;
+    display:inline-block;
+    height:20px;
+    margin-left:-23px;
+    margin-top:6px;
+    width:20px;
+    position:absolute;  
+}
+
+.btn_funcaoAdd
+{
+    background-image: url('/img/pacote_alertavaga/ico_mais.gif');
+    background-repeat: no-repeat;
+    display:inline-block;
+    height:20px;
+    margin-left:0;
+    margin-top:0;
+    width:20px;
+    position:absolute;
+}
+.btn_cidadeAdd{
+    background-image: url('/img/pacote_alertavaga/ico_mais.gif');
+    background-repeat: no-repeat;
+    display:inline-block;
+    height:20px;
+    margin-left:0;
+    margin-top:0;
+    width:20px;
+    position:absolute;
+}
+.controlador_detalhes3
+{
+   display:block;
+   margin-bottom:70px;
+   margin-left:-66px;
+   margin-top:15px;
+}
+.btn_azul
+{
+    background-image:url('/img/pacote_alertavaga/btn_azulSalvar.png');
+    background-repeat:no-repeat;
+    clear:both;
+    display:inline-block;
+    height:40px;
+    margin-bottom:15px;
+    margin-left:207px;
+    margin-top:10px;
+    width:215px  
+}
+.label_vagaSalvar
+{
+    color: #fff;
+    display:block;
+    position:relative;
+    font-size:20px;
+    text-shadow:2px 2px #333;
+    text-align:center;
+    padding-top:7px;
+}
+.textoEmpresasNaoQueroTrabalhar
+{
+    display:none;
+    font-size:16px;
+    height:300px;
+    margin-left:745px;
+    margin-top:0px;
+    position:absolute;  
+}
+strong
+{
+color:Red;    
+}
+/*
+.balaoCidade
+{
+    display:none;
+}
+.balaoFuncao{
+    display:none;
+}
+*/
+input[type="text"]:focus, textarea:focus {
+    border: 2px solid #FF8000;
+    outline: medium none;
+}
+.chamadaStrong
+{
+font-size:22px;    
+color: #FF8000;
+}

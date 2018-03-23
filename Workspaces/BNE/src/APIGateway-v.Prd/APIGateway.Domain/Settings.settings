@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="APIGateway.Domain" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SwaggerUiUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://gatewayapi.bne.com.br/swagger</Value>
+    </Setting>
+    <Setting Name="SwaggerFilesDir" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\temp\swagger\json</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

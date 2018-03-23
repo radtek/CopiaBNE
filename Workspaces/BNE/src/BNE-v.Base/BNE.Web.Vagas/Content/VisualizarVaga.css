@@ -1,0 +1,33 @@
+﻿.visualizar_vaga { overflow: auto; position: relative; }
+.coluna_esquerda { float: left; width: 650px; }
+.coluna_direita { width: 230px; height: 100%; position: absolute; right: 0; }
+.container_vagas_similares { overflow-y: scroll; background-color: #fff; border: 1px solid #D1D5DC; clear: both; margin: 8px 0; position: relative; margin-left: 10px; height: calc(100% - 18px); /* IE9+ and future browsers */ height: -moz-calc(100% - 18px); /* Firefox */ height: -webkit-calc(100% - 18px); /* Chrome, Safari */ }
+    .container_vagas_similares .vagas_similares { padding: 15px 12px; }
+    .container_vagas_similares .titulo { color: #172B49; font-size: 17px; width: auto; height: 20px; margin: 0; padding: 0; border-bottom: 2px solid #D1D5DC; margin-left: 4px; text-align: center; margin-right: 4px; padding-top: 4px; }
+    .container_vagas_similares .vagas_similares ul li { border-bottom: 1px solid #D1D5DC; padding-top: 5px; padding-bottom: 5px; }
+        .container_vagas_similares .vagas_similares ul li.last { border-bottom: none; }
+    .container_vagas_similares .vagas_similares .funcao { font-weight: bold; }
+    .container_vagas_similares .vagas_similares .cidade { }
+.vaga .data_vaga { margin-left: 10px; }
+.vaga h2 { font-size: 12px; margin-top: 14px; }
+.coluna_esquerda .vaga { padding-left: 10px; padding-right: 10px; }
+
+.vaga .quero_me_candidatar { margin-left: 0px; }
+
+.container_botoes {
+    height: 40px;
+}
+.container_botoes .container_candidatura{float: left;}
+.container_botoes .compartilhamento { position: relative; float: right;  }
+.vaga .compartilhamento .compartilhe {
+    margin-top: 0px;
+}
+
+@media only screen and (max-device-width: 900px) {
+	.coluna_direita {
+        display: none !important;
+    }
+	.coluna_esquerda {
+        width: 99% !important;
+    }
+} 

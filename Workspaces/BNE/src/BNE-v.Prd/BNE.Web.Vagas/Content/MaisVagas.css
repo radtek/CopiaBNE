@@ -1,0 +1,4 @@
+﻿.maisVagas{}
+.separador{margin-left:5px;margin-right:10px;}
+a.linkMaisVagas:link,a.linkMaisVagas:visited{color:#015ccb} /*#1C4B8B*/
+a.linkMaisVagas:hover{color:#0D47A1;text-decoration:underline}

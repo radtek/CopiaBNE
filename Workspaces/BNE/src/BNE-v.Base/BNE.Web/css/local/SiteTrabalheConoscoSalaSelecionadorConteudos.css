@@ -1,0 +1,22 @@
+﻿.topo {
+    background-image: url("/img/bg_topo_pj.png");
+}
+
+p
+{
+    margin: 4px 16px;
+}
+
+h2
+{
+    color: #4c7212;
+    font-size: 12px;
+    height: auto;
+    margin: 10px 16px 4px;
+}
+
+.radeditor_pagina_inicial,
+.radeditor_boas_vindas_candidato
+{
+    margin: 0 auto 20px;
+}

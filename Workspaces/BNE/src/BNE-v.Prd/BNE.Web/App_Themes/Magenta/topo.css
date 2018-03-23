@@ -1,0 +1,26 @@
+/*------------------------------------------------------------ Theme Magenta*/
+.topo {
+    background-image: url("/img/App_Themes/Magenta/bg_topo.gif");
+}
+
+.painel_filtro_vaga_escondido {
+    background-image: linear-gradient(90deg, #E623BB 6%, #BD009A 18%, #E623BB 72%, #FF39D0 99%) !important;
+    background-image: -moz-linear-gradient(90deg, #FF39D0 6%, #BD009A 18%, #E623BB 72%, #FF39D0 99%) !important;
+    background-image: -webkit-linear-gradient(90deg, #FF39D0 6%, #BD009A 18%, #E623BB 72%, #FF39D0 99%) !important;
+    background-image: -ms-linear-gradient(90deg, #FF39D0 6%, #BD009A 18%, #E623BB 72%, #FF39D0 99%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF39D0', endColorstr='#BD009A') !important;
+}
+
+#pnlBusca.painel_filtro_vaga {
+    background-image: linear-gradient(90deg, #E623BB 6%, #BD009A 18%, #E623BB 72%, #FF39D0 99%) !important;
+    background-image: -moz-linear-gradient(90deg, #FF39D0 6%, #BD009A 18%, #E623BB 72%, #FF39D0 99%) !important;
+    background-image: -webkit-linear-gradient(90deg, #FF39D0 6%, #BD009A 18%, #E623BB 72%, #FF39D0 99%) !important;
+    background-image: -ms-linear-gradient(90deg, #FF39D0 6%, #BD009A 18%, #E623BB 72%, #FF39D0 99%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF39D0', endColorstr='#BD009A') !important;
+    border-radius: 0 4px 4px 4px !important;
+}
+
+#aBuscarVagas, .btn_buscar a#btiPesquisarVaga {
+    background-color: #FF39D0;
+}
+/*# sourceMappingURL=topo.css.map */

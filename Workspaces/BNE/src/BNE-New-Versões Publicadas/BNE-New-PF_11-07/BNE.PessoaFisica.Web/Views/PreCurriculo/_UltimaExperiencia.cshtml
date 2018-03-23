@@ -1,0 +1,74 @@
+﻿@model BNE.PessoaFisica.Web.Models.PreCurriculo
+
+<script>
+    $(document).ready(function () {
+        ConfigurarExperiencia();
+    });
+</script>
+
+<div class="mdl-grid">
+    @Html.HiddenFor(m => m.ExperienciaProfissional.CPF, new { @Value = Model.CPF })
+    @Html.HiddenFor(m => m.ExperienciaProfissional.DataNascimento, new { @Value = Model.DataNascimento.Value.ToString("dd/MM/yyyy") })
+    @Html.HiddenFor(m => m.Nome, new { @Value = Model.Nome })
+
+
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center"><h4>Qual o seu último emprego?</h4></div>
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center ">
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect vertitemform" for="chkSemExperiencia">
+            <input type="checkbox" id="chkSemExperiencia" class="mdl-checkbox__input" name="chkSemExperiencia" />
+            <span class="mdl-checkbox__label">Não tenho experiência</span>
+        </label>
+    </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            <div class="mdl-grid experiencia">
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    @Html.TextBoxFor(m => m.ExperienciaProfissional.NomeEmpresa, new { id = "txtNomeEmpresa", @class = "mdl-textfield__input", @maxlength = "100" })
+                    <label class="mdl-textfield__label" for="txtNomeEmpresa">Nome Empresa</label>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    @Html.TextBoxFor(m => m.ExperienciaProfissional.FuncaoExercida, new { id = "txtFuncaoExercida", @class = "mdl-textfield__input", @maxlength = "100" })
+                    <label class="mdl-textfield__label" for="txtFuncaoExercida">Função Exercida</label>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col md-textarea-bne">
+                    @Html.TextAreaFor(m => m.ExperienciaProfissional.AtividadesExercidas, new { id = "activ", @class = "mdl-textfield__input", @rows = "8", @maxlength = "5000" })
+                    <label class="mdl-textfield__label" for="txtAtividadesExercidas ">Descreva o que você fazia na empresa</label>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            <div class="mdl-grid experiencia">
+                <div class="mdl-cell mdl-cell--12-col mdl-select-bne">
+                    @Html.DropDownListFor(m => m.ExperienciaProfissional.IdRamoEmpresa, new SelectList(
+                    Model.ListarRamosAtividades(), "IdRamoAtividade", "Descricao", 0), new { @class = "mdl-select__input" })
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    @Html.TextBoxFor(m => m.ExperienciaProfissional.DataEntrada, new { id = "txtDataEntrada", @class = "mdl-textfield__input" })
+                    <label class="mdl-textfield__label" for="txtDataEntrada">Data de entrada</label>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    @Html.TextBoxFor(m => m.ExperienciaProfissional.DataSaida, new { id = "txtDataSaida", @class = "mdl-textfield__input" })
+                    <label class="mdl-textfield__label" for="txtDataSaida">Data de Saída</label>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--2-col-phone vertitemform">
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect vertitemform" for="chkEmpregoAtual">
+                        <input type="checkbox" id="chkEmpregoAtual" class="mdl-checkbox__input" name="chkEmpregoAtual" />
+                        <span class="mdl-checkbox__label">Emprego Atual?</span>
+                    </label>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--2-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    @Html.TextBoxFor(m => m.ExperienciaProfissional.UltimoSalario, new { id = "txtUltimoSalario", @class = "mdl-textfield__input" })
+                    <label class="mdl-textfield__label" for="txtPretensaoSalarial">Último Salário R$</label>
+                </div>
+                @*<div class="mdl-cell mdl-cell--12-col mdl-cell--hide-tablet mdl-cell--hide-phone suggestions darkgrey">
+                    <strong>Sugestão de Tarefas:</strong><br />
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>*@
+
+            </div>
+        </div>
+    
+    
+        <div class="mdl-cell mdl-cell--12-col center top24">
+            <button type="submit" name="action:AdicionarExperiencia" onclick="trackEvent('PreCurriculo','Click','UltimaExperiencia');"  class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformxbig  " id="btnSave3">candidatar-me</button>
+        </div>
+    </div>

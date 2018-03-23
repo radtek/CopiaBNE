@@ -1,0 +1,67 @@
+﻿@using System.Web.Optimization;
+@using BNE.Core.Common;
+@model BNE.PessoaFisica.Web.Models.PreCurriculo
+
+<div id="modalOportunidade" class="modalOportunidade">
+    <script>
+        modal.abrirModal('modalOportunidade');
+    </script>
+
+    <a class="simplemodal-close b-close modal_fechar" title="Close"></a>
+    <div class="container_oportunidade_candidatura">
+        <div class="vaga-oportunidade-content">
+
+            <span class="vaga-premium-title">Aviso!</span><br>
+            <hr />
+        </div>
+        <br />
+        <div class="vaga-oportunidade-body">
+            Este processo seletivo foi encerrado deseja enviar seu  currículo para a empresa para futuras contratações?
+        </div>
+        <div class="btn_rodape">
+            <div class="btn_form">
+                <button  id="btnFechaOportunidade" class="btn_oportunidade_not" onclick="modal.abrirModal('modalOportunidade');" name="NaoCandidatar">Não, obrigado</button>
+            </div>
+            <div class="btn_form">
+@using (Ajax.BeginForm("EnviarCurriculo", "PreCurriculo", null, new AjaxOptions { HttpMethod = "Post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "modalOportunidade" }))
+{
+    if (Model.vagaTela != null)
+    {
+       
+        @Html.HiddenFor(m => m.IdFuncao, new { @Value = Model.vagaTela.IdFuncao })
+        @Html.HiddenFor(m => m.DescricaoFuncao, new { @Value = Model.vagaTela.Descricao })
+        @Html.HiddenFor(m => m.IdPesquisa, new { @Value = Model.vagaTela.IdPesquisa })
+        @Html.HiddenFor(m => m.UrlPesquisa, new { @Value = Model.vagaTela.urlPesquisa })
+        @Html.HiddenFor(m => m.vagaTela.FlgPremium, new { @Value = Model.vagaTela.FlgPremium })
+        @Html.HiddenFor(m => m.IdCidade, new { @Value = Model.vagaTela.IdCidade })
+        @Html.HiddenFor(m => m.vagaTela.LinkVagasFuncaoCidade.URL, new { @Value = Model.vagaTela.LinkVagasFuncaoCidade.URL })
+        @Html.HiddenFor(m => m.EstaEmBH, new { @Value = Model.EstaEmBH })
+        @Html.HiddenFor(m => m.EmpresaBloqueada, new { @Value = Model.EmpresaBloqueada })
+        @Html.HiddenFor(m => m.EhVIP, new { @Value = Model.EhVIP })
+        @Html.HiddenFor(m => m.vagaTela.FlgArquivada, new { @Value = Model.vagaTela.FlgArquivada })
+        for (int i = 0; i < Model.vagaTela.perguntas.Count; i++)
+        {
+            @Html.HiddenFor(m => m.vagaTela.perguntas[i].descricaoVagaPergunta, new { @Value = Model.vagaTela.perguntas[i].descricaoVagaPergunta })
+            @Html.HiddenFor(m => m.vagaTela.perguntas[i].flagResposta, new { @Value = Model.vagaTela.perguntas[i].flagResposta })
+            @Html.HiddenFor(m => m.vagaTela.perguntas[i].tipoResposta, new { @Value = Model.vagaTela.perguntas[i].tipoResposta })
+            @Html.HiddenFor(m => m.vagaTela.perguntas[i].idVagaPergunta, new { @Value = Model.vagaTela.perguntas[i].idVagaPergunta })
+            @Html.HiddenFor(m => m.vagaTela.perguntas[i].flgRespostaPergunta, new { @Value = Model.vagaTela.perguntas[i].flgRespostaPergunta})
+            @Html.HiddenFor(m => m.vagaTela.perguntas[i].resposta, new { @Value = Model.vagaTela.perguntas[i].resposta })
+        }
+
+    }
+       @Html.HiddenFor(m => m.IdVaga, new { @Value = Model.IdVaga })
+       @Html.HiddenFor(m => m.CPF, new { @Value = Model.CPF })
+       @Html.HiddenFor(m => m.DataNascimento, new { @Value = Model.DataNascimento })
+       @Html.HiddenFor(m => m.Nome, new { @Value = Model.Nome })
+       @Html.HiddenFor(m => m.Candidatar, new { @Value = Model.Candidatar })
+    
+    <button  class="btn_oportunidade" name="action:EnviarCurriculo" value="CandidatarOportunidade">Sim, eu quero</button>
+}
+
+        </div>
+    </div>
+
+</div>
+
+</div>

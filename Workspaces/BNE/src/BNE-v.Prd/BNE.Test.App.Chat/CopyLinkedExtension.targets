@@ -1,0 +1,30 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <!-- Override the default target dependencies to -->
+    <!-- include the new CopyLinkedContentFiles target. -->
+    <PropertyGroup>
+        <BuildDependsOn>
+            CopyLinkedContentFiles;
+            $(BuildDependsOn);
+        </BuildDependsOn>
+    </PropertyGroup>
+
+    <!--
+    ============================================================
+    CopyLinkedContentFiles
+
+    A new target to copy any linked content files into the 
+    web application output folder.
+
+    NOTE: This is necessary even when '$(OutDir)' has not been redirected.
+    ============================================================
+    -->
+    <Target Name="CopyLinkedContentFiles">
+        <!-- Remove any old copies of the files -->
+        <Delete Condition=" '%(Content.Link)' != '' AND Exists('$(WebProjectOutputDir)\%(Content.Link)') "
+                Files="$(WebProjectOutputDir)\%(Content.Link)" />
+        <!-- Copy linked content files recursively to the project folder -->
+        <Copy Condition=" '%(Content.Link)' != '' " SourceFiles="%(Content.Identity)"
+              DestinationFiles="$(WebProjectOutputDir)\%(Content.Link)" />
+    </Target>
+</Project>

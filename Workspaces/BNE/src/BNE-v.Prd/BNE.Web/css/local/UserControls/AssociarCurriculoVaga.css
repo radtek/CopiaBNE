@@ -1,0 +1,40 @@
+﻿.destaque_texto{color:#FF6600;font-weight:bold;}
+.gridview_padrao.associarvaga{ width: 96% !important ; margin-top:15px;}
+.gridview_padrao.associarvaga th.rgHeader{font-size: 12px;color:#000;font-weight: bold;padding: 10px 0;text-align: center;}
+.gridview_padrao.associarvaga tr{ font-size:11px;}
+.descricao_vaga{font-weight:normal !important;}
+.botao_padrao{ margin-bottom:0 !important;}
+.col_action{width: 19% !important;}
+.col_action_arq{width: 16% !important;}
+.col_action_arq input{margin:5px 8px;}
+.checkbox_large, .checkbox_large .rcbFocused{width: 240px !important; float:left;}
+.filtrar{height: 22px;width: auto !important; margin-left:5px; font-size:11px;}
+.descricao_vaga2{ width: 30%;}
+.cidade{ width: 16%;}
+.cv_recebida{ width: 16%;}
+.col_action{ text-align:center; width:18%;}
+.col_action input{margin:5px 6px;}
+.mensagem_nodata{padding: 30px 0 !important;text-align:center !important;}
+.rcbTemplate div label, .rcbHeader label{ float:none;}
+.RadComboBoxDropDown.RadComboBoxDropDown_Office2007{width:322px;}
+.textarea_padrao{border: 1px solid #B5CAEA;margin-left: 0;margin-right: 4px;height:100px;width:270px;}
+.RadGrid .rgGroupHeader td p{color: #FF6600;font-size: 16px;font-weight: bold;}
+
+.checkbox_large table
+{
+    width: 240px !important;
+}
+
+.linha_funcao_filtrar_vagas .container_campo
+{
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+}
+
+.label_funcao_filtrar_vagas
+{
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+}

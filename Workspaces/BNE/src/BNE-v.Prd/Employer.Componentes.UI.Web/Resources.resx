@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BackgroundTopoModais" xml:space="preserve">
+    <value>Employer.Componentes.UI.Web.Content.Images.bg_topo_modais.png</value>
+  </data>
+  <data name="BalaoSaibaMaisCss" xml:space="preserve">
+    <value>bsm_Tooltip</value>
+  </data>
+  <data name="BalaoSaibaMaisLabel" xml:space="preserve">
+    <value>Saiba mais...</value>
+  </data>
+  <data name="BalaoSaibaMaisLabelCss" xml:space="preserve">
+    <value>bsm_Label</value>
+  </data>
+  <data name="BotaoFechar" xml:space="preserve">
+    <value>Employer.Componentes.UI.Web.Content.Images.botao_padrao_fechar.png</value>
+  </data>
+  <data name="BuscaAgenciaBancariaFiltroBancoInvalido" xml:space="preserve">
+    <value>É necessário informar um banco</value>
+  </data>
+  <data name="BuscaAgenciaBancariaInativa" xml:space="preserve">
+    <value>Agência bancária inativa</value>
+  </data>
+  <data name="BuscaAgenciaBancariaInvalido" xml:space="preserve">
+    <value>Agência Bancaria Inválida</value>
+  </data>
+  <data name="BuscaAgenciaBancariaTitle" xml:space="preserve">
+    <value>Busca de Agências Bancarias</value>
+  </data>
+  <data name="BuscaBancoInativo" xml:space="preserve">
+    <value>Banco inativo</value>
+  </data>
+  <data name="BuscaBancosInvalido" xml:space="preserve">
+    <value>Banco inválido</value>
+  </data>
+  <data name="BuscaBancosTitle" xml:space="preserve">
+    <value>Busca de bancos</value>
+  </data>
+  <data name="BuscaCentroResultadoInvalido" xml:space="preserve">
+    <value>CR inexistente</value>
+  </data>
+  <data name="BuscaCentroResultadoRequerido" xml:space="preserve">
+    <value>Deve ser informado um Centro de Resultados</value>
+  </data>
+  <data name="BuscaCentroResultadoTitle" xml:space="preserve">
+    <value>Busca de centro de resultados</value>
+  </data>
+  <data name="BuscaContratoInativo" xml:space="preserve">
+    <value>Inativo</value>
+  </data>
+  <data name="BuscaContratoInvalido" xml:space="preserve">
+    <value>Contrato inválido</value>
+  </data>
+  <data name="BuscaContratoTitle" xml:space="preserve">
+    <value>Busca de contratos</value>
+  </data>
+  <data name="BuscaDataTextTitle" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="BuscaDataValueTitle" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="BuscaDepartamentoInvalido" xml:space="preserve">
+    <value>Departamento inválido</value>
+  </data>
+  <data name="BuscaDepartamentosFiltroContratoInvalido" xml:space="preserve">
+    <value>É necessário informar o contrato dos departamentos</value>
+  </data>
+  <data name="BuscaDepartamentoTitle" xml:space="preserve">
+    <value>Busca de departamentos</value>
+  </data>
+  <data name="BuscaEmpregadoInativo" xml:space="preserve">
+    <value>Empregado Inativo</value>
+  </data>
+  <data name="BuscaEmpregadoInvalido" xml:space="preserve">
+    <value>Empregado inválido</value>
+  </data>
+  <data name="BuscaEmpregadoTitle" xml:space="preserve">
+    <value>Busca de empregados</value>
+  </data>
+  <data name="BuscaFiliaisInativa" xml:space="preserve">
+    <value>Filial inativa</value>
+  </data>
+  <data name="BuscaFiliaisInvalido" xml:space="preserve">
+    <value>Filial não encontrada</value>
+  </data>
+  <data name="BuscaFiliaisTitle" xml:space="preserve">
+    <value>Busca de Filiais</value>
+  </data>
+  <data name="BuscaFornecedorInativo" xml:space="preserve">
+    <value>Fornecedor Inativo</value>
+  </data>
+  <data name="BuscaFornecedorInvalido" xml:space="preserve">
+    <value>Fornecedor Inválido</value>
+  </data>
+  <data name="BuscaFornecedorTitle" xml:space="preserve">
+    <value>Busca de fornecedores</value>
+  </data>
+  <data name="BuscaFuncoesInativa" xml:space="preserve">
+    <value>Função Inativa</value>
+  </data>
+  <data name="BuscaFuncoesInvalido" xml:space="preserve">
+    <value>Função inválida</value>
+  </data>
+  <data name="BuscaFuncoesTitle" xml:space="preserve">
+    <value>Busca de funções</value>
+  </data>
+  <data name="ComboCheckBoxJavascriptGlobal" xml:space="preserve">
+    <value>var cancelDropDownClosing = new Array();
+
+function StopPropagation(e)
+{
+	e.cancelBubble = true; 
+	if (e.stopPropagation) 
+    {
+		e.stopPropagation();
+	}
+}
+
+function removeLastDelimiter(str) 
+{
+	var len = str.length;
+	if (len &gt; 1)
+	    return str.substr(0, len - 1);
+	return str;
+}
+
+function onDropDownClosing(sender, eventArgs) {
+    cancelDropDownClosing[sender.get_id()] = false;
+}
+
+function onDropDownOpening(sender, eventArgs) {
+    var combo = $find(sender.get_id());
+    var chkall = $get(combo.get_id() + '_Header_SelectAll');
+    if (AllSelected(sender.get_id()) == true) {
+		if (chkall)
+			chkall.checked = true;
+    }
+    else {
+		if (chkall)
+			chkall.checked = false;
+    }
+}
+
+function onCheckBoxClickDefaultText(control_id){
+   var combo = $find(control_id);
+   combo.set_text(combo.get_emptyMessage());
+}
+
+function onCheckBoxClick(control_id) {
+    var combo = $find(control_id);
+    var chkall = $get(combo.get_id() + '_Header_SelectAll');
+    if (AllSelected(control_id) == true) {
+		if (chkall)
+			chkall.checked = true;
+    }
+    else {
+		if (chkall)
+			chkall.checked = false;
+    }
+    var text = '';
+    var values = '';
+    var items = combo.get_items();
+    for (var i = 0; i &lt; items.get_count(); i++) {
+        var item = items.getItem(i);
+        var chk1 = $get(combo.get_id() + '_i' + i + '_chk1');
+        if (chk1.checked) {
+            text += item.get_text() + ',';
+            values += item.get_value() + ',';
+        }
+    }
+    text = removeLastDelimiter(text);
+    values = removeLastDelimiter(values);
+    if (text.length &gt; 0) {
+        combo.set_text(text);
+    }
+    else {
+        combo.set_text('');
+    }
+}
+
+function GetItem(control_id,index)
+{
+	var combo = $find(control_id);
+	return combo.get_items().getItem(index);
+}
+
+function AnyOneSelected(control_id) {
+    var combo = $find(control_id);
+    var items = combo.get_items();
+    for (var i = 0; i &lt; items.get_count(); i++) {
+        var item = items.getItem(i);
+        var chk1 = $get(combo.get_id() + '_i' + i + '_chk1');
+        if (chk1.checked) {
+            return true;
+        }
+    }
+    return false;
+}
+function AllSelected(control_id) {
+    var combo = $find(control_id);
+    var items = combo.get_items();
+    for (var i = 0; i &lt; items.get_count(); i++) {
+        var item = items.getItem(i);
+        var chk1 = $get(combo.get_id() + '_i' + i + '_chk1');
+        
+        if (chk1.checked == false) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+function SelectAllClick(control_id,notify) {
+    var selectAll = true;
+    if (AnyOneSelected(control_id) == true) selectAll = true;
+    if (AllSelected(control_id) == true)
+        selectAll = false;
+    var text = '';
+    var values = '';
+    var combo = $find(control_id);
+    var items = combo.get_items();
+    for (var i = 0; i &lt; items.get_count(); i++) {
+        var item = items.getItem(i);
+        var chk1 = $get(combo.get_id() + '_i' + i + '_chk1');
+        if (selectAll) chk1.checked = true;
+        else
+            chk1.checked = false;
+        if (chk1.checked) {
+            text += item.get_text() + ',';
+            values += item.get_value() + ',';
+        }
+    }
+    text = removeLastDelimiter(text);
+    values = removeLastDelimiter(values);
+
+    if (text.length &gt; 0)
+	{
+		if (notify==true)		
+			combo.set_text(text);
+		else
+		  combo.set_text(combo.get_emptyMessage());
+	}
+    else combo.set_text(combo.get_emptyMessage());
+}</value>
+  </data>
+  <data name="ComboCheckBoxJavascriptIndividual" xml:space="preserve">
+    <value>&lt;script type="text/javascript"&gt;
+cancelDropDownClosing["{control_id}"] = false;
+&lt;/script&gt;</value>
+  </data>
+  <data name="ComboCheckboxSelectAll" xml:space="preserve">
+    <value>Selecionar todos</value>
+  </data>
+  <data name="DisplayContainerGridBalaoSaibaMaisFiltros" xml:space="preserve">
+    <value>Digite algum texto na caixa e pressione [enter] para filtrar</value>
+  </data>
+  <data name="DisplayContainerGridSelecionarHeader" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="EstiloBalaoSaibaMais" xml:space="preserve">
+    <value>Employer.Componentes.UI.Web.Content.Styles.BalaoSaibaMais.css</value>
+  </data>
+  <data name="EstiloGrid" xml:space="preserve">
+    <value>Employer.Componentes.UI.Web.Content.Styles.Grid.css</value>
+  </data>
+  <data name="EstiloListaSugestoes" xml:space="preserve">
+    <value>Employer.Componentes.UI.Web.Content.Styles.ListaSugestoes.css</value>
+  </data>
+  <data name="EstiloLookupControl" xml:space="preserve">
+    <value>Employer.Componentes.UI.Web.Content.Styles.LookupControl.css</value>
+  </data>
+  <data name="EstiloTreeView" xml:space="preserve">
+    <value>Employer.Componentes.UI.Web.Content.Styles.TreeView.Retto.css</value>
+  </data>
+  <data name="GridEmptyText" xml:space="preserve">
+    <value>Sem dados para exibir</value>
+  </data>
+  <data name="IconeBusca" xml:space="preserve">
+    <value>Employer.Componentes.UI.Web.Content.Images.icone_busca.png</value>
+  </data>
+  <data name="IconeSelecionar" xml:space="preserve">
+    <value>Employer.Componentes.UI.Web.Content.Images.ico_selecionar_16x16.gif</value>
+  </data>
+  <data name="ImageResizerJavascriptGlobal" xml:space="preserve">
+    <value>Employer.Componentes.UI.Web.Content.js.ImgResizer.js</value>
+  </data>
+  <data name="ImageSlicerErrorImageType" xml:space="preserve">
+    <value>Erro ao carregar foto. Selecione um arquivo de imagem. Exemplo: {0}</value>
+  </data>
+  <data name="ImageSlicerInvalidAspectRatio" xml:space="preserve">
+    <value>O atributo AspectRatio deve estar no seguinte formato: \"x:y\"</value>
+  </data>
+  <data name="ImageSlicerInvalidInitialSelection" xml:space="preserve">
+    <value>O atributo InitialiSelection deve estar no seguinte formato: \"x1;y1;x2;y2\"</value>
+  </data>
+  <data name="InvalidErrorMessage" xml:space="preserve">
+    <value>Valor digitado no campo é inválido</value>
+  </data>
+  <data name="InvalidMinSizeImage" xml:space="preserve">
+    <value>O tamanho da imagem é menor do que o tamanho mínimo de imagem aceito</value>
+  </data>
+  <data name="JQueryImageSelectionPlugin" xml:space="preserve">
+    <value>Employer.Componentes.UI.Web.Content.js.jquery.imgareaselect.min.js</value>
+  </data>
+  <data name="LoadingMessage" xml:space="preserve">
+    <value>Carregando...</value>
+  </data>
+  <data name="LookupDialogTitle" xml:space="preserve">
+    <value>Janela de busca</value>
+  </data>
+  <data name="LookupScripts" xml:space="preserve">
+    <value>&lt;script type="text/javascript"&gt;
+function UpdateItemCountField(sender, args) {            
+    sender.get_dropDownElement().lastChild.innerHTML = sender.get_items().get_count() + " item(s)";
+}
+function FocusOnRadGrid(target) {            
+    var grid = $get(target);
+    grid.focus();
+}      
+function OnKeyPressGrid(sender, eventArgs)
+{
+    if (eventArgs.get_keyCode() == 37) {
+        sender.get_masterTableView().page("Prev");        
+    }
+    if (eventArgs.get_keyCode() == 39) {
+        sender.get_masterTableView().page("Next");                
+    }
+    //Up,Down Arrow
+    if (eventArgs.get_keyCode() == 38 || eventArgs.get_keyCode() == 40) {        
+        if (sender.get_masterTableView().get_selectedItems() == null) {
+            sender.get_masterTableView().set_activeRow(sender.get_masterTableView().get_dataItems()[0].get_element());
+            sender.get_masterTableView().focus();
+        }        
+    }
+}   
+function LookupOnClientItemsRequesting(sender, eventArgs, minLength)
+{	
+	if (eventArgs.get_text().length &lt; minLength)
+		eventArgs.set_cancel(true)
+	else
+	{
+		eventArgs.set_cancel(false);		
+	}
+}
+
+function LookupOnKeyPress(sender, eventArgs)
+{
+	if (!sender.get_dropDownVisible())
+	{
+		sender.showDropDown();		
+		/*Não executa o request caso o keycode seja ceta para cima ou para baixo*/	
+		if (sender.get_text().length &gt; 3)
+		{		
+			var ie = (typeof window.ActiveXObject != 'undefined'); 
+			if (ie)
+			{		
+			sender.requestItems(sender.get_text(),false);			
+			}
+		}
+	}
+	else
+	{
+		// IF IE....
+		var ie = (typeof window.ActiveXObject != 'undefined'); 
+		if (ie)
+		{
+			if ((eventArgs._domEvent.keyCode  &gt; 48))
+			{	
+				sender.requestItems(sender.get_text(),false);
+			}
+		}
+	}
+	
+}
+&lt;/script&gt;</value>
+  </data>
+  <data name="PnlOptionsCheckMode" xml:space="preserve">
+    <value>Exibir como tree view</value>
+  </data>
+  <data name="RequiredErrorMessage" xml:space="preserve">
+    <value>Campo obrigatório</value>
+  </data>
+  <data name="TelerikSkinName" xml:space="preserve">
+    <value>Office2007</value>
+  </data>
+  <data name="TootipFechar" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="ControlBaseValidatorMensagemErroObrigatorio" xml:space="preserve">
+    <value>Campo Obrigatório</value>
+  </data>
+  <data name="ControlBaseValidatorMensagemErroValorMaximo" xml:space="preserve">
+    <value>O Campo não pode ser maior que {0}</value>
+  </data>
+  <data name="ControlBaseValidatorMensagemErroValorMinimo" xml:space="preserve">
+    <value>O Campo não pode ser menor que {0}</value>
+  </data>
+  <data name="ControlBaseValidatorMensagemErroFormato" xml:space="preserve">
+    <value>Campo Inválido</value>
+  </data>
+  <data name="ControlBaseValidatorMensagemErroInvalido" xml:space="preserve">
+    <value>Valor Inválido</value>
+  </data>
+  <data name="ListaSugestaoVazia" xml:space="preserve">
+    <value>Não existem dados para sugestão</value>
+  </data>
+  <data name="ControlAutoCompleteBase_Fechar" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="ControlAutoCompleteBase_Limpar" xml:space="preserve">
+    <value>Limpar</value>
+  </data>
+  <data name="ControlAutoCompleteBase_Pesquisar" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="EmployerHoraMensagemErroFormato" xml:space="preserve">
+    <value>Hora inválida</value>
+  </data>
+  <data name="EmployerHoraMensagemErroFormatoSummary" xml:space="preserve">
+    <value>Hora inválida</value>
+  </data>
+</root>

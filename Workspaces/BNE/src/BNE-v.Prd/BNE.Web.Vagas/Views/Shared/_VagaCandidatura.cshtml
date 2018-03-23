@@ -1,0 +1,121 @@
+﻿@using BNE.Web.Vagas.Models
+@model VagaCandidatura
+@if (@Model.Candidatou)
+{
+    var cssEnviei = @Model.Premium != null && @Model.Premium.premium ? "ja_enviei_premium" : "ja_enviei";
+    <div class="@cssEnviei">
+
+        @if (Model.IndicadoPeloBNE)
+        {
+            <i class=" fa fa-thumbs-up fa-5x">
+            </i>
+            <p>
+                Você foi indicado!
+            </p>
+        }
+        else
+        {
+            <i class=" fa fa-check-circle fa-5x">
+            </i>
+            <p>
+                Já enviei!
+            </p>
+        }
+    </div>
+}
+else
+{
+    <div id="upd_teste"></div>
+
+    if (User.Identity != null && User.Identity.IsAuthenticated)
+    {
+        using (Ajax.BeginForm("Candidatar", "Vaga", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "container_candidatura_" + Model.IdentificadorVaga, LoadingElementId = "div_carregando" }))
+        {
+            @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+            @Html.HiddenFor(m => m.FlgVagaArquivada)
+            @Html.HiddenFor(m => m.FlgInativa)
+            @Html.HiddenFor(m => m.URL)
+            @Html.HiddenFor(m => m.FlgCandidataOportunidade)
+
+            if (Model.FlgVagaArquivada || Model.FlgInativa)
+            {
+                <p class="btn">
+                    <button class="quero_me_candidatar_oportunidade" name="QueroCandidatar"><i class="fa fa-file-text"></i>  Enviar Currículo</button>
+                </p>
+            }
+            else if (Model.Premium != null && !Model.FlgVagaArquivada)
+            {
+                <div class="vaga-premium-candidatar">
+                    <p class="btn">
+                        <button class="quero_me_candidatar_vaga_premium" name="QueroCandidatar"><i class="fa fa-file-text"></i> Candidatar-me </button>
+                    </p>
+                </div>
+            }
+            else
+            {
+                <p class="btn">
+                    <button class="quero_me_candidatar_vaga" name="QueroCandidatar"><i class="fa fa-file-text"></i> Candidatar-me</button>
+                </p>
+            }
+
+        }
+    }
+    else
+    {
+        //using (Html.BeginForm("RedirecionarNovoBNE", "Base", new { redirectURL = Model.URL }))
+        //{
+        @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+        if (Model.FlgVagaArquivada || Model.FlgInativa)
+        {
+            <p class="btn">
+                <button onclick="window.location = '@Model.URL'" class="quero_me_candidatar_oportunidade" name="QueroCandidatar">Enviar meu currículo</button>
+            </p>
+        }
+        else if (Model.Premium != null && !Model.FlgVagaArquivada)
+        {
+            <div class="vaga-premium-candidatar">
+                <p class="btn">
+                    <button onclick="window.location = '@Model.URL'" class="quero_me_candidatar_vaga_premium" name="QueroCandidatar"><i class="fa fa-file-text"></i> Candidatar-me </button>
+                </p>
+            </div>
+        }
+        else
+        {
+            <p class="btn">
+                <button onclick="window.location = '@Model.URL'" class="quero_me_candidatar_vaga" name="QueroCandidatar">Candidatar-me </button>
+            </p>
+        }
+        //}
+    }
+}
+@if (Model.Perguntas != null)
+{
+    Html.RenderPartial("_ModalPerguntasCandidatura", Model);
+}
+@*if retarda mas é pra ser assim mesmo*@
+@if (Model.Premium != null && !String.IsNullOrEmpty(Model.Premium.PrecoCandidatura))
+{
+    Html.RenderPartial("_ModalPremiumCandidatura", new VagaCandidatura.PremiumCandidatura { PrecoCandidatura = @Model.Premium.PrecoCandidatura, PrecoVip = @Model.Premium.PrecoVip, premium = @Model.Premium.premium, idVaga = @Model.IdentificadorVaga });
+}
+
+@if (Model.Degustacao != null)
+{
+    Html.RenderPartial("_ModalDegustacaoCandidatura", new DegustacaoCandidatura { QuantidadeCandidaturaRestante = @Model.Degustacao.QuantidadeCandidaturaRestante, TextoCandidatura = @Model.Degustacao.DescricaoCandidaturaRestante });
+}
+@if (Model.FlgVagaArquivada && Model.FlgCandidataOportunidade)
+{
+    Html.RenderPartial("_ModalOportunidade", Model);
+}
+@if (Model.Sucesso != null)
+{
+    Html.RenderPartial("_ModalSucessoCandidatura", new SucessoCandidatura { NomeCandidato = @Model.Sucesso.NomeCandidato, Protocolo = @Model.Sucesso.Protocolo });
+}
+
+<div id="div_carregando" class="progresso">
+    <div class="progresso_texto">
+        <img src="@Url.Content("~/Images/ajax-loader.gif")" />
+        <br /> Carregando...
+    </div>
+
+</div>
+

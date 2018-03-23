@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<root>
+  <disponivel>
+    <item valor="Operador de Desempenadeira na Usinagem de Madeira" />
+    <item valor="Designer de Interfaces Digitais" />
+    <item valor="Programador de Interfaces" />
+    <item valor="Desenvolvedor Web" />
+    <item valor="Programador iPhone" />
+    <item valor="Administrador de Empresas" />
+    <item valor="Gerente de Marketing" />
+    <item valor="Gerente de TI" />
+    <item valor="Jardineiro" />
+    <item valor="Arquiteto" />
+    <item valor="Testador" />
+    <item valor="Dublê" />
+  </disponivel>
+  <escolhido>
+    <item valor="Designer de Produto" />
+  </escolhido>
+</root>

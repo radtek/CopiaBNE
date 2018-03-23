@@ -1,0 +1,10 @@
+﻿@using BNE.Web.Vagas.Code.Helpers
+@model BNE.Web.Vagas.Models.Parametros
+
+<script>
+    var parametros = @JavaScriptConvert.SerializeObject(Model);
+    autocomplete.URL.URLCompleteFuncao = parametros.urlAutocompleteFuncao;
+    autocomplete.URL.URLCompleteCidade = parametros.urlAutocompleteCidade;
+    autocomplete.limit.LimiteCompleteFuncao = parametros.limiteAutocompleteFuncao;
+    autocomplete.limit.LimiteCompleteCidade = parametros.limiteAutocompleteCidade;
+</script>

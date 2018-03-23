@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - BNE API Gateway Console</title>
+    @Styles.Render("~/Content/css")
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("scripts", required: false)
+
+</head>
+<body>
+
+    @{ var Ctrl = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(); }
+
+    @if (!string.IsNullOrEmpty(ViewBag.ActiveUserKey)) 
+    {
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+
+                        <div class="navbar-header">
+                            <h5 class="bne-title">BNE - API Console</h5>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                            <ul class="nav navbar-nav  navbar-right">
+
+                                <li><a href="/Usuarios/Index">Usuários</a></li>
+                                <li><a href="/Webapi/Index">Web API</a></li>
+                                <li><a href="/Endpoints/Index">Endpoint</a></li>
+                                <li><a href="/Quotas/Index">Quota</a></li>
+                                <li><a href="/Keytokens/Index">Key Token</a></li>
+                                <li><a href="/Perfis/Index">Perfil</a></li>
+                                
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@ViewBag.ActiveUserKey <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/Acesso/Sair">Sair</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div> 
+                  </div>
+                </div>
+        </nav>
+    }
+
+
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Banco Nacional de Empregos</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿using System;
+
+namespace BNE.Web.Vagas.Models
+{
+    public class DadosEmpresa
+    {
+        public string NomeEmpresa { get; set; }
+        public int? QuantidadeFuncionarios { get; set; }
+        public string NumeroTelefone { get; set; }
+        public string Cidade { get; set; }
+        public string Bairro { get; set; }
+        public DateTime? DataCadastro { get; set; }
+        public int? QuantidadeCurriculosVisualizados { get; set; }
+        public int? QuantidadeVagasDivulgadas { get; set; }
+        public bool CurriculoVIP { get; set; }
+        public decimal NumeroCNPJ { get; set; }
+        public decimal ValorPlanoVIP { get; set; }
+        public bool VagaConfidencial { get; set; }
+        public string MensagemEmpresaConfidencial { get; set; }
+    }
+}

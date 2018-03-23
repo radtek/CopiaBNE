@@ -1,0 +1,29 @@
+﻿.destaque_texto { color: #476D11; }
+.plano_vantagens { overflow: hidden; }
+.seta_plano { background: url('../../img/BG_setameuplano.png') bottom; width: 838px; height: 124px; overflow: hidden; }
+.icn_plano { float: left; margin: 22px 12px 0 12px; }
+.icn_plus { float: left; margin: 30px 0 30px 0; }
+.info_add_plano { float: left; }
+    .info_add_plano h2 { color: #4d7526; margin: 0 0 5px 5px; height: auto; }
+.info_add_button { overflow: hidden; }
+.tabela_planos { border-collapse: collapse; }
+    .tabela_planos th { border-left: 1px solid white; }
+    .tabela_planos td { border-left: 1px solid white; }
+tbody { background: #fff; }
+.tabela_planos thead { background: #e6ede2; border-bottom: solid 1px gray; background: url('../../img/bg_header_table.png') bottom; font-size: 12px; font-weight: bold; color: #4d7526; }
+.col_serv { width: 170px; padding: 5px; }
+.col_basico, .col_ilimitado { width: 70px; padding: 5px 10px; text-align: center; }
+.linha_in { background: #e6ede2; font-size: 11px; }
+.linha_in, .linha_normal { font-size: 11px; }
+.texto_e_botao { float: right; width: 460px; margin-top: 35px; }
+.texto_vantagens { font-weight: bold; color: #4d7526; text-align: center; margin-top: 10px; }
+.btn_compra { margin-top: 35px; }
+    .btn_compra a { color: gray; float: right; font-weight: bold; margin: 5px 30px 0 0; text-decoration: none; }
+        .btn_compra a:hover { text-decoration: underline; }
+.caracteristicas_plano { }
+    .caracteristicas_plano a { color: #4c7212; font-weight: bold; font-size: 11px; }
+    .caracteristicas_plano ul { padding: 0; margin: 0; }
+        .caracteristicas_plano ul li { list-style-type: none; margin: 5px 0; }
+            .caracteristicas_plano ul li span { font-weight: bold; color: #4c7212; }
+.alinhar { width: 50%; float: left; }
+.extrato_plano { clear: both; }

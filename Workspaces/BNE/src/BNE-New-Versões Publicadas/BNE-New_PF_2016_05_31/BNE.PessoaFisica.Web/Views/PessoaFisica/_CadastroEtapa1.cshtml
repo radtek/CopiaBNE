@@ -1,0 +1,135 @@
+﻿@model BNE.PessoaFisica.Web.Models.PessoaFisica
+<script type="text/javascript">
+               $(document).ready(function () {
+                   ConfigurarEtapa1();
+               });
+</script>
+<!-- ETAPA 01 -->
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col center">
+        <h3 class="darkgrey">Cadastre seu currículo!</h3>
+        <h5 class="mediumgrey subtitle">É fácil! É rápido! É sempre grátis.</h5>
+    </div>
+</div>
+<!-- Tracker-->
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col md-progtrckr">
+        <ol class="progtrckr" data-progtrckr-steps="5">
+            <li class="progtrckr-done"><span><strong>1. Mini Curriculo</strong></span><br /><div class="substage">Cadastre seus dados! É sempre grátis.</div></li>
+            <li class="progtrckr-todo" id="step-nok"><span>Dados Pessoais</span></li>
+            <li class="progtrckr-todo" id="step-nok"><span>Formação e Cursos</span></li>
+            <li class="progtrckr-todo" id="step-nok"><span>Informações Extras</span></li>
+            <li class="progtrckr-todo" id="step-nok"><span>Conferir</span></li>
+        </ol>
+    </div>
+</div>
+
+
+@using (Ajax.BeginForm("Index", "PessoaFisica", null, new AjaxOptions
+{
+    HttpMethod = "Post",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "etapa"
+}, new { @id = "Etapa1Form" }))
+{
+        <!-- Cadastre seus dados -->
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col title"><h6><strong>Cadastre seus dados</strong><span> e receba as melhores vagas no seu perfil!</span></h6></div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone mdl-cell--8-col-tablet vert-middle mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                @Html.TextBoxFor(m => m.Nome, new { id = "txtNome", @class = "mdl-textfield__input", @maxlength = "100" })
+                <label for="txtNome" class="mdl-textfield__label">Nome Completo</label>
+            </div>
+            <div class="mdl-cell mdl-cell--1-col mdl-cell--4-col-phone mdl-cell--2-col-tablet vertitemform">Sexo:</div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone mdl-cell--3-col-tablet vertitemform">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-m">
+                    @Html.RadioButtonFor(m => m.Sexo, "M", new { @id = "option-m", @class = "mdl-radio__button" })
+                    <span class="mdl-radio__label">Masculino</span>
+                </label>
+            </div>
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-phone mdl-cell--3-col-tablet vertitemform">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-f">
+                    @Html.RadioButtonFor(m => m.Sexo, "F", new { @id = "option-f", @class = "mdl-radio__button" })
+                    <span class="mdl-radio__label">Feminino</span>
+                </label>
+            </div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                @Html.TextBoxFor(m => m.Email, new { id = "txtEmail", @class = "mdl-textfield__input", @maxlength = "100" })
+                <label for="txtEmail" class="mdl-textfield__label">E-mail</label>
+            </div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--2-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                @Html.TextBoxFor(m => m.ConfirmarEmail, new { id = "txtConfirmarEmail", @class = "mdl-textfield__input", @maxlength = "100" })
+                <label for="txtConfirmarEmail" class="mdl-textfield__label">Repetir E-mail</label>
+            </div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                @Html.TextBoxFor(m => m.Celular, new { id = "txtCelular", @class = "mdl-textfield__input", @maxlength = "15" })
+                <label for="txtCelular" class="mdl-textfield__label">Celular</label>
+            </div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                @Html.TextBoxFor(m => m.Cidade, new { id = "txtCidade", @class = "mdl-textfield__input" })
+                <label for="txtCidade" class="mdl-textfield__label">Cidade</label>
+            </div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone mdl-cell--8-col-tablet vert-middle mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                @Html.TextBoxFor(m => m.Funcao, new { id = "txtFuncao", @class = "mdl-textfield__input", @maxlength = "100" })
+                <label for="txtFuncao" class="mdl-textfield__label">Função Desejada</label>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone mdl-cell--4-col-tablet vert-middle vertitemform">Experiência nesta função:</div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                @Html.TextBoxFor(m => m.TempoExperienciaAnos, new { id = "txtTempoExperienciaAnos", @class = "mdl-textfield__input", @maxlength = "2" })
+                <label for="years" class="mdl-textfield__label">Anos</label>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                @Html.TextBoxFor(m => m.TempoExperienciaMeses, new { id = "txtTempoExperienciaMeses", @class = "mdl-textfield__input" })
+                <label for="txtTempoExperienciaMeses" class="mdl-textfield__label">Meses</label>
+            </div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                @Html.TextBoxFor(m => m.PretensaoSalarial, new { id = "txtPretensaoSalarial", @class = "mdl-textfield__input" })
+                <label for="txtPretensaoSalarial" class="mdl-textfield__label">Salário Desejado</label>
+            </div>
+            @*<div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">*@
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-select-bne">
+                    @Html.DropDownListFor(m => m.IdEscolaridade, new SelectList(
+                Model.ListarEscolaridades(), "IdEscolaridade", "Descricao", 0), new { id = "ddlEscolaridade", @class = "mdl-select__input" })
+                </div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone mdl-cell--hide-tablet "></div>
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone mdl-cell--3-col-tablet vertitemform">Profissional com deficiência:</div>
+            <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-phone mdl-cell--2-col-tablet vertitemform">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="def-yes">
+                    <input type="radio" class="mdl-radio__button" id="def-yes" value="s" name="def" />
+                    <span class="mdl-radio__label">Sim</span>
+                </label>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone mdl-cell--3-col-tablet vertitemform">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="def-no">
+                    <input type="radio" class="mdl-radio__button" id="def-no" value="n" name="def" />
+                    <span class="mdl-radio__label">Não</span>
+                </label>
+            </div>
+            <div class="mdl-cell mdl-cell--6-col"></div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-select-bne">
+                @Html.DropDownListFor(m => m.IdDeficiencia, new SelectList(
+                Model.ListarDeficiencia(), "IdDeficiencia", "Descricao", 0), new { id = "ddlDeficiencia", @class = "mdl-select__input" })
+            </div>
+        </div>
+        <!-- Acessar BNE form -->
+        <div class="md-section-login md-section-grey">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet "><h5><strong class="darkgrey">Insira seus dados para ACESSAR o BNE</strong></h5></div>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    @Html.TextBoxFor(m => m.CPF, new { id = "txtCPF", @class = "mdl-textfield__input" })
+                    <label for="txtCPF" class="mdl-textfield__label">CPF</label>
+                </div>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+                    @Html.TextBoxFor(m => m.DataNascimento, new { id = "txtDataNascimento", @class = "mdl-textfield__input" })
+                    <label for="txtDataNascimento" class="mdl-textfield__label">Data Nascimento</label>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col center">
+                Ao clicar em "Salvar e Avançar" aceito receber propostas de emprego por celular ou email.
+            </div>
+            <div class="mdl-cell mdl-cell--12-col center">
+                <button type="submit" name="action:CadastrarMiniCurriculo" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformbig" id="btnSave">Salvar e avançar</button>
+            </div>
+        </div>
+}

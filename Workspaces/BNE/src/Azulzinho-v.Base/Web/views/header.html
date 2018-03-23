@@ -1,0 +1,63 @@
+﻿<div class="container-fluid" ng-controller="VagasController">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default navbar-static-top" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">MENU</span><span class="icon-bar">
+                        </span><span class="icon-bar"></span><span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand active" href="#" style="display:none">Brand</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-nav-adjust" id="outer">
+                        <li class="inner">
+                            <a href="#/Home" class="btn btn-link">VAGAS DE EMPREGO</a>
+                        </li>
+                        <li>
+                            <a href ng-click="redirecionar('Cadastro')" id="btnFazerCurriculo" class="btn btn-link">CADASTRO DE CURRÍCULO</a>
+                        </li>
+                        <li>
+                            <a href="http://noticias.azulzinho.com.br" class="btn btn-link">NOTÍCIAS</a>
+                        </li>
+                        <li>
+                            <a href="http://noticias.azulzinho.com.br/agencias" class="btn btn-link">AGÊNCIAS DE EMPREGO</a>
+                        </li>
+                        <li>
+                            <a href="#/QuemSomos" class="btn btn-link">QUEM SOMOS</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="jumbotron  text-center">
+                <h1>
+                    <a href="#/Home"><img src="../images/logoAzulzinho/layout-azulzinho.png" class="img-responsive" /></a>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="container-adjust search-adjust" ng-show="isHome">
+        <div class="row clearfix">
+            <div class="col-md-6 column">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="filtroFuncao" name="filtroFuncao" placeholder="Pesquise por área de atuação" ng-keypress="AtualizarListaVagasByEnter($event)">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default btn-lg" type="button" ng-click="AtualizarListaVagas()"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 column">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="filtroLocalidade" name="filtroLocalidade" placeholder="Pesquise também por cidade ou estado" ng-keypress="AtualizarListaVagasByEnter($event)">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default btn-lg" type="button" ng-click="AtualizarListaVagas()"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

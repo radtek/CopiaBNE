@@ -1,0 +1,14 @@
+﻿.container_campo_login { clear: both; }
+#titulo_solicita_dados { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+.label_principal.modal_login { text-align: left; width: 120px; }
+.painel_login_padrao { float: left; }
+/*.painel_login { background-color: #FFFFFF; }*/
+.painel_login_campos { padding-left: 10px; padding-right: 10px; /*background-color: #FFFFFF;*/ padding-bottom: 10px; }
+.linha.combobox_modal { padding-left: 10%; }
+.painel_cadastreja { margin-top: 10px; padding-right: 5px; text-align: right; text-decoration: underline; }
+.painel_login_esquerda { float: left; width: 240px; }
+.painel_login_direita { float: left; width: 240px; }
+.painel_login_direita_barra_separadora { background-image: url("/img/barra_separar_login.png"); background-position: left center; background-repeat: repeat-y; display: block; float: left; height: 150px; margin-top: 30px; position: relative; width: 2px; }
+.botao_entrar_facebook { background-color: #3B5998; border-radius: 3px 3px 3px 3px; cursor: pointer; display: inline-block; margin: 0 auto; padding-bottom: 8px; padding-left: 12px; padding-top: 5px; width: 160px; }
+.container_botao_facebook { position: relative; margin-top: 60px; margin-left: 35px; }
+.mantenha_logado label { float: none; display: inline; }

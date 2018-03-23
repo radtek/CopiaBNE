@@ -1,0 +1,17 @@
+﻿<Window x:Class="BNE.Compress.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" ResizeMode="NoResize"
+        Title="MinifyApp" Height="208.004" Width="574.323" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-br" Text="Input"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="65,31,0,0" Text="" VerticalAlignment="Top" Width="375" x:Name="TxtInput"></TextBox>
+        <TextBlock HorizontalAlignment="Left" Margin="10,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="39"><Run Language="pt-br" Text="Output"/><LineBreak/><Run Language="pt-br"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="65,74,0,0" Text="" VerticalAlignment="Top" Width="375" x:Name="TxtOutput"></TextBox>
+        <Button x:Name="BtnInputFile" Content="File" HorizontalAlignment="Left" Margin="454,32,0,0" VerticalAlignment="Top" Width="36" Height="23" Click="BtnInputFile_Click"/>
+        <Button x:Name="BtnInputFolder" Content="Folder" HorizontalAlignment="Left" Margin="503,32,0,0" VerticalAlignment="Top" Width="41" Height="23" Click="BtnInputFolder_Click" RenderTransformOrigin="0,0.522"/>
+        <Button x:Name="BtnOutputFile_Copy" Content="File" HorizontalAlignment="Left" Margin="454,74,0,0" VerticalAlignment="Top" Width="36" Height="23" Click="BtnOutputFile_Click"/>
+        <Button x:Name="BtnOutputFolder_Copy" Content="Folder" HorizontalAlignment="Left" Margin="503,74,0,0" VerticalAlignment="Top" Width="41" Height="23" Click="BtnOutputFolder_Click" RenderTransformOrigin="0,0.522"/>
+        <Button Content="Process" HorizontalAlignment="Center" Margin="0,135,0,0" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.997,-5.207" Click="Button_Click" />
+
+    </Grid>
+</Window>

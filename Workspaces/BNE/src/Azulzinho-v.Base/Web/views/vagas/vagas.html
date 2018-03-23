@@ -1,0 +1,326 @@
+﻿<div id="Progresso" class="DivProgresso" ng-show="carregando==true">
+    Carregando... <img src="../../images/gif-load.gif" />
+</div>
+<div id="Progresso" class="DivProgressoDemanda" ng-show="carregandoPorDemanda==true">
+    Carregando... <img src="../../images/gif-load.gif" />
+</div>
+<ol class="container breadcrumb breadcrumb-margin">
+    <li><a href="#/Home">Home</a></li>
+    <li class="active">Vagas</li>
+</ol>
+<div id="DivSemDados" class="DivSemVagas text-center" ng-show="temSpellCheck">
+    <div class="text-center">
+        <i class="fa fa-thumbs-o-down fa-5x fa-color"></i>
+        <!--<h3 class="text-modal">Nenhuma vaga encontrada</h3>-->
+        <h3 class="text-modal">Não encontramos nenhuma vaga com essa descrição.</h3>
+        <h3 class="text-modal">Verifique se escreveu corretamente e tente outra vez.</h3>
+
+    </div>
+</div>
+
+<!--BEGIN SpellCheck-->
+<div ng-show="temSpellCheck" class="margin-left-85">
+    <span class="floatLeft">Você quis dizer:</span>
+    <ul>
+        <li class="suggestTerm" ng-repeat="value in sugest | orderBy:'hit':true" ng-class="{'last':$last}"><a href ng-click="novaBusca(value.word)"> {{value.word}} {{$last ? '':','}}</a></li>
+    </ul>
+</div>
+<!--END SpellCheck-->
+
+<div class="container marginVagas" style="margin-top:40px;">
+    <article class="row" infinite-scroll="loadMore()" infinite-scroll-distance="0">
+        {{temSpellCheck}}
+        <div class="col-lg-3" ng-repeat="vaga in vagas" data-toggle="modal" data-target="#ModalDadosVaga" ng-click="MaisDadosVaga(this)" style="height:180px; overflow:hidden; padding: 5px; border-right: 1px dotted #ccc;">
+            <div class="col-lg-12 bloco-vaga" ng-class="(vaga.bneRecomenda == true ? 'destaque_amarela' : '')" style="padding-top:15px;">
+                <strong style="font-size:16px;">{{vaga.funcao}}</strong>
+                <p><span class="glyphicon glyphicon-map-marker"></span>{{vaga.cidade}}<small style="margin-left:8px;">(1 vaga)</small></p>
+                <p><i class="glyphicon glyphicon-briefcase"></i> <small>{{vaga.atribuicoes|truncate:140}}</small></p>
+            </div>
+        </div>
+    </article>
+</div>
+
+<div class="modal fade" id="ModalDadosVaga" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modalDadosEmpresa">
+        <div id="DivDadosVaga" class="modal-bg modalDadosEmpresa" ng-show="verDadosVaga">
+            <div class="modal-header modal-headerCVs">
+                <div style="float:left">
+                    <strong class="DivTituloVagaLabel">Vaga para:</strong><strong class="DivTituloVagaFuncao">{{listaVagasControle.vaga.funcao}}</strong>
+                </div>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="row clearfix">
+                                <div class="col-md-5 column atribuicoes">
+                                    <dl>
+                                        <dt class="dtSubtitule1b">Atribuições</dt>
+                                        <dd class="ddSubtitule1b">
+                                            <p>
+                                                {{listaVagasControle.vaga.atribuicoes}}
+                                            </p>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="col-md-6 column pull-right">
+                                    <dl>
+                                        <dt class="dtSubtitule1c" ng-show="(listaVagasControle.vaga.requisitos != null)">REQUISITOS</dt>
+                                        <p>
+                                            {{listaVagasControle.vaga.requisitos}}
+                                        </p>
+                                        <dt class="dtSubtitule1c" ng-show="(listaVagasControle.vaga.beneficios != null)">BENEFÍCIOS</dt>
+                                        <p>
+                                            {{listaVagasControle.vaga.beneficios}}
+                                        </p>
+                                        <dt class="dtSubtitule1c" ng-show="(listaVagasControle.vaga.salario != null)">SALÁRIO</dt>
+                                        <p>
+                                            {{listaVagasControle.vaga.salario}}
+                                        </p>
+                                        <dd class="ddSubtitule3"><small>- <strong>Código da Vaga:</strong> {{listaVagasControle.vaga.codigo}}</small></dd>
+                                        <p></p>
+                                    </dl>
+                                    <p class="clearfix"></p>
+                                    <button type="button" id="btnCandidatar" class="btn btn-warning btn-lg btn-block" ng-click="EnviarCandidatura()">ENVIAR MEU CURRÍCULO</button>
+                                    <p class="clearfix"></p>
+                                </div>
+                                
+                                <div id="DivCandidaturaJaEfetuada" class="col-md-6 column pull-right inativo alert alert-success">
+                                    <i class="fa fa-thumbs-o-up fa-2x"></i>
+                                     Parabéns! Você já está no processo seletivo desta vaga.
+                                </div>
+                                <div id="DivErroCandidatura" class="col-md-6 column pull-right inativo alert alert-warning">
+                                    <i class="fa fa-frown-o fa-2x"></i> Erro ao efetuar candidatura. Por favor, tente mais tarde.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="DivReg3" class="modal-bg" ng-show="verReg3">
+            <div class="modal-header modal-headerCVs">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="row clearfix">
+                                <div>
+                                    <dl>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            <strong>Parabéns!</strong>  Você cadastrou seu currículo no BNE!!
+                                            <p>Como agradecimento, te presenteamos com</p>
+                                        </dd>
+                                        <p></p>
+                                        <dt class="dtSubtitule1">
+                                            3 candidaturas gratuitas!
+                                        </dt>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Confira <strong>todas as vagas</strong> que temos <strong>para você</strong>.
+                                        </dd>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Candidate-se e <strong>saia na frente</strong>!
+                                        </dd>
+                                    </dl>
+                                    <p class="clearfix"></p>
+                                    <button type="button" class="btn btn-warning btn-lg" ng-click="FecharModal()">USAR MEU BÔNUS</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="DivReg2" class="modal-bg" ng-show="verReg2">
+            <div class="modal-header modal-headerCVs">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <dl>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            <strong>Parabéns!</strong>  sua candidatura a <strong>vaga {{listaVagasControle.vaga.codigo}}</strong> foi realizada com sucesso!
+                                        </dd>
+                                        <p></p>
+                                        <dt class="dtSubtitule1">
+                                            Você ainda tem 2 candidaturas gratuitas!
+                                        </dt>
+
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Dica do BNE:
+                                        </dd>
+                                        <p></p>
+                                        <dd class="ddSubtitule1">
+                                            Todos os dias são cadastradas <strong>4.000 novas vagas no <strong>BNE</strong>. então não perca oportunidades, acesse constantemente o nosso site.
+                                        </dd>
+                                    </dl>
+                                    <p class="clearfix"></p>
+                                    <button type="button" class="btn btn-warning btn-lg" ng-click="FecharModal()">VER OUTRAS VAGAS</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="DivReg1" class="modal-bg" ng-show="verReg1">
+            <div class="modal-header modal-headerCVs">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <dl>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            <strong>Parabéns!</strong>  sua candidatura a <strong>vaga {{listaVagasControle.vaga.codigo}}</strong> foi realizada com sucesso!
+                                        </dd>
+                                        <p></p>
+                                        <dt class="dtSubtitule1">
+                                            Você ainda tem 1 candidatura grátis!
+                                        </dt>
+
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Dica do BNE:
+                                        </dd>
+                                        <p></p>
+                                        <dd class="ddSubtitule1">
+                                            Detalhar bem as funções exercidas nas suas experiências anteriores auxilia o recrutador
+                                        </dd>
+                                        <p></p>
+                                        <dd class="ddSubtitule1">
+                                            a te conhecer melhor e identificar oportunidades no seu perfil.
+                                        </dd>
+                                    </dl>
+                                    <p class="clearfix"></p>
+                                    <button type="button" class="btn btn-warning btn-lg" ng-click="FecharModal()">VER OUTRAS VAGAS</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="DivReg0" class="modal-bg" ng-show="verReg0">
+            <div class="modal-header modal-headerCVs">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <dl>
+                                        <dd class="ddSubtitule1">
+                                            <strong>Parabéns!</strong>  sua candidatura a <strong>vaga {{listaVagasControle.vaga.codigo}}</strong> foi realizada com sucesso!
+                                        </dd>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Suas 3 candidaturas gratuitas terminaram.
+                                        </dd>
+                                        <p></p>
+                                        <dt class="dtSubtitule1">
+                                            Dica do BNE:
+                                        </dt>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Você pode continuar a se cadastrar nas vagas livres (destacadas) do BNE. Para se candidatar a TODAS as vagas do site, adquira nosso serviço VIP.
+                                        </dd>
+                                    </dl>
+                                    <p class="clearfix"></p>
+                                    <button type="button" class="btn btn-warning btn-lg" ng-click="RedirecionaCompraVip()">QUERO CONHECER O VIP!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="DivRegFim" class="modal-bg" ng-show="verRegFim">
+            <div class="modal-header modal-headerCVs">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <dl>
+                                        <dd class="ddSubtitule1">
+                                            Suas candidaturas gratuitas acabaram.
+                                        </dd>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Quer se candidatar a todas as vagas listadas?
+                                        </dd>
+                                        <p></p>
+                                        <dt class="dtSubtitule1">
+                                            Conheça nosso serviço VIP
+                                        </dt>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            e saiba tudo o que ele pode fazer para seu novo emprego!
+                                        </dd>
+                                    </dl>
+                                    <p class="clearfix"></p>
+                                    <button type="button" class="btn btn-warning btn-lg" ng-click="RedirecionaCompraVip()">QUERO CONHECER O VIP!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="DivCandVip" class="modal-bg" ng-show="verVip">
+            <div class="modal-header modal-headerCVs">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="row clearfix">
+                                <div>
+                                    <dl>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            <strong>Parabéns!</strong>  sua candidatura a <strong>vaga {{vaga.codigo}}</strong> foi realizada com sucesso!
+                                        </dd>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Confira <strong>todas as vagas</strong> que temos <strong>para você</strong>.
+                                        </dd>
+                                        <p></p>
+                                        <dd class="ddSubtitule2">
+                                            Candidate-se e <strong>saia na frente</strong>!
+                                        </dd>
+                                    </dl>
+                                    <p class="clearfix"></p>
+                                    <button type="button" class="btn btn-warning btn-lg btn-block" ng-click="FecharModal()">VER OUTRAS VAGAS</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

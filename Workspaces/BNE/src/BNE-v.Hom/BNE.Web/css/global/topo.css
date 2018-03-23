@@ -1,0 +1,224 @@
+﻿
+.topo .logo_sistema { height: 60px; background-repeat: no-repeat; position: absolute; top: 3px; }
+.topo .painel_informacoes { 
+    display:none;
+}
+
+    .topo .painel_filtro {
+        padding: 8px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+.topo .button_buscar_curriculo { }
+.topo .button_buscar_vaga { }
+.busca_superior-abas {
+    display: flex;
+    flex-direction: row;
+}
+.painel_filtro_vaga {
+    background-image: none !important;
+    filter: none !important;
+    background-color: #114d85 !important;
+    border-radius: 0 4px 4px 4px;
+}
+    .painel_filtro_vaga #txtPalavraChaveMaster-container {
+        display:none;
+    }
+    
+    .painel_filtro_curriculo, .painel_filtro_curriculo_escondido {
+        background-image: none !important;
+        filter: none !important;
+        background-color: #689F38 !important;
+        border-radius: 0 4px 4px 4px;
+    }
+    .painel_filtro_vaga .b, .painel_filtro_curriculo .b {
+        display: flex;
+        flex-direction: row;
+        padding: 16px 16px 8px;
+    }
+    .painel_filtro_vaga .b > div, .painel_filtro_curriculo .b > div{
+        flex-grow:1;
+    }
+#pnlBusca input {
+    width: calc(100% - 16px)!important;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+    padding: 8px 4px;
+}
+
+
+.ajax_ace { list-style: none outside none; margin: 0; padding: 0; text-align: left; width: auto !important; min-width: 220px; }
+
+.a img { border: none !important; }
+.img_sem_borda { border: none; }
+.descricao_vaga { font-weight: bold; }
+
+.funcao_inexistente {background-image: url('/img/imagem_funcoes_inexistentes.gif');height: 50px;width: 232px;position: absolute;}
+.cidade_inexistente {background-image: url('/img/imagem_funcoes_inexistentes.gif');height: 50px;width: 232px;position: absolute;z-index: 1003;}
+.texto_funcao_inexistente {position: absolute;2pxleft: 75pxfont-weight: bolder;top: 30px;left: 66px; font-weight:bold}
+.texto_cidade_inexistente {position: absolute;top: 30px;left: 66px;font-weight: bolder;}
+
+.nomeusuariologado {
+    margin-right: 8px;
+    font-weight: 700 !important;
+    font-family: "Roboto","Helvetica","Arial",sans-serif !important;
+    color:rgba(0,0,0, .87);
+} 
+
+#changeUser { 
+    height:38px; 
+    color: #fff; font-size:15px; 
+    align-items:center; 
+    font-weight:500; 
+    font-family: 'Roboto' !important; 
+    margin: 0;
+    display: flex; 
+    line-height: 20px; 
+
+}
+#changeUser a {color:#fff}
+    #changeUser.empresa {
+        background-color: #689F38;
+    }
+#changeUser.candidato { background-color:#1A4784; }
+#changeUser .empresa { width: 50%; text-align: left; float: left; }
+#changeUser .candidato { width: 50%; text-align: right; float: right; }
+
+.topo .whitebar {
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.27);
+    -moz-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.27);
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.27);
+    margin-bottom: 4px;
+}
+.topo .whitebar .conteudo-wrapper-responsivo {
+    align-items: center;
+}
+.painel_botoes_sistema a {
+    font-size: 12px;
+    color: rgba(0,0,0, .36) !important;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.busca_superior-abas a:hover {
+    text-decoration:none !important;
+}
+#aBuscarVagas {
+    background-color: #114d85;
+    border-radius: 4px 4px 0 0 !important;
+    margin-right: 4px;
+}
+
+#aBuscarVagas, #aBuscarCurriculos {
+    float: none;
+    border-right: solid 0px !important;
+    border-left: solid 0px !important;
+    padding: 8px 30px 8px 30px !important;
+    line-height: initial !important;
+    border-radius: 0px !important;
+    color: #fff !important;
+    display: flex !important;
+    border-bottom: 0px solid !important;
+    border-right: 0px solid !important;
+    height: auto !important;
+    justify-content: center;
+}
+.painel_filtro-linha_01 {
+    display:flex;
+    justify-content:space-between;
+}
+.topo .whitebar .wrapper-novo {
+    flex-direction: row !important;
+    display: flex;
+    align-items:center;
+    padding:0 8px;
+}
+.topo .painel_filtro h2 {
+display:none;
+text-align:center;
+color:#ffffff;
+font-family:'Roboto', sans-serif !important;
+font-weight:lighter;
+font-size:19px;
+padding:0 8px 16px;
+line-height:130%;
+}
+
+.topo .menu_principal_links a {
+    font-size: 12px;
+    color: rgba(0,0,0, .36) !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 24px;
+    font-family: 'Roboto', sans-serif !important;
+}
+.content_painel_filtro {
+    width: calc(100% - 16px);
+    margin:0 8px;
+    display: flex;
+    justify-content: flex-end;
+}
+.menu-responsivo .btn-default {
+    color: rgba(0,0,0, .54) !important;
+    background-color: #fff !important;
+    border-color: rgba(0,0,0,0) !important;
+    font-weight: bolder !important;
+    font-size: 0.9em !important;
+}
+.menu-responsivo .btn-default:hover {
+    color: rgba(0,0,0, .87) !important;
+    background-color: #f5f5f5 !important;        
+}
+
+@media screen and (max-width:599px) {
+    .topo.homebanner > .interna.wrapper-novo {
+        background-image: none;
+    }
+    .topo.homebanner .painel_filtro {
+        min-height:  unset;
+        width: 100%;
+    }
+    .topo.homebanner .interna {
+        background-color: unset;
+    }
+    #conteudo.conteudo {
+        margin-top: 16px !important;
+    }
+    .logo_whitebar {
+        width: 100px;
+        overflow: hidden;
+    }
+    .painel_filtro_vaga .b, .painel_filtro_curriculo .b {
+        flex-direction: column;
+    }
+    #pnlBusca input {
+        margin: 0 0 16px;
+    }
+    .painel_icones ul {
+        display:none;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width:959px) {
+    #conteudo.conteudo {
+        margin-top: 16px !important;
+    }
+    
+}
+
+@media screen and (min-width:960px) and (max-width:1149px) {
+
+}
+
+@media screen and (min-width:1150px) {
+}
+
+
+.click_area{
+    display: block;
+    width: 110%;
+    height: 100%;
+}

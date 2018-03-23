@@ -1,0 +1,297 @@
+﻿@model Sample.Models.VagaObservacaoModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Vaga
+            @*<small>Empresa @Html.DisplayFor(model => model.num_cnpj)</small>*@
+            <a href="~/VagasEmpresa/Details/@Model.vaga.num_cnpj" class="btn btn-default" >Voltar</a>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="~/Views/Home/"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Empresa</li>
+            <li class="active">Vagas</li>
+        </ol>
+    </section>
+
+
+    <div class="col-md-12" style="padding-top: 20px;">
+        <div class="col-md-4">
+            <b>CNPJ: </b> @Model.vaga.num_cnpj
+        </div>
+        <div class="col-md-4">
+            <b>Codigo:</b> @Model.vaga.Codigo
+        </div>
+        <div class="col-md-4">
+            <b>Quantidade de vaga:</b> @Model.vaga.qtd_Vaga
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <b>Função: </b> @Model.vaga.Funcao
+        </div>
+        <div class="col-md-4">
+            <b>Cidade:</b> @Model.vaga.Cidade / @Model.vaga.UF
+        </div>
+        <div class="col-md-4">
+            <b>E-mail:</b> @Model.vaga.eml_Vaga
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <b>Data de Abertura: </b> @Model.vaga.Dta_Abertura
+        </div>
+        <div class="col-md-4">
+            <b>Numero de Curriculos Recebidos:</b> @Model.vaga.Num_Cvs_Recebidos
+        </div>
+        <div class="col-md-4">
+            <b>Numero de Curriculos Recebidos Não Lidos:</b> @Model.vaga.Num_Cvs_Recebidos_Nao_Lidos
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <b>Quantidade Curriculos no perfil: </b> @Model.vaga.Qtd_Curriculos_Perfil
+        </div>
+        <div class="col-md-4">
+            <b>Data de Cadastro:</b> @Model.vaga.Dta_Cadastro
+        </div>
+        <div class="col-md-4">
+            <b>Origem:</b> @Model.vaga.Origem
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <b>Status da Vaga: </b> @Model.vaga.Status_vaga
+        </div>
+        <div class="col-md-4">
+            <b>Publicacao Imediata:</b> @Model.vaga.Publicacao_Imediata
+        </div>
+        <div class="col-md-4">
+            <b>Campanha:</b> @Model.vaga.Campanha
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <b>Ativa: </b> @Model.vaga.Ativa
+        </div>
+        <div class="col-md-4">
+            <b>Quantidade Visualização Completa Vip:</b> @Model.vaga.Qtd_Visualizacao_Completa_VIP
+        </div>
+        <div class="col-md-4">
+            <b>Quantidade Visualização Completa Não Vip:</b> @Model.vaga.Qtd_Visualizacao_Completa_Nao_VIP
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <b>Anunciante: </b> @Model.vaga.Nome
+        </div>
+        <div class="col-md-4">
+            <b>Quantidade Visualização Parcial Vip:</b> @Model.vaga.Qtd_Visualizacao_Parcial_VIP
+        </div>
+        <div class="col-md-4">
+            <b>Quantidade Visualização Parcial Não Vip:</b> @Model.vaga.Qtd_Visualizacao_Parcial_Nao_VIP
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <b>Nome de Contato: </b> @Model.vaga.nme_Contato
+        </div>
+        <div class="col-md-4">
+            <b>Telefone de Contato:</b> @if (!string.IsNullOrEmpty(Model.vaga.TelefoneVagaRapida)) {
+                @Model.vaga.TelefoneVagaRapida
+            }
+            else{
+                @Model.vaga.TelefoneUsuarioFilial
+            }
+        </div>
+    </div>
+
+    <br /><br />
+    <div class="col-md-12" style="padding-top: 20px;">
+        <div class="col-md-6">
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="panel panel-default panel-table">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col col-xs-6">
+                                    <h3 class="panel-title"> Observações:</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body table-responsive">
+                            <table class="table table-striped table-bordered table-list">
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Observação</th>
+                                        <th>Nome</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="myTable">
+                                    @foreach (var item in Model.listaObservacao)
+                                    {
+                                        <tr>
+                                            <td>@item.Dta_Cadastro</td>
+                                            <td>@item.Des_Observacao</td>
+                                            <td>@item.Nme_Pessoa</td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="panel-footer">
+                            <div class="row">
+                                <div class="col col-xs-4">
+                                </div>
+                                <div class="col col-xs-8">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            @{string mensagem = ViewBag.Msg; }
+            @if (!string.IsNullOrEmpty(mensagem) && mensagem.Contains("sucesso"))
+            {
+                <script>
+                    setTimeout("Ocultarsucesso()", 10000);
+                </script>
+                    <div class="alert alert-success alert-dismissable" id="divSucess" style="text-align:center">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <div class="msg msg-success msg-success-text">
+                            <span class="glyphicon glyphicon glyphicon-ok"></span> Salvo com sucesso!
+                        </div>
+
+                    </div>
+            }
+            else if (!string.IsNullOrEmpty(mensagem))
+            {
+                <script>
+                    setTimeout("OcultarAlert()", 10000);
+                </script>
+                    <div class="alert alert-danger alert-dismissable" id="divAlert" style="text-align:center">
+                        <button type="button" class="close" data-dismiss="danger" aria-hidden="true">×</button>
+                        <div class="msg msg-danger"> <span class="glyphicon glyphicon-remove-sign"></span> Falha ao salvar! </div>
+                    </div>
+            }
+
+            Observação:
+            @using (Html.BeginForm("salvarObservacao", "VagaObservacao", FormMethod.Post))
+            {
+                @Html.HiddenFor(m => m.vaga.Codigo, new { @Value = Model.vaga.Codigo })
+                @Html.TextAreaFor(m => m.Observacao, new { @class = "col-md-12 ", maxlength = "400" })
+
+                <button type="submit" id="btnSalvar" onclick="return validar();" class="btn btn-default btn-md" style="margin-top: 15px;">
+                    <span class="fa fa-floppy-o" aria-hidden="true"></span> Salvar
+                </button>
+            }
+
+        </div>
+    </div>
+
+</aside>
+
+
+<style type="text/css">
+        .panel-table .panel-body {
+            padding: 0;
+        }
+
+        .table-responsive {
+            height: 200px;
+        }
+
+        .panel-table .panel-body .table-bordered {
+            border-style: none;
+            margin: 0;
+        }
+
+            .panel-table .panel-body .table-bordered > thead > tr > th:first-of-type {
+                text-align: center;
+                width: 100px;
+            }
+
+            .panel-table .panel-body .table-bordered > thead > tr > th:last-of-type,
+            .panel-table .panel-body .table-bordered > tbody > tr > td:last-of-type {
+                border-right: 0px;
+            }
+
+            .panel-table .panel-body .table-bordered > thead > tr > th:first-of-type,
+            .panel-table .panel-body .table-bordered > tbody > tr > td:first-of-type {
+                border-left: 0px;
+            }
+
+            .panel-table .panel-body .table-bordered > tbody > tr:first-of-type > td {
+                border-bottom: 0px;
+            }
+
+            .panel-table .panel-body .table-bordered > thead > tr:first-of-type > th {
+                border-top: 0px;
+            }
+
+        .panel-table .panel-footer .pagination {
+            margin: 0;
+        }
+
+        /*
+    used to vertically center elements, may need modification if you're not using default sizes.
+    */
+        .panel-table .panel-footer .col {
+            line-height: 34px;
+            height: 34px;
+        }
+
+        .panel-table .panel-heading .col h3 {
+            line-height: 30px;
+            height: 30px;
+        }
+
+        .panel-table .panel-body .table-bordered > tbody > tr > td {
+            line-height: 34px;
+        }
+</style>
+
+<script type="text/javascript">
+
+    function validar() {
+
+        if (document.getElementById("Observacao").value.length > 0) {
+            return true;
+        }
+        return false;
+    }
+                    function Ocultarsucesso() {
+                        document.getElementById("divSucess").style.display = "none"
+                    }
+
+                    function OcultarAlert() {
+                        document.getElementById("divAlert").style.display = "none"
+                    }
+                    $(document).ready(function () {
+
+                        $('#myTable').pageMe({ pagerSelector: '#myPager', showPrevNext: true, hidePageNumbers: false, perPage: 4 });
+
+                    });
+</script>

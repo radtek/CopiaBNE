@@ -1,0 +1,2966 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LANModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BNE_Codigo_Desconto">
+          <Key>
+            <PropertyRef Name="Idf_Codigo_Desconto" />
+          </Key>
+          <Property Name="Idf_Codigo_Desconto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Des_Codigo_Desconto" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Idf_Status_Codigo_Desconto" Type="int" Nullable="false" />
+          <Property Name="Idf_Parceiro" Type="int" />
+          <Property Name="Idf_Tipo_Codigo_Desconto" Type="int" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Alteracao" Type="datetime" />
+          <Property Name="Dta_Utilizacao" Type="datetime" />
+          <Property Name="Dta_Validade_Inicio" Type="datetime" />
+          <Property Name="Dta_Validade_Fim" Type="datetime" />
+          <Property Name="Des_Identificacao_Codigo" Type="varchar" MaxLength="200" />
+          <Property Name="Idf_Usuario_Filial_Perfil" Type="int" />
+        </EntityType>
+        <EntityType Name="BNE_Codigo_Desconto_Plano">
+          <Key>
+            <PropertyRef Name="Idf_Tipo_Codigo_Desconto" />
+            <PropertyRef Name="Idf_Plano" />
+          </Key>
+          <Property Name="Idf_Tipo_Codigo_Desconto" Type="int" Nullable="false" />
+          <Property Name="Idf_Plano" Type="int" Nullable="false" />
+          <Property Name="Num_Percentual_Desconto" Type="int" />
+          <Property Name="Qtd_SMS" Type="int" />
+        </EntityType>
+        <EntityType Name="BNE_Curriculo">
+          <Key>
+            <PropertyRef Name="Idf_Curriculo" />
+          </Key>
+          <Property Name="Idf_Curriculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Idf_Pessoa_Fisica" Type="int" Nullable="false" />
+          <Property Name="Vlr_Pretensao_Salarial" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="Idf_Tipo_Curriculo" Type="int" Nullable="false" />
+          <Property Name="Idf_Situacao_Curriculo" Type="int" Nullable="false" />
+          <Property Name="Des_Mini_Curriculo" Type="varchar(max)" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Atualizacao" Type="datetime" Nullable="false" />
+          <Property Name="Flg_Manha" Type="bit" />
+          <Property Name="Flg_Tarde" Type="bit" />
+          <Property Name="Flg_Noite" Type="bit" />
+          <Property Name="Obs_Curriculo" Type="varchar" MaxLength="2000" />
+          <Property Name="Des_Analise" Type="varchar" MaxLength="2000" />
+          <Property Name="Des_Sugestao_Carreira" Type="varchar" MaxLength="2000" />
+          <Property Name="Des_Cursos_Oferecidos" Type="varchar" MaxLength="2000" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Vlr_Ultimo_Salario" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="Des_IP" Type="char" MaxLength="15" Nullable="false" />
+          <Property Name="Idf_Cidade_Pretendida" Type="int" />
+          <Property Name="Flg_Final_Semana" Type="bit" />
+          <Property Name="Flg_VIP" Type="bit" Nullable="false" />
+          <Property Name="Flg_Boas_Vindas" Type="bit" />
+          <Property Name="Flg_MSN" Type="bit" Nullable="false" />
+          <Property Name="Idf_Cidade_Endereco" Type="int" />
+          <Property Name="Des_Localizacao" Type="geography" />
+          <Property Name="Dta_Modificacao_CV" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BNE_Experiencia_Profissional">
+          <Key>
+            <PropertyRef Name="Idf_Experiencia_Profissional" />
+          </Key>
+          <Property Name="Idf_Area_BNE" Type="int" />
+          <Property Name="Idf_Pessoa_Fisica" Type="int" Nullable="false" />
+          <Property Name="Idf_Experiencia_Profissional" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Raz_Social" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Des_Funcao_Exercida" Type="varchar" MaxLength="50" />
+          <Property Name="Idf_Funcao" Type="int" />
+          <Property Name="Dta_Admissao" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Demissao" Type="datetime" />
+          <Property Name="Des_Atividade" Type="varchar(max)" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Flg_Importado" Type="bit" />
+        </EntityType>
+        <EntityType Name="BNE_Formacao">
+          <Key>
+            <PropertyRef Name="Idf_Formacao" />
+          </Key>
+          <Property Name="Idf_Pessoa_Fisica" Type="int" Nullable="false" />
+          <Property Name="Idf_Formacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Idf_Escolaridade" Type="int" Nullable="false" />
+          <Property Name="Idf_Curso" Type="int" />
+          <Property Name="Idf_Fonte" Type="int" />
+          <Property Name="Ano_Conclusao" Type="smallint" />
+          <Property Name="Qtd_Carga_Horaria" Type="smallint" />
+          <Property Name="Num_Periodo" Type="smallint" />
+          <Property Name="Idf_Situacao_Formacao" Type="smallint" />
+          <Property Name="Dta_Alteracao" Type="datetime" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Flg_Nacional" Type="bit" Nullable="false" />
+          <Property Name="Des_Endereco" Type="varchar" MaxLength="300" />
+          <Property Name="Des_Curso" Type="varchar" MaxLength="200" />
+          <Property Name="Idf_Cidade" Type="int" />
+          <Property Name="Des_Fonte" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="BNE_Funcao_Erro_Sinonimo">
+          <Key>
+            <PropertyRef Name="Idf_Funcao_Erro_Sinonimo" />
+          </Key>
+          <Property Name="Idf_Funcao_Erro_Sinonimo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Des_Funcao_Erro_Sinonimo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Flg_Erro" Type="bit" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Idf_Funcao" Type="int" />
+        </EntityType>
+        <EntityType Name="BNE_Funcao_Pretendida">
+          <Key>
+            <PropertyRef Name="Idf_Funcao_Pretendida" />
+          </Key>
+          <Property Name="Idf_Curriculo" Type="int" Nullable="false" />
+          <Property Name="Idf_Funcao_Pretendida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Idf_Funcao" Type="int" />
+          <Property Name="Qtd_Experiencia" Type="int" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Des_Funcao_Pretendida" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BNE_Plano">
+          <Key>
+            <PropertyRef Name="Idf_Plano" />
+          </Key>
+          <Property Name="Idf_Plano" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Des_Plano" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Qtd_Dias_Validade" Type="int" Nullable="false" />
+          <Property Name="Qtd_SMS" Type="int" Nullable="false" />
+          <Property Name="Qtd_Visualizacao" Type="int" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Vlr_Base" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Dta_Inicio" Type="datetime" />
+          <Property Name="Dta_Final" Type="datetime" />
+          <Property Name="Idf_Plano_Tipo" Type="int" Nullable="false" />
+          <Property Name="Idf_Plano_Forma_Pagamento" Type="int" Nullable="false" />
+          <Property Name="Qtd_Parcela" Type="int" Nullable="false" />
+          <Property Name="Vlr_Desconto_Maximo" Type="int" Nullable="false" />
+          <Property Name="Qtd_SMS_Maxima" Type="int" />
+          <Property Name="Vlr_Base_Minimo" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Qtd_Prazo_Boleto_Maxima" Type="int" />
+          <Property Name="Flg_Boleto_Registrado" Type="bit" Nullable="false" />
+          <Property Name="idf_Tipo_Contrato" Type="int" />
+        </EntityType>
+        <EntityType Name="TAB_Contato">
+          <Key>
+            <PropertyRef Name="Idf_Contato" />
+          </Key>
+          <Property Name="Idf_Pessoa_Fisica" Type="int" Nullable="false" />
+          <Property Name="Idf_Contato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nme_Contato" Type="varchar" MaxLength="100" />
+          <Property Name="Tip_Contato" Type="varchar" MaxLength="30" />
+          <Property Name="Num_DDD_Celular" Type="char" MaxLength="2" />
+          <Property Name="Num_Celular" Type="char" MaxLength="10" />
+          <Property Name="Num_DDD_Telefone" Type="char" MaxLength="2" />
+          <Property Name="Num_Telefone" Type="char" MaxLength="10" />
+          <Property Name="Num_Ramal_Telefone" Type="char" MaxLength="4" />
+          <Property Name="Num_DDD_Fax" Type="char" MaxLength="2" />
+          <Property Name="Num_Fax" Type="char" MaxLength="10" />
+          <Property Name="Eml_Contato" Type="varchar" MaxLength="100" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Alteracao" Type="datetime" Nullable="false" />
+          <Property Name="Flg_Importado" Type="bit" Nullable="false" />
+          <Property Name="Idf_Tipo_Contato" Type="int" />
+          <Property Name="Idf_Operadora_Celular" Type="int" />
+        </EntityType>
+        <EntityType Name="TAB_Endereco">
+          <Key>
+            <PropertyRef Name="Idf_Endereco" />
+          </Key>
+          <Property Name="Idf_Endereco" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Num_CEP" Type="char" MaxLength="8" />
+          <Property Name="Des_Logradouro" Type="varchar" MaxLength="100" />
+          <Property Name="Num_Endereco" Type="varchar" MaxLength="15" />
+          <Property Name="Des_Complemento" Type="varchar" MaxLength="30" />
+          <Property Name="Des_Bairro" Type="varchar" MaxLength="80" />
+          <Property Name="Idf_Cidade" Type="int" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Alteracao" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TAB_Filial">
+          <Key>
+            <PropertyRef Name="Idf_Filial" />
+          </Key>
+          <Property Name="Idf_Filial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Flg_Matriz" Type="bit" Nullable="false" />
+          <Property Name="Num_CNPJ" Type="numeric" Precision="14" Scale="0" />
+          <Property Name="Raz_Social" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Nme_Fantasia" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Idf_CNAE_Principal" Type="int" />
+          <Property Name="Idf_Natureza_Juridica" Type="int" />
+          <Property Name="Idf_Endereco" Type="int" Nullable="false" />
+          <Property Name="End_Site" Type="varchar" MaxLength="100" />
+          <Property Name="Num_DDD_Comercial" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Num_Comercial" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Alteracao" Type="datetime" Nullable="false" />
+          <Property Name="Qtd_Usuario_Adicional" Type="int" />
+          <Property Name="Qtd_Funcionarios" Type="int" Nullable="false" />
+          <Property Name="Des_IP" Type="char" MaxLength="15" Nullable="false" />
+          <Property Name="Flg_Oferece_Cursos" Type="bit" Nullable="false" />
+          <Property Name="Idf_Situacao_Filial" Type="int" Nullable="false" />
+          <Property Name="Des_Pagina_Facebook" Type="varchar" MaxLength="200" />
+          <Property Name="Des_Localizacao" Type="geography" />
+          <Property Name="Idf_Tipo_Parceiro" Type="int" />
+        </EntityType>
+        <EntityType Name="TAB_Filial_Logo">
+          <Key>
+            <PropertyRef Name="Idf_Filial" />
+          </Key>
+          <Property Name="Idf_Filial" Type="int" Nullable="false" />
+          <Property Name="Img_Logo" Type="varbinary(max)" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Alteracao" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TAB_Fonte">
+          <Key>
+            <PropertyRef Name="Idf_Fonte" />
+          </Key>
+          <Property Name="Idf_Fonte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sig_Fonte" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nme_Fonte" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Flg_Auditada" Type="bit" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Flg_MEC" Type="bit" Nullable="false" />
+          <Property Name="Num_cnpj" Type="numeric" Precision="14" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TAB_Origem_Filial">
+          <Key>
+            <PropertyRef Name="Idf_Origem_Filial" />
+          </Key>
+          <Property Name="Idf_Filial" Type="int" Nullable="false" />
+          <Property Name="Idf_Origem_Filial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Idf_Origem" Type="int" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Alteracao" Type="datetime" Nullable="false" />
+          <Property Name="Des_IP" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Flg_Curriculo_Publico" Type="bit" Nullable="false" />
+          <Property Name="Des_Diretorio" Type="varchar" MaxLength="100" />
+          <Property Name="Img_Logo" Type="varbinary(max)" />
+          <Property Name="Idf_Template" Type="int" />
+          <Property Name="Des_Mensagem_Candidato" Type="varchar(max)" />
+          <Property Name="Des_Pagina_Inicial" Type="varchar(max)" />
+          <Property Name="Flg_Todas_Funcoes" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TAB_Parametro_Filial">
+          <Key>
+            <PropertyRef Name="Idf_Parametro" />
+            <PropertyRef Name="Idf_Filial" />
+          </Key>
+          <Property Name="Idf_Parametro" Type="int" Nullable="false" />
+          <Property Name="Idf_Filial" Type="int" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Vlr_Parametro" Type="varchar(max)" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TAB_Pessoa_Fisica">
+          <Key>
+            <PropertyRef Name="Idf_Pessoa_Fisica" />
+          </Key>
+          <Property Name="Idf_Pessoa_Fisica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Num_CPF" Type="numeric" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="Nme_Pessoa" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Ape_Pessoa" Type="varchar" MaxLength="30" />
+          <Property Name="Idf_Sexo" Type="int" />
+          <Property Name="Idf_Nacionalidade" Type="int" />
+          <Property Name="Idf_Cidade" Type="int" />
+          <Property Name="Dta_Chegada_Brasil" Type="datetime" />
+          <Property Name="Dta_Nascimento" Type="datetime" Nullable="false" />
+          <Property Name="Nme_Mae" Type="varchar" MaxLength="100" />
+          <Property Name="Nme_Pai" Type="varchar" MaxLength="100" />
+          <Property Name="Num_RG" Type="varchar" MaxLength="20" />
+          <Property Name="Dta_Expedicao_RG" Type="datetime" />
+          <Property Name="Nme_Orgao_Emissor" Type="varchar" MaxLength="20" />
+          <Property Name="Sig_UF_Emissao_RG" Type="char" MaxLength="2" />
+          <Property Name="Num_PIS" Type="varchar" MaxLength="11" />
+          <Property Name="Num_CTPS" Type="varchar" MaxLength="8" />
+          <Property Name="Des_Serie_CTPS" Type="varchar" MaxLength="5" />
+          <Property Name="Sig_UF_CTPS" Type="char" MaxLength="2" />
+          <Property Name="Idf_Raca" Type="int" />
+          <Property Name="Idf_Deficiencia" Type="int" />
+          <Property Name="Idf_Endereco" Type="int" />
+          <Property Name="Num_DDD_Telefone" Type="char" MaxLength="2" />
+          <Property Name="Num_Telefone" Type="char" MaxLength="10" />
+          <Property Name="Num_DDD_Celular" Type="char" MaxLength="2" />
+          <Property Name="Num_Celular" Type="char" MaxLength="10" />
+          <Property Name="Eml_Pessoa" Type="varchar" MaxLength="100" />
+          <Property Name="Flg_Possui_Dependentes" Type="bit" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Alteracao" Type="datetime" Nullable="false" />
+          <Property Name="Flg_Importado" Type="bit" />
+          <Property Name="Idf_Escolaridade" Type="int" />
+          <Property Name="Nme_Pessoa_Pesquisa" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Idf_Estado_Civil" Type="int" />
+          <Property Name="Sig_Estado" Type="char" MaxLength="2" />
+          <Property Name="Flg_Inativo" Type="bit" />
+          <Property Name="Des_IP" Type="char" MaxLength="15" />
+          <Property Name="Idf_Operadora_Celular" Type="int" />
+          <Property Name="Idf_Email_Situacao_Confirmacao" Type="int" />
+          <Property Name="Idf_Email_Situacao_Validacao" Type="int" />
+          <Property Name="Idf_Email_Situacao_Bloqueio" Type="int" />
+        </EntityType>
+        <EntityType Name="TAB_Pessoa_Fisica_Foto">
+          <Key>
+            <PropertyRef Name="Idf_Pessoa_Fisica_Foto" />
+          </Key>
+          <Property Name="Idf_Pessoa_Fisica" Type="int" Nullable="false" />
+          <Property Name="Idf_Pessoa_Fisica_Foto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Img_Pessoa" Type="varbinary(max)" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Alteracao" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TAB_Pessoa_Fisica_Rede_Social">
+          <Key>
+            <PropertyRef Name="Idf_Pessoa_Fisica_Rede_Social" />
+          </Key>
+          <Property Name="Idf_Pessoa_Fisica" Type="int" Nullable="false" />
+          <Property Name="Idf_Pessoa_Fisica_Rede_Social" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Idf_Rede_Social_CS" Type="int" Nullable="false" />
+          <Property Name="Cod_Identificador" Type="varchar" MaxLength="350" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Cod_Interno_Rede_Social" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TAB_Regiao_Metropolitana">
+          <Key>
+            <PropertyRef Name="Idf_Regiao_Metropolitana" />
+          </Key>
+          <Property Name="Idf_Regiao_Metropolitana" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nme_Regiao_Metropolitana" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Nme_Regiao_Metropolitana_Pesquisa" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Idf_Cidade" Type="int" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Sig_UF" Type="char" MaxLength="2" />
+          <Property Name="CID_Regiao_Metropolitana" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TAB_Regiao_Metropolitana_Cidade">
+          <Key>
+            <PropertyRef Name="Idf_Regiao_Metropolitana" />
+            <PropertyRef Name="Idf_Cidade" />
+          </Key>
+          <Property Name="Idf_Regiao_Metropolitana" Type="int" Nullable="false" />
+          <Property Name="Idf_Cidade" Type="int" Nullable="false" />
+          <Property Name="Dta_cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LAN_Administrador">
+          <Key>
+            <PropertyRef Name="Idf_Administrador" />
+          </Key>
+          <Property Name="Idf_Administrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Num_CPF" Type="numeric" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="Dta_Nascimento" Type="datetime" Nullable="false" />
+          <Property Name="Sen_Administrador" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Idf_Perfil" Type="tinyint" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LAN_Companhia">
+          <Key>
+            <PropertyRef Name="Idf_Companhia" />
+          </Key>
+          <Property Name="Idf_Companhia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nme_Companhia" Type="varchar" MaxLength="100" />
+          <Property Name="Num_CNPJ" Type="numeric" Precision="14" Scale="0" />
+          <Property Name="Des_Carta_Apresentacao" Type="varchar" MaxLength="2000" />
+          <Property Name="Des_Carta_Agradecimento" Type="varchar" MaxLength="2000" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Alteracao" Type="datetime" />
+          <Property Name="Img_Logo" Type="varbinary(max)" />
+          <Property Name="Idf_Filial" Type="int" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LAN_Fase_Cadastro">
+          <Key>
+            <PropertyRef Name="Idf_Fase_Cadastro" />
+          </Key>
+          <Property Name="Idf_Fase_Cadastro" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Des_Fase_Cadastro" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LAN_Oportunidade">
+          <Key>
+            <PropertyRef Name="Idf_Filial" />
+            <PropertyRef Name="Idf_Companhia" />
+          </Key>
+          <Property Name="Idf_Filial" Type="int" Nullable="false" />
+          <Property Name="Idf_Companhia" Type="int" Nullable="false" />
+          <Property Name="Dta_Inicio_Validade" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Fim_Validade" Type="datetime" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Num_Prioridade" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LAN_Oportunidade_Cidade">
+          <Key>
+            <PropertyRef Name="Idf_Cidade" />
+            <PropertyRef Name="Idf_Filial" />
+            <PropertyRef Name="Idf_Companhia" />
+          </Key>
+          <Property Name="Idf_Cidade" Type="int" Nullable="false" />
+          <Property Name="Idf_Filial" Type="int" Nullable="false" />
+          <Property Name="Idf_Companhia" Type="int" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LAN_Oportunidade_Curriculo">
+          <Key>
+            <PropertyRef Name="Idf_Curriculo" />
+            <PropertyRef Name="Idf_Filial" />
+            <PropertyRef Name="Idf_Companhia" />
+          </Key>
+          <Property Name="Idf_Curriculo" Type="int" Nullable="false" />
+          <Property Name="Idf_Filial" Type="int" Nullable="false" />
+          <Property Name="Idf_Companhia" Type="int" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Idf_Fase_Cadastro" Type="tinyint" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LAN_Oportunidade_Curriculo_Historico">
+          <Key>
+            <PropertyRef Name="Idf_Oportunidade_Curriculo_Historico" />
+          </Key>
+          <Property Name="Idf_Oportunidade_Curriculo_Historico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Idf_Curriculo" Type="int" Nullable="false" />
+          <Property Name="Idf_Filial" Type="int" Nullable="false" />
+          <Property Name="Idf_Companhia" Type="int" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LAN_Perfil">
+          <Key>
+            <PropertyRef Name="Idf_Perfil" />
+          </Key>
+          <Property Name="Idf_Perfil" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Des_Perfil" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LAN_Plano_Adquirido">
+          <Key>
+            <PropertyRef Name="Idf_Plano_Adquirido" />
+          </Key>
+          <Property Name="Idf_Plano_Adquirido" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Idf_Curriculo" Type="int" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Inicio_Plano" Type="datetime" Nullable="false" />
+          <Property Name="Dta_Fim_Plano" Type="datetime" />
+          <Property Name="Idf_Plano_Situacao" Type="tinyint" Nullable="false" />
+          <Property Name="Idf_Codigo_Desconto" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LAN_Plano_Situacao">
+          <Key>
+            <PropertyRef Name="Idf_Plano_Situacao" />
+          </Key>
+          <Property Name="Idf_Plano_Situacao" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Des_Plano_Situacao" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TAB_Cidade">
+          <Key>
+            <PropertyRef Name="Idf_Cidade" />
+          </Key>
+          <Property Name="Idf_Cidade" Type="int" Nullable="false" />
+          <Property Name="Nme_Cidade" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Sig_Estado" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Txa_ISS" Type="float" Nullable="false" />
+          <Property Name="Idf_Tipo_Base" Type="int" />
+          <Property Name="Cod_Rais" Type="numeric" Precision="7" Scale="0" />
+        </EntityType>
+        <EntityType Name="TAB_Funcao">
+          <Key>
+            <PropertyRef Name="Idf_Funcao" />
+          </Key>
+          <Property Name="Idf_Funcao" Type="int" Nullable="false" />
+          <Property Name="Idf_Funcao_Agrupadora" Type="int" />
+          <Property Name="Des_Funcao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Idf_Funcao_Categoria" Type="int" Nullable="false" />
+          <Property Name="Idf_Classe_Salarial" Type="int" />
+          <Property Name="Idf_Escolaridade" Type="int" />
+          <Property Name="Idf_Area_BNE" Type="int" />
+          <Property Name="Flg_Menor_Aprendiz" Type="bit" />
+          <Property Name="Des_Job" Type="varchar" MaxLength="2000" />
+          <Property Name="Des_Experiencia" Type="varchar" MaxLength="2000" />
+          <Property Name="Vlr_Piso_Profissional" Type="money" />
+          <Property Name="Des_Cursos" Type="varchar" MaxLength="2000" />
+          <Property Name="Des_Competencias" Type="varchar" MaxLength="2000" />
+          <Property Name="Flg_Inativo" Type="bit" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+          <Property Name="Des_Funcao_Pesquisa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cod_Funcao_Folha" Type="char" MaxLength="10" />
+          <Property Name="Cod_CBO" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Flg_Conselho" Type="bit" Nullable="false" />
+          <Property Name="Flg_Curso_Especializacao" Type="bit" Nullable="false" />
+          <Property Name="Flg_RAIS_Analfabeto" Type="bit" />
+          <Property Name="Flg_RAIS_Nivel_Superior" Type="bit" />
+          <Property Name="Flg_Categoria_Sindical" Type="bit" Nullable="false" />
+          <Property Name="Flg_Auditada" Type="bit" Nullable="false" />
+          <Property Name="Qtd_Carga_Horaria_Diaria" Type="smallint" />
+          <Property Name="Des_Local_Trabalho" Type="varchar" MaxLength="2000" />
+          <Property Name="Des_EPI" Type="varchar" MaxLength="2000" />
+          <Property Name="Des_PPRA" Type="varchar" MaxLength="2000" />
+          <Property Name="Des_PCMSO" Type="varchar" MaxLength="2000" />
+          <Property Name="Des_Equipamentos" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="TAB_Parametro">
+          <Key>
+            <PropertyRef Name="Idf_Parametro" />
+          </Key>
+          <Property Name="Idf_Parametro" Type="int" Nullable="false" />
+          <Property Name="Nme_Parametro" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="Vlr_Parametro" Type="varchar(max)" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BNECDP_BNEPAN">
+          <End Role="BNE_Plano" Type="Self.BNE_Plano" Multiplicity="1" />
+          <End Role="BNE_Codigo_Desconto_Plano" Type="Self.BNE_Codigo_Desconto_Plano" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BNE_Plano">
+              <PropertyRef Name="Idf_Plano" />
+            </Principal>
+            <Dependent Role="BNE_Codigo_Desconto_Plano">
+              <PropertyRef Name="Idf_Plano" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BNECUR_BNEFPR">
+          <End Role="BNE_Curriculo" Type="Self.BNE_Curriculo" Multiplicity="1" />
+          <End Role="BNE_Funcao_Pretendida" Type="Self.BNE_Funcao_Pretendida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Curriculo" />
+            </Principal>
+            <Dependent Role="BNE_Funcao_Pretendida">
+              <PropertyRef Name="Idf_Curriculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BNETCI_BNECUR">
+          <End Role="TAB_Cidade" Type="Self.TAB_Cidade" Multiplicity="0..1" />
+          <End Role="BNE_Curriculo" Type="Self.BNE_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Cidade_Pretendida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Administrador_idf_Perfil_LAN_Administrador_idf_Perfil">
+          <End Role="LAN_Perfil" Type="Self.LAN_Perfil" Multiplicity="1" />
+          <End Role="LAN_Administrador" Type="Self.LAN_Administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LAN_Perfil">
+              <PropertyRef Name="Idf_Perfil" />
+            </Principal>
+            <Dependent Role="LAN_Administrador">
+              <PropertyRef Name="Idf_Perfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Companhia_Idf_Filial_Tab_Filial_Idf_Filial">
+          <End Role="TAB_Filial" Type="Self.TAB_Filial" Multiplicity="0..1" />
+          <End Role="LAN_Companhia" Type="Self.LAN_Companhia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Filial">
+              <PropertyRef Name="Idf_Filial" />
+            </Principal>
+            <Dependent Role="LAN_Companhia">
+              <PropertyRef Name="Idf_Filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Oportunidade_Cidade_Idf_cidade_Tab_Cidade_Idf_Cidade">
+          <End Role="TAB_Cidade" Type="Self.TAB_Cidade" Multiplicity="1" />
+          <End Role="LAN_Oportunidade_Cidade" Type="Self.LAN_Oportunidade_Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="LAN_Oportunidade_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Oportunidade_Curriculo_Idf_Curriculo_BNE_Curriculo_Idf_Curriculo">
+          <End Role="BNE_Curriculo" Type="Self.BNE_Curriculo" Multiplicity="1" />
+          <End Role="LAN_Oportunidade_Curriculo" Type="Self.LAN_Oportunidade_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Curriculo" />
+            </Principal>
+            <Dependent Role="LAN_Oportunidade_Curriculo">
+              <PropertyRef Name="Idf_Curriculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Oportunidade_Curriculo_Idf_Fase_Cadastro_LAN_Fase_Cadastro_Idf_Fase_Cadastro">
+          <End Role="LAN_Fase_Cadastro" Type="Self.LAN_Fase_Cadastro" Multiplicity="1" />
+          <End Role="LAN_Oportunidade_Curriculo" Type="Self.LAN_Oportunidade_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LAN_Fase_Cadastro">
+              <PropertyRef Name="Idf_Fase_Cadastro" />
+            </Principal>
+            <Dependent Role="LAN_Oportunidade_Curriculo">
+              <PropertyRef Name="Idf_Fase_Cadastro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Oportunidade_Curriculo_Idf_Filial_Idf_Companhia_LAN_Oportunidade_Idf_Filial_Idf_Companhia">
+          <End Role="LAN_Oportunidade" Type="Self.LAN_Oportunidade" Multiplicity="1" />
+          <End Role="LAN_Oportunidade_Curriculo" Type="Self.LAN_Oportunidade_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LAN_Oportunidade">
+              <PropertyRef Name="Idf_Filial" />
+              <PropertyRef Name="Idf_Companhia" />
+            </Principal>
+            <Dependent Role="LAN_Oportunidade_Curriculo">
+              <PropertyRef Name="Idf_Filial" />
+              <PropertyRef Name="Idf_Companhia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Oportunidade_Filial_Companhia_LAN_Oportunidade_Filial_Companhia">
+          <End Role="LAN_Oportunidade" Type="Self.LAN_Oportunidade" Multiplicity="1" />
+          <End Role="LAN_Oportunidade_Cidade" Type="Self.LAN_Oportunidade_Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LAN_Oportunidade">
+              <PropertyRef Name="Idf_Filial" />
+              <PropertyRef Name="Idf_Companhia" />
+            </Principal>
+            <Dependent Role="LAN_Oportunidade_Cidade">
+              <PropertyRef Name="Idf_Filial" />
+              <PropertyRef Name="Idf_Companhia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Oportunidade_Idf_Companhia_LAN_Companhia_Idf_Compahia">
+          <End Role="LAN_Companhia" Type="Self.LAN_Companhia" Multiplicity="1" />
+          <End Role="LAN_Oportunidade" Type="Self.LAN_Oportunidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LAN_Companhia">
+              <PropertyRef Name="Idf_Companhia" />
+            </Principal>
+            <Dependent Role="LAN_Oportunidade">
+              <PropertyRef Name="Idf_Companhia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Oportunidade_Idf_Filial_Tab_Filial_Idf_Filial">
+          <End Role="TAB_Filial" Type="Self.TAB_Filial" Multiplicity="1" />
+          <End Role="LAN_Oportunidade" Type="Self.LAN_Oportunidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Filial">
+              <PropertyRef Name="Idf_Filial" />
+            </Principal>
+            <Dependent Role="LAN_Oportunidade">
+              <PropertyRef Name="Idf_Filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Plano_Adquirido_Idf_Cod_Desconto_BNE_BNE_Codigo_Desconto_Idf_Codigo_Desconto">
+          <End Role="BNE_Codigo_Desconto" Type="Self.BNE_Codigo_Desconto" Multiplicity="1" />
+          <End Role="LAN_Plano_Adquirido" Type="Self.LAN_Plano_Adquirido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BNE_Codigo_Desconto">
+              <PropertyRef Name="Idf_Codigo_Desconto" />
+            </Principal>
+            <Dependent Role="LAN_Plano_Adquirido">
+              <PropertyRef Name="Idf_Codigo_Desconto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Plano_Adquirido_Idf_Curriculo_bne_Curiculo_Idf_Curriculo">
+          <End Role="BNE_Curriculo" Type="Self.BNE_Curriculo" Multiplicity="1" />
+          <End Role="LAN_Plano_Adquirido" Type="Self.LAN_Plano_Adquirido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Curriculo" />
+            </Principal>
+            <Dependent Role="LAN_Plano_Adquirido">
+              <PropertyRef Name="Idf_Curriculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Plano_Adquirido_Idf_Plano_Situacao_LAN_Plano_Situacao">
+          <End Role="LAN_Plano_Situacao" Type="Self.LAN_Plano_Situacao" Multiplicity="1" />
+          <End Role="LAN_Plano_Adquirido" Type="Self.LAN_Plano_Adquirido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LAN_Plano_Situacao">
+              <PropertyRef Name="Idf_Plano_Situacao" />
+            </Principal>
+            <Dependent Role="LAN_Plano_Adquirido">
+              <PropertyRef Name="Idf_Plano_Situacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABCDA_TABEND">
+          <End Role="TAB_Cidade" Type="Self.TAB_Cidade" Multiplicity="1" />
+          <End Role="TAB_Endereco" Type="Self.TAB_Endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="TAB_Endereco">
+              <PropertyRef Name="Idf_Cidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABCID_BNECUR">
+          <End Role="TAB_Cidade" Type="Self.TAB_Cidade" Multiplicity="0..1" />
+          <End Role="BNE_Curriculo" Type="Self.BNE_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Cidade_Endereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABCID_TABFOR">
+          <End Role="TAB_Cidade" Type="Self.TAB_Cidade" Multiplicity="0..1" />
+          <End Role="BNE_Formacao" Type="Self.BNE_Formacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="BNE_Formacao">
+              <PropertyRef Name="Idf_Cidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABCID_TABPFI">
+          <End Role="TAB_Cidade" Type="Self.TAB_Cidade" Multiplicity="0..1" />
+          <End Role="TAB_Pessoa_Fisica" Type="Self.TAB_Pessoa_Fisica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="TAB_Pessoa_Fisica">
+              <PropertyRef Name="Idf_Cidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABCID_TABRMC">
+          <End Role="TAB_Cidade" Type="Self.TAB_Cidade" Multiplicity="1" />
+          <End Role="TAB_Regiao_Metropolitana_Cidade" Type="Self.TAB_Regiao_Metropolitana_Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="TAB_Regiao_Metropolitana_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABCID_TABRME">
+          <End Role="TAB_Cidade" Type="Self.TAB_Cidade" Multiplicity="1" />
+          <End Role="TAB_Regiao_Metropolitana" Type="Self.TAB_Regiao_Metropolitana" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="TAB_Regiao_Metropolitana">
+              <PropertyRef Name="Idf_Cidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABEND_TABFIL">
+          <End Role="TAB_Endereco" Type="Self.TAB_Endereco" Multiplicity="1" />
+          <End Role="TAB_Filial" Type="Self.TAB_Filial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Endereco">
+              <PropertyRef Name="Idf_Endereco" />
+            </Principal>
+            <Dependent Role="TAB_Filial">
+              <PropertyRef Name="Idf_Endereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABEND_TABPFI">
+          <End Role="TAB_Endereco" Type="Self.TAB_Endereco" Multiplicity="0..1" />
+          <End Role="TAB_Pessoa_Fisica" Type="Self.TAB_Pessoa_Fisica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Endereco">
+              <PropertyRef Name="Idf_Endereco" />
+            </Principal>
+            <Dependent Role="TAB_Pessoa_Fisica">
+              <PropertyRef Name="Idf_Endereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABFIL_TABOFI">
+          <End Role="TAB_Filial" Type="Self.TAB_Filial" Multiplicity="1" />
+          <End Role="TAB_Origem_Filial" Type="Self.TAB_Origem_Filial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Filial">
+              <PropertyRef Name="Idf_Filial" />
+            </Principal>
+            <Dependent Role="TAB_Origem_Filial">
+              <PropertyRef Name="Idf_Filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABFON_BNEFOR">
+          <End Role="TAB_Fonte" Type="Self.TAB_Fonte" Multiplicity="0..1" />
+          <End Role="BNE_Formacao" Type="Self.BNE_Formacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Fonte">
+              <PropertyRef Name="Idf_Fonte" />
+            </Principal>
+            <Dependent Role="BNE_Formacao">
+              <PropertyRef Name="Idf_Fonte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABFUN_BNEEPR">
+          <End Role="TAB_Funcao" Type="Self.TAB_Funcao" Multiplicity="0..1" />
+          <End Role="BNE_Experiencia_Profissional" Type="Self.BNE_Experiencia_Profissional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Funcao">
+              <PropertyRef Name="Idf_Funcao" />
+            </Principal>
+            <Dependent Role="BNE_Experiencia_Profissional">
+              <PropertyRef Name="Idf_Funcao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABFUN_BNEFES">
+          <End Role="TAB_Funcao" Type="Self.TAB_Funcao" Multiplicity="0..1" />
+          <End Role="BNE_Funcao_Erro_Sinonimo" Type="Self.BNE_Funcao_Erro_Sinonimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Funcao">
+              <PropertyRef Name="Idf_Funcao" />
+            </Principal>
+            <Dependent Role="BNE_Funcao_Erro_Sinonimo">
+              <PropertyRef Name="Idf_Funcao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABFUN_BNEFPR">
+          <End Role="TAB_Funcao" Type="Self.TAB_Funcao" Multiplicity="0..1" />
+          <End Role="BNE_Funcao_Pretendida" Type="Self.BNE_Funcao_Pretendida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Funcao">
+              <PropertyRef Name="Idf_Funcao" />
+            </Principal>
+            <Dependent Role="BNE_Funcao_Pretendida">
+              <PropertyRef Name="Idf_Funcao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABFUN_TABFUN">
+          <End Role="TAB_Funcao" Type="Self.TAB_Funcao" Multiplicity="0..1" />
+          <End Role="TAB_Funcao1" Type="Self.TAB_Funcao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Funcao">
+              <PropertyRef Name="Idf_Funcao" />
+            </Principal>
+            <Dependent Role="TAB_Funcao1">
+              <PropertyRef Name="Idf_Funcao_Agrupadora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABPFI_BNECUR">
+          <End Role="TAB_Pessoa_Fisica" Type="Self.TAB_Pessoa_Fisica" Multiplicity="1" />
+          <End Role="BNE_Curriculo" Type="Self.BNE_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Pessoa_Fisica">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Principal>
+            <Dependent Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABPFI_BNEEPR">
+          <End Role="TAB_Pessoa_Fisica" Type="Self.TAB_Pessoa_Fisica" Multiplicity="1" />
+          <End Role="BNE_Experiencia_Profissional" Type="Self.BNE_Experiencia_Profissional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Pessoa_Fisica">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Principal>
+            <Dependent Role="BNE_Experiencia_Profissional">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABPFI_BNEFOR">
+          <End Role="TAB_Pessoa_Fisica" Type="Self.TAB_Pessoa_Fisica" Multiplicity="1" />
+          <End Role="BNE_Formacao" Type="Self.BNE_Formacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Pessoa_Fisica">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Principal>
+            <Dependent Role="BNE_Formacao">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABPFI_TABFLO">
+          <End Role="TAB_Filial" Type="Self.TAB_Filial" Multiplicity="1" />
+          <End Role="TAB_Filial_Logo" Type="Self.TAB_Filial_Logo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Filial">
+              <PropertyRef Name="Idf_Filial" />
+            </Principal>
+            <Dependent Role="TAB_Filial_Logo">
+              <PropertyRef Name="Idf_Filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABPFI_TABPFF">
+          <End Role="TAB_Pessoa_Fisica" Type="Self.TAB_Pessoa_Fisica" Multiplicity="1" />
+          <End Role="TAB_Pessoa_Fisica_Foto" Type="Self.TAB_Pessoa_Fisica_Foto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Pessoa_Fisica">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Principal>
+            <Dependent Role="TAB_Pessoa_Fisica_Foto">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABPFI_TABPFS">
+          <End Role="TAB_Pessoa_Fisica" Type="Self.TAB_Pessoa_Fisica" Multiplicity="1" />
+          <End Role="TAB_Pessoa_Fisica_Rede_Social" Type="Self.TAB_Pessoa_Fisica_Rede_Social" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Pessoa_Fisica">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Principal>
+            <Dependent Role="TAB_Pessoa_Fisica_Rede_Social">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABRME_TABRMC">
+          <End Role="TAB_Regiao_Metropolitana" Type="Self.TAB_Regiao_Metropolitana" Multiplicity="1" />
+          <End Role="TAB_Regiao_Metropolitana_Cidade" Type="Self.TAB_Regiao_Metropolitana_Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Regiao_Metropolitana">
+              <PropertyRef Name="Idf_Regiao_Metropolitana" />
+            </Principal>
+            <Dependent Role="TAB_Regiao_Metropolitana_Cidade">
+              <PropertyRef Name="Idf_Regiao_Metropolitana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="BUSCA_EMPRESA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="lan">
+          <Parameter Name="PaginaAtual" Type="int" Mode="In" />
+          <Parameter Name="QuantidadeRegistros" Type="int" Mode="In" />
+          <Parameter Name="Cidade" Type="int" Mode="In" />
+          <Parameter Name="SiglaEstado" Type="char" Mode="In" />
+          <Parameter Name="NomeEmpresa" Type="varchar" Mode="In" />
+          <Parameter Name="Curriculo" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="LANModelStoreContainer">
+          <EntitySet Name="BNE_Codigo_Desconto" EntityType="Self.BNE_Codigo_Desconto" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="BNE_Codigo_Desconto_Plano" EntityType="Self.BNE_Codigo_Desconto_Plano" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="BNE_Curriculo" EntityType="Self.BNE_Curriculo" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="BNE_Experiencia_Profissional" EntityType="Self.BNE_Experiencia_Profissional" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="BNE_Formacao" EntityType="Self.BNE_Formacao" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="BNE_Funcao_Erro_Sinonimo" EntityType="Self.BNE_Funcao_Erro_Sinonimo" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="BNE_Funcao_Pretendida" EntityType="Self.BNE_Funcao_Pretendida" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="BNE_Plano" EntityType="Self.BNE_Plano" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="TAB_Contato" EntityType="Self.TAB_Contato" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="TAB_Endereco" EntityType="Self.TAB_Endereco" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="TAB_Filial" EntityType="Self.TAB_Filial" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="TAB_Filial_Logo" EntityType="Self.TAB_Filial_Logo" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="TAB_Fonte" EntityType="Self.TAB_Fonte" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="TAB_Origem_Filial" EntityType="Self.TAB_Origem_Filial" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="TAB_Parametro_Filial" EntityType="Self.TAB_Parametro_Filial" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="TAB_Pessoa_Fisica" EntityType="Self.TAB_Pessoa_Fisica" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="TAB_Pessoa_Fisica_Foto" EntityType="Self.TAB_Pessoa_Fisica_Foto" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="TAB_Pessoa_Fisica_Rede_Social" EntityType="Self.TAB_Pessoa_Fisica_Rede_Social" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="TAB_Regiao_Metropolitana" EntityType="Self.TAB_Regiao_Metropolitana" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="TAB_Regiao_Metropolitana_Cidade" EntityType="Self.TAB_Regiao_Metropolitana_Cidade" Schema="BNE" store:Type="Tables" />
+          <EntitySet Name="LAN_Administrador" EntityType="Self.LAN_Administrador" Schema="lan" store:Type="Tables" />
+          <EntitySet Name="LAN_Companhia" EntityType="Self.LAN_Companhia" Schema="lan" store:Type="Tables" />
+          <EntitySet Name="LAN_Fase_Cadastro" EntityType="Self.LAN_Fase_Cadastro" Schema="lan" store:Type="Tables" />
+          <EntitySet Name="LAN_Oportunidade" EntityType="Self.LAN_Oportunidade" Schema="lan" store:Type="Tables" />
+          <EntitySet Name="LAN_Oportunidade_Cidade" EntityType="Self.LAN_Oportunidade_Cidade" Schema="lan" store:Type="Tables" />
+          <EntitySet Name="LAN_Oportunidade_Curriculo" EntityType="Self.LAN_Oportunidade_Curriculo" Schema="lan" store:Type="Tables" />
+          <EntitySet Name="LAN_Oportunidade_Curriculo_Historico" EntityType="Self.LAN_Oportunidade_Curriculo_Historico" Schema="lan" store:Type="Tables" />
+          <EntitySet Name="LAN_Perfil" EntityType="Self.LAN_Perfil" Schema="lan" store:Type="Tables" />
+          <EntitySet Name="LAN_Plano_Adquirido" EntityType="Self.LAN_Plano_Adquirido" Schema="lan" store:Type="Tables" />
+          <EntitySet Name="LAN_Plano_Situacao" EntityType="Self.LAN_Plano_Situacao" Schema="lan" store:Type="Tables" />
+          <EntitySet Name="TAB_Cidade" EntityType="Self.TAB_Cidade" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="TAB_Funcao" EntityType="Self.TAB_Funcao" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="TAB_Parametro" EntityType="Self.TAB_Parametro" Schema="plataforma" store:Type="Tables" />
+          <AssociationSet Name="FK_BNECDP_BNEPAN" Association="Self.FK_BNECDP_BNEPAN">
+            <End Role="BNE_Plano" EntitySet="BNE_Plano" />
+            <End Role="BNE_Codigo_Desconto_Plano" EntitySet="BNE_Codigo_Desconto_Plano" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BNECUR_BNEFPR" Association="Self.FK_BNECUR_BNEFPR">
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+            <End Role="BNE_Funcao_Pretendida" EntitySet="BNE_Funcao_Pretendida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BNETCI_BNECUR" Association="Self.FK_BNETCI_BNECUR">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Administrador_idf_Perfil_LAN_Administrador_idf_Perfil" Association="Self.FK_LAN_Administrador_idf_Perfil_LAN_Administrador_idf_Perfil">
+            <End Role="LAN_Perfil" EntitySet="LAN_Perfil" />
+            <End Role="LAN_Administrador" EntitySet="LAN_Administrador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Companhia_Idf_Filial_Tab_Filial_Idf_Filial" Association="Self.FK_LAN_Companhia_Idf_Filial_Tab_Filial_Idf_Filial">
+            <End Role="TAB_Filial" EntitySet="TAB_Filial" />
+            <End Role="LAN_Companhia" EntitySet="LAN_Companhia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Oportunidade_Cidade_Idf_cidade_Tab_Cidade_Idf_Cidade" Association="Self.FK_LAN_Oportunidade_Cidade_Idf_cidade_Tab_Cidade_Idf_Cidade">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="LAN_Oportunidade_Cidade" EntitySet="LAN_Oportunidade_Cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Oportunidade_Curriculo_Idf_Curriculo_BNE_Curriculo_Idf_Curriculo" Association="Self.FK_LAN_Oportunidade_Curriculo_Idf_Curriculo_BNE_Curriculo_Idf_Curriculo">
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+            <End Role="LAN_Oportunidade_Curriculo" EntitySet="LAN_Oportunidade_Curriculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Oportunidade_Curriculo_Idf_Fase_Cadastro_LAN_Fase_Cadastro_Idf_Fase_Cadastro" Association="Self.FK_LAN_Oportunidade_Curriculo_Idf_Fase_Cadastro_LAN_Fase_Cadastro_Idf_Fase_Cadastro">
+            <End Role="LAN_Fase_Cadastro" EntitySet="LAN_Fase_Cadastro" />
+            <End Role="LAN_Oportunidade_Curriculo" EntitySet="LAN_Oportunidade_Curriculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Oportunidade_Curriculo_Idf_Filial_Idf_Companhia_LAN_Oportunidade_Idf_Filial_Idf_Companhia" Association="Self.FK_LAN_Oportunidade_Curriculo_Idf_Filial_Idf_Companhia_LAN_Oportunidade_Idf_Filial_Idf_Companhia">
+            <End Role="LAN_Oportunidade" EntitySet="LAN_Oportunidade" />
+            <End Role="LAN_Oportunidade_Curriculo" EntitySet="LAN_Oportunidade_Curriculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Oportunidade_Filial_Companhia_LAN_Oportunidade_Filial_Companhia" Association="Self.FK_LAN_Oportunidade_Filial_Companhia_LAN_Oportunidade_Filial_Companhia">
+            <End Role="LAN_Oportunidade" EntitySet="LAN_Oportunidade" />
+            <End Role="LAN_Oportunidade_Cidade" EntitySet="LAN_Oportunidade_Cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Oportunidade_Idf_Companhia_LAN_Companhia_Idf_Compahia" Association="Self.FK_LAN_Oportunidade_Idf_Companhia_LAN_Companhia_Idf_Compahia">
+            <End Role="LAN_Companhia" EntitySet="LAN_Companhia" />
+            <End Role="LAN_Oportunidade" EntitySet="LAN_Oportunidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Oportunidade_Idf_Filial_Tab_Filial_Idf_Filial" Association="Self.FK_LAN_Oportunidade_Idf_Filial_Tab_Filial_Idf_Filial">
+            <End Role="TAB_Filial" EntitySet="TAB_Filial" />
+            <End Role="LAN_Oportunidade" EntitySet="LAN_Oportunidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Plano_Adquirido_Idf_Cod_Desconto_BNE_BNE_Codigo_Desconto_Idf_Codigo_Desconto" Association="Self.FK_LAN_Plano_Adquirido_Idf_Cod_Desconto_BNE_BNE_Codigo_Desconto_Idf_Codigo_Desconto">
+            <End Role="BNE_Codigo_Desconto" EntitySet="BNE_Codigo_Desconto" />
+            <End Role="LAN_Plano_Adquirido" EntitySet="LAN_Plano_Adquirido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Plano_Adquirido_Idf_Curriculo_bne_Curiculo_Idf_Curriculo" Association="Self.FK_LAN_Plano_Adquirido_Idf_Curriculo_bne_Curiculo_Idf_Curriculo">
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+            <End Role="LAN_Plano_Adquirido" EntitySet="LAN_Plano_Adquirido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Plano_Adquirido_Idf_Plano_Situacao_LAN_Plano_Situacao" Association="Self.FK_LAN_Plano_Adquirido_Idf_Plano_Situacao_LAN_Plano_Situacao">
+            <End Role="LAN_Plano_Situacao" EntitySet="LAN_Plano_Situacao" />
+            <End Role="LAN_Plano_Adquirido" EntitySet="LAN_Plano_Adquirido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABCDA_TABEND" Association="Self.FK_TABCDA_TABEND">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="TAB_Endereco" EntitySet="TAB_Endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABCID_BNECUR" Association="Self.FK_TABCID_BNECUR">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABCID_TABFOR" Association="Self.FK_TABCID_TABFOR">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="BNE_Formacao" EntitySet="BNE_Formacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABCID_TABPFI" Association="Self.FK_TABCID_TABPFI">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="TAB_Pessoa_Fisica" EntitySet="TAB_Pessoa_Fisica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABCID_TABRMC" Association="Self.FK_TABCID_TABRMC">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="TAB_Regiao_Metropolitana_Cidade" EntitySet="TAB_Regiao_Metropolitana_Cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABCID_TABRME" Association="Self.FK_TABCID_TABRME">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="TAB_Regiao_Metropolitana" EntitySet="TAB_Regiao_Metropolitana" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABEND_TABFIL" Association="Self.FK_TABEND_TABFIL">
+            <End Role="TAB_Endereco" EntitySet="TAB_Endereco" />
+            <End Role="TAB_Filial" EntitySet="TAB_Filial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABEND_TABPFI" Association="Self.FK_TABEND_TABPFI">
+            <End Role="TAB_Endereco" EntitySet="TAB_Endereco" />
+            <End Role="TAB_Pessoa_Fisica" EntitySet="TAB_Pessoa_Fisica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABFIL_TABOFI" Association="Self.FK_TABFIL_TABOFI">
+            <End Role="TAB_Filial" EntitySet="TAB_Filial" />
+            <End Role="TAB_Origem_Filial" EntitySet="TAB_Origem_Filial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABFON_BNEFOR" Association="Self.FK_TABFON_BNEFOR">
+            <End Role="TAB_Fonte" EntitySet="TAB_Fonte" />
+            <End Role="BNE_Formacao" EntitySet="BNE_Formacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABFUN_BNEEPR" Association="Self.FK_TABFUN_BNEEPR">
+            <End Role="TAB_Funcao" EntitySet="TAB_Funcao" />
+            <End Role="BNE_Experiencia_Profissional" EntitySet="BNE_Experiencia_Profissional" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABFUN_BNEFES" Association="Self.FK_TABFUN_BNEFES">
+            <End Role="TAB_Funcao" EntitySet="TAB_Funcao" />
+            <End Role="BNE_Funcao_Erro_Sinonimo" EntitySet="BNE_Funcao_Erro_Sinonimo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABFUN_BNEFPR" Association="Self.FK_TABFUN_BNEFPR">
+            <End Role="TAB_Funcao" EntitySet="TAB_Funcao" />
+            <End Role="BNE_Funcao_Pretendida" EntitySet="BNE_Funcao_Pretendida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABFUN_TABFUN" Association="Self.FK_TABFUN_TABFUN">
+            <End Role="TAB_Funcao" EntitySet="TAB_Funcao" />
+            <End Role="TAB_Funcao1" EntitySet="TAB_Funcao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABPFI_BNECUR" Association="Self.FK_TABPFI_BNECUR">
+            <End Role="TAB_Pessoa_Fisica" EntitySet="TAB_Pessoa_Fisica" />
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABPFI_BNEEPR" Association="Self.FK_TABPFI_BNEEPR">
+            <End Role="TAB_Pessoa_Fisica" EntitySet="TAB_Pessoa_Fisica" />
+            <End Role="BNE_Experiencia_Profissional" EntitySet="BNE_Experiencia_Profissional" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABPFI_BNEFOR" Association="Self.FK_TABPFI_BNEFOR">
+            <End Role="TAB_Pessoa_Fisica" EntitySet="TAB_Pessoa_Fisica" />
+            <End Role="BNE_Formacao" EntitySet="BNE_Formacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABPFI_TABFLO" Association="Self.FK_TABPFI_TABFLO">
+            <End Role="TAB_Filial" EntitySet="TAB_Filial" />
+            <End Role="TAB_Filial_Logo" EntitySet="TAB_Filial_Logo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABPFI_TABPFF" Association="Self.FK_TABPFI_TABPFF">
+            <End Role="TAB_Pessoa_Fisica" EntitySet="TAB_Pessoa_Fisica" />
+            <End Role="TAB_Pessoa_Fisica_Foto" EntitySet="TAB_Pessoa_Fisica_Foto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABPFI_TABPFS" Association="Self.FK_TABPFI_TABPFS">
+            <End Role="TAB_Pessoa_Fisica" EntitySet="TAB_Pessoa_Fisica" />
+            <End Role="TAB_Pessoa_Fisica_Rede_Social" EntitySet="TAB_Pessoa_Fisica_Rede_Social" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABRME_TABRMC" Association="Self.FK_TABRME_TABRMC">
+            <End Role="TAB_Regiao_Metropolitana" EntitySet="TAB_Regiao_Metropolitana" />
+            <End Role="TAB_Regiao_Metropolitana_Cidade" EntitySet="TAB_Regiao_Metropolitana_Cidade" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LANModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LanEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="BNE_Codigo_Desconto" EntityType="LANModel.BNE_Codigo_Desconto" />
+          <EntitySet Name="BNE_Codigo_Desconto_Plano" EntityType="LANModel.BNE_Codigo_Desconto_Plano" />
+          <EntitySet Name="BNE_Curriculo" EntityType="LANModel.BNE_Curriculo" />
+          <EntitySet Name="BNE_Experiencia_Profissional" EntityType="LANModel.BNE_Experiencia_Profissional" />
+          <EntitySet Name="BNE_Formacao" EntityType="LANModel.BNE_Formacao" />
+          <EntitySet Name="BNE_Funcao_Erro_Sinonimo" EntityType="LANModel.BNE_Funcao_Erro_Sinonimo" />
+          <EntitySet Name="BNE_Funcao_Pretendida" EntityType="LANModel.BNE_Funcao_Pretendida" />
+          <EntitySet Name="BNE_Plano" EntityType="LANModel.BNE_Plano" />
+          <EntitySet Name="TAB_Contato" EntityType="LANModel.TAB_Contato" />
+          <EntitySet Name="TAB_Filial" EntityType="LANModel.TAB_Filial" />
+          <EntitySet Name="TAB_Fonte" EntityType="LANModel.TAB_Fonte" />
+          <EntitySet Name="TAB_Origem_Filial" EntityType="LANModel.TAB_Origem_Filial" />
+          <EntitySet Name="TAB_Pessoa_Fisica" EntityType="LANModel.TAB_Pessoa_Fisica" />
+          <EntitySet Name="TAB_Cidade" EntityType="LANModel.TAB_Cidade" />
+          <EntitySet Name="TAB_Funcao" EntityType="LANModel.TAB_Funcao" />
+          <EntitySet Name="TAB_Parametro" EntityType="LANModel.TAB_Parametro" />
+          <AssociationSet Name="FK_BNECDP_BNEPAN" Association="LANModel.FK_BNECDP_BNEPAN">
+            <End Role="BNE_Plano" EntitySet="BNE_Plano" />
+            <End Role="BNE_Codigo_Desconto_Plano" EntitySet="BNE_Codigo_Desconto_Plano" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BNECUR_BNEFPR" Association="LANModel.FK_BNECUR_BNEFPR">
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+            <End Role="BNE_Funcao_Pretendida" EntitySet="BNE_Funcao_Pretendida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BNETCI_BNECUR" Association="LANModel.FK_BNETCI_BNECUR">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABCID_BNECUR" Association="LANModel.FK_TABCID_BNECUR">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABPFI_BNECUR" Association="LANModel.FK_TABPFI_BNECUR">
+            <End Role="TAB_Pessoa_Fisica" EntitySet="TAB_Pessoa_Fisica" />
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABFUN_BNEEPR" Association="LANModel.FK_TABFUN_BNEEPR">
+            <End Role="TAB_Funcao" EntitySet="TAB_Funcao" />
+            <End Role="BNE_Experiencia_Profissional" EntitySet="BNE_Experiencia_Profissional" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABPFI_BNEEPR" Association="LANModel.FK_TABPFI_BNEEPR">
+            <End Role="TAB_Pessoa_Fisica" EntitySet="TAB_Pessoa_Fisica" />
+            <End Role="BNE_Experiencia_Profissional" EntitySet="BNE_Experiencia_Profissional" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABCID_TABFOR" Association="LANModel.FK_TABCID_TABFOR">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="BNE_Formacao" EntitySet="BNE_Formacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABFON_BNEFOR" Association="LANModel.FK_TABFON_BNEFOR">
+            <End Role="TAB_Fonte" EntitySet="TAB_Fonte" />
+            <End Role="BNE_Formacao" EntitySet="BNE_Formacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABPFI_BNEFOR" Association="LANModel.FK_TABPFI_BNEFOR">
+            <End Role="TAB_Pessoa_Fisica" EntitySet="TAB_Pessoa_Fisica" />
+            <End Role="BNE_Formacao" EntitySet="BNE_Formacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABFUN_BNEFES" Association="LANModel.FK_TABFUN_BNEFES">
+            <End Role="TAB_Funcao" EntitySet="TAB_Funcao" />
+            <End Role="BNE_Funcao_Erro_Sinonimo" EntitySet="BNE_Funcao_Erro_Sinonimo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABFUN_BNEFPR" Association="LANModel.FK_TABFUN_BNEFPR">
+            <End Role="TAB_Funcao" EntitySet="TAB_Funcao" />
+            <End Role="BNE_Funcao_Pretendida" EntitySet="BNE_Funcao_Pretendida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABFIL_TABOFI" Association="LANModel.FK_TABFIL_TABOFI">
+            <End Role="TAB_Filial" EntitySet="TAB_Filial" />
+            <End Role="TAB_Origem_Filial" EntitySet="TAB_Origem_Filial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABCID_TABPFI" Association="LANModel.FK_TABCID_TABPFI">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="TAB_Pessoa_Fisica" EntitySet="TAB_Pessoa_Fisica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABFUN_TABFUN" Association="LANModel.FK_TABFUN_TABFUN">
+            <End Role="TAB_Funcao" EntitySet="TAB_Funcao" />
+            <End Role="TAB_Funcao1" EntitySet="TAB_Funcao" />
+          </AssociationSet>
+          <EntitySet Name="TAB_Pessoa_Fisica_Rede_Social" EntityType="LANModel.TAB_Pessoa_Fisica_Rede_Social" />
+          <AssociationSet Name="FK_TABPFI_TABPFS" Association="LANModel.FK_TABPFI_TABPFS">
+            <End Role="TAB_Pessoa_Fisica" EntitySet="TAB_Pessoa_Fisica" />
+            <End Role="TAB_Pessoa_Fisica_Rede_Social" EntitySet="TAB_Pessoa_Fisica_Rede_Social" />
+          </AssociationSet>
+          <EntitySet Name="TAB_Endereco" EntityType="LANModel.TAB_Endereco" />
+          <AssociationSet Name="FK_TABCDA_TABEND" Association="LANModel.FK_TABCDA_TABEND">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="TAB_Endereco" EntitySet="TAB_Endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABEND_TABFIL" Association="LANModel.FK_TABEND_TABFIL">
+            <End Role="TAB_Endereco" EntitySet="TAB_Endereco" />
+            <End Role="TAB_Filial" EntitySet="TAB_Filial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABEND_TABPFI" Association="LANModel.FK_TABEND_TABPFI">
+            <End Role="TAB_Endereco" EntitySet="TAB_Endereco" />
+            <End Role="TAB_Pessoa_Fisica" EntitySet="TAB_Pessoa_Fisica" />
+          </AssociationSet>
+          <EntitySet Name="TAB_Pessoa_Fisica_Foto" EntityType="LANModel.TAB_Pessoa_Fisica_Foto" />
+          <AssociationSet Name="FK_TABPFI_TABPFF" Association="LANModel.FK_TABPFI_TABPFF">
+            <End Role="TAB_Pessoa_Fisica" EntitySet="TAB_Pessoa_Fisica" />
+            <End Role="TAB_Pessoa_Fisica_Foto" EntitySet="TAB_Pessoa_Fisica_Foto" />
+          </AssociationSet>
+          <EntitySet Name="LAN_Administrador" EntityType="LANModel.LAN_Administrador" />
+          <EntitySet Name="LAN_Companhia" EntityType="LANModel.LAN_Companhia" />
+          <EntitySet Name="LAN_Fase_Cadastro" EntityType="LANModel.LAN_Fase_Cadastro" />
+          <EntitySet Name="LAN_Oportunidade" EntityType="LANModel.LAN_Oportunidade" />
+          <EntitySet Name="LAN_Oportunidade_Cidade" EntityType="LANModel.LAN_Oportunidade_Cidade" />
+          <EntitySet Name="LAN_Oportunidade_Curriculo_Historico" EntityType="LANModel.LAN_Oportunidade_Curriculo_Historico" />
+          <EntitySet Name="LAN_Perfil" EntityType="LANModel.LAN_Perfil" />
+          <EntitySet Name="LAN_Plano_Adquirido" EntityType="LANModel.LAN_Plano_Adquirido" />
+          <EntitySet Name="LAN_Plano_Situacao" EntityType="LANModel.LAN_Plano_Situacao" />
+          <AssociationSet Name="FK_LAN_Plano_Adquirido_Idf_Cod_Desconto_BNE_BNE_Codigo_Desconto_Idf_Codigo_Desconto" Association="LANModel.FK_LAN_Plano_Adquirido_Idf_Cod_Desconto_BNE_BNE_Codigo_Desconto_Idf_Codigo_Desconto">
+            <End Role="BNE_Codigo_Desconto" EntitySet="BNE_Codigo_Desconto" />
+            <End Role="LAN_Plano_Adquirido" EntitySet="LAN_Plano_Adquirido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Plano_Adquirido_Idf_Curriculo_bne_Curiculo_Idf_Curriculo" Association="LANModel.FK_LAN_Plano_Adquirido_Idf_Curriculo_bne_Curiculo_Idf_Curriculo">
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+            <End Role="LAN_Plano_Adquirido" EntitySet="LAN_Plano_Adquirido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Companhia_Idf_Filial_Tab_Filial_Idf_Filial" Association="LANModel.FK_LAN_Companhia_Idf_Filial_Tab_Filial_Idf_Filial">
+            <End Role="TAB_Filial" EntitySet="TAB_Filial" />
+            <End Role="LAN_Companhia" EntitySet="LAN_Companhia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Oportunidade_Idf_Filial_Tab_Filial_Idf_Filial" Association="LANModel.FK_LAN_Oportunidade_Idf_Filial_Tab_Filial_Idf_Filial">
+            <End Role="TAB_Filial" EntitySet="TAB_Filial" />
+            <End Role="LAN_Oportunidade" EntitySet="LAN_Oportunidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Administrador_idf_Perfil_LAN_Administrador_idf_Perfil" Association="LANModel.FK_LAN_Administrador_idf_Perfil_LAN_Administrador_idf_Perfil">
+            <End Role="LAN_Perfil" EntitySet="LAN_Perfil" />
+            <End Role="LAN_Administrador" EntitySet="LAN_Administrador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Oportunidade_Idf_Companhia_LAN_Companhia_Idf_Compahia" Association="LANModel.FK_LAN_Oportunidade_Idf_Companhia_LAN_Companhia_Idf_Compahia">
+            <End Role="LAN_Companhia" EntitySet="LAN_Companhia" />
+            <End Role="LAN_Oportunidade" EntitySet="LAN_Oportunidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Oportunidade_Filial_Companhia_LAN_Oportunidade_Filial_Companhia" Association="LANModel.FK_LAN_Oportunidade_Filial_Companhia_LAN_Oportunidade_Filial_Companhia">
+            <End Role="LAN_Oportunidade" EntitySet="LAN_Oportunidade" />
+            <End Role="LAN_Oportunidade_Cidade" EntitySet="LAN_Oportunidade_Cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Oportunidade_Cidade_Idf_cidade_Tab_Cidade_Idf_Cidade" Association="LANModel.FK_LAN_Oportunidade_Cidade_Idf_cidade_Tab_Cidade_Idf_Cidade">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="LAN_Oportunidade_Cidade" EntitySet="LAN_Oportunidade_Cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Plano_Adquirido_Idf_Plano_Situacao_LAN_Plano_Situacao" Association="LANModel.FK_LAN_Plano_Adquirido_Idf_Plano_Situacao_LAN_Plano_Situacao">
+            <End Role="LAN_Plano_Situacao" EntitySet="LAN_Plano_Situacao" />
+            <End Role="LAN_Plano_Adquirido" EntitySet="LAN_Plano_Adquirido" />
+          </AssociationSet>
+          <EntitySet Name="LAN_Oportunidade_Curriculo" EntityType="LANModel.LAN_Oportunidade_Curriculo" />
+          <AssociationSet Name="FK_LAN_Oportunidade_Curriculo_Idf_Curriculo_BNE_Curriculo_Idf_Curriculo" Association="LANModel.FK_LAN_Oportunidade_Curriculo_Idf_Curriculo_BNE_Curriculo_Idf_Curriculo">
+            <End Role="BNE_Curriculo" EntitySet="BNE_Curriculo" />
+            <End Role="LAN_Oportunidade_Curriculo" EntitySet="LAN_Oportunidade_Curriculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Oportunidade_Curriculo_Idf_Fase_Cadastro_LAN_Fase_Cadastro_Idf_Fase_Cadastro" Association="LANModel.FK_LAN_Oportunidade_Curriculo_Idf_Fase_Cadastro_LAN_Fase_Cadastro_Idf_Fase_Cadastro">
+            <End Role="LAN_Fase_Cadastro" EntitySet="LAN_Fase_Cadastro" />
+            <End Role="LAN_Oportunidade_Curriculo" EntitySet="LAN_Oportunidade_Curriculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LAN_Oportunidade_Curriculo_Idf_Filial_Idf_Companhia_LAN_Oportunidade_Idf_Filial_Idf_Companhia" Association="LANModel.FK_LAN_Oportunidade_Curriculo_Idf_Filial_Idf_Companhia_LAN_Oportunidade_Idf_Filial_Idf_Companhia">
+            <End Role="LAN_Oportunidade" EntitySet="LAN_Oportunidade" />
+            <End Role="LAN_Oportunidade_Curriculo" EntitySet="LAN_Oportunidade_Curriculo" />
+          </AssociationSet>
+          <EntitySet Name="TAB_Filial_Logo" EntityType="LANModel.TAB_Filial_Logo" />
+          <AssociationSet Name="FK_TABPFI_TABFLO" Association="LANModel.FK_TABPFI_TABFLO">
+            <End Role="TAB_Filial" EntitySet="TAB_Filial" />
+            <End Role="TAB_Filial_Logo" EntitySet="TAB_Filial_Logo" />
+          </AssociationSet>
+          <EntitySet Name="TAB_Parametro_Filial" EntityType="LANModel.TAB_Parametro_Filial" />
+          <EntitySet Name="TAB_Regiao_Metropolitana" EntityType="LANModel.TAB_Regiao_Metropolitana" />
+          <EntitySet Name="TAB_Regiao_Metropolitana_Cidade" EntityType="LANModel.TAB_Regiao_Metropolitana_Cidade" />
+          <AssociationSet Name="FK_TABCID_TABRME" Association="LANModel.FK_TABCID_TABRME">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="TAB_Regiao_Metropolitana" EntitySet="TAB_Regiao_Metropolitana" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABRME_TABRMC" Association="LANModel.FK_TABRME_TABRMC">
+            <End Role="TAB_Regiao_Metropolitana" EntitySet="TAB_Regiao_Metropolitana" />
+            <End Role="TAB_Regiao_Metropolitana_Cidade" EntitySet="TAB_Regiao_Metropolitana_Cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TABCID_TABRMC" Association="LANModel.FK_TABCID_TABRMC">
+            <End Role="TAB_Cidade" EntitySet="TAB_Cidade" />
+            <End Role="TAB_Regiao_Metropolitana_Cidade" EntitySet="TAB_Regiao_Metropolitana_Cidade" />
+          </AssociationSet>
+          <FunctionImport Name="BUSCA_EMPRESA" ReturnType="Collection(LANModel.BUSCA_EMPRESA_RETORNO)">
+            <Parameter Name="PaginaAtual" Mode="In" Type="Int32" />
+            <Parameter Name="QuantidadeRegistros" Mode="In" Type="Int32" />
+            <Parameter Name="Cidade" Mode="In" Type="Int32" />
+            <Parameter Name="SiglaEstado" Mode="In" Type="String" />
+            <Parameter Name="NomeEmpresa" Mode="In" Type="String" />
+            <Parameter Name="Curriculo" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="BNE_Codigo_Desconto">
+          <Key>
+            <PropertyRef Name="Idf_Codigo_Desconto" />
+          </Key>
+          <Property Name="Idf_Codigo_Desconto" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Des_Codigo_Desconto" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Idf_Status_Codigo_Desconto" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Parceiro" Type="Int32" />
+          <Property Name="Idf_Tipo_Codigo_Desconto" Type="Int32" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dta_Alteracao" Type="DateTime" Precision="3" />
+          <Property Name="Dta_Utilizacao" Type="DateTime" Precision="3" />
+          <Property Name="Dta_Validade_Inicio" Type="DateTime" Precision="3" />
+          <Property Name="Dta_Validade_Fim" Type="DateTime" Precision="3" />
+          <Property Name="Des_Identificacao_Codigo" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="LAN_Plano_Adquirido" Relationship="LANModel.FK_LAN_Plano_Adquirido_Idf_Cod_Desconto_BNE_BNE_Codigo_Desconto_Idf_Codigo_Desconto" FromRole="BNE_Codigo_Desconto" ToRole="LAN_Plano_Adquirido" />
+          <Property Name="Idf_Usuario_Filial_Perfil" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BNE_Codigo_Desconto_Plano">
+          <Key>
+            <PropertyRef Name="Idf_Tipo_Codigo_Desconto" />
+            <PropertyRef Name="Idf_Plano" />
+          </Key>
+          <Property Name="Idf_Tipo_Codigo_Desconto" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Plano" Type="Int32" Nullable="false" />
+          <Property Name="Num_Percentual_Desconto" Type="Int32" />
+          <Property Name="Qtd_SMS" Type="Int32" />
+          <NavigationProperty Name="BNE_Plano" Relationship="LANModel.FK_BNECDP_BNEPAN" FromRole="BNE_Codigo_Desconto_Plano" ToRole="BNE_Plano" />
+        </EntityType>
+        <EntityType Name="BNE_Curriculo">
+          <Key>
+            <PropertyRef Name="Idf_Curriculo" />
+          </Key>
+          <Property Name="Idf_Curriculo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Idf_Pessoa_Fisica" Type="Int32" Nullable="false" />
+          <Property Name="Vlr_Pretensao_Salarial" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Idf_Tipo_Curriculo" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Situacao_Curriculo" Type="Int32" Nullable="false" />
+          <Property Name="Des_Mini_Curriculo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dta_Atualizacao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_Manha" Type="Boolean" />
+          <Property Name="Flg_Tarde" Type="Boolean" />
+          <Property Name="Flg_Noite" Type="Boolean" />
+          <Property Name="Obs_Curriculo" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="Des_Analise" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="Des_Sugestao_Carreira" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="Des_Cursos_Oferecidos" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Vlr_Ultimo_Salario" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="Des_IP" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="true" />
+          <Property Name="Idf_Cidade_Pretendida" Type="Int32" />
+          <Property Name="Flg_Final_Semana" Type="Boolean" />
+          <Property Name="Flg_VIP" Type="Boolean" Nullable="false" />
+          <Property Name="Flg_Boas_Vindas" Type="Boolean" />
+          <Property Name="Flg_MSN" Type="Boolean" Nullable="false" />
+          <Property Name="Idf_Cidade_Endereco" Type="Int32" />
+          <Property Name="Des_Localizacao" Type="Geography" />
+          <Property Name="Dta_Modificacao_CV" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="BNE_Funcao_Pretendida" Relationship="LANModel.FK_BNECUR_BNEFPR" FromRole="BNE_Curriculo" ToRole="BNE_Funcao_Pretendida" />
+          <NavigationProperty Name="TAB_Cidade_Pretendida" Relationship="LANModel.FK_BNETCI_BNECUR" FromRole="BNE_Curriculo" ToRole="TAB_Cidade" />
+          <NavigationProperty Name="TAB_Cidade_Endereco" Relationship="LANModel.FK_TABCID_BNECUR" FromRole="BNE_Curriculo" ToRole="TAB_Cidade" />
+          <NavigationProperty Name="TAB_Pessoa_Fisica" Relationship="LANModel.FK_TABPFI_BNECUR" FromRole="BNE_Curriculo" ToRole="TAB_Pessoa_Fisica" />
+          <NavigationProperty Name="LAN_Plano_Adquirido" Relationship="LANModel.FK_LAN_Plano_Adquirido_Idf_Curriculo_bne_Curiculo_Idf_Curriculo" FromRole="BNE_Curriculo" ToRole="LAN_Plano_Adquirido" />
+          <NavigationProperty Name="LAN_Oportunidade_Curriculo" Relationship="LANModel.FK_LAN_Oportunidade_Curriculo_Idf_Curriculo_BNE_Curriculo_Idf_Curriculo" FromRole="BNE_Curriculo" ToRole="LAN_Oportunidade_Curriculo" />
+        </EntityType>
+        <EntityType Name="BNE_Experiencia_Profissional">
+          <Key>
+            <PropertyRef Name="Idf_Experiencia_Profissional" />
+          </Key>
+          <Property Name="Idf_Area_BNE" Type="Int32" />
+          <Property Name="Idf_Pessoa_Fisica" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Experiencia_Profissional" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Raz_Social" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Des_Funcao_Exercida" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Idf_Funcao" Type="Int32" />
+          <Property Name="Dta_Admissao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dta_Demissao" Type="DateTime" Precision="3" />
+          <Property Name="Des_Atividade" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_Importado" Type="Boolean" />
+          <NavigationProperty Name="TAB_Funcao" Relationship="LANModel.FK_TABFUN_BNEEPR" FromRole="BNE_Experiencia_Profissional" ToRole="TAB_Funcao" />
+          <NavigationProperty Name="TAB_Pessoa_Fisica" Relationship="LANModel.FK_TABPFI_BNEEPR" FromRole="BNE_Experiencia_Profissional" ToRole="TAB_Pessoa_Fisica" />
+        </EntityType>
+        <EntityType Name="BNE_Formacao">
+          <Key>
+            <PropertyRef Name="Idf_Formacao" />
+          </Key>
+          <Property Name="Idf_Pessoa_Fisica" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Formacao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Idf_Escolaridade" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Curso" Type="Int32" />
+          <Property Name="Idf_Fonte" Type="Int32" />
+          <Property Name="Ano_Conclusao" Type="Int16" />
+          <Property Name="Qtd_Carga_Horaria" Type="Int16" />
+          <Property Name="Num_Periodo" Type="Int16" />
+          <Property Name="Idf_Situacao_Formacao" Type="Int16" />
+          <Property Name="Dta_Alteracao" Type="DateTime" Precision="3" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Flg_Nacional" Type="Boolean" Nullable="false" />
+          <Property Name="Des_Endereco" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="Des_Curso" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Idf_Cidade" Type="Int32" />
+          <Property Name="Des_Fonte" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="TAB_Cidade" Relationship="LANModel.FK_TABCID_TABFOR" FromRole="BNE_Formacao" ToRole="TAB_Cidade" />
+          <NavigationProperty Name="TAB_Fonte" Relationship="LANModel.FK_TABFON_BNEFOR" FromRole="BNE_Formacao" ToRole="TAB_Fonte" />
+          <NavigationProperty Name="TAB_Pessoa_Fisica" Relationship="LANModel.FK_TABPFI_BNEFOR" FromRole="BNE_Formacao" ToRole="TAB_Pessoa_Fisica" />
+        </EntityType>
+        <EntityType Name="BNE_Funcao_Erro_Sinonimo">
+          <Key>
+            <PropertyRef Name="Idf_Funcao_Erro_Sinonimo" />
+          </Key>
+          <Property Name="Idf_Funcao_Erro_Sinonimo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Des_Funcao_Erro_Sinonimo" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Flg_Erro" Type="Boolean" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Idf_Funcao" Type="Int32" />
+          <NavigationProperty Name="TAB_Funcao" Relationship="LANModel.FK_TABFUN_BNEFES" FromRole="BNE_Funcao_Erro_Sinonimo" ToRole="TAB_Funcao" />
+        </EntityType>
+        <EntityType Name="BNE_Funcao_Pretendida">
+          <Key>
+            <PropertyRef Name="Idf_Funcao_Pretendida" />
+          </Key>
+          <Property Name="Idf_Curriculo" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Funcao_Pretendida" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Idf_Funcao" Type="Int32" />
+          <Property Name="Qtd_Experiencia" Type="Int32" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Des_Funcao_Pretendida" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="BNE_Curriculo" Relationship="LANModel.FK_BNECUR_BNEFPR" FromRole="BNE_Funcao_Pretendida" ToRole="BNE_Curriculo" />
+          <NavigationProperty Name="TAB_Funcao" Relationship="LANModel.FK_TABFUN_BNEFPR" FromRole="BNE_Funcao_Pretendida" ToRole="TAB_Funcao" />
+        </EntityType>
+        <EntityType Name="BNE_Plano">
+          <Key>
+            <PropertyRef Name="Idf_Plano" />
+          </Key>
+          <Property Name="Idf_Plano" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Des_Plano" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Qtd_Dias_Validade" Type="Int32" Nullable="false" />
+          <Property Name="Qtd_SMS" Type="Int32" Nullable="false" />
+          <Property Name="Qtd_Visualizacao" Type="Int32" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Vlr_Base" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Dta_Inicio" Type="DateTime" Precision="3" />
+          <Property Name="Dta_Final" Type="DateTime" Precision="3" />
+          <Property Name="Idf_Plano_Tipo" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Plano_Forma_Pagamento" Type="Int32" Nullable="false" />
+          <Property Name="Qtd_Parcela" Type="Int32" Nullable="false" />
+          <Property Name="Vlr_Desconto_Maximo" Type="Int32" Nullable="false" />
+          <Property Name="Qtd_SMS_Maxima" Type="Int32" />
+          <Property Name="Vlr_Base_Minimo" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Qtd_Prazo_Boleto_Maxima" Type="Int32" />
+          <NavigationProperty Name="BNE_Codigo_Desconto_Plano" Relationship="LANModel.FK_BNECDP_BNEPAN" FromRole="BNE_Plano" ToRole="BNE_Codigo_Desconto_Plano" />
+          <Property Name="Flg_Boleto_Registrado" Type="Boolean" Nullable="false" />
+          <Property Name="idf_Tipo_Contrato" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TAB_Contato">
+          <Key>
+            <PropertyRef Name="Idf_Contato" />
+          </Key>
+          <Property Name="Idf_Pessoa_Fisica" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Contato" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nme_Contato" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Tip_Contato" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Num_DDD_Celular" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Num_Celular" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="Num_DDD_Telefone" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Num_Telefone" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="Num_Ramal_Telefone" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="Num_DDD_Fax" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Num_Fax" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="Eml_Contato" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dta_Alteracao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_Importado" Type="Boolean" Nullable="false" />
+          <Property Name="Idf_Tipo_Contato" Type="Int32" />
+          <Property Name="Idf_Operadora_Celular" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TAB_Filial">
+          <Key>
+            <PropertyRef Name="Idf_Filial" />
+          </Key>
+          <Property Name="Idf_Filial" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Flg_Matriz" Type="Boolean" Nullable="false" />
+          <Property Name="Num_CNPJ" Type="Decimal" Precision="14" Scale="0" />
+          <Property Name="Raz_Social" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Nme_Fantasia" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Idf_CNAE_Principal" Type="Int32" />
+          <Property Name="Idf_Natureza_Juridica" Type="Int32" />
+          <Property Name="Idf_Endereco" Type="Int32" Nullable="false" />
+          <Property Name="End_Site" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Num_DDD_Comercial" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Num_Comercial" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dta_Alteracao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Des_Localizacao" Type="Geography" />
+          <Property Name="Qtd_Funcionarios" Type="Int32" Nullable="false" />
+          <Property Name="Des_IP" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="true" />
+          <Property Name="Flg_Oferece_Cursos" Type="Boolean" Nullable="false" />
+          <Property Name="Idf_Situacao_Filial" Type="Int32" Nullable="false" />
+          <Property Name="Des_Pagina_Facebook" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Qtd_Usuario_Adicional" Type="Int32" />
+          <Property Name="Idf_Tipo_Parceiro" Type="Int32" />
+          <NavigationProperty Name="TAB_Origem_Filial" Relationship="LANModel.FK_TABFIL_TABOFI" FromRole="TAB_Filial" ToRole="TAB_Origem_Filial" />
+          <NavigationProperty Name="TAB_Endereco" Relationship="LANModel.FK_TABEND_TABFIL" FromRole="TAB_Filial" ToRole="TAB_Endereco" />
+          <NavigationProperty Name="LAN_Companhia" Relationship="LANModel.FK_LAN_Companhia_Idf_Filial_Tab_Filial_Idf_Filial" FromRole="TAB_Filial" ToRole="LAN_Companhia" />
+          <NavigationProperty Name="LAN_Oportunidade" Relationship="LANModel.FK_LAN_Oportunidade_Idf_Filial_Tab_Filial_Idf_Filial" FromRole="TAB_Filial" ToRole="LAN_Oportunidade" />
+          <NavigationProperty Name="TAB_Filial_Logo" Relationship="LANModel.FK_TABPFI_TABFLO" FromRole="TAB_Filial" ToRole="TAB_Filial_Logo" />
+        </EntityType>
+        <EntityType Name="TAB_Fonte">
+          <Key>
+            <PropertyRef Name="Idf_Fonte" />
+          </Key>
+          <Property Name="Idf_Fonte" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Sig_Fonte" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Nme_Fonte" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Flg_Auditada" Type="Boolean" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_MEC" Type="Boolean" Nullable="false" />
+          <Property Name="Num_cnpj" Type="Decimal" Nullable="false" Precision="14" Scale="0" />
+          <NavigationProperty Name="BNE_Formacao" Relationship="LANModel.FK_TABFON_BNEFOR" FromRole="TAB_Fonte" ToRole="BNE_Formacao" />
+        </EntityType>
+        <EntityType Name="TAB_Origem_Filial">
+          <Key>
+            <PropertyRef Name="Idf_Origem_Filial" />
+          </Key>
+          <Property Name="Idf_Filial" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Origem_Filial" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Idf_Origem" Type="Int32" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dta_Alteracao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Des_IP" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Flg_Curriculo_Publico" Type="Boolean" Nullable="false" />
+          <Property Name="Des_Diretorio" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Img_Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Idf_Template" Type="Int32" />
+          <Property Name="Des_Mensagem_Candidato" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Des_Pagina_Inicial" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Flg_Todas_Funcoes" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TAB_Filial" Relationship="LANModel.FK_TABFIL_TABOFI" FromRole="TAB_Origem_Filial" ToRole="TAB_Filial" />
+        </EntityType>
+        <EntityType Name="TAB_Pessoa_Fisica">
+          <Key>
+            <PropertyRef Name="Idf_Pessoa_Fisica" />
+          </Key>
+          <Property Name="Idf_Pessoa_Fisica" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Num_CPF" Type="Decimal" Nullable="false" Precision="11" Scale="0" />
+          <Property Name="Nme_Pessoa" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Ape_Pessoa" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Idf_Sexo" Type="Int32" />
+          <Property Name="Idf_Nacionalidade" Type="Int32" />
+          <Property Name="Idf_Cidade" Type="Int32" />
+          <Property Name="Dta_Chegada_Brasil" Type="DateTime" Precision="3" />
+          <Property Name="Dta_Nascimento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Nme_Mae" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Nme_Pai" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Num_RG" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Dta_Expedicao_RG" Type="DateTime" Precision="3" />
+          <Property Name="Nme_Orgao_Emissor" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Sig_UF_Emissao_RG" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Num_PIS" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="Num_CTPS" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Des_Serie_CTPS" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="Sig_UF_CTPS" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Idf_Raca" Type="Int32" />
+          <Property Name="Idf_Deficiencia" Type="Int32" />
+          <Property Name="Idf_Endereco" Type="Int32" />
+          <Property Name="Num_DDD_Telefone" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Num_Telefone" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="Num_DDD_Celular" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Num_Celular" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="Eml_Pessoa" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Flg_Possui_Dependentes" Type="Boolean" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dta_Alteracao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_Importado" Type="Boolean" />
+          <Property Name="Idf_Escolaridade" Type="Int32" />
+          <Property Name="Nme_Pessoa_Pesquisa" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Idf_Estado_Civil" Type="Int32" />
+          <Property Name="Sig_Estado" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Flg_Inativo" Type="Boolean" />
+          <Property Name="Des_IP" Type="String" MaxLength="15" Unicode="false" FixedLength="true" />
+          <Property Name="Idf_Operadora_Celular" Type="Int32" />
+          <Property Name="Idf_Email_Situacao_Confirmacao" Type="Int32" />
+          <Property Name="Idf_Email_Situacao_Validacao" Type="Int32" />
+          <Property Name="Idf_Email_Situacao_Bloqueio" Type="Int32" />
+          <NavigationProperty Name="BNE_Curriculo" Relationship="LANModel.FK_TABPFI_BNECUR" FromRole="TAB_Pessoa_Fisica" ToRole="BNE_Curriculo" />
+          <NavigationProperty Name="BNE_Experiencia_Profissional" Relationship="LANModel.FK_TABPFI_BNEEPR" FromRole="TAB_Pessoa_Fisica" ToRole="BNE_Experiencia_Profissional" />
+          <NavigationProperty Name="BNE_Formacao" Relationship="LANModel.FK_TABPFI_BNEFOR" FromRole="TAB_Pessoa_Fisica" ToRole="BNE_Formacao" />
+          <NavigationProperty Name="TAB_Cidade" Relationship="LANModel.FK_TABCID_TABPFI" FromRole="TAB_Pessoa_Fisica" ToRole="TAB_Cidade" />
+          <NavigationProperty Name="TAB_Pessoa_Fisica_Rede_Social" Relationship="LANModel.FK_TABPFI_TABPFS" FromRole="TAB_Pessoa_Fisica" ToRole="TAB_Pessoa_Fisica_Rede_Social" />
+          <NavigationProperty Name="TAB_Endereco" Relationship="LANModel.FK_TABEND_TABPFI" FromRole="TAB_Pessoa_Fisica" ToRole="TAB_Endereco" />
+          <NavigationProperty Name="TAB_Pessoa_Fisica_Foto" Relationship="LANModel.FK_TABPFI_TABPFF" FromRole="TAB_Pessoa_Fisica" ToRole="TAB_Pessoa_Fisica_Foto" />
+        </EntityType>
+        <EntityType Name="TAB_Cidade">
+          <Key>
+            <PropertyRef Name="Idf_Cidade" />
+          </Key>
+          <Property Name="Idf_Cidade" Type="Int32" Nullable="false" />
+          <Property Name="Nme_Cidade" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sig_Estado" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Txa_ISS" Type="Double" Nullable="false" />
+          <Property Name="Idf_Tipo_Base" Type="Int32" />
+          <Property Name="Cod_Rais" Type="Decimal" Precision="7" Scale="0" />
+          <NavigationProperty Name="BNE_Curriculo" Relationship="LANModel.FK_BNETCI_BNECUR" FromRole="TAB_Cidade" ToRole="BNE_Curriculo" />
+          <NavigationProperty Name="BNE_Curriculo1" Relationship="LANModel.FK_TABCID_BNECUR" FromRole="TAB_Cidade" ToRole="BNE_Curriculo" />
+          <NavigationProperty Name="BNE_Formacao" Relationship="LANModel.FK_TABCID_TABFOR" FromRole="TAB_Cidade" ToRole="BNE_Formacao" />
+          <NavigationProperty Name="TAB_Pessoa_Fisica" Relationship="LANModel.FK_TABCID_TABPFI" FromRole="TAB_Cidade" ToRole="TAB_Pessoa_Fisica" />
+          <NavigationProperty Name="TAB_Endereco" Relationship="LANModel.FK_TABCDA_TABEND" FromRole="TAB_Cidade" ToRole="TAB_Endereco" />
+          <NavigationProperty Name="LAN_Oportunidade_Cidade" Relationship="LANModel.FK_LAN_Oportunidade_Cidade_Idf_cidade_Tab_Cidade_Idf_Cidade" FromRole="TAB_Cidade" ToRole="LAN_Oportunidade_Cidade" />
+          <NavigationProperty Name="TAB_Regiao_Metropolitana" Relationship="LANModel.FK_TABCID_TABRME" FromRole="TAB_Cidade" ToRole="TAB_Regiao_Metropolitana" />
+          <NavigationProperty Name="TAB_Regiao_Metropolitana_Cidade" Relationship="LANModel.FK_TABCID_TABRMC" FromRole="TAB_Cidade" ToRole="TAB_Regiao_Metropolitana_Cidade" />
+        </EntityType>
+        <EntityType Name="TAB_Funcao">
+          <Key>
+            <PropertyRef Name="Idf_Funcao" />
+          </Key>
+          <Property Name="Idf_Funcao" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Funcao_Agrupadora" Type="Int32" />
+          <Property Name="Des_Funcao" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Idf_Funcao_Categoria" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Classe_Salarial" Type="Int32" />
+          <Property Name="Idf_Escolaridade" Type="Int32" />
+          <Property Name="Idf_Area_BNE" Type="Int32" />
+          <Property Name="Flg_Menor_Aprendiz" Type="Boolean" />
+          <Property Name="Des_Job" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="Des_Experiencia" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="Vlr_Piso_Profissional" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Des_Cursos" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="Des_Competencias" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Des_Funcao_Pesquisa" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Cod_Funcao_Folha" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="Cod_CBO" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="Flg_Conselho" Type="Boolean" Nullable="false" />
+          <Property Name="Flg_Curso_Especializacao" Type="Boolean" Nullable="false" />
+          <Property Name="Flg_RAIS_Analfabeto" Type="Boolean" />
+          <Property Name="Flg_RAIS_Nivel_Superior" Type="Boolean" />
+          <Property Name="Flg_Categoria_Sindical" Type="Boolean" Nullable="false" />
+          <Property Name="Flg_Auditada" Type="Boolean" Nullable="false" />
+          <Property Name="Qtd_Carga_Horaria_Diaria" Type="Int16" />
+          <Property Name="Des_Local_Trabalho" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="Des_EPI" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="Des_PPRA" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="Des_PCMSO" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="Des_Equipamentos" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="BNE_Experiencia_Profissional" Relationship="LANModel.FK_TABFUN_BNEEPR" FromRole="TAB_Funcao" ToRole="BNE_Experiencia_Profissional" />
+          <NavigationProperty Name="BNE_Funcao_Erro_Sinonimo" Relationship="LANModel.FK_TABFUN_BNEFES" FromRole="TAB_Funcao" ToRole="BNE_Funcao_Erro_Sinonimo" />
+          <NavigationProperty Name="BNE_Funcao_Pretendida" Relationship="LANModel.FK_TABFUN_BNEFPR" FromRole="TAB_Funcao" ToRole="BNE_Funcao_Pretendida" />
+          <NavigationProperty Name="TAB_Funcao1" Relationship="LANModel.FK_TABFUN_TABFUN" FromRole="TAB_Funcao" ToRole="TAB_Funcao1" />
+          <NavigationProperty Name="TAB_Funcao2" Relationship="LANModel.FK_TABFUN_TABFUN" FromRole="TAB_Funcao1" ToRole="TAB_Funcao" />
+        </EntityType>
+        <EntityType Name="TAB_Parametro">
+          <Key>
+            <PropertyRef Name="Idf_Parametro" />
+          </Key>
+          <Property Name="Idf_Parametro" Type="Int32" Nullable="false" />
+          <Property Name="Nme_Parametro" Type="String" Nullable="false" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="Vlr_Parametro" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_BNECDP_BNEPAN">
+          <End Role="BNE_Plano" Type="LANModel.BNE_Plano" Multiplicity="1" />
+          <End Role="BNE_Codigo_Desconto_Plano" Type="LANModel.BNE_Codigo_Desconto_Plano" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BNE_Plano">
+              <PropertyRef Name="Idf_Plano" />
+            </Principal>
+            <Dependent Role="BNE_Codigo_Desconto_Plano">
+              <PropertyRef Name="Idf_Plano" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BNECUR_BNEFPR">
+          <End Role="BNE_Curriculo" Type="LANModel.BNE_Curriculo" Multiplicity="1" />
+          <End Role="BNE_Funcao_Pretendida" Type="LANModel.BNE_Funcao_Pretendida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Curriculo" />
+            </Principal>
+            <Dependent Role="BNE_Funcao_Pretendida">
+              <PropertyRef Name="Idf_Curriculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BNETCI_BNECUR">
+          <End Role="TAB_Cidade" Type="LANModel.TAB_Cidade" Multiplicity="0..1" />
+          <End Role="BNE_Curriculo" Type="LANModel.BNE_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Cidade_Pretendida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABCID_BNECUR">
+          <End Role="TAB_Cidade" Type="LANModel.TAB_Cidade" Multiplicity="0..1" />
+          <End Role="BNE_Curriculo" Type="LANModel.BNE_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Cidade_Endereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABPFI_BNECUR">
+          <End Role="TAB_Pessoa_Fisica" Type="LANModel.TAB_Pessoa_Fisica" Multiplicity="1" />
+          <End Role="BNE_Curriculo" Type="LANModel.BNE_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Pessoa_Fisica">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Principal>
+            <Dependent Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABFUN_BNEEPR">
+          <End Role="TAB_Funcao" Type="LANModel.TAB_Funcao" Multiplicity="0..1" />
+          <End Role="BNE_Experiencia_Profissional" Type="LANModel.BNE_Experiencia_Profissional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Funcao">
+              <PropertyRef Name="Idf_Funcao" />
+            </Principal>
+            <Dependent Role="BNE_Experiencia_Profissional">
+              <PropertyRef Name="Idf_Funcao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABPFI_BNEEPR">
+          <End Role="TAB_Pessoa_Fisica" Type="LANModel.TAB_Pessoa_Fisica" Multiplicity="1" />
+          <End Role="BNE_Experiencia_Profissional" Type="LANModel.BNE_Experiencia_Profissional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Pessoa_Fisica">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Principal>
+            <Dependent Role="BNE_Experiencia_Profissional">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABCID_TABFOR">
+          <End Role="TAB_Cidade" Type="LANModel.TAB_Cidade" Multiplicity="0..1" />
+          <End Role="BNE_Formacao" Type="LANModel.BNE_Formacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="BNE_Formacao">
+              <PropertyRef Name="Idf_Cidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABFON_BNEFOR">
+          <End Role="TAB_Fonte" Type="LANModel.TAB_Fonte" Multiplicity="0..1" />
+          <End Role="BNE_Formacao" Type="LANModel.BNE_Formacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Fonte">
+              <PropertyRef Name="Idf_Fonte" />
+            </Principal>
+            <Dependent Role="BNE_Formacao">
+              <PropertyRef Name="Idf_Fonte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABPFI_BNEFOR">
+          <End Role="TAB_Pessoa_Fisica" Type="LANModel.TAB_Pessoa_Fisica" Multiplicity="1" />
+          <End Role="BNE_Formacao" Type="LANModel.BNE_Formacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Pessoa_Fisica">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Principal>
+            <Dependent Role="BNE_Formacao">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABFUN_BNEFES">
+          <End Role="TAB_Funcao" Type="LANModel.TAB_Funcao" Multiplicity="0..1" />
+          <End Role="BNE_Funcao_Erro_Sinonimo" Type="LANModel.BNE_Funcao_Erro_Sinonimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Funcao">
+              <PropertyRef Name="Idf_Funcao" />
+            </Principal>
+            <Dependent Role="BNE_Funcao_Erro_Sinonimo">
+              <PropertyRef Name="Idf_Funcao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABFUN_BNEFPR">
+          <End Role="TAB_Funcao" Type="LANModel.TAB_Funcao" Multiplicity="0..1" />
+          <End Role="BNE_Funcao_Pretendida" Type="LANModel.BNE_Funcao_Pretendida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Funcao">
+              <PropertyRef Name="Idf_Funcao" />
+            </Principal>
+            <Dependent Role="BNE_Funcao_Pretendida">
+              <PropertyRef Name="Idf_Funcao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABFIL_TABOFI">
+          <End Role="TAB_Filial" Type="LANModel.TAB_Filial" Multiplicity="1" />
+          <End Role="TAB_Origem_Filial" Type="LANModel.TAB_Origem_Filial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Filial">
+              <PropertyRef Name="Idf_Filial" />
+            </Principal>
+            <Dependent Role="TAB_Origem_Filial">
+              <PropertyRef Name="Idf_Filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABCID_TABPFI">
+          <End Role="TAB_Cidade" Type="LANModel.TAB_Cidade" Multiplicity="0..1" />
+          <End Role="TAB_Pessoa_Fisica" Type="LANModel.TAB_Pessoa_Fisica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="TAB_Pessoa_Fisica">
+              <PropertyRef Name="Idf_Cidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABFUN_TABFUN">
+          <End Role="TAB_Funcao" Type="LANModel.TAB_Funcao" Multiplicity="0..1" />
+          <End Role="TAB_Funcao1" Type="LANModel.TAB_Funcao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Funcao">
+              <PropertyRef Name="Idf_Funcao" />
+            </Principal>
+            <Dependent Role="TAB_Funcao1">
+              <PropertyRef Name="Idf_Funcao_Agrupadora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TAB_Pessoa_Fisica_Rede_Social">
+          <Key>
+            <PropertyRef Name="Idf_Pessoa_Fisica_Rede_Social" />
+          </Key>
+          <Property Type="Int32" Name="Idf_Pessoa_Fisica" Nullable="false" />
+          <Property Type="Int32" Name="Idf_Pessoa_Fisica_Rede_Social" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Idf_Rede_Social_CS" Nullable="false" />
+          <Property Type="String" Name="Cod_Identificador" Nullable="false" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Flg_Inativo" Nullable="false" />
+          <Property Type="DateTime" Name="Dta_Cadastro" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Cod_Interno_Rede_Social" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TAB_Pessoa_Fisica" Relationship="LANModel.FK_TABPFI_TABPFS" FromRole="TAB_Pessoa_Fisica_Rede_Social" ToRole="TAB_Pessoa_Fisica" />
+        </EntityType>
+        <Association Name="FK_TABPFI_TABPFS">
+          <End Type="LANModel.TAB_Pessoa_Fisica" Role="TAB_Pessoa_Fisica" Multiplicity="1" />
+          <End Type="LANModel.TAB_Pessoa_Fisica_Rede_Social" Role="TAB_Pessoa_Fisica_Rede_Social" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Pessoa_Fisica">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Principal>
+            <Dependent Role="TAB_Pessoa_Fisica_Rede_Social">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TAB_Endereco">
+          <Key>
+            <PropertyRef Name="Idf_Endereco" />
+          </Key>
+          <Property Type="Int32" Name="Idf_Endereco" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Num_CEP" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Des_Logradouro" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Num_Endereco" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Des_Complemento" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Des_Bairro" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Idf_Cidade" Nullable="false" />
+          <Property Type="Boolean" Name="Flg_Inativo" Nullable="false" />
+          <Property Type="DateTime" Name="Dta_Cadastro" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="Dta_Alteracao" Precision="3" />
+          <NavigationProperty Name="TAB_Cidade" Relationship="LANModel.FK_TABCDA_TABEND" FromRole="TAB_Endereco" ToRole="TAB_Cidade" />
+          <NavigationProperty Name="TAB_Filial" Relationship="LANModel.FK_TABEND_TABFIL" FromRole="TAB_Endereco" ToRole="TAB_Filial" />
+          <NavigationProperty Name="TAB_Pessoa_Fisica" Relationship="LANModel.FK_TABEND_TABPFI" FromRole="TAB_Endereco" ToRole="TAB_Pessoa_Fisica" />
+        </EntityType>
+        <Association Name="FK_TABCDA_TABEND">
+          <End Type="LANModel.TAB_Cidade" Role="TAB_Cidade" Multiplicity="1" />
+          <End Type="LANModel.TAB_Endereco" Role="TAB_Endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="TAB_Endereco">
+              <PropertyRef Name="Idf_Cidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABEND_TABFIL">
+          <End Type="LANModel.TAB_Endereco" Role="TAB_Endereco" Multiplicity="1" />
+          <End Type="LANModel.TAB_Filial" Role="TAB_Filial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Endereco">
+              <PropertyRef Name="Idf_Endereco" />
+            </Principal>
+            <Dependent Role="TAB_Filial">
+              <PropertyRef Name="Idf_Endereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABEND_TABPFI">
+          <End Type="LANModel.TAB_Endereco" Role="TAB_Endereco" Multiplicity="0..1" />
+          <End Type="LANModel.TAB_Pessoa_Fisica" Role="TAB_Pessoa_Fisica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Endereco">
+              <PropertyRef Name="Idf_Endereco" />
+            </Principal>
+            <Dependent Role="TAB_Pessoa_Fisica">
+              <PropertyRef Name="Idf_Endereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TAB_Pessoa_Fisica_Foto">
+          <Key>
+            <PropertyRef Name="Idf_Pessoa_Fisica_Foto" />
+          </Key>
+          <Property Type="Int32" Name="Idf_Pessoa_Fisica" Nullable="false" />
+          <Property Type="Int32" Name="Idf_Pessoa_Fisica_Foto" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Binary" Name="Img_Pessoa" MaxLength="Max" FixedLength="false" />
+          <Property Type="Boolean" Name="Flg_Inativo" Nullable="false" />
+          <Property Type="DateTime" Name="Dta_Cadastro" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="Dta_Alteracao" Nullable="false" Precision="3" />
+          <NavigationProperty Name="TAB_Pessoa_Fisica" Relationship="LANModel.FK_TABPFI_TABPFF" FromRole="TAB_Pessoa_Fisica_Foto" ToRole="TAB_Pessoa_Fisica" />
+        </EntityType>
+        <Association Name="FK_TABPFI_TABPFF">
+          <End Type="LANModel.TAB_Pessoa_Fisica" Role="TAB_Pessoa_Fisica" Multiplicity="1" />
+          <End Type="LANModel.TAB_Pessoa_Fisica_Foto" Role="TAB_Pessoa_Fisica_Foto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Pessoa_Fisica">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Principal>
+            <Dependent Role="TAB_Pessoa_Fisica_Foto">
+              <PropertyRef Name="Idf_Pessoa_Fisica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LAN_Administrador">
+          <Key>
+            <PropertyRef Name="Idf_Administrador" />
+          </Key>
+          <Property Name="Idf_Administrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Num_CPF" Type="Decimal" Nullable="false" Precision="11" Scale="0" />
+          <Property Name="Dta_Nascimento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sen_Administrador" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="LAN_Perfil" Relationship="LANModel.FK_LAN_Administrador_idf_Perfil_LAN_Administrador_idf_Perfil" FromRole="LAN_Administrador" ToRole="LAN_Perfil" />
+        </EntityType>
+        <EntityType Name="LAN_Companhia">
+          <Key>
+            <PropertyRef Name="Idf_Companhia" />
+          </Key>
+          <Property Name="Idf_Companhia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nme_Companhia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Num_CNPJ" Type="Decimal" Precision="14" Scale="0" />
+          <Property Name="Des_Carta_Apresentacao" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Des_Carta_Agradecimento" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dta_Alteracao" Type="DateTime" Precision="3" />
+          <Property Name="Img_Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TAB_Filial" Relationship="LANModel.FK_LAN_Companhia_Idf_Filial_Tab_Filial_Idf_Filial" FromRole="LAN_Companhia" ToRole="TAB_Filial" />
+          <NavigationProperty Name="LAN_Oportunidade" Relationship="LANModel.FK_LAN_Oportunidade_Idf_Companhia_LAN_Companhia_Idf_Compahia" FromRole="LAN_Companhia" ToRole="LAN_Oportunidade" />
+        </EntityType>
+        <EntityType Name="LAN_Fase_Cadastro">
+          <Key>
+            <PropertyRef Name="Idf_Fase_Cadastro" />
+          </Key>
+          <Property Name="Idf_Fase_Cadastro" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Des_Fase_Cadastro" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Dta_Cadastro" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LAN_Oportunidade_Curriculo" Relationship="LANModel.FK_LAN_Oportunidade_Curriculo_Idf_Fase_Cadastro_LAN_Fase_Cadastro_Idf_Fase_Cadastro" FromRole="LAN_Fase_Cadastro" ToRole="LAN_Oportunidade_Curriculo" />
+        </EntityType>
+        <EntityType Name="LAN_Oportunidade">
+          <Key>
+            <PropertyRef Name="Idf_Filial" />
+            <PropertyRef Name="Idf_Companhia" />
+          </Key>
+          <Property Name="Idf_Filial" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Companhia" Type="Int32" Nullable="false" />
+          <Property Name="Dta_Inicio_Validade" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dta_Fim_Validade" Type="DateTime" Precision="3" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Num_Prioridade" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="TAB_Filial" Relationship="LANModel.FK_LAN_Oportunidade_Idf_Filial_Tab_Filial_Idf_Filial" FromRole="LAN_Oportunidade" ToRole="TAB_Filial" />
+          <NavigationProperty Name="LAN_Companhia" Relationship="LANModel.FK_LAN_Oportunidade_Idf_Companhia_LAN_Companhia_Idf_Compahia" FromRole="LAN_Oportunidade" ToRole="LAN_Companhia" />
+          <NavigationProperty Name="LAN_Oportunidade_Cidade" Relationship="LANModel.FK_LAN_Oportunidade_Filial_Companhia_LAN_Oportunidade_Filial_Companhia" FromRole="LAN_Oportunidade" ToRole="LAN_Oportunidade_Cidade" />
+          <NavigationProperty Name="LAN_Oportunidade_Curriculo" Relationship="LANModel.FK_LAN_Oportunidade_Curriculo_Idf_Filial_Idf_Companhia_LAN_Oportunidade_Idf_Filial_Idf_Companhia" FromRole="LAN_Oportunidade" ToRole="LAN_Oportunidade_Curriculo" />
+        </EntityType>
+        <EntityType Name="LAN_Oportunidade_Cidade">
+          <Key>
+            <PropertyRef Name="Idf_Cidade" />
+            <PropertyRef Name="Idf_Filial" />
+            <PropertyRef Name="Idf_Companhia" />
+          </Key>
+          <Property Name="Idf_Cidade" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Filial" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Companhia" Type="Int32" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="LAN_Oportunidade" Relationship="LANModel.FK_LAN_Oportunidade_Filial_Companhia_LAN_Oportunidade_Filial_Companhia" FromRole="LAN_Oportunidade_Cidade" ToRole="LAN_Oportunidade" />
+          <NavigationProperty Name="TAB_Cidade" Relationship="LANModel.FK_LAN_Oportunidade_Cidade_Idf_cidade_Tab_Cidade_Idf_Cidade" FromRole="LAN_Oportunidade_Cidade" ToRole="TAB_Cidade" />
+        </EntityType>
+        <EntityType Name="LAN_Oportunidade_Curriculo_Historico">
+          <Key>
+            <PropertyRef Name="Idf_Oportunidade_Curriculo_Historico" />
+          </Key>
+          <Property Name="Idf_Oportunidade_Curriculo_Historico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Idf_Curriculo" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Filial" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Companhia" Type="Int32" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="LAN_Perfil">
+          <Key>
+            <PropertyRef Name="Idf_Perfil" />
+          </Key>
+          <Property Name="Idf_Perfil" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Des_Perfil" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="LAN_Administrador" Relationship="LANModel.FK_LAN_Administrador_idf_Perfil_LAN_Administrador_idf_Perfil" FromRole="LAN_Perfil" ToRole="LAN_Administrador" />
+        </EntityType>
+        <EntityType Name="LAN_Plano_Adquirido">
+          <Key>
+            <PropertyRef Name="Idf_Plano_Adquirido" />
+          </Key>
+          <Property Name="Idf_Plano_Adquirido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dta_Inicio_Plano" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dta_Fim_Plano" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="BNE_Codigo_Desconto" Relationship="LANModel.FK_LAN_Plano_Adquirido_Idf_Cod_Desconto_BNE_BNE_Codigo_Desconto_Idf_Codigo_Desconto" FromRole="LAN_Plano_Adquirido" ToRole="BNE_Codigo_Desconto" />
+          <NavigationProperty Name="BNE_Curriculo" Relationship="LANModel.FK_LAN_Plano_Adquirido_Idf_Curriculo_bne_Curiculo_Idf_Curriculo" FromRole="LAN_Plano_Adquirido" ToRole="BNE_Curriculo" />
+          <NavigationProperty Name="LAN_Plano_Situacao" Relationship="LANModel.FK_LAN_Plano_Adquirido_Idf_Plano_Situacao_LAN_Plano_Situacao" FromRole="LAN_Plano_Adquirido" ToRole="LAN_Plano_Situacao" />
+        </EntityType>
+        <EntityType Name="LAN_Plano_Situacao">
+          <Key>
+            <PropertyRef Name="Idf_Plano_Situacao" />
+          </Key>
+          <Property Name="Idf_Plano_Situacao" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Des_Plano_Situacao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="LAN_Plano_Adquirido" Relationship="LANModel.FK_LAN_Plano_Adquirido_Idf_Plano_Situacao_LAN_Plano_Situacao" FromRole="LAN_Plano_Situacao" ToRole="LAN_Plano_Adquirido" />
+        </EntityType>
+        <Association Name="FK_LAN_Plano_Adquirido_Idf_Cod_Desconto_BNE_BNE_Codigo_Desconto_Idf_Codigo_Desconto">
+          <End Type="LANModel.BNE_Codigo_Desconto" Role="BNE_Codigo_Desconto" Multiplicity="1" />
+          <End Type="LANModel.LAN_Plano_Adquirido" Role="LAN_Plano_Adquirido" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_LAN_Plano_Adquirido_Idf_Curriculo_bne_Curiculo_Idf_Curriculo">
+          <End Type="LANModel.BNE_Curriculo" Role="BNE_Curriculo" Multiplicity="1" />
+          <End Type="LANModel.LAN_Plano_Adquirido" Role="LAN_Plano_Adquirido" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_LAN_Companhia_Idf_Filial_Tab_Filial_Idf_Filial">
+          <End Type="LANModel.TAB_Filial" Role="TAB_Filial" Multiplicity="0..1" />
+          <End Type="LANModel.LAN_Companhia" Role="LAN_Companhia" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_LAN_Oportunidade_Idf_Filial_Tab_Filial_Idf_Filial">
+          <End Type="LANModel.TAB_Filial" Role="TAB_Filial" Multiplicity="1" />
+          <End Type="LANModel.LAN_Oportunidade" Role="LAN_Oportunidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Filial">
+              <PropertyRef Name="Idf_Filial" />
+            </Principal>
+            <Dependent Role="LAN_Oportunidade">
+              <PropertyRef Name="Idf_Filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Administrador_idf_Perfil_LAN_Administrador_idf_Perfil">
+          <End Type="LANModel.LAN_Perfil" Role="LAN_Perfil" Multiplicity="1" />
+          <End Type="LANModel.LAN_Administrador" Role="LAN_Administrador" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_LAN_Oportunidade_Idf_Companhia_LAN_Companhia_Idf_Compahia">
+          <End Type="LANModel.LAN_Companhia" Role="LAN_Companhia" Multiplicity="1" />
+          <End Type="LANModel.LAN_Oportunidade" Role="LAN_Oportunidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LAN_Companhia">
+              <PropertyRef Name="Idf_Companhia" />
+            </Principal>
+            <Dependent Role="LAN_Oportunidade">
+              <PropertyRef Name="Idf_Companhia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Oportunidade_Filial_Companhia_LAN_Oportunidade_Filial_Companhia">
+          <End Type="LANModel.LAN_Oportunidade" Role="LAN_Oportunidade" Multiplicity="1" />
+          <End Type="LANModel.LAN_Oportunidade_Cidade" Role="LAN_Oportunidade_Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LAN_Oportunidade">
+              <PropertyRef Name="Idf_Filial" />
+              <PropertyRef Name="Idf_Companhia" />
+            </Principal>
+            <Dependent Role="LAN_Oportunidade_Cidade">
+              <PropertyRef Name="Idf_Filial" />
+              <PropertyRef Name="Idf_Companhia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Oportunidade_Cidade_Idf_cidade_Tab_Cidade_Idf_Cidade">
+          <End Type="LANModel.TAB_Cidade" Role="TAB_Cidade" Multiplicity="1" />
+          <End Type="LANModel.LAN_Oportunidade_Cidade" Role="LAN_Oportunidade_Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="LAN_Oportunidade_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Plano_Adquirido_Idf_Plano_Situacao_LAN_Plano_Situacao">
+          <End Type="LANModel.LAN_Plano_Situacao" Role="LAN_Plano_Situacao" Multiplicity="1" />
+          <End Type="LANModel.LAN_Plano_Adquirido" Role="LAN_Plano_Adquirido" Multiplicity="*" />
+        </Association>
+        <EntityType Name="LAN_Oportunidade_Curriculo">
+          <Key>
+            <PropertyRef Name="Idf_Curriculo" />
+            <PropertyRef Name="Idf_Filial" />
+            <PropertyRef Name="Idf_Companhia" />
+          </Key>
+          <Property Name="Idf_Curriculo" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Filial" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Companhia" Type="Int32" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Idf_Fase_Cadastro" Type="Byte" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="BNE_Curriculo" Relationship="LANModel.FK_LAN_Oportunidade_Curriculo_Idf_Curriculo_BNE_Curriculo_Idf_Curriculo" FromRole="LAN_Oportunidade_Curriculo" ToRole="BNE_Curriculo" />
+          <NavigationProperty Name="LAN_Fase_Cadastro" Relationship="LANModel.FK_LAN_Oportunidade_Curriculo_Idf_Fase_Cadastro_LAN_Fase_Cadastro_Idf_Fase_Cadastro" FromRole="LAN_Oportunidade_Curriculo" ToRole="LAN_Fase_Cadastro" />
+          <NavigationProperty Name="LAN_Oportunidade" Relationship="LANModel.FK_LAN_Oportunidade_Curriculo_Idf_Filial_Idf_Companhia_LAN_Oportunidade_Idf_Filial_Idf_Companhia" FromRole="LAN_Oportunidade_Curriculo" ToRole="LAN_Oportunidade" />
+        </EntityType>
+        <Association Name="FK_LAN_Oportunidade_Curriculo_Idf_Curriculo_BNE_Curriculo_Idf_Curriculo">
+          <End Type="LANModel.BNE_Curriculo" Role="BNE_Curriculo" Multiplicity="1" />
+          <End Type="LANModel.LAN_Oportunidade_Curriculo" Role="LAN_Oportunidade_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BNE_Curriculo">
+              <PropertyRef Name="Idf_Curriculo" />
+            </Principal>
+            <Dependent Role="LAN_Oportunidade_Curriculo">
+              <PropertyRef Name="Idf_Curriculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Oportunidade_Curriculo_Idf_Fase_Cadastro_LAN_Fase_Cadastro_Idf_Fase_Cadastro">
+          <End Type="LANModel.LAN_Fase_Cadastro" Role="LAN_Fase_Cadastro" Multiplicity="1" />
+          <End Type="LANModel.LAN_Oportunidade_Curriculo" Role="LAN_Oportunidade_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LAN_Fase_Cadastro">
+              <PropertyRef Name="Idf_Fase_Cadastro" />
+            </Principal>
+            <Dependent Role="LAN_Oportunidade_Curriculo">
+              <PropertyRef Name="Idf_Fase_Cadastro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LAN_Oportunidade_Curriculo_Idf_Filial_Idf_Companhia_LAN_Oportunidade_Idf_Filial_Idf_Companhia">
+          <End Type="LANModel.LAN_Oportunidade" Role="LAN_Oportunidade" Multiplicity="1" />
+          <End Type="LANModel.LAN_Oportunidade_Curriculo" Role="LAN_Oportunidade_Curriculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LAN_Oportunidade">
+              <PropertyRef Name="Idf_Filial" />
+              <PropertyRef Name="Idf_Companhia" />
+            </Principal>
+            <Dependent Role="LAN_Oportunidade_Curriculo">
+              <PropertyRef Name="Idf_Filial" />
+              <PropertyRef Name="Idf_Companhia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TAB_Filial_Logo">
+          <Key>
+            <PropertyRef Name="Idf_Filial" />
+          </Key>
+          <Property Name="Idf_Filial" Type="Int32" Nullable="false" />
+          <Property Name="Img_Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dta_Alteracao" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="TAB_Filial" Relationship="LANModel.FK_TABPFI_TABFLO" FromRole="TAB_Filial_Logo" ToRole="TAB_Filial" />
+        </EntityType>
+        <Association Name="FK_TABPFI_TABFLO">
+          <End Type="LANModel.TAB_Filial" Role="TAB_Filial" Multiplicity="1" />
+          <End Type="LANModel.TAB_Filial_Logo" Role="TAB_Filial_Logo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Filial">
+              <PropertyRef Name="Idf_Filial" />
+            </Principal>
+            <Dependent Role="TAB_Filial_Logo">
+              <PropertyRef Name="Idf_Filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TAB_Parametro_Filial">
+          <Key>
+            <PropertyRef Name="Idf_Parametro" />
+            <PropertyRef Name="Idf_Filial" />
+          </Key>
+          <Property Name="Idf_Parametro" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Filial" Type="Int32" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Vlr_Parametro" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TAB_Regiao_Metropolitana">
+          <Key>
+            <PropertyRef Name="Idf_Regiao_Metropolitana" />
+          </Key>
+          <Property Name="Idf_Regiao_Metropolitana" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nme_Regiao_Metropolitana" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Nme_Regiao_Metropolitana_Pesquisa" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Idf_Cidade" Type="Int32" Nullable="false" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <Property Name="Dta_Cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sig_UF" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="CID_Regiao_Metropolitana" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TAB_Cidade" Relationship="LANModel.FK_TABCID_TABRME" FromRole="TAB_Regiao_Metropolitana" ToRole="TAB_Cidade" />
+          <NavigationProperty Name="TAB_Regiao_Metropolitana_Cidade" Relationship="LANModel.FK_TABRME_TABRMC" FromRole="TAB_Regiao_Metropolitana" ToRole="TAB_Regiao_Metropolitana_Cidade" />
+        </EntityType>
+        <EntityType Name="TAB_Regiao_Metropolitana_Cidade">
+          <Key>
+            <PropertyRef Name="Idf_Regiao_Metropolitana" />
+            <PropertyRef Name="Idf_Cidade" />
+          </Key>
+          <Property Name="Idf_Regiao_Metropolitana" Type="Int32" Nullable="false" />
+          <Property Name="Idf_Cidade" Type="Int32" Nullable="false" />
+          <Property Name="Dta_cadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Flg_Inativo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TAB_Regiao_Metropolitana" Relationship="LANModel.FK_TABRME_TABRMC" FromRole="TAB_Regiao_Metropolitana_Cidade" ToRole="TAB_Regiao_Metropolitana" />
+          <NavigationProperty Name="TAB_Cidade" Relationship="LANModel.FK_TABCID_TABRMC" FromRole="TAB_Regiao_Metropolitana_Cidade" ToRole="TAB_Cidade" />
+        </EntityType>
+        <Association Name="FK_TABCID_TABRME">
+          <End Type="LANModel.TAB_Cidade" Role="TAB_Cidade" Multiplicity="1" />
+          <End Type="LANModel.TAB_Regiao_Metropolitana" Role="TAB_Regiao_Metropolitana" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="TAB_Regiao_Metropolitana">
+              <PropertyRef Name="Idf_Cidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABRME_TABRMC">
+          <End Type="LANModel.TAB_Regiao_Metropolitana" Role="TAB_Regiao_Metropolitana" Multiplicity="1" />
+          <End Type="LANModel.TAB_Regiao_Metropolitana_Cidade" Role="TAB_Regiao_Metropolitana_Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Regiao_Metropolitana">
+              <PropertyRef Name="Idf_Regiao_Metropolitana" />
+            </Principal>
+            <Dependent Role="TAB_Regiao_Metropolitana_Cidade">
+              <PropertyRef Name="Idf_Regiao_Metropolitana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TABCID_TABRMC">
+          <End Type="LANModel.TAB_Cidade" Role="TAB_Cidade" Multiplicity="1" />
+          <End Type="LANModel.TAB_Regiao_Metropolitana_Cidade" Role="TAB_Regiao_Metropolitana_Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAB_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Principal>
+            <Dependent Role="TAB_Regiao_Metropolitana_Cidade">
+              <PropertyRef Name="Idf_Cidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="BUSCA_EMPRESA_RETORNO">
+          <Property Type="Int32" Name="OrdenacaoCidade" Nullable="false" />
+          <Property Type="Int32" Name="OrdenacaoEstado" Nullable="false" />
+          <Property Type="Int32" Name="OrdenacaoLogo" Nullable="false" />
+          <Property Type="Int32" Name="OrdenacaoRM" Nullable="false" />
+          <Property Type="Decimal" Name="CNPJ" Nullable="true" Precision="14" Scale="0" />
+          <Property Type="Int32" Name="Filial" Nullable="false" />
+          <Property Type="String" Name="NomeFantasia" Nullable="true" MaxLength="100" />
+          <Property Type="Byte" Name="Prioridade" Nullable="false" />
+          <Property Type="Int32" Name="Candidatado" Nullable="false" />
+          <Property Type="String" Name="RecrutamentoTerceirizado" Nullable="true" MaxLength="100" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LANModelStoreContainer" CdmEntityContainer="LanEntities">
+          <EntitySetMapping Name="BNE_Codigo_Desconto">
+            <EntityTypeMapping TypeName="LANModel.BNE_Codigo_Desconto">
+              <MappingFragment StoreEntitySet="BNE_Codigo_Desconto">
+                <ScalarProperty Name="Idf_Usuario_Filial_Perfil" ColumnName="Idf_Usuario_Filial_Perfil" />
+                <ScalarProperty Name="Idf_Codigo_Desconto" ColumnName="Idf_Codigo_Desconto" />
+                <ScalarProperty Name="Des_Codigo_Desconto" ColumnName="Des_Codigo_Desconto" />
+                <ScalarProperty Name="Idf_Status_Codigo_Desconto" ColumnName="Idf_Status_Codigo_Desconto" />
+                <ScalarProperty Name="Idf_Parceiro" ColumnName="Idf_Parceiro" />
+                <ScalarProperty Name="Idf_Tipo_Codigo_Desconto" ColumnName="Idf_Tipo_Codigo_Desconto" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Dta_Alteracao" ColumnName="Dta_Alteracao" />
+                <ScalarProperty Name="Dta_Utilizacao" ColumnName="Dta_Utilizacao" />
+                <ScalarProperty Name="Dta_Validade_Inicio" ColumnName="Dta_Validade_Inicio" />
+                <ScalarProperty Name="Dta_Validade_Fim" ColumnName="Dta_Validade_Fim" />
+                <ScalarProperty Name="Des_Identificacao_Codigo" ColumnName="Des_Identificacao_Codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BNE_Codigo_Desconto_Plano">
+            <EntityTypeMapping TypeName="LANModel.BNE_Codigo_Desconto_Plano">
+              <MappingFragment StoreEntitySet="BNE_Codigo_Desconto_Plano">
+                <ScalarProperty Name="Idf_Tipo_Codigo_Desconto" ColumnName="Idf_Tipo_Codigo_Desconto" />
+                <ScalarProperty Name="Idf_Plano" ColumnName="Idf_Plano" />
+                <ScalarProperty Name="Num_Percentual_Desconto" ColumnName="Num_Percentual_Desconto" />
+                <ScalarProperty Name="Qtd_SMS" ColumnName="Qtd_SMS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BNE_Curriculo">
+            <EntityTypeMapping TypeName="LANModel.BNE_Curriculo">
+              <MappingFragment StoreEntitySet="BNE_Curriculo">
+                <ScalarProperty Name="Idf_Curriculo" ColumnName="Idf_Curriculo" />
+                <ScalarProperty Name="Idf_Pessoa_Fisica" ColumnName="Idf_Pessoa_Fisica" />
+                <ScalarProperty Name="Vlr_Pretensao_Salarial" ColumnName="Vlr_Pretensao_Salarial" />
+                <ScalarProperty Name="Idf_Tipo_Curriculo" ColumnName="Idf_Tipo_Curriculo" />
+                <ScalarProperty Name="Idf_Situacao_Curriculo" ColumnName="Idf_Situacao_Curriculo" />
+                <ScalarProperty Name="Des_Mini_Curriculo" ColumnName="Des_Mini_Curriculo" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Dta_Atualizacao" ColumnName="Dta_Atualizacao" />
+                <ScalarProperty Name="Flg_Manha" ColumnName="Flg_Manha" />
+                <ScalarProperty Name="Flg_Tarde" ColumnName="Flg_Tarde" />
+                <ScalarProperty Name="Flg_Noite" ColumnName="Flg_Noite" />
+                <ScalarProperty Name="Obs_Curriculo" ColumnName="Obs_Curriculo" />
+                <ScalarProperty Name="Des_Analise" ColumnName="Des_Analise" />
+                <ScalarProperty Name="Des_Sugestao_Carreira" ColumnName="Des_Sugestao_Carreira" />
+                <ScalarProperty Name="Des_Cursos_Oferecidos" ColumnName="Des_Cursos_Oferecidos" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Vlr_Ultimo_Salario" ColumnName="Vlr_Ultimo_Salario" />
+                <ScalarProperty Name="Des_IP" ColumnName="Des_IP" />
+                <ScalarProperty Name="Idf_Cidade_Pretendida" ColumnName="Idf_Cidade_Pretendida" />
+                <ScalarProperty Name="Flg_Final_Semana" ColumnName="Flg_Final_Semana" />
+                <ScalarProperty Name="Flg_VIP" ColumnName="Flg_VIP" />
+                <ScalarProperty Name="Flg_Boas_Vindas" ColumnName="Flg_Boas_Vindas" />
+                <ScalarProperty Name="Flg_MSN" ColumnName="Flg_MSN" />
+                <ScalarProperty Name="Idf_Cidade_Endereco" ColumnName="Idf_Cidade_Endereco" />
+                <ScalarProperty Name="Des_Localizacao" ColumnName="Des_Localizacao" />
+                <ScalarProperty Name="Dta_Modificacao_CV" ColumnName="Dta_Modificacao_CV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BNE_Experiencia_Profissional">
+            <EntityTypeMapping TypeName="LANModel.BNE_Experiencia_Profissional">
+              <MappingFragment StoreEntitySet="BNE_Experiencia_Profissional">
+                <ScalarProperty Name="Idf_Area_BNE" ColumnName="Idf_Area_BNE" />
+                <ScalarProperty Name="Idf_Pessoa_Fisica" ColumnName="Idf_Pessoa_Fisica" />
+                <ScalarProperty Name="Idf_Experiencia_Profissional" ColumnName="Idf_Experiencia_Profissional" />
+                <ScalarProperty Name="Raz_Social" ColumnName="Raz_Social" />
+                <ScalarProperty Name="Des_Funcao_Exercida" ColumnName="Des_Funcao_Exercida" />
+                <ScalarProperty Name="Idf_Funcao" ColumnName="Idf_Funcao" />
+                <ScalarProperty Name="Dta_Admissao" ColumnName="Dta_Admissao" />
+                <ScalarProperty Name="Dta_Demissao" ColumnName="Dta_Demissao" />
+                <ScalarProperty Name="Des_Atividade" ColumnName="Des_Atividade" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Flg_Importado" ColumnName="Flg_Importado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BNE_Formacao">
+            <EntityTypeMapping TypeName="LANModel.BNE_Formacao">
+              <MappingFragment StoreEntitySet="BNE_Formacao">
+                <ScalarProperty Name="Idf_Pessoa_Fisica" ColumnName="Idf_Pessoa_Fisica" />
+                <ScalarProperty Name="Idf_Formacao" ColumnName="Idf_Formacao" />
+                <ScalarProperty Name="Idf_Escolaridade" ColumnName="Idf_Escolaridade" />
+                <ScalarProperty Name="Idf_Curso" ColumnName="Idf_Curso" />
+                <ScalarProperty Name="Idf_Fonte" ColumnName="Idf_Fonte" />
+                <ScalarProperty Name="Ano_Conclusao" ColumnName="Ano_Conclusao" />
+                <ScalarProperty Name="Qtd_Carga_Horaria" ColumnName="Qtd_Carga_Horaria" />
+                <ScalarProperty Name="Num_Periodo" ColumnName="Num_Periodo" />
+                <ScalarProperty Name="Idf_Situacao_Formacao" ColumnName="Idf_Situacao_Formacao" />
+                <ScalarProperty Name="Dta_Alteracao" ColumnName="Dta_Alteracao" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Flg_Nacional" ColumnName="Flg_Nacional" />
+                <ScalarProperty Name="Des_Endereco" ColumnName="Des_Endereco" />
+                <ScalarProperty Name="Des_Curso" ColumnName="Des_Curso" />
+                <ScalarProperty Name="Idf_Cidade" ColumnName="Idf_Cidade" />
+                <ScalarProperty Name="Des_Fonte" ColumnName="Des_Fonte" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BNE_Funcao_Erro_Sinonimo">
+            <EntityTypeMapping TypeName="LANModel.BNE_Funcao_Erro_Sinonimo">
+              <MappingFragment StoreEntitySet="BNE_Funcao_Erro_Sinonimo">
+                <ScalarProperty Name="Idf_Funcao_Erro_Sinonimo" ColumnName="Idf_Funcao_Erro_Sinonimo" />
+                <ScalarProperty Name="Des_Funcao_Erro_Sinonimo" ColumnName="Des_Funcao_Erro_Sinonimo" />
+                <ScalarProperty Name="Flg_Erro" ColumnName="Flg_Erro" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Idf_Funcao" ColumnName="Idf_Funcao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BNE_Funcao_Pretendida">
+            <EntityTypeMapping TypeName="LANModel.BNE_Funcao_Pretendida">
+              <MappingFragment StoreEntitySet="BNE_Funcao_Pretendida">
+                <ScalarProperty Name="Idf_Curriculo" ColumnName="Idf_Curriculo" />
+                <ScalarProperty Name="Idf_Funcao_Pretendida" ColumnName="Idf_Funcao_Pretendida" />
+                <ScalarProperty Name="Idf_Funcao" ColumnName="Idf_Funcao" />
+                <ScalarProperty Name="Qtd_Experiencia" ColumnName="Qtd_Experiencia" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Des_Funcao_Pretendida" ColumnName="Des_Funcao_Pretendida" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BNE_Plano">
+            <EntityTypeMapping TypeName="LANModel.BNE_Plano">
+              <MappingFragment StoreEntitySet="BNE_Plano">
+                <ScalarProperty Name="idf_Tipo_Contrato" ColumnName="idf_Tipo_Contrato" />
+                <ScalarProperty Name="Flg_Boleto_Registrado" ColumnName="Flg_Boleto_Registrado" />
+                <ScalarProperty Name="Idf_Plano" ColumnName="Idf_Plano" />
+                <ScalarProperty Name="Des_Plano" ColumnName="Des_Plano" />
+                <ScalarProperty Name="Qtd_Dias_Validade" ColumnName="Qtd_Dias_Validade" />
+                <ScalarProperty Name="Qtd_SMS" ColumnName="Qtd_SMS" />
+                <ScalarProperty Name="Qtd_Visualizacao" ColumnName="Qtd_Visualizacao" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Vlr_Base" ColumnName="Vlr_Base" />
+                <ScalarProperty Name="Dta_Inicio" ColumnName="Dta_Inicio" />
+                <ScalarProperty Name="Dta_Final" ColumnName="Dta_Final" />
+                <ScalarProperty Name="Idf_Plano_Tipo" ColumnName="Idf_Plano_Tipo" />
+                <ScalarProperty Name="Idf_Plano_Forma_Pagamento" ColumnName="Idf_Plano_Forma_Pagamento" />
+                <ScalarProperty Name="Qtd_Parcela" ColumnName="Qtd_Parcela" />
+                <ScalarProperty Name="Vlr_Desconto_Maximo" ColumnName="Vlr_Desconto_Maximo" />
+                <ScalarProperty Name="Qtd_SMS_Maxima" ColumnName="Qtd_SMS_Maxima" />
+                <ScalarProperty Name="Vlr_Base_Minimo" ColumnName="Vlr_Base_Minimo" />
+                <ScalarProperty Name="Qtd_Prazo_Boleto_Maxima" ColumnName="Qtd_Prazo_Boleto_Maxima" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Contato">
+            <EntityTypeMapping TypeName="LANModel.TAB_Contato">
+              <MappingFragment StoreEntitySet="TAB_Contato">
+                <ScalarProperty Name="Idf_Pessoa_Fisica" ColumnName="Idf_Pessoa_Fisica" />
+                <ScalarProperty Name="Idf_Contato" ColumnName="Idf_Contato" />
+                <ScalarProperty Name="Nme_Contato" ColumnName="Nme_Contato" />
+                <ScalarProperty Name="Tip_Contato" ColumnName="Tip_Contato" />
+                <ScalarProperty Name="Num_DDD_Celular" ColumnName="Num_DDD_Celular" />
+                <ScalarProperty Name="Num_Celular" ColumnName="Num_Celular" />
+                <ScalarProperty Name="Num_DDD_Telefone" ColumnName="Num_DDD_Telefone" />
+                <ScalarProperty Name="Num_Telefone" ColumnName="Num_Telefone" />
+                <ScalarProperty Name="Num_Ramal_Telefone" ColumnName="Num_Ramal_Telefone" />
+                <ScalarProperty Name="Num_DDD_Fax" ColumnName="Num_DDD_Fax" />
+                <ScalarProperty Name="Num_Fax" ColumnName="Num_Fax" />
+                <ScalarProperty Name="Eml_Contato" ColumnName="Eml_Contato" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Dta_Alteracao" ColumnName="Dta_Alteracao" />
+                <ScalarProperty Name="Flg_Importado" ColumnName="Flg_Importado" />
+                <ScalarProperty Name="Idf_Tipo_Contato" ColumnName="Idf_Tipo_Contato" />
+                <ScalarProperty Name="Idf_Operadora_Celular" ColumnName="Idf_Operadora_Celular" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Filial">
+            <EntityTypeMapping TypeName="LANModel.TAB_Filial">
+              <MappingFragment StoreEntitySet="TAB_Filial">
+                <ScalarProperty Name="Idf_Filial" ColumnName="Idf_Filial" />
+                <ScalarProperty Name="Flg_Matriz" ColumnName="Flg_Matriz" />
+                <ScalarProperty Name="Num_CNPJ" ColumnName="Num_CNPJ" />
+                <ScalarProperty Name="Raz_Social" ColumnName="Raz_Social" />
+                <ScalarProperty Name="Nme_Fantasia" ColumnName="Nme_Fantasia" />
+                <ScalarProperty Name="Idf_CNAE_Principal" ColumnName="Idf_CNAE_Principal" />
+                <ScalarProperty Name="Idf_Natureza_Juridica" ColumnName="Idf_Natureza_Juridica" />
+                <ScalarProperty Name="Idf_Endereco" ColumnName="Idf_Endereco" />
+                <ScalarProperty Name="End_Site" ColumnName="End_Site" />
+                <ScalarProperty Name="Num_DDD_Comercial" ColumnName="Num_DDD_Comercial" />
+                <ScalarProperty Name="Num_Comercial" ColumnName="Num_Comercial" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Dta_Alteracao" ColumnName="Dta_Alteracao" />
+                <ScalarProperty Name="Des_Localizacao" ColumnName="Des_Localizacao" />
+                <ScalarProperty Name="Qtd_Funcionarios" ColumnName="Qtd_Funcionarios" />
+                <ScalarProperty Name="Des_IP" ColumnName="Des_IP" />
+                <ScalarProperty Name="Flg_Oferece_Cursos" ColumnName="Flg_Oferece_Cursos" />
+                <ScalarProperty Name="Idf_Situacao_Filial" ColumnName="Idf_Situacao_Filial" />
+                <ScalarProperty Name="Des_Pagina_Facebook" ColumnName="Des_Pagina_Facebook" />
+                <ScalarProperty Name="Qtd_Usuario_Adicional" ColumnName="Qtd_Usuario_Adicional" />
+                <ScalarProperty Name="Idf_Tipo_Parceiro" ColumnName="Idf_Tipo_Parceiro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Fonte">
+            <EntityTypeMapping TypeName="LANModel.TAB_Fonte">
+              <MappingFragment StoreEntitySet="TAB_Fonte">
+                <ScalarProperty Name="Idf_Fonte" ColumnName="Idf_Fonte" />
+                <ScalarProperty Name="Sig_Fonte" ColumnName="Sig_Fonte" />
+                <ScalarProperty Name="Nme_Fonte" ColumnName="Nme_Fonte" />
+                <ScalarProperty Name="Flg_Auditada" ColumnName="Flg_Auditada" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Flg_MEC" ColumnName="Flg_MEC" />
+                <ScalarProperty Name="Num_cnpj" ColumnName="Num_cnpj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Origem_Filial">
+            <EntityTypeMapping TypeName="LANModel.TAB_Origem_Filial">
+              <MappingFragment StoreEntitySet="TAB_Origem_Filial">
+                <ScalarProperty Name="Idf_Filial" ColumnName="Idf_Filial" />
+                <ScalarProperty Name="Idf_Origem_Filial" ColumnName="Idf_Origem_Filial" />
+                <ScalarProperty Name="Idf_Origem" ColumnName="Idf_Origem" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Dta_Alteracao" ColumnName="Dta_Alteracao" />
+                <ScalarProperty Name="Des_IP" ColumnName="Des_IP" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Flg_Curriculo_Publico" ColumnName="Flg_Curriculo_Publico" />
+                <ScalarProperty Name="Des_Diretorio" ColumnName="Des_Diretorio" />
+                <ScalarProperty Name="Img_Logo" ColumnName="Img_Logo" />
+                <ScalarProperty Name="Idf_Template" ColumnName="Idf_Template" />
+                <ScalarProperty Name="Des_Mensagem_Candidato" ColumnName="Des_Mensagem_Candidato" />
+                <ScalarProperty Name="Des_Pagina_Inicial" ColumnName="Des_Pagina_Inicial" />
+                <ScalarProperty Name="Flg_Todas_Funcoes" ColumnName="Flg_Todas_Funcoes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Pessoa_Fisica">
+            <EntityTypeMapping TypeName="LANModel.TAB_Pessoa_Fisica">
+              <MappingFragment StoreEntitySet="TAB_Pessoa_Fisica">
+                <ScalarProperty Name="Idf_Pessoa_Fisica" ColumnName="Idf_Pessoa_Fisica" />
+                <ScalarProperty Name="Num_CPF" ColumnName="Num_CPF" />
+                <ScalarProperty Name="Nme_Pessoa" ColumnName="Nme_Pessoa" />
+                <ScalarProperty Name="Ape_Pessoa" ColumnName="Ape_Pessoa" />
+                <ScalarProperty Name="Idf_Sexo" ColumnName="Idf_Sexo" />
+                <ScalarProperty Name="Idf_Nacionalidade" ColumnName="Idf_Nacionalidade" />
+                <ScalarProperty Name="Idf_Cidade" ColumnName="Idf_Cidade" />
+                <ScalarProperty Name="Dta_Chegada_Brasil" ColumnName="Dta_Chegada_Brasil" />
+                <ScalarProperty Name="Dta_Nascimento" ColumnName="Dta_Nascimento" />
+                <ScalarProperty Name="Nme_Mae" ColumnName="Nme_Mae" />
+                <ScalarProperty Name="Nme_Pai" ColumnName="Nme_Pai" />
+                <ScalarProperty Name="Num_RG" ColumnName="Num_RG" />
+                <ScalarProperty Name="Dta_Expedicao_RG" ColumnName="Dta_Expedicao_RG" />
+                <ScalarProperty Name="Nme_Orgao_Emissor" ColumnName="Nme_Orgao_Emissor" />
+                <ScalarProperty Name="Sig_UF_Emissao_RG" ColumnName="Sig_UF_Emissao_RG" />
+                <ScalarProperty Name="Num_PIS" ColumnName="Num_PIS" />
+                <ScalarProperty Name="Num_CTPS" ColumnName="Num_CTPS" />
+                <ScalarProperty Name="Des_Serie_CTPS" ColumnName="Des_Serie_CTPS" />
+                <ScalarProperty Name="Sig_UF_CTPS" ColumnName="Sig_UF_CTPS" />
+                <ScalarProperty Name="Idf_Raca" ColumnName="Idf_Raca" />
+                <ScalarProperty Name="Idf_Deficiencia" ColumnName="Idf_Deficiencia" />
+                <ScalarProperty Name="Idf_Endereco" ColumnName="Idf_Endereco" />
+                <ScalarProperty Name="Num_DDD_Telefone" ColumnName="Num_DDD_Telefone" />
+                <ScalarProperty Name="Num_Telefone" ColumnName="Num_Telefone" />
+                <ScalarProperty Name="Num_DDD_Celular" ColumnName="Num_DDD_Celular" />
+                <ScalarProperty Name="Num_Celular" ColumnName="Num_Celular" />
+                <ScalarProperty Name="Eml_Pessoa" ColumnName="Eml_Pessoa" />
+                <ScalarProperty Name="Flg_Possui_Dependentes" ColumnName="Flg_Possui_Dependentes" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Dta_Alteracao" ColumnName="Dta_Alteracao" />
+                <ScalarProperty Name="Flg_Importado" ColumnName="Flg_Importado" />
+                <ScalarProperty Name="Idf_Escolaridade" ColumnName="Idf_Escolaridade" />
+                <ScalarProperty Name="Nme_Pessoa_Pesquisa" ColumnName="Nme_Pessoa_Pesquisa" />
+                <ScalarProperty Name="Idf_Estado_Civil" ColumnName="Idf_Estado_Civil" />
+                <ScalarProperty Name="Sig_Estado" ColumnName="Sig_Estado" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Des_IP" ColumnName="Des_IP" />
+                <ScalarProperty Name="Idf_Operadora_Celular" ColumnName="Idf_Operadora_Celular" />
+                <ScalarProperty Name="Idf_Email_Situacao_Confirmacao" ColumnName="Idf_Email_Situacao_Confirmacao" />
+                <ScalarProperty Name="Idf_Email_Situacao_Validacao" ColumnName="Idf_Email_Situacao_Validacao" />
+                <ScalarProperty Name="Idf_Email_Situacao_Bloqueio" ColumnName="Idf_Email_Situacao_Bloqueio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Cidade">
+            <EntityTypeMapping TypeName="LANModel.TAB_Cidade">
+              <MappingFragment StoreEntitySet="TAB_Cidade">
+                <ScalarProperty Name="Idf_Cidade" ColumnName="Idf_Cidade" />
+                <ScalarProperty Name="Nme_Cidade" ColumnName="Nme_Cidade" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Sig_Estado" ColumnName="Sig_Estado" />
+                <ScalarProperty Name="Txa_ISS" ColumnName="Txa_ISS" />
+                <ScalarProperty Name="Idf_Tipo_Base" ColumnName="Idf_Tipo_Base" />
+                <ScalarProperty Name="Cod_Rais" ColumnName="Cod_Rais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Funcao">
+            <EntityTypeMapping TypeName="LANModel.TAB_Funcao">
+              <MappingFragment StoreEntitySet="TAB_Funcao">
+                <ScalarProperty Name="Idf_Funcao" ColumnName="Idf_Funcao" />
+                <ScalarProperty Name="Idf_Funcao_Agrupadora" ColumnName="Idf_Funcao_Agrupadora" />
+                <ScalarProperty Name="Des_Funcao" ColumnName="Des_Funcao" />
+                <ScalarProperty Name="Idf_Funcao_Categoria" ColumnName="Idf_Funcao_Categoria" />
+                <ScalarProperty Name="Idf_Classe_Salarial" ColumnName="Idf_Classe_Salarial" />
+                <ScalarProperty Name="Idf_Escolaridade" ColumnName="Idf_Escolaridade" />
+                <ScalarProperty Name="Idf_Area_BNE" ColumnName="Idf_Area_BNE" />
+                <ScalarProperty Name="Flg_Menor_Aprendiz" ColumnName="Flg_Menor_Aprendiz" />
+                <ScalarProperty Name="Des_Job" ColumnName="Des_Job" />
+                <ScalarProperty Name="Des_Experiencia" ColumnName="Des_Experiencia" />
+                <ScalarProperty Name="Vlr_Piso_Profissional" ColumnName="Vlr_Piso_Profissional" />
+                <ScalarProperty Name="Des_Cursos" ColumnName="Des_Cursos" />
+                <ScalarProperty Name="Des_Competencias" ColumnName="Des_Competencias" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Des_Funcao_Pesquisa" ColumnName="Des_Funcao_Pesquisa" />
+                <ScalarProperty Name="Cod_Funcao_Folha" ColumnName="Cod_Funcao_Folha" />
+                <ScalarProperty Name="Cod_CBO" ColumnName="Cod_CBO" />
+                <ScalarProperty Name="Flg_Conselho" ColumnName="Flg_Conselho" />
+                <ScalarProperty Name="Flg_Curso_Especializacao" ColumnName="Flg_Curso_Especializacao" />
+                <ScalarProperty Name="Flg_RAIS_Analfabeto" ColumnName="Flg_RAIS_Analfabeto" />
+                <ScalarProperty Name="Flg_RAIS_Nivel_Superior" ColumnName="Flg_RAIS_Nivel_Superior" />
+                <ScalarProperty Name="Flg_Categoria_Sindical" ColumnName="Flg_Categoria_Sindical" />
+                <ScalarProperty Name="Flg_Auditada" ColumnName="Flg_Auditada" />
+                <ScalarProperty Name="Qtd_Carga_Horaria_Diaria" ColumnName="Qtd_Carga_Horaria_Diaria" />
+                <ScalarProperty Name="Des_Local_Trabalho" ColumnName="Des_Local_Trabalho" />
+                <ScalarProperty Name="Des_EPI" ColumnName="Des_EPI" />
+                <ScalarProperty Name="Des_PPRA" ColumnName="Des_PPRA" />
+                <ScalarProperty Name="Des_PCMSO" ColumnName="Des_PCMSO" />
+                <ScalarProperty Name="Des_Equipamentos" ColumnName="Des_Equipamentos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Parametro">
+            <EntityTypeMapping TypeName="LANModel.TAB_Parametro">
+              <MappingFragment StoreEntitySet="TAB_Parametro">
+                <ScalarProperty Name="Idf_Parametro" ColumnName="Idf_Parametro" />
+                <ScalarProperty Name="Nme_Parametro" ColumnName="Nme_Parametro" />
+                <ScalarProperty Name="Vlr_Parametro" ColumnName="Vlr_Parametro" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Pessoa_Fisica_Rede_Social">
+            <EntityTypeMapping TypeName="LANModel.TAB_Pessoa_Fisica_Rede_Social">
+              <MappingFragment StoreEntitySet="TAB_Pessoa_Fisica_Rede_Social">
+                <ScalarProperty Name="Cod_Interno_Rede_Social" ColumnName="Cod_Interno_Rede_Social" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Cod_Identificador" ColumnName="Cod_Identificador" />
+                <ScalarProperty Name="Idf_Rede_Social_CS" ColumnName="Idf_Rede_Social_CS" />
+                <ScalarProperty Name="Idf_Pessoa_Fisica_Rede_Social" ColumnName="Idf_Pessoa_Fisica_Rede_Social" />
+                <ScalarProperty Name="Idf_Pessoa_Fisica" ColumnName="Idf_Pessoa_Fisica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Endereco">
+            <EntityTypeMapping TypeName="LANModel.TAB_Endereco">
+              <MappingFragment StoreEntitySet="TAB_Endereco">
+                <ScalarProperty Name="Dta_Alteracao" ColumnName="Dta_Alteracao" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Idf_Cidade" ColumnName="Idf_Cidade" />
+                <ScalarProperty Name="Des_Bairro" ColumnName="Des_Bairro" />
+                <ScalarProperty Name="Des_Complemento" ColumnName="Des_Complemento" />
+                <ScalarProperty Name="Num_Endereco" ColumnName="Num_Endereco" />
+                <ScalarProperty Name="Des_Logradouro" ColumnName="Des_Logradouro" />
+                <ScalarProperty Name="Num_CEP" ColumnName="Num_CEP" />
+                <ScalarProperty Name="Idf_Endereco" ColumnName="Idf_Endereco" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Pessoa_Fisica_Foto">
+            <EntityTypeMapping TypeName="LANModel.TAB_Pessoa_Fisica_Foto">
+              <MappingFragment StoreEntitySet="TAB_Pessoa_Fisica_Foto">
+                <ScalarProperty Name="Dta_Alteracao" ColumnName="Dta_Alteracao" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Img_Pessoa" ColumnName="Img_Pessoa" />
+                <ScalarProperty Name="Idf_Pessoa_Fisica_Foto" ColumnName="Idf_Pessoa_Fisica_Foto" />
+                <ScalarProperty Name="Idf_Pessoa_Fisica" ColumnName="Idf_Pessoa_Fisica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LAN_Administrador">
+            <EntityTypeMapping TypeName="LANModel.LAN_Administrador">
+              <MappingFragment StoreEntitySet="LAN_Administrador">
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Sen_Administrador" ColumnName="Sen_Administrador" />
+                <ScalarProperty Name="Dta_Nascimento" ColumnName="Dta_Nascimento" />
+                <ScalarProperty Name="Num_CPF" ColumnName="Num_CPF" />
+                <ScalarProperty Name="Idf_Administrador" ColumnName="Idf_Administrador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LAN_Companhia">
+            <EntityTypeMapping TypeName="LANModel.LAN_Companhia">
+              <MappingFragment StoreEntitySet="LAN_Companhia">
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Img_Logo" ColumnName="Img_Logo" />
+                <ScalarProperty Name="Dta_Alteracao" ColumnName="Dta_Alteracao" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Des_Carta_Agradecimento" ColumnName="Des_Carta_Agradecimento" />
+                <ScalarProperty Name="Des_Carta_Apresentacao" ColumnName="Des_Carta_Apresentacao" />
+                <ScalarProperty Name="Num_CNPJ" ColumnName="Num_CNPJ" />
+                <ScalarProperty Name="Nme_Companhia" ColumnName="Nme_Companhia" />
+                <ScalarProperty Name="Idf_Companhia" ColumnName="Idf_Companhia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LAN_Fase_Cadastro">
+            <EntityTypeMapping TypeName="LANModel.LAN_Fase_Cadastro">
+              <MappingFragment StoreEntitySet="LAN_Fase_Cadastro">
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Des_Fase_Cadastro" ColumnName="Des_Fase_Cadastro" />
+                <ScalarProperty Name="Idf_Fase_Cadastro" ColumnName="Idf_Fase_Cadastro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LAN_Oportunidade">
+            <EntityTypeMapping TypeName="LANModel.LAN_Oportunidade">
+              <MappingFragment StoreEntitySet="LAN_Oportunidade">
+                <ScalarProperty Name="Num_Prioridade" ColumnName="Num_Prioridade" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Dta_Fim_Validade" ColumnName="Dta_Fim_Validade" />
+                <ScalarProperty Name="Dta_Inicio_Validade" ColumnName="Dta_Inicio_Validade" />
+                <ScalarProperty Name="Idf_Companhia" ColumnName="Idf_Companhia" />
+                <ScalarProperty Name="Idf_Filial" ColumnName="Idf_Filial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LAN_Oportunidade_Cidade">
+            <EntityTypeMapping TypeName="LANModel.LAN_Oportunidade_Cidade">
+              <MappingFragment StoreEntitySet="LAN_Oportunidade_Cidade">
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Idf_Companhia" ColumnName="Idf_Companhia" />
+                <ScalarProperty Name="Idf_Filial" ColumnName="Idf_Filial" />
+                <ScalarProperty Name="Idf_Cidade" ColumnName="Idf_Cidade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LAN_Oportunidade_Curriculo_Historico">
+            <EntityTypeMapping TypeName="LANModel.LAN_Oportunidade_Curriculo_Historico">
+              <MappingFragment StoreEntitySet="LAN_Oportunidade_Curriculo_Historico">
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Idf_Companhia" ColumnName="Idf_Companhia" />
+                <ScalarProperty Name="Idf_Filial" ColumnName="Idf_Filial" />
+                <ScalarProperty Name="Idf_Curriculo" ColumnName="Idf_Curriculo" />
+                <ScalarProperty Name="Idf_Oportunidade_Curriculo_Historico" ColumnName="Idf_Oportunidade_Curriculo_Historico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LAN_Perfil">
+            <EntityTypeMapping TypeName="LANModel.LAN_Perfil">
+              <MappingFragment StoreEntitySet="LAN_Perfil">
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Des_Perfil" ColumnName="Des_Perfil" />
+                <ScalarProperty Name="Idf_Perfil" ColumnName="Idf_Perfil" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LAN_Plano_Adquirido">
+            <EntityTypeMapping TypeName="LANModel.LAN_Plano_Adquirido">
+              <MappingFragment StoreEntitySet="LAN_Plano_Adquirido">
+                <ScalarProperty Name="Dta_Fim_Plano" ColumnName="Dta_Fim_Plano" />
+                <ScalarProperty Name="Dta_Inicio_Plano" ColumnName="Dta_Inicio_Plano" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Idf_Plano_Adquirido" ColumnName="Idf_Plano_Adquirido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LAN_Plano_Situacao">
+            <EntityTypeMapping TypeName="LANModel.LAN_Plano_Situacao">
+              <MappingFragment StoreEntitySet="LAN_Plano_Situacao">
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Des_Plano_Situacao" ColumnName="Des_Plano_Situacao" />
+                <ScalarProperty Name="Idf_Plano_Situacao" ColumnName="Idf_Plano_Situacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_LAN_Plano_Adquirido_Idf_Cod_Desconto_BNE_BNE_Codigo_Desconto_Idf_Codigo_Desconto" TypeName="LANModel.FK_LAN_Plano_Adquirido_Idf_Cod_Desconto_BNE_BNE_Codigo_Desconto_Idf_Codigo_Desconto" StoreEntitySet="LAN_Plano_Adquirido">
+            <EndProperty Name="LAN_Plano_Adquirido">
+              <ScalarProperty Name="Idf_Plano_Adquirido" ColumnName="Idf_Plano_Adquirido" />
+            </EndProperty>
+            <EndProperty Name="BNE_Codigo_Desconto">
+              <ScalarProperty Name="Idf_Codigo_Desconto" ColumnName="Idf_Codigo_Desconto" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_LAN_Plano_Adquirido_Idf_Curriculo_bne_Curiculo_Idf_Curriculo" TypeName="LANModel.FK_LAN_Plano_Adquirido_Idf_Curriculo_bne_Curiculo_Idf_Curriculo" StoreEntitySet="LAN_Plano_Adquirido">
+            <EndProperty Name="LAN_Plano_Adquirido">
+              <ScalarProperty Name="Idf_Plano_Adquirido" ColumnName="Idf_Plano_Adquirido" />
+            </EndProperty>
+            <EndProperty Name="BNE_Curriculo">
+              <ScalarProperty Name="Idf_Curriculo" ColumnName="Idf_Curriculo" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_LAN_Companhia_Idf_Filial_Tab_Filial_Idf_Filial" TypeName="LANModel.FK_LAN_Companhia_Idf_Filial_Tab_Filial_Idf_Filial" StoreEntitySet="LAN_Companhia">
+            <EndProperty Name="LAN_Companhia">
+              <ScalarProperty Name="Idf_Companhia" ColumnName="Idf_Companhia" />
+            </EndProperty>
+            <EndProperty Name="TAB_Filial">
+              <ScalarProperty Name="Idf_Filial" ColumnName="Idf_Filial" />
+            </EndProperty>
+            <Condition ColumnName="Idf_Filial" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_LAN_Administrador_idf_Perfil_LAN_Administrador_idf_Perfil" TypeName="LANModel.FK_LAN_Administrador_idf_Perfil_LAN_Administrador_idf_Perfil" StoreEntitySet="LAN_Administrador">
+            <EndProperty Name="LAN_Administrador">
+              <ScalarProperty Name="Idf_Administrador" ColumnName="Idf_Administrador" />
+            </EndProperty>
+            <EndProperty Name="LAN_Perfil">
+              <ScalarProperty Name="Idf_Perfil" ColumnName="Idf_Perfil" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_LAN_Plano_Adquirido_Idf_Plano_Situacao_LAN_Plano_Situacao" TypeName="LANModel.FK_LAN_Plano_Adquirido_Idf_Plano_Situacao_LAN_Plano_Situacao" StoreEntitySet="LAN_Plano_Adquirido">
+            <EndProperty Name="LAN_Plano_Adquirido">
+              <ScalarProperty Name="Idf_Plano_Adquirido" ColumnName="Idf_Plano_Adquirido" />
+            </EndProperty>
+            <EndProperty Name="LAN_Plano_Situacao">
+              <ScalarProperty Name="Idf_Plano_Situacao" ColumnName="Idf_Plano_Situacao" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="LAN_Oportunidade_Curriculo">
+            <EntityTypeMapping TypeName="LANModel.LAN_Oportunidade_Curriculo">
+              <MappingFragment StoreEntitySet="LAN_Oportunidade_Curriculo">
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Idf_Fase_Cadastro" ColumnName="Idf_Fase_Cadastro" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Idf_Companhia" ColumnName="Idf_Companhia" />
+                <ScalarProperty Name="Idf_Filial" ColumnName="Idf_Filial" />
+                <ScalarProperty Name="Idf_Curriculo" ColumnName="Idf_Curriculo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Filial_Logo">
+            <EntityTypeMapping TypeName="LANModel.TAB_Filial_Logo">
+              <MappingFragment StoreEntitySet="TAB_Filial_Logo">
+                <ScalarProperty Name="Dta_Alteracao" ColumnName="Dta_Alteracao" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Img_Logo" ColumnName="Img_Logo" />
+                <ScalarProperty Name="Idf_Filial" ColumnName="Idf_Filial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Parametro_Filial">
+            <EntityTypeMapping TypeName="LANModel.TAB_Parametro_Filial">
+              <MappingFragment StoreEntitySet="TAB_Parametro_Filial">
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Vlr_Parametro" ColumnName="Vlr_Parametro" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Idf_Filial" ColumnName="Idf_Filial" />
+                <ScalarProperty Name="Idf_Parametro" ColumnName="Idf_Parametro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Regiao_Metropolitana">
+            <EntityTypeMapping TypeName="LANModel.TAB_Regiao_Metropolitana">
+              <MappingFragment StoreEntitySet="TAB_Regiao_Metropolitana">
+                <ScalarProperty Name="CID_Regiao_Metropolitana" ColumnName="CID_Regiao_Metropolitana" />
+                <ScalarProperty Name="Sig_UF" ColumnName="Sig_UF" />
+                <ScalarProperty Name="Dta_Cadastro" ColumnName="Dta_Cadastro" />
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Idf_Cidade" ColumnName="Idf_Cidade" />
+                <ScalarProperty Name="Nme_Regiao_Metropolitana_Pesquisa" ColumnName="Nme_Regiao_Metropolitana_Pesquisa" />
+                <ScalarProperty Name="Nme_Regiao_Metropolitana" ColumnName="Nme_Regiao_Metropolitana" />
+                <ScalarProperty Name="Idf_Regiao_Metropolitana" ColumnName="Idf_Regiao_Metropolitana" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAB_Regiao_Metropolitana_Cidade">
+            <EntityTypeMapping TypeName="LANModel.TAB_Regiao_Metropolitana_Cidade">
+              <MappingFragment StoreEntitySet="TAB_Regiao_Metropolitana_Cidade">
+                <ScalarProperty Name="Flg_Inativo" ColumnName="Flg_Inativo" />
+                <ScalarProperty Name="Dta_cadastro" ColumnName="Dta_cadastro" />
+                <ScalarProperty Name="Idf_Cidade" ColumnName="Idf_Cidade" />
+                <ScalarProperty Name="Idf_Regiao_Metropolitana" ColumnName="Idf_Regiao_Metropolitana" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="BUSCA_EMPRESA" FunctionName="LANModel.Store.BUSCA_EMPRESA">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="LANModel.BUSCA_EMPRESA_RETORNO">
+                <ScalarProperty Name="OrdenacaoCidade" ColumnName="OrdenacaoCidade" />
+                <ScalarProperty Name="OrdenacaoEstado" ColumnName="OrdenacaoEstado" />
+                <ScalarProperty Name="OrdenacaoLogo" ColumnName="OrdenacaoLogo" />
+                <ScalarProperty Name="OrdenacaoRM" ColumnName="OrdenacaoRM" />
+                <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+                <ScalarProperty Name="Filial" ColumnName="Filial" />
+                <ScalarProperty Name="NomeFantasia" ColumnName="NomeFantasia" />
+                <ScalarProperty Name="Prioridade" ColumnName="Prioridade" />
+                <ScalarProperty Name="Candidatado" ColumnName="Candidatado" />
+                <ScalarProperty Name="RecrutamentoTerceirizado" ColumnName="RecrutamentoTerceirizado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

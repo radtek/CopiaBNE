@@ -1,0 +1,11 @@
+﻿@model dynamic
+
+@User.Identity.Name
+@using (Html.BeginForm("SignIn", "Auth"))
+{
+    <input type="submit" value="Click" />
+}
+@using (Html.BeginForm("SignOut", "Auth"))
+{
+    <input type="submit" value="Sign out" />
+}

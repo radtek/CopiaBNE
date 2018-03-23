@@ -1,0 +1,15 @@
+﻿/* User Control [Paginacao] */
+.paginacao_panel { width: 100%; text-align: right; font-size: 12px; }
+.paginacao_panel .esquerda { float: left; width: 447px; margin-left: 2px; text-align: left; }
+.paginacao_panel .esquerda * { vertical-align: middle; }
+.paginacao_panel .direita { float: left; width: 447px; margin-right: 2px; text-align: right; }
+.paginacao_panel .direita * { vertical-align: middle; }
+.paginacao_panel .button_ok_paginacao { cursor: hand; cursor: pointer; height: 20px; margin: 0 5px; padding: 3px; background-image: url('../../img/global/bg_btn_padrao.gif'); background-repeat: repeat-x; background-position: bottom; border: 1px solid #7c785d; font-size: 11px; }
+/* FIM: User Control [Paginacao] */
+/* User Control [Paginacao Panel Padrao] */
+.paginacao_panel_padrao { width: 860px; height: auto; margin: 10px auto 20px; overflow: hidden; }
+.paginacao_panel_padrao .esquerda { width: 340px; }
+.paginacao_panel_padrao .direita { width: 516px; }
+/* FIM: User Control [Paginacao Panel Padrao] */
+/*-- ajustes na modal de CEP--*/
+.modal_busca_cep .painel_campos { margin: 10px; }

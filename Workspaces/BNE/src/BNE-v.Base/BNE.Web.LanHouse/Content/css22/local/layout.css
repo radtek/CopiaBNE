@@ -1,0 +1,1587 @@
+/* This code is only meant for previewing your Reflow design. */
+.primaryContainer {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100%;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+    position: relative;
+}
+
+#labelResenha-2 {
+    float: left;
+    font-size: 1.3125em;
+    width: 280px;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(153, 153, 153);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 8px;
+    margin-left: 8.385725%;
+    clear: both;
+}
+
+#labelLogo-2 {
+    float: left;
+    font-size: 2.3125em;
+    width: 280px;
+    height: auto;
+    text-align: left;
+    font-weight: bold;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 33px;
+    margin-left: 8.385725%;
+    clear: both;
+    margin-right: 0%;
+}
+
+#labelResenha {
+    float: left;
+    font-size: 1.3125em;
+    width: 280px;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(153, 153, 153);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 8px;
+    margin-left: 8.09449%;
+    clear: both;
+    margin-right: 0%;
+}
+
+#labelLogo {
+    float: left;
+    font-size: 2.3125em;
+    width: 280px;
+    height: auto;
+    text-align: left;
+    font-weight: bold;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 33px;
+    margin-left: 7.946561%;
+    clear: both;
+    margin-right: 0%;
+}
+
+#labelResenha-p1 {
+    float: left;
+    font-size: 0.8em;
+    width: 135px;
+    height: 74px;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 0px;
+    margin-left: 7.03125%;
+    clear: both;
+    min-height: 53px;
+    margin-right: 0%;
+}
+
+#box-destaq-2 {
+    float: left;
+    height: 526px;
+    width: 338px;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    clear: none;
+    margin-left: 40.978009799999995px;
+    margin-right: 0%;
+    margin-top: 45px;
+}
+
+#labelLogo-p1 {
+    float: left;
+    font-size: 1.3125em;
+    width: 135px;
+    height: 25px;
+    text-align: left;
+    font-weight: bold;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 6.992187%;
+    clear: both;
+    margin-right: 0%;
+}
+
+#labelResenha-p2 {
+    float: left;
+    font-size: 0.8em;
+    width: 135px;
+    height: 74px;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 0px;
+    margin-left: 7.548828%;
+    clear: both;
+    min-height: 74px;
+    margin-right: 0%;
+}
+
+#labelLogo-p2 {
+    float: left;
+    font-size: 1.3125em;
+    width: 135px;
+    height: 25px;
+    text-align: left;
+    font-weight: bold;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 23px;
+    margin-left: 7.548828%;
+    clear: both;
+    margin-right: 0%;
+}
+
+#box-destaq-1 {
+    float: left;
+    height: 526px;
+    width: 338px;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 45px;
+    margin-left: 171.20327920000003px;
+    clear: none;
+    margin-right: 0%;
+    display: block;
+}
+
+#bg {
+    float: left;
+    height: 978px;
+    width: 100%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: auto;
+    margin: 70px 0px 0px 0%;
+    clear: none;
+    overflow: hidden;
+}
+
+#box-1 {
+    float: left;
+    height: 258px;
+    width: 160px;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 7px;
+    margin-left: 3.613339%;
+    clear: none;
+    margin-right: 0%;
+    display: block;
+}
+
+#box-2 {
+    float: left;
+    height: 258px;
+    width: 160px;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 7px;
+    margin-left: 7.133838%;
+    clear: none;
+    margin-right: 0%;
+}
+
+#Lan_TODA_HORA {
+    float: left;
+    font-size: 1.5625em;
+    width: 354.28125px;
+    height: auto;
+    text-align: left;
+    font-weight: bold;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    margin-top: 20px;
+    margin-left: 17.99220114px;
+    clear: none;
+    margin-right: 0%;
+    overflow: hidden;
+}
+
+#lupa {
+    float: left;
+    width: auto;
+    height: auto;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 12px;
+    margin-left: 24.578125px;
+    clear: none;
+    margin-right: 0%;
+    max-width: 25.572917%;
+}
+
+#nome {
+    float: left;
+    font-size: 1.5625em;
+    width: 304.234375px;
+    height: auto;
+    text-align: right;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(153, 153, 153);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    margin-top: 23.5625px;
+    margin-left: 35.60937551999999px;
+    clear: none;
+    margin-right: 0%;
+    overflow: hidden;
+}
+
+#top-bar {
+    float: left;
+    height: 76px;
+    width: 100%;
+    background-color: rgb(241, 241, 241);
+    border: 1px solid rgba(0, 0, 0, 0.14902);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    clear: none;
+    right: auto;
+    min-width: 0px;
+}
+
+#containerFoto {
+    float: left;
+    height: 49px;
+    width: 49px;
+    background-color: rgb(102, 102, 102);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 2px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    margin-top: 11.5625px;
+    margin-left: 0.58084705%;
+    clear: none;
+    display: block;
+    margin-right: 0%;
+}
+
+#search-btn {
+    float: left;
+    height: 35px;
+    width: 60px;
+    background-color: rgb(13, 115, 180);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 3px inset;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    margin-top: 18px;
+    margin-left: 6.3125px;
+    clear: none;
+    display: block;
+    margin-right: 0%;
+}
+
+#image6 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0%;
+    display: block;
+}
+
+#Box-logo {
+    float: left;
+    height: 200px;
+    margin-left: 8.1777%;
+    margin-top: 30px;
+    clear: none;
+    width: 280px;
+    position: relative;
+}
+
+#Box-logo-2 {
+    float: left;
+    height: 200px;
+    margin-left: 7.95%;
+    margin-top: 31px;
+    clear: none;
+    width: 82.835614%;
+    margin-right: 0%;
+    display: block;
+}
+
+#Box-logo-p1 {
+    float: left;
+    height: 110px;
+    margin-left: 5.429688%;
+    margin-top: 14px;
+    clear: none;
+    width: 140px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    display: block;
+}
+
+#Box-logo-p2 {
+    float: left;
+    height: 110px;
+    margin-left: 6.083984%;
+    margin-top: 11px;
+    clear: none;
+    width: 140px;
+    margin-right: 0%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+#formgroup {
+    float: left;
+    height: auto;
+    display: block;
+    text-align: left;
+    margin-left: -64.271763%;
+    margin-top: -1863px;
+    clear: none;
+    width: 28.465792%;
+}
+
+#textinput {
+    float: none;
+    height: auto;
+    padding: 0px;
+    font-size: 1em;
+    display: block;
+    width: 100%;
+}
+
+#text {
+    float: none;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    padding: 0.2em 0em;
+    display: block;
+}
+
+#formgroup1 {
+    float: left;
+    height: auto;
+    display: block;
+    text-align: left;
+    margin-left: -64.271763%;
+    margin-top: -1802px;
+    clear: none;
+    width: 13.064772%;
+}
+
+#textinput1 {
+    float: none;
+    height: auto;
+    padding: 0px;
+    font-size: 1em;
+    display: block;
+    width: 100%;
+}
+
+#text1 {
+    float: none;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    padding: 0.2em 0em;
+    display: block;
+}
+
+#formgroup2 {
+    float: left;
+    height: auto;
+    display: block;
+    text-align: left;
+    margin-left: 69.40625292px;
+    margin-top: 10.75px;
+    clear: none;
+    width: 418px;
+    margin-right: 0%;
+}
+
+#textinput2 {
+    float: none;
+    height: 34px;
+    padding: 0px 0px 0px 7px;
+    font-size: 1em;
+    display: block;
+    width: 100%;
+    margin-top: -20.375px;
+    margin-left: 0%;
+    clear: none;
+}
+
+#text2 {
+    float: none;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    padding: 0.2em 0em;
+    display: block;
+    margin-top: 5.375px;
+    margin-left: 0%;
+    clear: none;
+    min-height: 0px;
+}
+
+#BoxDestaqueSmall {
+    float: left;
+    height: 546px;
+    margin-left: 25.4375px;
+    margin-top: 38px;
+    clear: none;
+    width: 420.75px;
+    display: block;
+}
+
+#Box-hover {
+    float: left;
+    height: 258px;
+    clear: none;
+    width: 338px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: auto;
+    z-index: 2;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#Box-hover:hover {
+    background-color: rgba(68, 68, 68, 0.592157);
+    display: block;
+    bottom: auto;
+    top: auto;
+    left: 0px;
+    right: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#image1 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 1.065908%;
+    margin-top: 22px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0%;
+}
+
+#image {
+    float: left;
+    width: auto;
+    max-width: 68.482143%;
+    height: auto;
+    margin-left: 16.09375%;
+    margin-top: 9px;
+    clear: none;
+    color: rgb(0, 0, 0);
+}
+
+#Box-hover1 {
+    float: left;
+    height: 258px;
+    clear: both;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    bottom: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: block;
+}
+
+#Box-hover1:hover {
+    background-color: rgba(68, 68, 68, 0.592157);
+}
+
+#Box-hover2 {
+    float: left;
+    height: 135px;
+    clear: none;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: auto;
+    left: 0px;
+    right: auto;
+    z-index: 2;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#Box-hover2:hover {
+    background-color: rgba(68, 68, 68, 0.592157);
+    display: block;
+}
+
+#Box-hover3:hover {
+    display: block;
+    background-color: rgba(68, 68, 68, 0.592157);
+}
+
+#Box-hover3 {
+    float: left;
+    height: 135px;
+    clear: both;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    right: auto;
+}
+
+#box-3 {
+    float: left;
+    height: 258px;
+    width: 160px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 10px;
+    margin-left: 3.613339%;
+    clear: both;
+    margin-right: 0%;
+    background-color: rgb(255, 255, 255);
+}
+
+#Box-hover4:hover {
+    display: block;
+    background-color: rgba(68, 68, 68, 0.592157);
+}
+
+#Box-hover4 {
+    float: left;
+    height: 135px;
+    clear: none;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: auto;
+    left: 0px;
+    right: auto;
+    z-index: 2;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#Box-logo-p3 {
+    float: left;
+    height: 110px;
+    margin-left: 5.820313%;
+    margin-top: 14px;
+    clear: none;
+    width: 140px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+#labelLogo-p3 {
+    float: left;
+    font-size: 1.3125em;
+    width: 135px;
+    height: 25px;
+    text-align: left;
+    font-weight: bold;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 6.888021%;
+    clear: both;
+    margin-right: 0%;
+}
+
+#labelResenha-p3 {
+    float: left;
+    font-size: 0.8em;
+    width: 135px;
+    height: 74px;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 0px;
+    margin-left: 6.888021%;
+    clear: both;
+    min-height: 53px;
+    margin-right: 0%;
+}
+
+#box-4 {
+    float: left;
+    height: 258px;
+    width: 160.0000011515625px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 10px;
+    margin-left: 7.133838%;
+    clear: none;
+    margin-right: 0%;
+    background-color: rgb(255, 255, 255);
+}
+
+#Box-logo-p4 {
+    float: left;
+    height: 110px;
+    margin-left: 6.09375%;
+    margin-top: 11px;
+    clear: none;
+    width: 140px;
+    margin-right: 0%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+#Box-hover5:hover {
+    display: block;
+    background-color: rgba(68, 68, 68, 0.592157);
+}
+
+#Box-hover5 {
+    float: left;
+    height: 135px;
+    clear: both;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    right: auto;
+}
+
+#labelLogo-p4 {
+    float: left;
+    font-size: 1.3125em;
+    width: 135px;
+    height: 25px;
+    text-align: left;
+    font-weight: bold;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 23px;
+    margin-left: 7.539063%;
+    clear: both;
+    margin-right: 0%;
+}
+
+#labelResenha-p4 {
+    float: left;
+    font-size: 0.8em;
+    width: 135px;
+    height: 74px;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 0px;
+    margin-left: 7.539063%;
+    clear: both;
+    min-height: 74px;
+    margin-right: 0%;
+}
+
+#article {
+    float: left;
+    height: 297px;
+    margin-left: 125.18107159999998px;
+    margin-top: 0px;
+    clear: both;
+    width: 1209.1875px;
+}
+
+#boxPadrao {
+    float: left;
+    height: 258px;
+    width: 160px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 17px;
+    margin-left: 45.609379588125px;
+    clear: none;
+    margin-right: 0%;
+    background-color: rgb(255, 255, 255);
+}
+
+#Box-hover6:hover {
+    display: block;
+    background-color: rgba(68, 68, 68, 0.592157);
+}
+
+#Box-hover6 {
+    float: left;
+    height: 135px;
+    clear: none;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: auto;
+    left: 0px;
+    right: auto;
+    z-index: 2;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#Box-logo1 {
+    float: left;
+    height: 110px;
+    margin-left: 6.757813%;
+    margin-top: 14px;
+    clear: none;
+    width: 140px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+#labelLogo1 {
+    float: left;
+    font-size: 1.3125em;
+    width: 135px;
+    height: 25px;
+    text-align: left;
+    font-weight: bold;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 7.265625%;
+    clear: both;
+    margin-right: 0%;
+}
+
+#labelResenha1 {
+    float: left;
+    font-size: 0.8em;
+    width: 135px;
+    height: 74px;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 0px;
+    margin-left: 7.265625%;
+    clear: both;
+    min-height: 53px;
+    margin-right: 0%;
+}
+
+#boxPadrao-6 {
+    float: left;
+    height: 258px;
+    width: 160px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 17px;
+    margin-left: 29px;
+    clear: none;
+    margin-right: 0%;
+    background-color: rgb(255, 255, 255);
+}
+
+#Box-hover11:hover {
+    display: block;
+    background-color: rgba(68, 68, 68, 0.592157);
+}
+
+#Box-hover11 {
+    float: left;
+    height: 135px;
+    clear: none;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: auto;
+    left: 0px;
+    right: auto;
+    z-index: 2;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#BoxLogoPadrao-6 {
+    float: left;
+    height: 110px;
+    margin-left: 5.820313%;
+    margin-top: 14px;
+    clear: none;
+    width: 140px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+#labelLogoPadrao-6 {
+    float: left;
+    font-size: 1.3125em;
+    width: 135px;
+    height: 25px;
+    text-align: left;
+    font-weight: bold;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 7.265625%;
+    clear: both;
+    margin-right: 0%;
+}
+
+#labelResenhaPadrao-6 {
+    float: left;
+    font-size: 0.8em;
+    width: 135px;
+    height: 74px;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 0px;
+    margin-left: 7.265625%;
+    clear: both;
+    min-height: 53px;
+    margin-right: 0%;
+}
+
+#boxPadrao-2 {
+    float: left;
+    height: 258px;
+    width: 160px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 17px;
+    margin-left: 29px;
+    clear: none;
+    margin-right: 0%;
+    background-color: rgb(255, 255, 255);
+}
+
+#Box-hover7:hover {
+    display: block;
+    background-color: rgba(68, 68, 68, 0.592157);
+}
+
+#Box-hover7 {
+    float: left;
+    height: 135px;
+    clear: none;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: auto;
+    left: 0px;
+    right: auto;
+    z-index: 2;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#BoxLogoPadrao-2 {
+    float: left;
+    height: 110px;
+    margin-left: 6.445313%;
+    margin-top: 14px;
+    clear: none;
+    width: 140px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+#labelLogoPadrao-2 {
+    float: left;
+    font-size: 1.3125em;
+    width: 135px;
+    height: 25px;
+    text-align: left;
+    font-weight: bold;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 7.265625%;
+    clear: both;
+    margin-right: 0%;
+}
+
+#labelResenhaPadrao-2 {
+    float: left;
+    font-size: 0.8em;
+    width: 135px;
+    height: 74px;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 0px;
+    margin-left: 7.265625%;
+    clear: both;
+    min-height: 53px;
+    margin-right: 0%;
+}
+
+#boxPadrao-3 {
+    float: left;
+    height: 258px;
+    width: 160px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 17px;
+    margin-left: 29px;
+    clear: none;
+    margin-right: 0%;
+    background-color: rgb(255, 255, 255);
+}
+
+#Box-hover8:hover {
+    display: block;
+    background-color: rgba(68, 68, 68, 0.592157);
+}
+
+#Box-hover8 {
+    float: left;
+    height: 135px;
+    clear: none;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: auto;
+    left: 0px;
+    right: auto;
+    z-index: 2;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#BoxLogoPadrao-3 {
+    float: left;
+    height: 110px;
+    margin-left: 6.445313%;
+    margin-top: 14px;
+    clear: none;
+    width: 140px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+#labelLogoPadrao-3 {
+    float: left;
+    font-size: 1.3125em;
+    width: 135px;
+    height: 25px;
+    text-align: left;
+    font-weight: bold;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 7.265625%;
+    clear: both;
+    margin-right: 0%;
+}
+
+#labelResenhaPadrao-3 {
+    float: left;
+    font-size: 0.8em;
+    width: 135px;
+    height: 74px;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 0px;
+    margin-left: 7.265625%;
+    clear: both;
+    min-height: 53px;
+    margin-right: 0%;
+}
+
+#boxPadrao-4 {
+    float: left;
+    height: 258px;
+    width: 160px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 17px;
+    margin-left: 29.000004271875003px;
+    clear: none;
+    margin-right: 0%;
+    background-color: rgb(255, 255, 255);
+}
+
+#Box-hover9:hover {
+    display: block;
+    background-color: rgba(68, 68, 68, 0.592157);
+}
+
+#Box-hover9 {
+    float: left;
+    height: 135px;
+    clear: none;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: auto;
+    left: 0px;
+    right: auto;
+    z-index: 2;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#BoxLogoPadrao-4 {
+    float: left;
+    height: 110px;
+    margin-left: 5.820313%;
+    margin-top: 14px;
+    clear: none;
+    width: 140px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+#labelLogoPadrao-4 {
+    float: left;
+    font-size: 1.3125em;
+    width: 135px;
+    height: 25px;
+    text-align: left;
+    font-weight: bold;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 7.265625%;
+    clear: both;
+    margin-right: 0%;
+}
+
+#labelResenhaPadrao-4 {
+    float: left;
+    font-size: 0.8em;
+    width: 135px;
+    height: 74px;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 0px;
+    margin-left: 7.265625%;
+    clear: both;
+    min-height: 53px;
+    margin-right: 0%;
+}
+
+#boxPadrao-5 {
+    float: left;
+    height: 258px;
+    width: 160px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 17px;
+    margin-left: 29.000004271875003px;
+    clear: none;
+    margin-right: 0%;
+    background-color: rgb(255, 255, 255);
+}
+
+#Box-hover10:hover {
+    display: block;
+    background-color: rgba(68, 68, 68, 0.592157);
+}
+
+#Box-hover10 {
+    float: left;
+    height: 135px;
+    clear: none;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: auto;
+    left: 0px;
+    right: auto;
+    z-index: 2;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#BoxLogoPadrao-5 {
+    float: left;
+    height: 110px;
+    margin-left: 5.820313%;
+    margin-top: 14px;
+    clear: none;
+    width: 140px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+#labelLogoPadrao-5 {
+    float: left;
+    font-size: 1.3125em;
+    width: 135px;
+    height: 25px;
+    text-align: left;
+    font-weight: bold;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 7.265625%;
+    clear: both;
+    margin-right: 0%;
+}
+
+#labelResenhaPadrao-5 {
+    float: left;
+    font-size: 0.8em;
+    width: 135px;
+    height: 74px;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(102, 102, 102);
+    font-style: normal;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 0px;
+    margin-left: 7.265625%;
+    clear: both;
+    min-height: 53px;
+    margin-right: 0%;
+}
+
+#image2 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 12.991071%;
+    margin-top: 3px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0%;
+}
+
+#image3 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 1.417411%;
+    margin-top: 4px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0%;
+}
+
+#image4 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 12.98%;
+    margin-top: 6px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0%;
+}
+
+#image5 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 1.58%;
+    margin-top: 4px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0%;
+}
+

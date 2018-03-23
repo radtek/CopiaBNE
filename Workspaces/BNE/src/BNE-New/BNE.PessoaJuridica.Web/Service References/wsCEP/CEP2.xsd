@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BNE.BLL.CEP" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BNE.BLL.CEP" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="DirecaoOrdenacao">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ASC" />
+      <xs:enumeration value="DESC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DirecaoOrdenacao" nillable="true" type="tns:DirecaoOrdenacao" />
+  <xs:simpleType name="Colunas">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cep" />
+      <xs:enumeration value="TipoLogradouro" />
+      <xs:enumeration value="Logradouro" />
+      <xs:enumeration value="Bairro" />
+      <xs:enumeration value="Cidade" />
+      <xs:enumeration value="Estado" />
+      <xs:enumeration value="Complemento" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Colunas" nillable="true" type="tns:Colunas" />
+  <xs:complexType name="CEP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bairro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BairroAbreviado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cep" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cidade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Complemento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Encontrou" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Logradouro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoLogradouro" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CEP" nillable="true" type="tns:CEP" />
+  <xs:complexType name="ArrayOfCEP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CEP" nillable="true" type="tns:CEP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCEP" nillable="true" type="tns:ArrayOfCEP" />
+</xs:schema>

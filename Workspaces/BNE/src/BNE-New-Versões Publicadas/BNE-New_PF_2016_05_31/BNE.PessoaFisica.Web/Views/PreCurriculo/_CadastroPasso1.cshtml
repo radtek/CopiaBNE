@@ -1,0 +1,78 @@
+﻿@model BNE.PessoaFisica.Web.Models.PreCurriculo
+           <script type="text/javascript">
+               $(document).ready(function () {
+                   ConfigurarPasso1();
+               });
+           </script>
+
+    <div class="mdl-grid bottom20">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center bottom20"><h4><strong class="darkgrey">Ainda não sou cadastrado</strong></h4></div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--8-col-tablet vert-middle mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+        @Html.TextBoxFor(m => m.Nome, new { id = "txtNome", @class = "mdl-textfield__input", @maxlength = "100", Value= @ViewBag.Nome  })
+        <label class="mdl-textfield__label" for="txtNome">Nome Completo</label>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+        @Html.TextBoxFor(m => m.Email, new { id = "txtEmail", @class = "mdl-textfield__input", @maxlength = "100", Value = @ViewBag.Email })
+        <label class="mdl-textfield__label" for="txtEmail">E-mail</label>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+        @Html.TextBoxFor(m => m.Celular, new { id = "txtCelular", @class = "mdl-textfield__input", @maxlength = "15" })
+        <label class="mdl-textfield__label" for="txtCelular ">Celular</label>
+    </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield onlycheck">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect " for="chkSemExperiencia">
+                <input type="checkbox" id="chkSemExperiencia" class="mdl-checkbox__input" name="chkSemExperiencia" />
+                <span class="mdl-checkbox__label">Tenho experiência na função</span>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone divTempoExp"></div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone divTempoExp"></div>
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone mdl-cell--4-col-tablet vert-middle vertitemform divTempoExp">Tempo de experiência:</div>
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne divTempoExp">
+            @Html.TextBoxFor(m => m.TempoExperienciaAnos, new { id = "txtTempoExperienciaAnos", @class = "mdl-textfield__input", @maxlength = "2" })
+            <label class="mdl-textfield__label" for="txtTempoExperienciaAnos">Anos</label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne divTempoExp">
+            @Html.TextBoxFor(m => m.TempoExperienciaMeses, new { id = "txtTempoExperienciaMeses", @class = "mdl-textfield__input" })
+            <label class="mdl-textfield__label" for="txtTempoExperienciaMeses">Meses</label>
+        </div>
+       
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--4-col-phone mdl-cell--2-col-tablet vertitemform">Sexo:</div>
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-phone mdl-cell--3-col-tablet vertitemform">
+            
+                @Html.RadioButtonFor(m => m.Sexo, "M", new { @id = "option-masc", @class = "mdl-radio__button" })
+                <span class="mdl-radio__label">Masculino</span>
+            @*<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-masc">
+                
+            </label>*@
+           
+        </div>
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-phone mdl-cell--3-col-tablet vertitemform">
+            
+                @Html.RadioButtonFor(m => m.Sexo, "F", new { @id = "option-fem", @class = "mdl-radio__button" })
+                <span class="mdl-radio__label">Feminino</span>
+            @*<label for="option-fem" class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+            </label>*@
+        </div>
+
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="mdl-cell mdl-cell--8-col mdl-cell--12-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne ">
+            @Html.TextBoxFor(m => m.PretensaoSalarial, new { id = "txtPretensaoSalarial", @class = "mdl-textfield__input " })
+            <label class="mdl-textfield__label" for="txtPretensaoSalarial">Sálario Desejado R$</label>
+        </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--12-col center top24">
+        <button type="submit" name="action:Cadastro" onclick="trackEvent('PreCurriculo','Click','CadastroPasso1');" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformxbig" id="btnSave2">Quero esta @ViewBag.CssVagaOportunidade</button>
+    </div>
+</div>

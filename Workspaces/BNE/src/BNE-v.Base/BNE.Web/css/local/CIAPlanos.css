@@ -1,0 +1,69 @@
+﻿body { font-family: Arial,Helvetica,sans-serif !important; }
+.painel_padrao { margin-bottom: 20px; overflow: auto; }
+h1 .destaque { color: #00678C; }
+.conteudo { margin-top: 35px !important; }
+.containerSlogan { background-image: url('/img/pacotes_cia/etiqueta_slogan.png'); background-repeat: no-repeat; display: block; height: 51px; margin-left: 136px; margin-top: 0px; width: 597px; }
+.containerEtiqueta { height: 330px; margin-left: 80px; margin-top: -13px; width: 750px; }
+.container_prePago { background-image: url('/img/pacotes_cia/etiqueta_1.png'); background-repeat: no-repeat; display: inline-block; float: left; height: 330px; margin-left: 0px; margin-top: 0px; width: 152px; }
+.container_prePago .prepago { margin-left: 54px; margin-top: 140px; position: relative; height: 190px; width: 200px; }
+.container_prePago .radiobutton_padrao { margin-left: 59px; }
+.containerTresMeses { background-image: url('/img/pacotes_cia/etiqueta_2.png'); background-repeat: no-repeat; display: inline-block; float: left; height: 330px; margin-left: 98px; margin-top: 0px; width: 166px; }
+.containerTresMeses .trimestral { margin-left: 40px; margin-top: 132px; position: relative; height: 198px; width: 200px; }
+.containerTresMeses .radiobutton_padrao { margin-left: 74px; }
+.containerDozeMeses { background-image: url('/img/pacotes_cia/etiqueta_3.png'); background-repeat: no-repeat; display: inline-block; float: left; height: 330px; margin-left: 118px; margin-top: 0px; width: 171px; }
+.containerDozeMeses .anual { margin-left: 39px; margin-top: 128px; position: relative; height: 202px; width: 200px; }
+.containerDozeMeses .radiobutton_padrao { margin-left: 78px; }
+.radiobutton_padrao label { float: none; }
+.container_preco { display: block; position: absolute; }
+.MesesDe { color: #808080; font-size: 22px; text-decoration: line-through; }
+.prePago_por { color: #000; font-size: 26px; font-weight: bold; }
+.tresMesesPor { color: #000; font-size: 26px; font-weight: bold; margin-left: 0px; margin-top: 11px; }
+.dozeMesesPor { color: #000; font-size: 26px; font-weight: bold; margin-left: 0px; margin-top: 11px; }
+.prePago_curriculo { font-size: 18px; font-weight: bold; margin-left: -27px; margin-top: 22px; }
+.prePago_chameFacil { font-size: 18px; font-weight: bold; margin-left: 48px; margin-top: -25px; }
+.tresMesesFacil { font-size: 18px; font-weight: bold; margin-left: 73px; margin-top: 24px; }
+.dozeMesesFacil { font-size: 18px; font-weight: bold; margin-left: 73px; margin-top: 22px; }
+.btn_cinza { display: block; background-image: url("/img/pacotes_cia/btn_continuar_cinzab.png"); background-repeat: no-repeat; width: 253px; height: 70px; }
+.complementaTextbox
+{
+  width:140px; 
+  vertical-align:middle; 
+}
+.containerIsenrirCupom
+{
+   padding: 9px 0 0 35px;
+   background-color:#EEE;
+   -webkit-border-radius:7px;
+   border:2px solid #F8AE22;
+   border-radius:7px;
+   display:inline-block;
+   float:left;
+   height:39px;
+   margin-left:37px;
+   margin-top:16px;
+   width:382px;  
+}
+.buttonStyle
+{
+    border:1px solid #F8AE22;
+    border-radius:4px;
+    cursor:pointer;
+    height:25px;
+    vertical-align:middle;
+}
+.buttonStyle:hover,.buttonStyle:active
+{
+    color:#B26500;
+}
+.prePago_prazo { padding: 4px 0 4px 22px; }
+.tresMesesPrazo { padding: 4px 0 4px 22px; }
+.dozeMesesPrazo { padding: 4px 0 4px 22px; }
+.container_controles { text-align: center; margin-top: 48px; }
+.container_codigocredito { display: inline-block; *display: inline; zoom: 1; margin-right: 87px; margin-bottom: 6px; }
+.btn_continuar_cinza { color: #000; display: inline-block; *display: inline; zoom: 1; }
+
+.contrato
+{
+    margin-left: 83px;
+    width: 500px;
+}

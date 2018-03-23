@@ -1,0 +1,146 @@
+﻿<div class="container marginPassos" ng-init="init4()">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-9 column">
+                    <form role="form" class="pashe pashe4" name="formPasso4" novalidate>
+                        <div class="row clearfix">
+                            <ol class="breadcrumb">
+                                <li><a href="#/Home">Home</a></li>
+                                <li><a href="#/Cadastro">1º Passo</a></li>
+                                <li><a href="#/CadastroPasso2">2º Passo</a></li>
+                                <li><a href="#/CadastroPasso3">3º Passo</a></li>
+                                <li class="active">Criação de Currículo 4º Passo</li>
+                            </ol>
+                            <h3 class="assistenteCV">Assistente de Criação de Currículo - 4º Passo</h3>
+                            <h3>Dados adicionais.</h3>
+                            <div class="col-md-6 column">
+                                <p><label>Quando pode Trabalhar?</label></p>
+                                <p>
+                                    <label class="checkbox-inline">
+                                        <checkbox-generico valor="M" nome="chkManha" label=" Manhã" ng-model="cadCV.curriculo.periodoManha" />
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <checkbox-generico valor="T" nome="chkTarde" label=" Tarde" ng-model="cadCV.curriculo.periodoTarde" />
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <checkbox-generico valor="N" nome="chkNoite" label=" Noite" ng-model="cadCV.curriculo.periodoNoite" />
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <checkbox-generico valor="F" nome="chkFim" label=" Final de Semana" ng-model="cadCV.curriculo.periodoFimdeSemana" />
+                                    </label>
+                                </p>
+                                <div class="form-group">
+                                    <dropdown-generico array="cadCV.estadoCivil" nome="ddlEstadoCivil" opt-value="id" opt-description="text" ng-model="cadCV.curriculo.idEstadoCivil" orderby="id" label="Estado Civil" />
+                                </div>
+                                <div class="form-group">
+                                    <textarea-observacao label="Observações" nome="Observacao" maxl="2000" ng-model="cadCV.curriculo.observacao" />
+                                    <!--<label>Observações</label>
+                                    <textarea class="form-control" ng-focus="mostrarAvisoObservacao()" ng-mouseover="mostrarAvisoObservacao()" ng-mouseleave="ocultarAvisoObservacao()" rows="3" ng-trim="false" name="Observacao" id="Observacao" maxlength="2000" ng-model="cadCV.curriculo.observacao"></textarea>
+                                    <div id="avisoObservacao" class=" tooltip top in" style="top: 42px; left: 263.5px; display:none">
+                                        <div class="tooltip-arrow"></div>
+                                        <div class="tooltip-inner">Utilize este campo para descrever dados como,  trabalhos temporários/ free lancer, outras experiências profissionais, trabalho voluntário hobbies etc.?</div>
+                                    </div>-->
+                                </div>
+                            </div>
+                            <div class="col-md-6 column">
+                                <div class="form-group">
+                                    <div ng-show="!tiroufoto && exibirwebcam">
+                                        <webcam on-stream="onStream(stream, video)" on-access-denied="onError(err)" on-streaming="onSuccess(videoElement)" placeholder="'images/gif-load.gif'"></webcam>
+                                        <p></p>
+                                        <div class="btn-group btn-group-sm">
+                                            <a class="btn btn-primary" href="" ng-click="tirarFotoWebCam()" title="Tirar foto"><i class="fa fa-camera"></i> Tirar foto</a> <a class="btn btn-default" href="" ng-click="ocultarWebCam()" title="Foto do computador"><i class="fa fa-folder-open"></i> Foto do computador</a>
+                                            <div ng-class="{'fotoMaskMan':cadCV.curriculo.sexo==1, 'fotoMaskWoman':cadCV.curriculo.sexo==2 }"></div>
+                                        </div>
+                                    </div>
+                                    <div ng-show="tiroufoto" class="snapshot">
+                                        <canvas id="snapshot" class="well" width="320" height="240"></canvas>
+                                        <p></p>
+                                        <div class="btn-group btn-group-sm">
+                                            <a class="btn btn-primary" href="" ng-click="addImageByWebCam()" title="Gostei!"><i class="fa fa-thumbs-o-up fa-2x"></i> Usar essa</a> <a class="btn btn-danger" href="" ng-click="naoGostei()" title="Não gostei!"><i class="fa fa-thumbs-o-down"></i> Tirar outra</a>
+                                        </div>
+                                    </div>
+                                    <div ng-show="!exibirwebcam" ng-class="{'bg-file': !disablebtnImg==true}">
+                                        <div class="col-lg-12">
+                                            <input type="file" id="file" name="file" class="InputFile" ng-show="!disablebtnImg==true">
+                                            <img class="well" src="{{imgCandidato || cadCV.curriculo.imgCandidato}}" style="border:0;" ng-show="disablebtnImg==true" />
+                                            <p></p>
+                                            <div id="divProcessandoEnvio" class="col-md-12 column inativo alert alert-link alert-margin-top">
+                                                <img src="images/gif-load.gif" /> Enviando imagem...
+                                            </div>
+                                            <div id="pnBotoesImagemPC" class="btn-group btn-group-sm">
+                                                <a class="btn btn-default" href ng-click="addImage()" ng-show="!disablebtnImg==true" title="Enviar"><i class="fa fa-paper-plane-o"></i> Enviar</a> <a class="btn btn-default" href ng-click="exibirWebCam()" title="Mostrar Webcam"><i class="fa fa-eye"></i> Mostrar Webcam</a> <a class="btn btn-danger fa-2x" href data-toggle="modal" data-target="#ConfirmRemoverFotoModal" ng-show="disablebtnImg==true" title="Excluir"><i class="fa fa-trash-o"></i> Excluir</a>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="clearfix"></p>
+                        </div>
+                        <!--BOTOES VOLTAR E PROXIMO-->
+                        <div class="row clearfix">
+                            <div class="col-md-6 column">
+                                <button type="button" ng-click="go('/CadastroPasso3')" class="btn  btn-default pull-left  btn-lg bt-prev-js"><i class="glyphicon glyphicon-chevron-left"></i> Voltar</button>
+                            </div>
+                            <div class="col-md-6 column adjustBottom4passo">
+                                <button type="button" ng-disabled="formPasso4.$invalid" ng-click="salvarCadastroPasso4()" class="btn  btn-primary  btn-lg pull-right">Próximo <i class="glyphicon glyphicon-chevron-right"></i></button>
+                            
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!--BOX AJUDA-->
+                <div class="col-md-3 column">
+                    <div class="box">
+                        <h3>Meu Currículo</h3>
+                        <ul class="list-unstyled">
+                            <li>
+                                <h4><strong class="passosBox">1º Passo</strong><span class="dadosTitle">Dados Pessoais</span></h4>
+                                <small>Nome, idade, sexo, contato, cidade, função e pretensão salarial.</small>
+                                <span></span>
+                            </li>
+                            <li>
+                                <h4><strong class="passosBox">2º Passo</strong><span class="dadosTitle">Experiência profissional</span></h4>
+                                <small>Nome da empresa, o que fazia, por quanto tempo trabalhou nessa empresa,</small>
+                                <span></span>
+                            </li>
+                            <li>
+                                <h4><strong class="passosBox">3º Passo</strong><span class="dadosTitle">Escolaridade</span></h4>
+                                <small>Sua formação, nome da escola/faculdade e do curso feito, quando se formou.</small>
+                                <span></span>
+                            </li>
+                            <li>
+                                <h4><strong class="passosBox">4º Passo</strong> Dados Adicionais</h4>
+                                <small>Foto, suas caracteristicas, endereço completo, disponibilidade para trabalhar, idioma e estado Civil.</small>
+                                <span></span>
+                            </li>
+                            <li class="gridPasso4"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- START Modal -->
+<div class="modal fade" id="ConfirmRemoverFotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-bg">
+            <div class="modal-header modal-headerCVs">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+
+            <div iv class="modal-body">
+                <p>Tem certeza que deseja remover a sua foto?</p>
+            </div>
+            <div class="modal-footer modal-footerCVs">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" ng-click="delImage()" data-dismiss="modal">Sim, remover</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Modal -->

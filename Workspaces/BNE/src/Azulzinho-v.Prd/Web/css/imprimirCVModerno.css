@@ -1,0 +1,46 @@
+﻿.modern-cv-header {font-family:Rockwell;}
+.nome{padding-top:50px}
+.margin-top-print{margin-top:-55px; z-index:99999;}
+.modern-cv{font-family:Georgia, Constantia, "Lucida Bright", "DejaVu Serif",  serif;}
+.modern-cv .container{margin-top:50px; }
+.modern-cv .container h2{color:#0066ff; font-weight:bolder; margin-top:0; /*margin-bottom:50px;*/ }
+.modern-cv .container ul li{ margin-bottom:10px;}
+.modern-cv .container p, .modern-cv .container em, .modern-cv .container ul li{font-size:18px;}
+.modern-cv .container .col-lg-8 ul{list-style-type: circle;}
+.modern-cv .container .col-lg-8 div{/*margin-bottom:50px;*/}
+.modern-cv .container em span, .modern-cv  .container h3 span{font-style:normal;}
+.modern-cv .container h3{ font-weight:bolder}
+.modern-cv .container h3 span{font-weight:normal}
+/*.modern-cv .container { padding:0; margin-top:-25px;}*/
+.direita{margin-top:-50px;}
+.col-lg-8, .col-md-8, .col-md-9{width:65% !important;float:left !important; }
+.col-lg-4, .col-md-4{width:35% !important;float:left !important;}
+.col-lg-4 ul li  {font-size:12px !important; display:block;}
+.col-lg-4 { padding-top:110px;}
+.clearfix{margin:0;}
+
+.maecurso { margin-bottom:0px;}
+.maecurso .col-md-8, .maecurso .col-md-4{ padding-top:0;  }
+.s{font-weight:bolder;}
+.r{margin-right:5px; float:left}
+.col-lg-8{ position:absolute; right:0;}
+.col-lg-8 h2, .col-lg-4 h2{font-size:18px;}
+.col-lg-8 a , .col-lg-8 em{ font-size:14px !important;  font-family:Georgia, Constantia, "Lucida Bright", "DejaVu Serif",  serif;}
+.col-lg-8 em{font-size:12px !important;}
+
+.empresa{ width:100% !important; }
+.empresa a{ font-weight:bolder;}
+.empresa em a{float:none;font-weight:normal;}
+.empresaem { float:right; width:39%; display:block; margin:0 !important}
+.empresa em a{display:inline-block; width:auto !important;}
+pre{border:none; font-family:Georgia!important; padding:0; margin-left:0 !important;white-space: normal}
+ul{ list-style:none !important; padding-left:0 !important}
+ul li{margin-left:0 !important}
+
+.col-md-4 a{ display:inline-block; float:left; margin-right:5px; font-size:12px !important;}
+.periodosTrabalhar{  padding: 0 !important}
+.periodosTrabalhar li {font-size:14px !important;}
+.periodosTrabalhar li span , .periodosTrabalhar li a{display:inline-block; padding:0; font-size:14px !important;}
+.ass{margin-top:60px;}
+.show-periodo{display:inline-block}
+.hide-periodo{display:none !important}

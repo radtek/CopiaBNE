@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{476040C4-57B6-48A3-83B9-9BFE5806414D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.PessoaFisica.Data</RootNamespace>
+    <AssemblyName>BNE.PessoaFisica.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\CidadePretendidaConfiguration.cs" />
+    <Compile Include="Configuration\CodigoConfirmacaoEmailConfiguration.cs" />
+    <Compile Include="Configuration\CurriculoAnexoConfiguration.cs" />
+    <Compile Include="Configuration\CurriculoConfiguration.cs" />
+    <Compile Include="Configuration\CurriculoDisponibilidadeConfiguration.cs" />
+    <Compile Include="Configuration\CurriculoOrigemConfiguration.cs" />
+    <Compile Include="Configuration\CurriculoParametroConfiguration.cs" />
+    <Compile Include="Configuration\CursoConfiguration.cs" />
+    <Compile Include="Configuration\EnderecoConfiguration.cs" />
+    <Compile Include="Configuration\EstadoCivilConfiguration.cs" />
+    <Compile Include="Configuration\ExperienciaProfissionalConfiguration.cs" />
+    <Compile Include="Configuration\FormacaoConfiguration.cs" />
+    <Compile Include="Configuration\FotoConfiguration.cs" />
+    <Compile Include="Configuration\FuncaoPretendidaConfiguration.cs" />
+    <Compile Include="Configuration\InstituicaoEnsinoConfiguration.cs" />
+    <Compile Include="Configuration\NivelCursoConfiguration.cs" />
+    <Compile Include="Configuration\NivelIdiomaConfiguration.cs" />
+    <Compile Include="Configuration\ParametroConfiguration.cs" />
+    <Compile Include="Configuration\PessoaFisicaConfiguration.cs" />
+    <Compile Include="Configuration\EmailConfiguration.cs" />
+    <Compile Include="Configuration\IdiomaConfiguration.cs" />
+    <Compile Include="Configuration\PreCurriculoConfiguration.cs" />
+    <Compile Include="Configuration\SituacaoCurriculoConfiguration.cs" />
+    <Compile Include="Configuration\SituacaoFormacaoConfiguration.cs" />
+    <Compile Include="Configuration\TelefoneConfiguration.cs" />
+    <Compile Include="Configuration\TipoCurriculoConfiguration.cs" />
+    <Compile Include="Configuration\TipoVeiculoConfiguration.cs" />
+    <Compile Include="Configuration\VeiculoConfiguration.cs" />
+    <Compile Include="Infrastructure\DatabaseFactory.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PessoaFisicaContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CodigoConfirmacaoEmailRepository.cs" />
+    <Compile Include="Repositories\CurriculoOrigemRepository.cs" />
+    <Compile Include="Repositories\CurriculoParametroRepository.cs" />
+    <Compile Include="Repositories\CurriculoRepository.cs" />
+    <Compile Include="Repositories\CursoRepository.cs" />
+    <Compile Include="Repositories\EmailRepository.cs" />
+    <Compile Include="Repositories\ExperienciaProfissionalRepository.cs" />
+    <Compile Include="Repositories\FormacaoRepository.cs" />
+    <Compile Include="Repositories\FuncaoPretendidaRepository.cs" />
+    <Compile Include="Repositories\InstituicaoEnsinoRepository.cs" />
+    <Compile Include="Repositories\ParametroRepository.cs" />
+    <Compile Include="Repositories\PessoaFisicaRepository.cs" />
+    <Compile Include="Repositories\PreCurriculoRepository.cs" />
+    <Compile Include="Repositories\SituacaoCurriculoRepository.cs" />
+    <Compile Include="Repositories\TelefoneCelularRepository.cs" />
+    <Compile Include="Repositories\TipoCurriculoRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BNE.Comum.Model\BNE.Comum.Model.csproj">
+      <Project>{962132f9-4293-4ac7-b044-2590667cd2e9}</Project>
+      <Name>BNE.Comum.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Data\BNE.Data.csproj">
+      <Project>{287ba500-e16d-46ad-91b7-442cda127398}</Project>
+      <Name>BNE.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Global.Data\BNE.Global.Data.csproj">
+      <Project>{fd787b4c-b825-4d17-a807-90a84fe3138f}</Project>
+      <Name>BNE.Global.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Global.Model\BNE.Global.Model.csproj">
+      <Project>{1c31b8d0-c2d2-4a48-893e-c2b43a852978}</Project>
+      <Name>BNE.Global.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.PessoaFisica.Model\BNE.PessoaFisica.Model.csproj">
+      <Project>{d9fe3158-5c0b-4b2b-b3da-033da5a88026}</Project>
+      <Name>BNE.PessoaFisica.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

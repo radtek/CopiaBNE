@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="App" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSMexEndPointTanqueService_IApp_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.DTO" />
+      <xsd:import schemaLocation="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://wstg.apprh.com.br/celulardaselecionadora/App.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Employer.Tanque.BLL.Enumeradores" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IApp_ReceberMensagem_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReceberMensagem" />
+  </wsdl:message>
+  <wsdl:message name="IApp_ReceberMensagem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReceberMensagemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_EnviarMensagem_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarMensagem" />
+  </wsdl:message>
+  <wsdl:message name="IApp_EnviarMensagem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarMensagemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecebeSMSCelular_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecebeSMSCelular" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecebeSMSCelular_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecebeSMSCelularResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_ValidarCelular_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarCelular" />
+  </wsdl:message>
+  <wsdl:message name="IApp_ValidarCelular_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarCelularResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_AlteraStatusMensagem_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlteraStatusMensagem" />
+  </wsdl:message>
+  <wsdl:message name="IApp_AlteraStatusMensagem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlteraStatusMensagemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_AlteraStatusCelular_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlteraStatusCelular" />
+  </wsdl:message>
+  <wsdl:message name="IApp_AlteraStatusCelular_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlteraStatusCelularResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_EfetuarLigacao_InputMessage">
+    <wsdl:part name="parameters" element="tns:EfetuarLigacao" />
+  </wsdl:message>
+  <wsdl:message name="IApp_EfetuarLigacao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EfetuarLigacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_StatusCelular_InputMessage">
+    <wsdl:part name="parameters" element="tns:StatusCelular" />
+  </wsdl:message>
+  <wsdl:message name="IApp_StatusCelular_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StatusCelularResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_AtualizarSaldo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarSaldo" />
+  </wsdl:message>
+  <wsdl:message name="IApp_AtualizarSaldo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarSaldoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_CelularLigado_InputMessage">
+    <wsdl:part name="parameters" element="tns:CelularLigado" />
+  </wsdl:message>
+  <wsdl:message name="IApp_CelularLigado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CelularLigadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_VerificaCelulares_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificaCelulares" />
+  </wsdl:message>
+  <wsdl:message name="IApp_VerificaCelulares_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificaCelularesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_TestarExcecao_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestarExcecao" />
+  </wsdl:message>
+  <wsdl:message name="IApp_TestarExcecao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestarExcecaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_EnviarMensagem_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarMensagem_New" />
+  </wsdl:message>
+  <wsdl:message name="IApp_EnviarMensagem_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarMensagem_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecebeSMSCelular_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecebeSMSCelular_New" />
+  </wsdl:message>
+  <wsdl:message name="IApp_RecebeSMSCelular_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecebeSMSCelular_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_EnviaSMSResposta_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviaSMSResposta_New" />
+  </wsdl:message>
+  <wsdl:message name="IApp_EnviaSMSResposta_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviaSMSResposta_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_ValidarCelular_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarCelular_New" />
+  </wsdl:message>
+  <wsdl:message name="IApp_ValidarCelular_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarCelular_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_AlteraStatusMensagem_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlteraStatusMensagem_New" />
+  </wsdl:message>
+  <wsdl:message name="IApp_AlteraStatusMensagem_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlteraStatusMensagem_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_AlteraStatusCelular_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlteraStatusCelular_New" />
+  </wsdl:message>
+  <wsdl:message name="IApp_AlteraStatusCelular_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlteraStatusCelular_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_EfetuarLigacao_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:EfetuarLigacao_New" />
+  </wsdl:message>
+  <wsdl:message name="IApp_EfetuarLigacao_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EfetuarLigacao_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_StatusCelular_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:StatusCelular_New" />
+  </wsdl:message>
+  <wsdl:message name="IApp_StatusCelular_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StatusCelular_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_AtualizarSaldo_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarSaldo_New" />
+  </wsdl:message>
+  <wsdl:message name="IApp_AtualizarSaldo_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarSaldo_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_ConversasAtivas_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConversasAtivas_New" />
+  </wsdl:message>
+  <wsdl:message name="IApp_ConversasAtivas_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConversasAtivas_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_HistoricoConversas_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricoConversas_New" />
+  </wsdl:message>
+  <wsdl:message name="IApp_HistoricoConversas_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricoConversas_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_CelularLigado_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:CelularLigado_New" />
+  </wsdl:message>
+  <wsdl:message name="IApp_CelularLigado_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CelularLigado_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApp_HabilitarUsuario_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabilitarUsuario_New" />
+  </wsdl:message>
+  <wsdl:message name="IApp_HabilitarUsuario_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabilitarUsuario_NewResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IApp">
+    <wsdl:operation name="ReceberMensagem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/ReceberMensagem" message="tns:IApp_ReceberMensagem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/ReceberMensagemResponse" message="tns:IApp_ReceberMensagem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarMensagem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/EnviarMensagem" message="tns:IApp_EnviarMensagem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/EnviarMensagemResponse" message="tns:IApp_EnviarMensagem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecebeSMSCelular">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/RecebeSMSCelular" message="tns:IApp_RecebeSMSCelular_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/RecebeSMSCelularResponse" message="tns:IApp_RecebeSMSCelular_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCelular">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/ValidarCelular" message="tns:IApp_ValidarCelular_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/ValidarCelularResponse" message="tns:IApp_ValidarCelular_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlteraStatusMensagem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/AlteraStatusMensagem" message="tns:IApp_AlteraStatusMensagem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/AlteraStatusMensagemResponse" message="tns:IApp_AlteraStatusMensagem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlteraStatusCelular">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/AlteraStatusCelular" message="tns:IApp_AlteraStatusCelular_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/AlteraStatusCelularResponse" message="tns:IApp_AlteraStatusCelular_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EfetuarLigacao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/EfetuarLigacao" message="tns:IApp_EfetuarLigacao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/EfetuarLigacaoResponse" message="tns:IApp_EfetuarLigacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StatusCelular">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/StatusCelular" message="tns:IApp_StatusCelular_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/StatusCelularResponse" message="tns:IApp_StatusCelular_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarSaldo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/AtualizarSaldo" message="tns:IApp_AtualizarSaldo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/AtualizarSaldoResponse" message="tns:IApp_AtualizarSaldo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CelularLigado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/CelularLigado" message="tns:IApp_CelularLigado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/CelularLigadoResponse" message="tns:IApp_CelularLigado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaCelulares">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/VerificaCelulares" message="tns:IApp_VerificaCelulares_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/VerificaCelularesResponse" message="tns:IApp_VerificaCelulares_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestarExcecao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/TestarExcecao" message="tns:IApp_TestarExcecao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/TestarExcecaoResponse" message="tns:IApp_TestarExcecao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarMensagem_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/EnviarMensagem_New" message="tns:IApp_EnviarMensagem_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/EnviarMensagem_NewResponse" message="tns:IApp_EnviarMensagem_New_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecebeSMSCelular_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/RecebeSMSCelular_New" message="tns:IApp_RecebeSMSCelular_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/RecebeSMSCelular_NewResponse" message="tns:IApp_RecebeSMSCelular_New_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviaSMSResposta_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/EnviaSMSResposta_New" message="tns:IApp_EnviaSMSResposta_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/EnviaSMSResposta_NewResponse" message="tns:IApp_EnviaSMSResposta_New_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCelular_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/ValidarCelular_New" message="tns:IApp_ValidarCelular_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/ValidarCelular_NewResponse" message="tns:IApp_ValidarCelular_New_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlteraStatusMensagem_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/AlteraStatusMensagem_New" message="tns:IApp_AlteraStatusMensagem_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/AlteraStatusMensagem_NewResponse" message="tns:IApp_AlteraStatusMensagem_New_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlteraStatusCelular_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/AlteraStatusCelular_New" message="tns:IApp_AlteraStatusCelular_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/AlteraStatusCelular_NewResponse" message="tns:IApp_AlteraStatusCelular_New_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EfetuarLigacao_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/EfetuarLigacao_New" message="tns:IApp_EfetuarLigacao_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/EfetuarLigacao_NewResponse" message="tns:IApp_EfetuarLigacao_New_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StatusCelular_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/StatusCelular_New" message="tns:IApp_StatusCelular_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/StatusCelular_NewResponse" message="tns:IApp_StatusCelular_New_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarSaldo_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/AtualizarSaldo_New" message="tns:IApp_AtualizarSaldo_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/AtualizarSaldo_NewResponse" message="tns:IApp_AtualizarSaldo_New_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConversasAtivas_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/ConversasAtivas_New" message="tns:IApp_ConversasAtivas_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/ConversasAtivas_NewResponse" message="tns:IApp_ConversasAtivas_New_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HistoricoConversas_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/HistoricoConversas_New" message="tns:IApp_HistoricoConversas_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/HistoricoConversas_NewResponse" message="tns:IApp_HistoricoConversas_New_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CelularLigado_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/CelularLigado_New" message="tns:IApp_CelularLigado_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/CelularLigado_NewResponse" message="tns:IApp_CelularLigado_New_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HabilitarUsuario_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApp/HabilitarUsuario_New" message="tns:IApp_HabilitarUsuario_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApp/HabilitarUsuario_NewResponse" message="tns:IApp_HabilitarUsuario_New_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSMexEndPointTanqueService_IApp" type="tns:IApp">
+    <wsp:PolicyReference URI="#WSMexEndPointTanqueService_IApp_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReceberMensagem">
+      <soap12:operation soapAction="http://tempuri.org/IApp/ReceberMensagem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarMensagem">
+      <soap12:operation soapAction="http://tempuri.org/IApp/EnviarMensagem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecebeSMSCelular">
+      <soap12:operation soapAction="http://tempuri.org/IApp/RecebeSMSCelular" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCelular">
+      <soap12:operation soapAction="http://tempuri.org/IApp/ValidarCelular" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlteraStatusMensagem">
+      <soap12:operation soapAction="http://tempuri.org/IApp/AlteraStatusMensagem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlteraStatusCelular">
+      <soap12:operation soapAction="http://tempuri.org/IApp/AlteraStatusCelular" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EfetuarLigacao">
+      <soap12:operation soapAction="http://tempuri.org/IApp/EfetuarLigacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusCelular">
+      <soap12:operation soapAction="http://tempuri.org/IApp/StatusCelular" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarSaldo">
+      <soap12:operation soapAction="http://tempuri.org/IApp/AtualizarSaldo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CelularLigado">
+      <soap12:operation soapAction="http://tempuri.org/IApp/CelularLigado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaCelulares">
+      <soap12:operation soapAction="http://tempuri.org/IApp/VerificaCelulares" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestarExcecao">
+      <soap12:operation soapAction="http://tempuri.org/IApp/TestarExcecao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarMensagem_New">
+      <soap12:operation soapAction="http://tempuri.org/IApp/EnviarMensagem_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecebeSMSCelular_New">
+      <soap12:operation soapAction="http://tempuri.org/IApp/RecebeSMSCelular_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviaSMSResposta_New">
+      <soap12:operation soapAction="http://tempuri.org/IApp/EnviaSMSResposta_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCelular_New">
+      <soap12:operation soapAction="http://tempuri.org/IApp/ValidarCelular_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlteraStatusMensagem_New">
+      <soap12:operation soapAction="http://tempuri.org/IApp/AlteraStatusMensagem_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlteraStatusCelular_New">
+      <soap12:operation soapAction="http://tempuri.org/IApp/AlteraStatusCelular_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EfetuarLigacao_New">
+      <soap12:operation soapAction="http://tempuri.org/IApp/EfetuarLigacao_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusCelular_New">
+      <soap12:operation soapAction="http://tempuri.org/IApp/StatusCelular_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarSaldo_New">
+      <soap12:operation soapAction="http://tempuri.org/IApp/AtualizarSaldo_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConversasAtivas_New">
+      <soap12:operation soapAction="http://tempuri.org/IApp/ConversasAtivas_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistoricoConversas_New">
+      <soap12:operation soapAction="http://tempuri.org/IApp/HistoricoConversas_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CelularLigado_New">
+      <soap12:operation soapAction="http://tempuri.org/IApp/CelularLigado_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabilitarUsuario_New">
+      <soap12:operation soapAction="http://tempuri.org/IApp/HabilitarUsuario_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="App">
+    <wsdl:port name="WSMexEndPointTanqueService_IApp" binding="tns:WSMexEndPointTanqueService_IApp">
+      <soap12:address location="http://wstg.apprh.com.br/celulardaselecionadora/App.svc/mex" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://wstg.apprh.com.br/celulardaselecionadora/App.svc/mex</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

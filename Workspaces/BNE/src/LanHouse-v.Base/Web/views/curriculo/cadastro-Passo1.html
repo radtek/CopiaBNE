@@ -1,0 +1,45 @@
+﻿<div class="container marginPassos">
+    <article class="col-lg-12">
+        <div class="col-lg-9">
+            <form role="form" id="formPasso1" name="formPasso1" class="pashe pashe1" novalidate>
+                <ol class="breadcrumb">
+                    <li><a href="#/Home">Home</a></li>
+                    <li class="active">Criação de Currículo 1º Passo</li>
+                </ol>
+                <h3 class="col-lg-12 assistenteCV">Assistente de Criação de Currículo - 1º Passo</h3>
+                <h4 class="col-lg-12 subTitle">Seus dados pessoais.</h4>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <nome-completo e-label="Nome completo" e-nome="txtNome" e-required ng-model="cadCV.curriculo.nome" e-maxl="80" />
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-4"><ddd e-label="DDD" e-nome="DDDCelular" e-required ng-model="cadCV.curriculo.dddCelular" e-maxl="2" /></div>
+                        <div class="col-lg-7 col-xs-push-1 pull-right"><celular e-label="Celular" e-nome="Celular" e-required /></div>
+                    </div>
+                    <div class="col-lg-5"><nascimento e-nome="DataNascimento" e-label="Data de Nascimento" e-required /></div>
+                    <div class="col-lg-6 col-xs-push-1 pull-right"><cpf e-nome="CPF" e-label="CPF" e-required /></div>
+                    <div class="form-group"><cidade e-label="Cidade" e-nome="Cidade" e-required buscar-media='{"campocidade":"Cidade","campofuncao":"Funcao"}' ng-model="cadCV.curriculo.cidade" /></div>
+                    <div class="form-group"><funcao-pretendida buscar-media='{"campocidade":"Cidade","campofuncao":"Funcao"}' ng-model="cadCV.curriculo.funcao" label="Função pretendida" nome="Funcao" maxl="50" minl="5" required /></div>
+                </div>
+                <div class="col-lg-5 col-xs-push-1 pull-right">
+                    <div class="col-lg-12"><email e-nome="Email" e-label="E-mail" /></div>
+                    <div class="col-lg-4"><ddd e-label="DDD" e-nome="DDDTelefone" ng-model="cadCV.curriculo.dddTelefone" e-maxl="2" /></div>
+                    <div class="col-lg-7 col-xs-push-1 pull-right">
+                        <telefone-fixo e-nome="Telefone" e-label="Telefone fixo" e-maxl="8"></telefone-fixo>
+                    </div>
+                    <p class="clearfix"></p>
+                    <div class="col-lg-12"><sexo e-nome="Sexo" e-label="Sexo" /></div>
+                    <div class="col-lg-12 spaceDeficiencia"><deficiencia e-nome="Deficiencia" e-label="Possui deficiência?" /></div>
+                    <p class="clearfix"></p><p class="clearfix"></p>
+                    <div class="form-group"><pretensao e-nome="PretensaoSalarial" e-label="Pretensão Salarial" /></div>
+                    <p class="clearfix"></p>
+                    <button type="button" ng-disabled="formPasso1.$invalid" ng-click="salvarCadastroPasso1()" class="btn btn-primary pull-right btn-lg btn-block bt-next-js">Próximo <i class="glyphicon glyphicon-chevron-right"></i></button>
+                    <p class="clearfix"></p>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-3">
+            <breadcrumb-lanhouse></breadcrumb-lanhouse>
+        </div>
+    </article>
+</div>

@@ -1,0 +1,24 @@
+﻿/* Estilos para impressão */
+@media print {
+    body { background: none; }
+    #topo { display: none; }
+    .container_boleto { display: block; /*text-align: center;*/ }
+    .barra_rodape { display: none; }
+    .final_rodape { display: none; }
+    .painel_rodape_padrao { display: none; }
+    .conteudo .internaSlim { margin-top: 0 !important; }
+    .conteudo .interna { margin: 0; }
+    .painel_botoes { display: none; }
+    .conteudo_impressao { display: none; }
+    .painel_paginacao { display: none; }
+}
+
+@media screen {
+    .container_boleto { background-color: #fff; padding: 30px; text-align: center; overflow-y: scroll; height: 500px; }
+    .pnlAguardandoIntermediador .icone_confirmacao, .pnlPlanoLiberado .icone_confirmacao { margin-top: 0; text-align: center; float: left; padding-left: 30px; padding-top: 10px; }
+    .pnlAguardandoIntermediador .texto_pagamento_sucesso, .pnlPlanoLiberado .texto_pagamento_sucesso { color: #1A3876; font-size: 21px; margin: 10px 0 0; font-weight: bold; padding-left: 150px; }
+    .pnlAguardandoIntermediador .texto_utilizar_servicos, .pnlPlanoLiberado .texto_utilizar_servicos { color: #1A3876; padding: 6px 20px; padding-left: 150px; }
+    .pnlAguardandoIntermediador .texto_utilizar_servicos, .pnlBoleto .texto_utilizar_servicos { color: #1A3876; padding: 6px 20px; font-size: 16px; }
+    .download { padding: 5px 11px !important; color: #000000; }
+    .container-impressao { display: none; }
+}

@@ -1,0 +1,236 @@
+﻿<!-- ETAPA 03 -->
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col center">
+        <h3 class="darkgrey">Cadastre seu currículo!</h3>
+        <h5 class="mediumgrey subtitle">É fácil! É rápido! É sempre grátis.</h5>
+    </div>
+</div>
+<!-- Tracker-->
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col md-progtrckr">
+        <ol class="progtrckr" data-progtrckr-steps="5">
+            <li class="progtrckr-todo" id="step-ok"><span>Mini Curriculo</span></li>
+            <li class="progtrckr-todo" id="step-ok"><span>Dados Pessoais</span></li>
+            <li class="progtrckr-done"><span><strong>3. Formação e Cursos</strong></span><br /><div class="substage">Seu diferencial pode estar aqui.</div></li>
+            <li class="progtrckr-todo" id="step-nok"><span>Informações Extras</span></li>
+            <li class="progtrckr-todo" id="step-nok"><span>Conferir</span></li>
+        </ol>
+    </div>
+</div>
+
+@using (Ajax.BeginForm("Index", "PessoaFisica", null, new AjaxOptions
+{
+    HttpMethod = "Post",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "etapa"
+}, new { @id = "Etapa3Form" }))
+{
+    
+    <!-- Escolaridade -->
+    <div class="mdl-grid ">
+        <div class="mdl-cell mdl-cell--12-col"><h6><strong>Escolaridade.</strong><span> Conte qual a sua formação. As empresas precisam saber disso.</span></h6></div>
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <table class="resp">
+                <thead>
+                    <tr>
+                        <th>Formação</th>
+                        <th>Curso</th>
+                        <th>Instituição de Ensino</th>
+                        <th>Ano de conclusão</th>
+                        <th>-</th>
+                        <th>-</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Empresa">Superior Completo</td>
+                        <td data-label="Função">Designer Gráfico</td>
+                        <td data-label="Entrada">University Massachusetts Ohio</td>
+                        <td data-label="Saída">1990</td>
+                        <td data-label="Editar"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformmedium">Editar</button></td>
+                        <td data-label="Remover"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised btnformneg">Remover</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Empresa">Superior Completo</td>
+                        <td data-label="Função">Designer Gráfico</td>
+                        <td data-label="Entrada">University Massachusetts Ohio</td>
+                        <td data-label="Saída">1990</td>
+                        <td data-label="Editar"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformmedium">Editar</button></td>
+                        <td data-label="Remover"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised btnformneg">Remover</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Adicionar Escolaridade-->
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-select-bne">
+            <select class="mdl-select__input">
+                <option value="1" class="mdl-select__option" disabled selected>Escolaridade</option>
+                <option value="2" class="mdl-select__option">Opção 1</option>
+                <option value="3" class="mdl-select__option">Opção 2</option>
+                <option value="4" class="mdl-select__option">Opção 3</option>
+                <option value="5" class="mdl-select__option">Outra</option>
+            </select>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="coursename" class="mdl-textfield__input" />
+            <label for="coursename" class="mdl-textfield__label">Nome do Curso</label>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--3-col-tablet  mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="instname" class="mdl-textfield__input" />
+            <label for="instname" class="mdl-textfield__label">Nome da Instituição</label>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--3-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="concldate" class="mdl-textfield__input" />
+            <label for="concldate" class="mdl-textfield__label">Data da Conclusão</label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--1-col-phone vertitemform">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="atualcourse">
+                <input type="checkbox" id="atualcourse" class="mdl-checkbox__input" name="atualcourse" />
+                <span class="mdl-checkbox__label"><p>Curso Atual</p></span>
+            </label>
+        </div>
+
+        <div class="mdl-cell mdl-cell--12-col center">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnform btnformmedium">Adicionar Escolaridade</button>
+        </div>
+    </div>
+    <!-- Cursos -->
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col"><h6><strong>O que mais você conhece?</strong><span> Diga quais cursos você já fez. Isso deixa seu currículo mais interessante</span></h6></div>
+        <div class="mdl-cell mdl-cell--12-col">
+            <table class="resp">
+                <thead>
+                    <tr>
+                        <th>Instituição</th>
+                        <th>Curso</th>
+                        <th>Data de Conlusão</th>
+                        <th>Carga Horária</th>
+                        <th>Editar</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Instituição">Sebrae</td>
+                        <td data-label="Curso">Liderança Comportamental	Liderança Comportamental Liderança Comportamental Liderança Comportamental	Liderança Comportamental Liderança Comportamental</td>
+                        <td data-label="Data de Conlusão">25/03/2012</td>
+                        <td data-label="Carga Horária">10 horas</td>
+                        <td data-label="Editar"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformmedium">Editar</button></td>
+                        <td data-label="Remover"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised btnformneg">Remover</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Instituição">Sebrae</td>
+                        <td data-label="Curso">Liderança Comportamental	</td>
+                        <td data-label="Data de Conlusão">25/03/2012</td>
+                        <td data-label="Carga Horária">10 horas</td>
+                        <td data-label="Editar"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformmedium">Editar</button></td>
+                        <td data-label="Remover"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised btnformneg">Remover</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Adicionar Cursos -->
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="instnamexcourse" class="mdl-textfield__input" />
+            <label for="instnamexcourse" class="mdl-textfield__label">Nome da Instituição</label>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="xcoursename" class="mdl-textfield__input" />
+            <label for="xcoursename" class="mdl-textfield__label">Nome do Curso</label>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--3-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="citycourse" class="mdl-textfield__input" />
+            <label for="citycourse" class="mdl-textfield__label">Cidade</label>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-textfield mdl-cell--2-col-phone mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="concldatecourse" class="mdl-textfield__input" />
+            <label for="concldatecourse" class="mdl-textfield__label">Data da Conclusão</label>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-textfield mdl-cell--2-col-phone mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+            <input type="text" name="workload" class="mdl-textfield__input" />
+            <label for="workload" class="mdl-textfield__label">Carga Horária</label>
+        </div>
+
+        <div class="mdl-cell mdl-cell--12-col center">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnform btnformmedium">Adicionar Curso</button>
+        </div>
+    </div>
+    <!-- Fala outras Línguas?-->
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--12-col spacing"><h6><strong>Fala outras línguas? </strong><span> Conte quais idiomas você sabe.</span></h6></div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-select-bne top-12 ">
+                    <select class="mdl-select__input">
+                        <option value="1" class="mdl-select__option" disabled selected>Selecione o idioma</option>
+                        <option value="2" class="mdl-select__option">Idioma 1</option>
+                        <option value="3" class="mdl-select__option">Idioma 2</option>
+                        <option value="4" class="mdl-select__option">Idioma 3</option>
+                        <option value="5" class="mdl-select__option">Outro</option>
+                    </select>
+                </div>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-tablet top12">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="basic">
+                        <input type="radio" class="mdl-radio__button" id="basic" value="1" name="basic" />
+                        <span class="mdl-radio__label">Básico</span>
+                    </label>
+                </div>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-tablet top12">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="intermed">
+                        <input type="radio" class="mdl-radio__button" id="intermed" value="2" name="intermed" />
+                        <span class="mdl-radio__label">Intermediário</span>
+                    </label>
+                </div>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-tablet top12">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="advanced">
+                        <input type="radio" class="mdl-radio__button" id="advanced" value="3" name="advanced" />
+                        <span class="mdl-radio__label">Avançado</span>
+                    </label>
+                </div>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-tablet top12">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="fluent">
+                        <input type="radio" class="mdl-radio__button" id="fluent" value="4" name="fluent" />
+                        <span class="mdl-radio__label">Fluente</span>
+                    </label>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnform btnformmedium">Adicionar Idioma</button>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            <div class="mdl-grid ">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <table class="resp">
+                        <thead>
+                            <tr>
+                                <th>Idioma</th>
+                                <th>Nível</th>
+                                <th>Remover</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Instituição">Chinês Mandarim</td>
+                                <td data-label="Curso">Avançado</td>
+                                <td data-label="Remover"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised btnformneg">Remover</button></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Instituição">Inglês</td>
+                                <td data-label="Curso">Avançado</td>
+                                <td data-label="Remover"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised btnformneg">Remover</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col center">
+            <button type="submit" name="action:AdicionarFormacaoCursos" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformbig" id="btnSave3">Salvar e avançar</button>
+        </div>
+    </div>
+}

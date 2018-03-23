@@ -1,0 +1,120 @@
+﻿
+a { color: #4e7413; }
+    a:hover { text-decoration: underline; }
+
+.botao_padrao { margin-bottom: 0; }
+
+.container_mensagens { background: url('../../img/bg_msg_menu_lateral.png') no-repeat; overflow: hidden; }
+
+.tipo_mensagem { border-bottom: 1px solid #fff; float: left; margin-left: 10px; overflow: hidden; padding-bottom: 5px; height: 300px; }
+    .tipo_mensagem h2 { font-size: 12px; height: auto !important; line-height: normal !important; margin: 10px 0 10px 0; color: #8c8c8c; }
+.conteudo .textarea_padrao { border: 1px solid #B5CAEA; margin-left: 0; margin-right: 4px; height: 100px; width: 270px; }
+
+.tipo_mensagem ul { list-style-type: none; padding: 0; margin: 0; font-size: 11px; }
+    .tipo_mensagem ul li { margin: 5px 0; }
+        .tipo_mensagem ul li img { float: left; margin-right: 7px; }
+
+        .tipo_mensagem ul li span { }
+
+        .tipo_mensagem ul li.selected { color: #4e7413; font-weight: bold; }
+
+.preview_mensagens { width: 74%; background: white; float: right; }
+
+    .preview_mensagens h2 { color: #4e7413; font-size: 14px; height: auto !important; line-height: normal !important; margin: 0 0 10px 0; }
+
+    .preview_mensagens .mensagem { border: 1px solid #ccc; overflow: auto; height: 300px; padding: 10px; background: url('../../img/bg_mensagens.jpg') repeat-x; }
+    .preview_mensagens .navegacao { float: right; }
+        .preview_mensagens .navegacao img { border: none; }
+.titulo_msg { font-size: 16px; font-weight: bold; }
+
+.info_adicionais { font-size: 11px; }
+
+    .info_adicionais ul { list-style-type: none; padding: 0; }
+
+.remetente { font-size: 12px; color: #476D11; font-weight: bold; }
+    .remetente img { margin-right: 7px; }
+
+ul.anexo { }
+    ul.anexo li { margin: 0 5px; }
+
+.data_hora { }
+.destinatario { }
+.anexos { margin-top: 10px; }
+    .anexos span { margin-top: 5px; padding: 0 5px; }
+
+.msg { border-top: 1px solid #eee; padding-top: 10px; margin-top: 10px; }
+
+    .msg p { font-size: 11px; }
+
+    .msg table td { line-height: 160%; }
+
+/*- Configuração do miolo de mensagens recebidas e enviadas-*/
+.titulo_msg_content { float: left; font-size: 16px !important; margin: 0 !important; }
+
+.filtro_pesquisa { float: right; border: 1px solid #cacaca; padding: 1px; }
+
+    .filtro_pesquisa input { border: none !important; background-image: none !important; vertical-align: middle; color: #cacaca; font-style: italic; padding: 2px !important; font-size: 11px; }
+
+.btn_pesquisa { margin: 0; }
+
+.titulo_filtro { overflow: hidden; }
+
+.mensagens { width: 620px; margin-top: 5px; }
+.gridview_padrao { border: 1px solid #c6c7c8 !important; }
+
+.rgMasterTable tr td.rgPagerCell { border: none !important; background: url('../../img/bg_table_msg_th.jpg') repeat-x bottom !important; }
+
+.rgMasterTable tr:hover { background: url('../../img/bg_table_msg_th.jpg') repeat-x bottom !important; }
+
+.rgMasterTable tr {  background: #fff !important; }
+
+.rgMasterEmail{cursor: pointer !important;text-decoration: none;}
+
+    .rgMasterTable tr td { border-bottom: 1px solid #e1e1e1 !important; }
+
+thead { background: #fff !important; }
+
+.rgPager td { border: none !important; }
+
+.rgInfoPart { font-size: 11px; }
+
+td.rgPagerCell { border-bottom: none !important; }
+
+.gridview_padrao tr:hover { background: url('../../img/bg_table_msg_pg.jpg') repeat-x bottom; }
+
+.titulo { color: #8C8C8C !important; font-weight: bold !important; font-size: 12px; background: url('../../img/bg_table_msg_pg.jpg') repeat-x bottom !important; border: none !important; padding-top: 10px !important; padding-bottom: 2px !important; }
+
+.dadoscol1, .dadoscol2, .dadoscol3 { font-size: 11px; border: none !important; padding: 10px 7px 5px 7px !important; }
+
+.alt_row:hover { background: url('../../img/bg_table_msg_th.jpg') repeat-x bottom #fff !important; }
+
+.dadoscol2 { width: 250px; }
+.esquerda { color: #4e7413; font-weight: bold !important; }
+
+.mensagem_nodata { padding: 102px 0 !important; text-align: center !important; }
+.rgMasterTable .rgNoRecords:hover { background: #fff !important; border: none; cursor: default !important; }
+.rgMasterTable .rgNoRecords td { border: none !important; }
+
+.rgIconeMsg { border-right: 1px solid #C6C7C8; width: 20px; margin-top: 10px; height: 15px; }
+.rgBarraMsg { margin-top: 20px; }
+.rgBarraMsgLida { border: solid !important; padding: 25px 0px 0px 0px !important; margin-top: -17px; float: left; margin-right: 3px; margin-left: -4px; border-width: thin !important; border-color: transparent !important; }
+.rgBarraMsgNova { border: solid !important; padding: 25px 0px 0px 0px !important; margin-top: -17px; float: left; margin-right: 3px; margin-left: -4px; border-width: thin !important; }
+.rgLblTitulo { color: black !important; font-weight: normal !important; }
+.rgLblTituloConteudo { width: 450px !important; margin-left: 5px; }
+.rgLblTituloConteudoAssunto { color: black !important; }
+.rgLblTituloDataHora { width: 50px !important; }
+.rgLblDataHora { width: 20%; }
+.rgLblTituloConteudoEnviadas { font-weight: normal !important; }
+
+.gridview_padrao.mensagens.RadGrid_Office2007 .rgHeader:first-child, 
+.gridview_padrao.mensagens.RadGrid_Office2007 th.rgResizeCol:first-child, 
+.gridview_padrao.mensagens.RadGrid_Office2007 .rgFilterRow > td:first-child, 
+.gridview_padrao.mensagens.RadGrid_Office2007 .rgRow > td:first-child, 
+.gridview_padrao.mensagens.RadGrid_Office2007 .rgAltRow > td:first-child, 
+.gridview_padrao.mensagens.RadGrid_Office2007 td.rgGroupCol, 
+.gridview_padrao.mensagens.RadGrid_Office2007 td.rgExpandCol .gridview_padrao.mensagens.RadGrid_Office2007 .rgGroupHeader .rgGroupCol, 
+.gridview_padrao.mensagens.RadGrid_Office2007 .rgExpandCol,
+.gridview_padrao.mensagens.RadGrid_Office2007 .rgHeader.rgGroupCol 
+{
+    display: none !important;
+}

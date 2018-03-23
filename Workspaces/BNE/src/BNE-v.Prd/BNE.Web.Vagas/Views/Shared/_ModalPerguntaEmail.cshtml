@@ -1,0 +1,96 @@
+﻿@using BNE.Web.Vagas.Models
+@model PerguntaEmail
+<div id="modalPerguntaEmail" class="modal amarela">
+    <script>
+        modal.abrirModal('modalPerguntaEmail');
+    </script>
+    <link href="~/Content/ModalExperienciaProfissional.css" rel="stylesheet" />
+    <a class="simplemodal-close b-close modal_fechar" title="Close"></a>
+    <div class="modal_conteudo">
+        <div class="container_confirmacao_candidatura">
+            <div class="icone_confirmacao">
+                <img alt="Ícone Confirmação" src="/Images/img_alerta_bne.png" />
+            </div>
+            <div class="texto_confirmacao">
+                @if (Model.EmailAntigo != "")
+                {
+                    <div id="divChecarEmail">
+                        <p class="texto_aviso" style="margin: 30px 0 0 200px;">
+                            O seu e-mail ainda é este?
+                        </p>
+                        <p style="margin: 15px 0 20px 200px; font-size: 17px; color: red;">@Html.ValueFor(m => m.EmailAntigo)</p>
+                        <button class="btn btn-danger btn-small espacoBotao" style="margin: 0 -37px 0 65px !important;" name="btnEmailAlterar" id="btnEmailAlterar">Não, alterar</button>
+
+                        @using (Ajax.BeginForm("Candidatar", "Vaga", new AjaxOptions { OnFailure = "OnFailure", InsertionMode = InsertionMode.Replace, UpdateTargetId = "container_candidatura_" + Model.IdentificadorVaga }))
+                        {
+                            @Html.HiddenFor(m => m.Identificador, new { @id = "id_" + Model.Identificador })
+                            @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+                            @Html.HiddenFor(m => m.IdPerguntaHistorico, new { @id = "id_" + Model.IdPerguntaHistorico })
+                            @Html.HiddenFor(m => m.Email, new { @id = "id_" + Model.Email })       
+                            @Html.HiddenFor(m => m.EmailAntigo, new { @id = "id_" + Model.EmailAntigo })             
+                            <button class="btn btn-primary btn-small espacoBotao" style="margin: 15px 0 20px 200px;" name="Button" value="EmailCorreto">Sim, está correto</button>
+                        }
+
+                        </div>
+                    <!-- FIM div checar email -->
+                }
+                else
+                {
+                    using (Ajax.BeginForm("Candidatar", "Vaga", new AjaxOptions { OnFailure = "OnFailure", InsertionMode = InsertionMode.Replace, UpdateTargetId = "container_candidatura_" + Model.IdentificadorVaga }))
+                   {
+                                @Html.HiddenFor(m => m.Identificador, new { @id = "id_" + Model.Identificador })
+                                @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+                                @Html.HiddenFor(m => m.IdPerguntaHistorico, new { @id = "id_" + Model.IdPerguntaHistorico })
+                                @Html.HiddenFor(m => m.EmailAntigo, new { @id = "id_" + Model.EmailAntigo })
+                    
+                                <p class="texto_aviso">
+                                    Por favor digite abaixo o seu e-mail:
+                                </p>
+                                <p>@Html.TextBoxFor(m => m.Email, new { @class = "textbox_padrao" })</p>
+                                <button class="btn btn-primary btn-small espacoBotao" name="Button" value="AtualizarEmail">Atualizar e-mail</button>
+                                @*<button class="btn btn-primary btn-small espacoBotao" name="Button" value="EmailCorreto">Não atualizar</button>*@
+                    
+                   } 
+                }
+                    
+                        <div id="divAlterarEmail">
+                            @using (Ajax.BeginForm("Candidatar", "Vaga", new AjaxOptions { OnFailure = "OnFailure", InsertionMode = InsertionMode.Replace, UpdateTargetId = "container_candidatura_" + Model.IdentificadorVaga }))
+                            {
+                                @Html.HiddenFor(m => m.Identificador, new { @id = "id_" + Model.Identificador })
+                                @Html.HiddenFor(m => m.IdentificadorVaga, new { @id = "id_" + Model.IdentificadorVaga })
+                                @Html.HiddenFor(m => m.IdPerguntaHistorico, new { @id = "id_" + Model.IdPerguntaHistorico })
+                                @Html.HiddenFor(m => m.EmailAntigo, new { @id = "id_" + Model.EmailAntigo })
+                    
+                                <p class="texto_aviso">
+                                    Por favor digite abaixo o seu e-mail:
+                                </p>
+                                <p>@Html.TextBoxFor(m => m.Email, new { @class = "textbox_padrao" })</p>
+                                <button class="btn btn-primary btn-small espacoBotao" name="Button" value="AtualizarEmail">Atualizar e-mail</button>
+                                <button class="btn btn-info btn-small espacoBotao" name="Button" value="EmailCorreto">Não tenho e-mail</button>
+                            }
+                        </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+
+        $('.modal_fechar').hide();
+        $('#divAlterarEmail').hide();
+
+        $('#btnEmailAlterar').click(function () {
+            $('#divAlterarEmail').show();
+            $('#divChecarEmail').hide();
+        });
+
+        $('#Email').attr('onkeyDown', 'ValidarEmail();');
+
+
+    });
+
+    function OnFailure(response) {
+        alert("Por favor, digite um e-mail válido!");
+    }
+</script>

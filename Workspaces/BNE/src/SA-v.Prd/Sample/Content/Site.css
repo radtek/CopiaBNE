@@ -1,0 +1,7 @@
+﻿table tbody tr.odd {
+	background-color: transparent;
+}
+
+table tbody tr.even {
+	background-color: rgb(249, 249, 249);
+}

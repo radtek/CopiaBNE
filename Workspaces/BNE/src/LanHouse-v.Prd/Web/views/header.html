@@ -1,0 +1,21 @@
+﻿    <div class="container"> 
+        <div class="col-lg-5 alignLogo" ng-controller="CarregarFilialController">
+            <a href="#/Home">
+                <img src="data:image/png;base64,{{pathLogoFilial}}" alt="Empregos" class="alignVertical" style="width:103px; height: auto;" />
+            </a>
+            <span class="h2 labelEmprego alignVertical">EMPREGOS</span>
+        </div>
+        <div class="col-lg-5 search" ng-show="isHome" ng-controller="VagasController">
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" id="filtroVagas" name="filtroVagas" placeholder="Digite a função ou o código da vaga" ng-keypress="AtualizarListaVagasByEnter($event)">
+                <span id="btnFiltraVagas" class="input-group-addon label-primary" ng-click="AtualizarListaVagas()"><i class="glyphicon glyphicon-search"></i></span>
+            </div>
+        </div>
+        <div class="col-lg-2 pull-right" ng-controller="HomeController">
+            <img src="images/bne-logo.png" alt="BNE - Banco Nacional de Empregos" alt="BNE - Banco Nacional de Empregos" class="alignLogoBne" />
+            <span ng-show="usuarioLogado" style="position:absolute; width:400px; top:0; margin: -6px 0 0 -560px; text-align:right; font-size:11px;">
+                Olá, {{nomeUsuario}}  <a href="" ng-click="logOut()">Sair</a> |
+                <a href="#/Vip">Ativar código VIP</a>
+            </span>
+        </div>
+    </div>

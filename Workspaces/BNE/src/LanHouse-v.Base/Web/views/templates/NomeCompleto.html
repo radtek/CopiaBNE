@@ -1,0 +1,6 @@
+﻿<label for="{{eNome}}">{{eLabel}} <span class="required" ng-show="eRequired">*</span></label>
+<input type="text" class="form-control" id="{{eNome}}" name="{{eNome}}" {{eRequired}} maxlength="{{eMaxl}}" validar-nome-completo ng-model="value" />
+<div class="tooltip right in" style="top: 6px; left: 386px; display: block;" ng-show="!nomeValido">
+    <div class="tooltip-arrow"></div>
+    <div class="tooltip-inner">Preencha o seu nome completo </div>
+</div>

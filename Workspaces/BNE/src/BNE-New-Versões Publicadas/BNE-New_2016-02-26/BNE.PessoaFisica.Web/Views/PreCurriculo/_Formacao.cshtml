@@ -1,0 +1,54 @@
+﻿@model BNE.PessoaFisica.Web.Models.PreCurriculo
+<script type="text/javascript">
+    $(document).ready(function () {
+        ConfigurarFormacao();
+    });
+</script>
+
+
+<div class="mdl-grid bottom20">
+    @Html.HiddenFor(m => m.Formacao.CPF, new { @Value = Model.CPF })
+    @Html.HiddenFor(m => m.Nome, new { @Value = Model.Nome })
+    @Html.HiddenFor(m => m.Formacao.DataNascimento, new { @Value = Model.DataNascimento.Value.ToString("dd/MM/yyyy") })
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center "><h4><strong class="darkgrey">Qual é a sua escolaridade?</strong></h4></div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-tablet mdl-select-bne top-12">
+        @Html.DropDownListFor(m => m.Formacao.IdEscolaridade, new SelectList(
+                Model.ListarEscolaridades(), "IdEscolaridade", "Descricao", 0), new { id="ddlEscolaridade", @class = "mdl-select__input" })
+    </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne Instituicao">
+        @Html.TextBoxFor(m => m.Formacao.NomeInstituicao, new { id = "txtNomeInstituicao", @class = "mdl-textfield__input", @maxlength = "100" })
+        <label class="mdl-textfield__label" for="txtNomeInstituicao">Nome Instituicao</label>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--3-col-tablet  mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne Curso">
+        @Html.TextBoxFor(m => m.Formacao.NomeCurso, new { id = "txtNomeCurso", @class = "mdl-textfield__input", @maxlength = "100" })
+        <label class="mdl-textfield__label" for="txtNomeCurso">Nome do Curso</label>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--3-col-tablet  mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne Cidade">
+        @Html.TextBoxFor(m => m.Formacao.NomeCidade, new { id = "txtNomeCidade", @class = "mdl-textfield__input" })
+        <label class="mdl-textfield__label" for="txtNomeCidade ">Cidade</label>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--5-col mdl-cell--3-col-tablet mdl-cell--3-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+        @Html.TextBoxFor(m => m.Formacao.AnoConclusao, new { id = "txtAnoConclusao", @class = "mdl-textfield__input", @maxlength = "4" })
+        <label class="mdl-textfield__label" for="txtAnoConclusao">Ano de conclusão</label>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--1-col-phone vertitemform">
+        <label id="lblCursoAtual" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="chkCursoAtual">
+            <input type="checkbox" id="chkCursoAtual" class="mdl-checkbox__input" name="chkCursoAtual" />
+            <span class="mdl-checkbox__label">Curso Atual?</span>
+        </label>
+        
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--12-col center top12">
+        <button type="submit" name="action:Formacao" onclick="trackEvent('PreCurriculo','Click','Formação');" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformxbig " id="btnSave4">candidatar-me</button>
+    </div>
+</div>

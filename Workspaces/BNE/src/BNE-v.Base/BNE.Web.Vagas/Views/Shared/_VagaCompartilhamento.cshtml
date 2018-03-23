@@ -1,0 +1,33 @@
+﻿@using BNE.BLL.Custom
+@model BNE.Web.Vagas.Models.VagaCompartilhamento
+@{
+    var compartilhamentoFacebook = string.Format("compartilhar.facebook('{0}','{1}','{2}', '{3}')",
+                                    Model.Funcao,
+                                    Helper.RetornarDesricaoSalario(Model.SalarioInicial, Model.SalarioFinal) + " - " + Model.Cidade,
+                                    Model.URLVaga,
+                                    Model.URLIconeFacebook);
+
+    var compartilhamentoEmail = string.Format("compartilhar.email('{0}','{1}')",
+                                    Model.Identificador,
+                                    Model.URLVaga);                               
+                                    
+}
+<div class="DivCompartilhamento">
+    <div style="float:left;"><span class="compartilhe">COMPARTILHE:</span></div>
+
+    @if (User.Identity != null && User.Identity.IsAuthenticated)
+    {
+        <div class="DivCompartilhamentoEmail"><a onclick="@compartilhamentoEmail"><i class="fa fa-envelope-square"></i></a></div>
+    }
+    else
+    {
+        if (Request.Url != null)
+        {
+            using (Html.BeginForm("Entrar", "Base", new { redirectURL = Request.Url.AbsoluteUri }))
+            {
+                <div class="DivCompartilhamentoEmail"><button class="fa fa-envelope-square envioEmailCompartilhamento"></button></div>
+            }
+        }
+    }
+    <div class="DivCompartilhamentoFB"><a class="compartilhamentoFacebook" onclick="@compartilhamentoFacebook"><i class="fa fa-facebook-square"></i></a></div>
+</div>

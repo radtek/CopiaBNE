@@ -1,0 +1,56 @@
+%tit-footer {
+   font-family: arial, sans-serif;
+    line-height: 1;
+    font-size: 13px; 
+    font-weight: bold;
+    letter-spacing:0px;
+    margin-bottom: 2px;
+    
+}
+
+.fl-left { 
+	float: left;
+}
+
+.fl-rigth { 
+	float: left;
+}
+
+%btn_acao_simples {
+	background: #1c3361 !important;
+	color: #fff !important;
+	font-size: 12px !important;
+	font-family: arial, sans-serif;
+}
+
+
+%cor-padrao-empresa-txt {
+	 color: #72992F!important;
+}
+
+%cor-padrao-empresa-bg {
+	background-color: #72992F !important;
+	
+}
+
+%btn_empresa {
+	background: #72992F !important;
+	color: #fff !important;
+}
+
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+%btn_candidato {
+  background: #2b64b2 !important;
+  color: #fff !important;
+  
+}

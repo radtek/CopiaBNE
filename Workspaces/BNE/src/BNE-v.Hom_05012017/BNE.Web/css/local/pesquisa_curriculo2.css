@@ -1,0 +1,640 @@
+﻿.coluna_resultado_pesquisa {
+    width: 639px;
+    position: absolute;
+    left: 0px;
+}
+
+.coluna_filtros {
+    width: 231px;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    font-size: 11px;
+}
+
+    .coluna_filtros .imagem_filtros {
+        margin-top: 30px;
+    }
+
+    .coluna_filtros .container_campo {
+        float: none;
+    }
+
+        .coluna_filtros .container_campo .rcbInput {
+            font-size: 11px;
+        }
+
+.RadComboBox .rcbInputCell .rcbInput {
+    vertical-align: auto;
+}
+
+.rcbList {
+    font-size: 11px !important;
+}
+
+.label {
+    font-weight: normal;
+}
+
+.painel_padrao {
+    background-image: url('/img/barra_painel_filtros.png');
+}
+
+.painel_legenda {
+    height: 22px;
+    width: 880px;
+    margin-bottom: 5px;
+}
+
+    .painel_legenda.icones {
+        background-color: #f2f1f1;
+        background-repeat: no-repeat;
+        padding-bottom: 5px;
+    }
+
+    .painel_legenda.manutencao {
+        background-color: #f9dfb1;
+        background-repeat: no-repeat;
+    }
+
+.manutencao {
+    background-color: #f9dfb1;
+}
+
+.gridview_padrao {
+    margin: 0; /*margin-left: 8px; */ /*width: 890px !important;*/
+}
+
+.conteudo .textbox_padrao.campo_obrigatorio, .conteudo .textarea_padrao.campo_obrigatorio {
+    max-width: 100px;
+    padding-left: 11px;
+}
+
+.conteudo .textbox_padrao, .conteudo .textarea_padrao {
+    max-width: 100px;
+    padding: 0;
+}
+
+    .conteudo .textbox_padrao.requisito_confidencial {
+        max-width: 145px;
+    }
+
+    .conteudo .textarea_padrao.busca_especifica {
+        max-width: 200px;
+    }
+
+    .conteudo .textbox_padrao.email_retorno, .conteudo .textarea_padrao.email_retorno {
+        max-width: 145px;
+    }
+
+.label_principal {
+    width: 0;
+}
+
+    .label_principal.checkbox {
+        float: none;
+    }
+
+    .label_principal.busca_especifica {
+        width: 225px;
+        text-align: center;
+    }
+
+.painel_botoes.painel_pesquisa_curriculo {
+    width: 880px;
+}
+
+.painel_botoes.filtros {
+    width: 231px;
+}
+
+.botao_padrao_filtro {
+    font-size: 11px;
+    margin-left: 0;
+    margin-bottom: 0;
+    background-image: url('/img/botao_padrao.png');
+    background-repeat: repeat-x;
+    border: 1px solid #dcdfe4;
+    cursor: pointer;
+    font-family: Verdana;
+    overflow: visible;
+    padding: 8px 10px;
+}
+
+.RadGrid .rgClipCells .rgRow td, .RadGrid .rgClipCells .rgAltRow td, .RadGrid .rgClipCells .rgFooter td {
+    border-color: #D0D7E5;
+}
+
+.nome_descricao_curriculo_padrao {
+    text-decoration: none;
+    color: #1E3260 !important;
+}
+
+.nome_descricao_curriculo_visited {
+    color: #e00 !important;
+    font-weight: bold;
+}
+
+.nome_curriculo {
+    display: inline-table;
+}
+
+.icones_pesquisa_curriculo {
+    text-align: center;
+    color: #00156e;
+    font-weight: bold;
+    width: 165px;
+}
+
+.icones_pesquisa_curriculo_vagas {
+    width: 96px;
+}
+
+.icones .espacamento {
+    margin: 0 2px;
+}
+
+.RadGrid_Office2007, .RadGrid_Office2007 .rgMasterTable, .RadGrid_Office2007 .rgDetailTable, .RadGrid_Office2007 .rgGroupPanel table, .RadGrid_Office2007 .rgCommandRow table, .RadGrid_Office2007 .rgEditForm table, .RadGrid_Office2007 .rgPager table, .GridToolTip_Office2007 {
+    font-family: Arial,Helvetica,sans-serif !important;
+    font-size: 11px !important;
+}
+
+.alinhar_container_campo * {
+    display: inline;
+}
+
+.icones_avaliacao {
+    width: 275px;
+    margin: 0 auto;
+}
+
+    .icones_avaliacao .posicao {
+        margin-left: 30px;
+        display: inline-block;
+        width: 48px;
+    }
+
+.espaco_radio_button {
+    margin-right: 25px;
+}
+
+.envio_de_mensagem_radio_button {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.meios_de_envio {
+    width: 644px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.primeira_coluna {
+    margin-right: 150px;
+    margin-bottom: 30px;
+}
+
+.segunda_coluna {
+    margin-right: 150px;
+}
+
+.enviar_mensagem_entrevista {
+    font-weight: bold;
+    color: #1E3260;
+    font-size: 13px;
+    text-align: center;
+}
+
+.modal_conteudo vagas .container_campo {
+    float: left;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.linha_vaga .container_campo {
+    float: left;
+    padding-left: 5px;
+}
+
+.label_principal_vaga {
+    font-size: 12px;
+}
+
+.container_campo .informacao_pesquisa_vaga {
+    font-weight: bold;
+}
+
+.coluna_filtros .ajax_ace {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style: none;
+    width: 215px !important;
+}
+
+.container_campo span {
+    display: inline-block;
+}
+
+.textbox_padrao, .textarea_padrao {
+    margin-right: 4px;
+    margin-left: 4px;
+    vertical-align: middle;
+    border: 1px solid #B5CAEA;
+}
+
+    .textbox_padrao.campo_obrigatorio, .textarea_padrao.campo_obrigatorio {
+        margin-right: 4px;
+        margin-left: 4px;
+        vertical-align: middle;
+        border: 1px solid #B5CAEA;
+        padding-left: 11px;
+    }
+
+.modal_conteudo.reduzida {
+    height: auto;
+}
+
+.rpRootGroup {
+    width: 880px;
+}
+
+.RadGrid_Office2007 .rgExpand, .gridview_padrao .rgExpand {
+    background-image: url('/img/ico_mais.gif');
+}
+
+.painel_resumo_curriculo {
+    padding: 36px 56px 25px 35px;
+    font-size: 14px;
+    position: absolute !important;
+    color: #fff;
+    width: 400px;
+    text-align: center;
+    font-family: roboto, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+.painel_resumo_atribuicoes {
+    border-right: 1px solid #9FCE68;
+    border-left: 1px solid #9FCE68;
+    border-top: 1px solid #9FCE68;
+    border-bottom: 1px solid #9FCE68;
+    padding: 14px;
+    background-color: #F1F7E9;
+    margin-bottom: 10px;
+    height: 40px;
+}
+
+    .painel_resumo_atribuicoes .atribuicoes {
+        font-weight: bold;
+        display: block;
+    }
+
+.legenda_resultado_pesquisa_curriculo {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.pesquisa_curriculo.RadGrid_Office2007 .rgHeader:first-child, .pesquisa_curriculo.RadGrid_Office2007 th.rgResizeCol:first-child, .pesquisa_curriculo.RadGrid_Office2007 .rgFilterRow > td:first-child, .pesquisa_curriculo.RadGrid_Office2007 .rgRow > td:first-child, .pesquisa_curriculo.RadGrid_Office2007 .rgAltRow > td:first-child, .pesquisa_curriculo.RadGrid_Office2007 td.rgGroupCol, .pesquisa_curriculo.RadGrid_Office2007 td.rgExpandCol .pesquisa_curriculo.RadGrid_Office2007 .rgGroupHeader .rgGroupCol, .pesquisa_curriculo.RadGrid_Office2007 .rgExpandCol, .pesquisa_curriculo.RadGrid_Office2007 .rgHeader.rgGroupCol {
+    display: none !important;
+}
+
+.foto_pesquisa_curriculo {
+    background-color: #e9f1fc;
+    float: left;
+    width: 180px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 20px; /*IE 7*/
+    color: #000;
+    font-family: Arial; /*IE 7*/
+}
+
+.espaco_descricao {
+    margin-bottom: 10px;
+}
+
+.ultimo_salario {
+    float: right; /*margin-right: 10px;*/
+    padding-top: 15px;
+}
+
+.foto_pesquisa_curriculo .nome_pessoa {
+    font-weight: bold;
+    margin-bottom: 7px;
+    font-size: 12px;
+}
+
+.codigo_curriculo {
+    font-size: 11px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.resultado_pesquisa_informacoes {
+    width: 600px;
+    min-height: 150px;
+    color: #000;
+    font-size: 11px;
+    overflow: hidden;
+}
+
+.grid_resultado_curriculo {
+    font-size: 12px;
+    font-family: Arial;
+    width: 100%;
+    color: #000;
+}
+
+.botoes_resultado_pesquisa {
+    text-align: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+    .botoes_resultado_pesquisa .espaco_botoes {
+        margin-right: 10px;
+    }
+
+.botao_padrao_fechar_escuro {
+    float: right;
+    margin-top: 6px;
+    margin-right: 10px;
+}
+
+.texte_cor {
+    color: #808080;
+}
+
+.icone_sms_teste, .icone_avaliacao_teste {
+    display: table-cell;
+}
+
+    .icone_avaliacao_teste input {
+        text-align: center;
+        margin-top: -10px;
+    }
+
+    .icone_sms_teste input {
+        text-align: center;
+    }
+
+    .icone_sms_teste .label_sms { /*margin-top: -5px;*/
+        padding-left: 2px;
+    }
+
+.icone_avaliacao_sms {
+    text-align: center;
+    display: table-cell;
+}
+
+.experiencia_curriculo_teste {
+    width: 32px;
+}
+
+.borda_branca {
+    width: 96px;
+    height: 121px;
+    background-image: url('/img/borda_branca_foto.png');
+    margin: 0 auto;
+}
+
+.foto_dentro_borda_branca {
+    width: 80px;
+    height: 107px;
+    border: 1px solid #c4c4c4;
+    margin: 5px auto;
+}
+
+.mensagem_nodata {
+    padding: 30px 0 !important;
+    text-align: center !important;
+}
+
+.validador {
+    color: #ff0000;
+    font-weight: normal;
+    font-size: 11px;
+    background-image: url('/img/icone_validacao_campo.gif');
+    background-repeat: no-repeat;
+    padding-left: 11px;
+}
+
+.RadGrid .rgGroupHeader td p {
+    color: #FF6600;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.espacamento.completo img {
+    border: none;
+}
+
+.ico_pcd {
+    display: inline-block;
+    padding-left: 5px;
+    font-size: 14px;
+}
+
+.painel_botoes.painel_pesquisa_curriculo .botao_padrao:first-child {
+    margin-left: 0px;
+}
+
+.painel_botoes.painel_pesquisa_curriculo .botao_padrao {
+    margin-left: 5px;
+}
+
+.topo .interna, .painel_filtro_curriculo, .conteudo .interna, .gridview_padrao.pesquisa_curriculo, .painel_filtro_vaga, .painel_botoes.painel_pesquisa_curriculo {
+    width: 1080px;
+}
+
+div.RadGrid .rgPager .rgAdvPart {
+    display: inline;
+    margin-left: 10px;
+}
+
+#DivBotoesLateraisAberto {
+    background: #e6f1fd;
+    text-align: center;
+    border-radius: 3px;
+    color: #333;
+    font-size: 16px;
+    padding: 20px 15px 13px 20px;
+    text-decoration: none;
+    top: 237px;
+    display: block;
+    padding: 10px;
+    position: fixed;
+    box-shadow: 0px 5px 7px #666;
+    right: 0;
+}
+
+#DivBotoesLateraisFechado {
+    background: #e6f1fd;
+    height: 15px;
+    border-radius: 3px;
+    color: #333;
+    font-size: 16px;
+    padding: 20px 15px 13px 20px;
+    text-decoration: none;
+    top: 237px;
+    display: block;
+    padding: 10px;
+    position: fixed;
+    box-shadow: 0px 5px 7px #666;
+    right: 0;
+}
+
+.linksAcoes {
+    cursor: pointer;
+    color: #000e73;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#DivTopoBotoesLaterais {
+    width: 100%;
+    height: 27px;
+    border-bottom: solid 1px #c1d7ee;
+}
+
+.linkChamarAgoraGrid:hover {
+    text-decoration: underline;
+}
+
+#InfosSalarioBR {
+    float: right;
+    text-align: left;
+    font-size: 12px;
+    padding: 11px;
+}
+
+.balao {
+    color: white;
+    cursor: pointer;
+    border-radius: 100% !important;
+}
+
+a.tooltipB {
+    display: inline;
+    position: relative;
+}
+
+    a.tooltipB:hover {
+        text-decoration: none;
+    }
+
+    a.tooltipB span {
+        display: none;
+    }
+
+    a.tooltipB:hover span {
+        border-radius: .5em;
+        bottom: 1.35em;
+        background-color: #d7d7d7 !important;
+        font-size: 12px;
+        line-height: 1.3;
+        bottom: 2em;
+        width: 250px;
+        color: #666;
+        content: attr(title);
+        display: block;
+        left: -1.5em;
+        padding: 1em 1em 1em 1em;
+        position: absolute;
+        pointer-events: none;
+        -webkit-transition: all .25s ease-out;
+        -moz-transition: all .25s ease-out;
+        -ms-transition: all .25s ease-out;
+        -o-transition: all .25s ease-out;
+        transition: all .25s ease-out;
+        -webkit-box-shadow: 2px 2px 6px rgba(0,0,0,0.28);
+        -moz-box-shadow: 2px 2px 6px rgba(0,0,0,0.28);
+        -ms-box-shadow: 2px 2px 6px rgba(0,0,0,0.28);
+        -o-box-shadow: 2px 2px 6px rgba(0,0,0,0.28);
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.28);
+    }
+
+#lblNomeCurriculo > div {
+    float: left;
+}
+
+.base-curriculo {
+    height: 80px;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    line-height: 80px;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+    .base-curriculo a {
+        text-transform: uppercase;
+        color: #fff;
+        padding: 10px 25px;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        font-size: 12px;
+        margin-left: 5px;
+    }
+
+    .base-curriculo.base-paga {
+        background-color: #1e88e5;
+    }
+
+        .base-curriculo.base-paga a {
+            background-color: #0d47a1;
+        }
+
+    .base-curriculo.base-gratis {
+        background-color: #72992f;
+    }
+
+        .base-curriculo.base-gratis a {
+            background-color: #435c17;
+        }
+
+
+.caixa_alta {
+    text-transform: uppercase;
+}
+
+
+.link_green {
+    color: #597e39;
+}
+
+.link_weak {
+    color: rgba(0,0,0,0.57);
+}
+
+.sbrInformacao {
+    text-align: left;
+    padding: 20px 0 20px 0;
+    font-size: 18px;
+}
+
+.linhaFunao {
+    font-size: 18px;
+    line-height: 42px;
+}
+
+.linhaAtribuicao {
+    font-size: 18px;
+}
+
+.BannerMedia {
+    padding-top: 20px;
+    font-size: 29px;
+}
+
+.txtLinhaFuncao{
+    font-size:29px;
+}

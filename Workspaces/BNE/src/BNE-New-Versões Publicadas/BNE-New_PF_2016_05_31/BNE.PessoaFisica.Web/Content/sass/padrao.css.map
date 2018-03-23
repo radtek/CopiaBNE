@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAUA,QAAS;EACR,KAAK,EAAE,IAAI;;AAGZ,SAAU;EACT,KAAK,EAAE,IAAI",
+"sources": ["padrao.scss"],
+"names": [],
+"file": "padrao.css"
+}

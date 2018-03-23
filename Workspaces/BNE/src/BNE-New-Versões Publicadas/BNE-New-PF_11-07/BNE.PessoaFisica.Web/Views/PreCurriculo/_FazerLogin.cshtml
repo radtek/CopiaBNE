@@ -1,0 +1,21 @@
+﻿@model BNE.PessoaFisica.Web.Models.PreCurriculo
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        ConfigurarPasso2();
+    });
+</script>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center bottom20"><h4><strong class="darkgrey">Confirmar candidatura!</strong></h4></div>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+        @Html.TextBoxFor(m => m.CPF, new { id = "txtCPF", @class = "mdl-textfield__input" })
+        <label class="mdl-textfield__label" for="txtCPF">CPF</label>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+        @Html.TextBoxFor(m => m.DataNascimento, new { id = "txtDataNascimento", @class = "mdl-textfield__input" })
+        <label class="mdl-textfield__label" for="txtDataNascimento">Data de Nascimento</label>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col center top12">
+        <button type="submit" name="action:FazerLogin" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformxbig">Candidatar-me</button>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+﻿@model BNE.PessoaFisica.Web.Models.PreCurriculo
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#spaVagaOportunidade').html($('#hddVagaOportunidade').val());
+    });
+</script>
+
+@Html.HiddenFor(p => p.IdPesquisa, new { @Value = Model.IdPesquisa })
+@Html.HiddenFor(p => p.UrlVoltarLogado, new { @Value = Model.UrlVoltarLogado })
+
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet center">
+        <h4><span class="i-h4"><i class="material-icons mediumcolor">check_circle</i></span><strong class="darkgrey">Seu Currículo foi enviado para a <span id="spaVagaOportunidade"></span>!</strong></h4>
+            <p><strong class="darkgrey">Conheça o <a href="http://www.bne.com.br/vip">VIP e candidate-se a todas as vagas e oportunidades!</a></strong></p>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col center top-12">
+        <button type="submit" name="action:VoltarparaPesquisa" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised btnformxbig " id="btnSave5">Continuar</button>
+    </div>
+</div>

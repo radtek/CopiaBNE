@@ -1,0 +1,131 @@
+﻿.RadComboBox
+{
+    margin-left: 4px !important;
+    margin-right: 5px !important;
+}
+
+.container_conteudo_saiba_mais_posicionamento_palavra_chave
+{
+    position: relative;
+    top: -112px;
+    left: -95px;
+    cursor: default;
+    height: auto;
+    width: 230px;
+    z-index: 8000;
+    display: none;
+}
+
+
+
+.container_conteudo_saiba_mais_posicionamento_codigo_vaga
+{
+    position: relative;
+    top: -95px;
+    left: -95px;
+    cursor: default;
+    height: auto;
+    width: 230px;
+    z-index: 8000;
+    display: none;
+}
+
+.inner_cointainer_couteudo_saiba_mais_flutuante
+{
+    height: auto;
+    position: absolute;
+    width: auto;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: rgb(255, 254, 183);
+    border: 1px solid rgb(255, 200, 100);
+}
+
+.table_conteudo_saiba_mais_organizacao
+{
+    margin: 2px 3px 4px 3px;
+    -webkit-border-horizontal-spacing: 2px;
+    -webkit-border-vertical-spacing: 2px;
+    border-collapse: collapse;
+    border-left-color: rgb(128, 128, 128);
+    border-right-color: rgb(128, 128, 128);
+    border-top-color: rgb(128, 128, 128);
+    cursor: default;
+    display: table;
+    font-size: 12px;
+    height: auto;
+    max-width: 240px;
+    width: auto;
+}
+
+.conteudo_saiba_mais_titulo
+{
+    border-collapse: collapse;
+    cursor: default;
+    display: block;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    height: auto;
+    line-height: 22px;
+    width: auto;
+}
+
+.saiba_mais_seta
+{
+    background-image: url(/img/balaosaibamais/Callouts.gif);
+    background-position: 0px -55px;
+    background-repeat: no-repeat;
+    cursor: default;
+    display: block;
+    font-size: 1px;
+    height: 11px;
+    left: 125px;
+    line-height: 0px;
+    margin-left: -10px;
+    margin-top: -1px;
+    position: absolute;
+    top: 100%;
+    visibility: visible;
+    width: 11px;
+}
+
+.conteudo_saiba_mais_texto
+{
+    background-color: rgb(255, 254, 183);
+    background-image: url(img/balaosaibamais/ContentBgr.png);
+    border-bottom-width: 0px;
+    border-collapse: collapse;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(0, 0, 0);
+    border-left-style: none;
+    border-left-width: 0px;
+    border-right-color: rgb(0, 0, 0);
+    border-right-style: none;
+    border-right-width: 0px;
+    border-top-color: rgb(0, 0, 0);
+    border-top-style: none;
+    border-top-width: 0px;
+    cursor: default;
+    display: table-cell;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    height: 100%;
+    line-height: normal;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    vertical-align: top;
+    width: auto;
+}

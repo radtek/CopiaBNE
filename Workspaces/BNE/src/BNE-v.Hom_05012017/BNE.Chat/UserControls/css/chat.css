@@ -1,0 +1,238 @@
+.container_chat {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 32px;
+    z-index: 5;
+}
+
+.container_inner_chat {
+    float: left;
+}
+
+.primaryContainerChat {
+    bottom: 0;
+    font-size: 1.08em !important;
+    height: auto;
+    line-height: 1.2em;
+    margin-right: 0px;
+    z-index: 999;
+}
+
+.checked {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 15;
+    margin-top: -27.5px;
+    margin-left: 14.176683%;
+    clear: both;
+    margin-right: 0%;
+}
+
+.visualizada_txt {
+    float: left;
+    font-size: 10px;
+    width: 180px;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(98, 124, 111);
+    font-style: normal;
+    letter-spacing: normal;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 9;
+    margin-top: -30px;
+    margin-left: 20%;
+    clear: none;
+    margin-right: 0%;
+    min-height: 14px;
+}
+
+.error_enviar_txt {
+    color: red;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 8px;
+    margin-top: -32px;
+}
+
+.data_txt {
+    float: left;
+    font-size: 10px;
+    width: 180px;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(98, 124, 111);
+    font-style: normal;
+    letter-spacing: normal;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 8;
+    margin-top: -30px;
+    margin-left: 20%;
+    clear: both;
+    display: block;
+}
+
+.pessoa_titulo_chat {
+    cursor: pointer;
+}
+
+.fechar {
+    float: right;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    margin-top: 10px;
+    margin-left: 6px;
+    padding-right: 6px;
+    padding-bottom: 6px;
+    margin-right: 1px;
+    width: 14px;
+    clear: none;
+    cursor: pointer;
+}
+
+.dashboard_link {
+    font-size: 12px;
+    text-decoration: underline;
+    color: white;
+    margin-top: 7px;
+    float: left;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+    .dashboard_link:hover {
+        color: #A880FD;
+    }
+
+.pessoa_Aleatoria_txt {
+    float: left;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(255, 255, 255);
+    font-style: normal;
+    letter-spacing: normal;
+    text-decoration: none;
+    font-family: arial;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    margin-top: 7px;
+    margin-left: -4%;
+    clear: none;
+    max-width: 165px;
+    margin-right: 0%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.topo_verde {
+    float: left;
+    height: 32px;
+    clear: none;
+    width: 260px;
+    background-color: rgb(49, 116, 6);
+    margin-right: 0%;
+    display: block;
+    opacity: 0.85;
+}
+
+.container_conversa_chat {
+}
+
+.container_texto_pessoa {
+    float: left;
+    height: 272px;
+    margin-top: 0px;
+    margin-bottom: -2px;
+    clear: both;
+    width: 260px;
+    background-color: #E7F4E7;
+    margin-right: 0%;
+    overflow-x: scroll;
+    overflow-y: auto;
+}
+
+.image {
+    float: left;
+    width: auto;
+    height: auto;
+    margin-top: 9px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-left: 10px;
+    cursor: pointer;
+    padding-right: 6px;
+    padding-bottom: 6px;
+}
+
+.formgroup {
+    float: left;
+    height: auto;
+    display: block;
+    text-align: left;
+    margin-top: 3px;
+    clear: both;
+    width: 248px;
+}
+
+.textinput {
+    float: none;
+    height: auto;
+    padding: 0px;
+    display: block;
+    width: 100%;
+    margin-top: -17px;
+    margin-left: 0%;
+    clear: none;
+    overflow: hidden;
+}
+
+.text_input_front_hack {
+    position: relative;
+}
+
+.text {
+    float: none;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    padding: 0.2em 0em;
+    display: block;
+}
+
+.input {
+    height: 30px !important;
+    border: thin solid rgb(49, 116, 6);
+    padding-left: 10px !important;
+}

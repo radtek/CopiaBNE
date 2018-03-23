@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace BNE.PessoaJuridica.Domain.Command
+{
+    public class CadastroPessoaJuridica
+    {
+        public decimal NumeroCNPJ { get; set; }
+        public string RazaoSocial { get; set; }
+        public string NomeFantasia { get; set; }
+        public string Site { get; set; }
+        public string SituacaoCadastral { get; set; }
+        public string CNAE { get; set; }
+        public string NaturezaJuridica { get; set; }
+        public string Email { get; set; }
+        public int CEP { get; set; }
+        public string Bairro { get; set; }
+        public string Cidade { get; set; }
+        public string Complemento { get; set; }
+        public string Logradouro { get; set; }
+        public string Numero { get; set; }
+        public string NumeroDDDComercial { get; set; }
+        public decimal NumeroComercial { get; set; }
+        public DateTime DataAbertura { get; set; }
+        public int QuantidadeFuncionario { get; set; }
+        public string IP { get; set; }
+        public UsuarioPessoaJuridica Usuario { get; set; }
+        public List<UsuarioAdicionalPessoaJuridica> UsuariosAdicionais { get; set; }
+
+    }
+
+    public class UsuarioPessoaJuridica
+    {
+
+        public string Nome { get; set; }
+        public string Sexo { get; set; }
+        public decimal NumeroCPF { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public string Funcao { get; set; }
+        public string NumeroDDDCelular { get; set; }
+        public decimal NumeroCelular { get; set; }
+        public string NumeroDDDComercial { get; set; }
+        public decimal NumeroComercial { get; set; }
+        public decimal NumeroRamal { get; set; }
+        public string Email { get; set; }
+        public bool FlgWhatsApp { get; set; }
+
+
+    }
+
+    public class UsuarioAdicionalPessoaJuridica
+    {
+
+        public string Nome { get; set; }
+        public string Email { get; set; }
+
+    }
+
+}

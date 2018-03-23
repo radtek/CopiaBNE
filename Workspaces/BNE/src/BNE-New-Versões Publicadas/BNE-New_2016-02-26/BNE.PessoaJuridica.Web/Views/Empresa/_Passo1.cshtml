@@ -1,0 +1,109 @@
+﻿@using BNE.Components.Web
+@model BNE.PessoaJuridica.Web.Models.CadastroEmpresa
+
+@if (ViewData["RunScripts"] != null && Convert.ToBoolean(ViewData["RunScripts"]))
+{
+    <script>
+        ConfigurarPasso1();
+    </script>
+}
+@if (ViewData["Erro"] != null && !string.IsNullOrWhiteSpace(ViewData["Erro"].ToString()))
+{
+    <script>
+        util.mostrarerro('@Html.Raw(ViewData["Erro"].ToString())');
+    </script>
+}
+@if (Model.ReceitaOnline)
+{
+    <script>
+        $(document).ready(function () {
+            ConfigurarCaptcha();
+        });
+    </script>
+}
+else
+{
+    <script>
+        $(document).ready(function () {
+            ConfigurarPasso1();
+        });
+    </script>
+}
+
+@Html.HiddenFor(m => m.ReceitaOnline)
+@Html.HiddenFor(m => m.Usuario.Nome)
+@Html.HiddenFor(m => m.Usuario.Email)
+
+<div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col md-progtrckr">
+            <ol class="progtrckr" data-progtrckr-steps="3">
+                <li class="progtrckr-done"><span class="ultradarkgreen"><strong>Dados da Empresa</strong></span></li>
+                <li class="progtrckr-todo mdl-cell--hide-phone" id="step-nok"><span class="silver">Dados do Responsável</span></li>
+                <li class="progtrckr-todo mdl-cell--hide-phone" id="step-nok"><span class="silver">Confirmação de Cadastro</span></li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet center darkgrey top36">
+    <h4>
+        <i class="material-icons mediumcolor">business</i>
+        <strong>CADASTRO DE EMPRESA</strong>
+    </h4>
+    Pesquisa diária, currículos de assinantes e divulgação de vagas ilimitadas<br />
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.NumeroCNPJ, new { id = "txtCNPJ", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtCNPJ">CNPJ da Empresa</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.Site, new { id = "txtSite", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtSite">Site Empresa</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.NumeroComercial, new { id = "txtNumeroComercial", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtNumeroComercial">Telefone Comercial</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label md-input-bne">
+    @Html.TextBoxFor(m => m.QuantidadeFuncionario, new { id = "txtQuantidadeFuncionario", @class = "mdl-textfield__input" })
+    <label class="mdl-textfield__label" for="txtQuantidadeFuncionario">Quantidade de Funcionários</label>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
+<div class="mdl-cell mdl-cell--12-col center">
+</div>
+@if (Model.ReceitaOnline)
+{
+    <div class="mdl-cell mdl-cell--5-col mdl-cell--2-col-tablet mdl-cell--hide-phone"></div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone center md-input-bne-emp-common captcha">
+        @Html.CNPJReceitaFederal(m => m.Captcha, InputType.Text, new { @for = "txtCNPJ", @class = "mdl-textfield__input", id = "txtCaptchaReceitaFederal" })
+    </div>
+    <div class="mdl-cell mdl-cell--5-col mdl-cell--2-col-tablet mdl-cell--hide-phone"></div>
+}
+<div class="mdl-cell mdl-cell--12-col center">
+    <input type="submit" value="CONTINUAR" name="action:Passo1" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised save btnformbig" />
+</div>
+
+@if (ViewData["MostrarModalReceita"] != null && Convert.ToBoolean(ViewData["MostrarModalReceita"]))
+{
+    @Html.Partial("_Receita", new BNE.PessoaJuridica.Web.Models.CadastroEmpresaReceita { CNPJ = @Model.NumeroCNPJ, Telefone = @Model.NumeroComercial })
+    <script>
+        ConfigurarReceita();
+    </script>
+}

@@ -1,0 +1,188 @@
+﻿@using System.Web.Optimization;
+@using BNE.Core.Common;
+@model BNE.PessoaFisica.Web.Models.PreCurriculo
+
+@section scripts {
+@Scripts.Render("~/bundles/pre-curriculo")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        Inicializar();
+    });
+</script>
+    }
+
+@using (Ajax.BeginForm("Index", "PreCurriculo", null, new AjaxOptions
+{
+    HttpMethod = "Post",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "renderTela"
+}, new { @id = "PreCadastroLoginForm" }))
+{
+    if (Model.vagaTela != null)
+    {
+        
+    
+    @Html.HiddenFor(m => m.IdVaga, new { @Value = Model.vagaTela.IdVaga })
+    @Html.HiddenFor(m => m.IdFuncao, new { @Value = Model.vagaTela.IdFuncao })
+    @Html.HiddenFor(m => m.DescricaoFuncao, new { @Value = Model.vagaTela.Descricao })
+    @Html.HiddenFor(m => m.IdPesquisa, new { @Value = Model.vagaTela.IdPesquisa })
+    @Html.HiddenFor(m => m.UrlPesquisa, new { @Value = Model.vagaTela.urlPesquisa })
+    
+    @Html.HiddenFor(m => m.IdCidade, new { @Value = Model.vagaTela.IdCidade })
+    
+    <input type="hidden" id="hddVagaOportunidade" value="@Model.VagaOportunidade" />
+
+   <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col center">
+              <h3 class="darkgrey">Olá, você quer se candidatar a esta @ViewBag.CssVagaOportunidade?</h3>
+        </div>
+   </div>
+   <!-- HTML da VAGA -->
+    <div class="mdl-grid top12 headbox-@ViewBag.CssVagaOportunidade">
+            <div class="mdl-cell mdl-cell--12-col">
+                <h1 class="white">
+                    @if (Model.vagaTela.FlagDeficiencia)
+                    {
+                        @Html.Raw(File.ReadAllText(Server.MapPath("~/svg/pcd.svg")))
+                    }
+                    @Model.vagaTela.Funcao
+                </h1>
+            </div>
+        @if (@Model.vagaTela.SalarioDe == 0 && @Model.vagaTela.SalarioAte == 0)
+        {
+            <div class="mdl-cell mdl-cell--12-col white">
+                @if (Model.vagaTela.faixaSalarial == "combinar")
+                {
+                    <p class="white">Salário a combinar em @Model.vagaTela.Cidade/@Model.vagaTela.UF</p>
+                }
+                else
+                {
+                    <p class="white">@Model.vagaTela.faixaSalarial</p>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="mdl-cell mdl-cell--12-col white">
+                <p class="white">@Utils.FormatarExibicaoSalario(@Model.vagaTela.SalarioDe, @Model.vagaTela.SalarioAte) em @Model.vagaTela.Cidade/@Model.vagaTela.UF</p>
+            </div>
+        }
+
+        @*@if (@Model.vagaTela.NomeEmpresa != null)
+            {<div class="mdl-cell mdl-cell--12-col white">
+                <p class="white">Empresa: <strong>@Model.vagaTela.NomeEmpresa</strong></p>
+            </div>
+            }*@
+    </div>
+
+    <div class="mdl-grid headcont-vaga">
+        <div class="mdl-cell mdl-cell--12-col"><h5 class="h5Vaga">Atribuições</h5></div>
+        <div class="mdl-cell mdl-cell--12-col justify"><p>@Model.vagaTela.Atribuicoes</p></div>
+
+            @if (!String.IsNullOrEmpty(Model.vagaTela.DescricaoDeficiencia))
+            {
+                <div class="mdl-cell mdl-cell--12-col"><h5 class="h5Vaga">Deficiência</h5></div>
+                <div class="mdl-cell mdl-cell--12-col justify"><p>@Model.vagaTela.DescricaoDeficiencia</p></div>
+            }
+
+            @if (Model.vagaTela.Beneficios != null)
+            {
+            <div class="mdl-cell mdl-cell--12-col"><h5 class="h5Vaga">Benefícios</h5></div>
+            <div class="mdl-cell mdl-cell--12-col justify"><p>@Model.vagaTela.Beneficios</p></div>
+        }
+            @if (Model.vagaTela.Requisitos != null)
+            {
+            <div class="mdl-cell mdl-cell--12-col"><h5 class="h5Vaga">Requisições</h5></div>
+            <div class="mdl-cell mdl-cell--12-col justify"><p>@Model.vagaTela.Requisitos</p></div>
+        }
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">Código da @ViewBag.CssVagaOportunidade: <strong class="darkcolor">@Model.vagaTela.CodigoVaga</strong></div>
+            @if (!@Model.vagaTela.FlgArquivada && !@Model.vagaTela.FlgInativo)
+        { 
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                    Anunciada em:
+            <strong class="darkcolor">@Model.vagaTela.DataAnuncio.ToString("dd/MM/yyyy")</strong> 
+            </div>
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                @if (Model.vagaTela.FlgAuditada)
+                {<span>@ViewBag.CssVagaOportunidade Auditada.</span>}
+            </div>
+        }
+            <div class="mdl-cell mdl-cell--12-col">
+                <p class="small mediumgrey lighter">
+                    @ViewBag.CssVagaOportunidade encontrada em:<br />
+                    @Model.vagaTela.LinkVagasFuncao.GetLink() / @Model.vagaTela.LinkVagasCidade.GetLink() / @Model.vagaTela.LinkVagasFuncaoCidade.GetLink() / @Model.vagaTela.LinkVagasArea.GetLink()
+                </p>
+            </div>
+        </div>
+    <div class="mdl-grid top24">
+        <div class="mdl-cell mdl-cell--12-col center ">
+            <h3 id="maisInfo" class="darkgrey"><span class="lighter">Para isso precisamos de </span>algumas informações:</h3>
+        </div>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col center">
+            <h6 class="linkLogin">
+                <span class="lighter darkgrey">Já possui cadastro?</span> <span class="italic">
+                        @Ajax.ActionLink("Clique Aqui", "FazerLogin", "PreCurriculo", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "renderTela" }, new { @class = "color", onClick = "trackEvent('PreCurriculo','Click','FazerLogin');" })
+                </span>
+            </h6>
+        </div>
+    </div>
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col center">
+            <h6 class="linkCadastro">
+                <span class="lighter darkgrey">Não possui cadastro?</span> <span class="italic">
+                    @Ajax.ActionLink("Clique Aqui", "Passo1", "PreCurriculo", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "renderTela" }, new { @class = "color", onClick = "trackEvent('PreCurriculo','Click','FazerCadastro');" })
+                </span>
+            </h6>
+        </div>
+    </div>
+    <!--FIM da VAGA-->
+
+    <!-- FORM -->
+    <div class="md-section-candidatvaga" id="renderTela">
+        <input type="hidden" id="hddMinimoNacional" value="@ViewBag.MinimoNacional" />
+        
+        
+        @if (!ViewBag.JaEnviei)
+        {
+            if (ViewBag.PedirExperiencia)
+            { @Html.Partial("_UltimaExperiencia", Model)}
+            else if (ViewBag.PedirFormacao)
+            {
+                @Html.Partial("_Formacao", Model)
+            }
+            else if (ViewBag.EnviarCV)
+            {
+                @Html.Partial("_EnviarCV", Model)
+            }
+            else
+            {
+                @Html.Partial("_CadastroPasso1", Model)
+            }
+        }
+        else
+        {
+            @Html.Partial("_JaEnviei", Model)
+        }
+
+        <p>@ViewBag.Erro</p>
+    </div>
+    <!--Fim do FORM-->
+
+    
+    }
+    else
+    {
+        <div class="mdl-grid headbox-vaga top12">
+            <div class="mdl-cell mdl-cell--12-col"><h1 class="white">OPS!</h1></div>
+                <div class="mdl-cell mdl-cell--12-col white">
+                    <p class="white">Vaga não encontrada!</p>
+                    <p class="white"><a href="" onclick="javascript: history.go(-1);">Voltar para a tela de pesquisa</a></p>
+
+                </div>
+        </div>
+    }
+}

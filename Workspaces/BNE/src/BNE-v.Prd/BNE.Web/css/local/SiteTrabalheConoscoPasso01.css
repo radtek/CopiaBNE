@@ -1,0 +1,31 @@
+﻿.painel_padrao { overflow: hidden; }
+.texto_escolha_nesta_tela { border-bottom: 1px solid #ccc; margin: 4px 12px 12px 12px; padding-bottom: 12px; }
+.coluna_configuracoes { color: #537918; float: left; margin: 3px 12px 12px 12px; width: 431px; font-size: 11px; }
+    .coluna_configuracoes h2 { color: #537918; font-size: 12px; margin: 0 0 5px 0; height: auto; overflow: hidden; }
+        .coluna_configuracoes h2 img { float: left; margin-right: 5px; }
+        .coluna_configuracoes h2 span { float: left; margin: 3px 0 2px 0; }
+.endereco_rhoffice { -moz-border-radius: 7px 7px 0 0; -webkit-border-radius: 7px 7px 0 0; border-radius: 7px 7px 0 0; padding: 10px; background: url('/img/bg_rhoffice_config.png') repeat-x; overflow: hidden; }
+.texto_botoes_tema { padding: 10px; margin-top: 5px; background: url('/img/bg_rhoffice_config.png') repeat-x; background-position: 10px; }
+.coluna_configuracoes .texto_www_bne { color: #000; }
+.texto_escolha_tema { }
+.botoes_escolha_tema input { border: none; color: #fff; cursor: pointer; font-size: 24px; font-weight: bold; height: 25px; margin: 6px 3px 0 3px; width: 60px; }
+.botoes_escolha_tema .tema_selecionado { background-image: url('/img/bg_bolinha_tema_selecionado.png'); background-position: center center; background-repeat: no-repeat; }
+.botoes_escolha_tema .botao_tema_vermelho { background-color: #f00; border-bottom: 2px solid #c00; border-right: 2px solid #c00; }
+.botoes_escolha_tema .botao_tema_laranja { background-color: #f90; border-bottom: 2px solid #e80; border-right: 2px solid #e80; }
+.botoes_escolha_tema .botao_tema_amarelo { background-color: #fd0; border-bottom: 2px solid #ec0; border-right: 2px solid #ec0; }
+.botoes_escolha_tema .botao_tema_verde { background-color: #9fc300; border-bottom: 2px solid #8eb200; border-right: 2px solid #8eb200; }
+.botoes_escolha_tema .botao_tema_azul { background-color: #4387C1; border-bottom: 2px solid #3276b0; border-right: 2px solid #3276b0; }
+.botoes_escolha_tema .botao_tema_cinza { background-color: #ccc; border-bottom: 2px solid #bbb; border-right: 2px solid #bbb; }
+.painel_insira_logo { padding: 10px; margin-top: 5px; background: url('/img/bg_rhoffice_config.png') repeat-x; background-position: 10px; overflow: hidden; }
+    .painel_insira_logo input { margin-left: 10px; vertical-align: top; }
+.coluna_resultado { color: #537918; float: left; margin: 3px 12px 0 12px; width: 400px; }
+    .coluna_resultado h2 { color: #537918; font-size: 12px; margin: 5px 0; height: auto; vertical-align: baseline; }
+    .coluna_resultado .container_imagem_resultado { background-color: #f3f3f3; border: 1px solid #e6e6e6; height: 300px; margin-bottom: 20px; width: 400px; }
+.painel_padrao { margin-bottom: 30px; }
+.modal_conteudo div { display: block; height: auto; }
+.label_coloque_sua_logo { float: left; }
+.inserir_logo_empresa { float: left; margin-left: 10px; overflow: hidden; }
+.modal_conteudo .titulo_modal { color: #FFFFFF; font-size: 19px; font-weight: normal; height: 44px; margin: 0; text-align: left; }
+    .modal_conteudo .titulo_modal span { display: inline-block; margin: 10px; }
+.inserir_logo_empresa .modal { background-color: #FFFFFF; background-image: url("/img/bg_topo_modal_empresa.png"); background-repeat: repeat-x; margin: 0 auto; width: 535px; }
+.inserir_logo_empresa .link_alterar_foto { display: block; text-align: center; width: 135px; /*margin-top: -45px;*/ }

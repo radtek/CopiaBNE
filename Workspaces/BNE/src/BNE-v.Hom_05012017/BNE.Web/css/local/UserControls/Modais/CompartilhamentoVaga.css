@@ -1,0 +1,23 @@
+﻿.modal_compartilhamento_vaga { width: 412px; background-color: rgb(255,255,255); background-image: url("/img/bg_topo_modal_candidato.png"); background-repeat: repeat-x; padding: 5px 15px; position: fixed; z-index: 3; }
+.modal_compartilhamento_vagaSucesso { background-color: #FFFFCE; border: 5px solid #fff; border-radius: 10px; -webkit-border-radius: 10px; -webkit-box-shadow: 1px 10px 50px 3px #ccc; box-shadow: 1px 10px 50px 3px #ccc; /*background-image: url("/img/bg_topo_modal_candidato.png");*/ background-repeat: repeat-x; padding: 5px 15px; position: fixed; width: 412px; z-index: 3; }
+.botaoNovo_fechar_modal { display: block; margin-left: 416px; margin-top: -69px; position: absolute; }
+.containerConteudoModal { }
+.botao_enviar_compartilhar_vaga { margin-top: 20px; margin-left: 161px; }
+.labelDigiteAbaixoAlinha { color: #355F77; font-family: 'Open Sans', sans-serif !important; font-weight: 600; font-size: 15px; margin-top: 4px; margin-left: 12px !important; }
+.titulo_compartilhar_vaga { display: block; float: left; color: rgb(255,255,255); }
+h2.titulo_compartilhar_vaga { margin-top: 11px; }
+.icone_modal_envio_mensagem { display: block; margin: 8px; float: left; }
+.limpa_float_compartilhar_vaga { clear: both; }
+.email_destinatario { display: block; margin-left: 4px; width: 290px; }
+.textbox_email_destinatario { width: 213px; }
+.controle_compartilhar_email { display: inline-block; }
+.mensagem_erro_compartilhar_email { display: block; }
+.label_email_destinatario { display: inline-block; margin-left: 15px !important; }
+.grid_email { background-color: #FFEFBF; margin-left: 100px; padding: 6px; text-align: left; width: 240px; }
+.panel_item_repeater_compartilhar_email { margin-top: 5px; }
+.btn_deletar_email_grid { background-image: url('/img/pacote_alertaVaga/btn_excluir.png'); background-repeat: no-repeat; display: inline-block; height: 20px; width: 20px; margin: 2px; float: right; }
+.modal_compartilhamento_vaga input[type="text"]:focus,
+.modal_compartilhamento_vaga textarea:focus { border: 2px solid #FF8000; outline: medium none; }
+.imagem_cadastro_sucesso_compartilhamento_vaga { background-image: url("/img/modal_nova/imgSucesso.png"); background-repeat: no-repeat; height: 128px; margin-left: 194px; margin-top: -28px; width: 50px; }
+.label_sucesso_compartilhamento_vaga { margin: 12px auto; }
+.texto_cadastro_sucesso_compartilhamento_vaga { color: #406C85; font-family: 'Open Sans', sans-serif !important; font-size: 16px; margin-left: 10px; /*margin-top:-106px;*/ text-align: center; }

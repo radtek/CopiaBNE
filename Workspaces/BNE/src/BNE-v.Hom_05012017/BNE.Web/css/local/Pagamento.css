@@ -1,0 +1,207 @@
+﻿ body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; width: 884px; margin: 0 auto;}
+.bredcrumb { margin: 0 auto; font-size: 12px; }
+.clear { clear: both;}
+.cod_promo { margin-top: 21px; float: right;}
+h4.tit_pag { float: left; font-size: 18px; font-family: 'Roboto', sans-serif;}
+.plano_1 { border: 1px solid #d2d2d2; float: left; width: 394px; height: 250px; position: relative; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;}
+.plano_2 { border: 1px solid #d2d2d2; float: right; width: 394px; height: 250px; position: relative; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;}
+.mod_plano { background: #2b64b2; color: #fff; text-align: center; padding: 16px 0px 16px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px; border-radius: 10px 10px 0px 0px;}
+.mod_plano2 { background: #54b8e3; color: #fff; text-align: center; padding: 16px 0px 16px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px; border-radius: 10px 10px 0px 0px;}
+span.tit_bdc { font-weight: bolder; color: #2b64b2; margin-right: 10px; font-family: 'Roboto', sans-serif;}
+i.fa-trophy { color: #eab240; font-size: 16px;}
+span.txt_bdc { color: #666666; font-family: 'Roboto', sans-serif;}
+div.select_plano { float: left; background: #f8f8f8; padding: 10px 45px 10px 45px; margin-top: 25px;}
+span.txt_pla { font-size: 20px; font-weight: 200; color: }
+span.plan_escolhido { font-size: 26px; font-weight: 600; color: #2b64b2;}
+div.cert_seg { float: right; margin-top: 40px; font-size: 12px; font-weight: bold;}
+i.fa-lock { color: #72992f; font-size: 18px;}
+p.lib_imedi { font-size:15px; text-align: center; float: left;  background:  #bbbbbb; color: #fff;  font-weight: 200;  width:280px; height:30px; padding-top:8px; margin-right: 27px;}
+p.lib_2dias { font-size:15px; text-align: center; float: left;  background:  #bbbbbb; color: #fff;  font-weight: 200;  width:572px; height:30px; padding-top:8px}
+ul.abas2 { list-style-type: none; margin: 0; padding: 0; background: red; }
+.TabControl{width: 884px; overflow: hidden; height: 200px; position: relative; top: -18px; height: auto; float: left; margin-top: 25px;}
+.TabControl #headerTabs { width: 100%;  overflow:hidden; cursor: hand; margin-left:0px; }
+.TabControl #contentTabs { width: 100%; overflow: hidden; height: 100%; }
+.TabControl .abas2{ display: inline;  }
+ .abas2 li{ float: left; cursor: pointer; font-size: 12px; list-style-type: none; }
+.selected span, .aba span { color: #aaaaaa; position: relative;  font-weight: 700; }
+.aba { float: left; width: 130px; height: 81px; text-align: center; background: #fff; border: 1px solid #aaaaaa; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; }
+
+.TabControl #contentTabs{ background: #efefef; margin-top: 40px; width: 882px;  border-top: 0px;  min-height: 300px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; }
+.selected{ width: 130px; height: 81px; text-align: center; background: #fff; border: 1px solid #2b64b2; }
+.selected span { color: #2b64b2; }
+.aba:hover  { border: 1px solid #2b64b2;  }
+.aba:hover span  { color: #2b64b2;}
+* {  margin: 0; padding: 0
+}
+
+
+.selected:before { content:""; border: 1px solid #e5e5e5; position: absolute; width: 0; height: 0; border-top: 20px solid transparent; border-left: 20px solid transparent; border-bottom: 30px solid #efefef; border-right: 20px solid transparent; margin: 75px 0 0 -20px; }
+#contentTabs .conteudo{ display: none;  }
+.mg_l { margin-left: 15px;}
+.mg_l2 { margin-left: 27px;}
+.mg_l3 { margin-left: 15px;}
+span.icon { font-size: 28px; top: 15px; text-align: center;  position: relative; }
+/*.cartao_credito { margin: 30px 0px 0px 100px;}*/
+.cartao_credito {margin-top:30px;}
+.conteudo_other {margin-left:100px;margin-top:30px;}
+.conteudo_other_1 {margin-left:10px;margin-top:30px;}
+.selec_bandeiras { margin: 40px 0px 0px 120px;  width: 200px; float: left;}
+.text_c { font-weight: 700;  font-size: 18px; margin-left: -220px; }
+.dados_cartao { width: 480px; height: 200px;  float: right;}
+img.img_t { top: 20px; position: relative;  }
+img.img_t2 { top: 7px; position: relative; }
+.text_d {font-weight: 700;  float: left; margin-right: 6px; position: relative; margin-top:8px;}
+span.text_e {font-weight: 700; position: relative; margin-left: 49px; margin-right: 5px; float: left;}
+span.text_f {font-weight: 700; position: relative; margin: 9px  8px 0px -2px; float: left;}
+span.text_g {font-weight: 700; position: relative; margin-left: 28px; float: left; margin-right: 5px; margin-top: 6px; }
+span.text_g2 {font-weight: 700; position: relative; margin-left: 18px; float: left; margin-right: 5px; margin-top: 6px; }
+span.text_h {font-weight: 700; position: relative; margin-left: 54px;  margin-right: 5px; top: 1px; }
+span.text_i {font-weight: 700; position: relative;  margin: 6px 5px 0px 20px; float: left;} 
+span.text_j {font-weight: 400;  text-align: center; position: relative; margin-left: 75px; font-size: 16px; }
+span.text_m {font-weight: 400;  text-align: center; position: relative; margin-left: 95px; font-size: 16px; }
+span.text_o {font-weight: 800;  text-align: center; position: absolute; margin: 40px 0px 0px 245px; font-size: 16px; }
+span.text_p {font-weight: 800;  text-align: center; position: absolute; margin: 55px 0px 0px 295px; font-size: 16px; }
+span.text_q {font-weight: 400;  text-align: center; position: relative; margin-left: 15px; font-size: 16px; }
+span.text_t {font-weight: 700;  text-align: center; position: relative; margin: 0px 5px 0px 5px; top: 1px; }
+p.text_n {font-weight: 400;  position: relative; margin: 10px 0px 0px 0px; font-size: 14px;}
+.numero_car .textbox_padrao  {  display: block; width: 250px; height: 28px; background: #f8f7f7; border: 1px solid #d2d2d2; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding-left: 5px; font-family: 'Roboto', sans-serif; margin: -18px 0px 8px 106px;}
+.cpf_banco .campo_obrigatorio  {  display: block; width: 230px; height: 28px; background: #f8f7f7; border: 1px solid #d2d2d2; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding-left: 5px; font-family: 'Roboto', sans-serif; margin: -18px 0px 0px 0px;}
+
+label.custom-select  { position: relative; display: inline-block; margin-top: -10px; background: #f8f7f7; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;border: 1px solid #d2d2d2; }
+label.custom-select select { font-size: 10px; display: inline-block; font-family: 'Roboto', sans-serif; width: 153px; padding: 5px 3px 5px 5px; margin: 0; font: inherit; outline:none; border: 0px;  line-height: 1.2; background: #f8f7f7; color:#aba9b2; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;   }
+label.custom-select:after { content: "▼";  position: absolute; top: 0; right: 0; bottom: 0; font-size: 60%; line-height: 30px;  padding: 0 7px; background: #f8f7f7; color: black; z-index: -100; }
+.no-pointer-events .custom-select:after { content: none; }
+label.custom-select2 { position: relative; display: inline-block; margin-top: -10px; border: 1px solid #d2d2d2;background: #f8f7f7;-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;  }
+.custom-select2 select { font-size: 10px; display: inline-block; font-family: 'Roboto', sans-serif; width: 100px; padding: 4px 3px 5px 5px; margin: 0; font: inherit; outline:none; border: 0px;  line-height: 1.2; background: #f8f7f7; color:#aba9b2; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;   }
+.custom-select2:after { content: "▼";  position: absolute; top: 0; right: 0; bottom: 0; font-size: 60%; line-height: 30px;  padding: 0 7px; background: #f8f7f7; color: black;  z-index: -100; }
+.no-pointer-events .custom-select2:after { content: none; }
+.seg_car #cphConteudo_txtCodigoVerificadorCartao_txtValor{ width: 90px!important; height: 28px; background: #f8f7f7; border: 1px solid #d2d2d2; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding-left: 5px; font-family: 'Roboto', sans-serif;}
+i.fa-question-circle { font-size: 24px; top: 4px; position: relative; color: #9e9b9b; left: 10px;}
+i.fa-question-circle:hover { color: #2b64b2; cursor: pointer;}
+.md_atent { display: none; width: 100px;height: 70px; float: right; background: #cfcfcf; margin: -7px 105px 0px 0px; position: relative; -moz-border-radius: 5px;  -webkit-border-radius: 5px;  border-radius: 5px; }
+.md_atent:before {    content:""; position: absolute; width: 0; height: 0;  border-top: 13px solid transparent; border-right: 26px solid #cfcfcf; border-bottom: 13px solid transparent; margin: 13px 0 0 -25px; }
+i.fa-question-circle:hover ~ .md_atent { display: table; }
+img.img_t3 { top: 6px; left: 4px; position: relative; }
+img.img_t4 { top: 12px; left: 4px; position: relative; }
+img.img_t5 { padding-top: 80px; }
+.icon_hsbc {float:left; text-align:center;}
+.finilazar_cp { background: #72992f; margin-left: 110px; border: 1px solid #608225; font-family: 'Roboto', sans-serif; color: #fff; font-size: 18px; font-weight: 700; -moz-border-radius: 5px;  -webkit-border-radius: 5px;  border-radius: 5px; padding: 10px 25px 10px 25px; cursor: pointer;margin-top: 10px;}
+.finilazar_cp:hover {background: #608225; }
+#cphConteudo_txtAgenciaDebitoHSBC{width: 140px; height: 28px; background: #f8f7f7; border: 1px solid #d2d2d2; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding-left: 5px; font-family: 'Roboto', sans-serif;}
+#cphConteudo_txtContaCorrenteDebitoHSBC{width: 140px; height: 28px; background: #f8f7f7; border: 1px solid #d2d2d2; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding-left: 5px; font-family: 'Roboto', sans-serif;}
+#cphConteudo_txtDigitoDebitoHSBC{width: 90px; height: 28px; background: #f8f7f7; border: 1px solid #d2d2d2; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding-left: 5px; font-family: 'Roboto', sans-serif;}
+
+.agen_c .textbox_padrao .campo_obrigatorio{ width: 140px; height: 28px; background: #f8f7f7; border: 1px solid #d2d2d2; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding-left: 5px; font-family: 'Roboto', sans-serif;}
+.agen_d { width: 60px; height: 28px; background: #f8f7f7; border: 1px solid #d2d2d2; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding-left: 5px; font-family: 'Roboto', sans-serif;}
+.finilazar_cp2 { background: #72992f; margin: 15px 0px 0px 250px; border: 1px solid #608225; font-family: 'Roboto', sans-serif; color: #fff; font-size: 18px; font-weight: 700; -moz-border-radius: 5px;  -webkit-border-radius: 5px;  border-radius: 5px; padding: 10px 25px 10px 25px; cursor: pointer;}
+.finilazar_cp2:hover {background: #608225; }
+.finilazar_cp3 { background: #72992f; margin-left: 255px; border: 1px solid #608225; font-family: 'Roboto', sans-serif; color: #fff; font-size: 18px; font-weight: 700; -moz-border-radius: 5px;  -webkit-border-radius: 5px;  border-radius: 5px; padding: 10px 25px 10px 25px; cursor: pointer;}
+.finilazar_cp3:hover {background: #608225; }
+.esp_dados_b { width: 200px; height: 100px;  float: left; margin: 25px 0px 20px -20px;}
+i.fa-long-arrow-right{ float: left; position: relative; font-size: 28px; margin: 50px 25px 0px 25px; color: #2b64b2;}
+i.fa-print, i.fa-calendar, i.fa-desktop { font-size: 32px; background: #2b64b2; color: #fff; -moz-border-radius: 70px;  -webkit-border-radius: 70px;  border-radius: 70px; padding: 20px; margin-left: 65px; }
+.barra_azul { background-color: #2b64b2 !important; }
+#conteudo{margin-top:-100px; height:auto;}
+#cphConteudo_txtNumeroCartao_pnlValidador span.validador{margin:-16px 0 0 109px;position:absolute;}
+label.bandeira {color: #1e3260;float:none;
+  margin-left: 4px;
+  padding-top: 3px;}
+#cphConteudo_CustomValidatorVencimento{width:300px;margin:-18px 0 0 0; position:absolute;}
+#cphConteudo_txtCPFDebitoHSBC_pnlValidador span.validador{margin:-16px 0 0 2px;position:absolute;}
+#cphConteudo_CustomValidatorObrigaContaHSBC{margin:-16px 0 0 -3px;position:absolute;}
+#cphConteudo_txtCPFDebitoHSBC_txtValor{margin-bottom:7px;}
+
+.painel_avisos {
+  display: none;
+  position: fixed;
+  cursor: pointer;
+  opacity: 0.9 !important;
+  width: 883px !important;
+  height: 40px;
+  padding: 10px 0;
+  text-align: center;
+  bottom: 0;
+  background-color: #fffeb7;
+  border-top: 1px solid #e4e270;
+  border-bottom: 1px solid #e4e270;
+  font-size: 15px;
+  font-weight: bold;
+  z-index: 100;
+}
+#lblFormasPgtoDisponiveis
+{
+    color: red;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+#DivInfoFormasPgto{
+    
+}
+.cursorNotAllowed
+{
+    cursor: not-allowed;
+}
+
+#cphConteudo_BalaoSaibaMais_CancelamentoCartaoCredito_BalaoSaibaMais_CancelamentoCartaoCredito_tooltip, 
+#cphConteudo_BalaoSaibaMais_CancelamentoHsbc_BalaoSaibaMais_CancelamentoHsbc_tooltip
+{
+    top: -100px;
+    left: -100px;
+}
+
+#cphConteudo_BalaoSaibaMais_CancelamentoCartaoCredito_BalaoSaibaMais_CancelamentoCartaoCredito_tooltip::after,
+#cphConteudo_BalaoSaibaMais_CancelamentoHsbc_BalaoSaibaMais_CancelamentoHsbc_tooltip::after
+{
+    display: none;
+}
+
+
+
+/* CSS NOVO*/
+
+.selec_Opcao--cartCred,.selec_Opcao--debAuto,.selec_Opcao--desc,.selec_OpcaoPagto_bandeiras-disp{text-align:center}
+.conteudo_Pagto{font-family:Arial,Helvetica,sans-serif;width:880px;margin:auto auto 12px;background-color:#efefef}
+.selec_OpcaoPagto{width:380px;float:left}
+.selec_OpcaoBanco{padding:2px 0 90px}
+.selec_OpcaoPagto_title{margin-top:30px;text-align:center;font-weight:700}
+.selec_OpcaoPagto_bandeiras-disp img{margin-top:16px}
+.insere_Dados{width:500px;float:left;padding:32px 0;font-size:12px;font-weight:700}
+.selec_Opcao--debAuto{margin-top:80px}
+.selec_Opcao--desc{font-size:11px}
+.insere_Dados--label,.insere_Dados--label_{text-align:right;margin-right:2%;padding-top:8px;float:left}
+.insere_Dados--label{width:23%}
+.insere_Dados--label_{width:10%}
+.insere_Dados--submit{margin-left:25%}
+.insere_Dados--input-100{width:70%;float:left;margin-right:5%}
+.insere_Dados--input-75{width:48%;float:left;margin-right:2%}
+.insere_Dados--input-60{width:33%;float:left;margin-right:2%}
+.insere_Dados--input-50{width:23%;float:left;margin-right:2%}
+.insere_Dados--input-25{width:10%;float:left;margin-right:2%}
+.clear{clear:both}
+input.DadosPagto{height:32px;width:100%;border-radius:6px;border:1px solid #bbb;text-indent:8px;outline:0}
+select.DadosPagto{height:28px;width:100%;margin-bottom:16px;border-radius:6px 0 0 6px;border:1px solid #bbb;text-indent:2px;outline:0;color:#aea9b3}
+.FinalizaPagto{padding:8px 36px;border-radius:6px;border:none;background-color:#72992f;color:#fff;font-weight:700;font-size:14px;cursor:pointer;outline:0}
+.FinalizaPagto:hover{background-color:#87bc2c}
+.FinalizaPagto:active{background-color:#638725}
+.selec_Banco{list-style:none;padding:0;margin-top:8px;margin-left:calc(50% - 184px)}
+.selec_Banco:after{content:"";clear:both}
+.selec_Banco_tp{box-sizing:border-box;float:left;padding-top:20px;height:55px;position:relative;width:160px;margin:12px}
+.selec_Banco_tp label{bottom:0;cursor:pointer;display:block;font-size:0;left:0;position:absolute;right:0;text-indent:100%;top:0;white-space:nowrap;border-radius:8px;border:2px solid #efefef}
+label.banco_BancoBrasil{background:url(img/selec_Opcao_BancoBrasil.png) right no-repeat}
+label.banco_BancoBradesco{background:url(img/selec_Opcao_BancoBradesco.png) right no-repeat}
+.selec_Banco_tp input:focus+label{border-radius:8px;border:2px solid #72992f}
+
+
+.selec_Banco {list-style: none;padding: 0; margin-top:8px;margin-left:calc(50% - 184px)}
+.selec_Banco:after {content: "";clear: both;}
+.selec_Banco_tp {box-sizing: border-box;float:left;padding-top:20px;height: 55px;position: relative;width: 160px;margin-top:4px;margin:12px;}
+.selec_Banco_tp label {bottom: 0px;cursor: pointer;display: block;font-size: 0;left: 0px;position: absolute;right: 0px;text-indent: 100%;top: 0px;white-space: nowrap;border-radius:8px;border:solid 2px #efefef; }
+label.banco_BancoBrasil  {background: url('/img/pagamento/selec_Opcao_BancoBrasil.png') no-repeat right;}
+label.banco_BancoBradesco  {background: url('/img/pagamento/selec_Opcao_BancoBradesco.png') no-repeat right;}
+.selec_Banco_tp input:focus + label {border-radius:8px;border:solid 2px #72992f; }
+.selec_OpcaoPagto_title {margin-top:30px; text-align:center; font-weight:bold;}
+.selec_Opcao--desc {text-align: center; font-size: 11px;}
+#DivSelDebitoEmConta.recorrente{margin-left:175px !important; }
+
+.radChoice { width: 200px;height: 26px;margin-left: 123px;margin-bottom: 25px;}
+.radChoice label {padding-right:8px;}

@@ -1,0 +1,285 @@
+﻿select
+{
+    border: 1px solid #B5CAEA;
+}
+
+.painel_padrao {
+    margin-bottom: 20px;
+}
+
+h1
+{
+    margin-left: 10px;
+}
+
+.texto_pesquisa_salarial
+{
+    margin: 0 0 16px;
+    padding: 0 10px;
+}
+
+.texto_faixa_salarial
+{
+    margin: 3px 12px;
+}
+
+.select_pesquisa_salarial
+{
+}
+
+.select_sexo
+{
+}
+
+.formulario_pesquisa
+{
+    overflow: auto;
+    width: 870px;
+    padding: 0 0 0px;
+}
+
+.formulario_pesquisa input,
+.formulario_pesquisa select
+{
+    vertical-align: middle;
+}
+
+.formulario_pesquisa .linha
+{
+    /* clear: both; */
+    display: inline;
+    clear: none !important;
+    overflow: auto;
+    padding: 3px 0;
+}
+
+.formulario_pesquisa .label_principal.funcao
+{
+    width: 60px;
+}
+
+.formulario_pesquisa .label_principal.idade
+{
+    width: 80px;
+}
+
+.formulario_pesquisa .label_principal.idade_maxima
+{
+    width: 52px;
+}
+
+.formulario_pesquisa .label_principal.estado
+{
+    width: 52px;
+}
+
+.formulario_pesquisa .label_principal.sexo
+{
+    width: 50px;
+}
+
+.painel_texto_media
+{
+    margin: 3px 0;
+    padding-bottom: 3px;
+    width: 880px;
+}
+
+.painel_botao_pesquisa
+{
+    padding: 0;
+    height: 20px;
+    margin-top: 15px;
+    clear: both;
+    text-align: center;
+}
+
+.valor_salario
+{
+    font-size: 16px;
+}
+
+.valor_media_geral
+{
+    color: #690;
+    font-weight: bold;
+}
+
+.painel_texto_media .valor_media_geral
+{
+    font-size: 14px;
+}
+
+.valor_media
+{
+    background-image: /img/pesquisasalarial/icone_cifrao.png;
+    background-repeat: no-repeat;
+}
+
+.painel_resultado_salarial
+{
+    margin: 0 auto;
+}
+
+.painel_resultado_salarial h2
+{
+    color: #0A3079;
+    font-size: 16px;
+    height: auto;
+    margin: 3px 10px 0;
+}
+
+.tabela_medias
+{
+    border-collapse: collapse;
+    width: 860px;
+    margin: auto;
+}
+
+.tabela_medias td p
+{
+    font-size: 11px;
+    line-height: 120%;
+    margin: 0 auto;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    text-align: center;
+    width: 160px;
+}
+
+.tabela_medias td
+{
+    background-color: #F8F8F8;
+    border: 1px solid #FFCC00;
+    font-size: 14px;
+    padding: 10px 0 4px;
+    text-align: center;
+}
+
+.tabela_medias td .valor_media_geral
+{
+    color: #000;
+}
+
+.tabela_medias td.trainee
+{
+    background-color: #fff;
+    padding-top: 6px;
+}
+
+.tabela_medias td.junior
+{
+    background-color: #fff;
+    padding-top: 6px;
+}
+
+.tabela_medias td.pleno
+{
+    background-color: #dff0a0;
+    padding-top: 6px;
+}
+
+.tabela_medias td.senior
+{
+    background-color: #fff;
+    padding-top: 6px;
+}
+
+.tabela_medias td.master
+{
+    background-color: #fff;
+    padding-top: 6px;
+}
+
+.tabela_medias th
+{
+    background: none;
+    border: 1px solid #FFCC00;
+    font-size: 12px;
+    padding: 5px 0;
+    text-align: center;
+    width: 20%;
+}
+
+.tabela_medias th.trainee
+{
+    background-color: #fff1bf;
+}
+
+.tabela_medias th.junior
+{
+    background-color: #ffe99d;
+}
+
+.tabela_medias th.pleno
+{
+    background-color: #ffde6c;
+}
+
+.tabela_medias th.senior
+{
+    background-color: #ffdb5b;
+}
+
+.tabela_medias th.master
+{
+    background-color: #ffcc00;
+}
+
+.tabela_medias img
+{
+    height: 124px;
+}
+
+.tabela_medias .icone_cifrao
+{
+    height: 20px;
+    vertical-align: bottom;
+}
+
+.imprimir
+{
+}
+
+
+
+/* PESQUISA SALARIAL */
+
+.painel_pesquisar_salario
+{
+    margin-top: 10px;
+    float: left;
+    border: 1px solid #d3ecf9; /* Bordas arredondadas */
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+.painel_pesquisar_salario .label_principal
+{
+    width: 55px;
+    color: #1E3260;
+}
+
+.titulo_principal
+{
+    color: #1E3260;
+    padding-left: 10px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+}
+.titulo_resultado
+{
+    display: block;
+    font-size: 21px;
+    font-weight: normal;
+    color: #79A5D2;
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+.texto_estatistica_infos
+{
+    padding: 4px 12px;
+}

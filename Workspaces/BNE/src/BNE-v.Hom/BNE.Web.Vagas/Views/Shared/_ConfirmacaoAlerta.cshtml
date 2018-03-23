@@ -1,0 +1,25 @@
+﻿
+<script>
+    $(document).ready(function () {
+        modal.abrirModal('modalConfirmacaoAlerta');
+    });
+</script>
+
+<div style="display:none;">
+    <div id="modalConfirmacaoAlerta" class="modal" style="height: 148px !important; ">
+        <link href="~/Content/ModalSucessoCandidatura.css" rel="stylesheet" />
+        <img class="sucesso-icon" src="~/Images/confirm/icon-success.png" />
+
+        <a class="simplemodal-close b-close modal_fechar" title="Close"></a>
+        <div class="modal_conteudo">
+            <div class="container_confirmacao_candidatura">
+                <div class="texto_confirmacao">
+                    <p class="texto_enviado_sucesso" style="margin-top: 30px !important">
+                        <br />
+                        Alerta salvo com sucesso
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

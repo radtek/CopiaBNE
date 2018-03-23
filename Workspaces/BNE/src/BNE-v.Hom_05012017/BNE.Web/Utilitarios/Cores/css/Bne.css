@@ -1,0 +1,72 @@
+﻿
+body {
+
+    background-color: #e3e8ed;
+}
+
+.h {
+    font-family: "proxima-nova",sans-serif;
+    color: #808080;
+    margin-left: 15%;
+    text-align: left;
+}
+
+
+
+.texto {
+    margin-left: 5%;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+
+.txt {
+    padding-left: 15px;
+    height: 40px;
+    width: 550px;
+    margin-left: 15%;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+
+
+#footer{z-index:1;/*border:1px solid #f7f7f7;*/ height:60px;padding-bottom: 20px;padding-top:5px;bottom: 0px!important;position:fixed;width: 100%;); /* Chrome 10+, Saf5.1+ */
+  background:-moz-linear-gradient(90deg,  #e3e8ed 10%,  #e3e8ed 90%); /* FF3.6+ */
+  background:-ms-linear-gradient(90deg,  #e3e8ed 10%,  #e3e8ed 90%); /* IE10 */
+  background:-o-linear-gradient(90deg,  #e3e8ed 10%,  #e3e8ed 90%); /* Opera 11.10+ */
+  background:linear-gradient(90deg,  #e3e8ed 10%,  #e3e8ed 90%); /* W3C */}
+.img-responsive {display:inline-block!important}
+
+.descricao {
+    margin-left: 12%;
+}
+
+.input-append input, .input-append select, .input-append .uneditable-input {
+    top: 0px;
+    border-radius: 8px 0px 0px 8px;
+}
+
+.input-append .add-on:last-child, .input-append .btn:last-child, .input-append .btn-group:last-child > .dropdown-toggle {
+    border-radius: 0px 8px 8px 0px;
+}
+
+.cores {
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    max-width: none;
+    /*  padding:10px;*/
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(51,51,51,1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(51,51,51,1);
+    box-shadow: 0px 0px 5px 0px rgba(51,51,51,1);
+}
+
+.td_cores {
+    padding: 10px;
+}
+
+.VejaVagasBNE{color:#737277; font-size: 14px; margin-right:180px; font-family:sans-serif;}
+.VejaVagasBNE_AjusteResultado{margin-right:0px; margin-left:20px;} 
+a.VejaVagasBNE:link {color:#1C4B8B}
+a.VejaVagasBNE:hover{color:#015ccb;text-decoration: underline}

@@ -1,0 +1,98 @@
+﻿<div class="fluid">
+    <div class="grid12">
+        <div class="widget analytics">
+            <div class="widget-header">
+                <h2 class="page-title">
+                    <i class="fa fa-list-ul"></i>PROJETOS
+                </h2>
+            </div>
+            <ul class="clearfix">
+                <li ng-repeat="watcher in statusProjetos">
+                    <div class=" analytics-content">
+                        <div class="analytics-info">
+                            {{watcher.Quantidade}}
+                        </div>
+                        <span class="analytics-site">{{watcher.Obs}}</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="analytics-content">
+                        <div class="analytics-info">
+                            {{statusProjetos[0].Quantidade + statusProjetos[1].Quantidade}}
+                        </div>
+                        <span class="analytics-site">Total</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="widget analytics">
+            <div class="widget-header">
+                <h2 class="page-title">
+                    <i class="fa fa-list-ul"></i>RESUMO DE VAGAS
+                </h2>
+            </div>
+            <ul class="clearfix">
+                <li>
+                    <div class="analytics-content">
+                        <div ng-repeat="watcher in vagasImportadas" style="color: #338cce" class="analytics-info">
+                            {{watcher.Hoje }}
+                        </div>
+                        <span class="analytics-site" style="color: #338cce">HOJE</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="analytics-content">
+                        <div ng-repeat="watcher in vagasImportadas" class="analytics-info">
+                            {{watcher.Ontem }}
+                        </div>
+                        <span class="analytics-site">ONTEM</span>
+                    </div>
+                </li>
+                <li style="display:none;">
+                    <div class="analytics-content">
+                        <div ng-repeat="watcher in vagasImportadas" class="analytics-info">
+                            {{watcher.DezDias }}
+                        </div>
+                        <span class="analytics-site">ULTIMOS 10 DIAS</span>
+                    </div>
+                </li>
+                <li style="display:none;">
+                    <div class="analytics-content">
+                        <div ng-repeat="watcher in vagasImportadas" class="analytics-info">
+                            {{watcher.TrintaDias }}
+                        </div>
+                        <span class="analytics-site">ULTIMOS 30 DIAS</span>
+                    </div>
+                </li>
+                <li style="display:none;">
+                    <div class="analytics-content">
+                        <div ng-repeat="watcher in vagasImportadas" class="analytics-info">
+                            {{watcher.SessentaDias}}
+                        </div>
+                        <span class="analytics-site">ULTIMOS 60 DIAS</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<div class="grid4">
+    <div class="widget">
+        <div class="widget-header">
+            <h2 class="page-title">
+                <i class="fa fa-bell"></i>ALERTAS
+            </h2>
+        </div>
+        <div ng-repeat="watcher in vagas">
+            <div ng-if="hasError(watcher)">
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    O {{watcher.Des_Origem_Importacao}} está sem importar vagas a mais de
+                    <strong>10 dias!</strong> <strong style="float:right; margin-right: 10px;">Vagas importadas: {{watcher.SessentaDias}}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

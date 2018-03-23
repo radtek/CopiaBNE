@@ -1,0 +1,154 @@
+﻿body { display: block; height: 100%; margin-left: 0; margin-right: 0; background-color: #ddd; position: relative; margin-top: 0; margin-bottom: 0; font-family: arial; line-height: normal; font-style: normal; letter-spacing: normal; text-decoration: none; font-weight: normal; text-align: left; }
+ul { list-style: none; }
+
+p { margin: 0; }
+label, span { color: rgb(75, 93, 101); font-size: 12px; float: none; }
+textarea { min-height: 75px; }
+
+header { display: block; height: 75px; width: auto; background-color: rgb(241, 241, 241); border-bottom: 1px solid rgba(0, 0, 0, 0.14902); position: fixed; top: 0; left: 0; z-index: 3; clear: none; right: 0; }
+    header .nome_lan { width: 25%; height: 75px; display: block; float: left; font-size: 25px; text-align: left; font-weight: bold; line-height: normal; color: rgb(102, 102, 102); font-style: normal; letter-spacing: -0.025em; text-decoration: none; font-family: arial; position: relative; top: 0; left: 0; z-index: 3; clear: none; margin-right: 0; overflow: hidden; }
+        header .nome_lan p { margin-left: 18px; margin-bottom: 0; margin-top: 20px; }
+    header .busca { width: 50%; height: 75px; display: block; float: left; text-align: left; position: relative; clear: none; margin-right: 0; }
+        header .busca .formulario { width: 500px; height: 65px; margin: 0 auto; padding: 5px; }
+            header .busca .formulario .textbox { float: left; height: 30px; padding: 0px 0px 0px 7px; font-size: 1em; display: block; width: 389px; clear: none; margin-top: 5px; }
+            header .busca .formulario .botao { float: left; height: 35px; width: 60px; background-color: rgb(13, 115, 180); margin-top: 5px; border: none; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 3px inset; position: relative; top: 0px; left: 0px; z-index: 3; margin-left: 10px; clear: none; display: block; margin-right: 0%; background-image: url('/Content/img/layout/lupa.png'); background-repeat: no-repeat; background-position: 22px 12px; }
+    header .login { width: 25%; height: 75px; display: block; float: left; font-size: 1.5625em; text-align: right; font-weight: normal; line-height: normal; color: rgb(153, 153, 153); font-style: normal; text-decoration: none; font-family: arial; top: 0; left: 0px; z-index: 3; clear: none; /*overflow: hidden;*/ position: relative; }
+        header .login .destaque-logado { color: rgb(153, 153, 153); display: block; font-size: 25px; float: left; margin-top: 23px; }
+        header .login .imagem-logado { display: block; float: left; height: 49px; width: 49px; background-color: rgb(102, 102, 102); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 2px; position: static; top: 0px; left: 0px; z-index: 3; margin-top: 11.5625px; margin-left: 10px; clear: none; background-size: cover; background-repeat: no-repeat; background-position: center; cursor: pointer; }
+
+#main { margin-top: 75px; }
+
+.empresas { overflow: auto; /*position: relative;*/ padding-left: 5%; padding-right: 5%; display: block; padding-bottom: 20px; }
+    .empresas .destaque { /*background-color: green !important;*/ cursor: pointer; float: left; height: 526px; width: 343px; background-color: rgb(255, 255, 255); border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; border-bottom-left-radius: 6px; box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px; position: relative; top: 0px; left: 0px; z-index: 1; margin-top: 15px; clear: none; margin-left: 27px; margin-right: 0%; display: block; }
+        .empresas .destaque.candidatou { height: 518px; width: 335px; }
+            .empresas .destaque.candidatou .imagem img { max-width: 335px; max-height: 250px; }
+        .empresas .destaque .nome { white-space: nowrap; text-overflow: ellipsis; overflow: hidden; display: block; float: left; font-size: 2.3125em; width: 330px; height: auto; text-align: left; font-weight: bold; line-height: normal; color: rgb(102, 102, 102); font-style: normal; letter-spacing: -0.04em; text-decoration: none; font-family: arial; position: relative; top: 0px; left: 0px; z-index: 1; margin-top: 0; margin-bottom: 0; margin-left: 5px; clear: both; margin-right: 0%; }
+        .empresas .destaque .resenha { display: block; float: left; font-size: 1.3125em; width: 280px; height: auto; text-align: left; font-weight: normal; line-height: normal; color: rgb(153, 153, 153); font-style: normal; letter-spacing: -0.04em; text-decoration: none; font-family: arial; position: relative; top: 0px; left: 0px; z-index: 1; margin-top: 8px; margin-left: 5px; clear: both; margin-right: 0%; }
+        .empresas .destaque .imagem { z-index: 0; display: table-cell; height: 258px; width: 338px; position: relative; text-align: center; vertical-align: middle; }
+            .empresas .destaque .imagem img { z-index: 1; top: 0; bottom: 0; margin: auto; max-width: 343px; max-height: 258px; }
+    .empresas .destaque-hover { z-index: 2; display: table-cell; height: 258px; width: 343px; position: absolute; text-align: center; vertical-align: middle; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; }
+    .empresas .destaque.candidatou .destaque-hover { height: 250px; width: 335px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; }
+
+    .empresas .destaque-small, .empresas .normal { /*background-color: yellow!important;*/ cursor: pointer; display: block; float: left; height: 258px; width: 160px; background-color: rgb(255, 255, 255); border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; border-bottom-left-radius: 6px; box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px; position: relative; top: 0px; left: 0px; z-index: 1; margin-top: 13px; margin-left: 25px; clear: none; margin-right: 0%; display: block; }
+        .empresas .destaque-small.candidatou, .empresas .normal.candidatou { height: 250px; width: 152px; }
+            .empresas .destaque-small.candidatou .imagem img, .empresas .normal.candidatou .imagem img { max-width: 152px; max-height: 127px; }
+        .empresas .destaque-small .nome, .empresas .normal .nome { white-space: nowrap; text-overflow: ellipsis; overflow: hidden; display: block; float: left; font-size: 12px; width: 125px; height: 15px; text-align: left; font-weight: bold; line-height: normal; color: rgb(102, 102, 102); font-style: normal; letter-spacing: -0.04em; text-decoration: none; font-family: arial; position: relative; top: 0px; left: 0px; z-index: 1; margin-top: 0; margin-bottom: 0; margin-left: 5px; clear: both; margin-right: 0%; }
+        .empresas .destaque-small .resenha, .empresas .normal .resenha { display: block; float: left; font-size: 0.8em; width: 150px; height: 50px; text-align: left; font-weight: normal; line-height: normal; color: rgb(102, 102, 102); font-style: normal; letter-spacing: -0.025em; text-decoration: none; font-family: arial; position: relative; top: 0px; left: 0px; z-index: 1; margin-top: 0px; margin-left: 5px; clear: both; min-height: 53px; margin-right: 0%; }
+        .empresas .destaque-small .imagem, .empresas .normal .imagem { z-index: 0; display: table-cell; height: 135px; width: 160px; position: relative; text-align: center; vertical-align: middle; }
+            .empresas .destaque-small .imagem img, .empresas .normal .imagem img { z-index: 1; top: 0; bottom: 0; margin: auto; max-width: 160px; max-height: 135px; }
+    .empresas .destaque-small-hover, .empresas .normal-hover { z-index: 2; display: table-cell; height: 135px; width: 160px; position: absolute; text-align: center; vertical-align: middle; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; }
+    .empresas .destaque-small.candidatou .destaque-small-hover, .empresas .destaque-small.candidatou .normal-hover { height: 127px; width: 152px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; }
+
+    .empresas .representante { display: block; float: left; font-size: 0.8em; width: 160px; height: auto; text-align: left; font-weight: normal; line-height: normal; color: rgb(102, 102, 102); font-style: normal; letter-spacing: -0.025em; text-decoration: none; font-family: arial; position: relative; top: 0px; left: 0px; z-index: 1; margin-top: 15px; margin-left: 5px; clear: both; min-height: 53px; margin-right: 0%; }
+
+    .empresas .destaque .ja { width: 35px; height: 35px; position: absolute; right: 10px; top: 255px; z-index: 1; }
+    .empresas .destaque-small .ja, .empresas .normal .ja { width: 20px; height: 20px; position: absolute; right: 4px; top: 130px; z-index: 1; }
+
+.candidatou { border-style: solid; border-width: 4px; border-color: rgb( 204, 153, 0 ); border-radius: 6px; /*background-image: -moz-radial-gradient( 50% 50%, circle closest-side, rgb(255,255,255) 50%, rgb(230,204,128) 200%); background-image: -webkit-radial-gradient( 50% 50%, circle closest-side, rgb(255,255,255) 50%, rgb(230,204,128)200%); background-image: -ms-radial-gradient( 50% 50%, circle closest-side, rgb(255,255,255) 50%, rgb(230,204,128) 200%);*/ box-shadow: 0px 3px 8px 0px rgb( 4, 1, 5 ); }
+.erro { background-color: #ffcc00; padding-left: 20px; margin-top: 5px; margin-bottom: 5px; display: none; min-height: 40px; vertical-align: middle; line-height: 40px; position: relative; }
+    .erro .fechar-erro { position: absolute; cursor: pointer; right: 5px; top: -9px; z-index: 4; font-size: 12px; }
+
+.modal { background-color: rgb(255, 255, 255); height: auto; width: 600px; border: 1px solid rgb(212, 212, 212); min-height: 240px; }
+    .modal .modal_fechar { position: absolute; cursor: pointer; right: 5px; top: 5px; z-index: 4; }
+    .modal .resenha { color: rgb(137, 164, 163); }
+    .modal .destaque { color: rgb(243, 154, 0); }
+    .modal .nome-empresa { font-size: 20px; font-weight: bold; color: rgb(75, 93, 101); }
+    .modal .logo-empresa { width: 66px; margin-left: 20px; /* margin-top: 26px; */ margin-right: 20px; float: left; height: 100%; justify-content: center; align-content: center; display: flex; flex-direction: column; }
+        .modal .logo-empresa img { width: 66px; margin: 0 auto; position: relative; /*border-style: solid; border-width: 1px; border-color: rgb(212, 212, 212);*/ }
+
+    .modal .topo { position: relative; display: inline-block; margin: 0; padding: 0; width: 100%; height: 110px; }
+        .modal .topo .dados { /*width: 490px; float: left;*/ width: 490px; float: left; justify-content: center; align-content: center; display: flex; flex-direction: column; padding-top: 5px; height: 100%; }
+    .modal .botoes { text-align: center; clear: both; padding-bottom: 20px; padding-top: 20px; }
+
+    .modal .coluna-esquerda { float: left; width: 50%; }
+    .modal .coluna-direita { float: left; width: 50%; margin: 0 auto; overflow: auto; }
+.login-com { display: block; margin-bottom: 30px; text-align: center; }
+.login .container-facebook { text-align: center; }
+
+.modal.codigo .topo { display: none; }
+.modal.codigo .resenha { padding-left: 45px; text-align: justify; display: block; padding-right: 45px; font-size: 16px; margin-bottom: 10px; color: rgb(153, 153, 153); margin-top: 50px; }
+    .modal.codigo .resenha p { margin-top: 10px; }
+.modal.codigo .destaque { color: rgb(243, 154, 0); display: block; font-size: 25px; margin-top: 50px; margin-bottom: 15px; margin-left: 45px; font-weight: bold; }
+.modal.codigo .label_padrao { font-size: 19px; color: rgb(75, 93, 101); font-weight: bold; }
+.modal.codigo .modal_fechar { font-size: 10px; }
+.modal.codigo .continuar { cursor: pointer; padding-top: 7px; padding-bottom: 7px; padding-left: 16px; padding-right: 16px; display: inline-block; text-decoration: none; font-size: 9px; font-weight: bold; margin-left: 10px; background-color: rgb(45, 72, 115); color: #ffffff; }
+
+.modal.comprovante .destaque { color: rgb(153, 153, 153); display: block; font-size: 21px; margin-top: 100px; text-align: left; margin-bottom: 45px; padding-left: 40px; padding-right: 40px; }
+    .modal.comprovante .destaque .nome-candidato { font-size: 21px; color: rgb(75, 93, 101); }
+    .modal.comprovante .destaque .resenha { color: rgb(153, 153, 153); display: block; font-size: 22px; }
+        .modal.comprovante .destaque .resenha .nome-empresa { display: inline-block; }
+
+.modal.candidatou .dados .resenha { font-size: 22px; color: rgb(222, 160, 52); text-align: center; font-weight: bold; }
+.modal.candidatou .logo-empresa { width: auto; float: none; margin-top: 60px; margin-bottom: 40px; }
+
+.modal .botoes a { cursor: pointer; background-color: rgb(221, 221, 221); padding-top: 7px; padding-bottom: 7px; padding-left: 16px; padding-right: 16px; display: inline-block; text-decoration: none; }
+.modal .botoes .anterior { font-size: 12px; text-decoration: underline; background-color: initial; }
+.modal .botoes .continuar { font-size: 9px; font-weight: bold; width: 70px; margin-left: 110px; }
+.modal .botoes .escolher-empresa { background-color: rgb(45, 72, 115); color: #ffffff; margin-left: 20px; }
+    .modal .botoes .escolher-empresa:hover { opacity: 0.8; }
+
+.modal.escolaridade .ui-accordion { margin-left: 45px; margin-right: 45px; }
+    .modal.escolaridade .ui-accordion .textbox_padrao, .modal.escolaridade .ui-accordion .textarea_padrao { margin-left: 25px; }
+    .modal.escolaridade .ui-accordion .label_padrao { margin-left: 25px; }
+.modal.escolaridade .scroll { overflow-y: scroll; height: 410px; }
+.modal.escolaridade .topo { height: 75px; }
+
+.modal.imprimircomprovante { text-align: center; width: 660px; }
+    .modal.imprimircomprovante .comprovante { position: relative; width: 660px; height: 500px; margin: 0 auto; margin-top: 10px; overflow-y: scroll; /*background-image: url('img/comprovante-background.png'); background-size: cover;*/ }
+        .modal.imprimircomprovante .comprovante img { width: 640px; position: absolute; left: 0; top: 0; }
+        .modal.imprimircomprovante .comprovante .resenha { color: rgb( 99, 80, 42 ); z-index: 100; position: absolute; font-size: 24px; font-weight: normal; left: 0; top: 230px; text-align: center; padding-left: 80px; padding-right: 80px; }
+            .modal.imprimircomprovante .comprovante .resenha span { color: rgb( 99, 80, 42 ); display: inline-block; font-size: 12px; }
+            .modal.imprimircomprovante .comprovante .resenha .nome-candidato { font-size: 40px; font-weight: bold; margin-top: 30px; margin-bottom: 45px; }
+            .modal.imprimircomprovante .comprovante .resenha .curriculo { margin-bottom: 45px; }
+            .modal.imprimircomprovante .comprovante .resenha .curriculo, .modal.imprimircomprovante .comprovante .resenha .funcao-candidato, .modal.imprimircomprovante .comprovante .resenha .idade-candidato { font-size: 26px; }
+                .modal.imprimircomprovante .comprovante .resenha .curriculo .nome-empresa { font-size: 26px; }
+            .modal.imprimircomprovante .comprovante .resenha .frase { font-size: 22px; margin-bottom: 50px; }
+            .modal.imprimircomprovante .comprovante .resenha .data { font-size: 20px; }
+
+.modal.celular-repetido .dados { padding-top: 10px; padding-left: 10px; }
+.modal.celular-repetido .continuar { background-color: rgb(45, 72, 115); color: #ffffff; width: 125px; }
+.modal.celular-repetido .selecionar { text-decoration: underline; font-size: 12px; cursor: pointer; }
+.modal.celular-repetido #ulCelularRepetido { padding-left: 10px; min-height: 160px; }
+    .modal.celular-repetido #ulCelularRepetido .nome { width: 185px; display: inline-block; }
+    .modal.celular-repetido #ulCelularRepetido .cpf { width: 120px; display: inline-block; }
+    .modal.celular-repetido #ulCelularRepetido .nascimento { width: 200px; display: inline-block; }
+
+.modal.youtube { background-color: rgb(221, 221, 221); width: 720px; height: 430px; }
+    .modal.youtube object, .modal.youtube iframe { margin-top: 25px; }
+
+.loading { text-align: center; display: inline; background-color: rgb(0, 0, 0); position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 3; opacity: 0.4; }
+.voltar-busca { cursor: pointer; float: left; height: 258px; width: 160px; background-color: rgb(255, 255, 255); border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; border-bottom-left-radius: 6px; box-shadow: rgba(4, 1, 5, 0.247059) 0px 3px 8px; position: relative; top: 0px; left: 0px; z-index: 1; margin-top: 13px; margin-left: 25px; clear: none; margin-right: 0%; display: block; line-height: 40px; }
+.botao-voltar-busca { font-size: 18px; font-weight: bold; width: 135px; background-color: rgb(45, 72, 115); display: block; height: 40px; color: #ffffff; text-align: center; margin: 0 auto; vertical-align: middle; margin-top: 92px; }
+
+.menu-logado { clear: both; border: none; border-radius: 0; padding: 0; }
+.ul-menu-logado { clear: both; border: none; border-radius: 0; padding: 0; margin-left: 77px; width: 70px; }
+    .ul-menu-logado li { width: 70px; background-color: none; font-size: 16px; }
+.imagem-info { float: left; width: auto; max-width: 100%; height: auto; color: rgb(0, 0, 0); position: absolute; top: -31px; left: 0px; z-index: 2; margin-top: 148px; margin-left: 25px; clear: none; opacity: 1; }
+.clear { clear: both; }
+.label_padrao { display: block; margin-left: 45px; top: 0; left: 0; margin-top: 3px; }
+.textbox_padrao, .textarea_padrao { margin-left: 45px; height: 30px; width: 200px; border: 1px solid rgb(221, 221, 221); padding-left: 5px; }
+    .textbox_padrao.ddd { width: 40px; }
+    .textbox_padrao.fone { width: 148px; margin-left: 5px; }
+    .textbox_padrao.codigo-confirmacao-celular { width: 100px; }
+.radiobutton_padrao { margin-left: 45px; }
+.linha-divisoria { background-image: url('img/linha_divisoria.png'); background-position: left center; background-repeat: repeat-y; display: block; float: left; height: 150px; position: relative; width: 2px; }
+.bold { font-weight: bold; }
+.botao-facebook { cursor: pointer; }
+.linha { padding: 3px 0; overflow: auto; }
+.sair { color: rgb(153, 153, 153); display: block; font-size: 15px; float: left; margin-top: 28px; margin-left: 20px; }
+.validacao-celular { }
+    .validacao-celular .continuar { cursor: pointer; font-size: 12px; text-decoration: underline; }
+
+.ui-accordion .ui-accordion-content { padding: 0; }
+.container-cadastre-curriculo { border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; right: 10%; width: 200px; background-color: rgb(241, 241, 241); /* position: relative; */ height: 21px; /* display: block; */ overflow: hidden; float: right; position: fixed; text-align: center; color: rgb(102, 102, 102); }
+.cadastre-curriculo { text-decoration: none; color: rgb(153, 153, 153); font-size: 14px; }
+.deseja-trabalhar { font-size: 24px; }
+
+@media print {
+    #div2, #div3, #div4, #div5, #div6, header, #main, .modal_fechar { display: none; }
+    body { background-color: white; }
+    #divComprovante { position: absolute !important; left: 0 !important; top: 0 !important; border: none !important; }
+    .b-modal { background-color: initial !important; }
+
+    .modal.imprimircomprovante .comprovante { overflow-y: initial !important; }
+}

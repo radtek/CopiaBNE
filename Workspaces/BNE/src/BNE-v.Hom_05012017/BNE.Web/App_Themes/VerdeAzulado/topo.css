@@ -1,0 +1,24 @@
+﻿@charset "UTF-8";
+/*------------------------------------------------------------ Theme Verde Azulado*/
+.topo {
+  background-image: url("/img/App_Themes/VerdeAzulado/bg_topo.gif"); }
+
+.painel_filtro_vaga_escondido {
+  background-image: linear-gradient(90deg, #00E2CB 6%, #00BDA9 18%, #00E2CB 72%, #00FFE5 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #00FFE5 6%, #00BDA9 18%, #00E2CB 72%, #00FFE5 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #00FFE5 6%, #00BDA9 18%, #00E2CB 72%, #00FFE5 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #00FFE5 6%, #00BDA9 18%, #00E2CB 72%, #00FFE5 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00FFE5', endColorstr='#00BDA9') !important; }
+
+#pnlBusca.painel_filtro_vaga {
+  background-image: linear-gradient(90deg, #00E2CB 6%, #00BDA9 18%, #00E2CB 72%, #00FFE5 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #00FFE5 6%, #00BDA9 18%, #00E2CB 72%, #00FFE5 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #00FFE5 6%, #00BDA9 18%, #00E2CB 72%, #00FFE5 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #00FFE5 6%, #00BDA9 18%, #00E2CB 72%, #00FFE5 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00FFE5', endColorstr='#00BDA9') !important;
+  border-radius: 0 4px 4px 4px !important; }
+
+#aBuscarVagas {
+  border-bottom: 35px solid #00FFE5 !important; }
+
+/*# sourceMappingURL=topo.css.map */

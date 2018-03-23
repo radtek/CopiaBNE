@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaArquitetura.API", "NovaArquitetura.API\NovaArquitetura.API.csproj", "{4648E8C4-FCA0-4C92-BC0B-1683DF1F92BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaArquitetura.Entities", "NovaArquitetura.Entities\NovaArquitetura.Entities.csproj", "{C1B70015-0257-4BE3-99C5-26369BBB6650}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaArquitetura.Business", "NovaArquitetura.Business\NovaArquitetura.Business.csproj", "{58DA192D-BB6E-42CD-A929-83C50916634E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaArquitetura.Web", "NovaArquitetura.Web\NovaArquitetura.Web.csproj", "{A0508E17-C909-4670-B5EB-46CDC92A0012}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaArquitetura.Data", "NovaArquitetura.Data\NovaArquitetura.Data.csproj", "{05B77148-C0D0-4DFE-86EC-6D460A0A60FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaArquitetura.API.Authentication", "NovaArquitetura.API.Authentication\NovaArquitetura.API.Authentication.csproj", "{4A8B390F-78D8-4D63-82E1-3E54B35A6735}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaArquitetura.Web2", "NovaArquitetura.Web2\NovaArquitetura.Web2.csproj", "{9E19A78F-7095-4C57-87D3-D54F0ED78CD6}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.employer.com.br:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = NovaArquitetura.API\\NovaArquitetura.API.csproj
+		SccProjectName1 = NovaArquitetura.API
+		SccLocalPath1 = NovaArquitetura.API
+		SccProjectUniqueName2 = NovaArquitetura.Entities\\NovaArquitetura.Entities.csproj
+		SccProjectName2 = NovaArquitetura.Entities
+		SccLocalPath2 = NovaArquitetura.Entities
+		SccProjectUniqueName3 = NovaArquitetura.Business\\NovaArquitetura.Business.csproj
+		SccProjectName3 = NovaArquitetura.Business
+		SccLocalPath3 = NovaArquitetura.Business
+		SccProjectUniqueName4 = NovaArquitetura.Web\\NovaArquitetura.Web.csproj
+		SccProjectName4 = NovaArquitetura.Web
+		SccLocalPath4 = NovaArquitetura.Web
+		SccProjectUniqueName5 = NovaArquitetura.Data\\NovaArquitetura.Data.csproj
+		SccProjectName5 = NovaArquitetura.Data
+		SccLocalPath5 = NovaArquitetura.Data
+		SccProjectUniqueName6 = NovaArquitetura.API.Authentication\\NovaArquitetura.API.Authentication.csproj
+		SccProjectName6 = NovaArquitetura.API.Authentication
+		SccLocalPath6 = NovaArquitetura.API.Authentication
+		SccProjectUniqueName7 = NovaArquitetura.Web2\\NovaArquitetura.Web2.csproj
+		SccProjectName7 = NovaArquitetura.Web2
+		SccLocalPath7 = NovaArquitetura.Web2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4648E8C4-FCA0-4C92-BC0B-1683DF1F92BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4648E8C4-FCA0-4C92-BC0B-1683DF1F92BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4648E8C4-FCA0-4C92-BC0B-1683DF1F92BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4648E8C4-FCA0-4C92-BC0B-1683DF1F92BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1B70015-0257-4BE3-99C5-26369BBB6650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B70015-0257-4BE3-99C5-26369BBB6650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1B70015-0257-4BE3-99C5-26369BBB6650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1B70015-0257-4BE3-99C5-26369BBB6650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58DA192D-BB6E-42CD-A929-83C50916634E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58DA192D-BB6E-42CD-A929-83C50916634E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58DA192D-BB6E-42CD-A929-83C50916634E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58DA192D-BB6E-42CD-A929-83C50916634E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0508E17-C909-4670-B5EB-46CDC92A0012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0508E17-C909-4670-B5EB-46CDC92A0012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0508E17-C909-4670-B5EB-46CDC92A0012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0508E17-C909-4670-B5EB-46CDC92A0012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05B77148-C0D0-4DFE-86EC-6D460A0A60FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05B77148-C0D0-4DFE-86EC-6D460A0A60FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05B77148-C0D0-4DFE-86EC-6D460A0A60FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05B77148-C0D0-4DFE-86EC-6D460A0A60FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A8B390F-78D8-4D63-82E1-3E54B35A6735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A8B390F-78D8-4D63-82E1-3E54B35A6735}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A8B390F-78D8-4D63-82E1-3E54B35A6735}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A8B390F-78D8-4D63-82E1-3E54B35A6735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E19A78F-7095-4C57-87D3-D54F0ED78CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E19A78F-7095-4C57-87D3-D54F0ED78CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E19A78F-7095-4C57-87D3-D54F0ED78CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E19A78F-7095-4C57-87D3-D54F0ED78CD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,101 @@
+﻿.container_degustacao_candidatura { /*width: 530px;*/
+    background-color: black;
+}
+
+
+.img_alerta {
+    display: block;
+    float: left;
+    margin-left: 30px;
+    margin-top: 47px;
+    height: 165px;
+    width: 173px;
+    background-image: url('/Images/img_alerta_bne.png');
+    background-repeat: no-repeat;
+}
+
+.label_quantidade_bonus {
+    color: #21190C;
+    display: block;
+    float: left;
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 70px;
+    margin-top: 56px; /*position: absolute;*/
+}
+
+.input_usar_bonus {
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 10px;
+    display: block;
+    float: left;
+    margin-left: 102px;
+    margin-top: 17px;
+    width: 151px;
+    height: 40px;
+    color: #21190C;
+    font-size: 18px;
+    cursor: pointer;
+    padding-bottom: 20px;
+}
+
+.input_quero_passar_vip {
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    margin-left: 20px;
+    margin-top: 17px;
+    width: 212px;
+    height: 40px;
+    color: #21190C;
+    font-size: 18px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.voce_ganhou {
+   color: #3F2007;
+    display: block;
+    float: left;
+    font-size: 23px;
+    margin-top: 57px;
+    width: 100%;
+    text-align: center;
+    line-height: 29px;
+}
+
+.que_pena {
+    font-size: 24px;
+    margin-left: 27px;
+    width: 558px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.degustacao-icon {
+    position: absolute;
+    /*left:50%;*/
+    left: 41%;
+    top: -45px;
+    margin-left: -75;
+}
+
+
+.degustacao-icon {
+    position: absolute;
+    /*left:50%;*/
+    left: 41%;
+    top: -45px;
+    margin-left: -75;
+}
+
+
+.vip-pass-icon {
+    position: absolute;
+    /*left:50%;*/
+    left: 38%;
+    top: -85px;
+    margin-left: -75;
+}

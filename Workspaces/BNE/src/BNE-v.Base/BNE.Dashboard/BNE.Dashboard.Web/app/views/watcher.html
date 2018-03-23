@@ -1,0 +1,84 @@
+﻿<div class="fluid">
+    <div class="widget grid12 analytics">
+        <div class="widget-header">
+            <h2 class="page-title">
+                <i class="fa fa-users"></i>USUÁRIOS ON-LINE
+            </h2>
+        </div>
+        <ul class="clearfix">
+            <div ng-repeat="site in analytics">
+                <li>
+                    <div class="analytics-content">
+                        <!--<div class="circle">
+                            <i class="fa fa-user"></i>
+                        </div>-->
+                        <div class="analytics-info">
+                            {{site.ActiveUsers}}
+                        </div>
+                        <span class="analytics-site">{{site.Site}}</span>
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </div>
+</div>
+
+<div class="fluid">
+    <div class="widget grid8">
+        <div class="widget-header">
+            <h2 class="page-title">
+                <i class="fa fa-bell"></i>ALERTAS
+            </h2>
+        </div>
+        <div ng-repeat="watcher in watchers">
+            <div ng-if="hasError(watcher)">
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Atenção!</strong>
+                    O {{watcher.Name}}
+                    <strong>está com erro!</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="widget grid4">
+        <div class="widget-header">
+            <h2 class="page-title">
+                <i class="fa fa-list-ul"></i>
+                STATUS
+            </h2>
+        </div>
+        <div class="todo">
+            <div ng-repeat="watcher in watchers">
+                <div class="todo-item ng-class:hasError(watcher) ? 'red' : 'green'">
+                    <i class="fa fa-check"></i>
+                    {{watcher.Name}}
+                    <div ng-if="!hasError(watcher)">
+                        <div class="todo-date">
+                            {{watcher.Status.Name}}
+                        </div>
+                    </div>
+                    <div ng-if="hasError(watcher)">
+                        <div class="todo-date">
+                            {{watcher.Amount}} {{watcher.Status.Name}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fluid">
+        <div class="widget grid12">
+            <div class="widget-header">
+                <h2 class="page-title">
+                    <i class="fa fa-bug"></i>ERROS
+                </h2>
+            </div>
+            <!--<div class="todo-item blue">
+                <i class="fa fa-check"></i>
+                PF BLABLA BLA
+                <div class="todo-date">400 ERROS</div>
+            </div>-->
+        </div>
+    </div>

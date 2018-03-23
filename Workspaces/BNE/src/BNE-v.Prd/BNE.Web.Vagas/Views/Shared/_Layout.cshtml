@@ -1,0 +1,324 @@
+﻿@using BNE.Web.Vagas.Code
+@using BNE.Web.Vagas.Code.Helpers
+@using BNE.Web.Vagas.Models
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @RenderSection("HeadBidder", false)
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta property="og:image" content="http://www.bne.com.br/img/logo_facebook.png" />
+    <meta property="og:title" content="Banco Nacional de Empregos | BNE - Banco Nacional de Empregos" />
+    @Html.MetaTag(MetatagHelper.MetatagType.MetaData).Render()
+    <title>@Html.MetaTag(MetatagHelper.MetatagType.Title).Render()</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("css", false)
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet">
+</head>
+<body id="body">
+    @*Integração Facebook*@
+    <div id="fb-root">
+    </div>
+    <script type="text/javascript">
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: 450210698402153,
+                status: true,
+                cookie: true,
+                xfbml: true
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/pt_BR/all.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    @*Fim Integração Facebook*@
+    <div class="header">
+        <div class=" whitebar">
+            <div class="conteudo-wrapper-responsivo">
+                @*<div class="esquerda">*@
+                <div id="header_linha01">
+                    <div class="logo">
+                        <a href='@Url.Action("Index", "Home")'>
+                            <img src='@Url.Content("~/Images/logo_bne.png")' alt="BNE" />
+                        </a>
+                    </div>
+                    <div style="flex-grow: 2;">
+                        @*<div class="painel_informacoes">
+                                @{ Html.RenderAction("RecuperarEstatistica", "Base"); }
+                            </div>*@
+                    </div>
+
+                    @if (ViewBag.IdCurriculo > 0 && User.Identity.Name != null)
+                   {
+                        <div id="nome_usuario-logado" class="nomeusuariologado">
+                            Olá, <strong>@User.Identity.Name.Split(' ')[0]</strong>
+
+
+                            <div id="divMenu" class="btn-group menu-responsivo" onclick="openMenu();">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    MENU
+                                </button>
+                                <ul class="dropdown-menu pull-right">
+
+                                    @if (!ViewBag.EmpresaLogada)
+                                    {
+                                    <li id="salaVIPMenu">
+                                        <a ID="hlSalaVip" href="http://www.bne.com.br/sala-vip">
+                                            Sala VIP
+                                        </a>
+                                    </li>
+                                    <li id="atualizarCurriculoMenu">
+                                        <a ID="hlAtualizarCurriculo" href="http://www.bne.com.br/cadastro-de-curriculo-gratis">Atualizar Currículo</a>
+                                    </li>
+
+                                        if (ViewBag.Vip)
+                                        {
+                                    <li id="atendimentoOnlineMenu">
+
+                                        <a onclick='$("#banner-posso-ajudar").click();'>Atendimento Online</a>
+
+                                    </li>
+                                        }
+                                    }
+                                    else
+                                    {
+                                    @*EMPRESA*@
+                                    <li id="salaSelecionadoraMenu">
+                                        <a href="http://www.bne.com.br/sala-selecionador" ID="hlSalaSelecionadorMenu">
+                                            Sala da Selecionadora
+                                        </a>
+                                    </li>
+
+                                    }
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+
+                                        <a href='@Url.Action("Sair", "Base")' rel="nofollow">
+                                            Sair <i class="fa fa-sign-in"></i>
+
+                                        </a>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    }
+                    else { 
+                    <div class="painel_login">
+
+                        @if (User.Identity != null && User.Identity.IsAuthenticated)
+                        {
+                        <a href='@Url.Action("Sair", "Base")' rel="nofollow">
+                            Sair <i class="fa fa-sign-in"></i>
+
+                        </a>
+                        }
+                        else
+                        {
+                        <a href='@if (Request.Url != null)
+                             {
+                                 @Url.Action("Entrar", "Base", new { redirectURL = Request.Url.AbsoluteUri })
+                             }' rel="nofollow">
+                            Entrar  <i class="fa fa-sign-in"></i>
+                        </a>
+                        }
+                    </div>
+                    }
+                       </div>
+                @*
+                    </div>*@
+                @*
+                    <div class="direita">
+                    </div>
+                    <div class="clear"></div>*@
+            </div>
+        </div>
+
+        <div class="conteudo-wrapper-responsivo">
+            <div class="busca">
+                <div class="busca_superior">
+                    <div class="busca_superior-abas">
+                        <a href="javascript:;" id="aBuscarVagas" rel="nofollow">
+                            Buscar VAGAS @*<i class="fa fa-caret-up">*@</i>
+                        </a>
+                        <a id="aBuscarCurriculos" href='@Url.Action("PesquisaCurriculoMasterPage", "Base")' rel="nofollow">
+                            Buscar CURRÍCULOS @*<i class="fa fa-caret-down">*@</i>
+                        </a>
+                    </div>
+                    <div class="busca_superior-icones-extras" style="display:none">
+                        <div class="painel_icones">
+                            @{ Html.RenderAction("RecuperarAtalhosTopo", "Base");}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="busca_inferior">
+
+                    @using (Html.BeginForm("PesquisarVagas", "ResultadoPesquisaVaga", FormMethod.Post, new { autocomplete = "off" }))
+                    {
+                        <div class="busca_inferior-campos">
+                            <div class="funcao">
+                                @Html.TextBox("txtFuncao", (string)ViewBag.Funcao, new { @Class = "pesquisa_topo_funcao input", placeholder = "Função", @value = (string)ViewBag.Funcao })
+                            </div>
+                            @*<span class="descricaoTopo DtFuncao">
+                                    Função <i class="fa fa-level-up fa2"></i>
+                                </span>*@
+                        </div>
+                        <div class="busca_inferior-campos">
+                            <div class="cidade">
+                                <input type="text" id="txtCidade" name="txtCidade" class="pesquisa_topo_cidade input" value="@ViewBag.Cidade" placeholder="Cidade/Estado" />
+                            </div>
+                            @*<span class="descricaoTopo DtCidade">
+                                    Cidade <i class="fa fa-level-up fa2"></i>
+                                </span>*@
+                        </div>
+
+                        @*<div class="palavrachave">
+                            @Html.TextBox("PalavraChave", null, new { @Class = "pesquisa_topo_palavra_chave", id = "txtPalavraChave" })
+                                                </div>*@
+                        <div class="buscar">
+                            <div>
+                                <input type="submit" name="Buscar" value="Buscar Vagas" alt="Buscar Vagas" class="search" />
+                                <a ID="buscaavancada" runat="server" href="/pesquisa-de-vagas">
+                                    Pesquisa avançada
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content" id="conteudo">
+
+
+        @if (ViewBag.ExibirPossoAjudar != null && ViewBag.ExibirPossoAjudar == true)
+        {
+            <div id="banner-posso-ajudar" class="banner-posso-ajudar">
+                <div id="possoajudar-bemvindo">Seja bem vindo!</div>
+                <div id="possoajudar-txt">Em que posso lhe ajudar?</div>
+                <div id="possoajudar-atendimento">Atendimento VIP</div>
+                <div id="possoajudar-status">ONLINE</div>
+                <img src="~/Images/banner-posso-ajudar/person.png" id="possoajudar-img">
+                <i class="fa fa-commenting fa-2x" aria-hidden="true" id="possoajudar-ico"></i>
+            </div>
+        }
+
+        <section class="conteudo-wrapper">
+            @{ Html.RenderAction("RecuperarBreadcrumb", "Breadcrumb"); }
+            @RenderBody()
+        </section>
+    </div>
+    <div class="footer" id="barra_rodape">
+        <div class="wrapper">
+            @{ Html.RenderAction("RecuperarRodape", "Base");}
+        </div>
+    </div>
+    <div id="modal_container"></div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/site")
+    @{ Html.RenderAction("RecuperarParametros", "Base"); }
+    <script src="~/Scripts/jquery.bpopup.min.js"></script>
+    @*<script src="~/Scripts/local/rrssb.min.js" ></script>*@
+    <script type="text/javascript">
+        var appSubFolder = "@Html.GetApplicationSubfolder()";
+
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            var uri = document.baseURI || document.URL;
+            var baseAddress = uri.replace("http://", "").replace("https://", "");
+            if (baseAddress.indexOf("www.bne.com.br") == 0 || baseAddress.indexOf("bne.com.br") == 0)
+                ga('create', 'UA-1937941-6', 'auto');
+            else
+                ga('create', 'UA-1937941-8', 'auto');
+
+            ga('send', 'pageview');
+
+        $(function () {
+            if (!!navigator.userAgent.match(/Trident\/7\./)) {
+                $("#lista_rodape_empresa_empresa").css("font-size", "99%");
+                $("#lista_rodape_geral_geral").css("font-size", "99%");
+            }
+
+            //Evento para que as requisições ajax considerem o subdiretório
+            $(document).bind("ajaxSend", function (e, xhr, settings) {
+                if (settings.url.indexOf('cep/api') === -1) {
+                var patt = /^(https?:\/\/[^\/]+)?(.*)/i;
+                var match = patt.exec(settings.url);
+                if (match.length >= 3 && !(match[2].indexOf(appSubFolder) === 0)) {
+                    var url = "";
+                    if (typeof match[1] !== typeof undefined) {
+                        url += match[1];
+                    }
+                    url += appSubFolder
+                    if (typeof match[2] !== typeof undefined) {
+                        url += match[2];
+                    }
+
+                    settings.url = url;
+                }
+                }
+            });
+
+            if (appSubFolder != "") {
+                $("a, form").each(function () {
+                    var t = $(this);
+                    var url = "";
+                    var notRedir = /^((https?:)?\/\/|\/(vagas?-de-emprego|resultado-pesquisa-avancada-de-vagas)|javascript:)/i;
+                    var attrName = ""
+                    var attr = t.is("[action]");
+                    if (typeof attr !== typeof undefined && attr !== false) {
+                        url = t.attr("action");
+                        attrName = "action";
+                    }
+                    var attr = t.is("[href]");
+                    if (typeof attr !== typeof undefined && attr !== false) {
+                        url = t.attr("href");
+                        attrName = "href"
+                    }
+                    if (url.match(notRedir) || attrName == "") {
+                        return;
+                    }
+
+                    t.attr(attrName, appSubFolder + t.attr(attrName));
+                });
+            }
+        });
+
+        
+        //Não exibir breadcrumb em mobile
+        jQuery(document).ready(function ($) {
+            if (navigator.userAgent.match(/Mobi/)) {
+                $('#navBreadcrumbMvc').css('visibility', 'hidden').css('display', 'none');
+            }
+        });
+
+        function openMenu() {
+            $("#divMenu").toggleClass("open");
+        }
+
+    </script>
+    @RenderSection("scripts", false)
+    <script src="https://use.fontawesome.com/731d28b804.js"></script>
+</body>
+</html>

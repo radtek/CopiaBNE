@@ -1,0 +1,38 @@
+﻿<div class="row clearfix">
+    <div class="col-md-12 column">
+        <form class="navbar-form navbar-left" role="search" name="buscaAluno">
+            <div class="form-group">
+                
+                <input ng-model="cadastro.busca.Nome" class="form-control largura" type="text" placeholder="NOME DO ALUNO">
+            </div> <button ng-disabled="!buscaAluno.$valid" class="btn btn-primary" ng-click="buscarAlunos()">BUSCAR</button>
+        </form>
+    </div>
+    <div class="col-md-4 column">
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-md-12 column">
+        <div class="accordion" id="accordion2">
+            <div class="panel-group" ng-repeat="aluno in cadastro.alunos_filtrados">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a class="panel-title collapsed" data-toggle="collapse" data-parent="#{{aluno.Aluno.Id}}" data-target="#panel-element-{{aluno.Aluno.Id}}"><strong>{{aluno.Aluno.Nome}}</strong></a>
+                    </div>
+                    <div id="panel-element-{{aluno.Aluno.Id}}" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <dl>
+                                <dd ng-repeat="disciplina in cadastro.disciplinas_cadastradas">
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" ng-click="addAluno(aluno.Aluno.Id, disciplina.Id, $event)" ng-checked="aluno.Disciplinas.indexOf(disciplina.Id) > -1" /> {{disciplina.Nome}}</label>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-default btn-lg pull-left" ng-click="voltarCadastroDisciplina()">VOLTAR</button>
+        </div>
+    </div>
+</div>

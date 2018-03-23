@@ -1,0 +1,11 @@
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Debug\BNE.Cielo.dll.config
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Debug\BNE.Cielo.dll
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Debug\BNE.Cielo.pdb
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Debug\Awesomely.dll
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Debug\DynamicBuilder.dll
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Debug\RestSharp.dll
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Debug\DynamicBuilder.xml
+C:\Projects\BNE-NugetServer\BNE.Cielo\bin\Debug\RestSharp.xml
+C:\Projects\BNE-NugetServer\BNE.Cielo\obj\Debug\BNE.Cielo.dll
+C:\Projects\BNE-NugetServer\BNE.Cielo\obj\Debug\BNE.Cielo.pdb
+C:\Projects\BNE-NugetServer\BNE.Cielo\obj\Debug\BNE.Cielo.csprojResolveAssemblyReference.cache

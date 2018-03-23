@@ -1,0 +1,88 @@
+﻿.containerImgMapa {
+    background-image:url("/img/ondeEstamos/mapa.png");
+    background-repeat:no-repeat;
+    height:243px;
+    margin-bottom:30px;
+    margin-left:25px;
+    margin-top:144px;
+    width:303px;
+}
+
+.containerTextoOndeEstamos {
+    color:#666;
+    display:block;
+    font-size:13px;
+    margin-left:328px;
+    margin-top:-307px;
+    padding:0px;
+    position:absolute;
+    width:100px;
+    white-space:pre;
+}
+
+.headPresencaNacional {
+    color:#f56e23;
+    display:block;
+    font-size:25px;
+    font-weight:bold;
+    margin-left:10px;
+    white-space:pre;
+}
+
+.containerTextoPhone {
+    display:block;
+    margin-left:328px;
+    margin-top:-90px;
+    /*position:absolute;*/
+    width:280px;
+}
+
+.containerPhone0800 {
+    color:#f56e23;
+    font-size:40px;
+    font-weight:bold;
+    margin-left:10px;
+    width:250px;
+}
+
+.containerTextoLigue {
+    margin-left:10px;
+    margin-top:10px;
+}
+
+.linha {
+    float:left;
+    height:480px;
+    border-right:1px solid #d8d7d6;
+    height:250px;
+    margin-bottom: 67px;
+    margin-left: 636px;
+    margin-top: -261px;
+    /*position:absolute;*/
+    width:1px;
+}
+
+.scrollEstados {
+    /*background-color:gray;*/
+    display:block;
+    height:250px;
+    margin-left:643px;
+    margin-top:-241px;
+    overflow:auto;
+    text-align:left;
+    width:210px;
+}
+
+.containerTextoEstados {
+    /*background-color:#f56e23;*/
+    color:#666;
+    height:350px;
+    position:relative;
+    width:150px;
+    white-space:pre;
+}
+
+.enfatizaEstados {
+    color:#f56e23;
+    font-weight:bold;
+}

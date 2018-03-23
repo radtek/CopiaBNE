@@ -1,0 +1,40 @@
+﻿.dados_cnae_pessoa_juridica { float: left; }
+    .dados_cnae_pessoa_juridica div .label_principal { float: none; float: left; text-align: right; width: 155px; }
+.caixa_amarela { background-color: #fcf8c4; margin-left: 4px; padding: 4px; /*--    width: 480px;--*/ float: left; width: 695px; }
+    .caixa_amarela .container_campo { margin-left: 0; padding: 0 0 4px 0; float: none; }
+.painel_consulte_cnae { font-size: 11px; float: right; overflow: hidden; }
+.container_campo.caixa_amarela { background-color: #fcf8c4; margin-left: 8px; padding: 4px; width: 480px; float: left; }
+.container_campo .textbox_padrao.campo_obrigatorio { margin-left: 0; }
+.container_campo.abrigatorio .textbox_padrao.campo_obrigatorio { margin-left: 4px; }
+.linha_caixa_amarela { clear: both; overflow: auto; }
+.input_CNAE_natureza_empresa { overflow: hidden; float: left; }
+#divDuvidas div { display: inline; vertical-align: middle; }
+    #divDuvidas div img { border: none; }
+#divDuvidas .btn_consultar { display: inline-block; vertical-align: middle; }
+.inserir_logo_empresa { float: right; margin-right: 20px; margin-top: 20px; overflow: hidden; }
+    .inserir_logo_empresa .modal { background-color: #FFFFFF; background-image: url("/img/bg_topo_modal_empresa.png"); background-repeat: repeat-x; margin: 0 auto; width: 535px; }
+    .inserir_logo_empresa .link_alterar_foto { display: block; text-align: center; width: 135px; /*margin-top: -45px;*/ }
+.modal_conteudo.modal_busca_cep { background-color: #FFFFFF; background-image: url("/img/bg_topo_modal_candidato.png"); background-repeat: repeat-x; border: none; margin: 0 auto; width: 880px; }
+.modal_busca_cep .painel_campos { margin: 10px; }
+.linha.autorizacao { text-align: center; }
+    .linha.autorizacao .container_campo { width: 520px; float: none; margin: 0 auto; }
+.painel_imagem_foto_logo img { width: 130px; }
+.campo_obrigatorio { background-image: none !important; background-repeat: no-repeat; background-position: left 4px; padding-left: 11px; }
+@media print {
+    textarea { height: 260px !important; width: 350px !important; }
+}
+.logo
+{
+    border: none !important;
+}
+
+
+#cphConteudo_ucFoto_mdlFoto_btnFechar {
+    float: right;
+}
+#cphConteudo_ucFoto_mdlFoto_lblInformacao {
+    color: white;
+    font-size: 13px;
+    float:left;
+    margin: -10px 0 20px 0;
+}

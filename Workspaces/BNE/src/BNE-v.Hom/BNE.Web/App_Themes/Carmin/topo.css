@@ -1,0 +1,26 @@
+/*------------------------------------------------------------ Theme Carmin*/
+.topo {
+    background-image: url("/img/App_Themes/Carmin/bg_topo.gif");
+}
+
+.painel_filtro_vaga_escondido {
+    background-image: linear-gradient(90deg, #A93343 6%, #960018 18%, #A93343 72%, #B24A57 99%) !important;
+    background-image: -moz-linear-gradient(90deg, #B24A57 6%, #960018 18%, #A93343 72%, #B24A57 99%) !important;
+    background-image: -webkit-linear-gradient(90deg, #B24A57 6%, #960018 18%, #A93343 72%, #B24A57 99%) !important;
+    background-image: -ms-linear-gradient(90deg, #B24A57 6%, #960018 18%, #A93343 72%, #B24A57 99%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B24A57', endColorstr='#960018') !important;
+}
+
+#pnlBusca.painel_filtro_vaga {
+    background-image: linear-gradient(90deg, #A93343 6%, #960018 18%, #A93343 72%, #B24A57 99%) !important;
+    background-image: -moz-linear-gradient(90deg, #B24A57 6%, #960018 18%, #A93343 72%, #B24A57 99%) !important;
+    background-image: -webkit-linear-gradient(90deg, #B24A57 6%, #960018 18%, #A93343 72%, #B24A57 99%) !important;
+    background-image: -ms-linear-gradient(90deg, #B24A57 6%, #960018 18%, #A93343 72%, #B24A57 99%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B24A57', endColorstr='#960018') !important;
+    border-radius: 0 4px 4px 4px !important;
+}
+
+#aBuscarVagas, .btn_buscar a#btiPesquisarVaga {
+    background-color: #B24A57;
+}
+/*# sourceMappingURL=topo.css.map */

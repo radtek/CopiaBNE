@@ -1,0 +1,573 @@
+﻿.alinha_btn_fechar_nova_modal {
+    margin-left: 500px;
+    margin-top: 400px;
+    position: absolute;
+    width: 30px;
+}
+
+
+
+.container_confirmacao {
+    width: 530px;
+    float: left;
+}
+
+.container_aviso {
+    border-top: 1px solid #B5CAEA !important;
+    float: left;
+    width: 535px;
+}
+
+.icone_confirmacao {
+    float: left;
+    margin-left: 2px;
+    margin-top: 31px;
+    position: relative;
+    text-align: center;
+    width: 100px;
+}
+
+.icone_aviso {
+    float: left;
+    margin-top: 28px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+}
+
+.texto_aviso {
+    color: #1A3876;
+    font-size: 16px;
+    margin-top: 32px;
+    text-align: left;
+    margin-right: 10px;
+    /*width: 430px;*/
+}
+
+.texto_enviado_sucesso {
+    color: #1A3876;
+    font-size: 20px;
+    /* margin: 90px 37px 37px 80px; */
+    text-align: center;
+    /* width: 100%; */
+    margin-left: 20px;
+    margin-right: 20px;
+    /* width: 100%; */
+    margin-top: 45px;
+}
+
+.texto_protocolo_envio {
+    color: #1A3876;
+    font-size: 14px;
+    margin: 0px 140px 0;
+    text-align: left;
+    width: 425px;
+    float: left;
+}
+
+.texto_caso_seu_curriculo {
+    color: #1A3876;
+    padding: 6px 20px;
+    text-align: center;
+}
+
+.painel_botoes {
+    margin: 20px 0;
+}
+
+    .painel_botoes .botao_padrao {
+        margin-bottom: 0;
+    }
+
+.modal_confirmacao_acao {
+    background-color: #FFFFFF;
+    background-image: url("/img/bg_topo_modal_candidato.png");
+    background-repeat: repeat-x;
+    border: medium none;
+    margin: 0 auto;
+    width: 420px;
+    min-height: 215px;
+}
+
+.texto_confirmacao {
+    color: #1A3876;
+    font-size: 13px;
+    text-align: center;
+    width: 530px;
+    height: 100px;
+    display: block;
+    width: 400px;
+    float: left;
+    margin: 10px;
+    margin-top: 24px;
+}
+
+.modal_confirmacao_registro.candidato, .modal_indicar_empresa.candidato {
+    background-color: #ebeff2;
+    /*background-image: url("/img/bg_topo_modal_candidato.png");*/
+    background-repeat: repeat-x;
+    border: medium none;
+    height: auto;
+    margin: 0 auto;
+    width: 525px;
+    border-radius: 8px;
+}
+
+
+.imagem_cadastro_alert {
+    background-image: url("/img/modal_nova/img_alerta_bne.png");
+    background-repeat: no-repeat;
+    height: 128px;
+    margin: 20px auto;
+    width: 128px;
+}
+
+p.textocomplementar {
+    font-size: 13px;
+    /*margin: 10px;*/
+    font-weight: bold;
+}
+
+p.textoform {
+    /*margin: 10px;*/
+}
+
+.label_principal {
+    color: #1d325d;
+    font-weight: bold; /*- width: 150px;-*/
+    text-align: right;
+}
+
+.modal .label_principal {
+    color: #1d325d;
+    font-weight: bold;
+    width: 112px;
+    text-align: right;
+}
+
+.texto_cadastro_sucesso {
+    color: Black;
+    font-size: 15px;
+    margin: 20px 10px;
+    text-align: center;
+}
+
+.modal_elastica {
+    overflow: hidden;
+}
+
+.texto_menor {
+    font-size: 11px;
+    line-height: normal;
+}
+
+.envio_curriculo .painel_botoes {
+    margin: 20px;
+}
+
+.gridview_padrao.trocar_empresa {
+    width: 630px !important;
+}
+
+.logo_empresa_trocar {
+    height: 31px;
+}
+
+.gridview_padrao.trocar_empresa .rgHeader {
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+}
+
+.logo_empresa_conteudo {
+    width: 20%;
+    text-align: center;
+}
+
+    .logo_empresa_conteudo img {
+        padding: 5px;
+        background: #fff;
+    }
+
+.nome_empresa_conteudo {
+    width: 70%;
+    text-align: center;
+}
+
+.selecionar_empresa {
+    width: 10%;
+    text-align: center;
+}
+
+.modal_trocar_empresa .titulo_modal {
+    color: #FFFFFF;
+    font-size: 19px;
+    font-weight: normal;
+    height: 44px;
+    margin: 10px;
+    text-align: left;
+}
+
+.modal_trocar_empresa .titulo_item_modal {
+    margin: 10px 0 10px 0;
+    font-size: 12px;
+    font-weight: normal;
+    color: #1d325d;
+}
+
+.modal_trocar_empresa {
+    background-color: #FFFFFF;
+    background-image: url("/img/bg_topo_modal_candidato.png");
+    background-repeat: repeat-x;
+    border: medium none;
+    height: auto;
+    margin: 0 auto;
+    width: 675px;
+}
+
+.TrocarEmpresaConteudo {
+    margin: 0 20px 20px 20px;
+}
+
+    .TrocarEmpresaConteudo div {
+        margin-top: 15px;
+    }
+
+.modal_trocar_empresa .textbox_padrao {
+    border: 1px solid #B5CAEA !important;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    width: 200px !important;
+    float: left;
+}
+
+.modal_trocar_empresa .filtrar {
+    font-size: 11px;
+    height: 22px;
+    margin-left: 5px;
+    width: auto !important;
+    margin-bottom: 0;
+}
+
+.FormularioEnviaAmigo {
+    margin: 20px 0;
+}
+
+    .FormularioEnviaAmigo .linha {
+        clear: none;
+        padding: 5px 0;
+    }
+
+        .FormularioEnviaAmigo .linha .label_principal {
+            width: 130px;
+        }
+
+.icone_enviar_amigo {
+    float: right;
+    margin: 5px 35px 0 0;
+}
+
+.modal_confirmacao_acao .painel_botoes .botao_padrao {
+    margin: 0 20px;
+}
+
+.alinha_btn_fechar_nova_modal {
+    margin-left: 581px;
+    margin-top: -12px;
+}
+
+.balao_saiba_mais {
+}
+
+a.tooltip {
+    position: relative;
+    text-decoration: none;
+    margin-left: 5px;
+    cursor: help;
+    font-size: 10px;
+    text-decoration: underline;
+    color: #1E3260;
+    cursor: pointer;
+}
+
+    a.tooltip:hover {
+        background: transparent;
+        color: #f00;
+        z-index: 25;
+    }
+
+    a.tooltip span {
+        display: none;
+    }
+
+    a.tooltip:hover span {
+        display: block;
+        position: absolute;
+        width: 210px;
+        top: 22px;
+        left: -60px;
+        font-size: 12px;
+        padding: 5px;
+        border: 1px solid #DDD;
+        background: #FFE79D;
+        color: #000;
+    }
+
+
+.alertModal {
+    background-color: #FFFFFF;
+    background-image: url("/img/bg_topo_modal_candidato.png");
+    background-repeat: repeat-x;
+    border: medium none;
+    width: 482px;
+    margin: -0% 0 0 -0%;
+}
+
+
+.container_confirmacao_candidatura {
+    width: 100%;
+    float: left;
+    height: auto;
+}
+
+
+
+    .container_confirmacao_candidatura .texto_confirmacao {
+        color: #1A3876;
+        font-size: 13px;
+        text-align: center;
+        width: 530px;
+        height: 100px;
+        display: block;
+        width: 425px;
+        float: left;
+    }
+
+        .container_confirmacao_candidatura .texto_confirmacao .texto_enviado_sucesso {
+            color: black !important;
+            font-size: 23px;
+            margin: 68px 80px 0px 80px;
+            text-align: center;
+            width: 100%;
+            line-height: 150%;
+        }
+
+        .container_confirmacao_candidatura .texto_confirmacao .texto_protocolo_envio {
+            color: rgba(0,0,0, .54);
+            font-size: 14px;
+            margin: 0px 140px 0;
+            text-align: left;
+            width: 425px;
+            float: left;
+        }
+
+.sucesso-icon {
+    left: 41%;
+    /* right: 50%; */
+    /* text-align: center; */
+    align-items: center;
+    width: 26%;
+    height: 119px;
+    /* display: inline; */
+    z-index: 1003;
+    position: absolute;
+    top: -59px;
+    background: url(/Promocoes/PeixeUrbano/Img/icon-success.png) no-repeat;
+}
+
+
+.icon_editar_dados {
+    left: 41%;
+    /* right: 50%; */
+    /* text-align: center; */
+    align-items: center;
+    width: 26%;
+    height: 119px;
+    /* display: inline; */
+    z-index: 1003;
+    position: absolute;
+    top: -59px;
+}
+
+
+.modal_fechar {
+    background: url(/img/modal_nova/btn_amarelo_fechar_modal.png) no-repeat;
+    width: 34px;
+    height: 34px;
+    display: inline;
+    z-index: 1003;
+    position: absolute;
+    top: -12px;
+    right: -15px;
+    cursor: pointer;
+}
+
+
+
+
+.btnVoltar input {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    background-color: #015a9c;
+    margin-bottom: 8px;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: all 0.5s;
+    outline: none;
+    width: 170px;
+    border-radius: 5px 5px 5px 5px;
+    text-align: center;
+}
+
+    .btnVoltar input:hover {
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+    }
+
+
+
+/*.modal_fundo {
+    background-color: rgb(235, 239, 242) !important;
+}*/
+
+.modal_corpo {
+    margin: 47px 17px 0px 17px;
+}
+
+
+.gridVerMotivosBronquinha {
+    margin-bottom: 15px;
+}
+
+
+.titulo_modal_nova {
+    color: #0A3079;
+    font-size: 19px;
+    font-weight: normal;
+    height: auto;
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+
+
+.cancelar input{
+	font-family: "Roboto","Helvetica","Arial",sans-serif;
+	border:none;
+	border-radius:4px;
+	padding:8px;
+	font-size:13px;
+	text-transform: uppercase;
+	font-weight:700;
+	color: rgba(0, 0, 0, 0.54);
+	margin-bottom:8px;
+	cursor:pointer;
+	text-decoration: none !important;
+	transition: all 0.5s;
+	outline: none;
+    width: 170px;
+    border-radius:5px 5px 5px 5px;
+}
+.cancelar input:hover{
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+	transition: all 0.5s;
+
+}
+
+.alinhar{
+    text-align: left;
+}
+
+.table_botoes{
+    width:100%;
+}
+
+.text_corpo{
+    font-size:14px;
+}
+
+
+
+.alert-icon {
+       background-image: url(/img/modal_nova/img_alerta_bne.png);
+    background-repeat: no-repeat;
+    height: 128px;
+    margin: 20px auto;
+    width: 128px;
+    left: 41%;
+    /* right: 50%; */
+    /* text-align: center; */
+    align-items: center;
+    width: 26%;
+    height: 119px;
+    /* display: inline; */
+    z-index: 1003;
+    position: absolute;
+    top: -80px;
+}
+
+
+.texto_modal_empresa_bloqueada {
+    color: #1A3876;
+    font-size: 19px;
+    margin: 90px 37px 37px 80px;
+    text-align: center;
+    /* width: 100%; */
+    margin-left: 20px;
+    margin-right: 20px;
+    /* width: 100%; */
+    margin-top: 58px;
+}
+
+.Titulo_modal_bloqueada { /* color: #fff; */
+    font-size: 19px;
+    font-weight: normal;
+    height: auto;
+    margin-left: 20px;
+    margin-top: 65px;
+    text-align: left;
+}
+
+
+
+.modal_fechar_404 {
+    width: 34px;
+    height: 34px;
+    display: inline;
+    z-index: 1003;
+    position: absolute;
+    top: -12px;
+    right: -15px;
+    cursor: pointer;
+}
+
+.grid_responsavel_chkbox{
+     width:10% !important;
+}
+.gridResponsaveis {
+    width:480px;
+}
+
+.imagem_cadastro_alert_endereco{
+      background-image: url("/img/modal_nova/img_alerta_bne.png");
+    background-repeat: no-repeat;
+    height: 158px;
+    margin: 47px auto;
+    width: 128px;
+    /* position: absolute; */
+    align-items: center;
+    position: absolute;
+    /*left:50%;*/
+    left: 39%;
+    top: -111px;
+    margin-left: -75;
+}

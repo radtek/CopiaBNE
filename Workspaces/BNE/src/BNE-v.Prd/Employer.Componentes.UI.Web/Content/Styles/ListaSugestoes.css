@@ -1,0 +1,57 @@
+﻿.lst_sug_gridview
+{
+    background-color: #f0ef9c;
+    color: Black;
+}
+.lst_sug_codigo
+{
+    min-width: 15px;
+    text-align: right;
+    font-weight: bolder;
+}
+.lst_sug_descricao
+{
+    padding-left: 5px;
+}
+.lst_sug_codigo, .lst_sug_descricao
+{
+    background-color: #f0ef9c;
+    border-bottom: 1px solid white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 5px;
+}
+
+*[class*='lst_sug_']
+{
+    font-family: Arial !important;
+}
+
+*[class*='lst_sug_'] table .lst_sug_gridview tr
+{
+}
+
+*[class*='lst_sug_'] table .lst_sug_gridview tr:hover
+{
+    border: 2px solid #fff;
+    opacity: 0.5;
+    -moz-opacity: 0.5;
+}
+
+*[class*='lst_sug_'] table .lst_sug_gridview .lst_sug_codigo
+{
+    background-color: #f0ef9c;
+    border: 1px solid #fff;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 3px !important;
+    width: 18px;
+}
+
+*[class*='lst_sug_'] table .lst_sug_gridview .lst_sug_descricao
+{
+    background-color: #fffeb7;
+    border: 1px solid #fff;
+    cursor: pointer;
+    font-size: 11px;
+}

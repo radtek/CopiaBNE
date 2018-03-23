@@ -1,0 +1,23 @@
+/*------------------------------------------------------------ Theme Arlequin*/
+.topo {
+  background-image: url("/img/App_Themes/Arlequin/bg_topo.gif"); }
+
+.painel_filtro_vaga_escondido {
+  background-image: linear-gradient(90deg, #32CB00 6%, #1F7F00 18%, #32CB00 72%, #39E500 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #39E500 6%, #1F7F00 18%, #32CB00 72%, #39E500 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #39E500 6%, #1F7F00 18%, #32CB00 72%, #39E500 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #39E500 6%, #1F7F00 18%, #32CB00 72%, #39E500 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#39E500', endColorstr='#1F7F00') !important; }
+
+#pnlBusca.painel_filtro_vaga {
+  background-image: linear-gradient(90deg, #32CB00 6%, #1F7F00 18%, #32CB00 72%, #39E500 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #39E500 6%, #1F7F00 18%, #32CB00 72%, #39E500 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #39E500 6%, #1F7F00 18%, #32CB00 72%, #39E500 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #39E500 6%, #1F7F00 18%, #32CB00 72%, #39E500 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#39E500', endColorstr='#1F7F00') !important;
+  border-radius: 0 4px 4px 4px !important; }
+
+#aBuscarVagas {
+  border-bottom: 35px solid #39E500 !important; }
+
+/*# sourceMappingURL=topo.css.map */

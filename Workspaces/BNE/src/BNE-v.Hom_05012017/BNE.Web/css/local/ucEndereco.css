@@ -1,0 +1,20 @@
+﻿.uc_cep .button_buscar_cep { vertical-align: text-top; }
+.uc_cep .panel_interno { position: relative; z-index: 2; width: 860px; margin: 10% auto 0; padding: 20px; background-color: #fff; background-image: url('../../img/global/bg_panel_cep.gif'); background-repeat: no-repeat; background-position: bottom left; text-align: left; }
+.uc_cep .panel_interno .panel_interno_topo { margin: -20px -20px 0 -20px; height: 7px; background-image: url('../../img/global/bg_panel_cep_topo.gif'); background-color: transparent; background-repeat: no-repeat; background-position: top left; font-size: 2px; }
+.uc_cep .panel_interno .panel_interno_campos { padding: 10px 0; margin: 0 -20px; background-color: #e7eef1; }
+.uc_cep .panel_interno .panel_interno_campos table { width: 100%; }
+.uc_cep .panel_interno .panel_interno_campos table .label_campo { width: 180px; }
+/* User Control [CEP] - novo */
+#conteudo .uc_cep_novo h1 { font-size: 21px; font-weight: normal; margin: 0; padding: 12px; }
+.uc_cep_novo .modal_interno { width: 880px; background: #fff; border: 2px solid #666; font-size: 12px; max-height: 500px; overflow: auto; padding-bottom: 20px; /* Border Radius */ border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; }
+.uc_cep_novo .painel_campos { background-color: #e7eef1; padding: 10px 0; }
+.uc_cep_novo .painel_gv_resultado_cep { max-height: 140px; overflow-y: scroll; }
+.uc_cep_novo .paginacao_panel { margin-top: 8px; text-align: center; }
+.uc_cep_novo .painel_gv_resultado_cep .gridview_padrao { margin: 0; width: 862px; }
+.label_numero { font-weight:bold; margin-left: 40px;}
+.label_bairro { font-weight:bold; margin-left:151px;}
+.button_nao_sei_cep{display: inline-block; padding: 0px 12px; margin-bottom: 0;  font-size: 14px;  font-weight: normal;  line-height: 1.42857143;
+text-align: center;  white-space: nowrap; vertical-align: middle; -ms-touch-action: manipulation;touch-action: manipulation;  cursor: pointer;
+-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; background-image: none; border: 1px solid transparent;
+border-radius: 4px; color: #333; background-color: #fff;  border-color: #ccc;}
+.uc_cep_fundo { background-color: #000; /* Transparencia */ opacity: 0.8; -moz-opacity: 0.8; filter: alpha(opacity=80); z-index: 2 !important; }

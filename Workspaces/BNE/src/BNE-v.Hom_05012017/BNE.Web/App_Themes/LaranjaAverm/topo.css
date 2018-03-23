@@ -1,0 +1,23 @@
+/*------------------------------------------------------------ Theme Laranja Avermelhado*/
+.topo {
+  background-image: url("/img/App_Themes/LaranjaAverm/bg_topo.gif"); }
+
+.painel_filtro_vaga_escondido {
+  background-image: linear-gradient(90deg, #EA3D0D 6%, #A8250F 18%, #EA3D0D 72%, #FF450D 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #FF450D 6%, #A8250F 18%, #EA3D0D 72%, #FF450D 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #FF450D 6%, #A8250F 18%, #EA3D0D 72%, #FF450D 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #FF450D 6%, #A8250F 18%, #EA3D0D 72%, #FF450D 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF450D', endColorstr='#A8250F') !important; }
+
+#pnlBusca.painel_filtro_vaga {
+  background-image: linear-gradient(90deg, #EA3D0D 6%, #A8250F 18%, #EA3D0D 72%, #FF450D 99%) !important;
+  background-image: -moz-linear-gradient(90deg, #FF450D 6%, #A8250F 18%, #EA3D0D 72%, #FF450D 99%) !important;
+  background-image: -webkit-linear-gradient(90deg, #FF450D 6%, #A8250F 18%, #EA3D0D 72%, #FF450D 99%) !important;
+  background-image: -ms-linear-gradient(90deg, #FF450D 6%, #A8250F 18%, #EA3D0D 72%, #FF450D 99%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF450D', endColorstr='#A8250F') !important;
+  border-radius: 0 4px 4px 4px !important; }
+
+#aBuscarVagas {
+  border-bottom: 35px solid #FF450D !important; }
+
+/*# sourceMappingURL=topo.css.map */

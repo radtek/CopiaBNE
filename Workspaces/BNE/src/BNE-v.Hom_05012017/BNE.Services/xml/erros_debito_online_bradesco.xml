@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<erros>
+  <erro codigo="-500006" origem="Core" descricao="Erro interno" />
+  <erro codigo="-500005" origem="SepsAPI" descricao="Não há mais ítens no orderDesc" />
+  <erro codigo="-500004" origem="SepsAPI" descricao="OrderDesc com problemas " />
+  <erro codigo="-500003" origem="SepsAPI" descricao="Objeto procurado não foi encontrado " />
+  <erro codigo="-500002" origem="SepsAPI" descricao="O método foi solicitado num estádo inválido" />
+  <erro codigo="-500001" origem="SepsAPI" descricao="Erro nas funções ODBC " />
+  <erro codigo="-100005" origem="Seps API" descricao="Valor inválido" />
+  <erro codigo="-100004" origem="SepsAPI" descricao="Item não encontrado " />
+  <erro codigo="-100003" origem="Core" descricao="Erro na configuração do SEPS" />
+  <erro codigo="-100002" origem="Core" descricao="Retornou último cartão" />
+  <erro codigo="-100001" origem="Core" descricao="Não existem cartões configurados " />
+  <erro codigo="-40113" origem="webservices" descricao="Número do Cartão Inválido." />
+  <erro codigo="-40112" origem="web" descricao="F9999" />
+  <erro codigo="-40111" origem="web" descricao="F9101" />
+  <erro codigo="-40110" origem="web" descricao="F9099" />
+  <erro codigo="-40109" origem="web" descricao="F9090" />
+  <erro codigo="-40108" origem="web" descricao="F0402" />
+  <erro codigo="-40107" origem="web" descricao="F0400" />
+  <erro codigo="-40106" origem="web" descricao="F0063" />
+  <erro codigo="-40105" origem="web" descricao="F0062" />
+  <erro codigo="-40104" origem="web" descricao="F0061" />
+  <erro codigo="-40103" origem="web" descricao="F0060" />
+  <erro codigo="-40102" origem="web" descricao="F0059" />
+  <erro codigo="-40101" origem="web" descricao="F0058" />
+  <erro codigo="-40100" origem="web" descricao="F0000" />
+  <erro codigo="-40016" origem="web" descricao="Falha na Autorização. Sem comunicação com a SITEF. " />
+  <erro codigo="-40015" origem="web" descricao="Falha na autorização" />
+  <erro codigo="-40014" origem="webservices" descricao="Número do Cartão Inválido." />
+  <erro codigo="-40010" origem="web" descricao="Pagamento não Autorizado" />
+  <erro codigo="-40009" origem="webservices" descricao="Pagamento Autorizado. " />
+  <erro codigo="-40008" origem="web" descricao="Falha na Autorização. Sem comunicação com autorizadora." />
+  <erro codigo="-40007" origem="web" descricao="Pagamento bloqueado." />
+  <erro codigo="-40006" origem="web" descricao="Compra já autorizada" />
+  <erro codigo="-40005" origem="web" descricao="Erro ao Processar a Compra! " />
+  <erro codigo="-40004" origem="web" descricao="Expirou o prazo para pagamento desta compra" />
+  <erro codigo="-40003" origem="web" descricao="Pagamento com autorização pendente. " />
+  <erro codigo="-40002" origem="web" descricao="Valor total da compra não pode ser Zero " />
+  <erro codigo="-40001" origem="web" descricao="NÃ¢o Foi Possivel Localizar a Loja" />
+  <erro codigo="-40000" origem="web" descricao="Erro ao Processar a Compra. Autorização em andamento." />
+  <erro codigo="-30417" origem="webservices" descricao="Validação do Titular do Cartão Incorreta. " />
+  <erro codigo="-30416" origem="webservices" descricao="Compra Cancelada" />
+  <erro codigo="-30415" origem="webservices" descricao="Pagamento Inválido" />
+  <erro codigo="-30414" origem="webservices" descricao="Pagamento Pendente de cancelamento" />
+  <erro codigo="-30413" origem="webservices" descricao="Compra processada com erro! " />
+  <erro codigo="-30412" origem="webservices" descricao="Erro na Autorização " />
+  <erro codigo="-30411" origem="webservices" descricao="Pagamento Autorizado. " />
+  <erro codigo="-30410" origem="webservices" descricao="Falha na Autorização. " />
+  <erro codigo="-30409" origem="webservices" descricao="Pagamento não Autorizado. " />
+  <erro codigo="-30408" origem="webservices" descricao="Falha na Autorização (pagamento bloqueado)." />
+  <erro codigo="-30407" origem="webservices" descricao="Número do Cartão Inválido." />
+  <erro codigo="-30406" origem="webservices" descricao="Compra não Encontrada!" />
+  <erro codigo="-30405" origem="webservices" descricao="Falha na confirmação da autorização." />
+  <erro codigo="-30404" origem="webservices" descricao="Falha na Autorização. Erro na inicialização do sitef " />
+  <erro codigo="-30403" origem="webservices"
+        descricao="Falha na Autorização. Sem comunicação com sistema de autorização " />
+  <erro codigo="-30402" origem="webservices" descricao="Loja/Shopping não Encontrado! " />
+  <erro codigo="-30401" origem="webservices" descricao="Compra Cancelada" />
+  <erro codigo="-30400" origem="webservices" descricao="Compra já Existente " />
+  <erro codigo="-30314" origem="webservices" descricao="Falha na consulta dos Dados do Titular" />
+  <erro codigo="-30313" origem="webservices" descricao="Número do Cartão Inválido." />
+  <erro codigo="-30312" origem="webservices" descricao="F9999" />
+  <erro codigo="-30311" origem="webservices" descricao="F9101" />
+  <erro codigo="-30310" origem="webservices" descricao="F9099" />
+  <erro codigo="-30309" origem="webservices" descricao="F9090" />
+  <erro codigo="-30308" origem="webservices" descricao="F0402" />
+  <erro codigo="-30307" origem="webservices" descricao="F0400" />
+  <erro codigo="-30306" origem="webservices" descricao="F0063" />
+  <erro codigo="-30305" origem="webservices" descricao="F0062" />
+  <erro codigo="-30304" origem="webservices" descricao="F0061" />
+  <erro codigo="-30303" origem="webservices" descricao="F0060" />
+  <erro codigo="-30302" origem="webservices" descricao="F0059" />
+  <erro codigo="-30301" origem="webservices" descricao="F0058" />
+  <erro codigo="-30300" origem="webservices" descricao="F0000" />
+  <erro codigo="-30236" origem="webservices" descricao="TipoEnvio é Obrigatório " />
+  <erro codigo="-30235" origem="webservices" descricao="TaxaEmbarque Tamanho Inválido " />
+  <erro codigo="-30234" origem="webservices" descricao="TaxaEmbarque Inválido " />
+  <erro codigo="-30233" origem="webservices" descricao="TipoEnvio Valor Inválido" />
+  <erro codigo="-30223" origem="webservices" descricao="Número Cartão em Branco " />
+  <erro codigo="-30222" origem="SepsAPI" descricao="resposta Obrigatória" />
+  <erro codigo="-30221" origem="SepsAPI" descricao="codigo Inexistente" />
+  <erro codigo="-30220" origem="SepsAPI" descricao="numeroCartao Limite Máximo Excedido " />
+  <erro codigo="-30213" origem="webservices" descricao="numeroCartao em Branco" />
+  <erro codigo="-30212" origem="SepsAPI" descricao="resposta Obrigatória" />
+  <erro codigo="-30211" origem="SepsAPI" descricao="codigo Inexistente" />
+  <erro codigo="-30210" origem="SepsAPI" descricao="numeroCartao Limite Máximo Excedido " />
+  <erro codigo="-30202" origem="webservices" descricao="numeroCartao em Branco" />
+  <erro codigo="-30201" origem="SepsAPI" descricao="numeroQuestoesRequest Inválido" />
+  <erro codigo="-30200" origem="SepsAPI" descricao="numeroCartao Limite Máximo Excedido " />
+  <erro codigo="-30101" origem="SepsAPI" descricao="numero Inválido " />
+  <erro codigo="-30100" origem="SepsAPI" descricao="numero Limite Máximo Excedido " />
+  <erro codigo="-30032" origem="SepsAPI" descricao="CodigoCredenciamento Inválido " />
+  <erro codigo="-30031" origem="SepsAPI" descricao="CodigoCompra Inválido " />
+  <erro codigo="-30030" origem="SepsAPI" descricao="Merchantid Inválido " />
+  <erro codigo="-30022" origem="SepsAPI" descricao="CodigoCredenciamento Inválido " />
+  <erro codigo="-30021" origem="SepsAPI" descricao="CodigoCompra Inválido " />
+  <erro codigo="-30020" origem="SepsAPI" descricao="Merchantid Inválido " />
+  <erro codigo="-30017" origem="webservices" descricao="validarTitular Inválido " />
+  <erro codigo="-30016" origem="webservices" descricao="Merchantid Inexistente" />
+  <erro codigo="-30015" origem="webservices" descricao="Código Credenciamento ou Tipo Cartão Inexistente " />
+  <erro codigo="-30014" origem="SepsAPI" descricao="TransacaoUnica Inválido " />
+  <erro codigo="-30013" origem="SepsAPI" descricao="TipoCartao Inválido " />
+  <erro codigo="-30012" origem="SepsAPI" descricao="ValorParcela Inválido " />
+  <erro codigo="-30010" origem="SepsAPI" descricao="TipoCondicao Inválido " />
+  <erro codigo="-30009" origem="SepsAPI" descricao="DescricaoCompra Inválido" />
+  <erro codigo="-30008" origem="SepsAPI" descricao="ValorTotal Inválido " />
+  <erro codigo="-30007" origem="SepsAPI" descricao="CodigoCredenciamento Inválido " />
+  <erro codigo="-30006" origem="SepsAPI" descricao="CodigoCompra Inválido " />
+  <erro codigo="-30005" origem="SepsAPI" descricao="CodigoValidacao Inválido" />
+  <erro codigo="-30004" origem="SepsAPI" descricao="Validade Inválido " />
+  <erro codigo="-30003" origem="SepsAPI" descricao="NumeroCartao Inválido " />
+  <erro codigo="-30002" origem="SepsAPI" descricao="NomeNoCartao Inválido " />
+  <erro codigo="-30001" origem="SepsAPI" descricao="TipoCartão Inválido " />
+  <erro codigo="-30000" origem="SepsAPI" descricao="Merchantid Inválido " />
+  <erro codigo="-20000" origem="Mainframe"
+        descricao="ATENÇÃO! Erro de comunicação. Sua transação pode ter ocorrido. Contatar a loja e informar o código do erro. " />
+  <erro codigo="-11004" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-11003" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-11002" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-11001" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10109" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10101" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10093" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10092" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10091" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10067" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10065" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10064" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10061" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10060" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10058" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10057" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10056" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10055" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10054" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10053" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10052" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10051" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10050" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10049" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10048" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10047" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10046" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10045" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10044" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10043" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10042" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10041" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10040" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10039" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10038" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10037" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10036" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10035" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10024" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10022" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10014" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10013" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-10004" origem="Loja"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="-8194" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-5171" origem="Servidor da Loja"
+        descricao="Erro - Para o ambiente de testes, o número da conta deve ser 1234567." />
+  <erro codigo="-5163" origem="Servidor da Loja" descricao="Erro - O número da conta deve ter no máximo 7 digitos. " />
+  <erro codigo="-5162" origem="Servidor da Loja" descricao="Erro - O número da agência deve ter no máximo 4 digitos. " />
+  <erro codigo="-5161" origem="Servidor da Loja"
+        descricao="Erro - Para o ambiente de testes, o número da agência deve ser 0001. " />
+  <erro codigo="-1999" origem="Core" descricao="Gateway de Pagamento não processou esse pedido " />
+  <erro codigo="-1023" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1022" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1021" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1020" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1019" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1018" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1017" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1016" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1015" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1014" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1013" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1012" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1011" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1010" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1009" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1008" origem="Mainframe" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-1007" origem="Payment Gateway" descricao="Compra já foi capturada anteriormente " />
+  <erro codigo="-1006" origem="Payment Gateway" descricao="Autorização de compra expirada" />
+  <erro codigo="-1005" origem="Payment Gateway" descricao="Autorização de compra cancelada junto ao banco." />
+  <erro codigo="-1004" origem="Payment Gateway" descricao="Erro de acesso no Gateway de Pagamento" />
+  <erro codigo="-1003" origem="Payment Gateway" descricao="Compra não foi autorizada " />
+  <erro codigo="-1002" origem="Payment Gateway" descricao="Compra já foi capturada anteriormente " />
+  <erro codigo="-1001" origem="Payment Gateway" descricao="Compra já foi capturada anteriormente " />
+  <erro codigo="-1000" origem="Payment Gateway" descricao="Pagamento capturado " />
+  <erro codigo="-999" origem="SPS" descricao="Compra já foi autorizada para este número de pedido. " />
+  <erro codigo="-908" origem="Payment Gateway"
+        descricao="ATENÇÃO! Erro de comunicação. Sua transação pode ter ocorrido. Contatar a loja e informar o código do erro. " />
+  <erro codigo="-907" origem="Payment Gateway"
+        descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-903" origem="Loja" descricao="Problemas de comunicacao com a loja " />
+  <erro codigo="-902" origem="Loja"
+        descricao="Erro no tratamento da resposta do pagamento. Entre em contato com a loja " />
+  <erro codigo="-711" origem="SepsAPI" descricao="Erro interno" />
+  <erro codigo="-710" origem="SepsAPI" descricao="Sistema não inicializado" />
+  <erro codigo="-709" origem="SepsAPI" descricao="Erro interno" />
+  <erro codigo="-708" origem="SepsAPI" descricao="Tipo de dado inválido " />
+  <erro codigo="-707" origem="Core" descricao="Menságem inválida " />
+  <erro codigo="-706" origem="Core" descricao="Erro interno" />
+  <erro codigo="-705" origem="Core" descricao="Erro interno" />
+  <erro codigo="-704" origem="Core" descricao="Erro interno" />
+  <erro codigo="-703" origem="SepsAPI" descricao="Falta de Memória" />
+  <erro codigo="-702" origem="SepsAPI" descricao="Argumento inválido" />
+  <erro codigo="-701" origem="Core" descricao="Erro interno" />
+  <erro codigo="-612" origem="Servidor da Loja"
+        descricao="Erro - Não foi possível gerar o boleto, número do pedido, não confere. " />
+  <erro codigo="-611" origem="Servidor da Loja" descricao="Erro - Número do pedido duplicado." />
+  <erro codigo="-610" origem="Servidor da Loja"
+        descricao="Erro - O valor do documento formatado é diferente do valor informado na ordem de compra." />
+  <erro codigo="-609" origem="Servidor da Loja"
+        descricao="Erro - O valor informado para o portal não é um número válido. " />
+  <erro codigo="-608" origem="Servidor da Loja"
+        descricao="O campo ValorDocumentoFormatado deve conter a moeda utilizada. " />
+  <erro codigo="-607" origem="Servidor da Loja" descricao="Erro - A Tag INSTRUCAO12 do boleto esta mal formada. " />
+  <erro codigo="-606" origem="Servidor da Loja" descricao="Erro - A Tag INSTRUCAO11 do boleto esta mal formada. " />
+  <erro codigo="-605" origem="Servidor da Loja" descricao="Erro - A Tag INSTRUCAO10 do boleto esta mal formada. " />
+  <erro codigo="-604" origem="Servidor da Loja" descricao="Erro - A Tag INSTRUCAO9 do boleto esta mal formada." />
+  <erro codigo="-603" origem="Servidor da Loja" descricao="Erro - A Tag INSTRUCAO8 do boleto esta mal formada." />
+  <erro codigo="-602" origem="Servidor da Loja" descricao="Erro - A Tag INSTRUCAO7 do boleto esta mal formada." />
+  <erro codigo="-601" origem="Servidor da Loja" descricao="Erro - A Tag INSTRUCAO6 do boleto esta mal formada." />
+  <erro codigo="-600" origem="Servidor da Loja" descricao="Erro - A Tag INSTRUCAO5 do boleto esta mal formada." />
+  <erro codigo="-599" origem="Servidor da Loja" descricao="Erro - A Tag INSTRUCAO4 do boleto esta mal formada." />
+  <erro codigo="-598" origem="Payment Gateway"
+        descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-597" origem="Servidor da Loja" descricao="Erro - A Tag INSTRUCAO2 do boleto esta mal formada." />
+  <erro codigo="-596" origem="Servidor da Loja" descricao="Erro - A Tag INSTRUCAO1 do boleto esta mal formada." />
+  <erro codigo="-565" origem="Servidor da Loja" descricao="Loja em Homologação / Assinatura deve ser de Testes" />
+  <erro codigo="-560" origem="Servidor da Loja" descricao="Loja em Homologação / Conta deve ser de Testes " />
+  <erro codigo="-555" origem="Servidor da Loja" descricao="Loja em Homologação / Agencia deve ser de Testes " />
+  <erro codigo="-552" origem="Servidor da Loja" descricao="Erro: Assinatura Inválida - Impossível Gerar o Boleto" />
+  <erro codigo="-551" origem="Servidor da Loja" descricao="Erro - Loja em teste. " />
+  <erro codigo="-550" origem="Servidor da Loja" descricao="Loja em Homologação / Valor Mínimo deve ser R$20,00" />
+  <erro codigo="-545" origem="Servidor da Loja" descricao="Loja em Homologação / Valor Máximo deve ser R$1,00 " />
+  <erro codigo="-540" origem="Servidor da Loja" descricao="Loja em Homologação / Produto deve ser de Teste" />
+  <erro codigo="-535" origem="Servidor da Loja"
+        descricao="Erro - A soma das tags VALOR e VALORADICIONAL nao confere com o valor da tag VALORDOCUMENTOFORMATADO. " />
+  <erro codigo="-530" origem="Servidor da Loja"
+        descricao="Erro - A Tag SHOPPINGID não foi encontrada ou está mal-formada " />
+  <erro codigo="-529" origem="Servidor da Loja"
+        descricao="Erro - A Tag VALORDOCUMENTOFORMATADO não foi encontrada ou está mal-formada" />
+  <erro codigo="-528" origem="Servidor da Loja"
+        descricao="Erro - A Tag NUMEROPEDIDO do Boleto não foi encontrada ou está mal-formada " />
+  <erro codigo="-527" origem="Servidor da Loja"
+        descricao="Erro - A Tag CPFSACADO do Boleto não foi encontrada ou está mal-formada" />
+  <erro codigo="-526" origem="Servidor da Loja"
+        descricao="Erro - A Tag CEPSACADO do Boleto não foi encontrada ou está mal-formada" />
+  <erro codigo="-525" origem="Servidor da Loja"
+        descricao="Erro - A Tag UFSACADO do Boleto não foi encontrada ou está mal-formada " />
+  <erro codigo="-524" origem="Servidor da Loja"
+        descricao="Erro - A Tag CIDADESACADO do BOleto não foi encontrada ou está mal-formada " />
+  <erro codigo="-523" origem="Servidor da Loja"
+        descricao="Erro - A Tag ENDERECOSACADO do Boleto não foi encontrada ou está mal-formada" />
+  <erro codigo="-522" origem="Servidor da Loja"
+        descricao="Erro - A Tag NOMESACADO do Boleto não foi encontrada ou está mal-formada " />
+  <erro codigo="-521" origem="Servidor da Loja"
+        descricao="Erro - A Tag DATAVENCIMENTO do Boleto não foi encontrada ou não foi encontrada" />
+  <erro codigo="-520" origem="Servidor da Loja"
+        descricao="Erro - A Tag DATAPROCESSAMENTO do Boleto não foi encontrada ou está mal-formada " />
+  <erro codigo="-519" origem="Servidor da Loja"
+        descricao="Erro - A Tag DATAEMISSAO do Boleto não foi encontrada ou está mal-formada" />
+  <erro codigo="-518" origem="Servidor da Loja"
+        descricao="Erro - A Tag ASSINATURA do Boleto não foi encontrada ou está mal-formada " />
+  <erro codigo="-517" origem="Servidor da Loja"
+        descricao="Erro - A Tag NUMEROCONTA do boleto não foi encontrada ou está mal-formada" />
+  <erro codigo="-516" origem="Servidor da Loja"
+        descricao="Erro - A Tag NUMEROAGENCIA do boleto não foi encontrada ou está mal-formada" />
+  <erro codigo="-515" origem="Servidor da Loja"
+        descricao="Erro - A tag BANCO do boleto não foi encontrada ou está mal-formada" />
+  <erro codigo="-514" origem="Servidor da Loja"
+        descricao="Erro - A Tag CEDENTE do boleto não foi encontrada ou está mal-formada" />
+  <erro codigo="-513" origem="Servidor da Loja"
+        descricao="Erro - O valor da Tag VALOR não pode ser igual a zero ou Nulo" />
+  <erro codigo="-512" origem="Servidor da Loja" descricao="Erro - A Tag VALOR não foi encontrada " />
+  <erro codigo="-511" origem="Servidor da Loja"
+        descricao="Erro - A Tag VALORADICIONAL não pode conter valor igual a zero ou nulo " />
+  <erro codigo="-510" origem="Servidor da Loja" descricao="Erro - A Tag VALORADICIONAL não foi encontrada " />
+  <erro codigo="-509" origem="Servidor da Loja" descricao="Erro - A Tag UNIDADE não foi encontrada " />
+  <erro codigo="-508" origem="Servidor da Loja"
+        descricao="Erro - O Valor da Tag QUANTIDADE não pode ser igual a zero ou nulo " />
+  <erro codigo="-507" origem="Servidor da Loja"
+        descricao="Erro - A Tag QUANTIDADE não foi encontrada ou está mal-formada " />
+  <erro codigo="-506" origem="Servidor da Loja" descricao="Erro - ENDORDERDESCRIPTION esperado " />
+  <erro codigo="-505" origem="Servidor da Loja" descricao="Erro na formatação da mensagem DESCRITIVO ou ADICIONAL " />
+  <erro codigo="-504" origem="Servidor da Loja" descricao="Erro na formatação da mensagem ORDERID" />
+  <erro codigo="-503" origem="Módulo de Pagamento" descricao="Problemas de comunicação com o sistema da loja " />
+  <erro codigo="-502" origem="Módulo de Pagamento" descricao="Sem comunicação com sistema da loja " />
+  <erro codigo="-501" origem="Módulo de Pagamento" descricao="Compra não foi encontrado na base de dados " />
+  <erro codigo="-410" origem="Servidor da Loja"
+        descricao="Erro - O número do pedido informado na url é diferente do número do pedido informado na cesta." />
+  <erro codigo="-409" origem="Servidor da Loja" descricao="Erro - Página não encontrada. " />
+  <erro codigo="-408" origem="Servidor da Loja"
+        descricao="Erro - O número do pedido não pode ter mais que 27 caracteres. " />
+  <erro codigo="-407" origem="Servidor da Loja" descricao="Erro - Não foi informado o número de pedido da compra. " />
+  <erro codigo="-406" origem="Servidor da Loja" descricao="Erro - Não foi informado o número de identificação da loja." />
+  <erro codigo="-405" origem="Servidor da Loja"
+        descricao="Erro - Não foi possível estabelecer uma conexão com o servidor da loja." />
+  <erro codigo="-404" origem="Servidor da Loja" descricao="Erro - Ocorreu um problema no processamento da requisição. " />
+  <erro codigo="-403" origem="Servidor da Loja" descricao="Erro - Falha na requisição HTTP " />
+  <erro codigo="-402" origem="Servidor da Loja"
+        descricao="Erro - Falha ao tentar converter os dados informados pela loja " />
+  <erro codigo="-401" origem="Servidor da Loja" descricao="Erro - Código de compra já autorizado " />
+  <erro codigo="-400" origem="Servidor da Loja" descricao="Erro - Código da loja não encontrado" />
+  <erro codigo="-303" origem="Core" descricao="Problemas de comunicação" />
+  <erro codigo="-302" origem="Core" descricao="Mensagem inválida " />
+  <erro codigo="-301" origem="Core" descricao="Mensagem inválida " />
+  <erro codigo="-210" origem="Core" descricao="Resposta da captura é inválida" />
+  <erro codigo="-209" origem="Core" descricao="Não foi capturado ainda " />
+  <erro codigo="-208" origem="Core" descricao="Não foi pedido a captura desse pagamento" />
+  <erro codigo="-207" origem="Core" descricao="Resposta inválida do Gateway de Pagamento Ãcaptura " />
+  <erro codigo="-206" origem="Core" descricao="Resposta do gateway de pagamento Ãcaptura é inválida " />
+  <erro codigo="-205" origem="Core" descricao="Não retornou assinatura da resposta da captura " />
+  <erro codigo="-204" origem="Core" descricao="Não há ítens a serem capturados " />
+  <erro codigo="-203" origem="Core" descricao="Excedeu limite de ítens em uma captura" />
+  <erro codigo="-202" origem="Core" descricao="Captura já foi realizada" />
+  <erro codigo="-201" origem="Core" descricao="Captura não foi inicializada" />
+  <erro codigo="-125" origem="Core" descricao="Não recebeu resposta do gateway de pagamento " />
+  <erro codigo="-124" origem="Core" descricao="Erro ao tentar enviar os dados ao Gateway de Pagamento " />
+  <erro codigo="-123" origem="Core" descricao="Não foi possível conectar ao Gateway de Pagamento" />
+  <erro codigo="-122" origem="Core" descricao="Tipo de pagamento não suportado " />
+  <erro codigo="-121" origem="Core" descricao="Tipo de pagamento não é suportado pelo cartão escolhido" />
+  <erro codigo="-111" origem="Core" descricao="A resposta ao pedido de autorização não contém todos os campos " />
+  <erro codigo="-104" origem="Core"
+        descricao="Assinatura da mensagem de resposta ao pedido de autorização não pertence Ãmensagem" />
+  <erro codigo="-103" origem="Core" descricao="Não foi possível decriptografar a resposta da autorização" />
+  <erro codigo="-102" origem="Core" descricao="Resposta Ãautorização não possui assinatura" />
+  <erro codigo="-101" origem="Core" descricao="Resposta da autorização é inválida" />
+  <erro codigo="-52" origem="Core" descricao="Indentificação de cartão inválida " />
+  <erro codigo="-51" origem="Core" descricao="Identificação da loja é inválida" />
+  <erro codigo="-50" origem="Core" descricao="Identificação da loja é inválida" />
+  <erro codigo="-48" origem="Core" descricao="Não foi possível decriptografar mensagem do cliente" />
+  <erro codigo="-47" origem="Core" descricao="Assinatura da mensagem do cliente não bate" />
+  <erro codigo="-46" origem="Core" descricao="Versão da carteira é muito antiga " />
+  <erro codigo="-45" origem="Core" descricao="Pedido de pagamento do cliente incompleto " />
+  <erro codigo="-44" origem="Core" descricao="Pedido de pagamento do cliente incompleto " />
+  <erro codigo="-43" origem="Core" descricao="Pedido de pagamento do cliente incompleto " />
+  <erro codigo="-42" origem="Core" descricao="Pedido de pagamento do cliente incompleto " />
+  <erro codigo="-41" origem="Core" descricao="Pedido de pagamento do cliente incompleto " />
+  <erro codigo="-34" origem="Core" descricao="Pedido de pagamento do cliente não contém assinatura " />
+  <erro codigo="-33" origem="Core" descricao="Pedido de pagamento do cliente não contém o certificado do cliente " />
+  <erro codigo="-32" origem="Core" descricao="Pedido de pagamento do cliente está incompleto " />
+  <erro codigo="-31" origem="Core" descricao="Pedido de pagamento do cliente está incompleto " />
+  <erro codigo="-24" origem="Core" descricao="Erro na configuração da loja" />
+  <erro codigo="-23" origem="Core" descricao="Erro na configuração da loja" />
+  <erro codigo="-22" origem="Core" descricao="Erro na configuração da loja" />
+  <erro codigo="-21" origem="Core" descricao="Erro na configuração da loja" />
+  <erro codigo="-18" origem="Core" descricao="Certificado do Gateway de Pagamento é inválido " />
+  <erro codigo="-17" origem="Core" descricao="Certificado do cliente é inválido " />
+  <erro codigo="-16" origem="Core" descricao="Certificado da loja é inválido" />
+  <erro codigo="-15" origem="Core" descricao="Erro interno" />
+  <erro codigo="-14" origem="Core" descricao="Erro na configuração da loja" />
+  <erro codigo="-13" origem="Core" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-12" origem="SepsAPI" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-11" origem="Core" descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="-10" origem="Core" descricao="Erro interno" />
+  <erro codigo="-3" origem="Core" descricao="Compra não foi inicializada " />
+  <erro codigo="-2" origem="Core" descricao="Objeto não foi inicializado " />
+  <erro codigo="-1" origem="Core" descricao="Erro interno" />
+  <erro codigo="0" origem="Core" descricao="Operação finalizada com sucesso " />
+  <erro codigo="3" origem="Banco Autorizante" descricao="Código de Estabelecimento Inválido. " />
+  <erro codigo="6" origem="Banco Autorizante" descricao="Erro na autorização " />
+  <erro codigo="13" origem="Banco Autorizante" descricao="Valor da transação inválido " />
+  <erro codigo="14" origem="Banco Autorizante"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="19" origem="Banco Autorizante" descricao="Refaça a transação " />
+  <erro codigo="41" origem="Banco Autorizante" descricao="Cartão extraviado " />
+  <erro codigo="43" origem="Banco Autorizante" descricao="Cartão roubado" />
+  <erro codigo="45" origem="MainFrame"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="49" origem="Payment Gateway"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="51" origem="Banco Autorizante"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="52" origem="Banco Autorizante"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="54" origem="Banco Autorizante" descricao="Cartão vencido" />
+  <erro codigo="57" origem="Banco Autorizante" descricao="Transação não permitida para esse cartão" />
+  <erro codigo="60" origem="Banco Autorizante" descricao="Entrar em contado com a instituição " />
+  <erro codigo="61" origem="Banco Autorizante" descricao="O Limite diário da operação foi excedido. " />
+  <erro codigo="76" origem="Banco Autorizante"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="78" origem="Banco Autorizante" descricao="Transação cancelada " />
+  <erro codigo="83" origem="Banco Autorizante" descricao="time-out " />
+  <erro codigo="85" origem="Banco Autorizante" descricao="Problema de comunicação interno " />
+  <erro codigo="90" origem="Banco Autorizante" descricao="Instituição em processo de fechamento contábil " />
+  <erro codigo="91" origem="Banco Autorizante" descricao="Instituição teporariamente fora de serviço. " />
+  <erro codigo="114" origem="Payment Gateway"
+        descricao="Transação não efetuada. Sistema indisponível no momento, tente mais tarde. " />
+  <erro codigo="161" origem="Payment Gateway"
+        descricao="Transação não efetuada.Cliente inexistente.Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="189" origem="Banco Autorizante" descricao="Sistema de autorização não disponível no momento " />
+  <erro codigo="193" origem="Payment Gateway"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="212" origem="Banco Autorizante"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="218" origem="Banco Autorizante" descricao="Cartão vencido" />
+  <erro codigo="224" origem="Mainframe"
+        descricao="ATENÇÃO! Erro de comunicação. Sua transação pode ter ocorrido. Contatar a loja e informar o código do erro. " />
+  <erro codigo="288" origem="Payment Gateway" descricao="Acesso não permitido para pessoa jurídica." />
+  <erro codigo="329" origem="Banco Autorizante"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="336" origem="Payment Gateway" descricao="Cartão com validade vencida " />
+  <erro codigo="413" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="430" origem="Banco Autorizante" descricao="Problemas na autorização, tente mais tarde" />
+  <erro codigo="439" origem="Banco Autorizante"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="441" origem="Banco Autorizante" descricao="O Limite diário da operação foi excedido. " />
+  <erro codigo="444" origem="Banco Autorizante" descricao="Código de lojista não cadastrado. " />
+  <erro codigo="491" origem="Payment Gateway"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="501" origem="Gateway de Pagamento" descricao="Problemas de comunicação com a instituição financeira" />
+  <erro codigo="502" origem="Gateway de Pagamento" descricao="Problemas de comunicação com a instituição financeira" />
+  <erro codigo="503" origem="Gateway de Pagamento" descricao="Problemas de comunicação com a instituição financeira" />
+  <erro codigo="504" origem="Gateway de Pagamento" descricao="Problemas de comunicação com a instituição financeira" />
+  <erro codigo="505" origem="Gateway de Pagamento" descricao="Problemas de comunicação com a instituição financeira" />
+  <erro codigo="506" origem="Gateway de Pagamento" descricao="Problemas de comunicação com a instituição financeira" />
+  <erro codigo="507" origem="Gateway de Pagamento" descricao="Problemas de comunicação com a instituição financeira" />
+  <erro codigo="508" origem="Gateway de Pagamento" descricao="Problemas de comunicação com a instituição financeira" />
+  <erro codigo="510" origem="Gateway de Pagamento" descricao="Erro interno" />
+  <erro codigo="511" origem="Gateway de Pagamento" descricao="Certificado do cartão é inválido" />
+  <erro codigo="512" origem="Gateway de Pagamento" descricao="Certificado da loja é inválido" />
+  <erro codigo="513" origem="Gateway de Pagamento" descricao="Erro interno" />
+  <erro codigo="514" origem="Payment Gateway"
+        descricao="Opção não permitida para conta-poupança. Contatar a Central de Atendimento (0800-7010-237) " />
+  <erro codigo="520" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="521" origem="Gateway de Pagamento"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="522" origem="Gateway de Pagamento"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="523" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="525" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="526" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="530" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="531" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="532" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="533" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="534" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="535" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="536" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="537" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="538" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="539" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="541" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="542" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="543" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="544" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="547" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="548" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="549" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="550" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="551" origem="Gateway de Pagamento"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="552" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="553" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="554" origem="Gateway de Pagamento"
+        descricao="Cartão empresarial não pode ser utilizado em compras parceladas" />
+  <erro codigo="556" origem="Payment Gateway" descricao="Cartão Visa electron função crédito não é aceito " />
+  <erro codigo="561" origem="Gateway de Pagamento"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="562" origem="Gateway de Pagamento" descricao="Falha na comunicação" />
+  <erro codigo="563" origem="Gateway de Pagamento"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="564" origem="Gateway de Pagamento" descricao="Moeda inválida" />
+  <erro codigo="565" origem="Gateway de Pagamento" descricao="Valor inválido" />
+  <erro codigo="580" origem="Gateway de Pagamento" descricao="Certificado do cliente está inválido . Re-certifique " />
+  <erro codigo="582" origem="Gateway de Pagamento"
+        descricao="Certificado do cliente está com problemas. Re-certifique " />
+  <erro codigo="583" origem="Gateway de Pagamento" descricao="Certificado do cliente é de teste " />
+  <erro codigo="584" origem="Gateway de Pagamento"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="585" origem="Gateway de Pagamento" descricao="Certificado da loja é inválido" />
+  <erro codigo="586" origem="Gateway de Pagamento" descricao="Certificado da loja é inválido" />
+  <erro codigo="590" origem="Gateway de Pagamento"
+        descricao="Erro, Compra já existente (capturada/solucionada/pendente) " />
+  <erro codigo="622" origem="Payment Gateway"
+        descricao="Transação com falha na autorização, favor verificar na previsão de crédito." />
+  <erro codigo="623" origem="Payment Gateway"
+        descricao="Transação com falha no protocolo, favor verificar na previsão de crédito." />
+  <erro codigo="624" origem="" descricao="O limite diario para pagamento com Cartao de Debito e R$ 2.000 " />
+  <erro codigo="625" origem="" descricao="O limite diario para pagamento com Cartao de Debito e R$ 2.000 " />
+  <erro codigo="626" origem="Payment Gateway"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="627" origem="" descricao="Instabilidade no Comercio Eletronico e Bradesco" />
+  <erro codigo="763" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="764" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="765" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="766" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="767" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="768" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="769" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="774" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="775" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="787" origem="Gateway de Pagamento"
+        descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="788" origem="Gateway de Pagamento"
+        descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="789" origem="Gateway de Pagamento"
+        descricao="Transação não efetuada. Erro de comunicação. Tente mais tarde" />
+  <erro codigo="801" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="802" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="810" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="888" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="1021" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+  <erro codigo="1054" origem="Mainframe"
+        descricao="Transação não efetuada. Contatar a Central de Atendimento (0800-7010-237)" />
+</erros>

@@ -1,0 +1,19 @@
+﻿/*local para não precisar importar a classe inteira somente por causa das tagas do breadcrumb, classe de origem:  css/local/Bootstrap/bootstrap.css*/
+.breadcrumb{padding:8px ;margin:0 0 8px;list-style:none;background-color:#f5f5f5;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}
+.breadcrumb li{display:inline-block; margin:4px 0; }
+.breadcrumb .divider{padding:0 5px;color: #1E3260;}
+.breadcrumb .active{color:#999}
+
+/*customização*/
+    .breadcrumb > li + li:before {
+        color: #1E3260;
+        content: "\2771\00a0";
+        padding: 0 5px;
+    }
+.ultimoDiretorio {
+    color: #1E3260
+}
+.ultimoDiretorio{pointer-events:none}
+a.ultimoDiretorio:link, a.ultimoDiretorio:visited, a.ultimoDiretorio:hover, a.ultimoDiretorio:active{text-decoration:none}
+.menu_breadcrumb { width: 50%; padding-top: 92px; float: left; padding: 50px; padding-left: 10px;}
+.menu_breadcrumbSlim {  width: 50%; padding-top: 40px; float: left; padding-left: 10px;}

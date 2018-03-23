@@ -1,0 +1,65 @@
+﻿.pagamentos_disponiveis { margin: 0 5% 0 6%; overflow: hidden; }
+.etiqueta_grande { text-align: center; margin: 0; background: url('../../img/etiqueta_pagamento_g.png') no-repeat; width: 279px; height: 124px; overflow: hidden; float: left; }
+.texto_vantagens2 { display: block; font-size: 20px; color: #5e5e5e; text-align: left; line-height: 23px; height: auto; margin: 20px 0; }
+.texto_vantagens2 span { font-size: 24px; color: #e5790d; font-weight: bold; }
+.texto_complementar { font-size: 16px; color: #134079; border-bottom: 1px solid #ccc; font-weight: bold; margin-bottom: 30px !important; clear: both; }
+.etiqueta_grande h3 { font-size: 11px; color: #96550f; font-weight: normal; margin: 7px 0; }
+.formas_pagamento { margin-top: 15px; overflow: hidden; }
+.tipo { float: left; margin: 4px 9px; cursor: pointer; }
+.tipo_cartao_credito { display: inline-block; float: none; margin: 4px 22px; }
+.icone_pagamento { margin-bottom: 10px; }
+.etiqueta_pequena { text-align: center; background: url('../../img/etiqueta_pagamento_p.png') no-repeat; width: 137px; height: 124px; overflow: hidden; float: left; }
+.etiqueta_pequena h3 { font-size: 11px; color: #96550f; font-weight: normal; margin: 7px 0; }
+.formas_pagamento { margin-top: 15px; overflow: hidden; margin: 3px 0 0 4px; width: 95%; }
+.etiqueta_pequena .tipo { float: left; margin: 4px 23%; }
+.icone_pagamento { margin-bottom: 10px; }
+.btn_compra { float: left; margin: 0 0 0 26px; padding-top: 30px; }
+.deposito { margin: 0 0 0 9%; width: 82%; }
+.centro { margin: 4px; }
+.boleto { width: 95%; margin: 0; }
+.linha.forma_pagamento { margin: 0 auto; width: 500px; }
+.linha.forma_pagamento .label_principal { width: auto; }
+.qtd_sms_compra { overflow: hidden; margin-bottom: 15px; }
+.qtd_sms_compra img { float: left; margin-right: 20px; }
+.no_margin { margin-left: 20px; width: auto; }
+.medio .textbox_padrao { width: 70px; background: none; }
+.mini_form { margin-top: 40px; }
+.mini_form .label_principal { color: #4C7212; }
+.texto_complementar.sms { color: #4C7212; margin-top: 25px; }
+.btn_compra .botao_padrao { font-size: 18px; height: 50px; margin-top: 30px; width: 200px !important; }
+.painel_grupo_forma_pagamento { float: left; margin-left: 115px; margin-top: 0px; margin-bottom: 0px; }
+.painel_grupo_forma_pagamento h3 { margin: 0 0 3px; }
+.painel_opcoes_pagamento { -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; background-color: #E5E5E5; overflow: hidden; padding: 8px 0; }
+.painel_opcoes_pagamento div { float: left; padding: 12px; text-align: center; width: 70px; }
+.painel_opcoes_pagamento div img { cursor: pointer; margin: 1px 0 2px; }
+.painel_opcoes_pagamento div img.logo_itau { margin: 1px 0; }
+.painel_opcoes_pagamento div img.icone_parceiro { margin: 0; }
+.painel_opcoes_pagamento div input { cursor: pointer; }
+.modal_conteudo.modal_cupons_parceiros { height: 420px; }
+.modal_conteudo.modal_cupons_parceiros .coluna_esquerda { height: 376px; }
+.modal_conteudo.modal_cupons_parceiros .painel_imagem { margin: 153px auto 0; padding: 14px 10px; }
+.modal_conteudo.modal_cupons_parceiros .coluna_direita { height: 376px; }
+.modal_cupons_parceiros .coluna_direita { background-image: url(/img/bg_callout_painel_esquerda.png); background-position: left center; background-repeat: no-repeat; float: left; width: 436px; }
+.modal_cupons_parceiros p { padding: 12px; }
+.modal_cupons_parceiros .label_principal { padding: 0 9px 4px; width: auto; }
+.modal_cupons_parceiros .linha_codigo_cupom { float: left; margin-bottom: 30px; margin-left: 4px; margin-right: 30px; width: 140px; }
+.modal_cupons_parceiros .linha_codigo_seguranca { float: left; margin-bottom: 40px; width: 140px; }
+.modal_cupons_parceiros .linha_codigo_imagem { clear: both; float: left; margin-left: 4px; margin-right: 12px; width: 140px; }
+.modal_cupons_parceiros .painel_captcha { float: left; font-size: 11px; text-align: center; width: 200px; }
+.modal_cupons_parceiros .painel_captcha div { margin-bottom: 4px; }
+.modal_cupons_parceiros .painel_botoes { clear: both; padding: 30px 0 0; text-align: left; }
+.modal_cupons_parceiros .painel_botoes input { margin-left: 13px; }
+.opcoes_plano { /* Transparencia border: 2px solid #CCCCCC;*/ /*border-radius: 5px 5px 5px 5px;*/ clear: both; font-weight: bold; height: 20px; margin: 0 auto 22px; padding: 4px; text-align: center; width: 580px; }
+.opcoes_plano label { color: #44855A; }
+.icone_confirmacao_candidatura { float: left; height: 110px; width: 180px; text-align: center; }
+.texto_enviado_sucesso_candidatura { color: #1A3876; font-size: 21px; margin: 10px 0 0; }
+.confirmacao_candidatura { text-align: left !important; border-bottom: 1px solid #ccc; min-height: 110px; }
+.icone_aviso { float: left; height: 110px; width: 180px; }
+.texto_vantagens { text-align: center; clear: both; height: 100px; }
+.texto_protocolo_envio_curriculo { color: #1A3876; font-size: 16px; margin: 0; }
+.bnt_continuar_compra { background: url("../../img/btn_continuar_compra.png") repeat scroll 0 0 transparent; border: medium none; height: 71px; width: 200px; text-indent: -999em; cursor: pointer; }
+.foma_pagamento { border-top: 1px solid #ccc; padding: 11px; color: #5e5e5e; }
+.clear { clear: both; color: #5e5e5e; }
+.pnlBotoesFormaPagamento h3 { color: #5E5E5E; font-family: Arial,Helvetica,sans-serif !important; font-size: 1.5em; font-weight: bold; padding: 14px; text-align: center; }
+.ibtBoletoBancario { margin-left: 94px; }
+.btn_continuar_cinza { color: #000; display: block; position: relative; font-size: 24px; text-align: center; margin-top: 55px; float: left; margin-left: 325px; }

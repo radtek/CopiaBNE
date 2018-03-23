@@ -1,0 +1,74 @@
+/* This code is only meant for previewing your Reflow design. */
+.container_conversa_informacoes {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+
+.primaryContainerInfo {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid green;
+    font-family: verdana !important;
+    height: 80px;
+    width: 233px;
+    z-index: 1000;
+    top: 33px;
+    left: -1px;
+    position: relative;
+}
+
+.valor_informacoes {
+    float: left;
+    font-size: 12px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    color: rgb(60, 73, 67);
+    font-style: normal;
+    letter-spacing: normal;
+    text-decoration: none;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    clear: both;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+.topoInfo {
+    float: left;
+    height: 25px;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    width: 100%;
+    background-color: rgb(49, 116, 6);
+    margin-right: 0%;
+}
+
+.text_informacoes {
+    float: left;
+    font-size: 12px;
+    width: 87.484375px;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: 12px;
+    margin-top: 7px;
+    clear: none;
+    min-height: 0px;
+    color: rgb(255, 255, 255);
+}
+
+.informacoes {
+    float: left;
+    height: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 100%;
+}

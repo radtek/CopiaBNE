@@ -1,0 +1,37 @@
+﻿@model BNE.PessoaJuridica.Web.Models.CadastroEmpresa
+
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-cell mdl-cell--12-col title">
+        <h6><strong>Endereço</strong></h6>
+    </div>
+    <div class="mdl-cell mdl-cell--8-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label float-left md-input-bne">
+        @Html.TextBoxFor(m => m.CEP, new { id = "txtCEP", @class = "mdl-textfield__input" })
+        <label for="txtCEP" class="mdl-textfield__label">CEP</label>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label float-left md-input-bne">
+        <a class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised btnform btnformmedium btn-nao-sei-cep" target="_blank" href="http://www.buscacep.correios.com.br/sistemas/buscacep/">Não sei meu CEP</a>
+    </div>
+    <div class="mdl-cell mdl-cell--10-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label float-left md-input-bne">
+        @Html.TextBoxFor(m => m.Logradouro, new { id = "txtLogradouro", @class = "mdl-textfield__input" })
+        <label for="txtLogradouro" class="mdl-textfield__label">Endereço</label>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label float-left md-input-bne">
+        @Html.TextBoxFor(m => m.Numero, new { id = "txtNumero", @class = "mdl-textfield__input" })
+        <label for="txtNumero" class="mdl-textfield__label">Número</label>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label float-left md-input-bne">
+        @Html.TextBoxFor(m => m.Complemento, new { id = "txtComplemento", @class = "mdl-textfield__input" })
+        <label for="txtComplemento" class="mdl-textfield__label">Complemento</label>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label float-left md-input-bne">
+        @Html.TextBoxFor(m => m.Cidade, new { id = "txtCidade", @class = "mdl-textfield__input" })
+        <label for="txtCidade" class="mdl-textfield__label">Cidade</label>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label float-left md-input-bne">
+        @Html.TextBoxFor(m => m.Bairro, new { id = "txtBairro", @class = "mdl-textfield__input" })
+        <label for="txtBairro" class="mdl-textfield__label">Bairro</label>
+    </div>
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>

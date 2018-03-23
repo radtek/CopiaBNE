@@ -1,0 +1,272 @@
+﻿h2
+{
+	margin: 15px 0 12px 25px;
+	height:auto;
+}
+
+.label_principal
+{
+	width: 120px;
+}
+
+.texto_agradecimento_enunciado{ margin-bottom:30px;}
+.painel_agradecimento
+{
+	/*-background-image: url('/img/agradecimentos/painel_agradecimentos.png');
+	background-position: 42px top;-*/
+	background: #f6f9fc;
+	width: 570px;
+	/*--height: 420px;--*/
+	float: left;
+	margin-bottom: 25px;
+	
+	
+}
+.btn_sombra
+{
+    height: 140px;
+	margin-bottom: 15px;
+	
+	
+}
+
+.btn_sombra:hover
+{
+	background-image: url('/img/agradecimentos/bg_btn_lateral_agradecimento.png');
+	background-position: bottom;
+	background-repeat:no-repeat;
+	
+	
+}
+
+.campo_mensagem
+{
+	font-size: 12px;
+    height: 86px;
+    width: 325px;
+}
+
+.painel_botoes
+{
+    text-align: center;
+    width: 100%;
+}
+
+.painel_botoes input
+{
+    margin: 0 50%;
+}
+
+.textarea_padrao
+{
+	border: 0 !important;
+}
+
+.imagens_direita
+{
+	width: 284px;
+	float:right;    
+	/*-- margin-left: 581px;
+	margin-top: -54px;--*/
+}
+
+/* DEPOIS COLOCAR A FOTO COMPRADA */
+.pessoas_placa_bne
+{
+	text-align: center;
+	margin-bottom: 5px;
+}
+/* fim: DEPOIS COLOCAR A FOTO COMPRADA */
+
+.botao_meu_agradecimento
+{
+	margin-bottom: 5px;
+}
+
+#carousel_ul
+{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0 0 10px;
+	left: 1px; 
+	width: 1000000px;
+	/*-height: 235px;-*/
+	position: relative;
+}
+
+.painel_agradecimentos
+{
+    height: 150px;
+    position: relative;
+    width: 880px;
+    background-image: url('/img/agradecimentos/bg_slider_agradecimento_slider.png');
+    background-repeat:repeat-x;
+	background-position: top;
+}
+
+.painel_com_agradecimentos
+{
+	width: 815px;
+	/*-height: 240px;-*/
+    overflow: hidden;
+    position: relative;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+.botao_esquerda
+{
+	float: left;
+	margin:  10px 0 0 5px;
+	cursor:pointer;
+	border-right: 2px solid white;
+	height:120px;
+}
+
+.botao_direita
+{
+    height:120px;
+	margin: 10px 5px 0 0;
+	float: right;
+	cursor:pointer;
+	border-left: 2px solid white;
+}
+.botao_esquerda img, .botao_direita img
+{
+ margin-top:10px;
+}
+
+.agradecimento_over{overflow:hidden;}
+
+.agradecimento_over:hover{ background-image: url('/img/agradecimentos/bg_selection_slider.png'); cursor:pointer;}
+
+.balao_agradecimento
+{
+	border-right:1px solid #c9cdd3;
+	/*-height: 230px;-*/
+	width: 263px;
+	float: left;
+	margin:10px 0 0 0;
+	height:120px;
+	padding: 0 5px;
+}
+
+.balao_agradecimento .texto
+{
+	text-align: center;
+	/*-padding-left: 20px;
+	padding-right: 20px;-*/
+	margin: 0 10px 0 0;
+	line-height: 17px;
+	min-height: 55px;
+	color: gray;
+	font-family:Verdana;
+	font-size:11px;
+	height: 70px;
+}
+
+.ver_agradecimento .texto
+{ 
+    margin: 20px 0 0 15px;
+    height:150px;
+    text-align:center;
+    width:460px;
+}
+
+.ver_agradecimento .apostrofo_superior{margin: 0 0 10px 0; float:left;}
+
+.ver_agradecimento .agradecimento_usuario{overflow:hidden; font-size: 14px; font-family:Verdana; font-weight: bold;color:Gray;}
+
+.ver_agradecimento .apostrofo_inferior{ margin:10px 0 0 0; text-align:right;}
+
+
+.ver_agradecimento .assinatura_agradecimento
+{
+	font-weight: bold;
+	margin-left: 40px;
+	margin-top: 30px;
+}
+
+.assinatura_agradecimento_rodape
+{
+	font-weight: bold;
+    margin-top: 25px;
+}
+
+.painel_agradecimento .ver_agradecimento{padding: 15px 15px 0 15px;}
+
+.painel_agradecimento_form{margin-top:10px;}
+.mais_informacoes
+{
+	text-align: right;
+}
+
+.boneco_agradecimento
+{
+	float: left;
+	/*-padding-top: 22px;-*/
+	margin:0px 6px 0 0;
+}
+
+.icone_mais_agradecimento
+{
+    margin: 0 15px 0 0;
+    float: right; cursor:pointer;
+    width: 16px;
+    height:13px;
+    background-image: url('/img/agradecimentos/icn_seta_baixo_off.png');
+	
+}
+
+/*-.agradecimento_usuario{overflow:hidden; width:230px;}-*/
+
+
+
+
+.agradecimento_usuario_rodape{background: #ecf3fb; overflow:hidden; padding:10px 25px;}
+
+.icone_mais_agradecimento:hover
+{
+	background-image: url('/img/agradecimentos/icn_seta_baixo.png');
+	
+}
+.assinatura_agradecimento_rodape .assinatura_agradecimento
+{
+	/*-padding-left: 20px;
+	padding-top: 22px;-*/
+	color:#143d75;
+	font-weight:bold;
+	font-size:14px;
+	line-height:normal;}
+	
+.assinatura_agradecimento
+{
+	padding-left: 20px;
+	/*-padding-top: 22px;-*/
+	color:#143d75;
+	font-weight:bold;
+	font-size:10px;
+	line-height:normal;}
+.assinatura_agradecimento_rodape .cidade_assinatura_agradecimento
+{
+    color: Gray;
+    font-size:11px;
+    line-height:normal;
+    }
+
+.cidade_assinatura_agradecimento
+{
+    color: Gray;
+    font-size:10px;
+    line-height:normal;
+    }
+
+ 
+#carousel_ul li
+{
+	display: inline;
+}
+
+
+
+

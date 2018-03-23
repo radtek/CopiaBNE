@@ -1,0 +1,89 @@
+﻿@using System.Web.Optimization
+@using BNE.Web.LanHouse.Code.Enumeradores
+@{
+    if (Session[Chave.DiretorioSTCLan.ToString()] != null)
+    {
+        ViewBag.DiretorioSTCLan = Session[Chave.DiretorioSTCLan.ToString()].ToString();
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @RenderSection("css", false)
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <form id="__AjaxAntiForgeryForm" action="#" method="post">@Html.AntiForgeryToken()</form>
+    <header class="clear">
+        <div class="nome_lan">
+            <p>
+                @ViewBag.NomeLan
+            </p>
+        </div>
+        <div class="busca">
+            <div class="formulario">
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "searchForm" }))
+                {
+                    <span class="deseja-trabalhar">Em qual empresa deseja trabalhar?</span>
+                    <input type="text" name="txtTermoBusca" id="txtTermoBusca" size="100" maxlength="100" class="textbox" autocomplete="off" />
+                    <input type="button" id="Submit" onclick="clean(); loadMoreEmpresas(0);" class="botao" />
+                }
+
+            </div>
+        </div> 
+        <div id="logindisplay" class="login">
+            <div id="divMenuLogado" style="display: none;">
+                <div id="divFotoLogado"></div>
+                <a class="sair" href="#" onclick="deslogar(); habilitarMenu();">Sair</a>
+            </div>
+
+        </div>
+    </header>
+    <div id="main">
+        @if (!string.IsNullOrWhiteSpace(ViewBag.DiretorioSTCLan))
+        {
+            <div class="container-cadastre-curriculo">
+                <p>
+                    <a href="http://www.bne.com.br/@ViewBag.DiretorioSTCLan/cadastro-de-curriculo-gratis" target="_blank" class="cadastre-curriculo" id="cadastre-curriculo">Cadastre seu currículo</a>
+                </p>
+            </div>
+        }
+        @RenderBody()
+    </div>
+    <div id="footer">
+    </div>
+    <script type="text/javascript">
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: 450210698402153,
+                status: true,
+                cookie: true,
+                xfbml: true
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/pt_BR/all.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/controles/employer")
+    @Scripts.Render("~/bundles/site")
+
+    <script src="/Scripts/jquery.bpopup.min.js"></script>
+    <script src="@Url.Content("~/Scripts/jquery.inputmask/jquery.inputmask-2.4.13.js")" type="text/javascript"></script>
+    @RenderSection("scripts", false)
+    <div class="loading" id="loading" style="display: none;">
+        <img src="/Content/img/loading.gif" />
+    </div>
+</body>
+</html>

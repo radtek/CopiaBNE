@@ -1,0 +1,550 @@
+html {
+  width: 100vw;
+  height: 100vh; }
+
+body {
+  width: 100%;
+  height: 100%; }
+
+.controle {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 9999;
+  padding: 2px;
+  background-color: #FF3D00;
+  opacity: 0; }
+  .controle h6 {
+    text-align: center;
+    color: #ffffff !important;
+    text-transform: uppercase;
+    padding: 0 0 16px 0 !important; }
+  .controle .checkbox, .controle .radio {
+    text-align: left; }
+    .controle .checkbox label, .controle .radio label {
+      color: #ffffff !important;
+      margin: 0 8px; }
+
+.hiddenscroll {
+  overflow: hidden !important; }
+
+body.mobile-payment {
+  background-color: #64B5F6;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.54);
+  overflow-y: auto;
+  overflow-x: hidden !important;
+  position: relative; }
+  body.mobile-payment .container {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 880px !important; }
+    body.mobile-payment .container-small {
+      margin: 0 auto;
+      padding: 0;
+      max-width: 480px !important; }
+  body.mobile-payment.return {
+    overflow: auto !important; }
+    body.mobile-payment.return section:not(.active) {
+      display: block !important; }
+  body.mobile-payment a {
+    color: rgba(0, 0, 0, 0.54);
+    text-decoration: none; }
+  body.mobile-payment h1, body.mobile-payment h2, body.mobile-payment h3, body.mobile-payment #summary-stage #seleciona-plano .plano .desc-plano h6 .valor, #summary-stage #seleciona-plano .plano .desc-plano h6 body.mobile-payment .valor, body.mobile-payment h4, body.mobile-payment h5, body.mobile-payment h6, body.mobile-payment p {
+    margin: 0;
+    padding: 0;
+    font-weight: normal; }
+  body.mobile-payment p {
+    font-size: 0.75em; }
+  body.mobile-payment h6 {
+    font-size: 0.85em; }
+  body.mobile-payment h5 {
+    font-size: 1em; }
+  body.mobile-payment h4 {
+    font-size: 1.2em; }
+  body.mobile-payment h3, body.mobile-payment #summary-stage #seleciona-plano .plano .desc-plano h6 .valor, #summary-stage #seleciona-plano .plano .desc-plano h6 body.mobile-payment .valor {
+    font-size: 1.5em; }
+  body.mobile-payment h2 {
+    font-size: 1.8em; }
+  body.mobile-payment h1 {
+    font-size: 2.1em; }
+  body.mobile-payment .clear {
+    clear: both; }
+  body.mobile-payment section:not(.active) {
+    display: none !important; }
+
+.stage-main-img {
+  height: auto; }
+  .stage-main-img img {
+    width: inherit;
+    max-width: 640px;
+    max-height: 60vh;
+    height: inherit !important; }
+
+@media screen and (max-width: 640px) {
+  .stage-main-img {
+    height: auto;
+    overflow: hidden; }
+    .stage-main-img img {
+      width: inherit;
+      max-width: 100%;
+      height: inherit !important; } }
+@media screen and (max-height: 320px) {
+  .stage-main-img {
+    display: none; } }
+.down-arrow {
+  max-width: 56px;
+  position: fixed;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation-name: go;
+  animation-duration: 700ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  outline: none !important; }
+
+@keyframes go {
+  0% {
+    bottom: 16px; }
+  50% {
+    bottom: 32px; }
+  100% {
+    bottom: 16px; } }
+.advantage-txt {
+  padding-top: 16px !important; }
+
+#welcome-stage {
+  background-color: #64b5f6;
+  min-height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  #welcome-stage #welcome-name {
+    padding-top: 16px; }
+    #welcome-stage #welcome-name h4 {
+      color: #ffffff; }
+  #welcome-stage #welcome-message {
+    padding: 16px; }
+    #welcome-stage #welcome-message h2 {
+      color: #ffffff;
+      line-height: 125%;
+      font-weight: lighter; }
+
+#advantages01-stage {
+  background-color: #42a5f5;
+  min-height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important; }
+  #advantages01-stage h2 {
+    color: #ffffff;
+    line-height: 125%;
+    font-weight: lighter; }
+  #advantages01-stage .advantage-txt {
+    padding: 16px; }
+
+#advantages02-stage {
+  background-color: #1976d2;
+  min-height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important; }
+  #advantages02-stage h2 {
+    color: #ffffff;
+    line-height: 125%;
+    font-weight: lighter; }
+  #advantages02-stage .advantage-txt {
+    padding: 16px; }
+
+#summary-stage {
+  background-color: #1565c0;
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  #summary-stage a {
+    outline: none !important; }
+  #summary-stage h2 {
+    color: #ffffff;
+    line-height: 125%;
+    font-weight: lighter; }
+  #summary-stage h3, #summary-stage #seleciona-plano .plano .desc-plano h6 .valor {
+    color: #ffffff;
+    line-height: 125%;
+    font-weight: lighter; }
+  #summary-stage .btn {
+    font-size: 1em !important;
+    font-weight: 600 !important; }
+  #summary-stage .advantage-txt {
+    padding: 16px; }
+  #summary-stage .container.row {
+    margin-top: 32px !important; }
+  #summary-stage #seleciona-plano h3, #summary-stage #seleciona-plano .plano .desc-plano h6 .valor {
+    margin-bottom: 16px; }
+  #summary-stage #seleciona-plano .plano {
+    opacity: .87;
+    background-color: #eceff1 !important;
+    border-radius: 4px;
+    margin: 0 8px 8px 8px;
+    -webkit-transition: background-color .25s;
+    transition: background-color .25s; }
+    #summary-stage #seleciona-plano .plano .nome-plano {
+      background-color: #cfd8dc;
+      border-radius: 4px 4px 0 0;
+      padding: 8px 8px 4px 8px;
+      -webkit-transition: background-color .25s;
+      transition: background-color .25s; }
+      #summary-stage #seleciona-plano .plano .nome-plano h5 {
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.54) !important; }
+    #summary-stage #seleciona-plano .plano .desc-plano {
+      border-radius: 0 4px 4px 0;
+      padding: 6px; }
+      #summary-stage #seleciona-plano .plano .desc-plano h6 {
+        display: block;
+        color: rgba(0, 0, 0, 0.87); }
+        #summary-stage #seleciona-plano .plano .desc-plano h6 .valor {
+          color: rgba(0, 0, 0, 0.87);
+          font-weight: 700 !important; }
+    #summary-stage #seleciona-plano .plano:hover {
+      opacity: 1 !important;
+      cursor: pointer; }
+      #summary-stage #seleciona-plano .plano:hover .nome-plano {
+        -webkit-transition: background-color .25s;
+        transition: background-color .25s; }
+    #summary-stage #seleciona-plano .plano.assinatura {
+      background-color: #ffffff !important; }
+      #summary-stage #seleciona-plano .plano.assinatura .nome-plano {
+        background-color: #283593; }
+        #summary-stage #seleciona-plano .plano.assinatura .nome-plano h5 {
+          color: #ffffff !important; }
+    #summary-stage #seleciona-plano .plano .com-desconto {
+      display: none; }
+  #summary-stage #cupom-desconto {
+    opacity: .87;
+    background-color: #eceff1 !important;
+    border-radius: 4px;
+    margin: 0 8px;
+    padding: 16px;
+    -webkit-transition: background-color .25s;
+    transition: background-color .25s; }
+    #summary-stage #cupom-desconto h6 {
+      text-transform: uppercase; }
+    #summary-stage #cupom-desconto:hover {
+      opacity: 1; }
+
+@media screen and (max-width: 480px) {
+  #welcome-stage h3, #welcome-stage #summary-stage #seleciona-plano .plano .desc-plano h6 .valor, #summary-stage #seleciona-plano .plano .desc-plano h6 #welcome-stage .valor, #advantages01-stage h3, #advantages01-stage #summary-stage #seleciona-plano .plano .desc-plano h6 .valor, #summary-stage #seleciona-plano .plano .desc-plano h6 #advantages01-stage .valor, #advantages02-stage h3, #advantages02-stage #summary-stage #seleciona-plano .plano .desc-plano h6 .valor, #summary-stage #seleciona-plano .plano .desc-plano h6 #advantages02-stage .valor, #summary-stage h3, #summary-stage #seleciona-plano .plano .desc-plano h6 .valor {
+    font-size: 1em; }
+  #welcome-stage h2, #advantages01-stage h2, #advantages02-stage h2, #summary-stage h2 {
+    font-size: 1.4em; } }
+#payment-stage {
+  height: calc(100vh - 72px); }
+
+#mobile-payment-header {
+  width: 100%;
+  background-color: #002C4C;
+  color: #ffffff;
+  padding: 8px 0; }
+  #mobile-payment-header-content {
+    margin: auto;
+    display: flex;
+    align-items: center; }
+    #mobile-payment-header-content #logo {
+      width: 100px;
+      flex: auto; }
+    #mobile-payment-header-content #secure {
+      font-size: 0.9em;
+      padding-right: 16px; }
+      #mobile-payment-header-content #secure img {
+        margin-left: 4px;
+        margin-top: -4px; }
+
+#mobile-payment-intro {
+  padding: 24px 0 8px 0; }
+  #mobile-payment-intro h5.resumo {
+    padding-bottom: 8px;
+    text-align: center; }
+  #mobile-payment-intro h5 {
+    text-align: center; }
+  #mobile-payment-intro #mobile-payment-total {
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 4px;
+    text-align: right;
+    margin: 0 8px 8px 8px; }
+
+#mobile-payment-methods .validation-time {
+  border-top: solid 1px rgba(0, 0, 0, 0.27);
+  display: flex;
+  justify-content: center;
+  margin: 24px 16px 0 16px; }
+  #mobile-payment-methods .validation-time p {
+    background-color: #e1e1e1;
+    margin-top: -16px;
+    padding: 8px;
+    text-transform: uppercase; }
+#mobile-payment-methods .payment-methods .payment-method {
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin: 8px 8px; }
+  #mobile-payment-methods .payment-methods .payment-method:hover {
+    cursor: pointer; }
+  #mobile-payment-methods .payment-methods .payment-method.panel {
+    box-shadow: none !important;
+    border: none !important; }
+  #mobile-payment-methods .payment-methods .payment-method-type {
+    display: flex;
+    align-items: center;
+    border-radius: 4px 4px 0 0;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.12); }
+    #mobile-payment-methods .payment-methods .payment-method-type p {
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 0 0 0 16px;
+      flex: auto; }
+    #mobile-payment-methods .payment-methods .payment-method-type img {
+      margin: 8px 8px 8px 0;
+      width: inherit;
+      height: 36px; }
+    #mobile-payment-methods .payment-methods .payment-method-type:hover {
+      background-color: #eceff1;
+      border-bottom: solid 1px transparent; }
+  #mobile-payment-methods .payment-methods .payment-method-desc {
+    margin: 0 12px;
+    padding-bottom: 16px; }
+    #mobile-payment-methods .payment-methods .payment-method-desc .col-xs-12, #mobile-payment-methods .payment-methods .payment-method-desc .col-xs-8, #mobile-payment-methods .payment-methods .payment-method-desc .col-xs-6, #mobile-payment-methods .payment-methods .payment-method-desc .col-xs-5, #mobile-payment-methods .payment-methods .payment-method-desc .col-xs-4, #mobile-payment-methods .payment-methods .payment-method-desc .col-xs-3, #mobile-payment-methods .payment-methods .payment-method-desc .col-xs-2 {
+      padding-left: 4px !important;
+      padding-right: 4px !important; }
+    #mobile-payment-methods .payment-methods .payment-method-desc .form-group {
+      margin-bottom: 0px;
+      margin-top: 4px; }
+    #mobile-payment-methods .payment-methods .payment-method-desc h5 {
+      text-align: center;
+      padding-top: 24px; }
+  #mobile-payment-methods .payment-methods .payment-method a {
+    outline: none !important; }
+  #mobile-payment-methods .payment-methods .payment-method #copyTxtArea {
+    width: 100%;
+    border: 0 !important;
+    text-align: center;
+    margin: 16px auto 0 auto;
+    height: auto;
+    resize: none; }
+  #mobile-payment-methods .payment-methods .payment-method #debtauto input {
+    max-width: 200px;
+    margin: 0 auto;
+    width: 100%; }
+#mobile-payment-methods .payment-methods input[type=number], #mobile-payment-methods .payment-methods input[type=text], #mobile-payment-methods .payment-methods input[type=radio] {
+  font-size: 1em !important; }
+#mobile-payment-methods .payment-methods input[type=radio] {
+  margin-top: 0px !important; }
+#mobile-payment-methods .payment-methods input[type=number] {
+  -moz-appearance: textfield; }
+#mobile-payment-methods .payment-methods input[type=number]::-webkit-inner-spin-button,
+#mobile-payment-methods .payment-methods input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+#mobile-payment-methods .payment-methods .btn {
+  margin-top: 16px;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: bold; }
+  #mobile-payment-methods .payment-methods .btn.btn-bb {
+    background-color: #F8DF00;
+    padding: 4px !important; }
+  #mobile-payment-methods .payment-methods .btn.btn-bradesco {
+    background-color: #F03631;
+    padding: 4px !important; }
+
+#payment-return {
+  text-align: center;
+  margin-top: 24px; }
+  #payment-return.white h2 {
+    color: #ffffff !important; }
+  #payment-return.white h4 {
+    color: #ffffff !important; }
+  #payment-return.white .btn-link {
+    color: #ffffff !important; }
+  #payment-return h2 {
+    padding-bottom: 16px !important;
+    margin: 0 16px !important; }
+  #payment-return h4 {
+    padding-bottom: 32px !important;
+    margin: 0 16px !important; }
+  #payment-return .payment-return-icon {
+    margin-bottom: 32px; }
+    #payment-return .payment-return-icon img {
+      max-width: 100%; }
+  #payment-return .payment-return-actions {
+    text-align: center; }
+  #payment-return .btn {
+    margin-top: 16px;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: bold; }
+    #payment-return .btn.btn-bb {
+      background-color: #F8DF00;
+      padding: 4px !important; }
+      #payment-return .btn.btn-bb img {
+        max-width: 100%; }
+    #payment-return .btn.btn-bradesco {
+      background-color: #FF2E34;
+      padding: 4px !important; }
+      #payment-return .btn.btn-bradesco img {
+        max-width: 100%; }
+
+#mobile-payment-footer {
+  text-align: center;
+  padding: 24px 8px 8px 8px; }
+  #mobile-payment-footer.white p {
+    color: #ffffff !important; }
+
+#redirectModal .modal-title {
+  text-transform: uppercase;
+  font-weight: bold !important; }
+#redirectModal .btn {
+  text-transform: uppercase;
+  font-weight: bold !important; }
+
+#cupomModal .modal-title {
+  text-transform: uppercase;
+  font-weight: bold !important;
+  text-align: left; }
+#cupomModal .btn {
+  text-transform: uppercase;
+  font-weight: bold !important; }
+#cupomModal input {
+  font-size: 1em !important; }
+
+#loginModal .modal-header {
+  background-color: #004587;
+  border-bottom: none !important;
+  padding: 16px 16px 0 16px;
+  border-radius: 4px 4px 0 0; }
+  #loginModal .modal-header .close {
+    color: #ffffff !important; }
+#loginModal .modal-title {
+  text-transform: uppercase;
+  font-weight: bold !important; }
+#loginModal .form-control {
+  font-style: italic; }
+#loginModal .btn {
+  text-transform: uppercase;
+  font-weight: bold !important; }
+#loginModal-logo {
+  background-color: #004587;
+  margin-bottom: 16px;
+  text-align: center; }
+  #loginModal-logo img {
+    margin: 0 4px 16px 4px;
+    width: 100%;
+    max-width: 220px; }
+#loginModal .modal-body.row {
+  padding-top: 0px !important; }
+  #loginModal .modal-body.row .input-lg {
+    font-size: 16px !important; }
+#loginModal h5.link {
+  text-align: center; }
+#loginModal h5.link:hover {
+  text-decoration: underline;
+  cursor: pointer; }
+#loginModal h6.informe {
+  text-transform: uppercase;
+  font-weight: bold !important;
+  margin-bottom: 16px;
+  background-color: #ffffff;
+  padding: 0 16px;
+  text-align: center; }
+#loginModal .center {
+  text-align: center; }
+#loginModal .modal-footer h6.informe {
+  width: 154px;
+  margin: -22px auto 16px auto !important; }
+#loginModal .modal-footer img {
+  max-width: 32px !important;
+  width: 32px !important; }
+
+.vertical-alignment-helper {
+  display: table;
+  margin: 16px;
+  height: calc(100% - 32px);
+  width: calc(100% - 32px);
+  pointer-events: none;
+  /* This makes sure that we can still click outside of the modal to close it */ }
+
+.vertical-align-center {
+  /* To center vertically */
+  display: table-cell;
+  vertical-align: middle;
+  pointer-events: none; }
+
+.modal-content {
+  /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+  width: inherit;
+  height: inherit;
+  /* To center horizontally */
+  margin: 0 auto;
+  pointer-events: all; }
+
+.help-block {
+  font-size: 0.85em !important; }
+
+@media screen and (max-width: 640px) {
+  #loginModal .modal-header {
+    padding: 8px 16px 0 16px; }
+  #loginModal-logo {
+    background-color: #004587;
+    margin-bottom: 16px; }
+    #loginModal-logo img {
+      margin: 0 4px 4px 4px;
+      width: 100%;
+      max-width: 100px; }
+  #loginModal h6.informe {
+    margin-bottom: 8px;
+    max-width: 100%; }
+  #loginModal .modal-footer h6.informe {
+    width: 170px;
+    margin: -22px auto 16px auto !important; }
+
+  #mobile-payment-header-content #secure {
+    font-size: 0.75em;
+    padding-right: 8px; }
+    #mobile-payment-header-content #secure img {
+      margin-left: 4px;
+      margin-top: -4px; } }
+@media screen and (max-height: 640px) {
+  #loginModal .modal-header {
+    padding: 8px 16px 0 16px; }
+  #loginModal-logo {
+    background-color: #004587;
+    margin-bottom: 16px; }
+    #loginModal-logo img {
+      margin: 0 4px 4px 4px;
+      width: 100%;
+      max-width: 100px; }
+  #loginModal h6.informe {
+    margin-bottom: 8px;
+    max-width: 100%; }
+  #loginModal .modal-footer h6.informe {
+    width: 170px;
+    margin: -22px auto 16px auto !important; } }
+
+/*# sourceMappingURL=styles.css.map */

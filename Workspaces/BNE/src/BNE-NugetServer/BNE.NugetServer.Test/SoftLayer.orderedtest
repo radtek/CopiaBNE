@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="softlayer" storage="d:\tfs\bne-nugetserver\bne.nugetserver.test\softlayer.orderedtest" id="b0b41aa2-0182-45ad-b471-95570afe3919" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="54303d76-3f2f-c714-ba97-e4eb997afc05" name="TestaConfig" storage="bin\debug\bne.nugetserver.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="fb6772b9-c681-8a29-a8fc-9d7bf86a4faa" name="Save" storage="bin\debug\bne.nugetserver.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="1a34b8ac-9c65-c812-357b-b3bbdc858506" name="Exists" storage="bin\debug\bne.nugetserver.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="1cf05233-558e-14bf-e55f-c0b3b5af802c" name="GetBytes" storage="bin\debug\bne.nugetserver.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="6085801d-1c3b-ee51-b1d7-70e3861c4f37" name="Move" storage="bin\debug\bne.nugetserver.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="42845911-9eed-7462-16e3-35be5e2fdb73" name="Delete" storage="bin\debug\bne.nugetserver.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

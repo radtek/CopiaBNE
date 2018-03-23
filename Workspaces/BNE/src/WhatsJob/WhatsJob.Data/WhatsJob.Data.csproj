@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B977210-819A-4402-A561-0FE08840E265}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WhatsJob.Data</RootNamespace>
+    <AssemblyName>WhatsJob.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\ChannelLogConfiguration.cs" />
+    <Compile Include="Configuration\PhraseConfiguration.cs" />
+    <Compile Include="Configuration\StopWordConfiguration.cs" />
+    <Compile Include="Migrations\201512011806596_Initial.cs" />
+    <Compile Include="Migrations\201512011806596_Initial.Designer.cs">
+      <DependentUpon>201512011806596_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512081252307_Inclusao_WhatsId.cs" />
+    <Compile Include="Migrations\201512081252307_Inclusao_WhatsId.Designer.cs">
+      <DependentUpon>201512081252307_Inclusao_WhatsId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512081342390_Inclusao_WhatsId_Correcao.cs" />
+    <Compile Include="Migrations\201512081342390_Inclusao_WhatsId_Correcao.Designer.cs">
+      <DependentUpon>201512081342390_Inclusao_WhatsId_Correcao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512091852220_Inclusao_StopWord.cs" />
+    <Compile Include="Migrations\201512091852220_Inclusao_StopWord.Designer.cs">
+      <DependentUpon>201512091852220_Inclusao_StopWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512101639224_Inclusaso_Phrase.cs" />
+    <Compile Include="Migrations\201512101639224_Inclusaso_Phrase.Designer.cs">
+      <DependentUpon>201512101639224_Inclusaso_Phrase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="WhatsJobsContext.cs" />
+    <Compile Include="Configuration\ChannelConfiguration.cs" />
+    <Compile Include="Configuration\ContactConfiguration.cs" />
+    <Compile Include="Configuration\MessageConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WhatsJob.Model\WhatsJob.Model.csproj">
+      <Project>{30c1c7a6-c076-4d35-84c0-3e804da00a7d}</Project>
+      <Name>WhatsJob.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201512011806596_Initial.resx">
+      <DependentUpon>201512011806596_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512081252307_Inclusao_WhatsId.resx">
+      <DependentUpon>201512081252307_Inclusao_WhatsId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512081342390_Inclusao_WhatsId_Correcao.resx">
+      <DependentUpon>201512081342390_Inclusao_WhatsId_Correcao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512091852220_Inclusao_StopWord.resx">
+      <DependentUpon>201512091852220_Inclusao_StopWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512101639224_Inclusaso_Phrase.resx">
+      <DependentUpon>201512101639224_Inclusaso_Phrase.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

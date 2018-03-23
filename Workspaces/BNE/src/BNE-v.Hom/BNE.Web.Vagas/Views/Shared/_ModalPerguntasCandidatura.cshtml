@@ -1,0 +1,56 @@
+﻿@using BNE.BLL.Enumeradores
+@model BNE.Web.Vagas.Models.VagaCandidatura
+<div id="modalPergunta" class="modal">
+    <script>
+        modal.abrirModal('modalPergunta');
+    </script>
+    <link href="~/Content/ModalPerguntasCandidatura.css" rel="stylesheet" />
+    <a class="b-close modal_fechar" title="Close"></a>
+    <div class="modal_conteudo">
+        <p class="titulo">Questionário: </p>
+        @using (Ajax.BeginForm("Candidatar", "Vaga", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "container_candidatura_" + Model.IdentificadorVaga }))
+        {
+            @Html.HiddenFor(m => m.FlgVagaArquivada)
+            @Html.HiddenFor(m => m.IdentificadorVaga)
+            <fieldset>
+
+                @for (int i = 0; i < @Model.Perguntas.Perguntas.Count; i++)
+                {
+                    @Html.HiddenFor(m => m.Perguntas.Perguntas[i].Id)
+                    @Html.HiddenFor(m => m.Perguntas.Perguntas[i].Descricao)
+
+                    @Html.Raw(i.Equals(@Model.Perguntas.Perguntas.Count - 1) ? "<div class=\"painel_pergunta ultima\">" : "<div class=\"painel_pergunta\">")
+                    <p>0@(i + 1). @Html.Raw(@Model.Perguntas.Perguntas[i].Descricao)</p>
+                    <div class="opcoes_pergunta">
+                        @if (@Model.Perguntas.Perguntas[i].TipoResposta == (int)TipoResposta.RespostaObjetiva)
+                        {
+                            @*@Html.Raw("<div id='AvisoCheck'  class='AvisoCheck" + i + "' style='display: none;'></div>")*@
+                            <div id="AvisoCheck" class="AvisoCheck" style="display: none;"></div>
+                            <div id="AvisoText" class="AvisoTexto" style="display: none;"></div>
+                            <span class="resposta_sim ValCheckBox">
+                                <label>@Html.RadioButtonFor(m => m.Perguntas.Perguntas[i].Resposta, true)Sim</label>
+                            </span>
+                            <span class="resposta_nao">
+                                <label>@Html.RadioButtonFor(m => m.Perguntas.Perguntas[i].Resposta, false)Não</label>
+                            </span>
+
+                        }
+                        else
+                        {
+
+                            <div id="AvisoCheck" class="AvisoCheck" style="display: none;"></div>
+                            <div id="AvisoText" class="AvisoTexto" style="display: none;"></div>
+                            <span class="resposta_descritiva">
+                                @Html.TextAreaFor(m => m.Perguntas.Perguntas[i].DescricaoResposta, new { @class = "textarea_padrao ValResposta", cols = "40", rows = "4", @maxlength = "200", @OnChange = "ValResposta();" })
+                            </span>
+                        }
+                    </div>
+                    @Html.Raw("</div>")
+                }
+                <div class="container_botoes">
+                    <input type="submit" name="Enviar" value="Enviar" class="botao_padrao" onclick=" return Validar();" />
+                </div>
+            </fieldset>
+        }
+    </div>
+</div>

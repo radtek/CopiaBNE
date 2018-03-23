@@ -1,0 +1,17 @@
+﻿@model dynamic
+
+@*@
+{
+string u = @Model.URL;
+}
+*@
+<img src='@Model.URL' alt="Logo da empresa"/>
+
+@{
+    System.Reflection.PropertyInfo[] properties = Model.GetType().GetProperties();
+
+    foreach (var property in properties)
+    {
+    @property.Name
+    }
+}

@@ -1,0 +1,36 @@
+﻿@using System.Web.Optimization;
+@using BNE.Core.Common;
+@model BNE.PessoaFisica.Web.Models.PreCurriculo
+
+
+<div id="modalPremiumCandidatura" class="modalPremiumCandidatura">
+    <script>
+        modal.abrirModal('modalPremiumCandidatura');
+    </script>
+    <div class="container_premium_candidatura ">
+        <div class="vaga-premium-icon"><img src="http://teste.pessoafisica.bne.com.br/Content/img/vaga-premium-trofeu-small.png" /> </div>
+        <div class="vaga-premium-content">
+
+            <span class="vaga-premium-title">Esta é uma Vaga Premium!</span><br>
+            <span class="vaga-premium-desc">Gostou dela, não é?</span><br>
+            <span class="vaga-premium-desc">Mas o que você prefere?</span>
+            <div class="vaga-premium-options">
+                <div class="vaga-premium-option">
+                    
+                        @*<a href="@Url.Action("CompraCandidatura", "PreCurriculo", Model)"><input type="button" value="Quero me candidatar" class="option1"></a><br />*@
+                         <a href="http://wwww.bne.com.br/Pagamento?vaga=@Model.IdVaga"><input type="button" value="Quero me candidatar" class="option1"></a><br />
+                        <span class="value">por apenas <strong>R$ @Model.vagaTela.PlanoPremium.PrecoCandidatura </strong></span>
+                </div>
+                <div class="vaga-premium-vs">x</div>
+                <div class="vaga-premium-option">
+                    @*<a href="@Url.Action("CompraVIP","PreCurriculo", Model)"><input type="button" value="Quero acesso ilimitado" class="option2"></a><br>*@
+                    <a href="http://www.bne.com.br/Escolha-de-Plano"><input type="button" value="Quero acesso ilimitado" class="option2"></a><br>
+                    <span class="value">por apenas <strong>R$ @Model.vagaTela.PlanoPremium.PrecoVip </strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="vaga-premium-close b-close"><a href="#">Nenhuma, não gosto de salários acima da média.</a></div>
+    </div>
+
+</div>
+

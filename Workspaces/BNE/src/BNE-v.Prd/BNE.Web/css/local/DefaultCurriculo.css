@@ -1,0 +1,38 @@
+﻿.painel_centro
+{
+	width: 750px;
+	margin: 0 auto;
+}
+
+.painel_menu_padrao
+{
+	top: 0px;
+}
+
+.barra_navegacao
+{
+    top: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.barra_navegacao ul
+{
+    margin: 0 auto;
+    /*width: 620px;*/
+    width: 765px;
+}
+
+.conteudo .interna 
+{
+	top: 100px;
+}
+
+.atendimento_online
+{
+	position: absolute;
+	top: 0;
+	right: 20px;
+}
+
+

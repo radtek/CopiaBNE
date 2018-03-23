@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73D692CA-175F-4EBC-84DB-6CAA93D90CE9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.PessoaJuridica.Domain</RootNamespace>
+    <AssemblyName>BNE.PessoaJuridica.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SharedKernel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharedKernel.1.2.24\lib\net461\SharedKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMapper\Profiles\CriarOuAtualizarUsuarioEmpresaToPessoaJuridica.cs" />
+    <Compile Include="AutoMapper\Profiles\UsuarioAdicionalPessoaJuridicaToUsuarioAdicional.cs" />
+    <Compile Include="AutoMapper\Profiles\CriarOuAtualizarUsuarioEmpresaToUsuario.cs" />
+    <Compile Include="AutoMapper\Profiles\UsuarioPessoaJuridicaToUsuario.cs" />
+    <Compile Include="AutoMapper\Profiles\CadastroPessoaJuridicaToPessoaJuridica.cs" />
+    <Compile Include="Services\CNAEDomainService.cs" />
+    <Compile Include="Command\CriarOuAtualizarPessoaJuridicaDoVelho.cs" />
+    <Compile Include="Command\CadastroPessoaJuridica.cs" />
+    <Compile Include="Command\CriarOuAtualizarUsuarioEmpresa.cs" />
+    <Compile Include="Command\CriarSolicitacaoReceita.cs" />
+    <Compile Include="Services\EmailService.cs" />
+    <Compile Include="Services\EnderecoService.cs" />
+    <Compile Include="Exceptions\CNPJInvalido.cs" />
+    <Compile Include="Exceptions\CPFInvalido.cs" />
+    <Compile Include="Exceptions\DataDeNascimentoNaoConfere.cs" />
+    <Compile Include="Exceptions\SemPermissaoParaEditar.cs" />
+    <Compile Include="Model\CNAE.cs" />
+    <Compile Include="Model\Email.cs" />
+    <Compile Include="Model\Endereco.cs" />
+    <Compile Include="Model\Enumeradores\Email.cs" />
+    <Compile Include="Model\Enumeradores\Parametro.cs" />
+    <Compile Include="Model\Enumeradores\Perfil.cs" />
+    <Compile Include="Model\NaturezaJuridica.cs" />
+    <Compile Include="Model\Parametro.cs" />
+    <Compile Include="Model\Perfil.cs" />
+    <Compile Include="Model\PessoaJuridica.cs" />
+    <Compile Include="Model\Telefone.cs" />
+    <Compile Include="Model\TelefoneCelular.cs" />
+    <Compile Include="Model\TelefoneComercial.cs" />
+    <Compile Include="Model\TelefoneFixo.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Model\UsuarioAdicional.cs" />
+    <Compile Include="Model\UsuarioPessoaJuridica.cs" />
+    <Compile Include="Services\NaturezaJuridicaService.cs" />
+    <Compile Include="Services\NCallService.cs" />
+    <Compile Include="Services\ParametroService.cs" />
+    <Compile Include="Services\PerfilService.cs" />
+    <Compile Include="Services\PessoaJuridicaService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ICNAERepository.cs" />
+    <Compile Include="Repositories\IEmailRepository.cs" />
+    <Compile Include="Repositories\IEnderecoRepository.cs" />
+    <Compile Include="Repositories\INaturezaJuridicaRepository.cs" />
+    <Compile Include="Repositories\IParametroRepository.cs" />
+    <Compile Include="Repositories\IPerfilRepository.cs" />
+    <Compile Include="Repositories\IPessoaJuridicaRepository.cs" />
+    <Compile Include="Repositories\ITelefoneCelularRepository.cs" />
+    <Compile Include="Repositories\ITelefoneComercialRepository.cs" />
+    <Compile Include="Repositories\IUsuarioAdicionalRepository.cs" />
+    <Compile Include="Repositories\IUsuarioPessoaJuridicaRepository.cs" />
+    <Compile Include="Repositories\IUsuarioRepository.cs" />
+    <Compile Include="Services\TelefoneCelularService.cs" />
+    <Compile Include="Services\TelefoneComercialService.cs" />
+    <Compile Include="Services\UsuarioAdicionalService.cs" />
+    <Compile Include="Services\UsuarioService.cs" />
+    <Compile Include="Services\UsuarioPessoaJuridicaService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BNE.Comum.Model\BNE.Comum.Model.csproj">
+      <Project>{962132F9-4293-4AC7-B044-2590667CD2E9}</Project>
+      <Name>BNE.Comum.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Core\BNE.Core.csproj">
+      <Project>{1c0e9fda-4b7f-4f28-bdef-9733c99aa46a}</Project>
+      <Name>BNE.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Data\BNE.Data.csproj">
+      <Project>{287BA500-E16D-46AD-91B7-442CDA127398}</Project>
+      <Name>BNE.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Global.Domain\BNE.Global.Domain.csproj">
+      <Project>{0ed6a49e-b926-4088-a7b5-40de1085e084}</Project>
+      <Name>BNE.Global.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Global.Model\BNE.Global.Model.csproj">
+      <Project>{1C31B8D0-C2D2-4A48-893E-C2B43A852978}</Project>
+      <Name>BNE.Global.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mapper.ToOld\BNE.Mapper.ToOld.csproj">
+      <Project>{d4fcefda-3d86-42bc-9dcb-b1e2d3c0d639}</Project>
+      <Name>BNE.Mapper.ToOld</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BNE.Mapper\BNE.Mapper.csproj">
+      <Project>{bc671d33-cfd9-4868-888f-4266aedb3b13}</Project>
+      <Name>BNE.Mapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\Interface\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

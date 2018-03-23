@@ -1,0 +1,23 @@
+﻿.destaque_texto{color:#FF6600;font-weight:bold;}
+.gridview_padrao{ width: 100% !important ; margin-top:15px;}
+.descricao_vaga {font-weight:normal !important;}
+.botao_padrao{ margin-bottom:0 !important;}
+.col_action {width: 19% !important;}
+.col_action_arq {width: 16% !important;}
+.col_action_arq input {margin:5px 8px;}
+.checkbox_large, .checkbox_large .rcbFocused{width: 240px !important; float:left;}
+.filtrar {height: 22px;width: auto !important; margin-left:5px; font-size:11px;}
+.codigo{ width: 10% !important;}
+.descricao_vaga2{ width: 30%;}
+.cidade { width: 12%;}
+.cv_recebida{ width: 10%;}
+.col_action { text-align:center; width:18%;}
+.col_action input {margin:5px 6px;}
+.mensagem_nodata {padding: 30px 0 !important;text-align:center !important;}
+.gridview_padrao th.rgHeader {font-size: 12px;color:#000;font-weight: bold;padding: 10px 0;text-align: center;}
+.gridview_padrao tr { font-size:11px;}
+.rcbTemplate div label, .rcbHeader label{ float:none;}
+.rcbTemplate div label, .rcbHeader label{ float:none;}
+.RadComboBoxDropDown.RadComboBoxDropDown_Office2007  {width:322px;}
+.textarea_padrao {border: 1px solid #B5CAEA;margin-left: 0;margin-right: 4px;height:100px;width:270px;}
+.RadGrid .rgGroupHeader td p{color: #FF6600;font-size: 16px;font-weight: bold;}

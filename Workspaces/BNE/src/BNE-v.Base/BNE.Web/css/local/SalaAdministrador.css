@@ -1,0 +1,290 @@
+﻿/*- configuração da sala vip -*/
+.painel_padrao_sala_adm{overflow:hidden; background-position: left bottom; 	background-repeat: no-repeat; 	background-color: #fff;	padding: 20px; 	margin:0; }
+
+.painel_padrao_sala_adm p{margin: 0 0 10px 0; }
+
+.menu{margin-top; 20px;}
+
+/*- dados do usuário e foto na sala vip -*/
+
+.negrito_btn {color: #153E78; }
+
+.conteudo .interna {margin: 20px auto; }
+
+.conteudo .internaSlim{margin-top: 20px !important; }
+
+.nome_destaque{margin: 0; color: #0A3079; font-size: 14px; border-bottom: 1px solid #d9e0e9; /*-height: 95px;-*/ height:auto; padding-bottom: 10px; margin-bottom:20px; }
+
+.menu_ss {padding:25px 0 0 0; overflow:hidden;}
+
+.nome_usuario_sv{float: left; margin: 40px 0 0 15px; }
+
+.foto_usuario {float: left; padding: 0; background: url('../../img/borda_sombra_foto.jpg') no-repeat; width: 76px; height: 96px; }
+
+.foto_usuario img {margin: 5px 7px;  width: 62px; }
+
+/*- configuração dos botões da sala vip -*/
+.menu_sv {padding: 25px 0; overflow: hidden; }
+
+.col01 {width: 257px; margin: 0 10px 0 10px; float: left;}
+
+.col02 {width: 257px; margin: 0 10px 0 10px; float: left;}
+
+.col03 {width: 270px; margin: 0 5px 0 10px; float: left;}
+
+.btn_col {margin-bottom: 20px; cursor: pointer; }
+
+.bottom {margin-bottom: 0; cursor: pointer; }
+
+.titulo_texto_btn {float: left; height: 80px; margin-top: 20px; width: 160px;}
+ 
+.menor{width: 160px; }
+ 
+/*- Modelo padrão menor -*/
+.fundo_btn_ss {width:268px; height:100px;/*background: url('../../img/SalaSelecionadora/bg_ss_col_e.png') no-repeat;*/ }
+
+.sombra_btn_ss {/*-width: 221px; -*/ overflow: hidden; /*background: url('../../img/SalaSelecionadora/sombra_ss1.png') no-repeat bottom;*/ }
+
+.sombra_btn_ss:hover {/*background: url('../../img/SalaSelecionadora/sombra_ss2.png') no-repeat bottom;*/ }
+
+.sombra_btn_ss img {float: left; margin: 20px 15px 10px 15px; border: none; }
+
+/*- Modelo padrão maior -*/
+.fundo_btn_ss_g {/*background: url('../../img/SalaSelecionadora/bg_ss_col_g.png') no-repeat;*/ }
+
+.sombra_btn_ss_g {/*-width: 221px; -*/ overflow: hidden; /*background: url('../../img/SalaSelecionadora/sombra_ss_g1.png') no-repeat bottom;*/ }
+
+.sombra_btn_ss_g:hover {b/*ackground: url('../../img/SalaSelecionadora/sombra_ss_g2.png') no-repeat bottom;*/ }
+
+.sombra_btn_ss_g img {float: left; margin: 20px 15px; border: none; }
+
+.texto_btn_ss {margin: 0; }
+ 
+.tit_btn_ss {font-size: 16px; font-weight: bold; color: #153e78; margin-top: 10px; }
+
+.item_btn {font-size: 11px; font-weight: bold; color: #555555; line-height: normal !important; margin: 0; padding: 0; }
+
+.item_btn li {list-style-type: none; margin: 0; padding: 0; }
+
+
+
+
+.RadGrid_Office2007 .rgHeader: first-child, .RadGrid_Office2007 th.rgResizeCol: first-child, .RadGrid_Office2007 .rgFilterRow > td: first-child, .RadGrid_Office2007 .rgRow > td: first-child, .RadGrid_Office2007 .rgAltRow > td: first-child
+{
+	width: 100px; 
+}
+
+.RadGrid_Office2007 .rgHeader, .RadGrid_Office2007 th.rgResizeCol 
+{
+	width: 120px; 
+}
+
+.excluir{margin-left: 2px !important; 
+ margin-right: 2px !important; 
+ text-align: center; 
+ width: 3% !important; }
+
+
+.RadGrid_Office2007, .RadGrid_Office2007 .rgMasterTable, .RadGrid_Office2007 .rgDetailTable, .RadGrid_Office2007 .rgGroupPanel table, .RadGrid_Office2007 .rgCommandRow table, .RadGrid_Office2007 .rgEditForm table, .RadGrid_Office2007 .rgPager table, .GridToolTip_Office2007
+{
+	font-family: Arial, Helvetica, sans-serif !important; 
+	font-size: 12px; 
+}
+
+.RadGrid_Office2007 .rgRow a, .RadGrid_Office2007 .rgAltRow a, .RadGrid_Office2007 .rgEditRow a, .RadGrid_Office2007 .rgFooter a, .RadGrid_Office2007 .rgEditForm a
+{
+	color: #1E3260 /*- !important--*/; 
+}
+
+.RadGrid_Office2007 .rgHeader, .RadGrid_Office2007 .rgHeader a
+{
+	color: #1E3260/*- !important--*/; 
+}
+
+.gridview_padrao th.rgHeader{ font-weight:bold; font-size:12px; text-align:center; padding: 10px 0;}
+
+.gridview_padrao tr {
+    font-size: 11px;
+}
+
+
+
+/*- dados da sala vip antigo que podem servir para ajustar algo dentro das páginas -*/
+
+
+
+.painel_sala_adm
+{
+	margin-top: 0px; 
+}
+
+.linha_sala_adm
+{
+	height: 175px; 
+}
+
+.funcoes
+{
+	max-width: 250px; 
+}
+
+
+.foto.sala_adm
+{
+	float: none; 
+}
+
+
+.botao_excluir
+{
+	margin-left: 33%; 
+}
+
+.rtsUL 
+{
+	position: absolute; 
+	right: 0; 
+	top: 60px; 
+}
+
+.painel_botoes{margin: 15px 0 0 0;}
+
+
+
+.titulo_uctabs{font-size:13px;}
+
+.uctabs_sala_adm
+{
+	width: 700px; 
+	margin: 0 auto; 
+}
+
+.titulo_uctabs.revisao_curriculo
+{
+	margin-left: 15px; 
+}
+
+.RadTabStripVertical .rtsLevel
+{
+	float: right !important; 
+}
+
+.RadTabStripVertical, .RadTabStripVertical .rtsLevel
+{
+	display: inline !important; 	
+}
+
+*[id*='upDadosPessoaFisica']
+{
+	display: inline !important; 	
+}
+
+/*
+.linha_sem_cor
+{
+	border: 0; 
+}*/
+
+.conteudo_uctabs
+{
+	color: #1E3260; 	
+}
+
+.conteudo_uctabs .descricao_funcao,
+.conteudo_uctabs .nome_empresa
+{
+	font-weight: bold; 
+}
+
+.conteudo_uctabs .valor_salario,
+.conteudo_uctabs .nome_cidade,
+.conteudo_uctabs .descricao_mensagem,
+.conteudo_uctabs .data_cadastro
+{
+	font-size: 11px; 
+}
+
+.conteudo_uctabs .linha_cor
+{
+	background-color: #e4f0f6; 
+	border: 0; 
+	float: left; 
+	width: 380px; 
+	padding-top: 5px; 
+	padding-bottom: 6px; 
+	padding-left: 5px; 
+}
+.conteudo_uctabs .cor
+{
+	background-color: #e4f0f6; 	
+	border: 0; 
+	padding-top: 5px; 
+	padding-bottom: 6px; 
+	padding-left: 5px; 
+	border-left: 2px solid #fff; 
+}
+
+.conteudo_uctabs .linha_sem_cor
+{
+	border: 0; 
+	float: left; 
+	width: 380px; 
+	padding-top: 5px; 
+	padding-bottom: 6px; 
+	padding-left: 5px; 
+}
+
+.conteudo_uctabs .sem_cor
+{
+	background-color: #fff; 
+	border: 0; 
+	padding-top: 5px; 
+	padding-bottom: 6px; 
+	padding-left: 5px; 
+}
+
+.conteudo_uctabs .linha
+{
+	/*border: 0; */	
+	height: 30px; 
+	margin-top: 5px; 
+}
+
+.RadDataPager 
+{	
+	display: inline-block !important; 
+	width: 100%; 
+}
+
+.painel_destaque_padrao 
+{
+	margin: 0px; 
+	margin-bottom: 0px; 
+	margin-top: 0px; 
+	width: 100%; 
+}
+
+.img_empresa_bloqueada
+{
+	width: 222px; 
+	vertical-align: middle; 
+}
+
+.teste
+{
+	font-weight: lighter; 
+	font-size: 11px; 
+}
+
+.modal_conteudo.foto .foto
+{
+ float: none; 
+ margin: 0; 
+}
+
+
+.mensagem_nodata
+{
+    padding: 30px 0;
+    text-align: center;
+}

@@ -1,0 +1,19 @@
+﻿<div class="row">
+    <div class="col-lg-12"><h1 class="page-header">API's</h1></div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<table class="table table-striped table-hover">
+    <thead> <tr><th>Name</th> <th>Destination URL</th> <th>Authentication</th><th></th> </tr> </thead>
+    <tbody>
+        <tr ng-repeat="api in apis">
+            <th scope="row">{{ api.UrlSuffix }}</th>
+            <td>{{ api.Url }}</td>
+            <td>{{ api.AuthenticationType.Interface || "None" }} <i ng-show="api.AuthenticationType.Interface" class="fa fa-question-circle" rel="tooltip" title="{{api.AuthenticationType.Descricao}}" id="blah"></i></td>
+            <td>
+                <a href="/apis/{{ api.UrlSuffix | scapeBars }}"><i class="fa fa-gear fa-fw"></i></a>
+                <a target="_blank" href="{{ api.SwaggerConfig.FullUIUrl }}" ng-show="api.SwaggerConfig.FullUIUrl" title="Acessar Swagger UI"><img src="img/swagger-16x16.png" /></a>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<AdminLTE_Application.CRM_Vendedor_Empresa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CRM_Empresa.Raz_Social)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CRM_Situacao_Atendimento.Des_Situacao_atendimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CRM_Vendedor.Nme_Vendedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dta_Inicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dta_Fim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dta_Cadastro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dta_Alteracao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Des_Obs_VendedorEmpresa)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CRM_Empresa.Raz_Social)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CRM_Situacao_Atendimento.Des_Situacao_atendimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CRM_Vendedor.Nme_Vendedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dta_Inicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dta_Fim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dta_Cadastro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dta_Alteracao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Des_Obs_VendedorEmpresa)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Idf_Vendedor_Empresa }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Idf_Vendedor_Empresa }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Idf_Vendedor_Empresa })
+        </td>
+    </tr>
+}
+
+</table>

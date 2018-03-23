@@ -1,0 +1,265 @@
+﻿.destaque_texto { color: #476D11; }
+.plano_vantagens { overflow: hidden; }
+.seta_plano { background: url('../../img/BG_setameuplano.png') bottom; width: 838px; height: 124px; overflow: hidden; }
+.icn_plano { float: left; margin: 22px 12px 0 12px; }
+.icn_plus { float: left; margin: 30px 0 30px 0; }
+.info_add_plano { float: left; }
+    .info_add_plano h2 { color: #4d7526; margin: 0 0 5px 5px; height: auto; }
+.info_add_button { overflow: hidden; }
+.tabela_planos { border-collapse: collapse; }
+    .tabela_planos th { border-left: 1px solid white; }
+    .tabela_planos td { border-left: 1px solid white; }
+tbody { background: #fff; }
+.tabela_planos thead { background: #e6ede2; border-bottom: solid 1px gray; background: url('../../img/bg_header_table.png') bottom; font-size: 12px; font-weight: bold; color: #4d7526; }
+.col_serv { width: 170px; padding: 5px; }
+.col_basico, .col_ilimitado { width: 70px; padding: 5px 10px; text-align: center; }
+.linha_in { background: #e6ede2; font-size: 11px; }
+.linha_in, .linha_normal { font-size: 11px; }
+.texto_e_botao { float: right; width: 460px; margin-top: 35px; }
+.texto_vantagens { font-weight: bold; color: #4d7526; text-align: center; margin-top: 10px; }
+.btn_compra { margin-top: 35px; }
+    .btn_compra a { color: gray; float: right; font-weight: bold; margin: 5px 30px 0 0; text-decoration: none; }
+        .btn_compra a:hover { text-decoration: underline; }
+.caracteristicas_plano { }
+    .caracteristicas_plano a { color: #4c7212; font-weight: bold; font-size: 11px; }
+    .caracteristicas_plano ul { padding: 0; margin: 0; }
+        .caracteristicas_plano ul li { list-style-type: none; margin: 5px 0; }
+            .caracteristicas_plano ul li span { font-weight: bold; color: #4c7212; }
+.alinhar { width: 50%; float: left; }
+.extrato_plano { clear: both; }
+
+
+
+.btn_cancelar_assinatura {font-size: 12px; cursor: hand; background:none!important;border:none!important;color:#4E7413;margin-left:-4px}
+.btn_cancelar_assinatura:hover{text-decoration:underline!important;}
+
+.btn_sim_cancelarAss {margin-right: 25px; margin-left:25px; height:32px; color:#666; background:#fff; border:none; margin-right:20px;}
+.btn_sim_cancelarAss:hover {text-decoration:underline}
+.btn_nao_cancelarAss {padding-right: 25px; padding-left:25px; height:32px; background-color:#3CB371; color:#fff; border:none; border-radius:12px;}
+.btn_MeLigue_cancelarAss {padding-right: 25px; padding-left:25px; height:32px; background-color:#4682B4; color:#fff; border:none; border-radius:12px;}
+
+
+
+
+.cia-cancelation {
+  font-family: 'Roboto', Arial, sans-serif !important;
+  color: rgba(0, 0, 0, 0.87) !important;
+  max-width: 880px;
+  padding: 0 8px;
+  margin: 0 auto; }
+  .cia-cancelation a {
+    color: rgba(0, 0, 0, 0.54);
+    text-decoration: none;
+    outline: none !important; }
+  .cia-cancelation h1, .cia-cancelation h2, .cia-cancelation h3, .cia-cancelation h4, .cia-cancelation h5, .cia-cancelation h6, .cia-cancelation p {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-weight: normal !important; }
+  .cia-cancelation p {
+    font-size: 13px !important; }
+  .cia-cancelation h6 {
+    font-size: 14px !important; }
+  .cia-cancelation h5 {
+    font-size: 13px !important; }
+  .cia-cancelation h4 {
+    font-size: 15px !important; }
+  .cia-cancelation h3 {
+    font-size: 15px !important; }
+  .cia-cancelation h2 {
+    font-size: 18px !important; }
+  .cia-cancelation h1 {
+    font-size: 21px !important; }
+  .cia-cancelation .clear {
+    clear: both !important; }
+  .cia-cancelation .cancelation-title {
+    text-align: center !important;
+    margin-bottom: 32px;
+    padding-top: 24px; }
+    .cia-cancelation .cancelation-title h4 {
+      color: rgba(0, 0, 0, 0.54) !important; 
+      line-height: 150%;
+    }
+    .cia-cancelation .cancelation-title h2 {
+      padding-bottom: 17px !important; }
+  .cia-cancelation .cancelation-success-icon {
+    border-radius: 50%;
+    text-align: center; }
+    .cia-cancelation .cancelation-success-icon svg {
+      margin: auto; }
+  .cia-cancelation .cancelation-question {
+    max-width: 320px;
+    margin: auto;
+    margin-bottom: 32px; }
+    .cia-cancelation .cancelation-question h4 {
+      text-align: center !important;
+      padding-bottom: 24px !important; }
+    .cia-cancelation .cancelation-question .checkbox {
+      margin-top: 6px; }
+    .cia-cancelation .cancelation-question label {
+      color: rgba(0, 0, 0, 0.54) !important; }
+    .cia-cancelation .cancelation-question input[type="checkbox"] {
+      outline: none !important;
+      margin-right: 8px; }
+    .cia-cancelation .cancelation-question textarea {
+      width: calc(100% - 24px) !important;
+      font-family: 'Roboto', Arial, sans-serif !important;
+      padding: 8px;
+      font-size: 14px !important; }
+  .cia-cancelation .cancelation-facets {
+    display: flex;
+    layout-direction: row;
+    margin-bottom: 32px;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .cia-cancelation .cancelation-facets .cancelation-facet {
+      margin: 8px;
+      border: solid 1px #607d8b;
+      display: flex;
+      position: relative;
+      margin-bottom: 80px; }
+      .cia-cancelation .cancelation-facets .cancelation-facet svg path {
+        fill: white; }
+      .cia-cancelation .cancelation-facets .cancelation-facet h6 {
+        font-weight: 500 !important; }
+      .cia-cancelation .cancelation-facets .cancelation-facet.light {
+        border: solid 1px #90a4ad; }
+        .cia-cancelation .cancelation-facets .cancelation-facet.light .cancelation-facet-icon {
+          background-color: #90a4ad; }
+        .cia-cancelation .cancelation-facets .cancelation-facet.light .cancelation-facet-desc h3 {
+          color: #90a4ad; }
+        .cia-cancelation .cancelation-facets .cancelation-facet.light .btn {
+          background-color: #90a4ad; }
+      .cia-cancelation .cancelation-facets .cancelation-facet .btn {
+        position: absolute;
+        bottom: -64px;
+        left: 0;
+        width: 100%;
+        background-color: #607d8b;
+        font-family: 'Roboto', Arial, sans-serif !important;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 500;
+        outline: none !important;
+        padding: 16px 32px;
+        border-radius: 4px;
+        border: 0;
+        color: #ffffff !important; }
+        .cia-cancelation .cancelation-facets .cancelation-facet .btn:hover {
+          opacity: .87; }
+    .cia-cancelation .cancelation-facets .cancelation-facet-icon {
+      background-color: #607d8b;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+    .cia-cancelation .cancelation-facets .cancelation-facet-desc {
+      padding: 16px;
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center; }
+      .cia-cancelation .cancelation-facets .cancelation-facet-desc h3 {
+        color: #607d8b;
+        text-transform: uppercase; }
+    .cia-cancelation .cancelation-facets .candidato-facet {
+      width: calc(33% - 48px);
+      min-width: 240px;
+      background-color: #f5f5f5;
+      margin: 8px;
+      padding: 16px;
+      text-align: center;
+       display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+      .cia-cancelation .cancelation-facets .candidato-facet p {
+        margin-top: 8px !important; }
+      .cia-cancelation .cancelation-facets .candidato-facet h5 {
+        font-weight: 700 !important; }
+      .cia-cancelation .cancelation-facets .candidato-facet h6 {
+        font-weight: lighter !important; }
+      .cia-cancelation .cancelation-facets .candidato-facet .btn {
+        font-family: 'Roboto', Arial, sans-serif !important;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 500;
+        margin: 16px 16px 0;
+        outline: none !important;
+        padding: 16px 32px;
+        border-radius: 4px;
+        border: 0;
+        background-color: rgba(0, 0, 0, 0.12);
+        color: rgba(0, 0, 0, 0.54); }
+        .cia-cancelation .cancelation-facets .candidato-facet .btn:hover {
+          background-color: #8bc34a;
+          color: #ffffff;
+          cursor: pointer; }
+  .cia-cancelation .cancelation-actions {
+    text-align: center !important;
+    padding-bottom: 24px; }
+    .cia-cancelation .cancelation-actions .btn {
+      font-family: 'Roboto', Arial, sans-serif !important;
+      text-transform: uppercase;
+      font-size:13px !important;
+      font-weight: 500;
+      margin-bottom: 8px;
+      outline: none !important;
+      padding: 16px 32px;
+      border-radius: 4px;
+      border: 0;
+      min-width: 240px; }
+      .cia-cancelation .cancelation-actions .btn.btn-success {
+        background-color: #8bc34a;
+        color: #ffffff !important;
+        font-weight: bold; }
+        .cia-cancelation .cancelation-actions .btn.btn-success:hover {
+          background-color: #aed581;
+          cursor: pointer; }
+      .cia-cancelation .cancelation-actions .btn.btn-link {
+        background-color: #ffffff;
+        color: rgba(0, 0, 0, 0.54) !important;
+        font-size: 7px; }
+        .cia-cancelation .cancelation-actions .btn.btn-link:hover {
+          background-color: #eceff1;
+          cursor: pointer; }
+      .cia-cancelation .cancelation-actions .btn:hover {
+        text-decoration: none; }
+  .cia-cancelation .separator-vert {
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.27);
+    margin-left: 32px;
+    margin-right: 32px; }
+  .cia-cancelation .motivo1-opcoes {
+    padding-left: 24px;
+    margin-bottom: 8px !important; }
+    .cia-cancelation .motivo1-opcoes input[type="text"] {
+      font-weight: bold; }
+  .cia-cancelation .motivo2-opcoes {
+    padding-left: 24px;
+    margin-bottom: 8px !important;
+    position: relative; }
+    .cia-cancelation .motivo2-opcoes input {
+      text-indent: 24px;
+      font-weight: bold; }
+    .cia-cancelation .motivo2-opcoes span {
+      position: absolute;
+      bottom: 4px;
+      left: 30px;
+      color: rgba(0, 0, 0, 0.54);
+      font-weight: bold; }
+  .cia-cancelation .motivo3-opcoes {
+    padding-left: 24px;
+    margin-bottom: 8px !important; }
+  .cia-cancelation .motivo4-opcoes {
+    padding-left: 24px;
+    margin-bottom: 8px !important; }
+    .cia-cancelation .motivo5-opcoes {
+    padding-left: 24px;
+    margin-bottom: 8px !important; }
+label {
+      margin-bottom: 0px !important;
+  }
+

@@ -1,0 +1,29 @@
+﻿.div_curriculo_conteudo { background-color: #FFFFFF; border: 1px solid #CCCCCC; margin: 20px auto; padding: 20px; width: 840px; }
+.div_curriculo_conteudo table th { line-height: 140%; text-align: left; vertical-align: top; width: 180px; }
+.div_curriculo_conteudo .titulo { border-bottom: 1px solid #CCD6B3; color: #000000; font-size: 14px; height: auto; margin-bottom: 14px; margin-top: 25px; padding-bottom: 5px; }
+.container_box_tipo_contrato_revisao { margin-left: -7px; table-layout: fixed;color: black;float: left;background: white;}
+.container_box_tipo_contrato_revisao input { float: left;}
+.container_box_tipo_contrato_revisao label { color:black;}
+.container_box_tipo_contrato_revisao span { color:black;}
+label.decimais { margin-left: 0; float: left !important; }
+.esquerda { float: left !important; }
+table td.celula_valor_esquerda { width: 300px; }
+table th.celula_label_direita { width: 100px; }
+a { color: #000000; }
+.foto_mini_curriculo { float: right; margin-right: 20px; margin-top: 20px; position: static; }
+.label_nao_informado { color: #FF0000 !important; font-size: 13px; font-style: italic; }
+.label_obrigatorio { color: #FF0000; font-size: 15px; background-color: Yellow; font-weight: bold; border: 1px dotted #FF0000; }
+.modal_conteudo.reduzida { height: auto; }
+label { float: left !important; }
+.radiobutton_padrao label { float: none !important; }
+.label_numero { margin-left: 114px; }
+.label_bairro { margin-left: 126px; }
+.gridview_padrao { width: 740px !important; }
+.gridview_padrao table th { width: auto; }
+.modal_conteudo.modal_busca_cep { background-color: #FFFFFF; background-image: url("/img/bg_topo_modal_candidato.png"); background-repeat: repeat-x; border: medium none; margin: 0 auto; width: 880px; }
+.texto_marcadores_obrigatorio { color: #FF0000; font-size: 20px; }
+.foto_mini_curriculo .modal { background-color: #FFFFFF; background-image: url("/img/bg_topo_modal_candidato.png"); background-repeat: repeat-x; margin: 0 auto; width: 535px; }
+.foto_mini_curriculo .link_alterar_foto { display: block; text-align: center; width: 135px; /*margin-top: -45px;*/ }
+.inputError {background-color: #EE9782;padding:2px;}
+.tooltips_aviso {position: relative;display: inline;}
+.tooltips_aviso span {position: relative;width:220px;color: #FFFFFF;background: #EE9782;height: 31px;line-height: 31px;text-align: center;padding:3px 7px 3px 7px;}

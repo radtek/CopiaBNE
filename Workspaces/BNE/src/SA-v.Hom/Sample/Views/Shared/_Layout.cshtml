@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SA2.0 | Sistema de atendimento BNE</title>
+  @*<title>@ViewBag.Title - My ASP.NET Application</title>*@
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+@Styles.Render("~/Content/css/bootstrap.min.css")
+@Styles.Render("~/Content/css/AdminLTE.css")
+<link href="@Url.Content("~/Content/fonts/font-awesome/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+
+@Styles.Render("~/Content/css/bootstrap-slider/slider.css")
+@Styles.Render("~/Content/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css")
+@Styles.Render("~/Content/css/colorpicker/bootstrap-colorpicker.min.css")
+@Styles.Render("~/Content/css/datatables/dataTables.bootstrap.css")
+@Styles.Render("~/Content/css/datepicker/datepicker3.css")
+@Styles.Render("~/Content/css/daterangepicker/daterangepicker-bs3.css")
+@Styles.Render("~/Content/css/iCheck/all.css")
+@Styles.Render("~/Content/css/ionslider/ion.rangeSlider.css")
+@Styles.Render("~/Content/css/ionslider/ion.rangeSlider.skinNice.css")
+@Styles.Render("~/Content/css/jvectormap/jquery-jvectormap-1.2.2.css")
+@Styles.Render("~/Content/css/morris/morris.css")
+@Styles.Render("~/Content/css/timepicker/bootstrap-timepicker.min.css")
+
+@Scripts.Render("~/Scripts/jquery.js")
+@Scripts.Render("~/Scripts/bootstrap.min.js")
+@Scripts.Render("~/Scripts/jquery-ui.min.js")
+@Scripts.Render("~/Scripts/AdminLTE/app.js")
+@Scripts.Render("~/Scripts/AdminLTE/demo.js")
+</head>
+<body class="skin-blue">
+    <p class="text-success">@ViewBag.StatusMessage</p>
+    
+    <!-- header logo: style can be found in header.less -->
+    <header class="header">
+
+
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <!-- Add the class icon to your logo image or logo icon to add the margining -->
+            SA2.0
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    <li id="Novoscliente" class="dropdown messages-menu">
+
+
+                    </li>
+                        <!-- Messages: style can be found in dropdown.less-->
+                    <li id="qtdfinaldeprazo" class="dropdown messages-menu">
+                        
+                    </li>
+                    <!-- Notifications: style can be found in dropdown.less -->
+                    <li id="qtdClientesOnline" class="dropdown messages-menu">
+
+                    </li>
+                    <!-- Tasks: style can be found in dropdown.less -->
+                    <li id="qtdClientesnaCarteira" class="dropdown messages-menu">
+
+                    </li>
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <span>@Html.Partial("_LoginPartial")</span>
+                    </li>
+                </ul>
+            </div>
+        </nav>        
+    </header>  
+    
+    <div id="divgeral"  class="wrapper row-offcanvas row-offcanvas-left">
+
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="left-side sidebar-offcanvas">
+
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section id="colunaopcoes" class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <!-- search form -->
+                    <form method="get" action="~/Pesquisa/" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" id="q" class="form-control" placeholder="Search..." />
+                            <span class="input-group-btn">
+                                <button type='submit' name='search' id='search-btn' class="btn btn-flat" ><i class=" fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li id="dashboard" class="active">
+                        <a href="@Url.Action("Index", "Home")">
+                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li id="Clientes" class="active">
+                        <a href="@Url.Action("Index", "EmpresaComPlano")">
+                            <i class="fa fa-retweet"></i> <span>Com plano</span>
+                        </a>
+                    </li>
+                    <li id="NaoClientes" class="active">
+                        <a href="@Url.Action("Index", "EmpresaSemPlano")" )">
+                            <i class="fa fa-folder-open-o"></i> <span>Sem plano</span>
+                        </a>
+                    </li>
+                    <li id="NaoClientes" class="active">
+                        <a href="@Url.Action("Empresas", "EmpresaProspeccao")" )">
+                            <i class="fa fa-share-square-o"></i> <span>Banco de Empresas</span>
+                        </a>
+                    </li>
+                    <li id="Vendedores" class="active">
+                        <a href="@Url.Action("Index", "Vendedor")">
+                            <i class="fa fa-users"></i> <span>Vendedores</span>
+                        </a>
+                    </li>
+                    <li id="Acompanhamento" class="active">
+                        <a href="@Url.Action("Index", "Acompanhamento")">
+                            <i class="fa fa-line-chart"></i> <span>Acompanhamento</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+            
+
+        </aside>
+        
+
+        @RenderBody()
+        @RenderSection("scripts", required: false)
+
+    </div><!-- ./wrapper -->
+
+
+    
+    
+   
+
+    <!--novasemrpesas-->
+    <script type="text/javascript">
+    user = '@HttpContext.Current.User.Identity.Name.ToString().Replace(".", "dott").Replace("@", "arroba")';
+        urls = '/api/ApiVendedorNovasEmpresas/' + user
+    $.ajax({
+        url: urls,
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            preencheNovasEmpresas(response); // calling method
+        }
+    }
+    );
+    function preencheNovasEmpresas(dataValues) {
+        var qtdnovosclientes = document.getElementById('Novoscliente');        
+        var rows = '<a href="~/NovoCadastro/" class="dropdown-toggle" data-toggle="dropdown">'+
+                    '<i class="fa fa-asterisk"></i>'+
+                    '<span class="badge pull-right bg-aqua">' + dataValues.length + '</span></a>' +
+                   '<ul class="dropdown-menu">' +
+                        '<li class="header">Você tem ' + dataValues.length + ' nova(s) empresa(s)</li>' +
+                            '<li>' +
+                                '<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;">'+
+                                    '<ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">'
+                    
+        for (var i = 0; i < dataValues.length; i++) {
+            rows +=     '<li>' +
+                            '<a href="/Empresa/Details/' + dataValues[i].Num_CNPJ + '">' +
+                                '<h4>' +
+                                        '' + dataValues[i].Raz_Social + '</h4>' +
+                                    '<p>' + dataValues[i].Nme_Cidade + '-' + dataValues[i].Sig_Estado + '</p>' +
+                                    '<p>' + dataValues[i].Des_CNAE_Sub_Classe + '</p>' +
+                            '</a>' +
+                        '</li>';
+        }
+
+        rows +=                 
+                                    '</ul>'+
+                                '<div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 0px; z-index: 99; right: 1px; height: 188.679px; background: rgb(0, 0, 0);"></div>'+
+                                '<div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>'+
+                            '</div>'+
+                        '</li>' +
+                    '<li class="footer"><a href="/NovoCadastro/">Ver todas</a></li>' +
+                '</ul>';
+
+        qtdnovosclientes.innerHTML += rows;
+
+    }
+    </script>
+
+    <!--emrpesasfinaldeprazo-->
+    <script type="text/javascript">
+        user = '@HttpContext.Current.User.Identity.Name.ToString().Replace(".", "dott").Replace("@", "arroba")';
+        urls = '/api/ApiVendedorEmpresaFinalPrazo/' + user
+        $.ajax({
+            url: urls,
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (response) {
+                preencheEmpresasFinalPrazo(response); // calling method
+            }
+        }
+        );
+        function preencheEmpresasFinalPrazo(dataValues) {
+            var EmpresasFinalPrazo = document.getElementById('qtdfinaldeprazo');
+            var rows = '<a href="/EmpresaFinalPrazo/" class="dropdown-toggle" data-toggle="dropdown">' +
+                        '<i class="fa fa-thumbs-o-down"></i>' +
+                        '<span class="badge pull-right bg-red">' + dataValues.length + '</span></a>' +
+                        '<ul class="dropdown-menu">' +
+                            '<li class="header">Você tem ' + dataValues.length + ' empresa(s) em final de prazo</li>' +
+                                '<li>' +
+                                    '<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;">' +
+                                        '<ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">'
+
+            for (var i = 0; i < dataValues.length; i++) {
+                rows += '<li>' +
+                                '<a href="/Empresa/Details/' + dataValues[i].Num_CNPJ + '">' +                                    
+                                    '<h4>' +
+                                        '' + dataValues[i].Raz_Social + '</h4>' +
+                                    '<p>' + dataValues[i].Nme_Cidade + '-' + dataValues[i].Sig_Estado + '</p>' +
+                                    '<p>' + dataValues[i].Des_CNAE_Sub_Classe + '</p>' +
+                                '</a>' +
+                            '</li>';
+            }
+
+            rows +=
+                                        '</ul>' +
+                                    '<div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 0px; z-index: 99; right: 1px; height: 188.679px; background: rgb(0, 0, 0);"></div>' +
+                                    '<div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>' +
+                                '</div>' +
+                            '</li>' +
+                        '<li class="footer"><a href="/EmpresaFinalPrazo/">Ver todas</a></li>' +
+                    '</ul>';
+
+            EmpresasFinalPrazo.innerHTML += rows;
+
+        }
+    </script>
+
+    <!--emrpesasNaCarteira-->
+    <script type="text/javascript">
+        user = '@HttpContext.Current.User.Identity.Name.ToString().Replace(".", "dott").Replace("@", "arroba")';
+        urls = '/api/ApiVendedorEmpresaNaCarteira/' + user
+        $.ajax({
+            url: urls,
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (response) {
+                preencheEmpresasNaCarteira(response); // calling method
+            }
+        }
+        );
+        function preencheEmpresasNaCarteira(dataValues) {
+            var EmpresasFinalPrazo = document.getElementById('qtdClientesnaCarteira');
+            var rows = '<a href="/EmpresaNovaCarteira/" class="dropdown-toggle" data-toggle="dropdown">' +
+                        '<i class="fa fa-folder-open-o"></i>' +
+                        '<span class="badge pull-right bg-yellow">' + dataValues.length + '</span></a>' +
+                        '<ul class="dropdown-menu">' +
+                            '<li class="header">Você tem ' + dataValues.length + ' nova(s) empresa(s) na carteira</li>' +
+                                '<li>' +
+                                    '<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;">' +
+                                        '<ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">'
+
+            for (var i = 0; i < dataValues.length; i++) {
+                rows += '<li>' +
+                                '<a href="/Empresa/Details/' + dataValues[i].Num_CNPJ + '">' +                                   
+                                    '<h4>' +
+                                        '' + dataValues[i].Raz_Social + '</h4>' +
+                                    '<p>' + dataValues[i].Nme_Cidade + '-' + dataValues[i].Sig_Estado + '</p>' +
+                                    '<p>' + dataValues[i].Des_CNAE_Sub_Classe + '</p>' +
+                                '</a>' +
+                            '</li>';
+            }
+
+            rows +=
+                                        '</ul>' +
+                                    '<div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 0px; z-index: 99; right: 1px; height: 188.679px; background: rgb(0, 0, 0);"></div>' +
+                                    '<div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>' +
+                                '</div>' +
+                            '</li>' +
+                        '<li class="footer"><a href="/EmpresaNovaCarteira/">Ver todas</a></li>' +
+                    '</ul>';
+
+            EmpresasFinalPrazo.innerHTML += rows;
+
+        }
+    </script>
+
+    <!--emrpesasonline-->
+    <script type="text/javascript">
+        user = '@HttpContext.Current.User.Identity.Name.ToString().Replace(".", "dott").Replace("@", "arroba")';
+        urls = '/api/ApiVendedorEmpresaOnline/' + user
+        $.ajax({
+            url: urls,
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (response) {
+                preencheEmpresasOnline(response); // calling method
+            }
+        }
+        );
+        function preencheEmpresasOnline(dataValues) {
+            var EmpresasFinalPrazo = document.getElementById('qtdClientesOnline');
+            var rows = '<a href="/EmpresaOnline/" class="dropdown-toggle" data-toggle="dropdown">' +
+                        '<i class="fa fa-spinner"></i>' +
+                        '<span class="badge pull-right bg-green">' + dataValues.length + '</span></a>' +
+                        '<ul class="dropdown-menu">' +
+                            '<li class="header">Você tem ' + dataValues.length + ' empresa(s) online</li>' +
+                                '<li>' +
+                                    '<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;">' +
+                                        '<ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">'
+
+            for (var i = 0; i < dataValues.length; i++) {
+                rows += '<li>' +
+                                '<a href="/Empresa/Details/' + dataValues[i].Num_CNPJ + '">' +                                   
+                                    '<h4>' +
+                                        '' + dataValues[i].Raz_Social + '</h4>' +
+                                    '<p>' + dataValues[i].Nme_Cidade + '-' + dataValues[i].Sig_Estado + '</p>' +
+                                    '<p>' + dataValues[i].Des_CNAE_Sub_Classe + '</p>' +
+                                '</a>' +
+                            '</li>';
+            }
+
+            rows +=
+                                        '</ul>' +
+                                    '<div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 0px; z-index: 99; right: 1px; height: 188.679px; background: rgb(0, 0, 0);"></div>' +
+                                    '<div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>' +
+                                '</div>' +
+                            '</li>' +
+                        '<li class="footer"><a href="/EmpresaOnline/">Ver todas</a></li>' +
+                    '</ul>';
+
+            EmpresasFinalPrazo.innerHTML += rows;
+
+        }
+    </script>
+
+
+
+
+
+    @Scripts.Render("~/bundles/datatables")
+    <script type="text/javascript">
+        $(function () {
+            $("#example1").dataTable();
+            $('#example2').dataTable({
+                "bPaginate": true,
+                "bLengthChange": true,
+                "bFilter": true,
+                "bSort": true,
+                "bInfo": true,
+                "bAutoWidth": true
+            });
+        });
+    </script>
+   
+
+
+</body>
+</html>

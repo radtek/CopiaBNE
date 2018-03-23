@@ -1,0 +1,55 @@
+﻿.alert {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 18px;
+}
+
+.analytics ul {
+    list-style: none;
+    margin: 0;
+}
+
+    .analytics ul li:first-child {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    .analytics ul li {
+        width: 22%;
+        height: 95px;
+        background: #fff;
+        float: left;
+        border: 1px solid rgba(0,0,0,0.15);
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+        border-right: none;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+        position: relative;
+    }
+
+.analytics-content {
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center
+}
+
+.analytics-content .circle{
+    height: 36px;
+}
+
+.analytics-info {
+    font-size: 50px;
+    color: #1b1e1f;
+    margin: 0 auto;
+    float: left;
+    width: 100%;
+}
+
+.analytics-site {
+    font-size: 18px;
+    display: block;
+}

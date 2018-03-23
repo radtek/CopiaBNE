@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SolicitaPagamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="desIdentificacao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codFiliacao" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Bandeira" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="formaPagamento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ValorPagamento" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="urlRetorno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipoTransacao" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="centroServico" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SolicitaPagamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SolicitaPagamentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceAuthHeader" type="tns:ServiceAuthHeader" />
+      <s:complexType name="ServiceAuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodHash" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="StatusTransacao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="centroServico" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StatusTransacaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StatusTransacaoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CobrancaBoleto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="centroServico" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="desIdentificacao" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="numCEICNPJCedente" nillable="true" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="numAgencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="convenioBancario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numConta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numDVConta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idBanco" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="razaoSocial" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="registrarBoleto" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateVencimento" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="valorDocumento" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CPF_CNPJ_Sacado" nillable="true" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="nome_razaoSocial_sacado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailAssunto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailDescricao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="enderecoRua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="enderecoNumero" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="enderecoComplemento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCidade" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="enderecoCEP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="enderecoBairro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="instrucaoBoleto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="gerarPDF" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="idPagamento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CobrancaBoletoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CobrancaBoletoResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="erro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagemBoleto" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoBarras" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nossoNumero" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CobrancaCancelamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodGuid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CobrancaCancelamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CobrancaCancelamentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CobrancaAlteracao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodGuid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="data" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CobrancaAlteracaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CobrancaAlteracaoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornoTipoBoleto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="centroServico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornoTipoBoletoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornoTipoBoletoResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nossoNumero" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codBarras" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolveBoleto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="centroServico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="gerarPDF" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolveBoletoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DevolveBoletoResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IntegrarContasReceberBNE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numCNPJCliente" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="vlrOriginalBoleto" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="vlrPagamentoBoleto" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtaVencimento" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtaPagamento" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IntegrarContasReceberBNEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="base64Binary" nillable="true" type="s:base64Binary" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SolicitaPagamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:SolicitaPagamento" />
+  </wsdl:message>
+  <wsdl:message name="SolicitaPagamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:SolicitaPagamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SolicitaPagamentoServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="StatusTransacaoSoapIn">
+    <wsdl:part name="parameters" element="tns:StatusTransacao" />
+  </wsdl:message>
+  <wsdl:message name="StatusTransacaoSoapOut">
+    <wsdl:part name="parameters" element="tns:StatusTransacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="StatusTransacaoServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaBoletoSoapIn">
+    <wsdl:part name="parameters" element="tns:CobrancaBoleto" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaBoletoSoapOut">
+    <wsdl:part name="parameters" element="tns:CobrancaBoletoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaBoletoServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaCancelamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:CobrancaCancelamento" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaCancelamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:CobrancaCancelamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaCancelamentoServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaAlteracaoSoapIn">
+    <wsdl:part name="parameters" element="tns:CobrancaAlteracao" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaAlteracaoSoapOut">
+    <wsdl:part name="parameters" element="tns:CobrancaAlteracaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaAlteracaoServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="RetornoTipoBoletoSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornoTipoBoleto" />
+  </wsdl:message>
+  <wsdl:message name="RetornoTipoBoletoSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornoTipoBoletoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornoTipoBoletoServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DevolveBoletoSoapIn">
+    <wsdl:part name="parameters" element="tns:DevolveBoleto" />
+  </wsdl:message>
+  <wsdl:message name="DevolveBoletoSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolveBoletoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevolveBoletoServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="IntegrarContasReceberBNESoapIn">
+    <wsdl:part name="parameters" element="tns:IntegrarContasReceberBNE" />
+  </wsdl:message>
+  <wsdl:message name="IntegrarContasReceberBNESoapOut">
+    <wsdl:part name="parameters" element="tns:IntegrarContasReceberBNEResponse" />
+  </wsdl:message>
+  <wsdl:message name="IntegrarContasReceberBNEServiceAuthHeader">
+    <wsdl:part name="ServiceAuthHeader" element="tns:ServiceAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="SolicitaPagamentoHttpGetIn">
+    <wsdl:part name="idSistema" type="s:string" />
+    <wsdl:part name="desIdentificacao" type="s:string" />
+    <wsdl:part name="codFiliacao" type="s:string" />
+    <wsdl:part name="Bandeira" type="s:string" />
+    <wsdl:part name="formaPagamento" type="s:string" />
+    <wsdl:part name="ValorPagamento" type="s:string" />
+    <wsdl:part name="urlRetorno" type="s:string" />
+    <wsdl:part name="tipoTransacao" type="s:string" />
+    <wsdl:part name="centroServico" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SolicitaPagamentoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="StatusTransacaoHttpGetIn">
+    <wsdl:part name="CodGuid" type="s:string" />
+    <wsdl:part name="centroServico" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="StatusTransacaoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaCancelamentoHttpGetIn">
+    <wsdl:part name="CodGuid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaCancelamentoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaAlteracaoHttpGetIn">
+    <wsdl:part name="CodGuid" type="s:string" />
+    <wsdl:part name="data" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaAlteracaoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DevolveBoletoHttpGetIn">
+    <wsdl:part name="centroServico" type="s:string" />
+    <wsdl:part name="guid" type="s:string" />
+    <wsdl:part name="gerarPDF" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DevolveBoletoHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="IntegrarContasReceberBNEHttpGetIn">
+    <wsdl:part name="numCNPJCliente" type="s:string" />
+    <wsdl:part name="vlrOriginalBoleto" type="s:string" />
+    <wsdl:part name="vlrPagamentoBoleto" type="s:string" />
+    <wsdl:part name="dtaVencimento" type="s:string" />
+    <wsdl:part name="dtaPagamento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IntegrarContasReceberBNEHttpGetOut" />
+  <wsdl:message name="SolicitaPagamentoHttpPostIn">
+    <wsdl:part name="idSistema" type="s:string" />
+    <wsdl:part name="desIdentificacao" type="s:string" />
+    <wsdl:part name="codFiliacao" type="s:string" />
+    <wsdl:part name="Bandeira" type="s:string" />
+    <wsdl:part name="formaPagamento" type="s:string" />
+    <wsdl:part name="ValorPagamento" type="s:string" />
+    <wsdl:part name="urlRetorno" type="s:string" />
+    <wsdl:part name="tipoTransacao" type="s:string" />
+    <wsdl:part name="centroServico" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SolicitaPagamentoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="StatusTransacaoHttpPostIn">
+    <wsdl:part name="CodGuid" type="s:string" />
+    <wsdl:part name="centroServico" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="StatusTransacaoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaCancelamentoHttpPostIn">
+    <wsdl:part name="CodGuid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaCancelamentoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaAlteracaoHttpPostIn">
+    <wsdl:part name="CodGuid" type="s:string" />
+    <wsdl:part name="data" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CobrancaAlteracaoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DevolveBoletoHttpPostIn">
+    <wsdl:part name="centroServico" type="s:string" />
+    <wsdl:part name="guid" type="s:string" />
+    <wsdl:part name="gerarPDF" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DevolveBoletoHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="IntegrarContasReceberBNEHttpPostIn">
+    <wsdl:part name="numCNPJCliente" type="s:string" />
+    <wsdl:part name="vlrOriginalBoleto" type="s:string" />
+    <wsdl:part name="vlrPagamentoBoleto" type="s:string" />
+    <wsdl:part name="dtaVencimento" type="s:string" />
+    <wsdl:part name="dtaPagamento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IntegrarContasReceberBNEHttpPostOut" />
+  <wsdl:portType name="wsTRANSACAOSoap">
+    <wsdl:operation name="SolicitaPagamento">
+      <wsdl:input message="tns:SolicitaPagamentoSoapIn" />
+      <wsdl:output message="tns:SolicitaPagamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StatusTransacao">
+      <wsdl:input message="tns:StatusTransacaoSoapIn" />
+      <wsdl:output message="tns:StatusTransacaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaBoleto">
+      <wsdl:input message="tns:CobrancaBoletoSoapIn" />
+      <wsdl:output message="tns:CobrancaBoletoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaCancelamento">
+      <wsdl:input message="tns:CobrancaCancelamentoSoapIn" />
+      <wsdl:output message="tns:CobrancaCancelamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaAlteracao">
+      <wsdl:input message="tns:CobrancaAlteracaoSoapIn" />
+      <wsdl:output message="tns:CobrancaAlteracaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornoTipoBoleto">
+      <wsdl:input message="tns:RetornoTipoBoletoSoapIn" />
+      <wsdl:output message="tns:RetornoTipoBoletoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolveBoleto">
+      <wsdl:input message="tns:DevolveBoletoSoapIn" />
+      <wsdl:output message="tns:DevolveBoletoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegrarContasReceberBNE">
+      <wsdl:input message="tns:IntegrarContasReceberBNESoapIn" />
+      <wsdl:output message="tns:IntegrarContasReceberBNESoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="wsTRANSACAOHttpGet">
+    <wsdl:operation name="SolicitaPagamento">
+      <wsdl:input message="tns:SolicitaPagamentoHttpGetIn" />
+      <wsdl:output message="tns:SolicitaPagamentoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StatusTransacao">
+      <wsdl:input message="tns:StatusTransacaoHttpGetIn" />
+      <wsdl:output message="tns:StatusTransacaoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaCancelamento">
+      <wsdl:input message="tns:CobrancaCancelamentoHttpGetIn" />
+      <wsdl:output message="tns:CobrancaCancelamentoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaAlteracao">
+      <wsdl:input message="tns:CobrancaAlteracaoHttpGetIn" />
+      <wsdl:output message="tns:CobrancaAlteracaoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolveBoleto">
+      <wsdl:input message="tns:DevolveBoletoHttpGetIn" />
+      <wsdl:output message="tns:DevolveBoletoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegrarContasReceberBNE">
+      <wsdl:input message="tns:IntegrarContasReceberBNEHttpGetIn" />
+      <wsdl:output message="tns:IntegrarContasReceberBNEHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="wsTRANSACAOHttpPost">
+    <wsdl:operation name="SolicitaPagamento">
+      <wsdl:input message="tns:SolicitaPagamentoHttpPostIn" />
+      <wsdl:output message="tns:SolicitaPagamentoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StatusTransacao">
+      <wsdl:input message="tns:StatusTransacaoHttpPostIn" />
+      <wsdl:output message="tns:StatusTransacaoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaCancelamento">
+      <wsdl:input message="tns:CobrancaCancelamentoHttpPostIn" />
+      <wsdl:output message="tns:CobrancaCancelamentoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaAlteracao">
+      <wsdl:input message="tns:CobrancaAlteracaoHttpPostIn" />
+      <wsdl:output message="tns:CobrancaAlteracaoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolveBoleto">
+      <wsdl:input message="tns:DevolveBoletoHttpPostIn" />
+      <wsdl:output message="tns:DevolveBoletoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegrarContasReceberBNE">
+      <wsdl:input message="tns:IntegrarContasReceberBNEHttpPostIn" />
+      <wsdl:output message="tns:IntegrarContasReceberBNEHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsTRANSACAOSoap" type="tns:wsTRANSACAOSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SolicitaPagamento">
+      <soap:operation soapAction="http://tempuri.org/SolicitaPagamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SolicitaPagamentoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusTransacao">
+      <soap:operation soapAction="http://tempuri.org/StatusTransacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StatusTransacaoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaBoleto">
+      <soap:operation soapAction="http://tempuri.org/CobrancaBoleto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CobrancaBoletoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaCancelamento">
+      <soap:operation soapAction="http://tempuri.org/CobrancaCancelamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CobrancaCancelamentoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaAlteracao">
+      <soap:operation soapAction="http://tempuri.org/CobrancaAlteracao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CobrancaAlteracaoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornoTipoBoleto">
+      <soap:operation soapAction="http://tempuri.org/RetornoTipoBoleto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RetornoTipoBoletoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolveBoleto">
+      <soap:operation soapAction="http://tempuri.org/DevolveBoleto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DevolveBoletoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegrarContasReceberBNE">
+      <soap:operation soapAction="http://tempuri.org/IntegrarContasReceberBNE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:IntegrarContasReceberBNEServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsTRANSACAOSoap12" type="tns:wsTRANSACAOSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SolicitaPagamento">
+      <soap12:operation soapAction="http://tempuri.org/SolicitaPagamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SolicitaPagamentoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusTransacao">
+      <soap12:operation soapAction="http://tempuri.org/StatusTransacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StatusTransacaoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaBoleto">
+      <soap12:operation soapAction="http://tempuri.org/CobrancaBoleto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CobrancaBoletoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaCancelamento">
+      <soap12:operation soapAction="http://tempuri.org/CobrancaCancelamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CobrancaCancelamentoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaAlteracao">
+      <soap12:operation soapAction="http://tempuri.org/CobrancaAlteracao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CobrancaAlteracaoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornoTipoBoleto">
+      <soap12:operation soapAction="http://tempuri.org/RetornoTipoBoleto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RetornoTipoBoletoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolveBoleto">
+      <soap12:operation soapAction="http://tempuri.org/DevolveBoleto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DevolveBoletoServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegrarContasReceberBNE">
+      <soap12:operation soapAction="http://tempuri.org/IntegrarContasReceberBNE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:IntegrarContasReceberBNEServiceAuthHeader" part="ServiceAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsTRANSACAOHttpGet" type="tns:wsTRANSACAOHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SolicitaPagamento">
+      <http:operation location="/SolicitaPagamento" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusTransacao">
+      <http:operation location="/StatusTransacao" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaCancelamento">
+      <http:operation location="/CobrancaCancelamento" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaAlteracao">
+      <http:operation location="/CobrancaAlteracao" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolveBoleto">
+      <http:operation location="/DevolveBoleto" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegrarContasReceberBNE">
+      <http:operation location="/IntegrarContasReceberBNE" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsTRANSACAOHttpPost" type="tns:wsTRANSACAOHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SolicitaPagamento">
+      <http:operation location="/SolicitaPagamento" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusTransacao">
+      <http:operation location="/StatusTransacao" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaCancelamento">
+      <http:operation location="/CobrancaCancelamento" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobrancaAlteracao">
+      <http:operation location="/CobrancaAlteracao" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolveBoleto">
+      <http:operation location="/DevolveBoleto" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegrarContasReceberBNE">
+      <http:operation location="/IntegrarContasReceberBNE" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsTRANSACAO">
+    <wsdl:port name="wsTRANSACAOSoap" binding="tns:wsTRANSACAOSoap">
+      <soap:address location="http://wstesteglobal.webfopag.com.br/wstransacao.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsTRANSACAOSoap12" binding="tns:wsTRANSACAOSoap12">
+      <soap12:address location="http://wstesteglobal.webfopag.com.br/wstransacao.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsTRANSACAOHttpGet" binding="tns:wsTRANSACAOHttpGet">
+      <http:address location="http://wstesteglobal.webfopag.com.br/wstransacao.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsTRANSACAOHttpPost" binding="tns:wsTRANSACAOHttpPost">
+      <http:address location="http://wstesteglobal.webfopag.com.br/wstransacao.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

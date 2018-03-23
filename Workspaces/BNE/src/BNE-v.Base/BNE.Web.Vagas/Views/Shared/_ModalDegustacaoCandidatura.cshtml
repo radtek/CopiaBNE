@@ -1,0 +1,37 @@
+﻿@using BNE.Web.Vagas.Code
+@model BNE.Web.Vagas.Models.DegustacaoCandidatura
+@{
+    var cssClassModal = @Model.QuantidadeCandidaturaRestante <= 0 ? "modal amarela" : "modal";
+    var textoBotaoUsarBonusNaoAgora = @Model.QuantidadeCandidaturaRestante <= 0 ? "Não agora" : "Usar meu bônus";
+}
+<div id="modalDegustacaoCandidatura" class="@cssClassModal">
+    <script>
+        modal.abrirModal('modalDegustacaoCandidatura');
+    </script>
+    <link href="~/Content/ModalDegustacaoCandidatura.css" rel="stylesheet" />
+    <a class="b-close modal_fechar" title="Close"></a>
+    <div class="modal_conteudo">
+        <div class="container_degustacao_candidatura">
+            @if (Model.QuantidadeCandidaturaRestante <= 0)
+            {
+                <div class="img_alerta">
+                </div>
+                <div class="voce_ganhou que_pena">
+                    <span>@Html.Raw(@Model.TextoCandidatura)</span>
+                </div>
+            }
+            else
+            {
+                <div class="img_envelope_bne">
+                    <span class="label_quantidade_bonus">@Model.QuantidadeCandidaturaRestante</span>
+                </div>
+                <div class="voce_ganhou">
+                    <span>@Html.Raw(@Model.TextoCandidatura)</span>
+                </div>
+            }
+            <a class="simplemodal-close b-close input_usar_bonus" title="@textoBotaoUsarBonusNaoAgora">@textoBotaoUsarBonusNaoAgora</a>
+            <a class="input_quero_passar_vip" href="@Url.Action("QueroSerVip", "Vaga")">Quero conhecer o <b>VIP</b>!</a>
+        </div>
+    </div>
+</div>
+

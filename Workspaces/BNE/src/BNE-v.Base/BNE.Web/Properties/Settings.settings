@@ -1,0 +1,54 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BNE.Web.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PessoaFisicaFotoChave" Type="System.Guid" Scope="Application">
+      <Value Profile="(Default)">0c088ab7-ae45-40a6-9736-cf344d801aa4</Value>
+    </Setting>
+    <Setting Name="BNE_Web_wsCEP_cepws" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wstestegeral.webfopag.com.br/cepws.asmx</Value>
+    </Setting>
+    <Setting Name="BNE_Web_wsAutenticacaoSOSRH_wsAutenticacao" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://teste.sosrh.com.br/webservices/wsAutenticacao.asmx</Value>
+    </Setting>
+    <Setting Name="SubDiretorioFoto" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/ArquivosTemporarios/ErroFotoTemp</Value>
+    </Setting>
+    <Setting Name="PessoaFisicaFotoDelayLimparCacheMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="PessoaFisicaFotoCaminho" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Fotos</Value>
+    </Setting>
+    <Setting Name="BNE_Web_WSPessoaJuridica_WSPessoaJuridica" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wstestegeral.webfopag.com.br/WSPessoaJuridica.asmx</Value>
+    </Setting>
+    <Setting Name="PessoaJuridicaLogoHandler" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Handlers/PessoaJuridicaLogo.ashx?CNPJ={0}&amp;origem={1}</Value>
+    </Setting>
+    <Setting Name="PessoaFisicaFotoHandler" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">/Handlers/PessoaFisicaFoto.ashx?CPF={0}&amp;origem={1}</Value>
+    </Setting>
+    <Setting Name="BNE_WEB_CurriculoThumbFotoHandler" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Handlers/CurriculoThumbFoto.ashx</Value>
+    </Setting>
+    <Setting Name="PessoaFisicaDelayCurriculoLink" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="BNE_WEB_CurriculoLinkHandler" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Handlers/CurriculoLink.ashx</Value>
+    </Setting>
+    <Setting Name="PessoaJuridicaLogoDelayLimparCacheMinutos" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="PessoaJuridicaLogoCaminho" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Logos</Value>
+    </Setting>
+    <Setting Name="BNE_BLL_wsIntegracaoWFat_IntegracaoFaturamentoFinanceiro" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://wshomglobal.webfopag.com.br/IntegracaoFaturamentoFinanceiro.asmx</Value>
+    </Setting>
+    <Setting Name="BNE_Web_wsTransacao_wsTRANSACAO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wshomglobal.webfopag.com.br/wstransacao.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

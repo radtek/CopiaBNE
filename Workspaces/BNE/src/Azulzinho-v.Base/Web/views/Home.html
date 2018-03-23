@@ -1,0 +1,179 @@
+﻿<!--<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">-->
+            <div class="container-fluid-adjust">
+                <div class="row clearfix">
+                    <div class="col-md-12 column">
+                        <div id="Progresso" class="DivProgresso" ng-show="carregando==true">
+                            Carregando... <img src="../images/gif-load.gif" />
+                        </div>
+                        <div id="Progresso" class="DivProgressoDemanda" ng-show="carregandoPorDemanda==true">
+                            Carregando vagas... <img src="../images/gif-load.gif" />
+                        </div>
+                        <!--BEGIN SpellCheck-->
+                        <div ng-show="temSpellCheck" class="margin-left-85">
+                            
+                            <ul class="inline-block">
+                                <li class="suggestTerm">Você quis dizer: </li>
+                                <li class="suggestTerm" ng-repeat="value in sugest | orderBy:'hit':true" ng-class="{'last':$last}"><a href ng-click="novaBusca(value.word)"> {{value.word}} {{$last ? '':','}}</a></li>
+                            </ul>
+                        </div>
+                        <!--END SpellCheck-->
+                        <!--BEGIN DivSemDados-->
+                        <div id="DivSemDados" class="DivSemVagas text-center" ng-show="temSpellCheck">
+                            <div class="text-center">
+                                <i class="fa fa-thumbs-o-down fa-5x fa-color"></i>
+                                <h3 class="text-modal">Não encontramos nenhuma vaga com essa descrição.</h3>
+                                <h3 class="text-modal">Verifique se escreveu corretamente e tente outra vez.</h3>
+                            </div>
+                        </div>
+                        <!--END DivSemDados-->
+                        
+                        <!--BEGIN Vagas-->
+                        <div class="container-fluid-adjust center-adjust">
+                            <div class="row clearfix">
+                                <div ng-repeat="vaga in vagas" ng-class="(vaga.bneRecomenda == true ? 'col-lg-2 BOXVAGA_AZUL' : 'col-lg-2 BOXVAGA')">
+                                    <div class="col-lg-12 bloco-vaga">
+                                        <strong class="TituloVaga">{{vaga.funcao}}</strong>
+                                        <p class="margin-top-5"><i ng-class="(vaga.bneRecomenda == true ? 'fa fa-map-marker icone-azul' : 'fa fa-map-marker icone-cinza')"></i> {{vaga.cidade}}</p>
+                                        <p><i ng-class="(vaga.bneRecomenda == true ? 'fa fa-money icone-azul' : 'fa fa-money icone-cinza')"></i> {{vaga.salario}}</p>
+                                        <p><small>{{vaga.atribuicoes|truncate:140}}</small></p>
+                                    </div>
+
+                                    <a href ng-class="(vaga.bneRecomenda == true ? 'btn btn-detalhes-vaga_azul' : 'btn btn-detalhes-vaga')" data-toggle="modal" data-target="#ModalDadosVaga" ng-click="MaisDadosVaga(this)">+</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END Vagas-->
+                    </div>
+                    <div class="col-md-12 column text-center" ng-show="!temSpellCheck"><button class="btn btn-primary btn-mais-vagas" type="button" ng-click="loadMore()">Mostrar mais vagas</button></div>
+                </div>
+            </div>
+            <!--Start News-->
+            <div class="container-bk">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-2 column">
+                            <div class="media media-adjust-categorias-news">
+                                <div class="media-body">
+                                    <span class="clearfix"></span>
+                                    <h3 class="media-heading text-center">Notícias</h3>
+                                    <ul class="list-unstyled">
+                                        <li><a href="http://noticias.azulzinho.com.br/category/curiosidades/">Curiosidades (1)</a></li>
+                                        <li><a href="http://noticias.azulzinho.com.br/category/empregos/">Empregos (1)</a></li>
+                                        <li><a href="http://noticias.azulzinho.com.br/category/estagios/">Estágios (1)</a></li>
+                                        <li><a href="http://noticias.azulzinho.com.br/category/negocios/">Negócios (1)</a></li>
+                                        <li><a href="http://noticias.azulzinho.com.br/category/novidades/">Novidades (1)</a></li>
+                                        <li><a href="http://noticias.azulzinho.com.br/category/salarios/">Salários (1)</a></li>
+                                        <li><a href="http://noticias.azulzinho.com.br/category/trabalho-temporario/">Trabalho Temporário (1)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="http://noticias.azulzinho.com.br" class="btn btn-default btn-block btn-adjust btn-default-adjust"><small>VER TODAS AS NOTÍCIAS</small></a>
+                        </div>
+                        <div class="col-md-5 column" ng-repeat="post in posts">
+                            <div class="media media-adjust">
+                                <div class="media-body">
+                                    <p><small class="pull-left text-info">{{post.categoria}}</small><small class="pull-right text-info">{{post.dataPost}}</small></p>
+                                    <span class="clearfix"></span>
+                                    <h3 class="media-heading">
+                                        <a href="{{post.link}}" title="{{post.titulo}}">{{post.titulo}}</a>
+                                    </h3>
+                                    <!--<a href="#" class="pull-left"><img src="http://lorempixel.com/200/200/" class="media-object img-news" alt='' /></a>-->
+                                    <p class="adjust-align-news" ng-bind-html="formatarHtml(post.descricao)">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End News-->
+            <!--Start Lista de Agencia de Emprego-->
+            <div class="jumbotron  text-center">
+                <div class="col-md-12 column">
+                    <h2 class="h2-adjust">LISTA DAS AGÊNCIAS DE EMPREGO</h2>
+                    <small class="small-adjust">Escolha sua cidade e confira a <strong>lista das agências</strong> de emprego parceiras do Jornal Azulzinho</small>
+                    <form class="navbar-form" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-adjust" placeholder="Digite aqui sua cidade" name="q" id="q">
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary btn-lg" type="button" ng-click="buscarAgencias()"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="adjust-p small-adjust">Além das agências parceiras, você pode ir até um dos <strong class="text-adjust-color">Pontos de Atendimento Credenciados do BNE</strong> para fazer sua candidatura e ter serviços especiais, como a compra do cartão VIP, envio de currículo para empresas, dentre outros.</p>
+                    <a href="http://www.bne.com.br/parcerias/lista-de-parceiros.pdf" target="_blank" class="btn btn-primary" type="submit">PONTOS CREDENCIADOS</a>
+                </div>
+            </div>
+            <!--End Lista de Agencia de Emprego-->
+        <!--</div>
+    </div>
+</div>-->
+    <!--START MODAL-->
+    <div class="modal fade ng-scope" id="ModalDadosVaga" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div id="DivDadosVaga" class="modal-bg" ng-show="verDadosVaga">
+                <div class="modal-header  modal-headerCVs modal-header-adjust-title">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body modal-header-adjust">
+                    <div class="container">
+                        <div class="row clearfix">
+                            <div class="col-md-12 column">
+                                <h1 class="text-adjust-color"><strong>{{listaVagasControle.vaga.funcao}}</strong></h1>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-md-6 column">
+                                <small><i class="fa fa-map-marker icone-azul"> São Paulo/SP</i></small>
+                            </div>
+                            <div class="col-md-6 column">
+                                <small ng-show="(listaVagasControle.vaga.salario != null)"><i class="fa fa-money"> {{listaVagasControle.vaga.salario}}</i></small>
+                            </div>
+                        </div>
+                        <div class="row clearfix small-adjust">
+                            <div class="col-md-12 column">
+                                <h3><strong>ATRIBUIÇÕES</strong></h3>
+                                <p>{{listaVagasControle.vaga.atribuicoes}}</p>
+                            </div>
+                        </div>
+                        <div id="DivCandidaturaJaEfetuada" class="col-md-6 column pull-right inativo alert alert-success">
+                            <i class="fa fa-thumbs-o-up fa-2x"></i>
+                            Parabéns! Você já está no processo seletivo desta vaga.
+                        </div>
+                        <div id="DivErroCandidatura" class="col-md-6 column pull-right inativo alert alert-warning">
+                            <i class="fa fa-frown-o fa-2x"></i> Erro ao efetuar candidatura. Por favor, tente mais tarde.
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="btnCandidatar" class="btn btn-primary btn-lg btn-block btn-adjust-modal" ng-click="EnviarCandidatura()">QUERO ME CANDIDATAR!</button>
+            </div>
+            <div id="DivCandVip" class="modal-bg" ng-show="verVip">
+                <div class="modal-header modal-header-adjust-title">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body modal-header-adjust">
+                    <div class="container">
+                        <div class="row clearfix">
+                            <div class="col-md-12 column">
+                                <h1 class="text-adjust-color"><strong>Parabéns!</strong> sua candidatura a <strong>vaga {{listaVagasControle.vaga.codigo}}</strong> foi realizada com sucesso!</h1>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-md-12 column">
+                                <h3>confira <strong>todas as vagas</strong> que temos <strong>para você</strong>.</h3>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-md-12 column">
+                                <h3>Candidate-se e <strong>saia na frente</strong>!</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-warning btn-lg btn-block btn-adjust-modal" ng-click="FecharModal()">VER OUTRAS VAGAS</button>
+            </div>
+        </div>
+    </div>
+    <!--END MODAL-->

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4FCEFDA-3D86-42BC-9DCB-B1E2D3C0D639}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BNE.Mapper.ToOld</RootNamespace>
+    <AssemblyName>BNE.Mapper.ToOld</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="BNE.BLL, Version=0.0.17275.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\BNE.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="BNE.BLL.AsyncServices">
+      <HintPath>Library\BNE.BLL.AsyncServices.dll</HintPath>
+    </Reference>
+    <Reference Include="BNE.BLL.Common">
+      <HintPath>Library\BNE.BLL.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="BNE.BLL.Mensagem, Version=2.0.173.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\BNE.BLL.Mensagem.dll</HintPath>
+    </Reference>
+    <Reference Include="BNE.BLL.Notificacao">
+      <HintPath>Library\BNE.BLL.Notificacao.dll</HintPath>
+    </Reference>
+    <Reference Include="BNE.Cache, Version=2.78.14163.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\BNE.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="BNE.EL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\BNE.EL.dll</HintPath>
+    </Reference>
+    <Reference Include="MailSender, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\MailSender.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PesquisaVaga.cs" />
+    <Compile Include="PessoaFisica.cs" />
+    <Compile Include="PessoaJuridica.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BNE.Mapper\BNE.Mapper.csproj">
+      <Project>{bc671d33-cfd9-4868-888f-4266aedb3b13}</Project>
+      <Name>BNE.Mapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Library\BNE.BLL.AsyncServices.dll" />
+    <Content Include="Library\BNE.BLL.Common.dll" />
+    <Content Include="Library\BNE.BLL.dll" />
+    <Content Include="Library\BNE.BLL.Mensagem.dll" />
+    <Content Include="Library\BNE.BLL.Notificacao.dll" />
+    <Content Include="Library\BNE.Cache.dll" />
+    <Content Include="Library\BNE.Domain.Events.dll" />
+    <Content Include="Library\BNE.EL.dll" />
+    <Content Include="Library\BNE.Services.Base.dll" />
+    <Content Include="Library\Employer.Plataforma.DAL.dll" />
+    <Content Include="Library\Employer.PlataformaLog.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\log4net.dll" />
+    <Content Include="Library\MailSender.dll" />
+    <Content Include="Library\Microsoft.Rest.ClientRuntime.dll" />
+    <Content Include="Library\RabbitMQ.Client.dll" />
+    <Content Include="Library\SharedKernel.DomainEvents.CrossDomainEvents.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

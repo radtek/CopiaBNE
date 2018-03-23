@@ -1,0 +1,10 @@
+﻿@using BNE.PessoaFisica.Web.Helpers
+@model BNE.PessoaFisica.Web.Models.Parametros
+
+<script>
+    var parametros = @JavaScriptConvert.SerializeObject(Model);
+    bne.components.web.autocomplete.URL.URLCompleteFuncao = parametros.urlAutocompleteFuncao;
+    bne.components.web.autocomplete.URL.URLCompleteCidade = parametros.urlAutocompleteCidade;
+    bne.components.web.autocomplete.limit.LimiteCompleteFuncao = parametros.limiteAutocompleteFuncao;
+    bne.components.web.autocomplete.limit.LimiteCompleteCidade = parametros.limiteAutocompleteCidade;
+</script>

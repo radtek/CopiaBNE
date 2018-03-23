@@ -1,0 +1,102 @@
+﻿@*@model BNE.Web.LanHouse.Models.ModelHomeIndex*@
+
+@{
+    ViewBag.Title = "Lan House - Administração";
+    Layout = "~/Views/Shared/_LayoutAdministracao.cshtml";
+}
+<div style="text-align: center">
+    <h2>Administração</h2>
+</div>
+
+@section scripts
+{
+    <script src="/Scripts/FileUpload/jquery.fileupload.js"></script>
+    <script src="/Scripts/local/Administracao.js"></script>
+}
+
+@using (Html.BeginForm())
+{
+    <div id="div1" class="tela modal" style="display: none">
+        <a class="b-close modal_fechar" title="Fechar">X</a>
+        <div class="linha">
+            <label for="txtCpf" class="label_padrao">CPF</label><input type="text" name="txtCpf" id="txtCpf" size="16" maxlength="16" class="textbox_padrao" />
+        </div>
+        <div class="linha">
+            <label for="txtDataNasc" class="label_padrao">Data nascimento</label><input type="text" name="txtDataNasc" id="txtDataNasc" size="10" maxlength="10" class="textbox_padrao" />
+        </div>
+        <div class="linha">
+            <label for="txtSenha" class="label_padrao">Senha</label><input type="password" name="txtSenha" id="txtSenha" size="14" maxlength="14" class="textbox_padrao" />
+        </div>
+        <div class="botoes">
+            <input type="button" value="Continuar" class="continuar" onclick="segundaTela()" />
+        </div>
+    </div>
+        
+    <div id="div2" class="tela modal" style="display: none">
+        <a class="b-close modal_fechar" title="Fechar">X</a>
+        <div class="linha">
+            @Html.Hidden("hdId")
+            <label for="txtCnpjCompanhia" class="label_padrao">CNPJ da companhia na Lan</label><input type="text" name="txtCnpjCompanhia" id="txtCnpjCompanhia" size="16" maxlength="16" class="textbox_padrao" />
+        </div>
+        <div class="linha">
+            <label for="txtNomeCompanhia" class="label_padrao">Nome</label><input type="text" name="txtNomeCompanhia" id="txtNomeCompanhia" size="100" maxlength="100" onkeydown="zerarExitAttempt()" onblur="formatarNomeCompanhia(this)" class="textbox_padrao" />
+        </div>
+        <div class="linha">
+            <label for="fileLogo" class="label_padrao">Logo</label><input type="file" name="files[]" id="fileLogo" class="textbox_padrao" value="Upload imagem" />
+            <img id="logo" style="max-height: 80px; max-width: 80px;" />
+        </div>
+        @*<div class="linha">
+            <label for="txtDataInicioValidade" class="label_padrao">Início vigência</label><input type="text" name="txtDataInicioValidade" id="txtDataInicioValidade" size="10" maxlength="10" onkeydown="zerarExitAttempt()" onblur="formatarDataInicioValidade(this)" class="textbox_padrao" />
+        </div>
+        <div class="linha">
+            <label for="txtDataFimValidade" class="label_padrao">Fim vigência (opcional)</label><input type="text" name="txtDataFimValidade" id="txtDataFimValidade" size="10" maxlength="10" onkeydown="zerarExitAttempt()" onblur="formatarDataFimValidade(this)" class="textbox_padrao" />
+        </div>*@
+        <div class="botoes">
+            <a class="b-close anterior">Voltar</a> @*onclick="primeiraTela()"*@
+            @*<a class="continuar" onclick="terceiraTela();">CONTINUAR</a>*@
+            <a class="continuar" onclick="Salvar();">SALVAR</a>
+        </div>
+        <div id="grid">
+            <table id="grid_list"></table>
+            <div id="grid_pager"></div>
+        </div>
+
+    </div>
+        
+    <div id="div3" class="tela modal" style="display: none">
+        <a class="b-close modal_fechar" title="Fechar">X</a>
+        <div class="linha">
+            <label for="txtCidade">Cidade</label><input type="text" name="txtCidade" id="txtCidade" size="100" onkeydown="zerarExitAttempt()" onchange="formatarCidade(this)" />
+        </div>
+        <div class="linha">
+            <input type="button" value="+" onclick="adicionaCidade(this)" />
+        </div>
+        <div class="linha">
+            <select multiple="multiple" name="selCidades" id="selCidades"></select>
+        </div>
+        <div class="linha">
+            <input type="button" value="Remove cidade" style="margin-left: 270px" onclick="removeCidade(this)" />
+        </div>
+
+        <div class="botoes">
+            <a class="b-close anterior" onclick="segundaTela()">Voltar</a>
+            <a class="continuar" onclick="quartaTela();">CONTINUAR</a>
+        </div>
+    </div>
+        
+    <div id="div4" class="tela modal" style="display: none">
+        <a class="b-close modal_fechar" title="Fechar">X</a>
+        <p class="logo"></p>
+        <p class="destaque">Os dados da oportunidade foram salvos com sucesso</p>
+
+        <div class="botoes">
+            <a class="b-close anterior" onclick="terceiraTela()">Voltar</a>
+            <a class="continuar" onclick="segundaTela();">Incluir mais oportunidades</a>
+        </div>
+    </div>
+        
+    <div id="divSalvoComSucesso" class="modal" title="Mensagem" style="display: none">
+        Dados salvos com sucesso
+    </div>
+        
+}

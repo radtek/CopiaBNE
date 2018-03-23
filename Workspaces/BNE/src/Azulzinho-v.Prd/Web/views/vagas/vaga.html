@@ -1,0 +1,57 @@
+﻿<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h1>Vaga para {{VagaController.vaga.funcao}} em {{VagaController.vaga.cidade}}</h1>
+            <div class="row clearfix">
+                <div class="col-md-5 column atribuicoes">
+                    <dl>
+                        <dt class="dtSubtitule1b">Atribuições</dt>
+                        <dd class="ddSubtitule1b">
+                            <p ng-bind-html="atribuicoes"></p>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-md-6 column pull-right">
+                    <dl>
+                        <dt class="dtSubtitule1c" ng-show="(VagaController.vaga.requisitos != null)">REQUISITOS</dt>
+                        <p>
+                            {{VagaController.vaga.requisitos}}
+                        </p>
+                        <dt class="dtSubtitule1c" ng-show="(VagaController.vaga.beneficios != null)">BENEFÍCIOS</dt>
+                        <p>
+                            {{VagaController.vaga.beneficios}}
+                        </p>
+                        <dt class="dtSubtitule1c" ng-show="(VagaController.vaga.salario != null)">SALÁRIO</dt>
+                        <p>
+                            {{VagaController.vaga.salario}}
+                        </p>
+                        <dd class="ddSubtitule3"><small>- <strong>Código da Vaga:</strong> {{VagaController.vaga.codigo}}</small></dd>
+                        <p></p>
+                    </dl>
+                    <p class="clearfix"></p>
+                    <button type="button" id="btnCandidatar" class="btn btn-warning btn-lg btn-block" ng-click="EnviarCandidatura()">ENVIAR MEU CURRÍCULO</button>
+                    <p class="clearfix"></p>
+                </div>
+
+                <div id="DivCandidaturaJaEfetuada" class="col-md-6 column pull-right inativo alert alert-success">
+                    <i class="fa fa-thumbs-o-up fa-2x"></i>
+                    Parabéns! Você já está no processo seletivo desta vaga.
+                </div>
+                <div id="DivErroCandidatura" class="col-md-6 column pull-right inativo alert alert-warning">
+                    <i class="fa fa-frown-o fa-2x"></i> Erro ao efetuar candidatura. Por favor, tente mais tarde.
+                </div>
+            </div>
+            <div class="row col-md-12 clearfix">
+                <div>
+                    <a href="/vaga/{{VagaController.vaga.cidade|formatToUrl}}">Mais vagas em {{VagaController.vaga.cidade}}</a>
+                </div>
+                <div>
+                    <a href="/vaga/{{VagaController.vaga.funcao|formatToUrl}}">Mais vagas para {{VagaController.vaga.funcao}}</a>
+                </div>
+                <div>
+                    <a href="/vaga/{{VagaController.vaga.funcao|formatToUrl}}-em-{{VagaController.vaga.cidade|formatToUrl}}">Mais vagas para {{VagaController.vaga.funcao}} em {{VagaController.vaga.cidade}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

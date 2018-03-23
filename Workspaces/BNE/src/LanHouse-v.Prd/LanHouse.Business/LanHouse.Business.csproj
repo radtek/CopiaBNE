@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9728E78-1F0F-433D-B506-901B6A642198}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LanHouse.Business</RootNamespace>
+    <AssemblyName>LanHouse.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BNE.BLL.AsyncServices">
+      <HintPath>..\Library\BNE.BLL.AsyncServices.dll</HintPath>
+    </Reference>
+    <Reference Include="BNE.Cache">
+      <HintPath>..\Library\BNE.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="BNE.EL">
+      <HintPath>..\Library\BNE.EL.dll</HintPath>
+    </Reference>
+    <Reference Include="BNE.Services.Base">
+      <HintPath>..\Library\BNE.Services.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Employer.Plataforma.DAL, Version=2.78.12212.2, Culture=neutral, PublicKeyToken=4248b668a8cf2529, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Employer.Plataforma.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Employer.PlataformaLog, Version=2.78.12212.2, Culture=neutral, PublicKeyToken=84ac12e9cf61bfdb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Employer.PlataformaLog.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AreaBNE.cs" />
+    <Compile Include="Candidatura.cs" />
+    <Compile Include="CartaEmail.cs" />
+    <Compile Include="CartaSMS.cs" />
+    <Compile Include="Cidade.cs" />
+    <Compile Include="CodigoDesconto.cs" />
+    <Compile Include="CodigoDescontoPlano.cs" />
+    <Compile Include="Curriculo.cs" />
+    <Compile Include="CurriculoObservacao.cs" />
+    <Compile Include="Curso.cs" />
+    <Compile Include="Custom\FormatObject.cs" />
+    <Compile Include="Custom\Html.cs" />
+    <Compile Include="Custom\MailController.cs" />
+    <Compile Include="Custom\SOLR\PesquisaEmpresaSolr.cs" />
+    <Compile Include="Custom\SOLR\PesquisaVagasSolr.cs" />
+    <Compile Include="Custom\SOLR\ResultadoBuscaEmpresaSolr.cs" />
+    <Compile Include="Custom\SOLR\ResultadoBuscaVagasSolr.cs" />
+    <Compile Include="Custom\Uteis.cs" />
+    <Compile Include="Deficiencia.cs" />
+    <Compile Include="DeParaEmail.cs" />
+    <Compile Include="DTO\CartaEmail.cs" />
+    <Compile Include="DTO\Empresa.cs" />
+    <Compile Include="DTO\Experiencia.cs" />
+    <Compile Include="DTO\Funcao.cs" />
+    <Compile Include="DTO\PesquisaSalarial.cs" />
+    <Compile Include="DTO\PessoaFisicaEnvioSMSTanque.cs" />
+    <Compile Include="DTO\RssPost.cs" />
+    <Compile Include="DTO\SpellCheck.cs" />
+    <Compile Include="Enumeradores\CartaSMS.cs" />
+    <Compile Include="DTO\Curriculo.cs" />
+    <Compile Include="DTO\FilialOrigemFilial.cs" />
+    <Compile Include="DTO\Formacao.cs" />
+    <Compile Include="DTO\Idioma.cs" />
+    <Compile Include="DTO\RegistrarUsuario.cs" />
+    <Compile Include="DTO\Vaga.cs" />
+    <Compile Include="Empresa.cs" />
+    <Compile Include="Enumeradores\AdicionalPlanoSituacao.cs" />
+    <Compile Include="Enumeradores\CartaEmail.cs" />
+    <Compile Include="Enumeradores\LAN_Fase_Cadastro.cs" />
+    <Compile Include="Enumeradores\PagamentoSituacao.cs" />
+    <Compile Include="Enumeradores\Parametro.cs" />
+    <Compile Include="Enumeradores\Perfil.cs" />
+    <Compile Include="Enumeradores\PlanoParcelaSituacao.cs" />
+    <Compile Include="Enumeradores\PlanoSituacao.cs" />
+    <Compile Include="Enumeradores\PlanoTipo.cs" />
+    <Compile Include="Enumeradores\SituacaoCurriculo.cs" />
+    <Compile Include="Enumeradores\StatusCodigoDesconto.cs" />
+    <Compile Include="Enumeradores\StatusCurriculoVaga.cs" />
+    <Compile Include="Enumeradores\TipoAdicional.cs" />
+    <Compile Include="Enumeradores\TipoPagamento.cs" />
+    <Compile Include="Enumeradores\TipoPerfil.cs" />
+    <Compile Include="EnviarCVEmpresa.cs" />
+    <Compile Include="Escolaridade.cs" />
+    <Compile Include="Estado.cs" />
+    <Compile Include="EstadoCivil.cs" />
+    <Compile Include="Estatistica.cs" />
+    <Compile Include="Exceptions\GerenciadorException.cs" />
+    <Compile Include="Extension\CustomExtension.cs" />
+    <Compile Include="Filial.cs" />
+    <Compile Include="Companhia.cs" />
+    <Compile Include="Exceptions\RecordNotFoundException.cs" />
+    <Compile Include="FaseCadastro.cs" />
+    <Compile Include="FilialObservacao.cs" />
+    <Compile Include="Fonte.cs" />
+    <Compile Include="Funcao.cs" />
+    <Compile Include="FuncaoPretendida.cs" />
+    <Compile Include="Idioma.cs" />
+    <Compile Include="MensagemCS.cs" />
+    <Compile Include="Pagamento.cs" />
+    <Compile Include="Parametro.cs" />
+    <Compile Include="PesquisaSalarial.cs" />
+    <Compile Include="PessoaFisica.cs" />
+    <Compile Include="PessoaFisicaExperiencia.cs" />
+    <Compile Include="PessoaFisicaFormacao.cs" />
+    <Compile Include="PessoaFisicaIdioma.cs" />
+    <Compile Include="Plano.cs" />
+    <Compile Include="PlanoAdicional.cs" />
+    <Compile Include="PlanoAdquirido.cs" />
+    <Compile Include="PlanoAdquiridoDetalhes.cs" />
+    <Compile Include="PlanoParcela.cs" />
+    <Compile Include="PlanoQuantidade.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RankingEmail.cs" />
+    <Compile Include="RssRead.cs" />
+    <Compile Include="Service References\BNETanqueService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SituacaoFormacao.cs" />
+    <Compile Include="Solr\PublicadorSolr.cs" />
+    <Compile Include="TipoCodigoDesconto.cs" />
+    <Compile Include="UsuarioFilial.cs" />
+    <Compile Include="UsuarioFilialPerfil.cs" />
+    <Compile Include="Vaga.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LanHouse.Entities.BNE\LanHouse.Entities.BNE.csproj">
+      <Project>{68fdc1c2-7887-4869-9d7a-52f398e41a42}</Project>
+      <Name>LanHouse.Entities.BNE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LanHouse.Entities.SalarioBR\LanHouse.Entities.SalarioBR.csproj">
+      <Project>{fa399ad5-df1a-4d79-b6ff-2b0cee218636}</Project>
+      <Name>LanHouse.Entities.SalarioBR</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Service References\BNETanqueService\App1.wsdl" />
+    <None Include="Service References\BNETanqueService\App4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BNETanqueService\App41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BNETanqueService\App42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BNETanqueService\App43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BNETanqueService\LanHouse.Business.BNETanqueService.OutAlteraStatusMensagem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\LanHouse.Business.BNETanqueService.OutConversaAtiva.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\LanHouse.Business.BNETanqueService.OutEnviarMensagem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\LanHouse.Business.BNETanqueService.OutEnviaSMSCelular.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\LanHouse.Business.BNETanqueService.OutHabilitarUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\LanHouse.Business.BNETanqueService.OutHistorico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\LanHouse.Business.BNETanqueService.OutInatividadeCelular.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\LanHouse.Business.BNETanqueService.OutInformacaoSaldo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\LanHouse.Business.BNETanqueService.OutReceberMensagem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\LanHouse.Business.BNETanqueService.OutRecebeSMSCelular.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\LanHouse.Business.BNETanqueService.OutStatusCelular.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\LanHouse.Business.BNETanqueService.OutStatusDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BNETanqueService\LanHouse.Business.BNETanqueService.OutVerificaCelulares.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BNETanqueService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BNETanqueService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BNETanqueService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BNETanqueService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BNETanqueService\App1.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

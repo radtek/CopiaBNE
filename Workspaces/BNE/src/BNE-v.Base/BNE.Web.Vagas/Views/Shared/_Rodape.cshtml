@@ -1,0 +1,171 @@
+﻿@using BNE.Web.Vagas.Code
+@model BNE.Web.Vagas.Models.Rodape
+
+@if (Model.STC)
+{
+    <div class="barra_rodape_rhoffice">
+        <ul>
+            <li>
+                <a href='@Url.Action("Index", "Home")'>Página Inicial</a>
+                |
+            </li>
+            <li>
+                @Html.ActionLink("Últimas Vagas", "PesquisarVagas", "ResultadoPesquisaVaga")
+                |
+            </li>
+            <li>
+                @Html.ActionLink("Buscar Vagas", "Index", "BuscaVaga")
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("PesquisaVaga", "Base")'>Pesquisa de Vagas</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("CadastrarCurriculo", "Base")'>Cadastrar Currículo</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("AtualizarCurriculo", "Base")'>Atualizar Currículo</a>
+                |
+            </li>
+            <li>
+                @Html.HyperLink("http://www.salariobr.com", "Pesquisa Salarial", "_blank")
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("TesteSistmars", "Base")'>Teste Sistmars</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("TesteDasCores", "Base")'>Teste das Cores</a>
+                |
+            </li>
+            @*<li>*@
+                @*<uc1:ucatendimentoonline id="ucAtendimentoOnlineRHOffice" runat="server" />*@
+                @*Atendimento Online
+                |
+            </li>*@
+            <li>
+                <a href='@Url.Action("RetornarBNE", "Base")'>BNE</a>
+            </li>
+        </ul>
+    </div>
+}
+else
+{
+    <div class="barra_rodape_candidato">
+        <h4 class="titulo_rodape">Candidato</h4>
+        <ul class="lista_rodape_candidato candidato footer-bar">
+            <li>
+                <a href='@Url.Action("AtualizarCurriculo", "Base")' rel="nofollow">Atualizar Currículo</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("CadastrarCurriculo", "Base")'>Cadastrar Currículo</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("SalaVip", "Base")' rel="nofollow">Sala Vip</a>
+                |
+            </li>
+            <li>
+                @Html.ActionLink("Últimas Vagas", "PesquisarVagas", "ResultadoPesquisaVaga")
+                |
+            </li>
+            <li>
+                @Html.ActionLink("Buscar Vagas", "Index", "BuscaVaga")
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("CompreVip", "Base")'>Compre Serviço Vip</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("QuemMeViu", "Base")' rel="nofollow">Quem me Viu?</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("PesquisaVaga", "Base")'>Pesquisa de Vagas</a>
+            </li>
+        </ul>
+    </div>
+    <div class="barra_rodape_empresa">
+        <h4 class="titulo_rodape">Empresa</h4>
+        <ul class="lista_rodape_empresa empresa" id="lista_rodape_empresa_empresa">
+            <li>
+                <a href='@Url.Action("AtualizarEmpresa", "Base")' rel="nofollow">Atualizar Empresa</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("CadastrarEmpresa", "Base")'>Cadastrar Empresa</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("SalaSelecionador", "Base")' rel="nofollow">Sala Selecionadora</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("PesquisaCurriculo", "Base")' rel="nofollow">Pesquisar CVs</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("CvsRecebidos", "Base")' rel="nofollow">CVs Recebidos</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("AnunciarVaga", "Base")' rel="nofollow">Anunciar Vagas</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("CompreCVs", "Base")'>Compre CVs</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("ExclusivoBancoCurriculo", "Base")' rel="nofollow">Exclusivo Banco de Currículos</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("RecrutamentoR1", "Base")'>Recrutamento R1</a>
+            </li>
+        </ul>
+    </div>
+    <div class="barra_rodape_geral">
+        <h4 class="titulo_rodape">Geral</h4>
+        <ul class="lista_rodape_geral geral footer-bar" id="lista_rodape_geral_geral">
+            <li>
+                <a href='http://@Html.RecuperarURLAmbiente()'>Página Inicial</a>
+                |
+            </li>
+            <li>@Html.HyperLink("http://www.salariobr.com", "Pesquisa Salarial", "_blank")
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("TesteSistmars", "Base")'>Teste Sistmars</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("TesteDasCores", "Base")'>Teste das Cores</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("OndeEstamos", "Base")'>Onde Estamos</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("FaleComPresidente", "Base")'>Fale com o Presidente</a>
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("Agradecimentos", "Base")'>Agradecimentos</a>
+                |
+            </li>
+            <li>@Html.HyperLink("http://www.employer.com.br", "Employer", "_blank")
+                |
+            </li>
+            <li>
+                <a href='@Url.Action("IndiqueBNE", "Base")'>Indique o BNE</a>
+            </li>
+        </ul>
+    </div>
+}

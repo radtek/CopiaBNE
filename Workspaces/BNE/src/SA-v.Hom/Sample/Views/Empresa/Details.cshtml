@@ -1,0 +1,1076 @@
+﻿@model AdminLTE_Application.VWEmpresa
+@using Microsoft.AspNet.Identity
+@using System.Security.Claims
+@{
+    ViewBag.Title = "CRM Detalhes Empresa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var userWithClaims = (ClaimsPrincipal)User;
+    var tipoVendedor = Convert.ToInt32(userWithClaims.Claims.FirstOrDefault(x => x.Type.Equals("tipoVendedor")).Value);
+}
+@Styles.Render("~/Content/css/datetimepickers.css")
+<link href="~/Content/css/datepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+<aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Painel Empresa
+            <small>Detalhes</small>
+
+        </h1>
+        @{string mensagem = ViewBag.Msg; }
+        @if (!string.IsNullOrEmpty(mensagem) && mensagem.Contains("sucesso"))
+        {
+            <script>
+                setTimeout("Ocultarsucesso()", 10000);
+            </script>
+            <div class="alert alert-success alert-dismissable" id="divSucess" style="text-align:center">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <div class="msg msg-success msg-success-text">
+                    <span class="glyphicon glyphicon glyphicon-ok"></span>  @ViewBag.Msg
+                </div>
+
+            </div>
+        }
+        else if (!string.IsNullOrEmpty(mensagem))
+        {
+            <script>
+                setTimeout("OcultarAlert()", 10000);
+            </script>
+            <div class="alert alert-info" id="divAlert" style="text-align:center">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <div class="msg msg-info"> <span class="glyphicon glyphicon-info-sign"></span> @ViewBag.Msg </div>
+            </div>
+        }
+
+        <ol class="breadcrumb">
+            <li><a href="~/Views/Home/"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Lista de Empresas</li>
+            <li class="active">Empresa</li>
+        </ol>
+    </section>
+
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Dados -->
+        <div class="row">
+            <section class="col-lg-5">
+                <div class="box box-success box-group">
+                    <div class="box-header">
+                        <div class="col-lg-12">
+                            <h4 class="box-title">
+                                @Html.DisplayFor(model => model.Raz_Social)
+
+                                @if (string.IsNullOrEmpty(Model.Nme_Vendedor))
+                                {
+                                    using (Html.BeginForm("AddProspeccao", "Empresa", FormMethod.Post))
+                                    {
+                                        @Html.HiddenFor(s => s.Num_CNPJ, new { @Value = Model.Num_CNPJ })
+                                        <button type="submit" class="btn btn-success btn-md" style="position:absolute;right:3%;">
+                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar
+                                        </button>
+                                    }
+                                }
+
+                            </h4>
+                            <div>
+                                <br><br><br>
+                                <b>CNPJ:</b> @Html.DisplayFor(model => model.Num_CNPJ).ToString().Replace(",00", "")<br>
+                                <b>Fone comercial:</b> (@Html.DisplayFor(model => model.Num_DDD_Comercial)) @Html.DisplayFor(model => model.Num_Comercial)<br>
+                                <b>Localidade:</b> @Html.DisplayFor(model => model.Nme_Cidade) - @Html.DisplayFor(model => model.Sig_Estado)<br>
+                                <b>Natureza jurídica:</b> @Html.DisplayFor(model => model.Des_Natureza_Juridica)<br>
+                                <b>CNAE:</b> @Html.DisplayFor(model => model.Des_CNAE_Sub_Classe)<br>
+
+                                @if (!(Model.Qtd_Funcionarios == null))
+                                {
+                                    <b>Qtd Funcionários:</b> @Html.DisplayFor(model => model.Qtd_Funcionarios)<br>
+                                }
+                                <b>Data de cadastro:</b> @Html.DisplayFor(model => model.Dta_Cadastro)<br>
+                                @if (!string.IsNullOrEmpty(Model.End_Site))
+                                {
+                                    <b>Site:</b> <a href="@Html.DisplayFor(model => model.End_Site)">@Html.DisplayFor(model => model.End_Site)</a><br>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.Des_Plano))
+                                {
+                                    <b>Plano: </b>@Html.DisplayFor(model => model.Des_Plano)<br>
+                                    <b>Período: </b>@Html.DisplayFor(model => model.Dta_Inicio_Plano) <span> até </span>@Html.DisplayFor(model => model.Dta_Fim_plano)<br>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.Des_URL))
+                                {
+                                    <b>STC: </b><a href="@Html.DisplayFor(model => model.Des_URL)">@Html.DisplayFor(model => model.Des_URL)</a><br>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.Nme_Usuario))
+                                {
+                                    <b>Usuário responsável: </b>@Html.DisplayFor(model => model.Nme_Usuario)<br>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.Num_Comercial_Usuario))
+                                {
+                                    <b>Função: </b>@Html.DisplayFor(model => model.Des_Funcao_Usuario)<<<br>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.Num_Comercial_Usuario))
+                                {
+                                    <b>Telefone: </b><a href="tel:@Html.DisplayFor(model => model.Num_DDD_Comercial_Usuario)@Html.DisplayFor(model => model.Num_Comercial_Usuario)">@Html.DisplayFor(model => model.Num_DDD_Comercial_Usuario)  @Html.DisplayFor(model => model.Num_Comercial_Usuario)</a><br>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.Nme_Vendedor))
+                                {
+                                    <b>Vendedor: </b>@Html.DisplayFor(model => model.Nme_Vendedor)<span> - </span>@Html.DisplayFor(model => model.Dta_Inicio_Carteira)<span> até </span> @Html.DisplayFor(model => model.Dta_Fim_Carteira)<br>
+                                }
+                                <!--TODO pegar perfil do ClaimsPrincipal-->
+                                @if ((Model.Eml_Vendedor == User.Identity.GetUserName()) ||
+(User.Identity.GetUserName() == "adrianogoncalves@bne.com.br"))/*ClaimsPrincipal.Current.FindFirst("tipoVendedor").ToString()=="6"*/
+                                {
+                                    <div id="transferencia">
+                                        <form method="get" action="~/Transferir/" class="sidebar-form">
+                                            <div class="input-group">
+                                                <select type="hidden" class="form-control" id="vendedor" name="vendedor">
+                                                    <option>option 1</option>
+                                                    <option>option 2</option>
+                                                    <option>option 3</option>
+                                                    <option>option 4</option>
+                                                    <option>option 5</option>
+                                                </select>
+                                                <input type="hidden" name="CNPJ" id="CNPJ" value="@Html.DisplayFor(model => model.Num_CNPJ)" />
+                                                <span class="input-group-btn">
+                                                    <button type='submit' class="btn btn-flat"><i class=" fa fa-exchange"></i></button>
+                                                </span>
+                                            </div>
+                                        </form>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--</section>
+                <section class="col-lg-5 connectedSortable ui-sortable">-->
+                <!-- Chat box -->
+                <div class="box box-success box-group">
+                    <div class="box-header">
+                        <i class="fa fa-comments-o"></i>
+                        <h3 class="box-title">@Html.ActionLink("CRM", "Details", new { controller = "HistoricoCRM", Id = Model.Num_CNPJ })</h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        @using (Html.BeginForm("AddAtendimento", "Empresa", FormMethod.Post))
+                        {
+                            <div class="form-group">
+                                <div class="input-group">
+                                    @Html.TextBox("DataAtendimento", ViewBag.DataAtendimento as string, new { @class = "form_datetime form-control", @id = "DataAtendimento", @readonly = "" })
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    @Html.TextBox("Msg", ViewBag.Msg as string, new { @class = "form-control type='text'" })
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-success" type="submit"><i class="fa fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div>
+                                    @Html.HiddenFor(x => Model.Num_CNPJ, ViewBag.Num_CNPJ as string)
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div id="crm" class="box-footer no-border chat">
+                    </div><!-- /.chat -->
+
+                </div><!-- /.box -->
+                <!--Empresas do Ramo-->
+                <div class="box box-success box-group">
+                    <div class="box-header">
+                        <div class="box-header">
+                            <i class="fa fa-users"></i>
+                            <h3 class="box-title">Empresas do Ramo</h3>
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="box-footer no-border">
+                                <div class="row">
+                                    <div class="box-header">
+                                        <div class="box-body">
+                                            <div class="box-body chart-responsive">
+                                                <div class="box-body table-responsive no-padding">
+                                                    <table id="EmpresasRamo" class="table table-hover">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>Empresa</th>
+                                                                <th>Vagas</th>
+                                                                <th>CV's</th>
+                                                                <th>Plano</th>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Limites SMS e Visualizacoes-->
+                <div id="parcelaatraso" class="box box-success box-group">
+                    <div class="box-header">
+                        <i class="fa fa-lock"></i>
+                        <h3 class="box-title">Limites</h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="box-footer no-border">
+                            <div class="row">
+                                <div class="box-header">
+                                    <div class="box-body">
+                                        <div class="box-body chart-responsive">
+                                            <div class="box-body table-responsive no-padding">
+                                                <table id="Limites" class="table table-hover">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Qtd Visualizações</th>
+                                                            <th>Qtd Utilizada</th>
+                                                            <th>Qtd SMS Disponível</th>
+                                                            <th>Qtd Usuários</th>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Planos-->
+                <div class="box box-success box-group">
+                    <div class="box-header">
+                        <i class="fa fa-money"></i>
+                        <h3 class="box-title">@Html.ActionLink("Ultimos planos", "Details", new { controller = "Plano", Id = Model.Num_CNPJ })</h3>
+                        <div id="titlePendencia">
+                        </div>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="box-footer no-border">
+                            <div class="row">
+                                <div class="box-header">
+                                    <div class="box-body">
+                                        <div class="box-body chart-responsive">
+                                            <div class="box-body table-responsive no-padding">
+                                                <table id="Planos" class="table table-hover">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Plano</th>
+                                                            <th>Situação</th>
+                                                            <th>Início</th>
+                                                            <th>Fim</th>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Cvs na localidade-->
+                <div class="box box-success box-group">
+                    <div class="box-header">
+                        <i class="fa fa-file-word-o"></i>
+                        <h3 class="box-title">Cvs na localidade</h3>
+                        <div id="titlePendencia">
+                        </div>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="box-footer no-border">
+                            <div class="row">
+                                <div class="box-header">
+                                    <div class="box-body">
+                                        <div class="box-body chart-responsive">
+                                            <div class="box-body table-responsive no-padding">
+                                                <table id="cvsNaLocalidade" class="table table-hover">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Cidade</th>
+                                                            <th>Total</th>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section><!-- /.Left col -->
+
+
+
+            <section class="col-lg-7 connectedSortable ui-sortable">
+
+
+
+                <!-- Indicadores box -->
+                <div class="row">
+                    <div class="box box-success box-group ">
+                        <div class="box-header">
+                            <i class="fa fa-pie-chart"></i>
+                            <h3 class="box-title">Indicadores</h3>
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div id="crm" class="box-footer no-border chat">
+                            <div class="box-footer no-border">
+                                <div class="row">
+                                    <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                                        <div class="knob-label"><b>@Html.ActionLink("Vagas", "Details", new { controller = "VagasEmpresa", Id = Model.Num_CNPJ })</b></div>
+                                        <div class="chart" id="vagas-chart" style="height: 200px; position: relative;"></div>
+                                    </div>
+                                    <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                                        <div class="knob-label"><b>@Html.ActionLink("Usuários", "Details", new { controller = "UsuarioEmpresa", Id = Model.Num_CNPJ })</b></div>
+                                        <div class="chart" id="usuarios-chart" style="height: 200px; position: relative;"></div>
+                                    </div>
+                                    <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+
+                                        <div class="knob-label"><b>Situação Empresa</b></div>
+
+                                        <br>
+                                        <div id="alertas" class="knob-label"></div>
+                                        <div class="box-body">
+                                            @if ((Model.Des_Situacao_Filial).ToString() == "Publicado Empresa" || (Model.Des_Situacao_Filial).ToString() == "Publicado Agência")
+                                            {
+                                                <div class="alert alert-success alert-dismissable">
+                                                    <i class="fa fa-check"></i>
+                                                    @Html.DisplayFor(model => model.Des_Situacao_Filial)
+                                                </div>
+                                            }
+                                            @if ((Model.Des_Situacao_Filial).ToString() == "Aguardando Publicacao" || Model.Des_Situacao_Filial.ToString() == "Pré Cadastro Vaga Rápida")
+                                            {
+                                                <div class="alert alert-info alert-dismissable">
+                                                    <i class="fa fa-check"></i>
+                                                    @Html.DisplayFor(model => model.Des_Situacao_Filial)
+                                                </div>
+                                            }
+                                            @if ((Model.Des_Situacao_Filial).ToString() == "Com Crítica" || Model.Des_Situacao_Filial.ToString() == "Faltando dados receita")
+                                            {
+                                                <div class="alert alert-warning alert-dismissable">
+                                                    <i class="fa fa-check"></i>
+                                                    @Html.DisplayFor(model => model.Des_Situacao_Filial)
+                                                </div>
+                                            }
+                                            @if ((Model.Des_Situacao_Filial).ToString() == "Bloqueado" || (Model.Des_Situacao_Filial).ToString() == "Cancelado" || (Model.Des_Situacao_Filial).ToString() == "Cadastrada fora do horário comercial")
+                                            {
+                                                <div class="alert alert-danger alert-dismissable">
+                                                    <i class="fa fa-check"></i>
+                                                    @Html.DisplayFor(model => model.Des_Situacao_Filial)
+                                                </div>
+                                            }
+
+
+
+                                            @if (Model.PlanoBloquedo != null)
+                                            {
+                                                <div id="alertas" class="knob-label"></div>
+                                                <div class="alert alert-danger alert-dismissable" data-toggle="tooltip" data-placement="top" title="Empresa com plano bloqueado NÃO tem acesso ao bne. Consulte o financeiro.">
+                                                    <i class="fa fa-exclamation-circle"></i>
+                                                    Plano Bloqueado
+                                                </div>
+                                            }
+                                        </div>
+
+                                        <div>
+                                            <div><i class="fa fa-phone" aria-hidden="true"> </i> Data de Retorno</div>
+                                            @Html.DisplayFor(model => model.Dta_Retorno)
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div><!-- /.box-footer -->
+                        </div><!-- /.chat -->
+                    </div><!-- /.box -->
+                </div>
+
+                <!-- Visualizacao CV -->
+                <div class="row">
+                    <div class="box box-success">
+                        <div class="box-header">
+                            <i class="fa fa-bar-chart-o"></i>
+                            <h3 class="box-title">@Html.ActionLink("Visualização de currículos", "Details", new { controller = "VisualizacaoEmpresa", Id = Model.Num_CNPJ })</h3>
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="box-footer no-border">
+                                <div class="row">
+                                    <div class="box-header">
+                                        <div class="box-body">
+                                            <div class="box-body chart-responsive">
+                                                <div class="chart" id="bar-chart" style="height: 300px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SMS's -->
+                <div class="row">
+                    <div class="box box-success">
+                        <div class="box-header">
+                            <i class="fa fa-send"></i>
+                            <h3 class="box-title">@Html.ActionLink("Envio de SMS's", "Details", new { controller = "SMSEmpresa", Id = Model.Num_CNPJ })</h3>
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="box-footer no-border">
+                                <div class="row">
+                                    <div class="box-header">
+                                        <div class="box-body">
+                                            <div class="box-body chart-responsive">
+                                                <div class="chart" id="bar-chart-sms" style="height: 300px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Campanhas-->
+                <div class="row">
+                    <div class="box box-success">
+                        <div class="box-header">
+                            <i class="fa fa-space-shuttle"></i>
+                            <h3 class="box-title">@Html.ActionLink("Campanhas", "Details", new { controller = "CampanhasEmpresa", Id = Model.Num_CNPJ })</h3>
+                            <div id="titleCampanha">
+                                <div class="box-tools pull-right">
+                                    <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="box-footer no-border">
+                                <div class="row">
+                                    <div class="box-header">
+                                        <div class="box-body">
+                                            <div class="box-body chart-responsive">
+                                                <div class="box-body table-responsive no-padding">
+                                                    <table id="Campanhas" class="table table-hover">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>Função</th>
+                                                                <th>Cidade</th>
+                                                                <th>Motivo</th>
+                                                                <th>Qtd Retorno</th>
+                                                                <th>Qtd Curriculo</th>
+                                                                <th>Data</th>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pesquisa CV -->
+                <div class="row">
+                    <div class="box box-success">
+                        <div class="box-header">
+                            <i class="fa fa-bar-chart-o"></i>
+                            <h3 class="box-title">@Html.ActionLink("Pesquisa de currículos", "Details", new { controller = "PesquisaCurriculos", Id = Model.Num_CNPJ })</h3>
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="box-footer no-border">
+                                <div class="row">
+                                    <div class="box-header">
+                                        <div class="box-body">
+                                            <div class="box-body chart-responsive">
+                                                <div class="chart" id="bar-chart-pesquisa" style="height: 300px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--Historico Atendente-->
+                <div class="row">
+                    <div class="box box-success">
+                        <div class="box-header">
+                            <i class="fa fa-exchange"></i>
+                            <h3 class="box-title">Histórico de transferências</h3>
+                            <div class="box-tools pull-right">
+                                @if (tipoVendedor.Equals((int)Sample.Enumerador.TipoVendedor.Administrador))
+                                {
+                                    <button class="btn btn-info btn-md" data-toggle="modal" onclick="OpenModel();"><i class="fa fa-user"></i>Transferir</button>
+                                }
+                                <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="box-footer no-border">
+                                <div class="row">
+                                    <div class="box-header">
+                                        <div class="box-body">
+                                            <div class="box-body chart-responsive">
+                                                <div class="box-body table-responsive no-padding">
+                                                    <table id="histtrans" class="table table-hover">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>Vendedor</th>
+                                                                <th>Inicio</th>
+                                                                <th>Fim</th>
+                                                                <th>Qtd Atendimentos</th>
+                                                                <th>Qtd Negociacao</th>
+                                                                <th>Qtd Venda</th>
+                                                                <th>Obs</th>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @if (tipoVendedor.Equals((int)Sample.Enumerador.TipoVendedor.Administrador))
+                {
+                    <div class="modal fade" id="mdlVendedores" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Transferir empresa.</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="box-body">
+                                        <div class="box-body chart-responsive">
+                                            <div class="box-body table-responsive no-padding">
+                                                <table id="tbVendedor" class="table table-hover">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Vendedor</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-primary" onclick="transferir(88)">Transferir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </section><!-- right col -->
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+@Scripts.Render("~/Scripts/AdminLTE/dashboard.js")
+@Scripts.Render("~/Scripts/raphael-min.js")
+@Scripts.Render("~/Scripts/plugins/morris/morris.min.js")
+@Scripts.Render("~/Scripts/plugins/sparkline/jquery.sparkline.min.js")
+@Scripts.Render("~/Scripts/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js")
+@Scripts.Render("~/Scripts/plugins/jvectormap/jquery-jvectormap-world-mill-en.js")
+@Scripts.Render("~/Scripts/plugins/jqueryKnob/jquery.knob.js")
+@Scripts.Render("~/Scripts/plugins/daterangepicker/daterangepicker.js")
+@Scripts.Render("~/Scripts/plugins/datepicker/bootstrap-datepicker.js")
+@Scripts.Render("~/Scripts/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js")
+@Scripts.Render("~/Scripts/plugins/iCheck/icheck.min.js")
+@Scripts.Render("~/Scripts/plugins/daterangepicker/daterangepicker.js")
+@Scripts.Render("~/Scripts/plugins/timepicker/bootstrap-timepicker.min.js")
+@Scripts.Render("~/Scripts/plugins/input-mask/jquery.inputmask.js")
+@Scripts.Render("~/Scripts/plugins/input-mask/jquery.inputmask.date.extensions.js")
+@Scripts.Render("~/Scripts/plugins/input-mask/jquery.inputmask.extensions.js")
+@Scripts.Render("~/Scripts/bootstrap-datetimepicker.min.js")
+@Scripts.Render("~/Scripts/bootstrap-datetimepicker.pt-BR.js")
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+
+        $("li").removeClass("active");
+        $("#dashboard").addClass("active");
+
+
+    });
+
+
+</script>
+
+
+<!--Indicador Vaga-->
+<script type="text/javascript">
+    $.ajax({
+        url: '/api/ApiIndicadorVaga/' + window.location.href.toString().split('/')[5],
+        type: 'GET',
+        dataType: 'json',
+        success : function (resp){
+            Morris.Donut({
+                data: resp,
+                element: 'vagas-chart',
+                resize: true,
+                hideHover: 'auto'
+            });
+        }
+    });
+</script>
+
+<!--Indicador Usuario-->
+<script type="text/javascript">
+    $.ajax({
+        url: '/api/ApiIndicadorUsuario/' + window.location.href.toString().split('/')[5],
+        type: 'GET',
+        dataType: 'json',
+        success: function (resp) {
+            Morris.Donut({
+                data: resp,
+                element: 'usuarios-chart',
+                resize: true,
+                hideHover: 'auto',
+                colors: ['#0B62A4', '#3980B5']
+            });
+        }
+    });
+</script>
+
+<!--Indicador Visualizacoes-->
+<script type="text/javascript">
+    $.ajax({
+        url: '/api/ApiIndicadorVisualizacao/' + window.location.href.toString().split('/')[5],
+        type: 'GET',
+        dataType: 'json',
+        success: function (resp2) {
+            Morris.Bar({
+                element: 'bar-chart',
+                resize: true,
+                data:resp2,
+                barColors: ['#f56954', '#00a65a', '#FFFF00'],
+                xkey: 'Data',
+                ykeys: ['VisualizacaoVIP', 'VisualizacaoCompleta', 'VisualizacaoNormal'],
+                hideHover: 'auto',
+                labels: ['Visualização VIP', 'Visualização Completa', 'Visualização Parcial'],
+                behaveLikeLine: true,
+                fillOpacity: 0.6,
+                resize: true,
+                pointFillColors: ['#ffffff'],
+                pointStrokeColors: ['black'],
+                stacked: true,
+                gridTextSize: 9
+            });
+        }
+    });
+</script>
+
+
+
+<!--Campanhas-->
+<script type="text/javascript">
+    $.ajax({
+
+        url: '/api/ApiIndicadorCampanhas/' + window.location.href.toString().split('/')[5],
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        data: "{}",
+        success: function (response) {
+            preencheCampanhas(response); // calling method
+        }
+
+    });
+    function preencheCampanhas(dataValues) {
+        var rows = "";
+        for (var i = 0; i < dataValues.length; i++) {
+            rows += '<tr><td>' + dataValues[i].Funcao + '</td><td>' + dataValues[i].Cidade + '/' + dataValues[i].UF + '</td><td>' + dataValues[i].Motivo + '</td><td>' + dataValues[i].QtdRetorno + '</td><td>' + dataValues[i].QtdCurriculo + '</td><td>' + dataValues[i].Dta_Cadastro + '</td></tr>'
+        }
+        $('#Campanhas').append(rows);
+    }
+</script>
+
+<!--Historico Atendimento-->
+<script type="text/javascript">
+    $.ajax({
+
+        url: '/api/ApiIndicadorHistoricoAtendente/' + window.location.href.toString().split('/')[5],
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        data: "{}",
+        success: function (response) {
+            preencheHistoricoAtendimento(response); // calling method
+        }
+
+    });
+
+    function preencheHistoricoAtendimento(dataValues) {
+        var rows = "";
+        for (var i = 0; i < dataValues.length; i++) {
+            rows += '<tr><td>' + dataValues[i].Vendedor + '</td><td>' + dataValues[i].Inicio + '</td><td>' + dataValues[i].Fim + '</td><td>' + dataValues[i].QtdAtendimentos + '</td><td>' + dataValues[i].QtdNegociacao + '</td><td>' + dataValues[i].QtdVenda + '</td><td>' + dataValues[i].Obs + '</td></tr>'
+        }
+        $('#histtrans').append(rows);
+    }
+
+
+
+</script>
+
+<script type="text/javascript">
+
+    $.ajax({
+        url: '/api/ApiVendedor',
+        type: 'GET',
+        contentType: "application/json;charset=utf-8",
+        data: "[]",
+        success: function(response){
+            preencherVendedores(response);
+        }
+    })
+    function preencherVendedores(dataValues){
+        var rows= "";
+        for (var i=0;i<dataValues.length;i++){
+            rows +='<tr><td>' + dataValues[i].Nme_Vendedor + '</td><td><input type="radio" name="iCheck">'
+        }
+        $('#tbVendedor').append(rows);
+    }
+
+    function transferir(vendedor){
+        console.log('api/apiVendedor/Transferir/'+vendedor+'/'+ window.location.href.toString().split('/')[5]);
+        $.ajax({
+            url:'api/apiVendedor/Transferir/'+vendedor+'/'+ window.location.href.toString().split('/')[5],
+            type: 'GET',
+            contentType: 'application/json',
+            data:"[]",
+            success: function(response){
+
+            }
+        })
+    }
+</script>
+<!--Limites-->
+<script type="text/javascript">
+    $.ajax({
+
+        url: '/api/ApiIndicadorLimites/' + window.location.href.toString().split('/')[5],
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        data: "{}",
+        success: function (response) {
+            preencheLimites(response); // calling method
+        }
+
+    });
+    function preencheLimites(dataValues) {
+        var rows = '<tr><td>' + dataValues[0].QtdVisualizacao + '</td><td>' + dataValues[0].QtdVisualizacaoUtilizado + '</td><td>' + dataValues[0].QtdSmsDisponivel + '</td><td>' + dataValues[0].QtdUsuario + '</td></tr>';
+        $('#Limites').append(rows);
+        if (dataValues[0].ParcelaAtraso) {
+            tempList = '<div class="alert alert-danger alert-dismissable">' +
+                                      '<i class="fa fa-dollar"></i>Existe pendência financeira!' +
+                                '</div>';
+            spamLimite = '<span class="badge pull bg-red">Pendência financeira!!!</span>';
+
+            $("#titlePendencia").html(spamLimite);
+            $("#alertas").html(tempList);
+        }
+        spamCampanha = '<span class="label label-warning">' + dataValues[0].QtdCampanhas + ' Campanha(s)  disponível</span>';
+        $("#titleCampanha").html(spamCampanha);
+
+
+    }
+</script>
+
+<!--Planos-->
+<script type="text/javascript">
+    $.ajax({
+
+        url: '/api/ApiIndicadorUltimosPlanos/' + window.location.href.toString().split('/')[5],
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        data: "{}",
+        success: function (response) {
+            preenchePlanos(response); // calling method
+        }
+
+    });
+    function preenchePlanos(dataValues) {
+        var rows = '';
+        console.log(dataValues);
+        for (var i = 0; i < dataValues.length; i++) {
+            if(dataValues[i].Situacao == "Bloqueado"){
+                rows += '<tr style="background-color:red; color:white;"><td>' + dataValues[i].Plano + '</td><td>' + dataValues[i].Situacao + '</td><td>' + dataValues[i].Inicio + '</td><td>' + dataValues[i].Fim + '</td></tr>';
+            }
+            else{
+                rows += '<tr><td>' + dataValues[i].Plano + '</td><td>' + dataValues[i].Situacao + '</td><td>' + dataValues[i].Inicio + '</td><td>' + dataValues[i].Fim + '</td></tr>';
+            }
+        }
+        $('#Planos').append(rows);
+    }
+</script>
+
+<!--Cvs na localidade-->
+<script type="text/javascript">
+    $.ajax({
+
+        url: '/api/ApiIndicadorCvsLocalidade/' + @Html.DisplayFor(model => model.Idf_Cidade),
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        data: "{}",
+        success: function (response) {
+            preencheCvsLocalidade(response); // calling method
+        }
+
+    });
+    function preencheCvsLocalidade(dataValues) {
+        var rows = '';
+        for (var i = 0; i < dataValues.length; i++) {
+            rows += '<tr><td>' + dataValues[i].Nme_Cidade + '-'+dataValues[i].UF + '</td><td>' + dataValues[i].Total + '</td></tr>';
+        }
+        $('#cvsNaLocalidade').append(rows);
+    }
+</script>
+
+<!--Indicador Pesquisa CV-->
+<script type="text/javascript">
+    $.ajax({
+        url: '/api/ApiIndicadorPesquisa/' + window.location.href.toString().split('/')[5],
+        type: 'GET',
+        dataType: 'json',
+        success: function (resp2) {
+            Morris.Bar({
+                element: 'bar-chart-pesquisa',
+                resize: true,
+                data: resp2,
+                barColors: ['#f56954'],
+                xkey: 'Data',
+                ykeys: ['Total'],
+                hideHover: 'auto',
+                labels: ['Quantidade de pesquisas'],
+                behaveLikeLine: true,
+                fillOpacity: 0.6,
+                resize: true,
+                pointFillColors: ['#ffffff'],
+                pointStrokeColors: ['black'],
+                stacked: true,
+                gridTextSize: 9
+            });
+        }
+    });
+</script>
+
+<!--SMS-->
+<script type="text/javascript">
+    $.ajax({
+        url: '/api/ApiIndicadorSMS/' + window.location.href.toString().split('/')[5],
+        type: 'GET',
+        dataType: 'json',
+        success: function (resp2) {
+            Morris.Bar({
+                element: 'bar-chart-sms',
+                resize: true,
+                data: resp2,
+                barColors: ['#17BDB8'],
+                xkey: 'Data',
+                ykeys: ['Total'],
+                hideHover: 'auto',
+                labels: ['Quantidade de SMS'],
+                behaveLikeLine: true,
+                fillOpacity: 0.6,
+                resize: true,
+                pointFillColors: ['#ffffff'],
+                pointStrokeColors: ['black'],
+                stacked: true,
+                gridTextSize: 9
+            });
+        }
+    });
+</script>
+
+<!--Empresas mesmo ramo-->
+<script type="text/javascript">
+    $.ajax({
+
+        url: '/api/ApiIndicadorEmpresasRamo/' + window.location.href.toString().split('/')[5],
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        data: "{}",
+        success: function (response) {
+            preencheEmpresasRamo(response); // calling method
+        }
+    });
+    function preencheEmpresasRamo(dataValues) {
+        var rows = "";
+        for (var i = 0; i < dataValues.length; i++) {
+            rows += '<tr><td><a href="../Details/' + dataValues[i].CNPJ + '" class="name">' + dataValues[i].Empresa + '</a></td><td>' + dataValues[i].Vagas + '</td><td>' + dataValues[i].Qtd_Visuaizacao_CV + '</td><td>';
+            rows += dataValues[i].Des_Plano == null ? '<span class="label label-warning">Sem plano</span>' : '<span class="label label-success">' + dataValues[i].Des_Plano + '</span>';
+            rows += '</td></tr>';
+        }
+        $('#EmpresasRamo').append(rows);
+    }
+</script>
+
+<!--Vendedores-->
+<script type="text/javascript">
+    $.ajax({
+
+        url: '/api/ApiVendedor/',
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        data: "{}",
+        success: function (response) {
+            preencheVendedores(response); // calling method
+        }
+
+    });
+    function preencheVendedores(dataValues) {
+        var tempList = '';
+        for (i = 0; i < dataValues.length; i++) {
+            tempList += '<option id="' + dataValues[i].Num_CPF + '" value="' + dataValues[i].Num_CPF + '" name="' + dataValues[i].Nme_Vendedor + '">' + dataValues[i].Nme_Vendedor + '</option>';
+        }
+        $("#vendedor").html(tempList);
+    }
+</script>
+
+<!--CRM-->
+<script type="text/javascript">
+    $.ajax({
+
+        url: '/api/ApiAtendimentos/' + window.location.href.toString().split('/')[5],
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        data: "{}",
+        success: function (response) {
+            preencheCrm(response); // calling method
+        }
+    });
+    function getFormattedDate(format, date) {
+        day = date.substr(8,2),
+        month = date.substr(5, 2) ,
+        year = date.substr(0, 4),
+        hours = date.substr(11, 2),
+        minutes = date.substr(14, 2)
+
+        if (!format) {
+            format = "dd/MM/yy";
+        }
+
+        format = format.replace("MM", month.toString().replace(/^(\d)$/, '0$1'));
+
+        if (format.indexOf("yyyy") > -1) {
+            format = format.replace("yyyy", year.toString());
+        } else if (format.indexOf("yy") > -1) {
+            format = format.replace("yy", year.toString().substr(2, 2));
+        }
+
+        format = format.replace("dd", day.toString().replace(/^(\d)$/, '0$1'));
+
+        if (format.indexOf("t") > -1) {
+            if (hours > 11) {
+                format = format.replace("t", "pm");
+            } else {
+                format = format.replace("t", "am");
+            }
+        }
+
+        if (format.indexOf("HH") > -1) {
+            format = format.replace("HH", hours.toString().replace(/^(\d)$/, '0$1'));
+        }
+
+        if (format.indexOf("hh") > -1) {
+            if (hours > 12) {
+                hours -= 12;
+            }
+
+            if (hours === 0) {
+                hours = 12;
+            }
+            format = format.replace("hh", hours.toString().replace(/^(\d)$/, '0$1'));
+        }
+
+        if (format.indexOf("mm") > -1) {
+            format = format.replace("mm", minutes.toString().replace(/^(\d)$/, '0$1'));
+        }
+
+        if (format.indexOf("ss") > -1) {
+            format = format.replace("ss", seconds.toString().replace(/^(\d)$/, '0$1'));
+        }
+
+        return format;
+    }
+    function preencheCrm(dataValues) {
+        var crm = document.getElementById('crm');
+
+        for (var i = 0; i < 10; i++) {
+            crm.innerHTML += '<div class="item">'+
+                                        '<img src="http://www.bne.com.br/Handlers/PessoaFisicaFoto.ashx?CPF=' + ((dataValues[i].CPF === null) ? "99999999" : dataValues[i].CPF) + '" alt="user image" />' +
+                                            '<p class="message">' +
+                                                '<a href="#" class="name">'+
+                                                    '<small class="text-muted pull-right"><i class="fa fa-clock-o"></i>' + getFormattedDate("dd/MM/yy HH:mm",dataValues[i].Dta_Atendimento) + '</small>' +
+                                                   ((dataValues[i].Nme_Vendedor === null) ? "Empresa" : dataValues[i].Nme_Vendedor) +
+                                                 '</a>'+
+                                               ((dataValues[i].Des_Observacao === null) ? dataValues[i].Tipo_Atendimento : dataValues[i].Des_Observacao) +
+                                             '</p>'+
+                                        '</div>';
+        }
+    }
+
+</script>
+
+
+<script src="~/Scripts/Local/Empresa.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>

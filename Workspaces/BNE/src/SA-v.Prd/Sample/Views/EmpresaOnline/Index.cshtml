@@ -1,0 +1,101 @@
+﻿@model IEnumerable<AdminLTE_Application.CRM_Vendedor_Empresa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Empresas
+            <small>Online</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li class="active">Online</li>
+        </ol>
+        <div id="tableOnline">
+            
+        </div>
+    </section>
+    <!-- Main content -->
+    <section class="content"></section><!-- /.content -->
+</aside><!-- /.right-side -->
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("li").removeClass("active");
+        $("#examples").addClass("active");
+        $("#examples_menu").css("display", "block");
+        $("#examples_empty").addClass("active");
+        $("#examples_arrow").addClass("fa-angle-down");
+    });
+</script>
+
+@Scripts.Render("~/bundles/datatables")
+<script type="text/javascript">
+    $(function () {
+        $("#example1").dataTable();
+        $('#example2').dataTable({
+            "bPaginate": true,
+            "bLengthChange": true,
+            "bFilter": true,
+            "bSort": true,
+            "bInfo": true,
+            "bAutoWidth": true
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    user = '@HttpContext.Current.User.Identity.Name.ToString().Replace(".", "dott").Replace("@", "arroba")';
+    $.ajax({
+        url: '/api/ApiEmpresasOnline/'+user,
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        data: "{}",
+        success: function (response) {
+            preencheEmpresasRamo(response); // calling method
+        },
+
+        error: function () {
+            alert("Error loading data! Please try again.");
+        }
+
+    });
+    function preencheEmpresasRamo(dataValues) {
+        var rows;
+        var table = document.getElementById('tableOnline');
+        table.innerHTML += '<table id="example2" class="table table-bordered table-hover"><thead>' +
+               '<tr role="row">' +
+                       '<th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 295px;" aria-label="Rendering engine: activate to sort column ascending">Empresa</th>' +
+                       '<th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 390px;" aria-label="Platform(s): activate to sort column ascending">Vendedor</th>' +
+                       '<th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 253px;" aria-label="Engine version: activate to sort column ascending">Inicio Carteira</th>' +
+                       '<th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 181px;" aria-label="CSS grade: activate to sort column ascending">Fim Carteira</th>' +
+                       '<th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 390px;" aria-label="Platform(s): activate to sort column ascending">Plano</th>' +
+                       '<th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 253px;" aria-label="Engine version: activate to sort column ascending">Inicio Plano</th>' +
+                       '<th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 181px;" aria-label="CSS grade: activate to sort column ascending">Fim Plano</th>' +
+                       '<th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 181px;" aria-label="CSS grade: activate to sort column ascending">Situação</th>' +
+                       '<th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 181px;" aria-label="CSS grade: activate to sort column ascending">Obs</th>' +
+                       '<th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 181px;" aria-label="CSS grade: activate to sort column ascending">Ações</th>' +
+                   '</tr></thead>';
+        for (var i = 0; i < dataValues.length; i++) {
+            rows += '<tr><td>' + dataValues[i].Empresa + '</td>' +
+            '<td>' + dataValues[i].Vendedor + '</td>' +
+            '<td>' + dataValues[i].Dta_Inicio_Carteira + '</td>' +
+            '<td>' + dataValues[i].Dta_Fim_Carteira + '</td>' +
+            '<td>' + dataValues[i].Plano + '</td>' +
+            '<td>' + dataValues[i].Dta_Inicio_Plano + '</td>' +
+            '<td>' + dataValues[i].Dta_Fim_Plano + '</td>' +
+            '<td>' + dataValues[i].Des_Situacao_atendimento + '</td>' +
+            '<td>' + dataValues[i].Obs + '</td>' +
+            '<td><a href="../Empresa/Details/' + dataValues[i].CNPJ + '">Detalhes</a></td></tr>';
+        }
+        $('#example2').append(rows);
+        table.innerHTML += '</table>';
+    }
+</script>
